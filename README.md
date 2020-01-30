@@ -11,15 +11,15 @@
 * certbot (only to get certs)
 * git-lfs
 
-**Temporary**: I have made changes to py-markdown2's source code to make it support <expand-note>. These changes are essential, but a better solution is needed eventually.
+**Temporary**: I have made changes to py-markdown2's source code to make it support &lt;expand-note&gt;. These changes are essential, but a better solution is needed eventually.
 
 # Overview
 
 * The host runs FreeBSD and is managed with SSH.
 
-* The entire repository goes under ~root, as ~/src.
+* The entire repository goes under `~root`, as `~/src`.
 
-* Nginx serves all static files - including articles - from an output dir, ~/html.
+* Nginx serves all static files - including articles - from an output dir, `~/html`.
 
 * A Django backend manages comments, the Spem dictionary, and any other dynamic aspects.
 
@@ -31,7 +31,7 @@
 
 * Currently, novel chapters are not templated. This is regrettable.
 
-* **DNS**: a TXT record on @ of "v=spf1 a:yujiri.xyz ~all" is required to make email delivery work.
+* **DNS**: a TXT record on @ of `"v=spf1 a:yujiri.xyz ~all"` is required to make email delivery work.
 
 # Instructions
 
@@ -57,8 +57,8 @@ Deploy the DNS TXT record and then the file as requested. Test that each are ava
 
 The Django server's config involves some settings that can't be exposed in the repo, so they're stored in secret.py protected by .gitignore. The necessary settings:
 
-* SECRET_KEY
-* EMAIL_HOST_PASSWORD
+* `SECRET_KEY`
+* `EMAIL_HOST_PASSWORD`
 
 # git-lfs
 
