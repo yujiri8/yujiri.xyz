@@ -9,6 +9,7 @@
 * paladin
 * entr
 * certbot (only to get certs)
+* git-lfs
 
 **Temporary**: I have made changes to py-markdown2's source code to make it support <expand-note>. These changes are essential, but a better solution is needed eventually.
 
@@ -58,3 +59,7 @@ The Django server's config involves some settings that can't be exposed in the r
 
 * SECRET_KEY
 * EMAIL_HOST_PASSWORD
+
+# git-lfs
+
+This repo needs git-lfs to be uploaded to Github due to the RTTP downloads exceeding size limits.
