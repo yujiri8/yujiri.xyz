@@ -260,22 +260,6 @@ arr.slice(1, 3); // Returns ['b', 'c']
 </pre><p>
 It's not horrible, but it's a good deal more verbose than most other languages.
 </p>
-<!--
-<h3 class="bad"><code>parseInt</code> doesn't error when it should</h3>
-<pre class="code">
-parseInt("1q") == 1
-</pre><p>
-I strongly believe this should throw an error, because if you're trying to parse a string that contains letters as an
-int, it's almost certainly because something is not working as intended. I mean if you asked someone to type a number
-and they typed "1qx5aewse5r454ae", you . If you wanted it not to you could .
-. But on top of this...
-</p><pre class="code">
-parseInt("q1") == NaN
-</pre><p>
-Are you serious? Javascript has exceptions! Why force us to also explicitly handle errors in Go-style after
-certain functions?
-</p>
--->
 <h3 class="bad">No passing parameters by name</h3>
 <p>
 Function parameters in Javascript can't be passed by name, they have to be passed by position.
@@ -294,8 +278,4 @@ them by position while you're at it.
 Another point from my review of Python. Having to constantly make this decision distracts me while I'm coding
 and breeds inconsistent style.
 </p>
-<!--
-	-- A lot of functions that should accept one value will silently operate on the first element of an array
-		# (Get examples)
--->
 <!--https://wsvincent.com/javascript-parseint-map/-->
