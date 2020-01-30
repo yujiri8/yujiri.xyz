@@ -1,0 +1,159 @@
+#!/usr/local/bin/python3.7
+"""Processes a source file and writes the final output to the production file."""
+
+import markdown2
+from bs4 import BeautifulSoup as bs
+import os, sys, datetime, html, urllib.parse
+parse_fs_time = datetime.datetime.utcfromtimestamp
+
+SRCDIR = '/root/src/'
+OUTDIR = '/root/html/'
+TEMPLATES = '/root/src/srv/scripts/'
+
+# Need a custom Markdown object to add header ids.
+markdowner = markdown2.Markdown(extras = ['header-ids'])
+markdowner.reset()
+
+class YujiriMarkdowner(markdown2.Markdown):
+	pass
+#	_block_tags_a = 'expand-note|' + markdown2.Markdown._block_tags_a
+#	_block_tags_b = 'expand-note|' + markdown2.Markdown._block_tags_b
+yujiri_markdown = YujiriMarkdowner(extras = ['code-friendly', 'fenced-code-blocks', 'markdown-in-html']).convert
+
+
+def process_file(infile, outfile, templates):
+	print(infile, outfile, templates)
+	# If it's a directory, create it if it doesn't exist, then quit.
+	if os.path.isdir(infile):
+		if not os.path.exists(outfile): os.mkdir(outfile)
+		return
+	# If it's not a templated article, just hard-link it if it isn't already.
+	if not infile.endswith('.html') or ('/chapter' in infile and 'works/' in infile):
+		if not os.path.exists(outfile) or not os.path.samefile(infile, outfile):
+			os.link(infile, outfile)
+		return
+	# Read the article first.
+	with open(infile, encoding='utf-8') as f:
+		article = f.read()
+	# Right now, only normal articles are templated.
+	templatefile = templates + 'article.html'
+	with open(templatefile, encoding='utf-8') as f:
+		template = f.read()
+	# Write the output.
+	with open(outfile, 'w', encoding='utf-8') as f:
+		f.write(build_article(article, template, infile[len(SRCDIR):], get_last_modified(infile)))
+
+def get_last_modified(*files):
+	return parse_fs_time(max(os.path.getmtime(file) for file in files))
+
+def build_article(article, template, path, last_modified):
+	title = ''
+	navtitle = ''
+	onload = ''
+	onresize = ''
+	description = ''
+	js = []
+	css = []
+	comments = True
+	timestamp = True
+	markdown = False
+	# Process template directives.
+	while True:
+		pos = article.find('\n')
+		line, article = article[:pos], article[pos+1:]
+		if line == '': break
+		if line.startswith("TITLE "):
+			title = line[6:]
+		elif line.startswith("NAV "):
+			navtitle = line[4:]
+		elif line.startswith("TEMPLATE "):
+			template_type = line[9:]
+			if template_type == 'DEFAULT':
+				js.append('/bundle.js')
+				css.append('/global.css')
+			elif template_type == 'COLUMNS':
+				js.append('/bundle.js')
+				css.append('/global.css')
+				onload = onresize = 'resizeColumns()'
+		elif line.startswith('NO_COMMENTS'):
+			comments = False
+		elif line.startswith('NO_TIMESTAMP'):
+			timestamp = False
+		elif line.startswith("CSS "):
+			css.append(line[4:])
+		elif line.startswith("JS "):
+			js.append(line[3:])
+		elif line.startswith("ONLOAD "):
+			onload = line[7:]
+		elif line.startswith("ONRESIZE "):
+			onresize = line[9:]
+		elif line.startswith("DESC "):
+			description = line[5:]
+		elif line == "MARKDOWN":
+			markdown = True
+	# Elide the comment section, if it's disabled.
+	if not comments:
+		template = template[:template.find('BEGIN_COMMENTS')] + \
+			template[template.find('END_COMMENTS'):]
+	# Either way, strip the placeholders.
+	template = template.replace('BEGIN_COMMENTS\n', '').replace("END_COMMENTS\n", '')
+	# Fill out the template.
+	js_full = ''
+	for script in js: js_full += '<script src="' + script + '"></script>'
+	css_full = ''
+	for style in css: css_full += '<link rel="stylesheet" href="' + style + '">'
+	if description:
+		description = '<meta name="description" content="' + description.replace('"', '&quot;') + '">'
+	if markdown:
+		article = yujiri_markdown(article) \
+			.replace('<pre><code>', '<pre class="code">') \
+			.replace('</code></pre>', '</pre>')
+	# Strip index and .html from the canonical URL.
+	if path.endswith('.html'): path = path[:-5]
+	if path.endswith('index'): path = path[:-5]
+	return template. \
+		replace('TITLE', title). \
+		replace('NAV', html.escape(navtitle)). \
+		replace('CSS', css_full). \
+		replace('JS', js_full). \
+		replace('PATH', path). \
+		replace('ONLOAD', onload). \
+		replace('ONRESIZE', onresize). \
+		replace('LAST_MODIFIED', last_modified.strftime("%Y %b %d, %A, %R") if timestamp else ''). \
+		replace('DESC', description). \
+		replace('ARTICLE', add_fragment_links(article))
+
+def add_fragment_links(article):
+	"""Finds each heading and adds a pilcrow that's a permalink to it."""
+	dom = bs(article, features='lxml')
+	for elem in dom.findAll(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+		# Compute the id if it doesn't have one set.
+		if 'id' not in elem:
+			elem['id'] = markdowner.header_id_from_text(''.join(elem.strings), '', 0)
+		# Add the link.
+		link = dom.new_tag('a')
+		link['href'] = '#' + elem['id']
+		link['class'] = 'sectionlink'
+		link.string = '¶'
+		# Insert the link at the end of the heading.
+		elem.append(link)
+	return str(dom)
+
+if __name__ == '__main__':
+	try:
+		infile = sys.argv[1]
+	except:
+		print(sys.argv, ": invalid arguments. We need at least an infile; "
+			"optionally an outfile, and a template dir.")
+		sys.exit(1)
+	infile = os.path.abspath(infile)
+	try:
+		outfile = sys.argv[2]
+	except:
+		outfile = infile.replace(SRCDIR, OUTDIR)
+		# strip '.html' from the end, for Nginx's benefit
+		if outfile.endswith('.html'): outfile = outfile[:-5]
+	try:
+		TEMPLATES = sys.argv[3]
+	except: pass
+	process_file(infile, outfile, TEMPLATES)

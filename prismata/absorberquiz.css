@@ -1,0 +1,12 @@
+button.answer {
+	display: block;
+	width: 60%;
+	align: centesr;
+	margin: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 0.4em;
+}
+h3 {
+	text-align: center;
+}

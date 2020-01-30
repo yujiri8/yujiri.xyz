@@ -1,0 +1,6 @@
+<svg height="150" width="150" xmlns="http://www.w3.org/2000/svg">
+<rect height="100%" width="100%" fill="black" />
+<line x1="50%" y1="85%" x2="100%" y2="85%" stroke="white" stroke-width="6" />
+<path d="M 0 127 L 75 75 H 65 L 0 120 Z" fill="yellow" />
+<path d="M 0 23 L 75 75 H 65 L 0 30 Z" fill="blue" />
+</svg>

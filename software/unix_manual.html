@@ -1,0 +1,56 @@
+TITLE How To Read Unix Manual Pages
+NAV Unix manual pages
+TEMPLATE DEFAULT
+
+<p>
+Unix manual pages can look like an illegible mess if you're not used to them. The SYNOPSIS section at the top lists the syntax
+of the command; the syntax of this listing itself calls for some explanation.
+</p><p>
+Stuff inside brackets is optional. Usually these are flags.
+</p><p>
+Things with a bar between them are alternatives - they're mutually exclusive.
+</p><p>
+Underlined words that are not bold <expand-note> (if you're not on FreeBSD the text style might differ from what
+I'm saying but it'll be consistent across the system)</expand-note> are not to be typed
+literally; they're descriptions of parameters. For example, the synopsis:
+</p><pre class="code">
+<b>dosomething</b> [-f | -q] [-w] <u>file</u>
+</pre><p>
+means the command is called <code>dosomething</code>, and it takes an argument which should be the name of a file.
+The command supports three flags: <code>-w</code>, <code>-q</code>, and <code>-f</code>; <code>-f</code> and <code>-q</code>
+are mutually exclusive. Exactly what each flag does will be described in the rest of the command's manual page.
+</p><p>
+<code>...</code> means multiple things can be put here. If the <code>dosomething</code> command's synopsis had said:
+</p><pre class="code">
+<b>dosomething</b> [-f | -q] [-w] <u>file ...</u>
+</pre><p>
+That would mean you can pass it more than one filename and it'll do whatever it does to all of those files. (Almost all
+commands allow this.)
+</p><p>
+Sometimes the synopsis is also specified in multiple parts, like:
+</p><pre class="code">
+<b>dosomething</b> [-f | -q] [-w] <u>file ...</u>
+<b>dosomething</b> -h
+</pre><p>
+This would mean that the command can be used like above, or it can be used as just <code>dosomething -h</code> with no other flags or
+operands. (Usually if a command has a <code>-h</code> flag, it stands for 'help' and causes the command to print a short
+description of how to use it instead of doing anything.)
+</p><p>
+There's <a href="https://www.freebsd.org/cgi/man.cgi">a web version of the FreeBSD manual pages</a>, and it looks much
+nicer, but you still need to know the synopsis syntax.
+</p>
+<h2>Manual sections</h2>
+<p>
+There are manual pages on more than just usable commands. The manual is organized into a number of sections, with section 1
+usually being for general commands and section 8 being for system administration commands. Section 5 is for information about
+file formats, sections 2, 3, 4, and 9 are for C programmers, section 7 is for "miscellaneous information" (section 6 is "games"
+but that's a misleading name).
+Normally the <code>man</code> command will search all the sections and show you the first one that matches the
+argument you specify. If you want to only search for pages in a specific section, you can do something like <code>man 1 ls</code>
+to search for a page on something called <code>ls</code> in section 1. The <code>-a</code> flag will show all the matching
+pages found in sequence (as opposed to just the first one).
+</p><p>
+When we want to talk about a specific manual page by section, it's standard notation to write <code>ls(1)</code>, to
+specify that we're talking about the page on <code>ls</code> in section 1, incase there are pages called that in other
+sections.
+</p>

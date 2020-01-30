@@ -1,0 +1,216 @@
+TITLE The Concise Python Tutorial, Lesson 1: From zero to calculator
+NAV The Concise Python Tutorial, Lesson 1: From zero to calculator
+TEMPLATE DEFAULT
+MARKDOWN
+
+I know, I know, there are an infinite number of Python tutorials on the internet (and on everything else for that matter), but I haven't found a single one I think is really good, so I'm making this one. My goal is to make a tutorial as **digestible**, **concise**, and **accurate** as I can. (Most of the other ones I've seen I dislike because they drone on about complex stuff in the early chapters and teach things in a nonsensical order.) The project by the end of this first entry will be a text-based, single-operation calculator.
+
+Prerequisite for this series: preferably [a basic understanding of how programming works](programming), but no actual ability.
+
+# Installing the Python interpreter
+
+Let me take a quick opportunity to hound you about this first: learning to program is *much* easier if you're on a Unix-like operating system than on Windows. I've written about [what Unix is and why you should use it](why_unix), and the reasons are even stronger for those learning to program, but of course, nothing stops you from doing it on Windows or Mac or anything else.
+
+**If you're on any Unix-like system:** you just need the interpreter installed, and you can run a file by passing the filename as an argument, or open the prompt by running it without a filename (ctrl-D to exit). The command might not just be called `python` though; it might be called `python3`, `python3.8`, or whatever version.
+
+**If you're on Windows:** the Python interpreter is probably preinstalled, but if not you can [get it from python.org](https://www.python.org/downloads/) (on a modern machine, you probably want the Windows x86-64 executable installer). The installer should include something called IDLE ("integrated developerment and learning environment"), which is a convenient (compared to Windows file explorer) way of opening the Python prompt and executing files. You can run IDLE from the Windows menu.
+
+## What's with this "prompt"?
+
+When you open IDLE, you'll probably see a window that shows a brief message about the Python version and stuff and then a line starting with `>>>`. In most languages, to write a program, you have to save the source code to a file and then run it. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. The `>>>` is the "prompt", which just means it's there to tell you that you can enter code. The result of expressions you type is displayed on the next line without the `>>>`. You might also hear this called the Python "shell".
+
+To write a program you can go to File -> New File in the top menu, but I highly recommend using the interactive prompt. It's awesome.
+<!--If you're using IDLE, when you run a program, it'll run in the prompt window.-->
+
+Most of my excerpts here are interactive sessions, and so lines that start with `>>>` are lines of code (but the `>>>` is not part of them), lines without it are output. Unless I post a block with no `>>>` lines - then it's a program instead of an interactive session.
+
+# Math
+
+First, let me demonstrate the calculator use:
+
+```
+>>> 5 + 2
+7
+>>> 7 / 5
+1.4
+>>> 11 * (3 - 1)
+22
+```
+
+The interactive prompt interprets math expressions just like math.
+
+## Variables
+
+`number = 5` assigns the value `5` to the name `number`. Hereafter, we could include `number` in our calculations and it would have this value:
+
+```
+>>> number = 5
+>>> number + 2
+7
+>>> number
+5
+```
+
+Note that Python's prompt doesn't print the result when you just assign to a variable. It shows the value of a variable when you put it by itself, or when you enter an expression (like `number + 2`) without assigning the result to another variable. Also note that `number + 2` didn't change the value of `number`; it just printed the value plus 2. `number = number + 2` would've changed the value of `number`.
+
+<p class="highlight">A valid variable name can only use letters, numbers, and the underscore, and can't start with a number.</p>
+
+This lets us do slightly more interesting stuff:
+
+```
+>>> x = 12
+>>> y = 2
+>>> z = x + y
+>>> z / y
+7.0
+```
+
+Now let's take a break from the math. There are just a couple other prerequisites to our objective of making a calculator.
+
+## Print
+
+First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never printed, even though it works in the interactive prompt. In the interactive prompt, Python automatically displays the result of an expression, but not when it's in a program. To make a program output text you need the `print` function:
+
+```
+>>> print(5)
+5
+>>> print(5 + 1)
+6
+>>> product = 6 * 9
+>>> print(product)
+54
+```
+
+<div class="highlight" markdown="1">
+The parentheses after `print` are important - they tell Python what the `print` applies to. The reason it can't just print the rest of the line is because you need to be able to wrap other functions around it (we'll see this later on).
+</div>
+
+# Strings
+
+`print` can print anything, not just numbers, so now we're going to talk about strings, another very important data type. A "string" meaning a string of text. String *literals* (not a variable that holds a string) always have to be enclosed in quotes, so that Python knows to interpret them as literal text and not Python code. The quotes are not themselves part of the string, though:
+```
+>>> print("hello")
+hello
+```
+You can use either single or double quotes, as long as you use the same kind on both sides.
+
+## Escaping
+
+The next logical question about strings should be (if you already started thinking this then you get a cookie): if enclosure in quotes is how we tell Python where the strings starts and ends, how do we put literal quotes in a string? `print("it's")` works because the apostrophe is a single quote and that string is enclosed by double quotes, but if you need to print a string that has both types of quotes in them, it's not so simple. `print("I said, "it's okay."")` would look to Python like the string you want to print is `"I said, "` and for some reason you put `it's okay.""` after it. You would get an error. (Go ahead and try it so you see what errors look like, if you haven't seen one yet.)
+
+If you want to put literal quotation marks inside of a string that are the same kind as the ones enclosing the string, you need to "escape" them by putting a backslash before each one: `print('I said, "it\'s okay."')` or `print("I said, \"it's okay.\"")` will print `I said, "it's okay."`. A backlash inside of a string is [a special signal to treat the next character literally, or vice versa if it's a character that's normally literal](escape_sequences). To include a literal backlash, you can write `\\` - the first one tells Python to treat the second one literally.
+
+## `+` and `*` on strings
+
+The `+` and `*` operators also work on strings. Check this out:
+
+```
+>>> 'hello' + 'friend'
+hellofriend
+>>> 'hello' * 3
+hellohellohello
+```
+
+(Note that they weren't separated by spaces. You might've already noticed, but <span class="highlight">the spaces I've been typing around everything are unnecessary; spaces inside code are generally ignored. They're just there to make it easier to read.</span> If you want to space-separate them, put a space inside one of the string literals, like `'hello ' + 'friend'`.)
+
+As an aside, you can now figure out how to make backslash-escaping completely unnecessary. Try to find another way to print a line of text that has both single and double quotes.
+
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+print('I said, "' + "it's okay." + '"')
+```
+See how this works? I made it three separate strings: the first one is enclosed by single quotes, so the double quote inside it is literal; the second one is enclosed by double quotes, so the single-quote inside it is literal, and the last one just needs to contain the remaining double quote, so I put it in single quotes.
+</expand-note>
+
+This isn't to say you shouldn't use backslash-escaping (of course it's better than that mess), I just wanted to point out that they're never strictly necessary.
+
+## Escape sequences
+
+Okay, this one isn't essential to our immediate mission, but while we're talking about backlash escapes I better mention what they can do besides escape quotes. This won't take long. I promise.
+
+There are several normal letters that, if escaped inside of a string, take on a special meaning instead of the other way around like quotes do. The most common example is `n`. `\n` inside of a string stands for 'newline':
+```
+>>> print('line 1\nline 2')
+line 1
+line 2
+```
+
+Another example is `\t` for tab:
+```
+>>> print('one word\tanother')
+one word	another
+```
+
+[Here's a list of string escape sequences](https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html), but you don't need to memorize them or anything.
+
+# Input
+
+`input` is the basic function for getting text input from the user. If you type `a = input()`, Python will wait for you to type something in after that, and then store what you type in the variable `a`.
+
+You can also specify a prompt to `input`:
+```
+text = input("give me some text:")
+print("here's the text you gave me: " + text)
+```
+
+So, with that done, can we use `input` to get numbers for our interactive calculator?
+
+```
+>>> num = input("give me a number:")
+give me a number:5
+>>> num
+'5'
+>>> num * 2
+'55'
+```
+
+Hm... there's one problem with using `input` to make a calculator: it returns a string.
+
+`5` and `'5'` are *very* different - one is a number and the other is a string. It's kinda like [the difference between a number and a numeral](https://www.mathsisfun.com/numbers/numbers-numerals-digits.html). This is where the `int` function comes in: it converts a string to an int (integer).
+
+```
+>>> num = int('5')
+>>> num
+5
+>>> num * 2
+10
+```
+
+(The `str` function also exists to turn a number into a string. You don't need it for `print`, though, because `print` already prints a string representation of its argument.)
+
+Protip: when you use a function with the `()` after its name, it's "replaced" with its result, meaning you can use it anywhere you could use a literal value:
+```
+>>> num = int(input())
+5
+>>> num + 1
+6
+```
+
+# Calculator time!
+
+Now you've got all the knowledge you need to make a program that asks for two numbers and then prints their sum (or whichever operation you choose to implement - we'll get to branching in the next lesson). I actually made this easier than I wanted to - my code snippets above pretty much contain the solution.
+
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+num1 = int(input('give me a number:'))
+num2 = int(input('give me another number:'))
+print(num1 + num2)
+```
+</expand-note>
+
+**Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence, waiting for the user to press enter between each one.
+
+**More interesting exercise:** How do you do the single-operation calculator in one line and without using any variables?
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+print(int(input('give me a number:')) + int(input('give me another number:')))
+```
+</expand-note>
+
+## Floats
+
+There's just one more thing I'm going to cover in this lesson. You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'.3.5'` to an integer.) A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
+
+(If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This is not Python's fault; it's due to an inherent drawback of the way your hardware stores decimal values in memory and is explained [here](https://floating-point-gui.de/basic/).)
+
+[Next lesson: Flow control](pythontut2)

@@ -1,0 +1,273 @@
+TITLE My catalog of recommended packages to install on Unix
+NAV Unix packages to install
+TEMPLATE DEFAULT
+
+<p>
+One of the best parts about an open-source operating system is the open-source community.
+Countless wonderful software projects have been made by awesome people who wanted to contribute to
+Unix or who wanted something impressive on their resume, and we all get to benefit from it.
+Here I'll post every package I've found useful and recommend installing on a Unix system.
+Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, which might be different
+on other systems. <a href="https://project-trident.org">Trident</a> or a lot of Linux distros
+probably have a lot of these preinstalled.
+</p>
+
+<h2>Basic terminal utilities</h2>
+<ul><li><p>
+	<code><a href="https://nano-editor.org">nano</a></code> - text editor. Easy to learn
+	(it shows help on the bottom by default) and yet quite configurable and powerful.
+	</p><p>
+	Nano's often derided as primitive among experienced Unixers (editors more popular with them are
+	<a href="https://www.vim.org">Vim</a> and <a href="https://www.gnu.org/software/emacs">Emacs</a>),
+	but I think this reputation's undeserved. I've <a href="nano">written more about the unsung power
+	and efficiency of Nano.</a>
+</p></li><li><p>
+	<code><a href="https://fishshell.com">fish</a></code> - "friendly interactive shell". My current shell of
+	choice. The main sellings points are syntax highlighting, history-based autosuggestions, and better tab
+	autocompletion without needing to install extra stuff and configure a whole bunch of crap (like you do to
+	get those things with <code>zsh</code>). I've <a href="fish">written more about Fish and
+	what's so great about it</a>.
+</p></li><li><p>
+	<code><a href="https://git-scm.com">git</a></code> - one of the most popular
+	<a href="https://en.wikipedia.org/wiki/Version_control">version control</a> systems. I use it for all
+	kinds of stuff, even besides code.
+</p></li></ul>
+
+<h2>Window manager and main graphical applications</h2>
+<ul><li><p>
+	<code><a href="https://www.freedesktop.org/Software/xorg">xorg-server</a></code> - X (the graphical window
+	system) doesn't come with FreeBSD, and this is the package for it.
+</p></li><li><p>
+	<code><a href="https://dwm.suckless.org">dwm</a></code> - My window manager of choice. <code>dwm</code> is
+	a tiling window manager with no desktop and is a wonderful way to use a computer productively. The only
+	possible criticism of it I could see is the configuration. It needs a custom config file to be good
+	(albeit it only takes a small amount of modifying the default, unlike <a href="https://xmonad.org">xmonad</a>),
+	and its config file has to be compiled in, which means you <i>have</i> to build it from source. (And you
+	have to rebuild it every time you change the config.) On the bright side, it builds in like 1 second.
+</p></li><li><p>
+	<code><a href="https://github.com/brndnmtthws/conky">conky</a></code> - a configurable tool to easily get
+	system status information. Most useful as a statusbar for <code>dwm</code>.
+</p></li><li><p>
+	<code><a href="https://github.com/realh/roxterm">roxterm</a></code> - my currently preferred terminal emulator.
+</p></li><li><p>
+	<code><a rel="nofollow" href="https://www.mozilla.com/firefox">firefox</a></code> - Firefox web browser.
+</p></li><li><p>
+	<code><a rel="nofollow" href="https://www.chromium.org/Home">chromium</a></code> - Chromium web browser
+	(different from but related to Chrome).
+</p></li><li><p>
+	<code><a href="https://www.qutebrowser.org">qutebrowser</a></code> - A web browser in <a href="python.html">Python</a> and Qt
+	with a design philosophy of keyboard-centrism and efficiency of use for advanced users. You have to give
+	it a fair chance and give yourself time to learn the hotkeys.
+	I like Qutebrowser, despite not being a Vim user; honestly the biggest thing holding me back from using
+	it right now is that the ctrl-shift-U trick for unicode typing doesn't work in it for whatever reason.
+	And I need unicode typing for <a href="/spem/">Spem</a>.
+</p></li></ul>
+
+<h2>Networking</h2>
+<ul><li><p>
+	<code><a href="https://curl.haxx.se">curl</a></code>,
+	<code><a href="https://www.gnu.org/s/wget/">wget</a></code> - swiss army knives of HTTP - and a little more!
+	<code>wget</code> is GNU software; <code>curl</code> is MIT licensed. Both are excellent and at least one
+	is a must-have. Personally I prefer <code>curl</code>, but I keep both installed. Most Linux distros
+	probably have <code>wget</code> preinstalled.
+</p></li><li><p>
+	<code><a href="https://yt-dl.org">youtube_dl</a></code> - Download videos from Youtube and a few other sites.
+	Yeah, apparently this isn't illegal...
+</p></li><li><p>
+	<code><a href="https://nmap.org">nmap</a></code> - "network mapper". <code>nmap</code> is a tool for network
+	exploration and security auditing, widely known as a port scanner; the package also contains <code>ncat</code>,
+	which is a more sophisticated version of <code>nc</code> that supports TLS!
+</p></li><li><p>
+	<code><a href="https://torproject.org">tor</a></code> - The Onion Router, a network anonymity tool. I strongly
+	recommend you read about this if you haven't heard of it.
+</p></li><li><p>
+	<code><a href="https://humdi.net/vnstat/">vnstat</a></code> - analyze network traffic statistics
+	over long times.
+</p></li><li><p>
+	<code><a href="https://scapy.net">py37-scapy</a></code> - Python library and interactively usable program
+	for sending and analyzing packets. <i>Horrible</i> documentation, but I think it is really powerful if you
+	learn to use it.
+</p></li><li><p>
+	<code><a href="https://wireshark.org">wireshark</a></code>/<code>tshark</code> - Wireshark is a renowned
+	packet analysis tool. It can't <i>send</i> custom packets like Scapy can as far as I know, but for receiving
+	and analyzing them it's much easier to use without trawling through huge amounts of vague documentation and
+	experimenting for hours. <code>tshark</code> is a terminal version of wireshark. For some horrible reason,
+	you can't have both installed at once on FreeBSD, and I remember thinking Wireshark's interface was horrid.
+</p></li><li><p>
+	<code><a href="https://www.joedog.org/siege-home/">siege</a></code> - load testing tool (but HTTP/1.1 only).
+</p></li><li><p>
+	<code><a href="https://nghttp2.org">nghttp2</a></code> - gives <code>h2load</code>, an HTTP/2 load
+	testing tool. I remember thinking it wasn't as nice though. (But that's not all this package is; just all
+	I know about it.)
+</p></li><li><p>
+	<code><a href="https://openvpn.net/index.php/open-source.html">openvpn</a></code> - open source VPN server
+	and client. I followed <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-and-connect-to-a-private-openvpn-server-on-freebsd-10-1">this tutorial</a> to set one up.
+</p></li></ul>
+
+<h2>Resources and monitoring</h2>
+<ul><li><p>
+	<code><a href="https://people.freebsd.org/~abe">lsof</a></code> - list open files. This might be preinstalled
+	on GNU/Linux, but not on FreeBSD. It's a little different from <code>fstat</code>; I'm not sure if either can
+	do anything the other can't, but I find <code>lsof</code> convenient to have.
+</p></li><li><p>
+	<code><a href="https://hisham.hm/htop">htop</a></code> - like <code>top</code>, but looks nicer (has color)</a>.
+</p></li><li><p>
+	<code><a href="http://www.ex-parrot.com/~pdw/iftop">iftop</a></code> - like <code>top</code>,
+	but for network traffic</a>.
+</p></li></ul>
+
+<h2>Misc CLI utilities</h2>
+<ul><li><p>
+	<code><a href="https://en.wikipedia.org/wiki/Rsync">rsync</a></code> - the swiss army knife of copying and
+	backups</a>. The <code>--delete</code> flag is one of the biggest things that makes it worth having over
+	<code>cp</code> in my opinion.
+</p></li><li><p>
+	<code><a href="https://www.ivarch.com/programs/pv.shtml">pv</a></code> - "pipe view". Monitor progress of data
+	through a pipeline. <code>cmd1 | pv | cmd2</code>
+	and it pipes <code>cmd1</code> into <code>cmd2</code>, but shows you the progress.
+</p></li><li><p>
+	<code><a href="https://en.wikipedia.org/wiki/Tmux">tmux</a></code> - "terminal multiplexer". It has a lot
+	of features I don't know about, but among them are the ability to use a terminal window in the fashion of a
+	<a href="https://en.wikipedia.org/wiki/Tiling_window_manager">tiling window manager</a> and to reconnect
+	to sessions that get interrupted (for example, if the network cuts out while you're using <code>ssh</code>).
+	I haven't taken the time to really learn <code>tmux</code> but I want to.
+</p></li><li><p>
+	<code><a href="http://entrproject.org">entr</a></code> - "Event Notify Test Runner". Monitors files and
+	runs a given command when they change. As of this writing I'm using it on this server.
+</p></li><li><p>
+	<code><a href="https://www.sudo.ws">sudo</a></code> - more sophisticated account permission control than
+	<code>su</code>. Due to <a href="root">the way Unix treats the root account</a>, even if your
+	system is single-user, this is probably worth installing if it isn't preinstalled.
+</p></li><li><p>
+	<code>beep</code> - beep. All the laptops I've had have had significant difficulty getting this to work,
+	but on this one I managed it. One of the useful traits of this tool is that, at least on my system,
+	it ignores volume (although not muting).
+</p></li></ul>
+
+<h2>Hardware and filesystems</h2>
+<ul><li><p>
+	<code><a href="https://www.nongnu.org/dmidecode/">dmidecode</a></code> - massive amount of info on all
+	hardware. I can't think of any commonly useful information I don't know how to get without this
+	command, but <code>dmidecode</code> simplifies things.
+</p></li><li><p>
+	<code><a href="http://cdrtools.sourceforge.net/private/cdrecord.html">cdrtools</a></code> - burn CDs
+	(and do other things with them I guess).
+</p></li><li><p>
+	<code><a href="https://www.zfsnap.org">zfsnap</a></code> - makes automatic ZFS snapshots slightly easier.
+</p></li><li><p>
+	<code><a href="https://devel.freebsoft.org/speechd">speech-dispatcher</a></code> - speech synthesis CLI tool.
+</p></li></ul>
+
+<h2>Media and file formats</h2>
+<ul><li><p>
+	<code><a href="https://mpv.io">mpv</a></code> - terminal-based music and video player.
+	I recently discovered this and it seems to outmode both <a href="http://www.mplayerhq.hu">mplayer</a>
+	and <a href="https://www.videolan.org">vlc</a> as far as I'm concerned.
+</p></li><li><p>
+	<code><a href="http://sox.sourceforge.net">sox</a></code> - "SOund eXchange" is what this is apparently
+	supposed to stand for. It's not as nice as <code>mpv</code> for playing music, but it's the most
+	convenient way I know of to record audio from my laptop microphone.
+</p></li><li><p>
+	<code><a href="https://ffmpeg.org">ffmpeg</a></code> - swiss army knife of multimedia manipulation.
+	I've been amazed by what this tool can do.
+</p></li><li><p>
+	<code><a href="https://www.libreoffice.org">libreoffice</a></code> - open source tool that can read
+	"document" formats like .xlsx, if you ever have the displeasure of needing to work with those.
+</p></li><li><p>
+	<code><a href="http://www.winfield.demon.nl/index.html">antiword</a></code> - convert
+	<code>.doc</code> files to plaintext.
+</p></li><li><p>
+	<code><a href="http://www.info-zip.org/Zip.html">zip</a></code> - tool to work with the Windows-standard
+	<code>.zip</code> file format.
+</p></li><li><p>
+	<code><a href="https://rarlab.com">rar</a></code>, <code>unrar</code> - tools for .rar files.
+	(They're separate packages on FreeBSD.)
+</p></li><li><p>
+	<code><a href="https://www.xpdfreader.com">xpdf</a></code> - dedicated PDF reader and manipulator.
+</p></li><li><p>
+	<code><a href="http://geeqie.org">geeqie</a></code> - image viewer. It's not like you need
+	<code>geeqie</code> to view images, and I don't even like the program, but I find it useful for
+	viewing all the image files in a directory in a single window.
+</p></li><li><p>
+	<code><a href="https://github.com/tesseract-ocr/tesseract">tesseract</a></code> - <a rel="nofollow"
+	href="https://en.wikipedia.org/wiki/Optical_character_recognition">Optical Character Recognition</a> for
+	Unix! FOSS, and works out of the box.
+</p></li></ul>
+
+<h2>Art production tools</h2>
+<ul><li><p>
+	<code><a href="https://lmms.io">lmms</a></code> - Linux MultiMedia Studio, for writing music.
+	Not the greatest, but it's the only free one I know of.
+</p></li><li><p>
+	<code><a href="https://www.gimp.org">gimp</a></code> - of course, the GNU Image Manipulation Program.
+	Again, I have plenty of gripes with it, mostly interface-related, but it's free and quite
+	functional other than that.
+</p></li><li><p>
+	<code><a href="https://scikit-image.org">py37-scikit-image</a></code> - nice image library for Python.
+	This package has saved me from a lot of manual work on multiple occcasions.
+</p></li></ul>
+
+<h2>X utilities</h2>
+<ul><li><p>
+	<code>xinit</code> - ships the <code>xinit</code> and <code>startx</code> commands, which make dealing with X
+	much simpler.
+</p></li><li><p>
+	<code><a href="https://www.nongnu.org/xbindkeys/xbindkeys.html">xbindkeys</a></code> - set keybinds in
+	the X environment. Incredibly useful. Don't live your life without it.
+</p></li><li><p>
+	<code>xmodmap</code> - manipulate the keymap in X. Basically this should be called <code>xbindkeys</code>
+	and <code>xbindkeys</code> should be called <code>xhotkey</code>.
+</p></li><li><p>
+	<code>xset</code> - X window system settings
+</p></li><li><p>
+	<code>xsetroot</code> - set the title of the "root window" in X. <code>dwm</code> uses this to set statusbar
+	text, making it even easier to plug <code>conky</code> into it!
+	much simpler.
+</p></li><li><p>
+	<code><a href="http://www.vergenet.net/~conrad/software/xsel/">xsel-conrad</a></code> - manipulate the X
+	selection buffer (clipboard). (The command is just called <code>xsel</code>).
+</p></li><li><p>
+	<code><a href="https://github.com/resurrecting-open-source-projects/scrot">scrot</a></code> - CLI tool
+	for SCReenshOTs.
+</p></li><li><p>
+	<code>xmessage</code> - display a message in an X window. It's primitive and ugly, but sometimes this is the
+	tool you need, for a script to get your attention or something.
+</p></li><li><p>
+	<code><a href="https://tools.suckless.org/dmenu">dmenu</a></code> - an easy launcher solution from the
+	same people that make <code>dwm</code>. The <code>dmenu</code> command by itself takes a list of options
+	from stdin and displays a menu on the top where you can select one via typing, arrow keys and tab completion,
+	and returns the selected option on stdout. The <code>dmenu_run</code> script it comes with is used as a plugin
+	for <code>dwm</code> to make it easier to launch stuff you don't have a hotkey for without opening a terminal
+	to type the command.
+</p></li><li><p>
+	<code>xev</code> - report X events. Enormously useful for debugging.
+</p></li><li><p>
+	<code><a href="https://www.semicomplete.com/projects/xdotool/">xdotool</a></code> - simulate key strokes,
+	mouse clicks, and other X events.
+</p></li><li><p>
+	<code>xlsclients</code> - list X client applications (applications running in X windows).
+</p></li><li><p>
+	<code>xwininfo</code> - get info about an X window by clicking on it.
+</p></li><li><p>
+	<code>xinput</code> - get information about X input devices.
+<!--
+</p></li><li><p>
+	<code><a href=""></a></code> -
+-->
+</p></li></ul>
+
+<h2>Programming and miscellany</h2>
+<ul><li><p>
+	<code><a href="https://github.com/trentm/python-markdown2">py37-markdown2</a></code> - library and CLI for
+	Markdown processing. I use this for the comments on this site.
+</p></li><li><p>
+	<code><a href="https://www.gnupg.org">gnupg</a></code> - GNU Privacy Guard, a renowned encryption tool.
+</p></li><li><p>
+	<code><a href="https://github.com/AlDanial/cloc">cloc</a></code> - Count Lines Of Code. The advantages over
+	<code>wc</code> are that it can count blank lines and comments separately from code lines, can
+	automatically find just the source code files in a hierarchy, and it can separate them by language.
+</p></li><li><p>
+	 <code><a href="https://www.perl.org">perl5</a></code> - I don't use Perl, but at least the FreeBSD
+	 distribution includes the <code>json_pp</code> program: JSON Pretty Print, which has served me well
+	 on numerous occasions.
+</p></li></ul>

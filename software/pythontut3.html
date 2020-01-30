@@ -1,0 +1,288 @@
+TITLE The Concise Python Tutorial, Lesson 3: Sequences
+NAV The Concise Python Tutorial, Lesson 3: Sequences
+TEMPLATE DEFAULT
+MARKDOWN
+
+<!--Maybe I should move for to before in.-->
+
+
+[Previous lesson: Flow control](pythontut2)
+
+This time we're going through **sequence** data types, and all the kickass things you can do with them. Actually, you've kind of already seen a sequence type: strings. Strings are a sequence of characters. Technically, in Python, strings are a special case and different from other sequence data types, but you can still do a lot of sequencey things to them. Once you've seen a few, I'll introduce the `list` data type.
+
+# Indexing
+
+The most basic feature of sequences is the ability to access a specific item inside them. This is done like this:
+
+```
+>>> "Hello"[3]
+'l'
+```
+
+<div class="highlight" markdown="1">
+A critical property of indexes is that **they start at 0**. `"Hello"[0]` is `'H'`. `"Hello"[1]` is `'e'`. This is actually pretty common in computing.
+</div>
+
+You can also, of course, index with a variable.
+```
+>>> i = 1
+>>> "Hello"[i]
+'e'
+```
+
+**Exercise:** make a program that asks the user for a string, and then a number, and prints out the character at that position in the string. (For extra fun, do it in one line.)
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+print(input("enter a string:")[int(input("enter a number:"))])
+```
+This might look hard to parse - indeed, it's bad enough that a serious programmer might do it on multiple lines [just for readability's sake](readability) - so I'll dissect it for ya. Assuming I enter `blah` and `3`, the code can be parsed like this:
+
+1. `input("enter a string:")` is replaced with the string entered, leaving: `print('blah'[int(input("enter a number:"))])`
+2. `input("enter a number:")` is replaced with the next string entered, leaving: `print('blah'[int('3')])`
+3. `int('3')` is replaced with `3`, leaving: `print('blah'[3])`
+</expand-note>
+
+## Negative index
+
+You might've already thought to try this and figured out how it works, but what happens if you run `"Hello"[-1]`?
+
+<div class="highlight" markdown="1">
+Negative indices start from the end. Note that this means *they are not subject to zero-indexing*, since -0 is the same as 0. 0 is the first element, 1 is the second element, -1 is the last element, -2 is the second-last.
+</div>
+
+If you try to acces an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
+```
+>>> len("hi")
+2
+```
+**Exercise:** modify the string indexing program so that it won't crash if the user asks for an invalid index, but print a message instead.
+
+# Slicing
+
+Another super cool feature of sequences is *slicing*: the ability to index a range of elements at a time.
+```
+>>> 'pizza'[1:3]
+'iz'
+```
+It gives us a string that starts at position 1 and ends at position 3, giving us characters #1 and #2. (You can think of this like a slice is always *from and including* the start position and *up to but not including* the end position.)
+
+If you omit one or both numbers of the slice, it goes to the beginning or end:
+```
+>>> 'pizza'[2:]
+'zza'
+>>> 'pizza'[:2]
+'pi'
+```
+Note that `'pizza'[:-1]` is `'pizz'` while `'pizza'[:]` is `'pizza'`. An omitted start position is the same as `0`, but an omitted end position is *not* the same as `-1`. `-1` is the last item, so slicing up to `-1` cuts it out.
+
+## Slice step
+
+Okay, this is a rather obscure feature, but I might as well demonstrate it while I'm talking about this. You can have a third number inside the slice brackets, which specifies the "step" size:
+```
+>>> 'abcabcabcabcabc'[::3]
+'aaaaa'
+```
+This slices from the beginning (because start position is omitted) to the end (because end position is omitted), selecting only every third character. You can think of the step size as defaulting to 1.
+
+# Iteration
+
+<div class="highlight" markdown="1">
+Jargon: **iterate**: to loop with a sequence and do something with each element inside it. It can be used with either "on" or "over" as a preposition.
+</div>
+
+**Exercise**: use your knowledge of loops and indexing to write a program that gets a string from the user and then prints out each character inside it on its own line. (I'm about to introduce an easier way of doing this, but I want you to see how it can be done without it.)
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+string = input("give me a string:")
+index = 0
+while index < len(string):
+	print(string[index])
+	index += 1
+```
+Note that I couldn't put the `input("give me a string:")` that defines the variable `string` inside the condition like `while index < len(input("give me a string:")):`. If you tried to solve this yourself before looking at the solution (which you should have), you probably ran into this, but the reason that doesn't work is that a `while` loop's condition is **evaluated** every time it's checked, since it has to know when to stop. So every time it loops, it would ask, is `index < len(input("give me a string:"))`?. And every time it asks that, it would execute `input("give me string:")` to find out what its value was, which means the user would be asked to enter a new string after every iteration of the loop. The solution was to execute `input("give me a string:")` once at the beginning, and store the value, so that when the `while` loop evaluates its condition every time, it's only asking whether `index` is less than the length of `string`, where `string` is the *result* of `input("give me a string:")`. This way, it doesn't ask the user for a new string every time.
+</expand-note>
+
+## `for`
+
+One of the most important keyword related to sequences: `for` is an alternate loop construction that makes iterating on a sequence much easier:
+```
+for letter in input("enter a word:"):
+	print(letter)
+```
+Note that with `for`, the expression that tells it the sequence to be iterated (in this case, the result of `input("enter a word:")`) is only evaluated once, and then it just internally runs the loop with `letter` set to each character in that string. So with `for` it's safe to put the `input` in the `for` line.
+
+In general, in Python you should never have to iterate in the fashion I had you come with before I told you about this, but many other languages require it (C, Javascript in some situations), so it's a very good problem to have solved.
+
+Try running that. (Note that `in` in the context of `for` isn't doing the same thing that it does by itself.)
+
+**Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the latter is in the string.
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+string = input("give me a string:")
+char_to_find = input("give me a single character:")
+found = False
+for char in string:
+	if char == char_to_find:
+		found = True
+if found:
+	print(char, 'is in', string)
+else:
+	print(char, 'is not in', string)
+```
+</expand-note>
+
+## `in`
+
+Yes, the problem I just made you solve was another unnecessary one :P You can use `in` outside of the context of `for` to test whether something is inside a sequence:
+```
+>>> 'e' in 'Hello'
+True
+>>> 'x' in 'Hello'
+False
+```
+Well isn't that neat! I just wanted you to solve this problem the hard way as an intellectual exercise, and because many other langugaes don't have this keyword or anything equivalent to it. (C doesn't; Go only has it for strings, but not for other sequence types.)
+
+Additionally, on strings, `in` works with multi-character substrings. Check this out:
+```
+>>> 'He' in 'Hello'
+True
+>>> 'eH' in 'Hello'
+False
+```
+Testing whether a multi-character string is inside of another string manually is a nightmare comapred to this. (If you want, take a stab at it.)
+
+## `break` and `continue`
+
+Now that we're iterating on stuff, it's a very good time to introduce two handy keywords used in loops: the `break` statement, which exits the loop immediately even if it's condition is still true, and `continue`, which skips the rest of the current iteration, and continues from the top of the loop. Here's a demo of both:
+```
+number = 0
+while number < 10:
+	number += 1
+	if number == 5:
+		continue
+	print("the next number is", number)
+	if input("want to see another? (y/n)") == 'n':
+		break
+```
+
+# Lists
+
+Lists are the most prevalent and useful sequence data type. They store an arbitrary list of arbitrary values. The syntax for list literals is to enclose them in brackets and separate elements by commas:
+```
+>>> nums = [6, 1, 4]
+>>> nums
+[6, 1, 4]
+>>> nums[0]
+6
+>>> for num in nums: print(num)
+6
+1
+4
+```
+Lists are subject to indexing, slicing, and the rest of the bag the same way strings are.
+
+There is one difference in the way the `in` operator works: with "real" sequences, like lists, `in` only tests if one of the members of the sequence after `in` is equal to the element before `in`. With strings, `in` does "in a row" checking rather than "is a member" checking, so `"he" in 'hello'` evaluates to `True`, but with lists, `['h', 'e'] in ['h', 'e', 'l', 'l', 'o']` or `[5, 3]` in `[5, 3, 6]` evaluates to `False`, but none of the members of the list on the right is the list on the left. `[5, 3] in [[1, 2, 3], [5, 3], [4, 6]]` evaluates to `True`. But strings don't have the concept of nested sequences in the way lists do, so strings are the only ones that have this "in a row" behavior for `in`.
+
+## Nested lists
+
+
+<!--
+## Comparing other types
+
+While we're at it, I should mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than ones treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
+
+You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com/), or on countless other websites.
+
+For Booleans, `True` is considered greater than `False`. In fact, if you play around besides the code I'm showing you, you might've already noticed that `True` and `False` can be used as `1` and `0`. If you didn't, try `print(True + True + False + True)`.
+
+For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with u. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as lis or tuple of characters. <expand-note>In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</expand-note>
+-->
+
+This is also a good time to introduce a couple of minor features about line breaks.
+
+## Line continuation
+
+When you need to break a statement across multiple lines, you're allowed to do so if it contains commas:
+```
+names = [
+	'Alice',
+	'Bob',
+	'Carl',
+	'Dana',
+	'Elijah',
+	'Fiona',
+]
+```
+But if it's not with commas, you need to use a backslash at the end of the line:
+```
+# This will raise a syntax error:
+#sentence = "The " + "quick " + "brown " + "fox " +
+#	"jumps"
+
+# This works:
+sentence = "The " + "quick " + "brown " + \
+	"fox " + "jumps " + "over " + \
+	"the " + "lazy" + "dog"
+```
+
+You can also put two string literals together *without* the `+`, and it will be assumed:
+```
+>>> print("hello" "friend")
+hellofriend
+```
+
+## Inline blocks
+
+So far, we've always put the block of an `if`, `while`, or similar keyword indented under the condition, but if it's only one line, you can actually do this:
+```
+if True: print("logic has not been broken")
+>>>
+```
+You can't nest them, though, even if they could theoretically all be on one line:
+```
+>>> for letter in "hi": if letter != 'h': print(letter)
+  File "<stdin>", line 1
+    for letter in "hi": if letter != 'h': print(letter)
+                         ^
+SyntaxError: invalid syntax
+```
+
+The most common time I use inline blocks is with `break` and `continue`.
+
+## Semicolons
+
+You should also be aware of semicolons. You can put multiple unrelated statements on one line by using a semicolon:
+```
+>>> a = 5; print(a)
+5
+```
+You generally shouldn't, though, because it's less readable to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
+
+## Tripe-quioted strings
+
+Another thing I'll talk about while we're on the topic of line continuations: Triple-quoted strings, enclosed on both sides with `"""` or `'''`, are allowed to span multiple lines without a backslash.
+```
+message = """Incoming transmission:
+
+Hi, I hacked Yujiri's website and replaced his original example string with this!
+
+Plz don't point this out to him. I'm wondering how long it'll be before he notices.
+Also, I don't want him to plug his security hole :P"""
+```
+These are often used when you need to store a big message in a string, like help text for a command-line tool.
+
+<!--"Mutate" in programming just means to change something (as opposed to making a slightly different copy of it while leaving the original unchanged).-->
+
+### Multiple assignment
+
+Quick trick: it's possible to assign two variables to the same value in one line:
+```
+>>> a = b = 5
+>>> print('a is', a, 'and b is also' b)
+a is 5 and b is also 5
+```
+This feature isn't useful very often, but I should mention it.
+
+# .
+
+With that, you're ready to take on a much more interesting project than you did in the last chapter. How about ?

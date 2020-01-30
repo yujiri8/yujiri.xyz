@@ -1,0 +1,128 @@
+TITLE Nano Is A Good Editor
+NAV Nano Is A Good Editor
+TEMPLATE DEFAULT
+
+<style>
+.bg-bad {
+	background-color: #f006;
+}
+.bg-good {
+	background-color: #1f16;
+}
+</style>
+<p>
+It seems to be a common opinion among experienced Unixers that <a href="https://nano-editor.org">Nano</a> is a low-featured text
+editor meant for newbies and not suitable for advanced users. While I acknowledge I don't know that much about Vim or Emacs (the
+usual alternatives advocated), I respectfully suggest that these people are basing their belief on not knowing what Nano has to
+offer. I'm a proficient Nano user and although there are a few ancillary features I miss in Nano, it's really a good editor, and
+let me explain why.
+</p><p>
+One of the biggest points I want to make is that even though Vim has some features I'd certainly like to have in Nano (number
++ navigation key to move a number of units), I think Nano more than makes up for it by having the most common functions be
+significantly faster to access than in Vim.
+</p>
+<dl>
+<dt><b>Example: how do you save your file?</b></dt>
+<dd><p class="bg-good">
+	Nano: ctrl-s. Two keypresses that don't even have to be strictly in sequence. One just needs to start before
+	the other. It's barely slower than one keypress.
+	</p><p class="bg-bad">
+	Vim: esc, shift-colon, w, enter. <i>Five</i> keypresses. And the first one is an out-of-the-way key that you
+	don't already have your finger next to! (At least on a qwerty keyboard.) And you also better not still be
+	holding down shift when your finger hits w or it won't work.
+</p></dd>
+</dl>
+<p>
+This one may have more value to me than it does in general since I've developed a habit of impulsively saving the buffer
+every time I've made a change and aren't immediately sure what to type next, but I don't imagine I'm the only one with some
+degree of save-happiness.
+</p>
+<dl>
+<dt><b>Example: how do you switch buffers?</b></dt>
+<dd><p class="bg-good">
+	Nano: alt-comma or alt-period. Again, two keys that aren't much slower than one.
+	</p><p class="bg-bad">
+	Vim: esc, shift-colon, b, the number of the buffer you want, enter.
+</p></dd>
+<dt><b>Example: how do you open a new file in the current editor instance?</b></dt>
+<dd><p class="bg-good">
+	Nano: ctrl-r. (With the default configuration you'll have to follow it with alt-f or it'll get read into the current
+	buffer, but really what are you doing with your life if you didn't set the config option to fix that.)
+	</p><p class="bg-bad">
+	Vim: esc, shift-colon, o, space.
+</p></dd>
+</dl>
+<p>
+You see where I'm going. My biggest gripe with Vim in general is the separation of "insert mode" which equates
+to having to press Esc and <code>i</code> all the time to switch between command mode and insert mode instead of
+putting to use the modifier keys all over your keyboard.
+I'd probably sooner be persuaded to join the <a href="https://www.emacswiki.org/emacs/ChurchOfEmacs">Church of
+Emacs</a>, so I admit it's a bit unfair for me to be basing my case for Nano on a critique of Vim when I know
+even less about Emacs than I do about Vim. I did try Emacs for a while and had some bad experiences with it, though
+I don't remember enough to explain.
+</p><p>
+Notable features Nano has that you might not know about (besides the help enabled by default which is
+<i>wonderful</i> for letting you learn the most useful hotkeys while working) include
+</p>
+<ul>
+<li class="bg-good"><p>
+	Regex search/replace
+</p></li><li class="bg-good"><p>
+	Search and replace history
+</p></li><li class="bg-good"><p>
+	The cursor position statusbar in addition to normal line numbers
+	</p><p>
+	This is actually wonderful. If you enable <code>constantshow</code> in the config, you see on the bottom
+	your current line number, the number of lines in the file, the percent ratio of the two, and the same
+	for columns in the current line and characters in the file.
+</p></li><li class="bg-good"><p>
+	Macros
+</p></li><li class="bg-good"><p>
+	Efficient navigation hotkeys: ^A (faster than hitting Home), ^E (faster than End), ^Y (faster than Page Up),
+	^V (faster than Page Down), ^W+^Y/V (top/bottom of file), M-G (goto line/column number), M-] (goto matching
+	bracket) word-oriented move/delete (ctrl-left/right, ctrl-del, ctrl-shift-del); Smart home; alt-up/down to
+	scroll the window without moving the cursor.
+</p></li><li class="bg-good"><p>
+	Selection (M-A) and almost everything (cutting, justifying, indenting) will automatically apply to just
+	the selection if you have one
+<!--</p></li><li class="bg-good"><p>
+	Good undo/redo-->
+</p></li><li class="bg-good"><p>
+	Excellent facilities for multiple buffers; opening a new one is easy (you get tab autocompletion and tilde
+	expansion when entering the filename), switching between them is easy, you can even execute an external
+	command and read in the output, etc
+</p></li><li class="bg-good"><p>
+	Toggleable autoindent
+</p></li><li class="bg-good"><p>
+	Regex-based syntax highlighting which works by having a nice, concise, plaintext file for each language it
+	supports, and it's super easy to modify or add languages. I've submitted some improvements to some of the
+	default syntax highlighting modules myself.
+</p></li><li class="bg-good"><p>
+	Optional mouse support, though I personally don't use this
+</p></li>
+</ul>
+<p>
+Of course, Nano <i>is</i> missing some features I'd like to have.
+</p>
+<ul>
+<li class="bg-bad"><p>
+	No search/replace across multiple files.
+</p></li><li class="bg-bad"><p>
+	No bracket highlighting (though it does have the goto bracket hotkey I mentioned above)
+</p></li><li class="bg-bad"><p>
+	<a href="https://www.debuggex.com/cheatsheet/regex/pcre">PCRE</a>. We're limited to POSIX ERE's.
+</p></li><li class="bg-bad"><p>
+	It's missing hotkeys to indent and unindent an entire selection by spaces. Tab will indent all
+	selected lines if a selection's active (and shift-tab will unindent them), but space will just type
+	a space where you are. Macros are a reasonable workaround but they're a good deal less convenient
+	than having these hotkeys.
+</p></li>
+</ul>
+<p>
+But this brings me to another great thing about Nano: its active development! Nano gets a new release every few
+months tops, and each one has great new features to bring to the table. The developer is mostly one guy by
+the looks of things but he's very responsive; he's always responded to my patches within 48 hours. I remember
+when I first became a hardcore fan of Nano it was version 2.9 and some of the features I mentioned up there
+didn't exist. So I expect the few inadequacies of Nano to be improved in the next year or so, and if I have time
+I intend to help make it happen.
+</p>

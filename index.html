@@ -1,0 +1,475 @@
+TITLE Yujiri's homepage
+NAV Yujiri's homepage
+TEMPLATE DEFAULT
+ONLOAD resizeIndex()
+ONRESIZE resizeIndex()
+DESC I'm a programmer, writer, and philosopher of all things. I post about everything from game design and storytelling and conlangs to philosophy.
+
+<script>
+function resizeIndex() {
+	const container = document.querySelector('.indexlayout');
+	const cardSeries = document.querySelector('card-series');
+	const containerStyle = getComputedStyle(container);
+	const containerWidth = parseFloat(containerStyle.width);
+	const emSize = parseFloat(containerStyle['font-size']);
+	const cardStyle = getComputedStyle(document.querySelector('image-card'));
+	const cardWidth = parseFloat(cardStyle.width) + parseFloat(cardStyle.marginRight);
+	const recentCommentsWidth = parseFloat(getComputedStyle(document.querySelector('recent-comments')).minWidth);
+	const maxCols = Math.floor((containerWidth - recentCommentsWidth) / cardWidth);
+	if (maxCols < 2) {
+		container.style['flex-wrap'] = 'wrap';
+		// If there's no recent comments panel, expand the other one.
+		cardSeries.classList.add('solo');
+		cardSeries.style.minWidth = '';
+		cardSeries.style.width = '';
+	} else {
+		container.style['flex-wrap'] = 'nowrap';
+		cardSeries.classList.remove('solo');
+		const t = maxCols * cardWidth + 'px';
+		cardSeries.style.minWidth = t;
+		cardSeries.style.width = t;
+	}
+}
+</script>
+<style>
+.indexlayout {
+	display: flex;
+}
+card-series {
+	display: flex;
+	flex-wrap: wrap; 
+	flex-shrink: 1;
+	flex-grow: 0;
+}
+card-series.solo {
+	justify-content: space-evenly;
+}
+card-series > * {
+	margin-right: 1em;
+	margin-bottom: 1em;
+}
+recent-comments {
+	min-width: 20em;
+	flex-grow: 1;
+}
+</style>
+<p>
+I'm a programmer, writer, and philosopher of all things. I post all kinds of stuff here.
+</p>
+<div class="indexlayout">
+<card-series>
+<image-card title="Prismata" href="prismata/" image="category_images/prismata.jpg">
+I used to play this game devoutly, and wrote a lot of beginner guides and stuff for it.
+</image-card>
+<image-card title="Spem" href="spem/" image="category_images/spem.png">
+The philosopher's conlang. Join me, and together we will rule our own minds.
+</image-card>
+<image-card title="Software" href="software/" image="category_images/code.png">
+As my primary skill set, I naturally love to talk about software.
+</image-card>
+<image-card title="Protagonism" href="protagonism/" image="category_images/protagonism.jpg">
+Does it count as a religion if it's all a priori? 🤔
+</image-card>
+<image-card title="Argument" href="argument/" image="category_images/argument.jpg">
+Wherein I talk about conversational tricks and the role of psychology in arguments, as well as debunk random bad ideas.
+</image-card>
+<image-card title="Music" href="music/" image="category_images/music.jpg">
+I'm a musician... sort of...
+</image-card>
+<image-card title="Game Design" href="game_design/" image="category_images/go.png">
+Many people think that different people enjoy different things and so all judgements of games are nothing more than personal preferences, but I don't subscribe to that nihilism.
+</image-card>
+<image-card title="Storytelling" href="fiction/" image="category_images/writing.jpg">
+What <i>makes</i> a good story? I'm not quite sure myself, but I have plenty of half-baked/outdated ideas.
+</image-card>
+<image-card title="Reviews" href="reviews/" image="category_images/reviews.jpg">
+I enjoy enumerating all the flaws in other people's stories and games, and occasionally gushing over good ones.
+</image-card>
+<image-card title="My Works" href="works/" image="category_images/reading.jpg">
+Novels, DDLC mods, poems
+</image-card>
+<image-card title="Counterplay Infinity" href="ci" image="category_images/ci.png">
+A minimalist, proof-of-concept fighting game I made that doesn't live up to its name.
+</image-card>
+<image-card title="The Logo Explained" href="logo" image="category_images/logo.svg">
+I thought it out very carefully, and I'm very satisfied.
+</image-card>
+<image-card title="Secure Contact/Donation Info" href="contact" image="category_images/logo.svg">
+Help me find out whether I'm using GPG right :)
+</image-card>
+</card-series>
+<recent-comments></recent-comments>
+</div>
+<hr>
+<p>
+This site wouldn't be what it is without my dedicated contributor main_gi. He's been my de-facto editor for a long time,
+has helped me with CSS troubles, found two vulnerabilities in my comment feature, and even contributed valuable
+insight that got me to change some beliefs. His page is <a href="https://igniam.xyz">here</a>.
+</p><p>
+The above photos, where they're not mine, are from:
+<a href="https://pxhere.com/en/photo/986424">unknown pxhere user</a>,
+<a href="https://negativespace.co/pen-notebook-notepad-paper-writing/">Aaron Burden</a>,
+<a href="https://pixabay.com/illustrations/ratings-stars-quality-best-ranking-1482011/">sthenostudio</a>,
+and <a href="https://unsplash.com/photos/tN9h1vuAp6Y">César A. Mazillo Jr</a>.
+</p>
+<hr>
+<p>Recent update log:</p>
+<expand-note open block openText="collapse" closedText="show">
+<!--
+<p><b>January :</b>
+</p>
+<p><b>January :</b>
+</p>
+-->
+<p><b>January 26:</b>
+I added the <a href="software/pythontut2">second part of my Python tutorial</a> and a <a href="argument/shane_utilitarianism">rebuttal to Shane Killian on utilitarianism</a>.
+</p>
+<p><b>January 25:</b>
+Fixed a slight bug where if you loaded the Spem search page with the <code>c</code> query param, like from a recent comments link, it would load the whole dictionary because it would see that you loaded it with some query params, but no filters.
+</p><p>
+I also posted <a href="software/pythontut1">the first part of my Python tutorial</a>. There are an infinite number of them, I know, but I haven't seen a single one I like, and I really wanted to do it.
+</p>
+<p><b>January 22:</b>
+<i>Tons</i> of new words added to Spem! The word count is over 560 now :) New articles on software: <a href="software/evil">Incomplete list of formats, standards, and technologies that should die</a> and <a href="software/readability">Why readability is important</a>. I also added "rule of law" to <a href="argument/propaganda#rule-of-law">Propaganda words and phrases</a>.
+</p>
+<p><b>January 21:</b>
+I found out <a href="protagonism/circumcision">the most horrifying thing I learned about America in a long time</a>. In happier news, updates to Spem: <spem>verɪθ</spem> -> <spem>yeθ</spem>, <spem>felɪθ</spem> -> <spem>weθ</spem>, <spem>vɑrɪθ</spem> -> <spem>yaθ</spem>, <spem>falɪθ</spem> -> <spem>waθ</spem>; all the should words have been added to the dictionary; a <a href="spem/rfc">new question added on directness</a>; and a tentative solution accepted to the age old conundrum of "without" I used to describe on the notes of <spem>u</spem>: due to the way Spem entities aggregate by default, "without" as different from "minus" is <spem>i nu</spem>. I also added a neat feature to the Spem dictionary: if you load it with a query string in the URL, it'll be automatically searched for.
+</p>
+<p><b>January 19:</b>
+I finally got around to editing my <a href="protagonism/property">attempt at a complete formulation of the ethics of ownership</a> with what I learned from the folks at r/DebateAnarchism. I haven't edited the article on capitalism yet.
+</p>
+<p><b>January 16:</b>
+Long-term improvement: the page URLs no longer have <code>.html</code>. Requesting the <code>.html</code> version should redirect to the new version.
+</p>
+<p><b>January 14:</b>
+I've changed my philosophy on simplicity in game design a bit after discussion with 231 in the comments. I've edited the articles on <a href="game_design/depth">Depth</a> and <a href="game_design/simplicity">Simplicity</a>.
+</p>
+<p><b>January 13:</b>
+New arguments: <a href="argument/dashes">Oh my god, please stop writing dashes without spaces</a>, <a href="argument/yujiris_first_law">Yujiri's First Law</a> and <a href="argument/yujiris_second_law">Yujiri's Second Law</a>.
+</p>
+<p><b>January 12:</b>
+New articles: <a href="argument/identity_politics">The inherent logical problem with identity politics</a>,
+<a href="protagonism/cosmic_slot_machine">The Cosmic Slot Machine actually works...</a>, and
+my <a href="software/nginx">Nginx review</a>. I really missed talking about software.
+</p><p>
+Later today, I fixed the navbar/URL title for the Software category. I originally called it "computing", because I
+wanted it to be more general than "programming" etc, but the right name didn't come to mind until the Jan 6
+improvements.
+</p>
+<p><b>January 9:</b>
+One small but significant technical improvement: the section id links are less ugly now; they use the standard formula instead of a bare URL-safe encoding of the header text. The reason I didn't do this before was because I had some difficulty figuring out how to use <a href="https://github.com/trentm/python-markdown2">Trent's Markdown library</a> for this, so I put it off, but I wanted to get this out of the way before I gain much popularity.
+</p>
+<p><b>January 8:</b>
+Changes to Spem: <spem>kyu</spem> is dead and the relevant proposition has been accepted, resulting in the
+addition of an article on <a href="spem/multiple_predicates">multiple predicates</a>.
+</p>
+<p><b>January 7:</b>
+New rebuttal: <a href="argument/first_round_capital">First Round Capital is Sexist</a>.
+</p>
+<p><b>January 6:</b>
+Category images added! I still have a few dissatisfactions with the change, but it looks so much fancier I couldn't
+wait to push it out.
+</p>
+<p><b>January 4:</b>
+More substantial updates to Spem, including the shortening of <spem>zɵrɪθ</spem> and <spem>selɪθ</spem> to
+<spem>zir</spem> and <spem>sel</spem>, the celebrable death of <spem>zɪtu</spem>, some improvements to tags,
+the official shortening of <spem>yen</spem> to <spem>en</spem>, and the death of <spem>zuni</spem> and the
+addition of <a href="spem/rfc">the relevant question</a> to the RFC page.
+</p>
+<p><b>January 3:</b>
+I've got one small general improvement for today: the recent comment links link to the particular comment,
+so it's easier to find what's new on pages that have a ton. Unfortunately due to the way fragment scrolling
+works and that the comments load after the page, this doesn't scroll all the way down to the comment, but
+to the comment section, and I don't have an obvious way to fix that. I imagine the change is still appreciated though.
+</p><p>
+There's also some pretty cool Spem updates: <spem>θe</spem> and <spem>θi</spem> have been added at long last after
+I finally got confident in my understanding of what they mean; <a href="spem/rfc">several more open questions</a>
+have been added to the list (<spem>ɪl ɑn ʌ ɪn kuto ŋe ki tiku ɪn tetɪk ne mi</spem>), and that's right -
+<spem>ŋel</spem> finally became <spem>ŋe</spem> :) Feels like shattering a sentimental antique. That word's
+been <spem>ŋel</spem> for ages. It was one of the first words I added to Spem, since "of" was one of the first
+English conflation demons I tried to tackle. That was way back in the days of Odyssey Of The Elements.
+</p>
+<p><b>January 2:</b>
+New articles: <a href="argument/hypocritical_objectivism">Hypocritical Objectivism</a> and
+<a href="argument/socialism_not_greedy">Socialism Is Not Greedy</a>.
+</p>
+<p><b>January 1:</b>
+New article: <a href="protagonism/legislation_enforcement">The separation of legislation and enforcement
+is harmful</a>.
+</p>
+<p><b>December 31:</b>
+<ul>
+<li><p>
+	On <a href="spem/search">the Spem dictionary page</a>, notes search by regex is finally available.
+</p></li><li><p>
+	<a href="spem/transliteration">The Spem ASCII transliteration scheme</a> has been defined.
+</p></li><li><p>
+	A minor improvement to the Markdown system: fenced code blocks no longer put the &lt;code&gt; inside of the
+	&lt;pre&gt; (which made the &lt;code&gt; styling apply only to the text and not the whole block).
+</p></li><li><p>
+	The big one: <b>We got header links now!</b> Check 'em out. Let me know if you find any that don't work.
+</p></li><li><p>
+	New page with <a href="spem/rfc">Spem open questions</a>. I plan to start using that page as a general
+	page to keep track of everything I'm looking for input on, but I'm not merging the page about variable
+	derefencing into there yet.
+</p></li><li><p>
+	The old articles on the problems with "harm", "self-defense", and "extremism" have been merged into a new
+	article on <a href="argument/propaganda">Propaganda words and phrases</a> that includes all of them
+	and some more.
+</p></li><li><p>
+	New argument: <a href="argument/ethical_notions_personhood">Rebuttal to Insula Qui's
+	"The Ethical Notions of Personhood and Savagery"</a>.
+</p></li>
+</ul>
+</p>
+<p><b>December 30:</b>
+I've been making some changes to the Spem articles. In particular <a href="spem/types">the tradeoffs of
+parts of speech</a> and <a href="spem/defaults">default identifiers</a> have been edited.
+</p>
+<p><b>December 22:</b>
+I'd decided to redo my article on the status of children in society, to expand it a lot and divide the topics I covered
+into three separate articles, of which I've just finished two, and three other new articles. There's now <a href="protagonism/children">Children are not property</a>, <a href="protagonism/sheltering_children">Sheltering children is harmful</a>, and <a href="protagonism/children_immature">Children aren't as immature as you think...</a>, <a href="protagonism/stockholm_syndrome">Stockholm syndrome is human nature</a>, and <a href="protagonism/statist_stockholm">All statists have Stockholm syndrome</a>.
+</p><p>
+I really need to decide on a capitalization convention for article names. My inconsistency is painful.
+</p>
+<p><b>December 21:</b>
+New article, and my first rebuttal to a Youtube video:
+<a href="argument/the_origin_of_consciousness">The origin of consciousness</a>.
+</p>
+<p><b>December 20:</b>
+Woohoo! <a href="works/return_to_the_portrait/">RTTP</a> Part 2 is out!
+</p>
+<p><b>December 19:</b>
+I've implemented comment subtree viewing! I know that ideally it should do this without reloading the page, but
+I'll stop here for now.
+</p><p>
+I'm trying to delete my old (bad) liberty.me account to start anew, but unfortunately I can't because I don't have
+access to the old email address anymore, and I can't change it because Wordpress sends a confirmation email to do that...
+to the new address... but apparently they have mail routing issues and closed the support thread where a dozen people
+reported it a year ago without resolution :/
+</p>
+<p><b>December 18:</b>
+Update to Spem articles <a href="spem/linking">Linking clauses</a> and <a href="spem/should">should</a>.
+Some important new words added also (mi jini yam kor θɑr), <s>incl</s> keθɪs 'yɑri' (i yo), 'vien', 'dimu', i tir
+yɪŋ ɪl verbs ŋel ki kei; i jinu kazu i kanu - tem ʌ zu.
+I've also done some more under-the-hood improvements: I added the &lt;input-list&gt; element, and it can work
+with &lt;select&gt;s too. So I've got my Spem admin interface back. Finally, I added an article I started
+drafting a while ago: <a href="protagonism/consent">The loss of the concept of Consent</a>.
+</p>
+<p><b>December 17:</b>
+I finally completed the Lit-Element move! Phew, this took most of 4 days. I probably put almost 30 hours into it.
+But it's done! Noticeable improvements:
+</p>
+<ul>
+<li><p>
+	The authentication popup is way better! No more HTTP Basic auth; I use the mwc-dialog element, so the field
+	asking for your email doesn't have to be labeled "username" anymore.
+</p></li><li><p>
+	Relatedly, you'll see an area in the top-left when you're logged in showing who as and giving a link to
+	the notification settings page.
+</p></li><li><p>
+	A minor aesthetic change: I've added a slight box-shadow around comments. Let me know what you think of it.
+</p></li><li><p>
+	Most important of all: I've added an email entry field to the comment element, so you don't have to make
+	an account separately. When you use this field, your account is automatically created and subscribed to
+	the one comment. I didn't want to do that without confirmation before, but I realized that a spammer can
+	already spam you with confirmation emails, so it doesn't really make anything worse if they can subscribe
+	you to a single comment, as long as they can't mess with your settings once you've got your account.
+	Finally, entering the email address (which is auto-filled by a cookie) on the comment
+	submit form auto-subscribes you to it, so you won't have to login and click subscribe on all your comments.
+	</p><p>
+	This was the biggest blocker to my publicity pushes. I didn't want to go for traffic when I had a flaw
+	that I thought would cause most commenters to never come back. Once I'm sure everything's working,
+	I think it's time to start a liberty.me account and go debate either Eso or Filthy...
+</p></li><li><p>
+	Instead of having different paragraph elements for errors to show up and me having to worry about targeting
+	the right one and clearing it when the request succeeds, I use
+	<a href="https://github.com/Victor-Bernabe/lit-toast">lit-toast</a> to show error and success messages.
+</p></li><li><p>
+	I've enabled gzip, which will mitigate the performance loss. It reduces the size of the Javascript
+	bundle from about 115 KB to 35 KB.
+</p></li><li><p>
+	main_gi found another XSS vulnerability, although less severe. My markdown processor escapes HTML first but
+	doesn't stop bookmarklet links generated from Markdown. This should be fixed.
+</p></li>
+</ul>
+<p>
+I've also improved my tmpl.py script on the backend, and merged an old repo that didn't have anything else I was
+still using into the main one. And the navbar path is computed by the frontend now, rather than stored during
+templating.
+</p><p>
+And finally, there've been some more mundane updates. I've improved <a href="protagonism/power">Power Doesn't
+Corrupt You, Idiot</a> and significantly edited my critiques of <a href="reviews/lotr">Lord of the Rings</a> and
+<a href="reviews/mass_effect">Mass Effect</a>.
+</p>
+<p><b>December 15:</b>
+It's been a while since I posted normal articles, but today I've got two:
+<a href="argument/relativism_not_inconsistent">Relativism Is Not Inconsistent</a> and
+<a href="argument/condescending_conservative">The Condescending Fake Intellectualism of Conservatives</a>.
+</p><p>
+The Web Components move is coming. Today and yesterday I got a break from my job and managed to get a lot of
+progress on it. The site will look fancier, have a better authentication popup with non-misleading labels,
+and if all goes according to plan it'll land at the same time as the last major interface change I want to make
+before I start pushing for publicity.
+</p><p>
+RTTP is also coming! The script is completed, it just needs testing/debugging and some editing.
+</p>
+<p><b>December 11:</b>
+No content update, but I looked into the Web Components thing a bit and found out the build didn't have to
+be that big. I had it set to build for development, which made it way bigger. I've done some more exploring of
+Web Component building systems and I've found at least two promising options, so I'm back to being fairly sure
+I'll do the move. Just gotta do some more investigation to find out what the best solution is and then set
+aside a day for it.
+</p>
+<p><b>December 8:</b>
+I got banned from r/ShitStatistsSay for pointing out a double standard that holds children to have less rights than
+adults, and had a hilarious exchange with the moderators about it. I added details and screenshots to
+<a href="protagonism/age_of_consent">the relevant Protagonism article</a>.
+</p>
+<p><b>December 7:</b>
+I spent a few hours tonight looking into my ambition to migrate to Lit-Element, but this time, I'm starting to think
+the dream is just a bust. I found a compiler solution using Webpack that only required me to install the one package
+(no Babel needed!)... with its >300 dependencies, of course. I actually started making components, but then I looked
+at the bundle.js being generated even with only using the one small library and two MWC components to make the
+theme switch better, and for some goddamn reason it was 14,000 lines. And that's without the sourcemap, without which
+I can't reasonably debug. So I decided you know what, that's not even worth it. Screw web components. Screw
+<code>npm</code> forever. I continued in the good old primitive ways and added the ability for me to delete comments
+from the web interface.
+</p><p>
+I'm also starting to hate Django more, since I found out today that apparently it swallows uncaught exceptions
+unless I specifically catch them and <code>traceback.print_exc()</code>. I didn't think it used to do that. Its
+admin interface is borderline useless since I can't filter or search objects at all, and today I found out it won't
+accept me creating an object if I don't put non-empty values in certain fields that don't have a non-empty constraint
+(doing it from <code>psql</code> worked). But the database management is still so valuable...
+</p>
+<p><b>December 4:</b>
+Today I <a href="reviews/jedi_fallen_order">finished and reviewed Jedi: Fallen Order</a>,
+and posted a new Spem conlang article: <a href="spem/profiles">The phonetic mapping</a>, and
+<a href="argument/learning_language">Languages are not easier to learn as a kid</a>.
+</p><p>
+Sigh... lastly, I've been reminded that I somehow forgot to note the addition of
+<a href="https://yujiri.xyz/spem/dereference">Spem conlang open question: variable dereferencing?</a>.
+</p>
+<p><b>December 3:</b>
+I updated my article on the <a href="/argument/what_if_everyone">"What If Everyone" fallacy</a> to add an example
+I encountered today. It was too gold to pass up.
+</p>
+<p><b>November 29:</b>
+I made a performance improvement: the server sends with each comment whether it has replies, so the browser
+doesn't have to make an extra request for each comment it loads that doesn't have replies.
+</p>
+<p><b>November 27:</b>
+On the <a href="spem/search">Spem search page</a>, you can now enter multiple space-separated words to display
+them all. Thanks to main_gi for the great suggestion :)
+</p>
+<p><b>November 24:</b>
+I changed how I do markdown processing so blockquotes in comments work now.
+</p>
+<p><b>November 22:</b>
+New article: <a href="argument/fee_bystander">Yes, Tyler Curtis, The Bystander Effect Exists</a>.
+</p>
+<p><b>November 21:</b>
+New Spem post: <a href="spem/defaults">Open question: Default identifiers</a>. Input appreciated!
+</p>
+<p><b>November 16:</b>
+New article: <a href="argument/changing_language">Trying to change a living language</a>.
+</p>
+<p><b>November 15:</b>
+<ul>
+<li><p><a href="protagonism/bystander">The Bystander Effect - a story of my failure</a>.</p></li>
+<li><p><a href="protagonism/self_defense">The problem with the term "self-defense"</a>.</p></li>
+<li><p><a href="argument/noncompetitive">The Noncompetitive Fallacy</a>.</p></li>
+<li><p><a href="argument/same_person">Not the same person?</a>.</p></li>
+<li><p><a href="protagonism/market">The free market in a nutshell</a>. I've been working on this article
+for a long time. Since I think most conservatives already know the "drill" on the free market, I tried to
+tailor it to people who were raised with a liberal conception of economics and just haven't really questioned it yet.</p></li>
+<li><p><a href="protagonism/anarchist_memes">Anarchist meme dump.</a></p></li>
+</ul>
+</p>
+<p><b>November 14:</b>
+New Spem article: <a href="spem/questions">Questions</a>. I'm still undecided on some aspects but
+I'm posting my thoughts. I've also added some content to the article on <a href="spem/should">Should</a>,
+and my <a href="reviews/ff13">retrospective of Final Fantasy 13's story</a>.
+I'm glad I finally got this done. Also <a href="argument/history_philosophy">There is no history of philosophy</a>,
+and <a href="argument/national_debt">There's no such thing as national debt</a>.
+</p>
+<p><b>November 13:</b>
+New <a href="spem/objects">Spem conlang quickie: Verb objects</a>. Also tons of new words. We're almost at
+400 now :)
+</p><p>
+Something I'm considering is that opposites should always be sorted next to each other in search results. I could
+add a foreign key Opposite on the Word model that would enable that, but it would be a bit difficult to make it
+actually sort that way. Probably incur a performance hit. It'd also be a ton of work for me to go through all the
+words manually and tag their opposites, which I'd have to do. But if it's going to happen, better now than later.
+I'm just not sure if it is. I might need a different solution for sorting anyway. I don't like the "last modified
+at the top" sort I have now - it's good for seeing new stuff but I'd like to have an option to sort in a more
+reasonable way, like by advancement somehow.
+</p>
+<p><b>November 12:</b>
+New <a href="spem/should">Spem conlang quickie: Should</a>. It could use some feedback. I also added
+the voiced th to <a href="spem/alphabet">the alphabet</a>. I don't like that sound and didn't want to
+use it, but last night I realized there are going to need to be a <i>lot</i> of nouns, and the extra letter
+will help a lot.
+</p>
+<p><b>November 11:</b>
+Dark mode switch added, as well as tons of <a href="spem/search">progress on Spem</a> and the button
+to hide this log (I figured it'd be useful on mobile).
+</p>
+<p><b>November 10:</b>
+I added the ability to set passwords for notification management.
+</p>
+<p><b>November 9:</b>
+<h1>Notifications are here!</h1>
+<p>
+I haven't been this excited in a long time. I added the ability to opt-in to email notifications on comment replies!
+You enter your address and follow the link in the confirmation email to give your browser an auth cookie that lets
+you edit your subscription settings. There's still a lot I need to do, like schedule email sending in the background
+so posting a comment isn't delayed by it, allowing setting a username for your address so your comments can be
+authenticated, a way to view a subtree of the comments, and a bunch more, but I've been at this all day so I'm
+takin' a break.
+</p><p>
+Part of the reason I'm so excited is that not having this was one of the main things holding me back from going
+for publicity. I didn't want to make any big pushes if people might come here and leave a comment and then forget
+about it. In a few more days, when this feature is more polished, it might be time to go to the Backalley discord
+and start spreading the word about Spem, make a liberty.me account where I mostly just mirror my anarchism-related
+articles, maybe debate Eso on metaphysics...
+</p><p>
+There's also a new article: <a href="software/fighting_over_keyboard">Fighting over the keyboard</a>.
+</p><p>
+I cleared two months of old update history, because recently I noticed how much scrolling that meant for mobile
+users to see the comments. Probably should have a button to hide the update log or something.
+</p>
+<p><b>November 8:</b>
+Two new articles: <a href="argument/worrying">Worrying is not irrational</a> and
+<a href="argument/disputed_premise">Disputed premise, not circular reasoning</a>. I also revised my explanations
+of <a href="protagonism/metaphysics">why it's impossible to rationally believe that consciousness
+is a product of matter</a> and <a href="protagonism/sleep">how sleep works</a>.
+</p>
+<p><b>November 7:</b>
+Four new articles: <a href="protagonism/personal_determinism">Societal diagnosis: personal determinism</a>;
+<a href="protagonism/voting_consent">"Representation" - the worst argument for the legitimacy of government?</a>;
+<a href="software/nano">Nano Is A Good Editor</a>; and <a href="fiction/magic">What is 'magic'? An
+attempted answer</a>.
+</p>
+<p><b>November 6:</b>
+There have been tons of <a href="spem/search">new words added to Spem</a> lately, including an expansion to
+<a href="spem/demonstratives">the demonstratives</a>. I also added my <a href="software/fish">review of the
+Fish shell</a>.
+</p>
+<p><b>November 4:</b>
+New article: <a href="protagonism/anarchism_history">ThErE aRe No HiStOrIcAl ExAmPlEs Of AnArChY</a>
+</p>
+<p><b>November 2:</b>
+Well! After so much indecision I finally went ahead and migrated the backend to Django.
+We'll see how this goes. The comments and Spem dictionary shouldn't be messed up,
+but if they are that's why. The old version of the site is available at
+<a rel="nofollow" href="https://old.yujiri.xyz">old.yujiri.xyz</a>, so if the comments are broken, you could comment there
+to get my attention.
+</p>
+<p><b>November 1:</b>
+New Spem articles: <a href="spem/quantifiers">Quickie: quantifier-type compounds</a>, and
+<a href="spem/verbs_adjectives">Language design insight: the difference between verbs and adjectives</a>.
+New pseudo-Protagonism article: <a href="protagonism/apostasy">How I left Catholicism</a>.
+</p>
+</expand-note>
+</div>

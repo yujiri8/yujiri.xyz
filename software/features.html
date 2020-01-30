@@ -1,0 +1,42 @@
+TITLE The Evils of Unnecessary Features In Software
+NAV The evils of unnecessary features
+TEMPLATE DEFAULT
+
+<p>
+As a programmer and <a href="why_unix">Unix</a> loyalist, I hate redundant functionality in software with a
+passion. I want to do things The One Right Way. But I wanna make a case about why including unnecessary features
+in software or alternative ways to do the same thing is bad for a practical reason, not just an aesthetic one.
+</p>
+<ol>
+<li><p>
+	The more features a piece of software has, the longer it takes to learn how to use it. Even if some of the
+	features are totally redundant, you won't know that until you learn them.
+</p></li><li><p>
+	Relatedly, the more features you see, the more you'll be tempted to cut corners and avoid learning them all.
+	<a href="/game_design/simplicity">Like I did when I played Starcraft</a>. And of course you don't know
+	which features are the most important ones to know until you learn them, so you can't effectively prioritize
+	them.
+</p></li><li><p>
+	When you find out two ways of doing the same thing, you're likely to spend a long time wondering what
+	the difference is before you realize there isn't one. After all why would the developers implement it if it
+	didn't add any functionality? Even if there is a difference, if it's not obvious what it is, that's a sign
+	that one or both features are poorly designed.
+</p></li><li><p>
+	This may not apply to all software projects, but for languages, standards or development frameworks,
+	more features means different programmers might come up with different ways of accomplishing the same tasks.
+	This can lead to a lot of confusion when they work together, and in the best case that confusion will cost
+	precious time.
+</p></li><li><p>
+	The more features, even if they overlap in functionality, the harder it is to make sure none of them have
+	bugs. It gets exponentially more difficult to anticipate how they might all be used and test everything.
+</p></li><li><p>
+	Lastly, this doesn't concern the end user after it's done but while in development, every feature takes time
+	to add. Any time the dev spends coding a feature that isn't needed is time not spent coding one that <i>is</i>
+	needed, or fixing bugs, or doing something else of value.
+</p></li>
+</ol>
+<p>
+<a href="http://quotes.cat-v.org/programming/">Fun quote</a>:
+"Normal people believe that if it ain't broke, don't fix it. Engineers believe that if it ain't
+broke, it doesn't have enough features yet."
+</p>

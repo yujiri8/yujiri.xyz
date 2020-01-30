@@ -1,0 +1,4 @@
+__pycache__
+migrations
+static
+secret.py

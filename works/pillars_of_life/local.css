@@ -1,0 +1,66 @@
+html {
+	height: 100%;
+	font-family: sans-serif;
+}
+body {
+	margin: 0px;
+}
+div.flex-container {
+	display: flex;
+	height: 100%;
+	float: left;
+}
+
+div.head {
+	width: 100%;
+	height: 5em;
+	color: rgb(127,127,127);
+	background-color: rgb(60,30,0);
+	display: flex;
+	position: fixed;
+}
+div.title {
+	margin-left: 0.5em;
+}
+/* Need this because otherwise links aren't affected by the parent's color attr, only normal text. */
+a.title {
+	color:rgb(255,255,255);
+}
+div.chapter {
+	margin: auto;
+}
+div.toc {
+	margin-top: 5em;
+	min-width: 7em;
+	min-height: calc(100vh - 5em);
+	float: left;
+	color: rgb(127,127,127);
+	background-color: rgb(60,30,0);
+}
+p.toc {
+	position: fixed;
+	color: rgb(127,127,127);
+	/* text-indent: 0em; */
+}
+a.chapterlink {
+	color:rgb(255,255,0);
+}
+
+div.text {
+	flex: 1;
+	float: right;
+	margin: 2em;
+	margin-left: 3em;
+	margin-top: 6em;
+}
+p {
+	margin: 0.5em;
+}
+div.text > p {
+	text-indent: -2em;
+}
+div.text > h3 {
+	text-indent: -2em;
+	margin-top: 2em;
+
+}

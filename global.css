@@ -1,0 +1,147 @@
+/* Color themes. */
+:root {
+	--outer-margins: 1em;
+	--bgcolor: white;
+	--textcolor: black;
+	--weakcolor: grey; /* used for borders and shadows */
+	--buttonbgcolor: #eee;
+	--tintcolor: #ddd; /* used for cards and other tinted areas; stronger tint than code */
+	--codecolor: #eee;
+	--linkcolor: #00e;
+	--linkvisitedcolor: #50a;
+	--yellowcolor: #cc0; /* yellow needs to be darker on a white background to look good */
+}
+[data-theme="dark"] {
+	--bgcolor: #080808;
+	--textcolor: white;
+	--weakcolor: grey;
+	--buttonbgcolor: #ddd;
+	--tintcolor: #444;
+	--codecolor: #222;
+	--linkcolor: #07f;
+	--linkvisitedcolor: #b0f;
+	--yellowcolor: #ff0;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 0; /* Remove UA edge spacing */
+	padding-bottom: 3em;
+	background-color: var(--bgcolor);
+	color: var(--textcolor);
+}
+div.content {
+	margin: var(--outer-margins);
+	margin-top: calc(var(--outer-margins) + 1em);
+}
+
+/* stuff shared with the components */
+* {
+	box-sizing: border-box;
+}
+.small {
+	font-size: 0.9em;
+}
+/* Misc color adjustments */
+a {
+	color: var(--linkcolor);
+}
+a:visited {
+	color: var(--linkvisitedcolor);
+}
+code, .code {
+	background-color: var(--codecolor);
+}
+hr {
+	border-color: var(--weakcolor);
+}
+.indent {
+	margin-left: 1em;
+}
+spem {
+	font-family: monospace;
+}
+/* distinguish quotes better */
+blockquote {
+	border-left: 6px solid #00ffff;
+	margin: 0.5em 1em 0.5em 1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+.highlight {
+	background-color: #ff06;
+}
+
+/* column-layout pages */
+div.row {
+	display: grid;
+	grid-gap: 1em;
+}
+div.column {
+	min-width: 18em;
+}
+
+/* tables */
+table {
+	width: 100%;
+}
+th.par, td.par {
+	min-width: 30em;
+}
+table, th, td {
+	border: 1px solid var(--weakcolor);
+	border-collapse: collapse;
+	text-align: center;
+}
+tbody.checkered tr:nth-child(odd) {
+	background-color: #222222;
+}
+
+/* spoilers */
+.spoiler {
+	background-color: var(--textcolor);
+}
+/* this is necessary to stop links from showing through */
+.spoiler:not(:hover) a {
+	color: var(--textcolor);
+}
+.spoiler:hover {
+	color: var(--bgcolor);
+}
+
+/* Stop things from overflowing horizontally (don't ask me why the overflow-y thing works) */
+pre {
+	overflow-y: hidden;
+}
+img {
+	max-width: 100%;
+}
+
+/* stuff for reviews */
+.good {
+	color: blue;
+}
+.bad {
+	color: red;
+}
+.mixed {
+	color: var(--yellowcolor);
+}
+
+/* section links */
+:not(:hover) a.sectionlink {
+	visibility: hidden;
+}
+a.sectionlink {
+	color: inherit;
+	font-size: 0.75em;
+	margin-left: 0.5em;
+}
+a.sectionlink:visited {
+	color: inherit;
+}
+
+/* Unfortunately, this couldn't be avoided for disconnected expand notes. */
+.hidden {
+	display: none;
+}

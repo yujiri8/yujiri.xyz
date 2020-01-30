@@ -1,0 +1,301 @@
+TITLE Javascript Review
+NAV Review: Javascript
+TEMPLATE DEFAULT
+
+<p>
+I know Javascript is a language a lot of people already agree is terrible, but now that I've got a substantial
+amount of experience with it myself, I think it'll be fun to write a language opinion article where I get to
+be more ranty. Of course, in keeping with my tradition, I'll have to open with the good things first.
+How Javascript And I Met isn't particularly interesting (I just chose to learn it because of its unique
+ability to run in a browser and because it was a bad thing not to have on my resume as a programmer),
+so I'll skip that.
+</p><p>
+Also, I'll stick to talking about Javascript itself, not the DOM APIs. I'll probably write separately
+about those someday.
+</p>
+<h1 class="good">Interactive</h1>
+<p>
+Well, at least you've got the interactive use. Any browser's devtools allow running JS interactively, and
+the <a href="https://nodejs.org/en">Node.js</a> command-line tool also has an interactive prompt. This is
+really nice, I'll admit.
+</p><p>
+The type correction features most browsers' devtools I've seen foist on you are disgusting. When I'm typing a name it always opens a suggestion box that covers the rest of the command history if there's any name defined that starts with what I have, and it fucking rebinds the enter key to "accept suggestion" (not tab for some god-forsaken reason), so I get hoodwinked by that on a regular basis. Worst of all, typing out the full name of a suggestion doesn't make the box go away, so I have to press enter twice if I'm ending a statement with a defined name.
+</p><p>
+But the in-browser command-line experience has some compensatory advantages. Due to the nature of browser
+devtools, it's an out-of-the-box feature to be able to use it interactively while the page is running.
+That's pretty damn useful.
+</p>
+<h1 class="good">I actually love how it handles objects.</h1>
+<p>
+Javascript objects are dictionaries. They're just mappings of string keys to values.
+</p><p>
+I sincerely think that if you don't have any type safety whatsoever in your language and objects are going to be totally
+mutable, you should not distinguish between objects and dicts, because that loses all the meaningful differences.
+</p>
+<h1 class="bad">No compile-time sanity checking</h1>
+<p>
+A repeated point from <a href="python">my opinion on Python</a>, the flipside of being interactive.
+You'll never know your JS is even valid until you run it and test every code path.
+</p><p>
+"Just use <a href="https://www.typescriptlang.org">TypeScript</a>! Problem solved!"
+</p><p><!--https://channel9.msdn.com/Events/Build/2017/B8088/-->
+No, problem not solved. Using TypeScript adds a requirement for me to compile my JS before I run it. I'm not
+saying TypeScript isn't good or helpful (I haven't used it), but it's not built-in, it's a separate tool you
+have to learn, and even then it introduces a large drawback of its own.
+</p>
+<h1 class="bad">Trying to access a nonexistent slot of an array or an object silently returns <code>undefined</code></h1>
+<p>
+But you can define one of the values to be <code>undefined</code> and it's now in there!
+</p><pre class="code">
+arr = [undefined];
+arr[0]; // undefined
+arr[1]; // undefined
+arr == []; // false
+</pre></p>
+By the way, even a function parameter just gets <code>undefined</code> if it's not passed. All arguments are optional; you
+<i>can't</i> define a function that requires you to pass it a parameter. Let that sink in for a minute.
+</p>
+<h1 class="bad">Arrays aren't really arrays</h1>
+<p>
+This took me a while to understand, but arrays are really just objects with numbered fields.
+(No wonder you can't add arrays in the way you'd expect...) This has many bad corellaries.
+One is that you can assign past the end of an array and you just get "empty items" inbetween;
+</p><pre class="code">
+arr = [];
+arr[5] = 'x';
+arr; // [<5 empty items>, 'x' ]
+arr.length; // 6
+delete(arr[5]);
+arr; // [ <6 empty items> ]
+arr.length; // 6
+</pre>
+<p>
+And note that those empty items <i>aren't the same as undefined</i>. Or they are, but they're not. Check this out:
+</p><pre class="code">
+emptyArr = [];
+arrEmpty = [,,,];
+arrUndefined = [undefined, undefined, undefined, undefined];
+emptyArr == arrEmpty; // false
+arrEmpty == arrUndefined; // false
+arrUndefined == emptyArr; // false
+console.log(emptyArr[0], arrEmpty[0], arrUndefined[0]); // undefined undefined undefined
+</pre><p>
+It's like the holy trinity of <code>undefined</code>!
+</p><p>
+This is because arrays have a <code>length</code> attribute that stores the number of elements they
+supposedly have. So when you assign to an index, it changes the length, and then when you look at
+the array all the slots inbetween that don't exist as keys in the array are presented as these
+"empty items". <code>delete</code> is meant for removing a key from an object, so when used on an
+array, it only deletes the key and doesn't collapse the others or modify the <code>length</code> attribute,
+so it just leaves an empty slot behind.
+</p><p>
+Arrays and objects represent fundamentally different ideas. I know dynamic typing obscures this, but
+arrays exist to represent a set of values of the same type. That's what the idea of iterating is based on.
+You would never iterate on the fields of an object in an object-oriented language. Iterating implies doing
+the same thing to each element, which necessitates the elements having some common type or interface.
+If the values are meant for iterating, they're in an array; if they're not in an array, it's because they
+don't represent a set of comparable things, but different attributes of one thing.
+</p><p>
+In Javascript, dicts are objects, which means that for an iterable set of values with duplicate prevention
+and no ordering, you have to use an object. But that doesn't change the truth that arrays are not objects
+semantically.
+</p><p>
+Thinking about them as such has led to the aforementioned tragedies, and also the actual ways to work with
+arrays are counterintuitive. The <code>.push</code> method is how you're supposed to add stuff to the end,
+and <code>.concat</code> is for adding arrays. The main way to delete from an array is <code>.splice</code>,
+but there are a lot of others depending on the specifics. <a
+href="https://love2dev.com/blog/javascript-remove-from-array/">This article</a> goes through a bunch of them.
+</p><p>
+For some reason,
+<a href="https://stackoverflow.com/questions/586182/how-to-insert-an-item-into-an-array-at-a-specific-index-javascript"
+><code>.splice</code> is also how you insert elements</a>. <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">The one method is
+basically a swiss army knife</a> instead of using different functions to accomplish different tasks.
+<p>
+<h2 class="bad">This implicit type conversion is outrageous</h2>
+<p>
+A lot of people who rant about Javascript mention this. Let me just jump into the examples:
+</p>
+<pre class="code">
+// Strings and numbers
+'q' - 'q'; // NaN
+5 + '5'; // '55'
+'5' * '2'; // 10
+'5' - '2'; // 3
+// Arrays
+1 + [1]; // '11'
+1 + [1, 2]; // '11,2'
+1 - [1]; // 0
+1 - [1, 2]; // NaN
+[] + []; // ''
+[] - []; // 0
+[1, 2] - [3, 4]; // NaN
+// Objects
+{} + 0; // 0
+{} + ''; // 0
+{} - 0; // -0. No, I am not kidding. -0 can be assigned to a variable and it stays that way. On the bright side, it seems to be exactly the same as 0 for every purpose I can find.
+{} + []; // 0
+[] + {}; // '[object Object]'
+{} - []; // -0
+[] - {}; // NaN
+{} + {}; // NaN
+{} - {}; // NaN
+{} / []; // SyntaxError: Invalid regular expression: missing /. ?!?!?!
+</pre>
+<p>
+I can see arguing for some implicit type conversion. I hate in <a href="go">Go</a> when you can't even compare
+<code>int</code> to <code>int32</code> without an explicit conversion for example. But this? Not only it is through
+the roof, it's wildly inconsistent and unintuitable.
+</p>
+<h2 class="bad">Iterating is a mess</h2>
+<p>
+Javascript has three different for loop constructions: the C-style <code>for (let i = 0; i < items.length; i++) {</code>;
+then <code>for (let i in items) {</code>, and <code>for (let i of items) {</code>. What are the differences? Can we maybe
+use these two latter constructions to elide the antiquated C bullshit?
+</p><p>
+Well, no. <code>for</code>..<code>in</code> is for iterating on the keys of an object... but objects in Javascript
+have string keys. And do you know what that means happens when you try to use this on an Array?
+</p><pre class="code">
+nums = [5, 16, -3];
+for (let i in nums) {
+    console.log(i + 1);
+}
+/* Prints
+01
+11
+21
+*/
+</pre><p>
+Because arrays are technically objects and so their keys as given by <code>for</code>..<code>in</code> are of course the
+<i>string</i> indices. This works for some use cases, but if you try to add to the index counter, it'll break your code
+in bizarre ways.
+</p><p>
+<code>for</code>..<code>of</code>, on the other hand, <i>only</i> gives you the values. Not the keys. And of course
+there's no easy way to get the key from the value; there's nothing equivalent to Python's <code>enumerate</code>,
+as far as I know. So, we still need to use antiquated C bullshit to iterate in Javascript.
+</p>
+<h2 class="bad">Variable declarations are a mess</h2>
+<p>
+Assigning to an undefined variable in Javascript by default creates a <i>global</i> variable, if you don't use
+<code>'use strict';</code> at the top of the file. Besides this unfortunate fact, there are <i>three</i> different
+keywords for declaring variables that all have subtle differences:
+</p>
+<ul>
+<li><p>
+<code>var</code> - creates a function-local variable. That's all it does.
+</p></li><li><p>
+<code>let</code> - two differences from <code>var</code>. It's <i>block-scoped</i> instead of function-scoped, and
+it doesn't allow redeclaring the variable with <code>let</code> later.
+</p></li><li><p>
+<code>const</code> - like <code>let</code>, but makes the variable immutable.
+</p></li>
+</ul>
+<p>
+What an elegant and straightforward system!
+</p>
+<h2 class="bad">Boilerplate syntax - semicolons, parentheses around conditions</h2>
+<p>
+I talked about this a lot in my review of Python, but Javascript does worse than just having these boilerplate
+syntax features. <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion"
+>Semicolons will usually be automatically inserted by the interpreter</a>, so <i>often</i> you don't need them, but if you
+lean on that fact, sometimes semicolons will be inserted incorrectly and break your code in bizarre ways. And you can't
+even say "Just don't lean on the feature", because the nature of the feature precludes that. Everyone forgets semicolons
+sometimes in semicolon languages.
+</p>
+<h2 class="bad">Objects can't compare for equality</h2>
+<p>
+<code>==</code> on Objects (including Arrays) compares for identity, not equality. If you want to test whether
+two Objects are equal, you have to iterate over their keys.
+</p><p>
+In a language that has <code>==</code> and <code>===</code>, you would think <code>==</code> would compare by
+value for objects, and <code>===</code> would compare identity. But no, they do the same thing.
+</p>
+<h2 class="bad">Barren standard library</h2>
+<p>
+The JS stdlib is thoroughly lacking compared to other languges, especially when it comes to Strings. No titlecase. I had to implement that one myself. No functions to parse and format query strings. Pretty important for a language that's almost exclusively used on the web. At least we have ones to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent">encode</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent">decode</a> URI <i>components</i>.
+</p>
+<h3 class="bad">Object constructors for primitive types</h3>
+<pre class="code">
+x = 5;
+y = new Number(5);
+x == y; // true
+x === y; // false
+typeof x; 'number'
+typeof y; 'object'
+</pre><p>
+Just why? What is the difference between these two things? I'm sure <code>Number</code> provides some methods or
+something that primitive numbers don't, but why <i>should</i> it if these two things represent the exact same
+idea? Why shouldn't whatever works on <code>Number</code> just work on <code>number</code>s?
+</p>
+<h3 class="bad">No error when passing too many arguments to a function</h3>
+<p>
+Ugh... for real?
+</p><pre class="code">
+function f(param) { console.log(param) };
+f(1, 2, 3); // Just prints 1
+</pre><p>
+</p>
+<h3 class="bad">Distinction between <code>null</code> and <code>undefined</code> is confusing and unnecessary</h3>
+<p>
+There are <i>two</i> primitive values that represent the lack of a value. <code>null</code> and <code>undefined</code>
+are semantically different; for function parameters, passing <code>undefined</code> causes the parameter
+to get its default value. Passing <code>null</code> causes it to get <code>null</code>. Now <i>that's</i> nice and
+intuitive.
+</p>
+<h3 class="bad">Arrays don't support negative indices</h3>
+<p>
+Negative array indices are a super useful feature in other languages for making code more concise and more readable.
+Javascript, perhaps owing to the way it treats arrays as objects, doesn't support them. Just compare the readability difference:
+</p><pre class="code">
+arr[-5];
+arr[arr.length - 5];
+</pre>
+<h3 class="bad">Slicing arrays is ugly</h3>
+<p>
+Javascript also doesn't support the usual syntax for slicing arrays. Instead you use <code>.slice</code>:
+</p><pre class="code">
+arr = ['a', 'b', 'c', 'd'];
+arr.slice(1, 3); // Returns ['b', 'c']
+</pre><p>
+It's not horrible, but it's a good deal more verbose than most other languages.
+</p>
+<!--
+<h3 class="bad"><code>parseInt</code> doesn't error when it should</h3>
+<pre class="code">
+parseInt("1q") == 1
+</pre><p>
+I strongly believe this should throw an error, because if you're trying to parse a string that contains letters as an
+int, it's almost certainly because something is not working as intended. I mean if you asked someone to type a number
+and they typed "1qx5aewse5r454ae", you . If you wanted it not to you could .
+. But on top of this...
+</p><pre class="code">
+parseInt("q1") == NaN
+</pre><p>
+Are you serious? Javascript has exceptions! Why force us to also explicitly handle errors in Go-style after
+certain functions?
+</p>
+-->
+<h3 class="bad">No passing parameters by name</h3>
+<p>
+Function parameters in Javascript can't be passed by name, they have to be passed by position.
+For a long time I actually thought you could do this because it was working for me, but then I got bitten by the inability
+later and found out it was working in the first place because I was actually still passing them in the right order;
+the parameter assignments I was doing were actually assigning to global variables. The second place I tried to use it it was
+in a file with <code>'use strict';</code> enabled so I found out.
+</p><p>
+It is of course possible to have your function take an object for its parameters, but that's an inadequate replacement
+because it means the function has to be specifically made to be used this way, so at best that works on functions you write
+yourself and that you refactor with a more convoluted syntax to get this functionality and also lose the ability to pass
+them by position while you're at it.
+</p>
+<h3 class="bad">Single versus double quotes - meaningless decision</h3>
+<p>
+Another point from my review of Python. Having to constantly make this decision distracts me while I'm coding
+and breeds inconsistent style.
+</p>
+<!--
+	-- A lot of functions that should accept one value will silently operate on the first element of an array
+		# (Get examples)
+-->
+<!--https://wsvincent.com/javascript-parseint-map/-->

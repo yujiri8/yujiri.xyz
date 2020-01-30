@@ -1,0 +1,35 @@
+TITLE Incomplete list of formats, standards, and technologies that should die
+NAV Incomplete list of formats, standards, and technologies that should die
+TEMPLATE DEFAULT
+MARKDOWN
+
+## "Document" formats
+
+Compared to HTML files, document formats have basically no advantages. The biggest disadvantage is that you need specific applications to read them. You can't open a PDF in a text editor; you need a "PDF viewer". And while most browsers can render PDFs natively, *they shouldn't have to*, because HTML exists. That browsers have to [implement PDF support](https://github.com/mozilla/pdf.js)<expand-note>Notice the commit count on that repository. How many thousands of hours do you think were put into it? I cloned it and <a href="https://github.com/AlDanial/cloc">counted the source lines</a> at well over 100k.</expand-note> as well as HTML [adds to the complexity and bugginess](features) of browsers (as well as the difficulty of new browsers [entering the market](/protagonism/market)).
+
+Making matters worse, document formats besides PDF have compatibility issues. Unix operating systems don't usually come with viewers for them preinstalled. [PDFs are not the worst](https://www.xpdfreader.com) but stuff like .xlsx or .ppt tends to require installing something absurdly heavyweight like [libreoffice](https://www.libreoffice.org).
+
+Honestly, half of the time I see PDFs used on the web, there's no real reason it couldn't have been a plaintext file, let alone an HTML file.
+
+## XML, in any application other than HTML and SVG
+
+The only reason I qualify it that way is because abandoning HTML won't be feasible for a long time to come; it would mean rewriting all websites and all browsers. The idea of SVG is glorious honestly; my only gripe with it is that it's implemented in XML. I dream of standardizing a non-XML version of SVG, but for the time being, I consider SVG one of the few justifiable uses of XML.
+
+JSON should replace XML in the vast majority of uses. For web applications, JSON's inherent affinity with Javascript is an enormous plus, and support for it is also in the stdlib of most other languages.
+<!--QB, Google apis-->
+
+(Also, I know that HTML isn't technically XML, but it is deeply influenced by it.)
+
+Flaws of XML:
+
+* The central attribute/child dichotomy is very odd, rarely if ever a useful distinction.
+
+* Tag names are always written twice, increasing typo rate when handwritten and data size.
+
+* No type information is conveyed. This is a rather terrible trait for data applications.
+
+* Five unique escape sequences that must be memorized instead of using the versatile backslash like everything else.
+
+* <a rel="nofollow" href="https://en.wikipedia.org/wiki/CDATA#CDATA_sections_in_XML"><code>CDATA</code></a> - unnecessary redundancy, since anything you can do with it you can do without it.
+
+* The root element of an XML tree must have a name, although the name is arbitrary.

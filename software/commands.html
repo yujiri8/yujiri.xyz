@@ -1,0 +1,508 @@
+TITLE Unix Command Reference
+NAV Unix command reference
+TEMPLATE DEFAULT
+
+<style>
+code.ess {
+	background-color: #00ffff;
+	color: black;
+}
+code.basic {
+	background-color: #0000ff;
+	color: white;
+}
+code.com {
+	background-color: #22ff22;
+	color: black;
+}
+code.med {
+	background-color: #ffff22;
+	color: black;
+}
+code.adv {
+	background-color: #ff0000;
+	color: white;
+}
+</style>
+<p>
+I'm aiming this article mostly at absolute beginners to <a href="why_unix">Unix</a>, as I feel the guidance resources
+available for a Windows user switching to Unix on their own are woefully inadequate right now. It's meant to be read after
+my <a href="shell_basics">guide on basic shell use</a>. Note that a lot of my descriptions of the less essential
+commands refer to concepts I don't expect new users to know about; when I have time I plan to write more about those things,
+but you can probably find decent explanations with a web search.
+<!--Nevertheless, if you're a mid-level Unix user, you might still find out something you didn't know here, because I've
+been using Unix for probably five years and some of the commands I'm going to list I didn't find out about until the last
+year of that.-->
+</p><p>
+There are lots of places that list "the basic" Unix commands, but I've never seen one of those references that lists enough of them
+to really show how awesome Unix is to someone who hasn't seen it. My eventual goal here is to list almost all the
+commands I know of, but I'll categorize them, so the reference is still usable. I'm writing this based on experience with
+<a href="https://freebsd.org">FreeBSD</a>, but most of it should apply to any Unix system.
+</p><p>
+I'll also color-code the commands according to how important they are.
+<code class="ess">Cyan</code> commands are the most essential;
+<code class="basic">blue</code> commands are very common;
+<code class="com">green</code> are somewhat common;
+<code class="med">yellow</code> are intermediate commands;
+and <code class="adv">red</code> are advanced commands that are either hard to learn or not used frequently.
+</p>
+<h2>Basic filesystem usage</h2>
+<ul>
+<li><p>
+	<code class="ess">cd</code> - change directory. Equivalent to clicking on a folder in Windows File Explorer.
+</p></li><li><p>
+	<code class="ess">ls</code> - list the files in the current directory, or the specified directories if any.
+</p></li><li><p>
+	<code class="ess">cat</code> - show the contents of the named file(s) in the terminal window.
+</p></li><li><p>
+	<code class="ess">rm</code> - remove files.
+</p></li><li><p>
+	<code class="ess">mv</code> - move/rename files (those are actually the same thing).
+</p></li><li><p>
+	<code class="ess">cp</code> - copy files.
+</p></li><li><p>
+	<code class="ess">ee</code> - "easy editor". A basic built-in text editor that runs in the terminal. It's easy to use,
+	but far better editors exist.
+	</p><p>
+	If you're running Linux, you probably have <code>nano</code> installed by default. <code>nano</code> is much better than
+	<code>ee</code>, and still shows help at the bottom with the default configuration. <code>nano</code> is very
+	newcomer-friendly. I'd not recommend using <code>ee</code> unless your operating system doesn't have <code>nano</code>
+	built-in. In fact, in that case you should probably just install Nano or another text editor rather than using
+	<code>ee</code>.
+</p></li><li><p>
+	<code class="basic">pwd</code> - print working directory. Shows the directory you're in (although any decently
+	configured shell shows this automatically in the prompt).
+</p></li><li><p>
+	<code class="basic">ln</code> - create links (called shortcuts on Windows).
+</p></li>
+</ul>
+<h2>Getting help</h2>
+<ul>
+<li><p>
+	<code class="ess">man</code> - "manual". Shows the manual page for the argument you pass it (so <code>man rm</code> will
+	get you the manual page on the <code>rm</code> command). (And yes there's a manual page on <code>man</code>.) I cover
+	manual pages more <a href="unix_manual">here</a>. The other commands in this section are not nearly as important.
+</p></li><li><p>
+	<code class="med">apropos</code> - search the list of manual pages for one related to the argument.
+</p></li><li><p>
+	<code class="med">whatis</code> - equivalent to <code>apropos -f</code>. <code>whatis ls</code> will show all the manual
+	pages that have 'ls' in their name.
+</p></li><li><p>
+	<code class="med">whereis</code> - show the location of the executable, manual page, and source code for a program.
+</p></li>
+</ul>
+<h2>More advanced filesystem usage</h2>
+<ul>
+<li><p>
+	<code class="ess">stat</code> - display information about a file (on a BSD system, it displays in a very terse format by
+	default; <code>-x</code> to make it display in a more human-readable way)
+</p></li><li><p>
+	<code class="basic">locate</code> - Search the hard drive for a filename containing the given argument. Since it uses a
+	cached database, it can search the entire hard drive almost instantly, but the downside is that its database can get out
+	of date. Depending on your operating system it's probably updated once a week or once a day (but you can change that).
+</p></li><li><p>
+	<code class="basic">touch</code> - Change a file's access and modification timestamps (useful for just creating an empty
+	file).
+</p></li><li><p>
+	<code class="basic">file</code> - determine the type of content in a file (this can sometimes even detect programming
+	languages and stuff).
+</p></li><li><p>
+	<code class="com">find</code> - print the paths of all files in the specified directory and below it (can be passed
+	options, like <code>-type f -name foo</code> to search for a regular file named foo)
+</p></li><li><p>
+	<code class="com">chmod</code> - "change mode". Changes file permissions.
+</p></li><li><p>
+	<code class="com">chown</code> - "change owner".
+</p></li><li><p>
+	<code class="com">du</code> - "disk usage". Show the size of a file or directory.
+</p></li><li><p>
+	<code class="med">truncate</code> - change a file's size, by deleting the end or by adding zero-bytes to the end.
+</p></li><li><p>
+	<code class="med">tee</code> - write input both to stdout and to the named file.
+</p></li><li><p>
+	<code class="med">dd</code> - "data duplicator", basically like <code>cat</code> but has some different capabilities.
+	(And the way it takes arguments is nonstandard as hell. I think this is a command that got ported from another operating
+	system decades ago and never got adapted to follow standard Unix syntax.)
+</p></li><li><p>
+	<code class="adv">chflags</code> - "change flags". Sets certain flags on files, such as an immutability flag that
+	prevents even root from changing a file without first unsetting the flag, or a flag that makes it possible to append
+	to a file but not to overwrite it. I don't know most of these myself.
+</p></li><li><p>
+	<code class="adv">mkfifo</code> - create a fifo.
+</p></li>
+</ul>
+<h2>Text files</h2>
+<ul>
+<li><p>
+	<code class="basic">less</code> - like <code>cat</code>, but lets you scroll through the output instead of printing it
+	all at once. Useful for large files. You scroll with the up and down arrows (or the page up and page down keys), and
+	might have to press q to get out of it.
+	</p><p>
+	I believe the story behind this command's name is that first there was <code>more</code>, which did this job and was
+	called so because it lets you see <i>more</i> than your screen can fit, and then somebody wanted to make a better
+	version of it and so they called it <i>less</i>. Nowadays, <code>less</code> has basically replaced <code>more</code>.
+</p></li><li><p>
+	<code class="com">head</code> - show the beginning of a file. By default, the first ten lines. See its manual page for
+	more info.
+</p></li><li><p>
+	<code class="com">tail</code> - show the end of a file. <code>tail</code> has a particularly useful flag <code>-f</code>
+	that makes it keep following the file and print out any new data that gets appended to it. That's mostly useful for log
+	files, but that's not something new Unix users are expected to deal with.
+</p></li><li><p>
+	<code class="com">grep</code> - search through files (or stdin if no files are specified), printing out only lines that
+	match a certain pattern. The first argument specifies the pattern. For more info look up
+	<a rel="nofollow" href="https://en.wikipedia.org/wiki/Regular_expression">regular</a>
+	<a href="https://www.regular-expressions.info">expressions</a> (or use <code>fgrep</code> which is a version that
+	interprets the text to search for literally instead of as a regex).
+</p></li><li><p>
+	<code class="com">wc</code> - "word count". Print the number of words, bytes, and lines in a file.
+</p></li><li><p>
+	<code class="med">diff</code> - show the differences between two files.
+</p></li><li><p>
+	<code class="med">vis</code> - Like cat, but transforms nonprintable characters into printable representations.
+</p></li><li><p>
+	<code class="med">unvis</code> - Undo vis.
+</p></li><li><p>
+	<code class="med">nl</code> - Like cat, but number the lines.
+</p></li><li><p>
+	<code class="adv">sed</code> - "stream editor". Extremely flexible tool to do something to its stdin, like
+	search/replace, and then send the output to stdout.
+</p></li><li><p>
+	<code class="adv">patch</code> - Take the output of a <code>diff</code> command and apply it to a file, making all the
+	indicated changes. We don't often have to use this command directly because version control systems like git do it
+	internally, although I'm not sure if they call out to <code>patch</code> or just implement the logic themselves.
+</p></li>
+</ul>
+<h2>Shell utilities</h2>
+<ul>
+<li><p>
+	<code class="com">which</code> - find the location of the executable for a command. <code>which ls</code> should show
+	<code>/bin/ls</code>, for example.
+</p></li><li><p>
+	<code class="med">source</code> - run a file as a shell script.
+</p></li><li><p>
+	<code class="med">xargs</code> - run a command on each input. <code>find . | xargs cat</code> will run <code>cat</code>
+	on every file found by <code>find .</code>.
+</p></li><li><p>
+	<code class="med">umask</code> - show or set the default permissions of files you create.
+</p></li><li><p>
+	<code class="med">yes</code> - spam the specified message, or 'y' by default. Mostly used for piping into commands that
+	would stop and ask for confirmation; piping <code>yes</code> into them effectively automatically says yes to everything
+	they ask so you can walk away without the other command stopping and waiting for you. (And you could use <code>yes n</code>
+	to make it spam 'n', to autmatically say no if the other command asks you anything.)
+</p></li><li><p>
+	<code class="adv">logger</code> - shell interface to <code>syslog(3)</code>.
+</p></li><li><p>
+	<code class="adv">tty</code> - get the filename of the TTY attached to stdin.
+</p></li><li><p>
+	<code class="adv">stty</code> - terminal driver settings.
+</p></li><li><p>
+	<code class="adv">perror</code> - 'print error' - show the description of an OS error code by number.
+</p></li>
+</ul>
+<h2>Shell utilities - text</h2>
+<ul>
+<li><p>
+	<code class="com">echo</code> - print text to stdout. Mostly useful for scripts.
+</p></li><li><p>
+	<code class="med">uniq</code> - print only uniques lines in a file or in stdin.
+</p></li><li><p>
+	<code class="adv">printf</code> - like <code>echo</code>, but works in the fashion of the <code>printf</code> function
+	from C.
+</p></li>
+</ul>
+<h2>Shell utilities - filepaths</h2>
+<ul>
+<li><p>
+	<code class="med">readlink</code> - get the target of a symbolic link.
+</p></li><li><p>
+	<code class="med">realpath</code> - get the full path of a file.
+</p></li><li><p>
+	<code class="med">dirname</code> - get just the part of a filepath that shows the directory containing it.
+</p></li><li><p>
+	<code class="med">basename</code> - get just the base name part of a filepath, not the directories before it.
+</p></li>
+</ul>
+<h2>Shell utilities - job control</h2>
+<ul>
+<li><p>
+	<code class="basic">bg</code>, <code class="basic">fg</code> - Move a job to the background/foreground.
+</p></li><li><p>
+	<code class="med">wait</code> - Wait until background jobs complete.
+</p></li><li><p>
+	<code class="med">time</code> - Run another command and print how long it took.
+</p></li><li><p>
+	<code class="med">disown</code> - Disassociate a process from your shell session, so that it won't die when your shell
+	exits and your shell won't wait for it.
+</p></li><li><p>
+	<code class="adv">nohup</code> - Invoke a command immune to SIGHUP.
+</p></li>
+</ul>
+<h2>Process management</h2>
+<ul>
+<li><p>
+	<code class="basic">ps</code> - "processes", or "process status". show a list of running processes and their PIDs.
+	Often used with <code>grep</code> to find the PID of a particular process. <code>ps | grep firefox</code> is an easy way
+	to find out what Firefox's PID is. Also by default it only displays processes owned by you and that have a controlling
+	terminal. The flags for it vary by operating system, but on FreeBSD the normal flags you want are <code>-a</code> and
+	<code>-x</code>.
+</p></li><li><p>
+	<code class="com">pgrep</code> - an easier way of finding a process's ID by its command name, but it doesn't show any
+	other information.
+</p></li><li><p>
+	<code class="com">kill</code> - the main way of sending signals to processes. By default, sends the TERM signal.
+</p></li><li><p>
+	<code class="com">killall</code> - kill all processes with the given name. Useful as a shortcut for killing a process
+	without having to first find out its PID.
+</p></li><li><p>
+	<code class="com">pkill</code> - does basically the same thing as <code>killall</code>, but has some different options,
+	and doesn't print anything to stderr if the process doesn't exist.
+</p></li><li><p>
+	<code class="med">nice</code> - print the "nice value" of a process (how much priority it gets relative to other processes).
+</p></li><li><p>
+	<code class="med">renice</code> - change a process's nice value.
+</p></li><li><p>
+	<code class="med">procstat</code> - similar to <code>ps</code>, but shows different information by default.
+	I'm not sure if either one can actually achieve anything the other can't, but <code>ps</code> is shorter.
+</p></li>
+</ul>
+<h2>Monitoring</h2>
+<ul>
+<li><p>
+	<code class="com">top</code> - "table of processes". Monitor running processes and resource usage.
+</p></li><li><p>
+	<code class="med">uptime</code> - show how long the system's been up for.
+</p></li><li><p>
+	<code class="adv">fstat</code> - "file status". Get information about open files.
+</p></li><li><p>
+	<code class="adv">sockstat</code> - get information about open sockets.
+</p></li><li><p>
+	<code class="adv">netstat</code> - get information about open network connections. (<code>netstat -r</code> shows
+	the routing table.)
+</p></li><li><p>
+	<code class="adv">gstat</code> - "GEOM status". Get information about disk I/O.
+</p></li><li><p>
+	<code class="adv">iostat</code> - get information about all IO.
+</p></li><li><p>
+	<code class="adv">vmstat</code> - "virtual memory status". Get various statistics about the system. This command
+	has a ton of options and I don't know half of its functionality (I only found out about it September 19); but I'm
+	noting it here for reference.
+</p></li>
+</ul>
+<h2>Timed command execution</h2>
+<ul>
+<li><p>
+	<code class="med">crontab</code> - set commands to run at regular intervals, such as every day, every hour, et cetera.
+	This command is very useful but it requires understanding the format of the crontab files. The crontab(5) manual page
+	has the needed information.
+</p></li><li><p>
+	<code class="med">at</code> - schedule a command to run just once at a specified time in the future.
+</p></li>
+</ul>
+<h2>System administration</h2>
+<ul>
+<li><p>
+	<code class="basic">shutdown</code> - watch out; on most systems, this command doesn't work quite how you expect.
+	On FreeBSD you have to pass the flag <code>-p</code> to make it actually turn the power off instead of just
+	"halting" the system. It also requires specifying a time to do it at, which can just be "now".
+	</p><p>
+	The time argument is useful if you have a computer that multiple people are logged in to remotely, and you want to
+	warn everyone else before you turn it off. That may not be a common situation today, but as I understand it it was
+	in the environent Unix was invented in.
+	</p><p>
+	<code>reboot</code> and <code>poweroff</code> are aliases to make it easier to do exactly what it says, but I'm
+	not if they exist on every Unix system.
+</p></li><li><p>
+	<code class="com">date</code> - get or set the system time.
+</p></li><li><p>
+	<code class="com">uname</code> - get information about the system. <code>uname -a</code> is the usual form to
+	get more information. You should always include the output of this command when asking for help with Unix.
+</p></li><li><p>
+	<code class="com">service</code> - control system 'services' - programs that run in the background and are
+	usually started at boot. For example, there's a service (<code>netif</code> on FreeBSD) that manages your internet
+	connectivity, ones for a lot of stuff I don't know much about, and ones for a lot of programs you install that
+	need to run in the background, like web servers. <code>service netif restart</code> will restart your <b>net</b>work
+	<b>i</b>nter<b>f</b>ace service, which is an often helpful command for internet troubleshooting.
+	</p><p>
+	As far as I know, the <code>service</code> command exists on every Unix, but on most Linuxes, system services are
+	managed by the <a href="https://www.freedesktop.org/wiki/Software/systemd">systemd</a> facility, and
+	<code>systemctl</code> is the canonical way to control them, with <code>service</code> just being an alias for
+	compatibility.
+<!--https://nosystemd.org/-->
+</p></li><li><p>
+	<code class="adv">sysctl</code> - "system control". Get or set system settings. These settings won't stay set
+	on reboot; on FreeBSD you're supposed to set them in <code>/etc/sysctl.conf</code> if you want them to persist.
+</p></li><li><p>
+	<code class="adv">dmesg</code> - print the diagnostic messages printed at startup.
+</p></li><li><p>
+	<code class="adv">kldstat</code> - "kernel <b>l</b>oa<b>d</b> status", I guess? Lists currently loaded kernel modules.
+	I think it's a BSD-specific concept, but I'm not sure.
+</p></li><li><p>
+	<code class="adv">kldload</code>, <code class="adv">kldunload</code> - load or unload kernel modules.
+</p></li>
+</ul>
+<h2>Hardware and filesystem stuff</h2>
+<ul>
+<li><p>
+	<code class="med">pciconf</code> - get information about connected <a rel="nofollow"
+	href="https://en.wikipedia.org/wiki/Conventional_PCI">PCI</a> devices. <code>pciconf -lv</code> to get the most
+	information (probably wanna pipe that through <code>less</code>).
+</p></li><li><p>
+	<code class="med">acpiconf</code> - control <a rel="nofollow"
+	href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface">ACPI</a> power management.
+	To get information about the laptop battery, at least for me the command is <code>acpiconf -i 0</code>.
+	(And yes a well-configured Unix system will show that information in some kind of statusbar if it's a
+	laptop, but there's no limit to how you can set that up and this is the underlying command that gets the information.)
+</p></li><li><p>
+	<code class="med">mount</code> - "mount" a device, making its contents accessible at a directory you specify
+	(you have to do this when you connect a flash drive or similar). (Note I find this usually has to be passed
+	<code>-t msdosfs</code> for flash drives; telling it the filesystem type.)
+</p></li><li><p>
+	<code class="med">umount</code> - unmount (pass it the place you mounted it at, not the name of the device).
+</p></li><li><p>
+	<code class="med">fstyp</code> - "filesystem type". Attempt to detect the type of a filesystem given the filename under
+	<code>/dev</code>.
+</p></li><li><p>
+	<code class="adv">gpart</code>, <code class="adv">geom</code> - disk partitioning. I don't know much about these
+	commands, but the goto for finding out a drive's partition table is <code>gpart show</code>.
+</p></li><li><p>
+	<code class="adv">diskinfo</code> - show physical information about a hard disk like its sectorsize and disk identifier
+	and stuff.
+</p></li><li><p>
+	<code class="adv">zfs</code>, <code class="adv">zpool</code>, <code class="adv">zdb</code> -
+	<a href="https://www.freebsd.org/doc/handbook/zfs.html">ZFS</a>-specific
+	utilities. ZFS is one of two main filesystems in use on FreeBSD (the other being UFS), and from what I've heard ZFS
+	is pretty much better and more modern. These commands to some extent replace other hardware and filesystem-related
+	commands on ZFS, for example <code>zfs mount</code> is needed to mount a ZFS filesystem. (But that's only for mounting
+	filesystems that are themselves ZFS; you still use <code>mount</code> to mount things like flash drives if your
+	machine uses ZFS.)
+	</p><p>
+	To check disk usage, the usual commands I go to are <code>zfs list</code> and <code>zpool list</code>.
+</p></li><li><p>
+	<code class="adv">df</code> - "disk free". Show the used and availablee space of your disk.
+	Can't be trusted on ZFS, but on other filesystems it's the equivalent of <code>zfs list</code>.
+</p></li>
+</ul>
+<h2>Networking - configuration</h2>
+<p>
+Unfortunately, configuring networking on a Unix system if it doesn't work out of the box is very hard and frustrating, like
+every other operating system. With any luck it'll work out of the box.
+</p>
+<ul>
+<li><p>
+	<code class="com">ifconfig</code> - "interface config". The main tool to configure network interfaces.
+</p></li><li><p>
+	<code class="med">resolvconf</code> - DNS configuration.
+</p></li>
+</ul>
+<h2>Networking - diagnostics</h2>
+<ul>
+<li><p>
+	<code class="com">ping</code> - Users coming from Windows or Mac might already be familiar with this command (it
+	exists everywhere as far as I know). It sends a meaningless message to another machine, just to test that a connection
+	can be established. Ping is arguably the single most important network troubleshooting tool.
+</p></li><li><p>
+	<code class="med">traceroute</code> - Show the path from the local machine to the specified destination.
+</p></li><li><p>
+	<code class="med">host</code> - Do a DNS lookup.
+</p></li><li><p>
+	<code class="med">drill</code> - More advanced DNS tool.
+</p></li><li><p>
+	<code class="med">whois</code> - Do a WHOIS lookup.
+</p></li><li><p>
+	<code class="adv">tcpdump</code> - Watch a network interface and dump all the packets it receives. Despite
+	the name, not limited to TCP.
+</p></li><li><p>
+	<code class="adv">ping6</code> - IPv6 version of <code>ping</code>.
+</p></li>
+</ul>
+<h2>Networking - use</h2>
+<ul>
+<li><p>
+	<code class="com">ssh</code> - "Secure SHell". The main way to log into a machine remotely. <code>telnet</code> is often
+	taught first but it's not really easier to use and it sends all its data in unencrypted text, which is a horrible security
+	practice. I'm planning to write a primer at some point in the near future on how encryption works. Or maybe I shouldn't
+	bother because there are plenty of good ones I could just link to instead? I've yet to find a completely satisfactory one
+	though.
+	<!--ssh -XYC for graphical login-->
+</p></li><li><p>
+	<code class="med">scp</code> - "secure copy". Copy files between machines using a secure, encrypted connection.
+</p></li><li><p>
+	<code class="adv">nc</code> - "netcat". Send low-level network traffic. It's mostly useful for examinging stuff at
+	the low-level to learn about how the internet works or debug my site (I've used it for both of those quite a bit :)).
+	Although <code>ncat</code> (not builtin) seems to outmode it.
+</p></li><li><p>
+	<code class="adv">cu</code> - "call Unix". Used to connect over serial cables. This is probably by far
+	the most obscure thing I list, but I've needed it to connect to a home-assembled BSD router when its
+	internet wasn't working.
+</p></li>
+</ul>
+<h2>Non-plain files</h2>
+<ul>
+<li><p>
+	<code class="med">gzip</code>, <code class="med">tar</code>, <code class="med">bzip2</code>,
+	<code class="med">xz</code>, <code class="med">zstd</code> - compression and archiving tools.
+	They all use different algorithms and produce different output formats. (The Windows-standard .zip file format can
+	be worked with on Unix but at least on FreeBSD the program isn't preinstalled; <code>pkg install zip</code> will
+	fix that problem.)
+</p></li><li><p>
+	<code class="med">hexdump</code> - read the byte codes in binary files.
+</p></li><li><p>
+	<code class="adv">strings</code> - Extract printable strings from a binary file.
+</p></li><li><p>
+	<code class="adv">uuencode</code>, <code class="adv">uudecode</code> - encode/decode files into a pure ASCII form
+	(can do base64).
+</p></li>
+</ul>
+<h2>User account management</h2>
+<ul>
+<li><p>
+	<code class="com">su</code> - "switch user". Switch to another user to run commands with their credentials. Most commonly
+	used to switch to root. (Note that since this starts the other user's shell, Ctrl-D gets you back to yourself, by exiting
+	your shell session as the other user.)
+</p></li><li><p>
+	<code class="med">pw</code> - I think it's BSD-specific, but on FreeBSD this is the main program for account management.
+	It has subcommands to do most if not all acconut management stuff.
+</p></li><li><p>
+	<code class="med">chsh</code> - "change shell", although it does more than change an account's default shell. This
+	command opens an editor (probably <code>vi</code> by default) and lets you use that to change any of the user
+	information stored in /etc/passwd. (The information will be laid out in a friendlier format for editing.)
+</p></li><li><p>
+	<code class="med">passwd</code> - change a user's password. This one I think is standard on all Unix systems, but I'm
+	not sure.
+</p></li><li><p>
+	<code class="med">id</code> - find out what user and group IDs a user has (yourself by default).
+</p></li><li><p>
+	<code class="med">w</code> - "who". Display info about currently logged in users (also <code>who</code> for less
+	information).
+</p></li><li><p>
+	<code class="med">finger</code> - like <code>w</code>, but shows different information.
+</p></li><li><p>
+	<code class="adv">last</code> - find out when a user last logged in (there's a lot I don't know about this)
+</p></li><li><p>
+	<code class="adv">pwd_mkdb</code> - Update user information after directly editing <code>/etc/passwd</code> or
+	<code>/etc/master.passwd</code>. Commands like <code>chsh</code> do this automatically so you don't have to.
+<!--	<code>pwd_mkdb -p /etc/master.passwd</code>-->
+</p></li>
+</ul>
+<h2>Compiled code files</h2>
+<ul>
+<li><p>
+	<code class="med">ldd</code> - "list dynamic dependencies". Shows the shared libraries an executable is linked
+	against. Very nice for learning about the ecosystem.
+</p></li><li><p>
+	<code class="adv">size</code> - get segment size information about compiled ELF files.
+</p></li><li><p>
+	<code class="adv">nm</code> - read the symbol table of a compiled executable.
+</p></li><li><p>
+	<code class="adv">strip</code> - strip unneeded information from an ELF, reducing the size.
+</p></li>
+</ul>
+<h2>Encryption</h2>
+<ul>
+<li><p>
+	<code class="adv">openssl</code> - Tool for working with SSL/TLS; can verify, create and sign certificates
+	and stuff. The <code>s_client</code> subcommand can be used to fetch a server's certificate and initiate a
+	TLS connection, essentially functioning as the TLS version of <code>nc</code>.
+</p></li>
+</ul>
