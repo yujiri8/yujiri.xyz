@@ -235,8 +235,8 @@ hellofriend
 
 So far, we've always put the block of an `if`, `while`, or similar keyword indented under the condition, but if it's only one line, you can actually do this:
 ```
-if True: print("logic has not been broken")
->>>
+>>> if True: print("logic has not been broken")
+logic has not been broken
 ```
 You can't nest them, though, even if they could theoretically all be on one line:
 ```
@@ -256,7 +256,7 @@ You should also be aware of semicolons. You can put multiple unrelated statement
 >>> a = 5; print(a)
 5
 ```
-You generally shouldn't, though, because it's less readable to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
+You generally shouldn't, though, because it's [less readable](readability) to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
 
 ## Tripe-quioted strings
 
@@ -275,7 +275,7 @@ These are often used when you need to store a big message in a string, like help
 
 ### Multiple assignment
 
-Quick trick: it's possible to assign two variables to the same value in one line:
+Quick trick: it's possible to assign two variables to the same value in one line without a semicolon:
 ```
 >>> a = b = 5
 >>> print('a is', a, 'and b is also' b)
