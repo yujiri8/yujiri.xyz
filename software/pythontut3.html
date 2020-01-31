@@ -8,7 +8,7 @@ MARKDOWN
 
 [Previous lesson: Flow control](pythontut2)
 
-This time we're going through **sequence** data types, and all the kickass things you can do with them. Actually, you've kind of already seen a sequence type: strings. Strings are a sequence of characters. Technically, in Python, strings are a special case and different from other sequence data types, but you can still do a lot of sequencey things to them. Once you've seen a few, I'll introduce the `list` data type.
+This time we're going through **sequence** data types, and all the kickass things you can do with them. Actually, you've kind of already seen a sequence type: strings. Strings are a sequence of characters. Technically, in Python, strings are a special case and different from other sequence data types, but you can still do a lot of sequencey things to them. Once you've seen a few, I'll introduce the `tuple` data type.
 
 # Indexing
 
@@ -47,7 +47,7 @@ This might look hard to parse - indeed, it's bad enough that a serious programme
 You might've already thought to try this and figured out how it works, but what happens if you run `"Hello"[-1]`?
 
 <div class="highlight" markdown="1">
-Negative indices start from the end. Note that this means *they are not subject to zero-indexing*, since -0 is the same as 0. 0 is the first element, 1 is the second element, -1 is the last element, -2 is the second-last.
+Negative indices start from the end. Note that this means *they are not subject to zero-indexing*, since -0 is the same as 0. 0 is the first element, 1 is the second element, -1 is the last element, -2 is the second-last. If you find this confusing, you're not alone :)
 </div>
 
 If you try to acces an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
@@ -113,8 +113,6 @@ Note that with `for`, the expression that tells it the sequence to be iterated (
 
 In general, in Python you should never have to iterate in the fashion I had you come with before I told you about this, but many other languages require it (C, Javascript in some situations), so it's a very good problem to have solved.
 
-Try running that. (Note that `in` in the context of `for` isn't doing the same thing that it does by itself.)
-
 **Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the latter is in the string.
 <expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
 ```
@@ -158,45 +156,67 @@ Now that we're iterating on stuff, it's a very good time to introduce two handy 
 number = 0
 while number < 10:
 	number += 1
-	if number == 5:
+	if number == 5: # skip 5 for no reason
 		continue
 	print("the next number is", number)
 	if input("want to see another? (y/n)") == 'n':
 		break
 ```
 
-# Lists
+# Tuples
 
-Lists are the most prevalent and useful sequence data type. They store an arbitrary list of arbitrary values. The syntax for list literals is to enclose them in brackets and separate elements by commas:
+Tuples are a more general sequence data type. They store an arbitrary list of arbitrary values. The syntax for tuple literals is to enclose them in brackets and separate elements by commas:
 ```
->>> nums = [6, 1, 4]
+>>> nums = (6, 1, 4)
 >>> nums
-[6, 1, 4]
+(6, 1, 4)
 >>> nums[0]
 6
 >>> for num in nums: print(num)
 6
 1
 4
+>>> greetings = ("Hi", "Hello", "Good day", "Salutations")
+>>> greetings[2]
+"Good day"
+>>> for greeting in greetings: print(greeting)
+Hi
+Hello
+Good Day
+Saluations
+>>> print(greetings[:2])
+('Hi', 'Hello')
 ```
-Lists are subject to indexing, slicing, and the rest of the bag the same way strings are.
+As you can see, tuples are subject to indexing, slicing, and the rest of the bag the same way strings are, but they aren't limited to holding strings; they can hold ints, floats, strings, Booleans, or any other type of value.
 
-There is one difference in the way the `in` operator works: with "real" sequences, like lists, `in` only tests if one of the members of the sequence after `in` is equal to the element before `in`. With strings, `in` does "in a row" checking rather than "is a member" checking, so `"he" in 'hello'` evaluates to `True`, but with lists, `['h', 'e'] in ['h', 'e', 'l', 'l', 'o']` or `[5, 3]` in `[5, 3, 6]` evaluates to `False`, but none of the members of the list on the right is the list on the left. `[5, 3] in [[1, 2, 3], [5, 3], [4, 6]]` evaluates to `True`. But strings don't have the concept of nested sequences in the way lists do, so strings are the only ones that have this "in a row" behavior for `in`.
+<div class="highlight" markdown="1">
+**Warning!** Declaring a tuple with only a single element isn't done the way you might expect! `nums = (5)` does not make a tuple; since parentheses are also used as mathematical or logical operators, that statement would just set `nums` to `5`. Python only interprets parentheses as enclosing a tuple if there's at least one comma inside (or if there's nothing inside). To set `nums` to a one-element tuple, you could do `nums = (5,)` - unnecessary trailing commas are permitted.
+</div>
 
-## Nested lists
+You can also add tuples together:
+```
+>>> nums = (1, 2, 3)
+>>> more_nums = (4, 5, 6)
+>>> nums + more_nums
+(1, 2, 3, 4, 5, 6)
+```
+<div class="highlight" markdown="1">
+Something I struggled with when learning Python was trying to add a single element to a tuple like: `nums += 5`. This would raise a `TypeError`, saying `can only concatenate tuple (not "int") to tuple`. Remember, since `var1 += var2` is shorthand for `var1 = var1 + var2`, `nums += 5` is saying `nums = nums + 5`. To add something to a tuple, the new addend has to itself be made into a tuple, like: `nums += (5,)`.
+</div>
 
+There is one difference in the way the `in` operator works: with "real" sequences, like tuples, `in` only tests if one of the members of the sequence after `in` is equal to the element before `in`. With strings, `in` does "in a row" checking rather than "is a member" checking, so `"he" in 'hello'` evaluates to `True`, but with tuples, `('h', 'e') in ('h', 'e', 'l', 'l', 'o')` or `(5, 3)` in `(5, 3, 6)` evaluates to `False`, because none of the members of the tuple on the right is the tuple on the left. The reason for this behavior is that, as you may have guessed, you can have a tuple of tuples:
 
-<!--
-## Comparing other types
-
-While we're at it, I should mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than ones treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
-
-You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com/), or on countless other websites.
-
-For Booleans, `True` is considered greater than `False`. In fact, if you play around besides the code I'm showing you, you might've already noticed that `True` and `False` can be used as `1` and `0`. If you didn't, try `print(True + True + False + True)`.
-
-For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with u. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as lis or tuple of characters. <expand-note>In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</expand-note>
--->
+## Nested tuples
+```
+>>> high_scores = (("Alice", 1260), ("Bob", 1135), ("Carl", 1390))
+>>> for score in high_scores:
+...   print(score[0], 'scored', score[1])
+...
+Alice scored 1260
+Bob scored 1135
+Carl scored 1390
+```
+Isn't that cool! Each element in `high_scores` is a tuple that holds a name in position 0 and a score in position 1. `('Alice', 1260) in high_scores` would evaluate to `True`. (Strings don't have the concept of nested sequences in the way tuples do, so strings are the only sequence type that have the "in a row" behavior for `in` instead of "is a member".)
 
 This is also a good time to introduce a couple of minor features about line breaks.
 
@@ -204,14 +224,14 @@ This is also a good time to introduce a couple of minor features about line brea
 
 When you need to break a statement across multiple lines, you're allowed to do so if it contains commas:
 ```
-names = [
+names = (
 	'Alice',
 	'Bob',
 	'Carl',
 	'Dana',
 	'Elijah',
 	'Fiona',
-]
+)
 ```
 But if it's not with commas, you need to use a backslash at the end of the line:
 ```
@@ -230,6 +250,7 @@ You can also put two string literals together *without* the `+`, and it will be 
 >>> print("hello" "friend")
 hellofriend
 ```
+I don't recommend using this though. I find it less clear than using `+` and it's at most 2 characters shorter, and most other languages don't have it, so it's not a good habit to build. (It also only works on string literals, not string variables.) I honestly wish it wasn't in the language. [It made me have to include this section to explain it](https://yujiri.xyz/software/features), which costs both my time and yours.
 
 ## Inline blocks
 
@@ -271,14 +292,12 @@ Also, I don't want him to plug his security hole :P"""
 ```
 These are often used when you need to store a big message in a string, like help text for a command-line tool.
 
-<!--"Mutate" in programming just means to change something (as opposed to making a slightly different copy of it while leaving the original unchanged).-->
-
 ### Multiple assignment
 
 Quick trick: it's possible to assign two variables to the same value in one line without a semicolon:
 ```
 >>> a = b = 5
->>> print('a is', a, 'and b is also' b)
+>>> print('a is', a, 'and b is also', b)
 a is 5 and b is also 5
 ```
 This feature isn't useful very often, but I should mention it.
