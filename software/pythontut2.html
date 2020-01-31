@@ -43,6 +43,10 @@ if operation == '/':
 ```
 </expand-note>
 
+### Indentation in the prompt
+
+The way the Python prompt handles indented blocks can be confusing. After a line that starts a block, like `if operation == '+':`, the prompt will change from `>>>` to `...` while you enter the indented block. It'll stop you if you make a syntax error (code Python can't understand), but it doesn't actually execute your statements until you finish entering the block (so a non-syntax error, like a TypeError, you won't hear about until then). To terminate the block, it requires a blank, unindented line; I'm not exactly sure why.
+
 ### Other numeric operators
 
 * `**` is mathematical "to the power of", so `x ** 2` means `x` squared, etc.
