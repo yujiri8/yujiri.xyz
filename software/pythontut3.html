@@ -215,6 +215,8 @@ There is one difference in the way the `in` operator works: with "real" sequence
 Alice scored 1260
 Bob scored 1135
 Carl scored 1390
+>>> high_scores[1][0] # demonstrating double-indexing: high_scores[1] is ('Bob', 1135)
+'Bob'
 ```
 Isn't that cool! Each element in `high_scores` is a tuple that holds a name in position 0 and a score in position 1. `('Alice', 1260) in high_scores` would evaluate to `True`. (Strings don't have the concept of nested sequences in the way tuples do, so strings are the only sequence type that have the "in a row" behavior for `in` instead of "is a member".)
 
