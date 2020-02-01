@@ -10,13 +10,10 @@ server {
 
 	index index;
 	error_page 404 /404;
-#	#error_page 400 /400;
-#	#error_page 502 /502;
+	#error_page 400 /400;
+	#error_page 502 /502;
 	try_files $uri $uri/ =404;
-	location / {
-		default_type text/html;
-	}
-#	# redirect map
+	# redirect map
 	if ( $redirect_uri ) {
 		return 301 $redirect_uri;
 	}

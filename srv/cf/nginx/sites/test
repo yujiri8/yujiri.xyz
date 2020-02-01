@@ -10,13 +10,10 @@ server {
 
 	index index;
 	error_page 404 /404;
-#	#error_page 400 /400;
-#	#error_page 502 /502;
+	#error_page 400 /400;
+	#error_page 502 /502;
 	try_files $uri $uri/ =404;
-	location / {
-		default_type text/html;
-	}
-#	# redirect map
+	# redirect map
 	if ( $redirect_uri ) {
 		return 301 $redirect_uri;
 	}
@@ -28,6 +25,7 @@ server {
 	rewrite ^/kaliruk(.*) /works$1 permanent;
 	rewrite ^/works/rebels(.*) /works/the_pygon_hybrid$1 permanent;
 	rewrite ^/works/rttp_downloads(.*) /works/return_to_the_portrait$1 permanent;
+	rewrite ^/computing(.*) /software$1 permanent;
 	# API
 	location /api {
 		uwsgi_pass unix:/tmp/django-dev.sock;
