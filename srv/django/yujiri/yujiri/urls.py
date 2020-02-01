@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from . import common, spem, comments
+from . import common, spem, comments, stats
 
 app_name = 'yujiri'
 
@@ -36,4 +36,5 @@ urlpatterns = [
     path('api/login', comments.login),
     path('api/setpw', comments.setpw),
     path('api/setname', comments.setusername),
+    path('api/stats', stats.stats),
 ]
