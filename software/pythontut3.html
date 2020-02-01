@@ -3,9 +3,6 @@ NAV The Concise Python Tutorial, Lesson 3: Sequences
 TEMPLATE DEFAULT
 MARKDOWN
 
-<!--Maybe I should move for to before in.-->
-
-
 [Previous lesson: Flow control](pythontut2)
 
 This time we're going through **sequence** data types, and all the kickass things you can do with them. Actually, you've kind of already seen a sequence type: strings. Strings are a sequence of characters. Technically, in Python, strings are a special case and different from other sequence data types, but you can still do a lot of sequencey things to them. Once you've seen a few, I'll introduce the `tuple` data type.
@@ -149,6 +146,8 @@ False
 ```
 Testing whether a multi-character string is inside of another string manually is a nightmare comapred to this. (If you want, take a stab at it.)
 
+`not in` works the way you expect, even though, technically, you should expect it to be `not (x in y)` (which does also work). After all, `x not > y` is a syntax error. Basically, it's like `not in` is an operator in its own right.
+
 ## `break` and `continue`
 
 Now that we're iterating on stuff, it's a very good time to introduce two handy keywords used in loops: the `break` statement, which exits the loop immediately even if it's condition is still true, and `continue`, which skips the rest of the current iteration, and continues from the top of the loop. Here's a demo of both:
@@ -190,7 +189,7 @@ Saluations
 As you can see, tuples are subject to indexing, slicing, and the rest of the bag the same way strings are, but they aren't limited to holding strings; they can hold ints, floats, strings, Booleans, or any other type of value.
 
 <div class="highlight" markdown="1">
-**Warning!** Declaring a tuple with only a single element isn't done the way you might expect! `nums = (5)` does not make a tuple; since parentheses are also used as mathematical or logical operators, that statement would just set `nums` to `5`. Python only interprets parentheses as enclosing a tuple if there's at least one comma inside (or if there's nothing inside). To set `nums` to a one-element tuple, you could do `nums = (5,)` - unnecessary trailing commas are permitted.
+**Warning!** Declaring a tuple with only a single element isn't done the way you might expect! `nums = (5)` does not make a tuple; since parentheses are also used as mathematical or logical operators, that statement would just set `nums` to `5`. Python only interprets parentheses as enclosing a tuple if there's at least one comma inside (or if there's nothing inside). To set `nums` to a one-element tuple, you could do `nums = (5,)` - unnecessary trailing commas are permitted. Actually, you can even just write `nums = 5,`.
 </div>
 
 You can also add tuples together:
@@ -222,7 +221,7 @@ Isn't that cool! Each element in `high_scores` is a tuple that holds a name in p
 
 This is also a good time to introduce a couple of minor features about line breaks.
 
-## Line continuation
+### Line continuation
 
 When you need to break a statement across multiple lines, you're allowed to do so if it contains commas:
 ```
@@ -252,9 +251,9 @@ You can also put two string literals together *without* the `+`, and it will be 
 >>> print("hello" "friend")
 hellofriend
 ```
-I don't recommend using this though. I find it less clear than using `+` and it's at most 2 characters shorter, and most other languages don't have it, so it's not a good habit to build. (It also only works on string literals, not string variables.) I honestly wish it wasn't in the language. [It made me have to include this section to explain it](https://yujiri.xyz/software/features), which costs both my time and yours.
+I don't recommend using this though. I find it less clear than using `+` and it's at most 2 characters shorter, and most other languages don't have it, so it's not a good habit to build. (It also only works on string literals, not string variables.) I honestly wish it wasn't in the language. [It made me have to include this section to explain it](features), which costs both my time and yours.
 
-## Inline blocks
+### Inline blocks
 
 So far, we've always put the block of an `if`, `while`, or similar keyword indented under the condition, but if it's only one line, you can actually do this:
 ```
@@ -272,16 +271,16 @@ SyntaxError: invalid syntax
 
 The most common time I use inline blocks is with `break` and `continue`.
 
-## Semicolons
+### Semicolons
 
 You should also be aware of semicolons. You can put multiple unrelated statements on one line by using a semicolon:
 ```
 >>> a = 5; print(a)
 5
 ```
-You generally shouldn't, though, because it's [less readable](readability) to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
+You generally shouldn't, though, because it's [less readable](https://yujiri.xyz/software/readability) to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
 
-## Tripe-quioted strings
+### Tripe-quioted strings
 
 Another thing I'll talk about while we're on the topic of line continuations: Triple-quoted strings, enclosed on both sides with `"""` or `'''`, are allowed to span multiple lines without a backslash.
 ```
@@ -304,6 +303,59 @@ a is 5 and b is also 5
 ```
 This feature isn't useful very often, but I should mention it.
 
-# .
+### Convention: capitalizing variable names
 
-With that, you're ready to take on a much more interesting project than you did in the last chapter. How about ?
+By convention, variable names in Python are all-lowercase, but there's an exception. *Constants* (variables that are meant to never change) are often written in all caps. I'm saying this because I'm going to use it in the following project, and don't want it to look weird.
+
+# Censorship simulator!
+
+With that, you're ready to write a much more fun program than you did in the last chapter.
+
+The government hires you to write a program to automatically censor messages that contain politically unacceptable speech. There's a predefined set of words you're searching for. Your program must accept multi-line input (a blank line signals the end of the message) and then output: the message with all lines containing dirty words removed; and some metadata for the overseer of the censorship department, including an account of which unacceptable words were found in the message (all listed on one line, without the parentheses you get when you print a tuple, but with commas placed appropriately), and the total number of characters that were removed.
+
+Additionally, the filter should impose a message length limit of 140 characters (including the newlines, including the one at the end of the last non-blank line). If a message is longer than that, it should be cut off and terminated with "..." so that exactly the first 140 characters (including the added `...`) of the message are outputted. In either case, a blank line should be printed between the message and the statistics.
+
+This is supposed to be a fairly difficult assignment for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on. <!--I'll include some hints if you want hints but not the full solution.-->
+
+<expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
+```
+WORDS = ('free', 'liberty', 'tyrant', 'tyranny', 'oppress', 'rebel', 'revolt', 'revolution')
+caught = ()
+removed = 0
+message = ''
+
+while True:
+	line = input()
+	# empty line signals end of input
+	if not line: break
+	# since this is after we break out if the line was empty,
+	# everything after this in the loop is dealing with a non-empty line.
+	# next step: search for dirty words.
+	censor = False
+	for word in WORDS:
+		if word in line:
+			censor = True
+			if word not in caught: caught += (word,)
+			removed += len(line)
+	if not censor:
+		message += line + '\n'
+
+# truncate the message
+if len(message) > 140:
+	# we have to re-add the newline that we cut off so there will still be
+	# a blank line between it and the statistics. this means cutting off
+	# 4 characters, not 3.
+	print(message[:136] + '...\n')
+else:
+	print(message)
+
+# statistics
+words_caught_str = ''
+for word in caught:
+	words_caught_str += word
+	if caught[-1] != word: # avoid putting a comma after the last word.
+		words_caught_str += ', '
+print("words found:", words_caught_str)
+print("characters removed:", removed)
+```
+</expand-note>
