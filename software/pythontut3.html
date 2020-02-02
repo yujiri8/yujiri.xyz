@@ -325,9 +325,9 @@ removed = 0
 message = ''
 
 while True:
-	line = input()
+	line = input() + '\n' # re-add the newline (which input leaves out) so we count it as a character
 	# empty line signals end of input
-	if not line: break
+	if line == '\n': break
 	# since this is after we break out if the line was empty,
 	# everything after this in the loop is dealing with a non-empty line.
 	# next step: search for dirty words.
@@ -336,9 +336,10 @@ while True:
 		if word in line:
 			censor = True
 			if word not in caught: caught += (word,)
-			removed += len(line)
-	if not censor:
-		message += line + '\n'
+	if censor:
+		removed += len(line)
+	else:
+		message += line
 
 # truncate the message
 if len(message) > 140:
@@ -346,6 +347,7 @@ if len(message) > 140:
 	# a blank line between it and the statistics. this means cutting off
 	# 4 characters, not 3.
 	print(message[:136] + '...\n')
+	removed += len(message) - 140
 else:
 	print(message)
 
