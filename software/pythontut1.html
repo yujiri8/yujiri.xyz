@@ -17,9 +17,9 @@ Let me take a quick opportunity to hound you about this first: learning to progr
 
 ## What's with this "prompt"?
 
-When you open IDLE, you'll probably see a window that shows a brief message about the Python version and stuff and then a line starting with `>>>`. In most languages, to write a program, you have to save the source code to a file and then run it. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. The `>>>` is the "prompt", which just means it's there to tell you that you can enter code. The result of expressions you type is displayed on the next line without the `>>>`. You might also hear this called the Python "shell".
+When you open IDLE, you'll probably see a window that shows a brief message about the Python version and stuff and then a line starting with `>>>`. In most languages, to write a program, you have to save the source code to a file and then run it. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. The `>>>` is the "prompt", which just means it's waiting for you to enter code. The result of expressions you type is displayed on the next line without the `>>>`. You might also hear this called the Python "shell".
 
-To write a program you can go to File -> New File in the top menu, but I highly recommend using the interactive prompt. It's awesome.
+To write a program you can go to File -> New File in the top menu, but I highly recommend using the interactive prompt for now. It's awesome.
 <!--If you're using IDLE, when you run a program, it'll run in the prompt window.-->
 
 Most of my excerpts here are interactive sessions, and so lines that start with `>>>` are lines of code (but the `>>>` is not part of them), lines without it are output. Unless I post a block with no `>>>` lines - then it's a program instead of an interactive session.
@@ -211,6 +211,6 @@ print(int(input('give me a number:')) + int(input('give me another number:')))
 
 There's just one more thing I'm going to cover in this lesson. You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'.3.5'` to an integer.) A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
 
-(If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This is not Python's fault; it's due to an inherent drawback of the way your hardware stores decimal values in memory and is explained [here](https://floating-point-gui.de/basic/).)
+(If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This is not Python's fault; it's due to an inherent consequence of the way your hardware stores decimal values in memory and is explained [here](https://floating-point-gui.de/basic/).)
 
 [Next lesson: Flow control](pythontut2)
