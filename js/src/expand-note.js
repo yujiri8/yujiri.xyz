@@ -33,7 +33,11 @@ customElements.define('expand-note', class extends LitElement {
 		<button @click="${this.toggle}">
 			${this.open? this.openText : this.closedText}
 		</button>
-		<slot ?hidden="${!this.open}" class="${!this.block? 'small' : ''}"></slot>
+		${this.block? html`
+			<slot ?hidden="${!this.open}"></slot>
+		`:html`
+			<small><slot ?hidden="${!this.open}"></slot></small>
+		`}
 		`;
 	}
 	toggle() {

@@ -6,9 +6,6 @@ export const styles = css`
 * {
 	box-sizing: border-box;
 }
-.small {
-	font-size: 0.9em;
-}
 /* Misc color adjustments */
 a {
 	color: var(--linkcolor);

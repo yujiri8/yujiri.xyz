@@ -90,7 +90,7 @@ customElements.define('a-comment', class extends LitElement {
 					style="${this.comment.name === 'Yujiri'? 'color:var(--yellowcolor)' : ''}">
 					${this.comment.name}</b>
 			`}
-			${this.comment.time}
+			<small>${this.comment.time}</small>
 		</div>
 		${this.loggedIn && this.user? html`
 			<div class="actions">${this.renderActions()}</div>

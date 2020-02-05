@@ -60,7 +60,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 	render() {
 		return html`
 		${this.timestamp? html`
-			<div class="small">This page was last edited ${this.timestamp} (UTC)</div>
+			<small>This page was last edited ${this.timestamp} (UTC)</small>
 		` : ''}
 		<div class="bottom">
 			<div>
