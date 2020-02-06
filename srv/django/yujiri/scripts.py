@@ -52,4 +52,4 @@ def strip_html_suffix():
 		print(cmt.article_path + ' changed to ' + newpath)
 		cmt.save()
 
-strip_html_suffix()
+breakpoint()
