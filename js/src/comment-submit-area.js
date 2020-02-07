@@ -1,6 +1,7 @@
 import {LitElement, html, css} from 'lit-element';
+import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
-import {readCookie, setCookie, api} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('comment-submit-area', class extends LitElement {
@@ -8,6 +9,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		return {
 			reply_to: {type: String},
 			user: {type: String},
+			previewHTML: {type: String, attribute: false},
 		}
 	}
 	static get styles() {
@@ -24,11 +26,24 @@ customElements.define('comment-submit-area', class extends LitElement {
 			margin-top: 0;
 			margin-bottom: 0;
 		}
+		#preview {
+			border: 1px solid var(--weakcolor);
+			padding: 2px;
+		}
 		`];
+	}
+	constructor() {
+		super();
+		this.savedContents = '';
 	}
 	render() {
 		return html`
 		<button @click="${this.submit}">Submit</button>
+		${this.previewHTML? html`
+			<button @click="${this.unpreview}">Edit</button>
+		`:html`
+			<button @click="${this.preview}">Preview</button>
+		`}
 		<br>
 		<label for="name">Name:</label>
 		<input id="name">
@@ -36,16 +51,21 @@ customElements.define('comment-submit-area', class extends LitElement {
 		<label for="email">Email (optional):</label>
 		<input id="email" value="${this.user}">
 		<br>
-		<textarea id="body" placeholder="Your comment..."></textarea>
+		${this.previewHTML? html`
+			<div id="preview">${unsafeHTML(this.previewHTML)}</div>
+		`:html`
+			<textarea id="body" placeholder="Your comment...">${this.savedContents}</textarea>
+		`}
 		`;
 	}
 	async submit() {
+		if (this.previewHTML) await this.unpreview();
 		const nameElem = this.shadowRoot.getElementById('name');
 		const emailElem = this.shadowRoot.getElementById('email');
 		const bodyElem = this.shadowRoot.getElementById('body');
 		// Set the email cookie before sending the request, so it will be filled in if login is required.
-		setCookie('email', emailElem.value);
-		const req = await api('POST', 'comments', {
+		util.setCookie('email', emailElem.value);
+		await util.api('POST', 'comments', {
 			name: nameElem.value,
 			email: emailElem.value,
 			reply_to: this.reply_to || window.location.pathname,
@@ -61,5 +81,18 @@ customElements.define('comment-submit-area', class extends LitElement {
 			nameElem.value = emailElem.value = bodyElem.value = '';
 		}
 		// TODO eventually this should handle showing the comment as subscribed if you authed it.
+	}
+	async preview() {
+		this.savedContents = this.shadowRoot.getElementById('body').value;
+		const resp = await util.api('POST', 'comments/preview', undefined, this.savedContents);
+		try {
+			this.previewHTML = await resp.text();
+		} catch (err) {
+			return util.showToast('err', "Couldn't read response from server");
+		}
+	}
+	async unpreview() {
+		this.previewHTML = '';
+		await this.updateComplete;
 	}
 });
