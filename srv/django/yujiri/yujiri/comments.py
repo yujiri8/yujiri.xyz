@@ -5,7 +5,7 @@ import django.core.exceptions as exceptions
 import json, re, secrets, base64, hashlib, subprocess, uuid, urllib.parse
 
 from . import common
-from .models import Comment, User, Subscription
+from .models import Comment, User, Subscription, markdown
 
 SUB_CONFIRM_MSG_TXT = """You asked to modify notification settings for %s on yujiri.xyz, right? This email is being sent incase it wasn't you. If it was, please visit https://yujiri.xyz/api/notifs/prove?token=%s to confirm your changes and obtain an auth token that will be remembered by your browser so you won't have to do this regularly."""
 REPLY_NOTIF_TXT = """
@@ -147,6 +147,9 @@ def delete_comment(req):
 		return HttpResponse(status = 400)
 	get_object_or_404(Comment, id = id).delete()
 	return HttpResponse(status = 204)
+
+def preview_comment(req):
+	return HttpResponse(markdown(req.body.decode('utf-8')))
 
 def claim_email(req):
 	"""A thin wrapper around register_email that turns it into a valid endpoint handler."""

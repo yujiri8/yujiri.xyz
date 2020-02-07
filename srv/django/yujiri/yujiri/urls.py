@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/spem/words', spem.words_router),
     path('api/spem/tags', spem.get_tags),
     path('api/comments', comments.comment_router),
+    path('api/comments/preview', comments.preview_comment),
     path('api/recent_comments', comments.recent_comments),
     path('api/notifs/claim', comments.claim_email),
     path('api/notifs/prove', comments.prove_email),
