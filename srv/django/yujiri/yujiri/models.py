@@ -3,8 +3,9 @@ import django.contrib.postgres.fields as pg_fields
 from django.utils import timezone
 import django.core.exceptions as exceptions
 
-import uuid, datetime
-import markdown2, html
+import uuid, datetime, html
+
+import markdown2
 
 class Word(models.Model):
 	word = models.CharField(max_length=30, primary_key=True)

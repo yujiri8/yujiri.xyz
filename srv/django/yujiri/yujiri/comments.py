@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 import django.core.exceptions as exceptions
 
@@ -18,7 +18,7 @@ On %s, %s posted on %s:
 
 ------
 
-To edit your subscriptions, visit https://yujiri.xyz/notifs.html.
+To edit your subscriptions, visit https://yujiri.xyz/notifs.
 
 Don't reply by email. That doesn't work yet.
 """
@@ -181,7 +181,7 @@ def prove_email(req):
 	# Might as well change the token.
 	user.auth = gen_auth_token()
 	user.save()
-	resp = HttpResponseRedirect('/notifs.html')
+	resp = HttpResponseRedirect('/notifs')
 	return grant_auth(resp, user)
 
 def edit_subs(req):
@@ -210,10 +210,10 @@ def see_subs(req):
 	user = common.check_auth(req)
 	if not user: return HttpResponse(status = 401)
 	subs = Subscription.objects.filter(user = user)
-	resp = HttpResponse(json.dumps({
+	resp = JsonResponse({
 		'subs':	[sub.dict() for sub in subs],
 		'email': user.email,
-	}))
+	})
 	return resp
 
 def send_reply_notifs(orig_comment):
