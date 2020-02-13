@@ -24,14 +24,14 @@ Don't reply by email. That doesn't work yet.
 """
 
 def comment_router(req):
-	if req.method == "GET":
-		return get_comments(req)
 	if req.method == "POST":
 		return accept_comment(req)
 	if req.method == "PUT":
 		return edit_comment(req)
 	if req.method == "DELETE":
 		return delete_comment(req)
+	else:
+		return get_comments(req)
 
 def get_comments(req):
 	user = common.check_auth(req) # Authentication is optional here.
