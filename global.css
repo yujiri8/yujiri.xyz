@@ -30,7 +30,7 @@ body {
 	background-color: var(--bgcolor);
 	color: var(--textcolor);
 }
-div.content {
+article {
 	margin: var(--outer-margins);
 	margin-top: calc(var(--outer-margins) + 1em);
 }
