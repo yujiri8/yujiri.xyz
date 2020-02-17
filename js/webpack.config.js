@@ -1,11 +1,10 @@
-const config = {
-  mode: 'production',
+const config = (env, argv) => ({
   entry: './src/main.js',
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
+  ...env && env.dev && {devtool: 'source-map'},
   module: {
     rules: [
       {
@@ -15,7 +14,7 @@ const config = {
       }
     ]
   }
-};
+});
 
 module.exports = config;
 

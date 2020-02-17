@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "d": "webpack -d --mode development && cp dist/* /root/htmltest/",
-    "p": "webpack -p --mode production && cp dist/bundle.js /root/html/"
+    "d": "webpack --env.dev && cp dist/* /root/htmltest/",
+    "p": "webpack && cp dist/bundle.js /root/html/"
   },
   "author": "Yujiri (Ryan Westlund)",
   "license": "BSD-3-Clause",
