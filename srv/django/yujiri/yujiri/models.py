@@ -9,7 +9,7 @@ import markdown2
 
 class Word(models.Model):
 	word = models.CharField(max_length=30, primary_key=True)
-	meaning = models.CharField(max_length=100)
+	meaning = models.CharField(max_length=200)
 	notes = models.TextField()
 	translations = pg_fields.ArrayField(base_field=models.CharField(max_length=50))
 	tags = pg_fields.ArrayField(base_field=models.CharField(max_length=50))
