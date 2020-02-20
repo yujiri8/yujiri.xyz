@@ -1,3 +1,5 @@
+#! /usr/local/bin/python3.7 -i
+
 import os, django
 os.environ['DJANGO_SETTINGS_MODULE'] = 'yujiri.settings'
 django.setup()
@@ -51,5 +53,3 @@ def strip_html_suffix():
 		cmt.article_path = newpath
 		print(cmt.article_path + ' changed to ' + newpath)
 		cmt.save()
-
-breakpoint()
