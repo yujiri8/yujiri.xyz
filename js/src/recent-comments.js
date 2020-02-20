@@ -21,6 +21,10 @@ customElements.define('recent-comments', class extends LitElement {
 		}
 		`];
 	}
+	constructor() {
+		super()
+		this.count = 10;
+	}
 	render() {
 		return html`
 		<h2>Recent comments</h2>
@@ -30,6 +34,7 @@ customElements.define('recent-comments', class extends LitElement {
 				: "Loading..."
 			}
 		</div>
+		<button @click="${this.loadMore}">Load 5 more</button>
 		`;
 	}
 	firstUpdated() {
@@ -37,12 +42,16 @@ customElements.define('recent-comments', class extends LitElement {
 		this.load();
 	}
 	async load() {
-		const req = await api('GET', 'recent_comments');
+		const req = await api('GET', 'recent_comments', {count: this.count});
 		try {
 			this.comments = await req.json();
 		} catch (err) {
 			showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
+	}
+	loadMore() {
+		this.count += 5;
+		this.load();
 	}
 });
