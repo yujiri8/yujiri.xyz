@@ -47,7 +47,7 @@ You might've already thought to try this and figured out how it works, but what 
 Negative indices start from the end. Note that this means *they are not subject to zero-indexing*, since -0 is the same as 0. 0 is the first element, 1 is the second element, -1 is the last element, -2 is the second-last. If you find this confusing, you're not alone :)
 </div>
 
-If you try to acces an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
+If you try to access an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
 ```
 >>> len("hi")
 2
@@ -110,7 +110,7 @@ Note that with `for`, the expression that tells it the sequence to be iterated (
 
 In general, in Python you should never have to iterate in the fashion I had you come with before I told you about this, but many other languages require it (C, Javascript in some situations), so it's a very good problem to have solved.
 
-**Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the latter is in the string.
+**Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the letter is in the string.
 <expand-note block closedtext="Show solution" opentext="Hide solution" markdown="1">
 ```
 string = input("give me a string:")
@@ -144,13 +144,13 @@ True
 >>> 'eH' in 'Hello'
 False
 ```
-Testing whether a multi-character string is inside of another string manually is a nightmare comapred to this. (If you want, take a stab at it.)
+Testing whether a multi-character string is inside of another string manually is a nightmare compared to this. (If you want, take a stab at it.)
 
 `not in` works the way you expect, even though, technically, you should expect it to be `not (x in y)` (which does also work). After all, `x not > y` is a syntax error. Basically, it's like `not in` is an operator in its own right.
 
 ## `break` and `continue`
 
-Now that we're iterating on stuff, it's a very good time to introduce two handy keywords used in loops: the `break` statement, which exits the loop immediately even if it's condition is still true, and `continue`, which skips the rest of the current iteration, and continues from the top of the loop. Here's a demo of both:
+Now that we're iterating on stuff, it's a very good time to introduce two handy keywords used in loops: the `break` statement, which exits the loop immediately even if its condition is still true, and `continue`, which skips the rest of the current iteration, and continues from the top of the loop. Here's a demo of both:
 ```
 number = 0
 while number < 10:
@@ -280,7 +280,7 @@ You should also be aware of semicolons. You can put multiple unrelated statement
 ```
 You generally shouldn't, though, because it's [less readable](https://yujiri.xyz/software/readability) to have multiple, semantically distinct instructions on one line. <!--(In fact, some Python linters consider this always wrong and will print a warning if they ever see you doing it.)-->
 
-### Tripe-quioted strings
+### Triple-quioted strings
 
 Another thing I'll talk about while we're on the topic of line continuations: Triple-quoted strings, enclosed on both sides with `"""` or `'''`, are allowed to span multiple lines without a backslash.
 ```
