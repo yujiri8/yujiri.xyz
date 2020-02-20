@@ -27,10 +27,10 @@ compromising themselves.
 ```
 So they're saying not just that the browser should warn when you try to connect over HTTP, but that it should *not offer you a choice*, even though there's no technical reason why proceeding is impossible. And indeed the browsers have implemented this; Firefox and Chromium both won't *allow* me to connect if there's a cert error.
 
-The reason I oppose this is that it represents a betrayal of principles and a flagrant breach of respect for the user. Implementing this means taking away people's control of their own devices. If security designed to protect "me" requires me not having a choice, something is wrong with the underlying philosophy.
+The reason I oppose this is that it represents a betrayal of principles and a flagrant breach of respect for the user. Implementing this means taking away people's control of their own devices. If security designed to protect "me" involves me not having a choice, something is wrong with the underlying philosophy.
 
 [An excellent quote from Linus](http://quotes.cat-v.org/programming/): "... If you think your users are idiots, only idiots will use it." Unfortunately, this time, even the smart people have no choice but to use it.
 
-Luckily, `curl` and `httpie` can be used to circumvent this, but that I need them to get out of my browser to do so is absurd.
+Luckily, `curl` and `httpie` can be used to circumvent this, but that I need to get out of my browser to do so is absurd.
 
 It's for the same reason [I oppose programs that don't allow running as root](why_root), but at least most of those programs allow a flag to override it.
