@@ -1,8 +1,6 @@
 import {LitElement, html, css} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
-import './a-comment.js';
-import './comment-submit-area.js';
 import {readCookie, api, showToast, summarizeComment} from './util.js';
 import {styles} from './css.js';
 
