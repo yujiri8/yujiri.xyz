@@ -344,12 +344,14 @@ https://yujiri.xyz/software/pythontut3
 https://yujiri.xyz/software/readability
 https://yujiri.xyz/software/renpy
 https://yujiri.xyz/software/root
+https://yujiri.xyz/software/safety_choice
 https://yujiri.xyz/software/shell_basics
 https://yujiri.xyz/software/sqlite
 https://yujiri.xyz/software/unix_manual
 https://yujiri.xyz/software/unix_permissions
 https://yujiri.xyz/software/unix_streams
 https://yujiri.xyz/software/why_program
+https://yujiri.xyz/software/why_root
 https://yujiri.xyz/software/why_unix
 https://yujiri.xyz/spem/
 https://yujiri.xyz/spem/alphabet
