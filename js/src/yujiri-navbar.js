@@ -71,7 +71,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 					<button @click="${this.login}">Login</button>
 				`}
 			</div>
-			<div class="path">${unsafeHTML(this.computePath())}</div>
+			<nav class="path">${unsafeHTML(this.computePath())}</nav>
 			<div class="theme-switch-area">
 				<label for="theme-switch">Dark mode</label>
 				<mwc-switch id="theme-switch" @change="${this.toggleTheme}"></mwc-switch>
