@@ -13,18 +13,4 @@ Automatic ZFS snapshots made from (root's) crontab mean I essentially can't caus
 
 I have never had a major disaster as a result of being root. The worst I ever did was attempt to `rm /*` (not `rm -r`, since I wasn't using my aliases - it was a shell script gone wrong). I deleted a couple of things like `/COPYRIGHT` and `/entropy`, which I recovered from ZFS snapshots, and all was well. The whole event costed me only about 1 hour (and most of that time was spent assessing the damage rather than recovering from it.)
 
-So that's why I live as root. I'm very happy with the decision, and find the pervasive insistence that it's some kind of horrible mistake a little insulting. I know what I'm doing with my own system and don't need to be protected from myself.
-
-I respect other people's choices to not live as root. I don't think their decisions are unreasonable. What I don't respect is people trying to force the same choice on me. I have a bone to pick with people who write applications that don't allow running them as root. If it prints a warning and then proceeds (like [Tor](https://torproject.org)), that's perfectly cool. If it requires a flag to run it as root (like [LMMS](https://lmms.io) and Chromium), that's rather annoying, especially if the error message is [downright condescending](https://stackoverflow.com/questions/25672924/run-bower-from-root-user-its-possible-how), but okay. But I'm extremely insulted by applications that outright don't allow it. For example, GTK (I know GTK isn't an application). I once decided it would be good to have my browser - my least trusted application - have non-root privileges, so I tried to set Chromium to be owned by a guest user 'browser' and setuid, so I could be root but run my browser without those privileges. This plan initially failed with the following message:
-```
-(process:15337): Gtk-WARNING **: 15:42:24.216: This process is currently running setuid or setgid.
-This is not a supported use of GTK+. You must create a helper
-program instead. For further details, see:
-
-    http://www.gtk.org/setuid.html
-
-Refusing to initialize GTK+.
-```
-(Funny how their attempt to stop insecure uses of GTK actually stopped me from *dropping* root privileges.) So I gave up on it and just continued running my browser as root. This is a good example in general of why trying to force people to do things can often be counterproductive.
-
-(Later on, I did learn some more C and write a `browser_wrapper.c` that would let me do this, and later after that, decided it still wasn't worth the effort and complexity of making this actually work, since so many other files and directories had to be writable by `browser` for Chromium to work, and different browsers required different ones, and which ones seemed to change periodically, breaking my shell script to assign them. I'm not really worried about my browser compromising my OS. After all, it's open-source, and the odds that it could do something with those privileges that would cause me significant harm are pretty negligible.)
+So that's why I live as root. I'm very happy with the decision, and find the pervasive insistence that it's some kind of horrible mistake a little insulting. I know what I'm doing with my own system and [don't need to be protected from myself](safety_choice).
