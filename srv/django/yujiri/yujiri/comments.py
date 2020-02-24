@@ -162,9 +162,17 @@ def register_email(email):
 	Returns an HTTP response if it fails; None if it succeeds."""
 	if not re.fullmatch(r"[^@]+@[\w]+\.[\w]+", email):
 		return None, HttpResponse("That doesn't look like a valid email address.", status = 400)
-	user = User(email = email, auth = gen_auth_token())
-	user.save()
-	send_confirm_email(user)
+	# First, check whether the email is already registered.
+	try:
+		user = User.objects.get(email = email)
+	except exceptions.ObjectDoesNotExist:
+		# This is expected. If they're making a new account, it shouldn't exist.
+		user = User(email = email, auth = gen_auth_token())
+		user.save()
+		send_confirm_email(user)
+	else:
+		# It does exist. They're asking to claim a registered email. Just send the confirmation.
+		send_confirm_email(user)
 	return user, None
 
 def send_confirm_email(user):
