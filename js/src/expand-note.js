@@ -5,8 +5,6 @@ import {styles} from './css.js';
 customElements.define('expand-note', class extends LitElement {
 	static get properties() {
 		return {
-			// I wonder if we can compute whether it needs to go up a
-			// level based on whether we're at an index page.
 			closedText: {type: String},
 			openText: {type: String},
 			open: {type: Boolean},
