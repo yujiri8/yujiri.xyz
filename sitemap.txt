@@ -335,6 +335,7 @@ https://yujiri.xyz/software/javascript
 https://yujiri.xyz/software/nano
 https://yujiri.xyz/software/nginx
 https://yujiri.xyz/software/oop
+https://yujiri.xyz/software/overempowering_js
 https://yujiri.xyz/software/programming
 https://yujiri.xyz/software/programming_paradigms
 https://yujiri.xyz/software/python
