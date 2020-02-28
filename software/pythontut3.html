@@ -202,6 +202,13 @@ You can also add tuples together:
 <div class="highlight" markdown="1">
 Something I struggled with when learning Python was trying to add a single element to a tuple like: `nums += 5`. This would raise a `TypeError`, saying `can only concatenate tuple (not "int") to tuple`. Remember, since `var1 += var2` is shorthand for `var1 = var1 + var2`, `nums += 5` is saying `nums = nums + 5`. To add something to a tuple, the new addend has to itself be made into a tuple, like: `nums += (5,)`.
 </div>
+In fact, you can also multiply tuples:
+```
+>>> nums = (1, 2, 3)
+>>> nums * 3
+(1, 2, 3, 1, 2, 3, 1, 2, 3)
+```
+But this is very rarely useful.
 
 There is one difference in the way the `in` operator works: with "real" sequences, like tuples, `in` only tests if one of the members of the sequence after `in` is equal to the element before `in`. With strings, `in` does "in a row" checking rather than "is a member" checking, so `"he" in 'hello'` evaluates to `True`, but with tuples, `('h', 'e') in ('h', 'e', 'l', 'l', 'o')` or `(5, 3)` in `(5, 3, 6)` evaluates to `False`, because none of the members of the tuple on the right is the tuple on the left. The reason for this behavior is that, as you may have guessed, you can have a tuple of tuples:
 
