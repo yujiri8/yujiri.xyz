@@ -260,19 +260,6 @@ arr.slice(1, 3); // Returns ['b', 'c']
 </pre><p>
 It's not horrible, but it's a good deal more verbose than most other languages.
 </p>
-<h3 class="bad">No passing parameters by name</h3>
-<p>
-Function parameters in Javascript can't be passed by name, they have to be passed by position.
-For a long time I actually thought you could do this because it was working for me, but then I got bitten by the inability
-later and found out it was working in the first place because I was actually still passing them in the right order;
-the parameter assignments I was doing were actually assigning to global variables. The second place I tried to use it it was
-in a file with <code>'use strict';</code> enabled so I found out.
-</p><p>
-It is of course possible to have your function take an object for its parameters, but that's an inadequate replacement
-because it means the function has to be specifically made to be used this way, so at best that works on functions you write
-yourself and that you refactor with a more convoluted syntax to get this functionality and also lose the ability to pass
-them by position while you're at it.
-</p>
 <h3 class="bad">Single versus double quotes - meaningless decision</h3>
 <p>
 Another point from my review of Python. Having to constantly make this decision distracts me while I'm coding
