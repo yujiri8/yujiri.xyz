@@ -142,3 +142,10 @@ a.sectionlink:visited {
 .hidden {
 	display: none;
 }
+
+/* Middle finger to you browsers. I will not let you mutilate my h1s into h2s inside <article>. */
+h1 {
+	font-size: 2em;
+	margin-block-start: 0.67em;
+	margin-block-end: 0.67em;
+}
