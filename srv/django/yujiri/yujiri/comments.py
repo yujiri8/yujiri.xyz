@@ -44,18 +44,18 @@ def get_comments(req):
 		if reply_to.endswith('/index'):
 			reply_to = reply_to[:-5]
 		comments = Comment.objects.filter(reply_to = reply_to).order_by('-time')
-		return HttpResponse(json.dumps([c.dict(user = user, raw = raw) for c in comments]))
+		return JsonResponse([c.dict(user = user, raw = raw) for c in comments], safe = False)
 	# Case 2: a specific comment requested.
 	elif id:
 		comment = get_object_or_404(Comment, id = id)
-		return HttpResponse(json.dumps(comment.dict(user = user, raw = raw)))
+		return JsonResponse(comment.dict(user = user, raw = raw))
 	else:
 		return HttpResponse(status = 400)
 
 def recent_comments(req):
 	count = req.GET.get('count') or 10
 	comments = Comment.objects.order_by('-time')[:int(count)]
-	return HttpResponse(json.dumps([comment.summary_dict() for comment in comments]))
+	return JsonResponse([comment.summary_dict() for comment in comments], safe = False)
 
 def accept_comment(req):
 	reply_to = req.GET.get('reply_to')

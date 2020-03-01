@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 import django.core.exceptions as exceptions
@@ -48,7 +48,7 @@ def get_words(req):
 	# Search.
 	filter = reduce(lambda x, y: x & y, filters)
 	words = Word.objects.filter(filter).order_by('-time_modified')
-	return HttpResponse(json.dumps([word.dict(no_markdown) for word in words]))
+	return JsonResponse([word.dict(no_markdown) for word in words], safe = False)
 
 def get_tags(req):
 	words = Word.objects.filter()
@@ -56,7 +56,7 @@ def get_tags(req):
 	for word in words:
 		for tag in word.tags:
 			tags.add(tag)
-	return HttpResponse(json.dumps(sorted(tags)))
+	return JsonResponse(sorted(tags), safe = False)
 
 def add_word(req):
 	try:
