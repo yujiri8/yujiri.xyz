@@ -332,6 +332,7 @@ https://yujiri.xyz/software/forgot_password
 https://yujiri.xyz/software/go
 https://yujiri.xyz/software/install
 https://yujiri.xyz/software/javascript
+https://yujiri.xyz/software/kill_software
 https://yujiri.xyz/software/nano
 https://yujiri.xyz/software/nginx
 https://yujiri.xyz/software/oop
@@ -348,6 +349,8 @@ https://yujiri.xyz/software/root
 https://yujiri.xyz/software/safety_choice
 https://yujiri.xyz/software/shell_basics
 https://yujiri.xyz/software/sqlite
+https://yujiri.xyz/software/tags
+https://yujiri.xyz/software/tests
 https://yujiri.xyz/software/unix_manual
 https://yujiri.xyz/software/unix_permissions
 https://yujiri.xyz/software/unix_streams
