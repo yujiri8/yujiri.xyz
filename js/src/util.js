@@ -15,7 +15,7 @@ export async function api(method, url, query, body) {
 		throw err;
 	}
 	if (resp.status == 401) {
-		// Don't try to recurisvely make the login request. Let the auth popup handle retries.
+		// Don't try to recursively make the login request. Let the auth popup handle retries.
 		if (url == 'login') return resp;
 		await login();
 		return api(method, url, undefined, body);
