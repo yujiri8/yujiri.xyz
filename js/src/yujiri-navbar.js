@@ -66,7 +66,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 			<div>
 				${this.user && this.loggedIn? html`
 					Logged in as ${this.user}<br>
-					<a href="/notifs.html">notification settings</a>
+					<a href="/notifs">notification settings</a>
 				`: html`
 					<button @click="${this.login}">Login</button>
 				`}
