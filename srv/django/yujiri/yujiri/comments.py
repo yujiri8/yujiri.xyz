@@ -121,6 +121,7 @@ def accept_comment(req):
 	if clear_auth:
 		resp.set_cookie('auth', '', max_age=0)
 		resp.set_cookie('email', '', max_age=0)
+		resp.set_cookie('haskey', '', max_age=0)
 	return resp
 
 def edit_comment(req):
@@ -282,7 +283,6 @@ def login(req):
 	resp = HttpResponse(status = 204)
 	return grant_auth(resp, user)
 
-# TODO maybe merge setpw and setusername. You could send a JSON object with the properties you wanna modify.
 def setpw(req):
 	user = common.check_auth(req)
 	if not user: return HttpResponse(status = 401)
@@ -305,15 +305,28 @@ def setusername(req):
 	resp = HttpResponse(status = 204)
 	return grant_auth(resp, user)
 
+def setpubkey(req):
+	user = common.check_auth(req)
+	if not user: return HttpResponse(status = 401)
+	key = req.FILES['key']
+	user.pubkey = key.read()
+	print(user.pubkey)
+	# Change the token after this.
+	user.auth = gen_auth_token()
+	user.save()
+	resp = HttpResponse(status = 204)
+	return grant_auth(resp, user)
+
 def gen_auth_token(): return secrets.token_urlsafe(32)
 
 def hash_pw(pw): return hashlib.sha512(pw).hexdigest()
 
 def grant_auth(resp, user):
 	"""Takes an HttpResponse and a token and sets the auth and email cookies on it."""
-	# they last a month.
+	# They last a month.
 	resp.set_cookie('auth', user.auth, secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('email', urllib.parse.quote(user.email), secure=True, samesite='lax', max_age=2592000)
+	resp.set_cookie('haskey', bool(user.pubkey), secure=True, samesite='lax', max_age=2592000)
 	# Set the admin cookie also if it's me.
 	if user.name == 'Yujiri': resp.set_cookie('admin', 'true', max_age=2592000)
 	return resp

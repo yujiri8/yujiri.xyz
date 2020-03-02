@@ -83,8 +83,9 @@ class Comment(models.Model):
 			return "You cannot possibly need a name longer than 30 characters."
 
 class User(models.Model):
-	email = models.CharField(primary_key=True, max_length=100)
+	email = models.CharField(unique=True, max_length=100, null=True)
 	name = models.CharField(unique=True, max_length=30, null=True)
+	pubkey = models.BinaryField()
 	password = models.TextField()
 	auth = models.CharField(max_length=50)
 	def __str__(self):
