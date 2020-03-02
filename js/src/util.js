@@ -43,7 +43,7 @@ export async function handleErr(resp) {
 	} catch {
 		return showToast('err', "Couldn't understand response from server");
 	}
-	if (!text || text.includes("<!doctype html>")) // Don't display HTML responses.
+	if (!text || text.includes("<html")) // Don't display HTML responses.
 		text = window.errorCodes[resp.status] || `Error ${resp.status}`;
 	showToast('err', text);
 }
