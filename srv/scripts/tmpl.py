@@ -39,9 +39,10 @@ def process_file(infile, outfile, templates):
 	templatefile = templates + 'article.html'
 	with open(templatefile, encoding='utf-8') as f:
 		template = f.read()
+	# Generate the output before writing it, so we don't truncate the file.
+	output = build_article(article, template, infile[len(SRCDIR):], get_last_modified(infile))
 	# Write the output.
-	with open(outfile, 'w', encoding='utf-8') as f:
-		f.write(build_article(article, template, infile[len(SRCDIR):], get_last_modified(infile)))
+	with open(outfile, 'w', encoding='utf-8') as f: f.write(output)
 
 def get_last_modified(*files):
 	return parse_fs_time(max(os.path.getmtime(file) for file in files))
