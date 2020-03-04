@@ -345,6 +345,7 @@ https://yujiri.xyz/software/python
 https://yujiri.xyz/software/pythontut1
 https://yujiri.xyz/software/pythontut2
 https://yujiri.xyz/software/pythontut3
+https://yujiri.xyz/software/pythontut4
 https://yujiri.xyz/software/readability
 https://yujiri.xyz/software/renpy
 https://yujiri.xyz/software/root

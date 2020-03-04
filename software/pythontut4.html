@@ -111,6 +111,22 @@ If shared reference is still confusing to you, you're not alone. I was still tri
 
 By the way, you can use the `list` or `tuple` functions to convert between lists and tuples, or to convert strings to either (but using `str` on a list or tuple doesn't do what you might expect - it gives you the representation you get when you print them).
 
+## Comparing other types
+
+<!--I bet these should've been introed gradually.-->
+
+While we're at it, it's about time I mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than operators treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
+
+You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com), or on countless other websites. <expand-note>Technically, Python strings use UTF-8, not ASCII. But that's a discussion for another time, and UTF-8 is fully backward-compatible.</expand-note>
+
+For Booleans, `True` is considered greater than `False`. In fact, if you play around besides the code I'm showing you, you might've already noticed that `True` and `False` can be used as `1` and `0`. If you didn't, try `print(True + True + False + True)`.
+
+For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with the greater element is considered greater. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as a list or tuple of characters. <expand-note>In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</expand-note>
+
+## `None`
+
+There's a special value called `None` that's very similar to `False`, but useful to have as an alternative. The difference in functionality is that `None` can't act like 0 or be compared with other numbers (that raises a `TypeError`). `None` does evaluate to `False` when used as a condition. But using `None` instead of `False` can make your code clearer, because setting a variable to `False` implies that it's only ever supposed to have a boolean value. Using `None` communicates that the variable is meant to hold another type of value at some point or in some situation, but doesn't right now. I'll show you at least an example later where using `None` is better than using `False`, even though either would work.
+
 # Methods
 
 I didn't really want to talk about methods until we got to objects or at least to functions, but oh well, I can't avoid this any longer. For now, let's just say that methods are basically functions attached to a specific data type and with a special `.` syntax. Here's an example:
@@ -169,7 +185,7 @@ Even ints and floats have some methods, but they're all pretty obscure.
 
 # Sentence manipulator
 
-To use your newfound knowledge of mutable lists, methods, and shared reference, try writing a program that gets a sentence from the user, and then lets gives them do the following things to it until they're done:
+To use your newfound knowledge of mutable lists, methods, and shared reference, try writing a program that gets a sentence from the user, and then lets them do the following things to it until they're done:
 
 * Insert a word
 * Remove all occurences of a word
@@ -178,7 +194,7 @@ To use your newfound knowledge of mutable lists, methods, and shared reference, 
 
 And whatever other operations you want to implement.
 
-When they're done manipulating their sentence, print it out with the first word capitalized like a 3proper sentence. Then print the number of times each letter occurs in the sentence.
+When they're done manipulating their sentence, print it out with the first word capitalized like a proper sentence. Then print the number of times each letter occurs in the sentence.
 
 <expand-note block opentext="Hide solution" closedtext="Show solution">
 ```
@@ -247,7 +263,7 @@ for letter in "abcdefghijklmnopqrstuvwxyz":
 
 # Dictionaries
 
-Another crucial data type is the dictionary (usually just called a dict). Dicts are basically sets that also store a corresponding value for each key, and you can lookup a key to get its value:
+Another crucial data type is the dictionary (usually just called a dict). A real dictionary has a definition for each word. A Python d ict has a 'value' for each 'key', and you can lookup a key to get its value:
 ```
 >>> spanish = {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
 >>> print(spanish['casa'])
@@ -257,7 +273,7 @@ How neat is that!
 
 Dicts don't respect order, by the way, so `{'a': 'z', 'b': 'y'}` and `{'b': 'y', 'a': 'z'}` are identical dicts.
 
-Dicts (usually just called dicts) don't store duplicates, so when you assign to a key, it gets that value regardless of what it had or whether it existed before:
+Dicts don't store duplicates, so when you assign to a key, it gets that value regardless of what it had or whether it existed before:
 ```
 >>> spanish['hablar'] = 'talk'
 {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
@@ -303,19 +319,9 @@ si means yes
 hablar means speak
 ```
 
-## Comparing other types
-
-While we're at it, it's about time I mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than operators treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
-
-You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com), or on countless other websites. <expand-note>Technically, Python strings use UTF-8, not ASCII. But that's a discussion for another time, and UTF-8 is fully backward-compatible.</expand-note>
-
-For Booleans, `True` is considered greater than `False`. In fact, if you play around besides the code I'm showing you, you might've already noticed that `True` and `False` can be used as `1` and `0`. If you didn't, try `print(True + True + False + True)`.
-
-For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with u. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as li s or tuple of characters. <expand-note>In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</expand-note>
-
 # Score reporter!
 
-Here's a (hopefully) fun assignment. Write a program that lets a group of people each enter their names and a list of scores they got. Then, when the (user)s confirm they're done, print the highest score and the name of the person who got it, and the average score of each person.
+Here's a (hopefully) fun assignment. Write a program that lets a group of people each enter their names and a list of scores they got. Then, when the user(s) confirm they're done, print the highest score and the name of the person who got it, and the average score of each person.
 
 Some functions that will help you here are the builtin `max` and `sum`, which take a sequence of any type and give you the max or total value, if applicable. (If you use them on a sequence of values that can't be compared, like `max([4, 'a'])`, you'll get an error.) You can do it without these, by implementing their logic yourself, but using the builtin ones will save you some effort.
 
