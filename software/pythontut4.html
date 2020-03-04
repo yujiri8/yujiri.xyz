@@ -44,11 +44,11 @@ And that's what's so important about lists: they're mutable.
 >>> nums[0] = 1.5
 [1.5, 2, 4]
 ```
-So you might be wondering why you would ever use tuples. Well, there at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <expand-note>(Some languages offer a way of making it actually impossible to change a variable's value, but Python does not.)</expand-note> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
+So you might be wondering why you would ever use tuples. Well, there at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <expand-note>(Some languages offer a general way of making it impossible to change a variable, but Python does not.)</expand-note> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
 
 # Shared reference
 
-Get ready for something really hard. Remember when I told you that `x += y` is just shorthand for `x = x + y`? That was kind of an oversimplification. It's only true *for immutable data types*. But for mutable things like lists, there's a difference.
+Get ready for something really hard. Remember when I told you that `x += y` is just shorthand for `x = x + y`? That was kind of an oversimplification. It's true *for immutable data types*, but for mutable things like lists, there's a difference.
 
 Mutable data types exhibit **shared reference**. With immutable types, if you assign one variable to another, and then change one, the other stays:
 ```
@@ -75,7 +75,7 @@ They don't stay linked. Lists, however:
 >>> words
 ['hi', 'hello', 'hey']
 ```
-It changed both! That's because there was actually only ever one list. `words` was set to refer to a list, then `words2` was set to the value of `words`, so when you change one, both names see it as changed. Whereas with tuples or strings or ints, since they're immatuable, when you do `words2 += ('hey',)`, what's really happening is that it expands to `words2 = words2 + ('hey',)`, so a second tuple is being created that consists of `words2 + ('hey',)`. When `words2` is a list, on the other hand, `words2 += ['hey']` concatenates `['hey']` to the *existing* list stored in `words2`. We call it adding `in-place` or *mutating* the existing list, as opposed to making a new one and assigining the new one to the same variable.
+It changed both! That's because there was actually only ever one list. `words` was set to refer to a list, then `words2` was set to the value of `words`, so when you change one, both names see it as changed. Whereas with tuples or strings or ints, since they're immutable, when you do `words2 += ('hey',)`, what's really happening is that it expands to `words2 = words2 + ('hey',)`, so a second tuple is being created that consists of `words2 + ('hey',)`. When `words2` is a list, on the other hand, `words2 += ['hey']` concatenates `['hey']` to the *existing* list stored in `words2`. We call it adding 'in-place' or *mutating* the existing list, as opposed to making a new one and assigining the new one to the same variable.
 
 But then there's this finding:
 ```
@@ -89,7 +89,7 @@ But then there's this finding:
 ```
 If you use `=` (not `+=`), `words2` is reassigned and stops referring to the same list as `words`. I told you the simplified story earlier because for immutable data types, it doesn't matter.
 
-To understand how this works, you need to understand the difference between a variable and its value. Variables in Python are nothing more than names. If you do `nums = [1, 2, 3]` and then later `nums = [4, 5, 6]`, you don't change the list, you change `nums`. This distinction is important. The list itself is a block of data stored in memory somewhere. The new list is stored in a different memory location. But when you do `nums2 = nums`, `nums2` refers to the same underlying data as `nums`, not an identical copy.
+To understand how this works, you need to understand the difference between a variable and its value. Variables in Python are nothing more than names. If you do `nums = [1, 2, 3]` and then later `nums = [4, 5, 6]`, you don't change the list, you change `nums`. This distinction is important. The list itself is a block of data stored in memory somewhere. The new list is stored in a different memory location. But when you do `nums2 = nums`, it makes `nums2` refer to the same underlying data as `nums`, as opposed to making an identical copy.
 
 The `is` operator is really useful for understanding this:
 ```
@@ -122,7 +122,7 @@ I didn't really want to talk about methods until we got to objects or at least t
 So lists have this `remove` method that takes a value and deletes the first element in the list that is that value. (It does only get the first one; if `nums` were `[5, 4, 5]`, it would've been `[4, 5]` after the operation.)
 
 <div class="highlight" markdown="1">
-**Important jargon**: the value a function **returns** is the value it's replaced with when you execute it. For example, `input` *returns* the text entered.**
+**Important jargon**: the value a function **returns** is the value it's replaced with when you execute it. For example, `input` *returns* the text entered.
 </div>
 
 The `remove` method of lists doesn't return anything.
@@ -140,7 +140,7 @@ True
 True
 >>> word.replace('l', 'x') # note that this doesn't modify the word, as I'll show on the next line
 'hexxo'
->>> word # original word is unchanged. The method returns a new string.
+>>> word # original word is unchanged. Since strings are immutable, all their methods return a new string.
 'hello'
 >>> sentence = "Hello, my friend."
 >>> sentence.split(' ')
@@ -151,23 +151,102 @@ True
 'hello, my friend.'
 >>> sentence.title()
 'Hello, My Friend.'
+>>> '...'.join(["hello", "my", "friend"]) # See how this works?
+'hello...my...friend'
 ```
 And many others. Lists and tuples also have `count` and `index`.
 
 # Other useful list methods
 
-* `list.append(value)` - adds the value to the list in-place. Note that this way, you don't have to put brackets around it.
+* `list.append(value)` - adds the value to the list in-place. Note that this way, you don't have to put brackets around it. (It's also slightly faster than using `+=`.)
 * `list.pop(i)` - removes the element at position `i` (default `-1`), and return it.
-* `list.reverse()` - reverses it in-place
 * `list.insert(index, value)` - inserts the given `value` at the given `index`.
-* `list.clear()` - removes all elements. The difference from reassigning `[]` to the variable name is that reassigning breaks shared references: `list.clear()` changes the list in-place.
-* `list.copy` - doesn't modify the list, but returns an exact copy of it. This is used to get around shared reference, since the copy is a *distinct* list even if it's identical. (This can also be done with `list[:]` - using slicing to create a new list with all the same elements.)
+* `list.reverse()` - reverses it in-place.
+* `list.clear()` - removes all elements. The difference between this and setting the variable to `[]` is that reassigning breaks shared references; `list.clear()` changes the list in-place.
 
 Even ints and floats have some methods, but they're all pretty obscure.
 
+# Sentence manipulator
+
+To use your newfound knowledge of mutable lists, methods, and shared reference, try writing a program that gets a sentence from the user, and then lets gives them do the following things to it until they're done:
+
+* Insert a word
+* Remove all occurences of a word
+* Remove the word at a specified position
+* Save the sentence incase they do something accidentally, and revert the sentence to its saved state
+
+And whatever other operations you want to implement.
+
+When they're done manipulating their sentence, print it out with the first word capitalized like a 3proper sentence. Then print the number of times each letter occurs in the sentence.
+
+<expand-note block opentext="Hide solution" closedtext="Show solution">
+```
+menu = """
+	insert - specify a word to insert and the position to put it at
+	remove - specify a word to be removed
+	pop - specify a position to remove the word at that position
+	save - save the sentence's current state
+	load - restore the saved sentence
+	done - print out the final sentence
+"""
+
+sentence = input("enter a sentence: ")
+wordlist = sentence.split(' ')
+save = None
+while True:
+	print("The following operations are available:\n" + menu)
+	operation = input("What do you wanna do? ")
+	if operation == 'insert':
+		word = input('What word should we insert? ')
+		position = int(input('And what position should we put it at? '))
+		if position >= len(wordlist):
+			print("Unfortunately, there aren't that many words, so that's an invalid position.")
+			continue
+		wordlist.insert(position, word)
+	elif operation == 'remove':
+		word = input("What word should we remove? ")
+		# Remove all of them, not just the first one.
+		while word in wordlist:
+			wordlist.remove(word)
+	elif operation == 'pop':
+		position = int(input('Which number word should we remove? '))
+		if position >= len(wordlist):
+			print("Unfortunately, there aren't that many words, so that's an invalid position.")
+			continue
+		wordlist.pop(position)
+	elif operation == 'save':
+		save = wordlist[:]
+		print('The sentence "' + sentence + '" has been saved.')
+	elif operation == 'load':
+		if save is None:
+			print("Sorry, but it looks like you forgot to save the sentence.")
+		else:
+			wordlist = save[:]
+	elif operation == 'done':
+		break
+	else:
+		print("That's not a valid choice. Try again.")
+		
+	print("The sentence is currently:", ' '.join(wordlist))
+
+# Capitalize the first word.
+wordlist[0] = wordlist[0].title()
+
+new_sentence = ' '.join(wordlist)
+print("Your final sentence is:\n" + new_sentence)
+
+print("\nLetter frequency:")
+for letter in "abcdefghijklmnopqrstuvwxyz":
+	frequency = new_sentence.lower().count(letter)
+	# Don't print the number of times if it's 0.
+	if frequency:
+		print(letter, "appears", frequency, "times")
+```
+</expand-note>
+
 # Dictionaries
 
-Another crucial data type is the dictionary. Dictionaries are basically sets that also store a corresponding value for each key, and you can lookup by by key:
+Another crucial data type is the dictionary (usually just called a dict). Dicts are basically sets that also store a corresponding value for each key, and you can lookup a key to get its value:
 ```
 >>> spanish = {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
 >>> print(spanish['casa'])
@@ -175,9 +254,9 @@ Another crucial data type is the dictionary. Dictionaries are basically sets tha
 ```
 How neat is that!
 
-Dictionaries don't respect order, by the way, so `{'a': 'z', 'b': 'y'}` and `{'b': 'y', 'a': 'z'}` are identical dictionaries.
+Dicts don't respect order, by the way, so `{'a': 'z', 'b': 'y'}` and `{'b': 'y', 'a': 'z'}` are identical dicts.
 
-Dictionaries (usually just called dicts) don't store duplicates, so when you assign to a key, it gets that value regardless of what it had or whether it existed before:
+Dicts (usually just called dicts) don't store duplicates, so when you assign to a key, it gets that value regardless of what it had or whether it existed before:
 ```
 >>> spanish['hablar'] = 'talk'
 {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
@@ -223,20 +302,6 @@ si means yes
 hablar means speak
 ```
 
-<!--
-# Sets
-
-There are also sets, which are sets in the mathematical sense:
-
-<div class="highlight" markdown="1">
-Note that since `{}` is interpreted as the empty dictionary . There is no empty set literal. To make an empty set you have to use `set()`.
-</div>
-
-Sets don't respect order (so `{1, 2, 3} == {1, 3, 2}`), and like dictionaries, don't allow duplicates.
-
-Sets are also mutable .
--->
-
 ## Comparing other types
 
 While we're at it, it's about time I mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than operators treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
@@ -249,10 +314,11 @@ For a list or tuple, comparison is done by comparing each element in sequence, a
 
 # Score reporter!
 
-Here's a (hopefully) fun assignment. Write a program that lets a group of people each enter their names and a list of scores they got. Then, when the (user)s confirm they're done, print the highest score and the name of the person who got it, and the average score and the number of scores of each person.
+Here's a (hopefully) fun assignment. Write a program that lets a group of people each enter their names and a list of scores they got. Then, when the (user)s confirm they're done, print the highest score and the name of the person who got it, and the average score of each person.
 
 Some functions that will help you here are the builtin `max` and `sum`, which take a sequence of any type and give you the max or total value, if applicable. (If you use them on a sequence of values that can't be compared, like `max([4, 'a'])`, you'll get an error.) You can do it without these, by implementing their logic yourself, but using the builtin ones will save you some effort.
 
+<expand-note block opentext="Hide solution" closedtext="Show solution">
 ```
 # The value of each key will be a nested dict of all the player's data: 'scores', 'max', and 'average'
 data = {}
@@ -279,8 +345,5 @@ print("The highest score ever was", grand_max['score'], "by", grand_max['name'])
 print("Everyone's average score:")
 for player in data:
 	print('\t' + player + ":", data[player]['average'])
-
-# use comapring other types
-# use item assignment
-# use item deletion, lots of methods
 ```
+</expand-note>
