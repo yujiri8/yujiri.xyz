@@ -55,7 +55,6 @@ https://yujiri.xyz/category_images/prismata.jpg
 https://yujiri.xyz/category_images/spem.png
 https://yujiri.xyz/ci
 https://yujiri.xyz/ci_trial_error_meme.jpg
-https://yujiri.xyz/contact
 https://yujiri.xyz/fiction/
 https://yujiri.xyz/fiction/action_scenes
 https://yujiri.xyz/fiction/agency
@@ -119,8 +118,12 @@ https://yujiri.xyz/game_design/trial_and_error
 https://yujiri.xyz/game_design/turn_timers
 https://yujiri.xyz/game_design/turn_waiting
 https://yujiri.xyz/
-https://yujiri.xyz/logo
 https://yujiri.xyz/logo24-thick.png
+https://yujiri.xyz/misc/apostasy
+https://yujiri.xyz/misc/anarchism_conversion
+https://yujiri.xyz/misc/contact
+https://yujiri.xyz/misc/logo
+https://yujiri.xyz/misc/masks
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
 https://yujiri.xyz/music/a_retro_memory.ogg
@@ -182,10 +185,8 @@ https://yujiri.xyz/protagonism/
 https://yujiri.xyz/protagonism/age_of_consent
 https://yujiri.xyz/protagonism/altruism_examples
 https://yujiri.xyz/protagonism/anarchism
-https://yujiri.xyz/protagonism/anarchism_conversion
 https://yujiri.xyz/protagonism/anarchism_history
 https://yujiri.xyz/protagonism/anarchist_memes
-https://yujiri.xyz/protagonism/apostasy
 https://yujiri.xyz/protagonism/bystander
 https://yujiri.xyz/protagonism/cartesian
 https://yujiri.xyz/protagonism/charity
