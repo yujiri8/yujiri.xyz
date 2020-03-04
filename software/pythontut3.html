@@ -319,9 +319,33 @@ By convention, variable names in Python are all-lowercase, but there's an except
 
 With that, you're ready to write a much more fun program than you did in the last chapter.
 
-The government hires you to write a program to automatically censor messages that contain politically unacceptable speech. There's a predefined set of words you're searching for. Your program must accept multi-line input (a blank line signals the end of the message) and then output: the message with all lines containing dirty words removed; and some metadata for the overseer of the censorship department, including an account of which unacceptable words were found in the message (all listed on one line, without the parentheses you get when you print a tuple, but with commas placed appropriately), and the total number of characters that were removed.
+The government hires you to write a program to automatically censor messages that contain politically unacceptable speech. There's a predefined set of words you're searching for (for the exercise, you can pick what they are). Your program must accept multi-line input (a blank line signals the end of the message) and then output: the message with all lines containing dirty words removed; and some metadata for the overseer of the censorship department, including an account of which unacceptable words were found in the message (all listed on one line, without the parentheses you get when you print a tuple, but with commas placed appropriately), and the total number of characters that were removed.
 
 Additionally, the filter should impose a message length limit of 280 characters (including the newlines, including the one at the end of the last non-blank line). If a message is longer than that, it should be cut off and terminated with "..." so that exactly the first 280 characters (including the added `...`) of the message are outputted. In either case, a blank line should be printed between the message and the statistics.
+
+For example, if the words to be censored are "oppress", "free", and "rebel", and the message is:
+```
+I wanted to do X today, but it was illegal.
+This is terrible. We shouldn't be prevented from doing X.
+We need to do something about our oppression. What if we rebelled?
+I don't know, maybe I'm just getting crazy ideas.
+It wouldn't work anyway, right?
+Oh well, I guess there's nothing we can do about it.
+I'll have to go do Y instead. I didn't want to do Y, though.
+I just wish we had more freedom.
+```
+The program should output:
+```
+I wanted to do X today, but it was illegal.
+This is terrible. We shouldn't be prevented from doing X.
+I don't know, maybe I'm just getting crazy ideas.
+It wouldn't work anyway, right?
+Oh well, I guess there's nothing we can do about it.
+I'll have to go do Y instead. I didn't ...
+
+words found: oppress, rebel, free
+characters removed: 118
+```
 
 This is supposed to be a fairly difficult assignment for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on. <!--I'll include some hints if you want hints but not the full solution.-->
 
