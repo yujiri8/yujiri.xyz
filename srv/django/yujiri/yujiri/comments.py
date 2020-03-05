@@ -87,16 +87,20 @@ def accept_comment(req):
 	)
 	err = cmt.validate()
 	if err: return HttpResponse(err, status = 400)
-	# Prevent impersonation.
-	elif name == 'Yujiri':
-		user = common.check_auth(req)
-		if not user or user.name != 'Yujiri': return HttpResponse(status = 401)
+	# Prevent name impersonation.
+	user = common.check_auth(req)
+	try:
+		name_user = User.objects.get(name = name)
+	except exceptions.ObjectDoesNotExist:
+		pass
+	else:
+		if not user or user.name != name_user: return HttpResponse(status = 401)
 	# Check for an email.
 	subscribe = clear_auth = False
 	if email:
 		# Determine if the email is already claimed.
 		try:
-			claimed_user = User.objects.get(email = email)
+			email_user = User.objects.get(email = email)
 		except exceptions.ObjectDoesNotExist:
 			# The email isn't claimed yet, so assume they have it and try to register it.
 			user, err = register_email(email)
@@ -107,8 +111,7 @@ def accept_comment(req):
 			clear_auth = True
 		else:
 			# The email exists. Check that this is them.
-			user = common.check_auth(req)
-			if user != claimed_user:
+			if user != email_user:
 				return HttpResponse(status = 401)
 			# It's them. Subscribe them at the end.
 			subscribe = True
