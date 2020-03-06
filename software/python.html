@@ -153,42 +153,15 @@ amazing.
 <p>
 Of course, there are also a lot of things I don't like about Python.
 </p>
-<h1 class="bad">Lack of compile-time sanity checking</h1>
+<h1 class="bad">Lack of type checking</h1>
 <p>
-The Python interpreter checks only for syntax while parsing your code. Did you forget the brackets and pass <code>var</code> to
-a function when you meant to pass <code>[var]</code>? Have fun crashing at runtime when you get to that line. Did you pass the
-arguments to a function in the wrong order? Have fun crashing at runtime. Hell, did you even misspell a name? Have fun crashing
-at runtime once more and being told "name 'comprehnesion' is not defined" and staring at it for 15 seconds before realizing
-what's wrong. Oh, and have fun with that you only find out about one of these each time the program crashes. If you have
-multiple errors like this, you're gonna have to run the code multiple times to find out. God help you if you're writing a game
-like <a href="https://github.com/yujiri8/spacestation-defense">Spacestation Defense</a> and the function you just added with all
-these mistakes takes 30 seconds or more of clicking through menus and playing out the first couple turns to get to after game
-start.
-</p>
-<h1 class="bad">Lack of static typing</h1>
-<p>
-This is a related point to the above, but they're different things. Python doesn't do any checking that values are of the
-correct types; it'll happily let you assign a tuple to an object attribute that's supposed to be a list and then later in some
-unrelated function tell you <code>'tuple' object does not support item assignment</code> with a stack trace that doesn't
-include the line that caused the problem. Even worse when it <i>never</i> crashes, but instead causes some bizarre
-functionality breakage; this kind of bug can take hours to track down in the worst cases.
+Python doesn't do any checking that values are of the correct types, or even that a referenced name exists until you get to it. Did you accidentally pass <code>var</code> to a function when you meant to pass <code>[var]</code>? Have fun crashing at runtime when you get to that line. Did you pass the arguments to a function in the wrong order? Have fun crashing at runtime. Hell, did you even misspell a name? Have fun crashing at runtime once more and being told "name 'comprehnesion' is not defined" and staring at it for 15 seconds before realizing what's wrong. Oh, and have fun with that you only find out about one of these each time the program crashes. If you have multiple errors like this, you have to run the code multiple times to find out. God help you if you're writing a game like <a href="https://github.com/yujiri8/spacestation-defense">Spacestation Defense</a> and the function you just added with all these mistakes takes 30 seconds or more of clicking through menus and playing out the first couple turns to get to after game start.
 </p><p>
-When I was new to Python I actually loved this trait and argued that other languages were badly designed for
-not allowing the programmer to mix types. "What if you need to have values of multiple types in a list, or a function
-that takes a single argument of multiple types?" I asked. But is there actually <i>ever</i> a legitimate use case for that
-kind of practice? After six years of Python experience, I'm not sure that there is. The only one I've ever found was using
-values of different types to convey different meanings about what to do with the value (I used this technique frequently in
-past versions of Spacestation Defense if I remember correctly), for example when sending actions to <code>gamestate.playout</code>,
-if the value is a bool then it means to toggle whether the component is powered, and if it's a list then it's information about
-what action that component should take this round. But using the type as part of the value contradicts the whole idea of a type.
-That kind of solution is just a less clear alternative to a struct/dictionary-based approach (and I did end up converting it
-to that).
+Worse, the lack of type checking tends to lead to much less helpful error messages. Python'll happily let you assign a tuple to an object attribute that's supposed to be a list and then later in some unrelated function tell you <code>'tuple' object does not support item assignment</code> with a stack trace that doesn't include the line that caused the problem. Even worse when it <i>never</i> crashes, but instead causes some bizarre functionality breakage; this kind of bug can take hours to track down in the worst cases.
 </p><p>
-I can see a possible case for a list of ints with <code>None</code> as a valid value, but other languages with static typing
-have ways of accomplishing that. In Haskell for example you could use the <code>Maybe</code> monad. Then the type system would
-provide you this flexibility while still making sure you won't have any type errors at runtime. In C you could use a struct
-with fields <code>int value</code> and <code>bool valid</code> (or more probably a union; I haven't used unions in C yet but
-from what I understand they exist to solve this very problem).
+When I was new to Python I actually loved the lack of type checking and argued that other languages were badly designed for enforcing types. "What if you need to have values of multiple types in a list, or a function that takes a single argument of multiple types?" I asked. But is there actually <i>ever</i> a legitimate use case for that kind of practice? After six years of Python experience, I'm not sure that there is. The only one I've ever found was using values of different types to convey different meanings about what to do with the value (I used this technique frequently in past versions of Spacestation Defense), for example when sending actions to <code>gamestate.playout</code>, if the value is a bool then it means to toggle whether the component is powered, and if it's a list then it's information about what action that component should take this round. But using the type as part of the value contradicts the whole idea of a type. That kind of solution is just a less clear alternative to a struct/dictionary-based approach (and I did end up converting it to that).
+</p><p>
+The only real exception I can think of is a list of ints with <code>None</code> as a valid value, but other languages with static typing have ways of accomplishing that. In Haskell for example you could use the <code>Maybe</code> monad. Then the type system would provide you this flexibility while still making sure you won't have any type errors at runtime. In C you could use a struct with fields <code>int value</code> and <code>bool valid</code> (or more probably a union; I haven't used unions in C yet but from what I understand they exist to solve this very problem).
 </p><p>
 Of course, it's not as if this shortcoming could be easily removed from Python by adding compile-time type checks, because
 Python doesn't have <a href="oop">any concept of interfaces</a>. It relies on this duck typing to not suffer a major
@@ -214,8 +187,6 @@ to the same potential for mistakes and bugs.
 </li>
 </ul>
 <p>
-<!--In some ways I like the way Python thinks of everything as an object. It's more intuitive to me to have <code>split</code> be a
-method of strings than to have it be a function that you pass the string to.-->
 Also, constructor functions are rather boilerplate-esque in Python...
 <!--I found out as of 2019 October 10 that you can actually omit the <code>__init__</code> header and use almost
 exactly the C syntax, but then you can't pass arguments to its default values; every object of the class has to start
@@ -263,8 +234,6 @@ Being interpreted at run-time instead of pre-compiled, Python is pretty much alw
 language (I benchmarked it doing some repetitive math once and found it to be over 120x slower than Go). I think this is
 just an acceptable loss when you decide to make an interactively interpretable language, although Haskell has shown that
 it's possible to be both compilable to native code and interactively usable.
-<!--(.pyc files aren't really compiled; they're just pre-parsed bytecode
-that still needs the Python interpreter)-->
 </p><p>
 But Python's case is worse, because you can't really even make use of threading to overcome this - the Global Interpreter Lock
 only allows one thread to execute Python code at a time. So you can have one thread doing computation and many other threads

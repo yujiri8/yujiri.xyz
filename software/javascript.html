@@ -26,30 +26,32 @@ I sincerely think that if you don't have any type safety whatsoever in your lang
 
 Most dynamic languages have `map`, `filter`, `reduce`, and lambdas, but I think Javascript one-ups Python here with [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). I use them every day; I can't describe how much nicer I find them than using the `function` keyword. And the syntax is intuitive, too; it *looks* like you're taking the parameter list and doing something with it. Python has lambdas and in-function `def`, but lambdas are limited to just a `return` statement and `def` doesn't handle scoping the same way arrow functions do ([this article on Pylint](https://pythonspeed.com/articles/pylint/) shows an example of the difference where you would want the arrow function behavior).
 
-There are other functional programming features in Javascript, like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>.bind</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code>.call</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>.apply</code></a>, but those are relatively fringe compared to arrow functions.
+There are other functional programming features in Javascript, like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>.bind</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code>.call</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>.apply</code></a>, but those are niche compared to arrow functions.
 
 <h3 class="good">Template strings are pretty useful</h3>
 
 I'll be honest, I was pretty skeptical of [this feature](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when I first found out. I thought it was adding a new syntactic construction to the language for no good reason. But after working with web components via Lit-Element I've learned to appreciate it; it really does help readability when so much logic is embedded in the component's render template.
 
-<h1 class="bad">No compile-time sanity checking</h1>
+<h1 class="bad">No type checking</h1>
 
-A repeated point from [my review of Python](python), the flipside of being interactive. You'll never know your JS is even valid until you run it and test every code path.
+A repeated point from [my Python review](python), the flipside of being interactive. This wastes enormous amounts of my time on debugging.
 
 "Just use [TypeScript](https://www.typescriptlang.org)! Problem solved!"
 
-<!--https://channel9.msdn.com/Events/Build/2017/B8088/-->
 No, problem not solved. Using TypeScript adds third-party dependencies, complicates my build process further, and requires a time investment to learn it. I'm not saying TypeScript isn't good or helpful (I haven't used it), but as a tool separate from the language itself, it shouldn't be used to defend the flaws of Javascript.
 
-<h1 class="bad">Things that should raise exceptions just return <code>undefined</code></h1>
+Also, Javascript makes things far worse than Python here...
 
-Accessing a nonexistent slot of an array or object gives you `undefined`. A true debugging nightmare to complement the lack of sanity checking. It's not uncommon to lose 15 minutes or more to a typo or forgetting exactly what you named a JSON property in your API.
+<h1 class="bad">Silence</h1>
+
+At least in Python, most things that should be compile-time errors are still run-time errors. But in Javascript they're often silent failures. Accessing a nonexistent slot of an array or object gives you `undefined`.
 
 But you can define one of the values to be `undefined` and it's now in there!
 ```
 arr = [undefined];
 arr[0]; // undefined
 arr[1]; // undefined
+arr.length; // 1
 ```
 Even a function parameter just gets `undefined` if it's not passed. All arguments are optional; you *can't* define a function that requires you to pass it a parameter. Let that sink in for a minute.
 
@@ -58,6 +60,8 @@ You also don't get an error when passing too many arguments to a function.
 function f(param) { console.log(param) };
 f(1, 2, 3); // Just prints 1
 ```
+
+I found out the hard way that `setTimeout` silently does nothing if you pass its arguments in the wrong order. That was how I lost most of a day of work.
 
 <h1 class="bad">Arrays aren't really arrays</h1>
 
