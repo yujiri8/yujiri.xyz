@@ -18,7 +18,8 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		return [styles, css`
 		:host([hidden]) { display: none; }
 		:host {
-			display: block;
+			display: flex;
+			flex-direction: column;
 			position: sticky;
 			top: 0;
 			width: 100%;
@@ -27,19 +28,17 @@ customElements.define('yujiri-navbar', class extends LitElement {
 			text-align: center;
 			padding: 0.3em;
 		}
-		/* Below the timestamp: nav links and theme toggle */
-		.bottom {
+		.top {
 		        display: grid;
-		        grid-template-columns: 1fr 4fr 1fr;
-		        align-items: center;
+		        grid-template-columns: 1fr minmax(auto, auto) 1fr;
 		}
-		.path {
+		nav {
 			font-size: 1.3em;
 		}
 		a, a:visited {
 			color: yellow;
 		}
-		.theme-switch-area {
+		.flex-vertical {
 			display: flex;
 			flex-direction: column;
 		}
@@ -50,6 +49,11 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		mwc-switch {
 			--mdc-theme-secondary: #0f0;
 		}
+		.center {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 		`];
 	}
 	constructor() {
@@ -59,24 +63,29 @@ customElements.define('yujiri-navbar', class extends LitElement {
 	}
 	render() {
 		return html`
-		${this.timestamp? html`
-			<small>This page was last edited ${this.timestamp} (UTC)</small>
-		` : ''}
-		<div class="bottom">
-			<div>
+		<div class="top">
+			<div class="center">
 				${this.user && this.loggedIn? html`
+					<small>
 					Logged in as ${this.user}<br>
-					<a href="/notifs">notification settings</a>
+					<a href="/notifs">notification settings</a><br>
+					<a href @click="${this.logout}">logout</a>
+					</small>
 				`: html`
 					<button @click="${this.login}">Login</button>
 				`}
 			</div>
-			<nav class="path">${unsafeHTML(this.computePath())}</nav>
-			<div class="theme-switch-area">
-				<label for="theme-switch">Dark mode</label>
+			<div class="center">
+				${this.timestamp? html`
+					<small>This page was last edited ${this.timestamp} (UTC)</small>
+				`:''}
+			</div>
+			<div class="flex-vertical">
+				<label for="theme-switch"><small>Dark mode</small></label>
 				<mwc-switch id="theme-switch" @change="${this.toggleTheme}"></mwc-switch>
 			</div>
 		</div>
+		<nav>${unsafeHTML(this.computePath())}</nav>
 		`;
 	}
 	toggleTheme() {
@@ -100,8 +109,8 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		}
 	}
 	computePath() {
-		// Get an aray of the category components. Trim *.html and then /(index).
-		let parts = window.location.pathname.replace(/\.html$/, '').replace(/\/(index)?$/, '').split('/');
+		// Get an aray of the category components. Trim /(index).
+		let parts = window.location.pathname.replace(/\/(index)?$/, '').split('/');
 		parts = parts.slice(1); // Don't count the inevitable empty first component.
 		// Root page is a special case.
 		if (parts.length == 0) return "Yujiri's homepage";
@@ -111,8 +120,8 @@ customElements.define('yujiri-navbar', class extends LitElement {
 			mc_revenge: "MC's Revenge",
 			ddlc_mods: 'DDLC Mods',
 		};
-		let total = '<a href="/">yujiri.xyz</a> &gt; ';
-		let path = '/';
+		let navHTML = '<a href="/">yujiri.xyz</a> &gt; ';
+		let runningPath = '/';
 		// Now loop over intermediary parts.
 		for (let i = 0; i < parts.length - 1; i++) {
 			const part = parts[i];
@@ -121,19 +130,19 @@ customElements.define('yujiri-navbar', class extends LitElement {
 			const partName = exceptionMap[part] || titleCase(part.replace(/_/g, ' '));
 			// Exception for DDLC mods.
 			if (part == 'ddlc_mods') {
-				total += `<a href="${path}ddlc">${partName}</a> &gt; `;
-				path += part + '/';
+				navHTML += `<a href="${runningPath}ddlc">${partName}</a> &gt; `;
+				runningPath += part + '/';
 				continue;
 			}
 			// Add the link.
-			path += part + '/';
-			total += `<a href="${path}">${partName}</a> &gt; `;
+			runningPath += part + '/';
+			navHTML += `<a href="${runningPath}">${partName}</a> &gt; `;
 		}
 		// If it has a navtitle, use it.
-		if (this.navtitle) return total + this.navtitle;
+		if (this.navtitle) return navHTML + this.navtitle;
 		// Otherwise, compute it.
 		const name = parts[parts.length - 1];
-		return total + (exceptionMap[name] || titleCase(name.replace(/_/g, ' ')));
+		return navHTML + (exceptionMap[name] || titleCase(name.replace(/_/g, ' ')));
 	}
 	async login() {
 		await login();
