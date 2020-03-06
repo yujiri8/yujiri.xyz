@@ -139,4 +139,10 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		await login();
 		window.location.reload();
 	}
+	logout() {
+		document.cookie = 'auth=; path=/; max-age=0';
+		document.cookie = 'email=; path=/; max-age=0';
+		document.cookie = 'admin=; path=/; max-age=0';
+		document.cookie = 'haskey=; path=/; max-age=0';
+	}
 });
