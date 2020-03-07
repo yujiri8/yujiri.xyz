@@ -4,6 +4,7 @@
 * nginx
 * npm
 * py37-markdown2
+* pgpy
 * Beautiful Soup
 * mutt (for email notifications)
 * paladin

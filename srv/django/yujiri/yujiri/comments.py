@@ -2,6 +2,8 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 import django.core.exceptions as exceptions
 
+import pgpy
+
 import json, re, secrets, base64, hashlib, subprocess, uuid, urllib.parse
 
 from . import common
@@ -180,11 +182,17 @@ def register_email(email):
 	return user, None
 
 def send_confirm_email(user):
+	msg = bytes(SUB_CONFIRM_MSG_TXT % (user.email, user.auth), 'utf-8')
+	# Encrypt if they have a key set.
+	if user.pubkey:
+		key = pgpy.PGPKey()
+		key.parse(bytes(user.pubkey)) # TODO find out whether it needs bytes()
+		msg = str(key.encrypt(pgpy.PGPMessage.new(msg))).encode('utf-8')
 	mutt = subprocess.Popen(args = ['/usr/local/bin/mutt', user.email,
 		'-s', "Subscribing you to reply notifications on yujiri.xyz",
 		'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
 		stdin = subprocess.PIPE)
-	mutt.stdin.write(bytes(SUB_CONFIRM_MSG_TXT % (user.email, user.auth), "utf-8"))
+	mutt.stdin.write(msg)
 	mutt.stdin.close()
 
 def prove_email(req):
@@ -256,17 +264,18 @@ def send_reply_notifs(orig_comment):
 		# Else, get the parent comment.
 		comment = Comment.objects.get(id = comment.reply_to)
 	# Email everybody.
-	mutt = subprocess.Popen(args = ['/usr/local/bin/mutt', *(user.email for user in listening),
-		"-s", "New reply on yujiri.xyz",
-		'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
-		stdin = subprocess.PIPE)
-	mutt.stdin.write(bytes(REPLY_NOTIF_TXT % (
-		orig_comment.article_title,
-		orig_comment.name,
-		orig_comment.time.strftime("%b %d, %A, %R (UTC)"),
-		orig_comment.body,
-	), "utf8"))
-	mutt.stdin.close()
+	for user in listening:
+		mutt = subprocess.Popen(args = ['/usr/local/bin/mutt', user.email,
+			"-s", "New reply on yujiri.xyz",
+			'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
+			stdin = subprocess.PIPE)
+		mutt.stdin.write(bytes(REPLY_NOTIF_TXT % (
+			orig_comment.article_title,
+			orig_comment.name,
+			orig_comment.time.strftime("%b %d, %A, %R (UTC)"),
+			orig_comment.body,
+		), "utf8"))
+		mutt.stdin.close()
 
 def login(req):
 	"""All logging in happens at this endpoint."""
@@ -313,7 +322,6 @@ def setpubkey(req):
 	if not user: return HttpResponse(status = 401)
 	key = req.FILES['key']
 	user.pubkey = key.read()
-	print(user.pubkey)
 	# Change the token after this.
 	user.auth = gen_auth_token()
 	user.save()

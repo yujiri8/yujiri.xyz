@@ -62,6 +62,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			You can upload a PGP public key. If you do, reset emails will be encrypted,
 			you'll be able to excluding others from comments as your name, and you'll
 			be able to edit your comments.
+			(This feature is still in very early phases.)
 			</p>
 			<input type="file" id="key" name="key"></input>
 			<button @click="${this.setKey}">submit</button>
