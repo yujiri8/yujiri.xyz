@@ -119,7 +119,7 @@ def accept_comment(req):
 			subscribe = True
 	# Everthing looks valid; post it.
 	cmt.save()
-	send_reply_notifs(cmt)
+	send_reply_notifs(cmt, user)
 	if subscribe:
 		Subscription(user = user, comment = cmt, sub = True).save()
 	resp = HttpResponse(status = 204)
@@ -239,17 +239,13 @@ def see_subs(req):
 	})
 	return resp
 
-def send_reply_notifs(orig_comment):
+def send_reply_notifs(new_comment, exclude):
+	"""exclude is the user who posted the reply. They won't be notified."""
 	listening = set()
 	ignoring = set()
-	# If it's a comment by a registered user, don't email them about their own comment.
-	try:
-		user = User.objects.get(name = orig_comment.name)
-		ignoring.add(user)
-	except exceptions.ObjectDoesNotExist:
-		pass
+	if exclude: ignoring.add(exclude)
 	# Travel up the tree, finding the lowest-level subscription or ignore for each user.
-	comment = orig_comment
+	comment = new_comment
 	while True:
 		subs = Subscription.objects.filter(comment__id = comment.id)
 		for sub in subs:
@@ -270,10 +266,10 @@ def send_reply_notifs(orig_comment):
 			'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
 			stdin = subprocess.PIPE)
 		mutt.stdin.write(bytes(REPLY_NOTIF_TXT % (
-			orig_comment.article_title,
-			orig_comment.name,
-			orig_comment.time.strftime("%b %d, %A, %R (UTC)"),
-			orig_comment.body,
+			new_comment.article_title,
+			new_comment.name,
+			new_comment.time.strftime("%b %d, %A, %R (UTC)"),
+			new_comment.body,
 		), "utf8"))
 		mutt.stdin.close()
 
