@@ -329,6 +329,9 @@ def grant_auth(resp, user):
 	# They last a month.
 	resp.set_cookie('auth', user.auth, secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('email', urllib.parse.quote(user.email), secure=True, samesite='lax', max_age=2592000)
-	resp.set_cookie('haskey', bool(user.pubkey), secure=True, samesite='lax', max_age=2592000)
+	if user.pubkey:
+		resp.set_cookie('haskey', 'true', secure=True, samesite='lax', max_age=2592000)
+	else:
+		resp.set_cookie('haskey', '', max_age=0)
 	if user.admin: resp.set_cookie('admin', 'true', max_age=2592000)
 	return resp
