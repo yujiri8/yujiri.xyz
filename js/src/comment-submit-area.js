@@ -73,13 +73,14 @@ customElements.define('comment-submit-area', class extends LitElement {
 		// Dispatch the event to load the comment in.
 		this.dispatchEvent(new CustomEvent('comment-posted',
 			{bubbles: true, composed: true, detail: this.reply_to}))
+		// Show a toast if it was a new poster making an account.
+		if (emailElem.value && !this.user)
+			showToast('success', "You'll receive a confirmation email about your account creation.");
 		// Close the submit area if it's not the top-level one.
-		if (!this.reply_to.includes('/')) {
+		if (!this.reply_to.includes('/'))
 			this.remove();
 		// Otherwise, just clear the fields.
-		} else {
-			nameElem.value = emailElem.value = bodyElem.value = '';
-		}
+		else nameElem.value = emailElem.value = bodyElem.value = '';
 	}
 	async preview() {
 		this.savedContents = this.shadowRoot.getElementById('body').value;

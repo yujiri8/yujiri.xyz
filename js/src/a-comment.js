@@ -117,7 +117,7 @@ customElements.define('a-comment', class extends LitElement {
 			<button @click="${() => this.setNotifs(null)}">Unignore</button>
 			<button @click="${() => this.setNotifs(true)}">Subscribe</button>
 		`:''}
-		${this.hasKey? html`
+		${this.admin || this.hasKey && this.comment.owned? html`
 			${this.editMode? html`
 				<button @click="${this.finishEdit}">Save</button>
 			`:html`

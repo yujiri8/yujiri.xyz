@@ -80,12 +80,13 @@ class Comment(models.Model):
 		}
 		if self.time_changed:
 			cmt['time_changed'] = self.time_changed.strftime('%Y %b %d, %A, %R (UTC)')
-		# If a user is provided, attach that user's sub status to the comment.
+		# If a user is provided, attach that user's sub status and ownership flag to the comment.
 		if user:
 			try:
 				cmt['sub'] = Subscription.objects.get(comment = self, user = user).sub
 			except exceptions.ObjectDoesNotExist:
 				cmt['sub'] = None
+			cmt['owned'] = user == self.user
 		return cmt
 	def summary_dict(self):
 		return {
