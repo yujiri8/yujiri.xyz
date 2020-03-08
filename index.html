@@ -115,9 +115,22 @@ and <a href="https://unsplash.com/photos/tN9h1vuAp6Y">César A. Mazillo Jr</a>.
 <!--
 <p><b>March :</b>
 </p>
-<p><b>March :</b>
-</p>
 -->
+<p><b>March 8:</b>
+Phew! What an evening.
+</p><p>
+So around 6 PM I downed the server working on big changes. I thought I'd only need to down it for a few minutes, but things got hairer than I expected, and it ended up down for hours as I desperately fiddled with Google, Django and Postgres. I plan to post the story of how this happened to dev.to tomorrow, but for the time being, here are the upates I've brought you:
+</p>
+<ul>
+<li>You can upload a PGP public key and any password reset emails will be encrypted.</li>
+<li>Once you've uploaded your key, you gain the ability to edit comments made with it, and to claim your username so no one else can post as it! Unfortunately for the time being it shows the edit button on all comments when you have a key, but I'll hopefully get around to fixing that in the next few days. I'll take manual action to link existing comments by registered folk to their accounts.</li>
+<li>I fixed a bug that made you still get notification emails about your own comments.</li>
+<li>I fixed a bug that made the notifs panel not refresh after a successful login if you viewed it while logged out.</li>
+<li>Mostly behind the scenes: admin powers aren't specifically tied to my username anymore; the User model has an admin flag. So other closely trusted people will be able to do previously me-only stuff like edit the Spem dictionary.</li>
+</ul>
+<p>
+I won't be surprised if some of this is broken, but I feel pretty epic about today, especially since this was also a day I made more progress on RTTP than in the last week combined :)
+</p>
 <p><b>March 6:</b>
 I changed the navbar structure a bit so it's less cramped on mobile. There's probably still improvements to make, but this is less egregious on pages with really long titles.
 </p>
