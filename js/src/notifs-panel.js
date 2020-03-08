@@ -28,7 +28,10 @@ customElements.define('notifs-panel', class extends LitElement {
 		this.subs = [];
 		if (!readCookie('auth')) {
 			this.setAttribute('hidden', 'true');
-			return window.addEventListener('load', login);
+			return window.addEventListener('load', async () => {
+				await login();
+				window.location.reload();
+			});
 		}
 		this.fetchData();
 	}
