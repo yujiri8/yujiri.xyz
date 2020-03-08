@@ -36,20 +36,3 @@ def update_article_names():
 		input(cmt.article_title + ' renamed to ' + newtitle)
 		cmt.article_title = newtitle
 		cmt.save()
-
-def strip_html_suffix():
-	for cmt in Comment.objects.all():
-		if not cmt.article_path.endswith('.html'):
-			assert not cmt.reply_to.endswith('.html')
-			continue
-		# with .html going away, index should go too.
-		if cmt.article_path.endswith('index.html'):
-			newpath = cmt.article_path[:-10]
-		else:
-			newpath = cmt.article_path[:-5]
-		print(cmt.article_path, newpath)
-		if cmt.article_path == cmt.reply_to:
-			cmt.reply_to = newpath
-		cmt.article_path = newpath
-		print(cmt.article_path + ' changed to ' + newpath)
-		cmt.save()
