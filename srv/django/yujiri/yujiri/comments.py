@@ -333,5 +333,8 @@ def grant_auth(resp, user):
 		resp.set_cookie('haskey', 'true', secure=True, samesite='lax', max_age=2592000)
 	else:
 		resp.set_cookie('haskey', '', max_age=0)
-	if user.admin: resp.set_cookie('admin', 'true', max_age=2592000)
+	if user.admin:
+		resp.set_cookie('admin', 'true', secure=True, samesite='lax', max_age=2592000)
+	else:
+		resp.set_cookie('admin', '', max_age=0)
 	return resp
