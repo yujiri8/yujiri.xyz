@@ -20,6 +20,8 @@ On %s, %s posted on %s:
 
 ------
 
+Direct link to the comment: %s.
+
 To edit your subscriptions, visit https://yujiri.xyz/notifs.
 
 Don't reply by email. That doesn't work yet.
@@ -266,6 +268,7 @@ def send_reply_notifs(new_comment):
 			new_comment.name,
 			new_comment.time_posted.strftime("%b %d, %A, %R (UTC)"),
 			new_comment.body,
+			'https://yujiri.xyz' + new_comment.summary_dict()['link'],
 		), "utf8"))
 		mutt.stdin.close()
 
