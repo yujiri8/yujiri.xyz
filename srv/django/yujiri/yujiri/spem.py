@@ -12,9 +12,9 @@ from .models import Word
 def words_router(req):
 	if req.method == 'GET':
 		return get_words(req)
-	# The other methods require auth.
+	# The other methods require admin status.
 	user = common.check_auth(req)
-	if not user or user.name != "Yujiri":
+	if not user or user.admin:
 		return HttpResponse(status = 401)
 	if req.method == 'POST':
 		return add_word(req)

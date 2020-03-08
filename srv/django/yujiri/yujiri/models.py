@@ -66,7 +66,7 @@ class Comment(models.Model):
 	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 	def __str__(self):
 		txt = "%s on %s at %s" % (self.name, self.article_title, self.time_posted.strftime("%Y %b %d, %A, %R"))
-		if self.time_changed != self.time_posted:
+		if self.time_changed:
 			txt += " (edited %s)" % (self.time_changed.strftime("%Y %b %d, %A, %R"),)
 		return txt
 	def dict(self, user, raw = False):
