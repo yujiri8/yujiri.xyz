@@ -8,8 +8,9 @@ customElements.define('a-comment', class extends LitElement {
 	static get properties() {
 		return {
 			comment: {type: Object},
-			admin: {type: Boolean},
 			loggedIn: {type: Boolean},
+			hasKey: {type: Boolean},
+			admin: {type: Boolean},
 			user: {type: String},
 			replyOpen: {type: Boolean},
 			editMode: {type: Boolean},
@@ -54,8 +55,9 @@ customElements.define('a-comment', class extends LitElement {
 	constructor() {
 		super();
 		this.loggedIn = readCookie('auth');
-		this.user = readCookie('email');
+		this.hasKey = readCookie('haskey');
 		this.admin = readCookie('admin');
+		this.user = readCookie('email');
 	}
 	render() {
 		return html`
@@ -90,7 +92,11 @@ customElements.define('a-comment', class extends LitElement {
 					style="${this.comment.name === 'Yujiri'? 'color:var(--yellowcolor)' : ''}">
 					${this.comment.name}</b>
 			`}
-			<small>${this.comment.time}</small>
+			<small>${this.comment.time_posted}
+				${this.comment.time_changed? html`
+					- <span style="color:orange">edited ${this.comment.time_changed}</span>
+				`:''}
+			</small>
 		</div>
 		${this.loggedIn && this.user? html`
 			<div class="actions">${this.renderActions()}</div>
@@ -111,13 +117,15 @@ customElements.define('a-comment', class extends LitElement {
 			<button @click="${() => this.setNotifs(null)}">Unignore</button>
 			<button @click="${() => this.setNotifs(true)}">Subscribe</button>
 		`:''}
-		${this.admin? html`
-			<button @click="${() => api('DELETE', 'comments', undefined, this.comment.id)}">Delete</button>
+		${this.hasKey? html`
 			${this.editMode? html`
 				<button @click="${this.finishEdit}">Save</button>
 			`:html`
 				<button @click="${this.edit}">Edit</button>
 			`}
+		`:''}
+		${this.admin? html`
+			<button @click="${() => api('DELETE', 'comments', undefined, this.comment.id)}">Delete</button>
 		`:''}
 		`;
 	}

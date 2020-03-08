@@ -4,7 +4,7 @@ import django.core.exceptions as exceptions
 
 import pgpy
 
-import json, re, secrets, base64, hashlib, subprocess, uuid, urllib.parse
+import json, datetime, re, secrets, base64, hashlib, subprocess, uuid, urllib.parse
 
 from . import common
 from .models import Comment, User, Subscription, markdown
@@ -45,7 +45,7 @@ def get_comments(req):
 		# Don't get messed up by polynymous index pages.
 		if reply_to.endswith('/index'):
 			reply_to = reply_to[:-5]
-		comments = Comment.objects.filter(reply_to = reply_to).order_by('-time')
+		comments = Comment.objects.filter(reply_to = reply_to).order_by('-time_posted')
 		return JsonResponse([c.dict(user = user, raw = raw) for c in comments], safe = False)
 	# Case 2: a specific comment requested.
 	elif id:
@@ -56,7 +56,7 @@ def get_comments(req):
 
 def recent_comments(req):
 	count = req.GET.get('count') or 10
-	comments = Comment.objects.order_by('-time')[:int(count)]
+	comments = Comment.objects.order_by('-time_posted')[:int(count)]
 	return JsonResponse([comment.summary_dict() for comment in comments], safe = False)
 
 def accept_comment(req):
@@ -72,7 +72,6 @@ def accept_comment(req):
 	else:
 		if not common.article_exists(reply_to):
 			return HttpResponse("That article doesn't seem to exist.", status = 404)
-		# Temporary: No commenting on 404
 		if reply_to == '/404':
 			return HttpResponse("You can't comment on that URL", status = 400)
 		# Strip 'index'.
@@ -86,17 +85,17 @@ def accept_comment(req):
 		article_title = common.get_article_title(article_path),
 		ip = req.META.get('REMOTE_ADDR'),
 		user_agent = req.META.get('HTTP_USER_AGENT'),
+		user = common.check_auth(req),
 	)
 	err = cmt.validate()
 	if err: return HttpResponse(err, status = 400)
 	# Prevent name impersonation.
-	user = common.check_auth(req)
 	try:
 		name_user = User.objects.get(name = name)
 	except exceptions.ObjectDoesNotExist:
 		pass
 	else:
-		if not user or user.name != name_user: return HttpResponse(status = 401)
+		if not cmt.user or cmt.user != name_user: return HttpResponse(status = 401)
 	# Check for an email.
 	subscribe = clear_auth = False
 	if email:
@@ -105,39 +104,37 @@ def accept_comment(req):
 			email_user = User.objects.get(email = email)
 		except exceptions.ObjectDoesNotExist:
 			# The email isn't claimed yet, so assume they have it and try to register it.
-			user, err = register_email(email)
+			cmt.user, err = register_email(email)
 			if err: return err
-			# Subscribe them at the end.
-			subscribe = True
-			# also clear their auth token, so they don't remain logged in as the old user.
+			# Clear their auth token, so they don't remain logged in as someone else if
+			# they used to be.
 			clear_auth = True
 		else:
-			# The email exists. Check that this is them.
-			if user != email_user:
-				return HttpResponse(status = 401)
-			# It's them. Subscribe them at the end.
-			subscribe = True
+			# They're trying to subscribe someone else's email!
+			if cmt.user != email_user: return HttpResponse(status = 401)
 	# Everthing looks valid; post it.
 	cmt.save()
-	send_reply_notifs(cmt, user)
-	if subscribe:
-		Subscription(user = user, comment = cmt, sub = True).save()
+	send_reply_notifs(cmt)
+	# Subscribe users to their own comments by default.
+	if cmt.user:
+		Subscription(user = cmt.user, comment = cmt, sub = True).save()
 	resp = HttpResponse(status = 204)
 	if clear_auth:
 		resp.set_cookie('auth', '', max_age=0)
 		resp.set_cookie('email', '', max_age=0)
 		resp.set_cookie('haskey', '', max_age=0)
+		resp.set_cookie('admin', '', max_age=0)
 	return resp
 
 def edit_comment(req):
 	user = common.check_auth(req)
-	# currently only available to me, but people might eventually be able to edit their own comments.
-	if not user or user.name != 'Yujiri':
-		return HttpResponse(status = 401)
 	body = json.loads(req.body)
 	cmt = get_object_or_404(Comment, id = body['id'])
+	if not user or (user != cmt.user and not user.admin):
+		return HttpResponse(status = 401)
 	cmt.name = body['name']
 	cmt.body = body['body']
+	cmt.time_changed = datetime.datetime.now()
 	err = cmt.validate()
 	if err: return HttpResponse(err, status = 400)
 	cmt.save()
@@ -145,7 +142,7 @@ def edit_comment(req):
 
 def delete_comment(req):
 	user = common.check_auth(req)
-	if not user or user.name != 'Yujiri':
+	if not user or not user.admin:
 		return HttpResponse(status = 401)
 	try:
 		id = uuid.UUID(req.body.decode('utf-8'))
@@ -165,7 +162,7 @@ def claim_email(req):
 
 def register_email(email):
 	"""A helper to validate an email, create the user, and send a confirm email.
-	Returns an HTTP response if it fails; None if it succeeds."""
+	Returns (None, HttpResponse) if it fails; (User, None) if it succeeds."""
 	if not re.fullmatch(r"[^@]+@[\w]+\.[\w]+", email):
 		return None, HttpResponse("That doesn't look like a valid email address.", status = 400)
 	# First, check whether the email is already registered.
@@ -239,11 +236,10 @@ def see_subs(req):
 	})
 	return resp
 
-def send_reply_notifs(new_comment, exclude):
-	"""exclude is the user who posted the reply. They won't be notified."""
+def send_reply_notifs(new_comment):
 	listening = set()
 	ignoring = set()
-	if exclude: ignoring.add(exclude)
+	if new_comment.user: ignoring.add(new_comment.user)
 	# Travel up the tree, finding the lowest-level subscription or ignore for each user.
 	comment = new_comment
 	while True:
@@ -268,7 +264,7 @@ def send_reply_notifs(new_comment, exclude):
 		mutt.stdin.write(bytes(REPLY_NOTIF_TXT % (
 			new_comment.article_title,
 			new_comment.name,
-			new_comment.time.strftime("%b %d, %A, %R (UTC)"),
+			new_comment.time_posted.strftime("%b %d, %A, %R (UTC)"),
 			new_comment.body,
 		), "utf8"))
 		mutt.stdin.close()
@@ -334,6 +330,5 @@ def grant_auth(resp, user):
 	resp.set_cookie('auth', user.auth, secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('email', urllib.parse.quote(user.email), secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('haskey', bool(user.pubkey), secure=True, samesite='lax', max_age=2592000)
-	# Set the admin cookie also if it's me.
-	if user.name == 'Yujiri': resp.set_cookie('admin', 'true', max_age=2592000)
+	if user.admin: resp.set_cookie('admin', 'true', max_age=2592000)
 	return resp

@@ -80,7 +80,6 @@ customElements.define('comment-submit-area', class extends LitElement {
 		} else {
 			nameElem.value = emailElem.value = bodyElem.value = '';
 		}
-		// TODO eventually this should handle showing the comment as subscribed if you authed it.
 	}
 	async preview() {
 		this.savedContents = this.shadowRoot.getElementById('body').value;

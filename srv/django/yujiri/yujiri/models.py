@@ -38,9 +38,24 @@ class Word(models.Model):
 		self.tags = new.tags
 		self.time_modified = timezone.now()
 
+class User(models.Model):
+	email = models.CharField(unique=True, max_length=100, null=True)
+	name = models.CharField(unique=True, max_length=30, null=True)
+	pubkey = models.BinaryField()
+	password = models.TextField()
+	auth = models.CharField(max_length=50)
+	admin = models.BooleanField(default = False)
+	def __str__(self):
+		return self.email
+	def subs(self):
+		return list(Subscription.objects.filter(user = self, sub = True))
+	def ignores(self):
+		return list(Subscription.objects.filter(user = self, sub = False))
+
 class Comment(models.Model):
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-	time = models.DateTimeField(default=timezone.now)
+	time_posted = models.DateTimeField(default=timezone.now)
+	time_changed = models.DateTimeField(null=True)
 	name = models.CharField(max_length=30)
 	reply_to = models.CharField(max_length=200)
 	article_path = models.CharField(max_length=200)
@@ -48,18 +63,25 @@ class Comment(models.Model):
 	body = models.TextField()
 	ip = models.CharField(max_length=15, null=True)
 	user_agent = models.TextField(null=True)
+	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 	def __str__(self):
-		return "%s on %s at %s" % (self.name, self.article_title, self.time.strftime("%Y %b %d, %A, %R"))
+		txt = "%s on %s at %s" % (self.name, self.article_title, self.time_posted.strftime("%Y %b %d, %A, %R"))
+		if self.time_changed != self.time_posted:
+			txt += " (edited %s)" % (self.time_changed.strftime("%Y %b %d, %A, %R"),)
+		return txt
 	def dict(self, user, raw = False):
 		cmt = {
 			'id': str(self.id),
 			'name': self.name,
 			'reply_to': self.reply_to,
 			'body': markdown(self.body) if not raw else self.body,
-			'time': self.time.strftime('%Y %b %d, %A, %R (UTC)'),
-			'has_replies': len(Comment.objects.filter(reply_to = self.id)),
+			'time_posted': self.time_posted.strftime('%Y %b %d, %A, %R (UTC)'),
+			'has_replies': len(Comment.objects.filter(reply_to = str(self.id))),
 		}
-		if user: # If a user is provided, attach that user's sub status to the comment.
+		if self.time_changed:
+			cmt['time_changed'] = self.time_changed.strftime('%Y %b %d, %A, %R (UTC)')
+		# If a user is provided, attach that user's sub status to the comment.
+		if user:
 			try:
 				cmt['sub'] = Subscription.objects.get(comment = self, user = user).sub
 			except exceptions.ObjectDoesNotExist:
@@ -71,7 +93,7 @@ class Comment(models.Model):
 			'name': self.name,
 			'article_title': self.article_title,
 			'link': self.article_path + '?c=' + str(self.id) + '#comment-section',
-			'time': self.time.strftime('%Y %b %d, %A, %R'),
+			'time_posted': self.time_posted.strftime('%Y %b %d, %A, %R'),
 		}
 	def validate(self):
 		"""Validates the comment, and if invalid, returns a string explanation."""
@@ -81,19 +103,6 @@ class Comment(models.Model):
 			return "Your name mustn't have leading or trailing whitespace"
 		if len(self.name) > 30:
 			return "You cannot possibly need a name longer than 30 characters."
-
-class User(models.Model):
-	email = models.CharField(unique=True, max_length=100, null=True)
-	name = models.CharField(unique=True, max_length=30, null=True)
-	pubkey = models.BinaryField()
-	password = models.TextField()
-	auth = models.CharField(max_length=50)
-	def __str__(self):
-		return self.email
-	def subs(self):
-		return list(Subscription.objects.filter(user = self, sub = True))
-	def ignores(self):
-		return list(Subscription.objects.filter(user = self, sub = False))
 
 class Subscription(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
