@@ -30,7 +30,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		}
 		.top {
 		        display: grid;
-		        grid-template-columns: 1fr minmax(auto, auto) 1fr;
+		        grid-template-columns: 1fr minmax(auto, 2fr) 1fr;
 		}
 		nav {
 			font-size: 1.3em;
