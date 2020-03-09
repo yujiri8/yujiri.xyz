@@ -7,7 +7,8 @@ import {styles} from './css.js';
 customElements.define('notifs-panel', class extends LitElement {
 	static get properties() {
 		return {
-			user: {type: String},
+			email: {type: String, attribute: false},
+			user: {type: String, attribute: false},
 			subs: {type: Array, attribute: false},
 		}
 	}
@@ -23,7 +24,8 @@ customElements.define('notifs-panel', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.user = readCookie('email');
+		this.email = readCookie('email');
+		this.name = readCookie('name');
 		this.hasKey = readCookie('haskey');
 		this.subs = [];
 		if (!readCookie('auth')) {
@@ -44,7 +46,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			a password to get a new one so you don't have to go through email confirmation again.
 			</p>
 			<label for="pw">password:</label>
-			<input type="text" id="pw"></input>
+			<input type="text" id="pw">
 			<button @click="${this.setPw}">submit</button>
 		</div>
 		${this.hasKey ? html`
@@ -55,7 +57,7 @@ customElements.define('notifs-panel', class extends LitElement {
 				commenting as it.
 				</p>
 				<label for="name">name:</label>
-				<input type="text" id="name"></input>
+				<input type="text" id="name" value="${this.name}">
 				<button @click="${this.setName}">submit</button>
 			</div>
 		`:''}
@@ -65,9 +67,8 @@ customElements.define('notifs-panel', class extends LitElement {
 			You can upload a PGP public key. If you do, reset emails will be encrypted,
 			you'll be able to exclude others from comments as your name, and you'll
 			be able to edit your comments.
-			(This feature is still in very early phases.)
 			</p>
-			<input type="file" id="key" name="key"></input>
+			<input type="file" id="key" name="key">
 			<button @click="${this.setKey}">submit</button>
 		</div>
 		<p>

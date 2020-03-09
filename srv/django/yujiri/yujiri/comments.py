@@ -331,6 +331,7 @@ def grant_auth(resp, user):
 	"""Takes an HttpResponse and a token and sets the auth and email cookies on it."""
 	# They last a month.
 	resp.set_cookie('auth', user.auth, secure=True, samesite='lax', max_age=2592000)
+	resp.set_cookie('name', user.name, secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('email', urllib.parse.quote(user.email), secure=True, samesite='lax', max_age=2592000)
 	if user.pubkey:
 		resp.set_cookie('haskey', 'true', secure=True, samesite='lax', max_age=2592000)
