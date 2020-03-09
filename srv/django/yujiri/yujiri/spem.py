@@ -14,7 +14,7 @@ def words_router(req):
 		return get_words(req)
 	# The other methods require admin status.
 	user = common.check_auth(req)
-	if not user or user.admin:
+	if not user or not user.admin:
 		return HttpResponse(status = 401)
 	if req.method == 'POST':
 		return add_word(req)
