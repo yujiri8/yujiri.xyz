@@ -10,6 +10,7 @@
 	--linkcolor: #00e;
 	--linkvisitedcolor: #50a;
 	--yellowcolor: #cc0; /* yellow needs to be darker on a white background to look good */
+	--notecolor: #090;
 }
 [data-theme="dark"] {
 	--bgcolor: #080808;
@@ -21,6 +22,7 @@
 	--linkcolor: #07f;
 	--linkvisitedcolor: #b0f;
 	--yellowcolor: #ff0;
+	--notecolor: #9f9;
 }
 
 body {
@@ -150,7 +152,7 @@ a.sectionlink:visited {
 	content: ']';
 }
 .note {
-	color: lightgreen;
+	color: var(--notecolor);
 }
 
 /* Middle finger to you browsers. I will not let you mutilate my h1s into h2s inside <article>. */

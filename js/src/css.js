@@ -123,6 +123,6 @@ button {
 	content: ']';
 }
 .note {
-	color: lightgreen;
+	color: var(--notecolor);
 }
 `;
