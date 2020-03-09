@@ -143,6 +143,16 @@ a.sectionlink:visited {
 	display: none;
 }
 
+.note:before {
+	content: '[';
+}
+.note:after {
+	content: ']';
+}
+.note {
+	color: lightgreen;
+}
+
 /* Middle finger to you browsers. I will not let you mutilate my h1s into h2s inside <article>. */
 h1 {
 	font-size: 2em;

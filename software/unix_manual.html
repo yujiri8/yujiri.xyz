@@ -1,6 +1,7 @@
-TITLE How To Read Unix Manual Pages
-NAV Unix manual pages
+TITLE How to read Unix manual pages
+NAV How to read Unix manual pages
 TEMPLATE DEFAULT
+DESC Unix manual can look like an illegible mess if you're not used to them. Here I explain the basics of their syntax.
 
 <p>
 Unix manual pages can look like an illegible mess if you're not used to them. The SYNOPSIS section at the top lists the syntax
@@ -10,8 +11,8 @@ Stuff inside brackets is optional. Usually these are flags.
 </p><p>
 Things with a bar between them are alternatives - they're mutually exclusive.
 </p><p>
-Underlined words that are not bold <expand-note> (if you're not on FreeBSD the text style might differ from what
-I'm saying but it'll be consistent across the system)</expand-note> are not to be typed
+Underlined words that are not bold <span class="note">if you're not on FreeBSD the text style might differ from what
+I'm saying but it'll be consistent across the system</span> are not to be typed
 literally; they're descriptions of parameters. For example, the synopsis:
 </p><pre class="code">
 <b>dosomething</b> [-f | -q] [-w] <u>file</u>

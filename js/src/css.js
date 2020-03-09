@@ -115,4 +115,14 @@ button {
 	border-radius: 5px;
 	background-color: var(--buttonbgcolor);
 }
+
+.note:before {
+	content: '[';
+}
+.note:after {
+	content: ']';
+}
+.note {
+	color: lightgreen;
+}
 `;

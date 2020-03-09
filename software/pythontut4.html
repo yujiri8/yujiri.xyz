@@ -45,7 +45,7 @@ And that's what's so important about lists: they're mutable.
 >>> nums[0] = 1.5
 [1.5, 2, 4]
 ```
-So you might be wondering why you would ever use tuples. Well, there at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <expand-note>(Some languages offer a general way of making it impossible to change a variable, but Python does not.)</expand-note> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
+So you might be wondering why you would ever use tuples. Well, there at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <span class="note">Some languages offer a general way of making it impossible to change a variable, but Python does not.</span> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
 
 # Shared reference
 
@@ -117,11 +117,11 @@ By the way, you can use the `list` or `tuple` functions to convert between lists
 
 While we're at it, it's about time I mention that all of the comparison operators work on things besides numbers. On strings, the greater-than and less-than operators treat strings as if characters with higher values are 'greater' - in other words, they alphabetize them. Actually, that's an oversimplification.
 
-You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com), or on countless other websites. <expand-note>Technically, Python strings use UTF-8, not ASCII. But that's a discussion for another time, and UTF-8 is fully backward-compatible.</expand-note>
+You might have already heard of [ASCII](https://en.wikipedia.org/wiki/ASCII). Internally, a string is a sequence of bytes, each one representing a character. For example, the byte `1100001` (97 in decimal) is `a`. (`A` is `1000001` - 65.) The full ASCII table is [available here](http://www.asciitable.com), or on countless other websites. <span class="note">Technically, Python strings use UTF-8, not ASCII. But that's a discussion for another time, and UTF-8 is fully backward-compatible.</span>
 
 For Booleans, `True` is considered greater than `False`. In fact, if you play around besides the code I'm showing you, you might've already noticed that `True` and `False` can be used as `1` and `0`. If you didn't, try `print(True + True + False + True)`.
 
-For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with the greater element is considered greater. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as a list or tuple of characters. <expand-note>In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</expand-note>
+For a list or tuple, comparison is done by comparing each element in sequence, and the first time it finds a pair that isn't equal, the list with the greater element is considered greater. This behavior can be thought of as a generalization of how string comparison works, although a string is not the same as a list or tuple of characters. <span class="note">In many other languages, there's a separate `char` data type, and a string is a list of `char`s. But in Python, strings are their own data type.</span>
 
 ## `None`
 
