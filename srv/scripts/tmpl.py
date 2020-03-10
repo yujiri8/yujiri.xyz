@@ -29,7 +29,10 @@ def process_file(infile, outfile, templates):
 		return
 	# If it's not a templated article, just hard-link it if it isn't already.
 	if not infile.endswith('.html') or ('/chapter' in infile and 'works/' in infile):
-		if not os.path.exists(outfile) or not os.path.samefile(infile, outfile):
+		# Remove if it exists but it's a different file.
+		if os.path.exists(outfile) and not os.path.samefile(infile, outfile):
+			os.remove(outfile)
+		if not os.path.exists(outfile):
 			os.link(infile, outfile)
 		return
 	# Read the article first.
