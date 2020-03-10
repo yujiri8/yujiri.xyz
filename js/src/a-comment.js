@@ -9,7 +9,7 @@ customElements.define('a-comment', class extends LitElement {
 		return {
 			comment: {type: Object},
 			loggedIn: {type: Boolean},
-			hasKey: {type: Boolean},
+			key: {type: Boolean},
 			admin: {type: Boolean},
 			user: {type: String},
 			replyOpen: {type: Boolean},
@@ -55,7 +55,7 @@ customElements.define('a-comment', class extends LitElement {
 	constructor() {
 		super();
 		this.loggedIn = readCookie('auth');
-		this.hasKey = readCookie('haskey');
+		this.key = readCookie('key');
 		this.admin = readCookie('admin');
 		this.user = readCookie('email');
 	}
@@ -117,7 +117,7 @@ customElements.define('a-comment', class extends LitElement {
 			<button @click="${() => this.setNotifs(true)}">Subscribe</button>
 			<button @click="${() => this.setNotifs(null)}">Unignore</button>
 		`:''}
-		${this.admin || this.hasKey && this.comment.owned? html`
+		${this.admin || this.key && this.comment.owned? html`
 			${this.editMode? html`
 				<button @click="${this.finishEdit}">Save</button>
 			`:html`

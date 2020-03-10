@@ -26,7 +26,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		super();
 		this.email = readCookie('email');
 		this.name = readCookie('name');
-		this.hasKey = readCookie('haskey');
+		this.key = readCookie('key');
 		this.subs = [];
 		if (!readCookie('auth')) {
 			this.setAttribute('hidden', 'true');
@@ -49,7 +49,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			<input type="text" id="pw">
 			<button @click="${this.setPw}">submit</button>
 		</div>
-		${this.hasKey ? html`
+		${this.key ? html`
 			<br>
 			<div class="outline">
 				<p>
@@ -68,6 +68,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			you'll be able to exclude others from comments as your name, and you'll
 			be able to edit your comments.
 			</p>
+			${this.key? html`<p>Your current key's fingerprint is ${this.key}.</p>` : ''}
 			<input type="file" id="key" name="key">
 			<button @click="${this.setKey}">submit</button>
 		</div>

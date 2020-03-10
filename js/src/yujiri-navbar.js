@@ -152,6 +152,6 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		document.cookie = 'auth=; path=/; max-age=0';
 		document.cookie = 'email=; path=/; max-age=0';
 		document.cookie = 'admin=; path=/; max-age=0';
-		document.cookie = 'haskey=; path=/; max-age=0';
+		document.cookie = 'key=; path=/; max-age=0';
 	}
 });

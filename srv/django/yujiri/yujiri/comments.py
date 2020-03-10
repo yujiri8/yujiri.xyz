@@ -124,7 +124,7 @@ def accept_comment(req):
 	if clear_auth:
 		resp.set_cookie('auth', '', max_age=0)
 		resp.set_cookie('email', '', max_age=0)
-		resp.set_cookie('haskey', '', max_age=0)
+		resp.set_cookie('key', '', max_age=0)
 		resp.set_cookie('admin', '', max_age=0)
 	return resp
 
@@ -334,9 +334,11 @@ def grant_auth(resp, user):
 	resp.set_cookie('name', user.name, secure=True, samesite='lax', max_age=2592000)
 	resp.set_cookie('email', urllib.parse.quote(user.email), secure=True, samesite='lax', max_age=2592000)
 	if user.pubkey:
-		resp.set_cookie('haskey', 'true', secure=True, samesite='lax', max_age=2592000)
+		k = pgpy.PGPKey()
+		k.parse(bytes(user.pubkey))
+		resp.set_cookie('key', urllib.parse.quote(k.fingerprint), secure=True, samesite='lax', max_age=2592000)
 	else:
-		resp.set_cookie('haskey', '', max_age=0)
+		resp.set_cookie('key', '', max_age=0)
 	if user.admin:
 		resp.set_cookie('admin', 'true', secure=True, samesite='lax', max_age=2592000)
 	else:
