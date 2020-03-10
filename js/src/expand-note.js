@@ -8,7 +8,6 @@ customElements.define('expand-note', class extends LitElement {
 			closedText: {type: String},
 			openText: {type: String},
 			open: {type: Boolean},
-			block: {type: Boolean},
 			contentId: {type: String}, /* only used if the content can't be right next to the button. */
 		}
 	}
@@ -31,11 +30,7 @@ customElements.define('expand-note', class extends LitElement {
 		<button @click="${this.toggle}">
 			${this.open? this.openText : this.closedText}
 		</button>
-		${this.block? html`
-			<slot ?hidden="${!this.open}"></slot>
-		`:html`
-			<small><slot ?hidden="${!this.open}"></slot></small>
-		`}
+		<slot ?hidden="${!this.open}"></slot>
 		`;
 	}
 	toggle() {
