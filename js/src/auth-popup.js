@@ -1,15 +1,17 @@
 import {LitElement, html, css} from 'lit-element';
 import '@material/mwc-dialog';
 
-import {readCookie, setCookie, api} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
+
+canceled = Symbol('canceled');
 
 customElements.define('auth-popup', class extends LitElement {
 	static get properties() {
 		return {
 			open: {type: Boolean, attribute: false},
-			user: {type: String, attribute: false},
-			failedOnce: {type: Boolean, attribute: false},
+			email: {type: String, attribute: false},
+			errMsg: {type: String, attribute: false},
 		}
 	}
 	static get styles() {
@@ -24,8 +26,8 @@ customElements.define('auth-popup', class extends LitElement {
 	}
 	render() {
 		return html`
-		<mwc-dialog ?open="${this.open}" @closed="${e => this.handleClose(e)}">
-			<p class="bad">${this.failedOnce? 'Invalid credentials.' : ''}</p>
+		<mwc-dialog ?open="${this.open}" @closed="${this.handleClose}">
+			<p class="bad">${this.errMsg}</p>
 			<label for="email">Email:</label>
 			<input type="text" id="email">
 			<br>
@@ -39,10 +41,10 @@ customElements.define('auth-popup', class extends LitElement {
 	}
 	async run() {
 		// Reset stuff incase there was a canceled attempt before.
-		this.user = readCookie('email');
-		this.shadowRoot.getElementById('email').value = this.user;
+		this.email = util.readCookie('email');
+		this.shadowRoot.getElementById('email').value = this.email;
 		this.shadowRoot.getElementById('pw').value = '';
-		this.failedOnce = false;
+		this.errMsg = '';
 		// Retry until they succeed or cancel (which throws an exception).
 		while (true) {
 			this.open = true;
@@ -50,20 +52,25 @@ customElements.define('auth-popup', class extends LitElement {
 			if (resp.ok) {
 				return resp;
 			}
-			this.failedOnce = true;
+			try {
+				this.errMsg = await resp.text();
+			} catch (err) {
+				console.log('when reading response:', err);
+				this.errMsg = 'Invalid credentials.';
+			}
 		}
 	}
 	async runOnce() {
 		// A hack that escapes the promise callback from the promise, so we can await properly.
 		const creds = await new Promise(resolve => {this.resolve = resolve});
-		if (creds.cancel) throw undefined;
-		const resp = await api('POST', 'login', undefined, creds);
+		if (creds.cancel) throw canceled;
+		const resp = await util.api('POST', 'login', undefined, creds);
 		return resp;
 	}
 	handleClose(e) {
 		const email = this.shadowRoot.getElementById('email').value;
 		// Set the email cookie if they didn't cancel.
-		if (e.detail.action == 'submit') setCookie('email', email);
+		if (e.detail.action == 'submit') util.setCookie('email', email);
 		this.open = false;
 		this.resolve({
 			cancel: e.detail.action != 'submit',

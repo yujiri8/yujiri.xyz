@@ -65,6 +65,7 @@ export function readCookie(cname) {
 	return "";
 }
 
+// Gives them a month.
 export function setCookie(name, val) {
 	document.cookie = `${name}=${val}; path=/; max-age=2592000;`;
 }

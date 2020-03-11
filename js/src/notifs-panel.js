@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
-import {readCookie, api, showToast, summarizeComment, login} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('notifs-panel', class extends LitElement {
@@ -24,14 +24,14 @@ customElements.define('notifs-panel', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.email = readCookie('email');
-		this.name = readCookie('name');
-		this.key = readCookie('key');
+		this.email = util.readCookie('email');
+		this.name = util.readCookie('name');
+		this.key = util.readCookie('key');
 		this.subs = [];
-		if (!readCookie('auth')) {
+		if (!util.readCookie('auth')) {
 			this.setAttribute('hidden', 'true');
 			return window.addEventListener('load', async () => {
-				await login();
+				await util.login();
 				window.location.reload();
 			});
 		}
@@ -88,7 +88,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			<tbody id="subs">
 				${this.subs.filter(s => s.sub).map(s => html`
 				<tr>
-					<td>${summarizeComment(s.comment)}</td>
+					<td>${util.summarizeComment(s.comment)}</td>
 					<td>
 					<button @click="${() => this.editSub(s.comment.id, null)}">clear</button>
 					<button @click="${() => this.editSub(s.comment.id, false)}">ignore</button>
@@ -106,7 +106,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			<tbody id="ignores">
 				${this.subs.filter(s => !s.sub).map(s => html`
 				<tr>
-					<td>${summarizeComment(s.comment)}</td>
+					<td>${util.summarizeComment(s.comment)}</td>
 					<td>
 					<button @click="${() => this.editSub(s.comment.id, null)}">clear</button>
 					<button @click="${() => this.editSub(s.comment.id, true)}">subscribe</button>
@@ -118,23 +118,23 @@ customElements.define('notifs-panel', class extends LitElement {
 		`;
 	}
 	async fetchData() {
-		const resp = await api('GET', 'notifs/see');
+		const resp = await util.api('GET', 'notifs/see');
 		try {
 			this.subs = (await resp.json()).subs; // The email field may be deprecated.
 		} catch {
-			showToast('err', "Couldn't understand response from server");
+			util.showToast('err', "Couldn't understand response from server");
 		}
 	}
 	async setPw() {
 		const pwBox = this.shadowRoot.getElementById('pw');
-		await api('POST', 'setpw', undefined, pwBox.value);
-		showToast('success', "Password set.");
+		await util.api('POST', 'setpw', undefined, pwBox.value);
+		util.showToast('success', "Password set.");
 		pwBox.value = '';
 	}
 	async setName() {
 		const nameBox = this.shadowRoot.getElementById('name');
-		await api('POST', 'setname', undefined, nameBox.value);
-		showToast('success', "Name set.");
+		await util.api('POST', 'setname', undefined, nameBox.value);
+		util.showToast('success', "Name set.");
 		nameBox.value = '';
 	}
 	async setKey() {
@@ -146,7 +146,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		window.location.reload();
 	}
 	async editSub(id, state) {
-		await api('POST', 'notifs/edit', undefined, {id: id, state: state});
+		await util.api('POST', 'notifs/edit', undefined, {id: id, state: state});
 		this.fetchData();
 	}
 });
