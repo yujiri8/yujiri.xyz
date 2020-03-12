@@ -1,12 +1,13 @@
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 import django.core.exceptions as exceptions
 
 import pgpy
 
 import json, datetime, re, secrets, base64, hashlib, subprocess, uuid, urllib.parse
 
-from . import common
+from . import common, settings
 from .models import Comment, User, Subscription, markdown
 
 SUB_CONFIRM_MSG_TXT = """You asked to modify notification settings for %s on yujiri.xyz, right? This email is being sent incase it wasn't you. If it was, please visit https://yujiri.xyz/api/notifs/prove?token=%s to confirm your changes and obtain an auth token that will be remembered by your browser so you won't have to do this regularly."""
@@ -181,18 +182,13 @@ def register_email(email):
 	return user, None
 
 def send_confirm_email(user):
-	msg = bytes(SUB_CONFIRM_MSG_TXT % (user.email, user.auth), 'utf-8')
+	msg = SUB_CONFIRM_MSG_TXT % (user.email, user.auth)
 	# Encrypt if they have a key set.
 	if user.pubkey:
 		key = pgpy.PGPKey()
 		key.parse(bytes(user.pubkey)) # TODO find out whether it needs bytes()
-		msg = str(key.encrypt(pgpy.PGPMessage.new(msg))).encode('utf-8')
-	mutt = subprocess.Popen(args = ['/usr/local/bin/mutt', user.email,
-		'-s', "Subscribing you to reply notifications on yujiri.xyz",
-		'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
-		stdin = subprocess.PIPE)
-	mutt.stdin.write(msg)
-	mutt.stdin.close()
+		msg = str(key.encrypt(pgpy.PGPMessage.new(msg)))
+	send_mail("Subscribing you to reply notifications on yujiri.xyz", msg, settings.SERVER_EMAIL, [user.email])
 
 def prove_email(req):
 	token = req.GET.get('token')
@@ -259,18 +255,13 @@ def send_reply_notifs(new_comment):
 		comment = Comment.objects.get(id = comment.reply_to)
 	# Email everybody.
 	for user in listening:
-		mutt = subprocess.Popen(args = ['/usr/local/bin/mutt', user.email,
-			"-s", "New reply on yujiri.xyz",
-			'-e', 'set from="yujiri.xyz notifications <notifications@yujiri.xyz>"'],
-			stdin = subprocess.PIPE)
-		mutt.stdin.write(bytes(REPLY_NOTIF_TXT % (
-			new_comment.article_title,
-			new_comment.name,
-			new_comment.time_posted.strftime("%b %d, %A, %R (UTC)"),
-			new_comment.body,
-			'https://yujiri.xyz' + new_comment.summary_dict()['link'],
-		), "utf8"))
-		mutt.stdin.close()
+		send_mail("New reply on yujiri.xyz", REPLY_NOTIF_TXT % (
+				new_comment.article_title,
+				new_comment.name,
+				new_comment.time_posted.strftime("%b %d, %A, %R (UTC)"),
+				new_comment.body,
+				'https://yujiri.xyz' + new_comment.summary_dict()['link'],
+			), settings.SERVER_EMAIL, [user.email])
 
 def login(req):
 	"""All logging in happens at this endpoint."""

@@ -116,11 +116,10 @@ LOGGING = {
 
 SECURE_CONTENT_TYPE_NOSNIFF = False # don't need x-content-type-options: nosniff
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'rlwestlund@gmail.com'
 ADMINS = [("Yujiri", "rlwestlund@gmail.com")]
+
+SERVER_EMAIL = 'yujiri.xyz notifications <notifications@yujiri.xyz>'
+EMAIL_BACKEND = 'yujiri.emails.MuttBackend'
 
 # sensitive stuff
 from .secret import *
