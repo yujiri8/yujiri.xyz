@@ -7,7 +7,19 @@
 {% if DESC %}
 	<meta name="description" content="{{DESC}}">
 {% endif %}
-<link rel="canonical" href="https://yujiri.xyz/{{PATH}}">
+
+{% if NOINDEX %}
+	<meta name="robots" content="noindex">
+{% else %}
+	<link rel="canonical" href="https://yujiri.xyz/{{PATH}}">
+	<meta property="og:title" content="{{TITLE}}">
+	<meta property="og:description" content="{{DESC}}">
+	<meta property="og:image" content="https://yujiri.xyz/logo600.png">
+	<meta property="og:url" content="https://yujiri.xyz/{{PATH}}">
+	<meta property="og:type" content="website">
+	<meta name="twitter:creator" content="@Yujiri3">
+{% endif %}
+
 {% for stylesheet in CSS %}
 	<link rel="stylesheet" href="{{stylesheet}}">
 {% endfor %}
