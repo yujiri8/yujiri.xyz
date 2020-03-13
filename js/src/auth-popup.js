@@ -4,7 +4,7 @@ import '@material/mwc-dialog';
 import * as util from './util.js';
 import {styles} from './css.js';
 
-canceled = Symbol('canceled');
+var canceled = Symbol('canceled');
 
 customElements.define('auth-popup', class extends LitElement {
 	static get properties() {
