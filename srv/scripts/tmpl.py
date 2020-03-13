@@ -76,7 +76,7 @@ def build_article(article, template_txt, path, last_modified):
 	args = parse_directives(article)
 	# Retain only the article body.
 	article = article[article.find('\n\n')+2:]
-	if not args.get('NO_MARKDOWN'):
+	if args.get('MARKDOWN'):
 		article = yujiri_markdown(article) \
 			.replace('<pre><code>', '<pre class="code">') \
 			.replace('</code></pre>', '</pre>')
@@ -103,8 +103,10 @@ def add_fragment_links(article):
 		link.string = '¶'
 		# Insert the link at the end of the heading.
 		elem.append(link)
-	# Make sure we don't include <html><body>.
-	return dom.find('body').encode_contents().decode('utf8')
+	# Make sure we don't include extra <html>, <head> or <body>.
+	for elem in dom.findAll(['html', 'body', 'head']):
+		elem.unwrap()
+	return dom
 
 if __name__ == '__main__':
 	try:
