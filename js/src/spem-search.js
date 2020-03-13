@@ -20,6 +20,9 @@ customElements.define('spem-search', class extends LitElement {
 		td, th {
 			padding: 3px;
 		}
+		.tag {
+			white-space: nowrap;
+		}
 		`];
 	}
 	constructor() {
@@ -121,7 +124,8 @@ customElements.define('spem-search', class extends LitElement {
 				<td>${word.translations.join(', ')}</td>
 				<td style="text-align: left; min-width: ${Math.min(30, word.notes.length/2)}em">
 					${unsafeHTML(word.notes)}</td>
-				<td>${word.tags.join(', ')}</td>
+				<td>${unsafeHTML(word.tags.map(w => `<span class="tag">${w}</span>`)
+					.join(', '))}</td>
 				${this.admin? html`<td>
 					<button @click="${() => this.deleteWord(word.word)}">Delete</button>
 					<button @click="${() => this.fetchWord(word.word)}">Fetch</button>
