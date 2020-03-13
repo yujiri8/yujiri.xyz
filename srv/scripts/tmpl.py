@@ -19,6 +19,7 @@ class YujiriMarkdowner(markdown2.Markdown):
 #	_block_tags_b = 'expand-note|' + markdown2.Markdown._block_tags_b
 yujiri_markdown = YujiriMarkdowner(extras = ['code-friendly', 'fenced-code-blocks', 'markdown-in-html']).convert
 
+jinja_env = jinja2.Environment(autoescape = True)
 
 def process_file(infile, outfile, templates):
 	print(infile, outfile, templates)
@@ -86,7 +87,7 @@ def build_article(article, template_txt, path, last_modified):
 	if path.endswith('index'): path = path[:-5]
 	args['PATH'] = path
 	if not args.get('NO_TIMESTAMP'): args['TIMESTAMP'] = last_modified.strftime('%Y %b %d, %A, %R')
-	template = jinja2.Template(template_txt)
+	template = jinja_env.from_string(template_txt)
 	return template.render(args)
 
 def add_fragment_links(article):
