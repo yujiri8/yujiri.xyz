@@ -3,6 +3,7 @@
 * django
 * nginx
 * npm
+* jinja2
 * py37-markdown2
 * pgpy
 * Beautiful Soup

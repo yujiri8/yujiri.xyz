@@ -4,22 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1">
 <link rel="icon" type="image/png" href="/logo24-thick.png">
-DESC
-<link rel="canonical" href="https://yujiri.xyz/PATH">
-CSS
-JS
-<title>TITLE</title>
+{% if DESC %}
+	<meta name="description" content="{{DESC}}">
+{% endif %}
+<link rel="canonical" href="https://yujiri.xyz/{{PATH}}">
+{% for stylesheet in CSS %}
+	<link rel="stylesheet" href="{{stylesheet}}">
+{% endfor %}
+{% for script in JS %}
+	<script src="{{script}}"></script>
+{% endfor %}
+<title>{{TITLE}}</title>
 </head>
-<body onload="ONLOAD" onresize="ONRESIZE">
+<body onload="{{ONLOAD}}" onresize="{{ONRESIZE}}">
 
-<yujiri-navbar navtitle="NAV" timestamp="LAST_MODIFIED"></yujiri-navbar>
+<yujiri-navbar navtitle="{{NAV}}" timestamp="{{TIMESTAMP}}"></yujiri-navbar>
 
-<article>ARTICLE</article>
+<article>{{ARTICLE|safe}}</article>
 
-BEGIN_COMMENTS
-<br><hr>
-<comment-section id="comment-section"></comment-section>
-END_COMMENTS
+{% if not NO_COMMENTS %}
+	<br><hr>
+	<comment-section id="comment-section"></comment-section>
+{% endif %}
 
 <lit-toast id="toast"></lit-toast>
 <auth-popup id="authenticator"></auth-popup>
+</body>
+</html>
