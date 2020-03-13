@@ -32,6 +32,7 @@ https://yujiri.xyz/argument/openmind
 https://yujiri.xyz/argument/philosophy
 https://yujiri.xyz/argument/polymorphic_values
 https://yujiri.xyz/argument/propaganda
+https://yujiri.xyz/argument/punishment_reward
 https://yujiri.xyz/argument/reactance
 https://yujiri.xyz/argument/relativism_not_inconsistent
 https://yujiri.xyz/argument/same_person
@@ -188,6 +189,7 @@ https://yujiri.xyz/protagonism/altruism_examples
 https://yujiri.xyz/protagonism/anarchism
 https://yujiri.xyz/protagonism/anarchism_history
 https://yujiri.xyz/protagonism/anarchist_memes
+https://yujiri.xyz/protagonism/borders
 https://yujiri.xyz/protagonism/bystander
 https://yujiri.xyz/protagonism/cartesian
 https://yujiri.xyz/protagonism/charity
