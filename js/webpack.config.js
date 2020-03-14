@@ -17,5 +17,3 @@ const config = (env, argv) => ({
 });
 
 module.exports = config;
-
-// TODO configure eslint.
