@@ -2,7 +2,7 @@ import {LitElement, html, css} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
 import './input-list.js';
-import {readCookie, api, showToast, parseQuery} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('spem-search', class extends LitElement {
@@ -29,7 +29,7 @@ customElements.define('spem-search', class extends LitElement {
 		super();
 		this.words = [];
 		this.tags = [];
-		this.admin = readCookie('admin');
+		this.admin = util.readCookie('admin');
 	}
 	render() {
 		return html`
@@ -75,7 +75,7 @@ customElements.define('spem-search', class extends LitElement {
 				<input-list id="admin-tags" class="indent" .options="${this.tags}"></input-list>
 			</div>
 			<label for="admin-notes">
-			<textarea id="admin-notes"></textarea>
+			<textarea id="admin-notes" @input="${util.autogrow}"></textarea>
 			<br>
 			<button @click="${this.addWord}">jini</button>
 			<button @click="${this.changeWord}">yɪŋ</button>
@@ -147,19 +147,19 @@ customElements.define('spem-search', class extends LitElement {
 	async firstUpdated() {
 		super.firstUpdated();
 		this.bindSearchKeys();
-		const resp = await api('GET', 'spem/tags');
+		const resp = await util.api('GET', 'spem/tags');
 		try {
 			this.tags = await resp.json();
 		} catch {
-			showToast('err', "Couldn't understand response from server");
+			util.showToast('err', "Couldn't understand response from server");
 		}
 		await this.updateComplete;
-		const args = parseQuery(window.location.search);
+		const args = util.parseQuery(window.location.search);
 		const params = ['word', 'meaning', 'translation', 'tag', 'notes', 'notes_regex'];
 		if (params.some(p => p in args)) this.pageloadSearch();
 	}
 	async pageloadSearch() {
-		const args = parseQuery(window.location.search);
+		const args = util.parseQuery(window.location.search);
 		this.shadowRoot.getElementById('word').value = args.word || '';
 		this.shadowRoot.getElementById('meaning').value = args.meaning || '';
 		this.shadowRoot.getElementById('translation').value = args.translation || '';
@@ -200,24 +200,24 @@ customElements.define('spem-search', class extends LitElement {
 			notes: this.shadowRoot.getElementById('notes').getData(),
 			notes_regex: this.shadowRoot.getElementById('notes-regex').getData(),
 		}
-		const resp = await api('GET', 'spem/words', query);
+		const resp = await util.api('GET', 'spem/words', query);
 		try {
 			this.words = await resp.json();
 		} catch {
-			throw showToast('err', "Couldn't understand response from server")
+			throw util.showToast('err', "Couldn't understand response from server")
 		}
 		this.shadowRoot.getElementById('result-count').innerText = `${this.words.length} results found`;
 	}
 	async deleteWord(word) {
-		await api('DELETE', 'spem/words', undefined, word);
-		showToast('success', `${word} deleted`);
+		await util.api('DELETE', 'spem/words', undefined, word);
+		util.showToast('success', `${word} deleted`);
 	}
 	async fetchWord(word) {
-		const resp = await api('GET', 'spem/words', {word: word, no_markdown: true});
+		const resp = await util.api('GET', 'spem/words', {word: word, no_markdown: true});
 		try {
 			var newWord = (await resp.json())[0];
 		} catch {
-			throw showToast('err', "Couldn't understand response from server")
+			throw util.showToast('err', "Couldn't understand response from server")
 		}
 		// Fill in data.
 		this.shadowRoot.getElementById('admin-word').value = newWord.word;
@@ -238,12 +238,12 @@ customElements.define('spem-search', class extends LitElement {
 	}
 	async addWord() {
 		const data = this.getAdminData();
-		await api('POST', 'spem/words', undefined, data);
-		showToast('success', `${data.word} added`);
+		await util.api('POST', 'spem/words', undefined, data);
+		util.showToast('success', `${data.word} added`);
 	}
 	async changeWord() {
 		const data = this.getAdminData();
-		await api('PUT', 'spem/words', undefined, data);
-		showToast('success', `${data.word} changed`);
+		await util.api('PUT', 'spem/words', undefined, data);
+		util.showToast('success', `${data.word} changed`);
 	}
 });

@@ -54,7 +54,8 @@ customElements.define('comment-submit-area', class extends LitElement {
 		${this.previewHTML? html`
 			<div id="preview">${unsafeHTML(this.previewHTML)}</div>
 		`:html`
-			<textarea id="body" placeholder="Your comment...">${this.savedContents}</textarea>
+			<textarea id="body" @input="${util.autogrow}"
+				placeholder="Your comment...">${this.savedContents}</textarea>
 		`}
 		`;
 	}

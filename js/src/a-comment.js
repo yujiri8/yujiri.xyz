@@ -1,7 +1,7 @@
 import {LitElement, html, css} from 'lit-element';
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
-import {readCookie, api, showToast} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('a-comment', class extends LitElement {
@@ -54,10 +54,10 @@ customElements.define('a-comment', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.loggedIn = readCookie('auth');
-		this.key = readCookie('key');
-		this.admin = readCookie('admin');
-		this.user = readCookie('email');
+		this.loggedIn = util.readCookie('auth');
+		this.key = util.readCookie('key');
+		this.admin = util.readCookie('admin');
+		this.user = util.readCookie('email');
 	}
 	render() {
 		return html`
@@ -65,7 +65,7 @@ customElements.define('a-comment', class extends LitElement {
 			<div class="header">${this.renderHeader()}</div>
 			<hr>
 			${this.editMode? html`
-				<textarea id="body">${this.comment.body}</textarea>
+				<textarea id="body" @input="${util.autogrow}">${this.comment.body}</textarea>
 			`:html`
 				<div class="body" id="body">${unsafeHTML(this.comment.body)}</div>
 			`}
@@ -125,39 +125,39 @@ customElements.define('a-comment', class extends LitElement {
 			`}
 		`:''}
 		${this.admin? html`
-			<button @click="${() => api('DELETE', 'comments', undefined, this.comment.id)}">Delete</button>
+			<button @click="${() => util.api('DELETE', 'comments', undefined, this.comment.id)}">Delete</button>
 		`:''}
 		`;
 	}
 	async setNotifs(state) {
-		await api('POST', 'notifs/edit', undefined, {id: this.comment.id, state: state});
+		await util.api('POST', 'notifs/edit', undefined, {id: this.comment.id, state: state});
 		this.comment.sub = state;
 		this.requestUpdate();
 	}
 	async edit() {
-		const resp = await api('GET', 'comments', {id: this.comment.id, raw: true});
+		const resp = await util.api('GET', 'comments', {id: this.comment.id, raw: true});
 		try {
 			var comment = await resp.json();
 		} catch (err) {
-			showToast('err', "Couldn't understand response from server");
+			util.showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
 		this.comment.body = comment.body;
 		this.editMode = true;
 	}
 	async finishEdit() {
-		await api('PUT', 'comments', undefined, {
+		await util.api('PUT', 'comments', undefined, {
 			id: this.comment.id,
 			name: this.shadowRoot.getElementById('name').value,
 			body: this.shadowRoot.getElementById('body').value,
 		});
 		this.editMode = false;
 		// Re-fetch it.
-		const resp = await api('GET', 'comments', {id: this.comment.id});
+		const resp = await util.api('GET', 'comments', {id: this.comment.id});
 		try {
 			var comment = await resp.json();
 		} catch (err) {
-			showToast('err', "when re-fetching comment: couldn't understand response from server");
+			util.showToast('err', "when re-fetching comment: couldn't understand response from server");
 			throw err;
 		}
 		this.comment = comment;

@@ -170,3 +170,10 @@ function scrollFix() {
 window.addEventListener("load", scrollFix);
 window.addEventListener("popstate", scrollFix);
 //window.addEventListener("hashchange", scrollFix);
+
+
+// A global utility to make a textarea grow when necessary.
+export function autogrow(e) {
+	const textarea = e.target;
+	textarea.style.height = textarea.scrollHeight + 2 + 'px';
+}
