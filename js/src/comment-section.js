@@ -73,7 +73,7 @@ customElements.define('comment-section', class extends LitElement {
 			}
 			// pass '/' as reply_to even though it's false, because this needs to be treated as the root.
 			this.insertComments([comment], '/');
-		};
+		}
 		// Now load everything under the subtree root, or all the comments.
 		this.loadComments(subtree || window.location.pathname);
 	}

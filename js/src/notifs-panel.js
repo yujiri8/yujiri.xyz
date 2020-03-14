@@ -1,5 +1,4 @@
 import {LitElement, html, css} from 'lit-element';
-import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
 import * as util from './util.js';
 import {styles} from './css.js';

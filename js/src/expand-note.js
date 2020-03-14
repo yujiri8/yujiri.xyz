@@ -1,4 +1,4 @@
-import {LitElement, html, css, unsafeCSS} from 'lit-element';
+import {LitElement, html, css} from 'lit-element';
 
 import {styles} from './css.js';
 
