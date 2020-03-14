@@ -154,16 +154,15 @@ export function parseQuery(raw) {
 	return query;
 }
 
-// Fragment link fix, necessary because the navbar has position:fixed.
+// Fragment link fix, necessary because the navbar has position:sticky.
 function scrollFix() {
 	if (!window.location.hash) return;
 	const section = document.getElementById(window.location.hash.slice(1));
 	if (!section) return;
-	// I don't understand why, but this doesn't work without setTimeout.
+	// This doesn't work without setTimeout.
 	setTimeout(() => {
 		const offset = section.offsetTop;
-		// Get the navbar height.
-		const navbarHeight = document.querySelector('yujiri-navbar').scrollHeight;
+		const navbarHeight = document.querySelector('yujiri-navbar').offsetHeight;
 		window.scrollTo(0, offset - navbarHeight);
 	}, 0);
 }
