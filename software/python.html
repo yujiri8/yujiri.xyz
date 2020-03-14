@@ -81,30 +81,11 @@ Python's syntax is great for a lot of reasons.
 <b>Uses indentation to mark code blocks.</b> You always want to indent your code anyway in a language that uses braces,
 so why not just have the parser use that to tell where a block ends?
 </p><p>
-Another advantage besides the parsimony appeal is that in a language that relies on braces for this, you often get syntax
-errors due to forgetting one or whatnot, and when that happens the error message frequently points to a line that
-isn't causing the problem. Those don't usually take more than a minute to track down but they're annoying, and in Python
-they're a lot less common because indentation not only is more visually apparent but leads to far better error messages
-when you get it wrong.
+Another advantage besides the parsimony appeal is that in a language that relies on braces for this, error messages about brace mistakes frequently point to a line that isn't causing the problem. Those don't usually take more than a minute to track down but they're annoying, and in Python they're a lot less common because indentation not only is more visually apparent but leads to far better error messages when you get it wrong.
 </p></li><li><p>
-<b>No completely unnecessary semicolons and parentheses.</b> It seems like everybody who makes a language after C decides it
-needs to copy over all of C's syntactic noise and require a semicolon after every statement, even though parsers are
-well capable of telling where a statement ends without that; and the incessant parentheses around
-every if or for condition. They take time to type and time to look at. I've yet to hear any argument that there's any kind of
-benefit to C-style syntax.
+<b>No semicolons and parentheses around conditions.</b> The reason I think <code>\</code> line continuation is better than semicolons is because line continuation is needed on a minority of lines, therefore it's better to need extra noise to continue lines than to need extra noise to end a line. As for parentheses around conditions, as far as I'm aware the argued benefit is that they make it possible to elide the braces for one-line blocks (as if that's even worth this cost), but Python's got that covered with colons and indentation.
 </p></li><li><p>
-<b><i>English.</i></b> Python's boolean operators are <code>and</code>, <code>or</code>, and <code>not</code>, instead of the
-more traditional <code>&&</code>, <code>||</code>, and <code>!</code>. Humans read English, so a programming language that uses
-English words to express concepts that correspond easily to them is always going to be more readable. The faster you parse the
-characters on the screen as a logical concept, the more efficient you'll be. Especially the for loop: what alien in the universe
-would rather read <code>for (let i = 0; i < seq.length; i++) {</code> than <code>for elem in seq:</code>? The line literally
-says what it does instead of making you parse out three separate statements each full of non-English symbols. And if you want
-the counter explicitly you can do <code>for i, elem in enumerate(seq):</code>.
-</p><p>
-Also, perhaps counterintuitively, <code>and</code> and <code>or</code> are <i>significantly faster to type</i> than <code>&&</code>
-and <code>||</code>. <code>&&</code> and <code>||</code> are the same number of keypresses as <code>and</code>
-since they require shift, shift is usually slightly slower to hit than a letter, and the second and third keypress
-are the same key, which prevents use of multiple fingers to accelerate your typing.
+<b><i>English.</i></b> Python's boolean operators are <code>and</code>, <code>or</code>, and <code>not</code>, instead of the more traditional <code>&&</code>, <code>||</code>, and <code>!</code>. Humans read English, so a programming language that uses English words to express concepts that correspond easily to them is always going to be more readable. The faster you parse the characters on the screen as a logical concept, the more efficient you'll be. Especially the for loop: what alien in the universe would rather read <code>for (let i = 0; i < seq.length; i++) {</code> than <code>for elem in seq:</code>? The line literally says what it does instead of making you parse out three separate statements each full of non-English symbols. And if you want the counter explicitly you can do <code>for i, elem in enumerate(seq):</code>.
 </p></li>
 </ul>
 <h2 class="good">Generators and comprehensions</h2>
