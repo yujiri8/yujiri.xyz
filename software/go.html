@@ -96,11 +96,11 @@ But that's so much clunkier than a normal `defer` call that we sometimes just le
 
 <h1 class="bad">No generics</h1>
 
-Generics are an insanely useful concept for code reuse. In Python or [Javascript](javascript) or Haskell or really most other languages, even if they didn't include a built-in function to, say, find the max of a list of numbers, you could at least write it once and it would work on lists of any numeric type or any other value that can be meaningfully compared with `&gt;`/`&lt;`. In Go not so. There are a few built-in things like `append`, but you can't define your own function that takes type `slice`; it has to be limited to a slice of some particular type.
+Generics are an insanely useful concept for code reuse. In Python or [Javascript](javascript) or Haskell or really most other languages, even if they didn't include a built-in function to, say, find the max of a list of numbers, you could at least write it once and it would work on lists of any numeric type or any other value that can be meaningfully compared with `<`/`>`. In Go not so. There are a few built-in things like `append`, but you can't define your own function that takes type `slice`; it has to be limited to a slice of some particular type.
 
 I've had a Go project where we wrote a function called `MaxInt`. It accepted `[]int` and returned `int`. But then we changed the values we were using it on to be `int32` instead of `int`, and `MaxInt` no longer worked on them because the argument was the wrong type. I changed `MaxInt` to `MaxInt32`, but if we ever have a need to do this on `int`s or `int64`s anywhere in the codebase, we'll have to make a separate function.
 
-It's not like this was necessary or anything. Haskell's type system shows us how we can support generics without sacrificing any of the benefits of a strict type system. In Haskell this function's type signature would be `Ord a => [a] -> a` (translation: it takes a list of any type, denoted `a`, such that `a` can be meaningfully ordered, and returns a single value of the same type). You'd write it once and it would work on Ints, Floats, Chars, and anything else that has some defined behavior for `&gt;`/`&lt;`; while still giving you a compile-time error if you try to use it on something that isn't a list or a list of things that can't be meaningfully ordered.
+It's not like this was necessary or anything. Haskell's type system shows us how we can support generics without sacrificing any of the benefits of a strict type system. In Haskell this function's type signature would be `Ord a => [a] -> a` (translation: it takes a list of any type, denoted `a`, such that `a` can be meaningfully ordered, and returns a single value of the same type). You'd write it once and it would work on Ints, Floats, Chars, and anything else that has some defined behavior for `>`/`<`; while still giving you a compile-time error if you try to use it on something that isn't a list or a list of things that can't be meaningfully ordered.
 
 Go can sometimes get around this by using the type `interface{}`; this is how `sort.Slice` in the standard library is able to get by (see below for why it can't take `[]interface{}`); but that sacrifices all the benefits of static typing. Since it only requires that its argument satisfy `interface{}`, Go can't even check at compile-time that it's getting a slice, so `sort.Slice` compiles successfully and then panics at run-time if you use it on something that isn't a slice. And this still wouldn't work if you wanted to catch the return value (`sort.Slice` works in place), because it would have to return `interface{}` because that's all the function knows about its type.
 
@@ -112,11 +112,11 @@ Lots of common tasks in Go, particularly slice operations, are extremely verbose
 
 * Concatenate two slices? `items = append(items, others...)` Again, not terrible but uglier than most other languages.
 
-* Deleting an item from a slice: `items = append(items[:i], items[i+1:]...)` Yuck... I gotta really look at that to tell what what's going on (especially since we're using the *append* function to *remove* items... that's confusing). Also, this doesn't give you the item removed. There's no `pop`. If you want to do that you need to assign from it with a separate statement beforehand.
+* Deleting an item from a slice: `items = append(items[:i], items[i+1:]...)` Yuck... I gotta really look at that to tell what's going on (especially since we're using the *append* function to *remove* items... that's confusing). Also, this doesn't give you the item removed. There's no `pop`. If you want to do that you need to assign from it with a separate statement beforehand.
 
 * Insert an element into a slice at an arbitrary position? This is where it gets terrible. `items = append(items[:i], append([]T{item}, items[i:]...)...)` where T is the type of the items.
 
-* Want to try *reversing* a slice? Go's about to throw you for a loop. (Forgive my pun)
+* Want to try *reversing* a slice? Go's about to throw you for a loop.
 	```
 	for i := len(items)/2 - 1; i >= 0; i-- {
 		opp := len(items) - 1 - i
@@ -226,7 +226,7 @@ Fails with `not enough arguments in call to f1` and `multiple-value f2() in sing
 
 There are some infamous gotchas related to `nil`, many of which seem like they could've been implemented better.
 
-Maps and channels both require `make` to initialize them; forgetting to do this and using the standard `var x Type` syntax leaves them as `nil`, with disastrous results. If you make a map with `var dict map[string]string` and then try to assign to an entry in the map, Go commpiles happily and then panics.
+Maps and channels both require `make` to initialize them; forgetting to do this and using the standard `var x Type` syntax leaves them as `nil`, with disastrous results. If you make a map with `var dict map[string]string` and then try to assign to an entry in the map, Go compiles happily and then panics.
 
 It's much worse with channels. A send to or receive from a `nil` *channel* [blocks forever](https://dave.cheney.net/2014/03/19/channel-axioms) instead of crashing. Single instances of this mistake have costed me hours.
 
@@ -262,15 +262,15 @@ This code will compile and then panic at runtime with `panic: value method main.
 
 But how is that possible? I checked if it was `nil`!
 
-The reason is because of how interfaces work under the hood. The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a large number of people have been confused by it. In brief, interfaces are never `nil` if they have a defined concrete type, even if they value of the interface is a `nil` pointer of that type.
+The reason is because of how interfaces work under the hood. The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a large number of people have been confused by it. In brief, interfaces are never `nil` if they have a defined concrete type, even if they hold a `nil` pointer of that type.
 
 <h3 class="bad"><code>var</code> versus <code>:=</code> - meaningless decision</h3>
 
-You have to declare a variable before you can use it, and there are two ways: `var val = 5` or `val := 5`. Most of the time they're interchangeable, but it's far worse than the string quotation thing in Python and Javascript, because they're actually not interchangeable, and some of the differences are very subtle and confusing when you come across them.
+You have to declare a variable before you can use it, and there are two ways: `var val = 5` or `val := 5`. Most of the time they're interchangeable, but it's worse than the string quotation thing in Python and Javascript, because they're actually not interchangeable, and some of the differences are rather subtle.
 
-* `:=` can't be used to declare global variables because it can't be used outside of a function; you have to use `var`. I'm not sure what the reason for this is, but it's what the designers decided.
+* `:=` can't be used outside of a function; you have to use `var` for global variables. I'm not sure what the reason for this is, but it's what the designers decided.
 
-* `var` requires that *all* variables on the left are new. Code like this will fail to compile:
+* `var` requires that *all* variables on the left are new. This will fail to compile:
 	```
 	var x = 5
 	var x, y = getMeTwoInts()
@@ -280,9 +280,9 @@ You have to declare a variable before you can use it, and there are two ways: `v
 	var x = 5
 	x, y := getMeTwoInts()
 	```
-	And you might think looking at that that the takeaway is that you should always default to `:=` inside a function. But some Gophers would argue that preventing repeat declarations helps avoids bugs - there *are* some cases in other languages where I've been bitten by declaring a variable with the same name as an old one and not realizing it. And there are some additional cases where you can't use `:=`...
+	And you might think looking at that that the takeaway is that you should default to `:=` inside a function. But some Gophers would argue that preventing repeat declarations helps avoids bugs - there *are* some cases in other languages where I've been bitten by declaring a variable with the same name as an old one and not realizing it. And there are some additional cases where you can't use `:=`...
 
-* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`. You have to use  `var x *Thingy`. Similarly, when initializing a non-pointer struct to its zero value, while you can use `x := Thingy{}`, `var x Thingy` is arguably nicer looking. I don't know of any times where you can't use `var`, and we'd certainly prefer our coding style to be consistent...
+* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`. You have to use  `var x *Thingy`. Similarly, when initializing a non-pointer struct to its zero value, while you can use `x := Thingy{}`, `var x Thingy` is arguably nicer looking. I don't know of any times where you can't use `var`, and we'd certainly prefer our style to be consistent...
 
 And this is unfortunately one of the areas where `go fmt` doesn't have an opinion.
 
