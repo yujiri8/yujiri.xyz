@@ -77,7 +77,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		// Show a toast if it was a new poster making an account.
 		// Note this doesn't work if the user is logged in but posts as a different email address.
 		// I'm not sure if that will stay a thing.
-		if (emailElem.value && !this.user)
+		if (emailElem.value && !util.readCookie('email'))
 			util.showToast('success', "You'll receive a confirmation email about your account creation.");
 		// Close the submit area if it's not the top-level one.
 		if (!this.reply_to.includes('/'))
