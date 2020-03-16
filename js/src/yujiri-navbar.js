@@ -29,8 +29,9 @@ customElements.define('yujiri-navbar', class extends LitElement {
 			padding: 0.3em;
 		}
 		.top {
-		        display: grid;
-		        grid-template-columns: 1fr minmax(auto, 2fr) 1fr;
+		        display: flex;
+		        /*grid-template-columns: 1fr minmax(auto, 2fr) 1fr;*/
+		        justify-content: space-evenly;
 		}
 		nav {
 			font-size: 1.3em;
@@ -51,6 +52,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		}
 		.center {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 		}
@@ -68,7 +70,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 				${this.user && this.loggedIn? html`
 					<small>
 					Logged in as ${this.user}<br>
-					<a href="/notifs">notification settings</a><br>
+					<a href="/notifs">notification settings</a> /
 					<a href @click="${this.logout}">logout</a>
 					</small>
 				`: html`
@@ -76,11 +78,6 @@ customElements.define('yujiri-navbar', class extends LitElement {
 				`}
 			</div>
 			<div class="center">
-				${this.timestamp? html`
-					<small>This page was last edited ${this.timestamp} (UTC)</small>
-				`:''}
-			</div>
-			<div class="flex-vertical">
 				<label for="theme-switch"><small>Dark mode</small></label>
 				<mwc-switch id="theme-switch" @change="${this.toggleTheme}"></mwc-switch>
 			</div>

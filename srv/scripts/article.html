@@ -30,13 +30,13 @@
 </head>
 <body onload="{{ONLOAD}}" onresize="{{ONRESIZE}}">
 
-<yujiri-navbar navtitle="{{NAV}}" timestamp="{{TIMESTAMP}}"></yujiri-navbar>
+<yujiri-navbar navtitle="{{NAV}}"></yujiri-navbar>
 
 <article>{{ARTICLE|safe}}</article>
 
 {% if not NO_COMMENTS %}
 	<br><hr>
-	<comment-section id="comment-section"></comment-section>
+	<comment-section id="comment-section" timestamp="{{TIMESTAMP}}"></comment-section>
 {% endif %}
 
 <lit-toast id="toast"></lit-toast>

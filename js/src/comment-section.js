@@ -10,6 +10,7 @@ customElements.define('comment-section', class extends LitElement {
 		return {
 			user: {type: String},
 			admin: {type: Boolean},
+			timestamp: {type: String},
 		}
 	}
 	static get styles() {
@@ -40,6 +41,9 @@ customElements.define('comment-section', class extends LitElement {
 		fenced-code-blocks</code> and <code>code-friendly</code> extras. I also support the &lt;spem&gt;
 		tag which makes text monospace like &lt;code&gt; but without changing the background color.
 		I use that tag for formatting <a href="/spem/">spem</a> text.</span>
+		</p><p>
+		This article was last modified ${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.timestamp))}.
+		Comments made before then have orange timestamps.
 		</p>
 		<div id="signup">
 			<label for="email">Email address:</label>
@@ -111,6 +115,7 @@ customElements.define('comment-section', class extends LitElement {
 			const commentElem = document.createElement('a-comment');
 			commentElem.id = comment.id;
 			commentElem.comment = comment;
+			commentElem.timestamp = new Date(this.timestamp);
 			addComment(commentElem);
 			window.c = commentElem;
 		}
@@ -124,7 +129,7 @@ customElements.define('comment-section', class extends LitElement {
 		await api('POST', 'notifs/claim', undefined, email);
 		showToast('success', "Confirmation email sent.");
 	}
-	// This function takes a child and parent element and indents the child under the parent element in-place.
+	// Takes a child and parent element and indents the child under the parent element in-place.
 	increaseIndent(child, parent) {
 		// Shortcut.
 		const parentStyle = getComputedStyle(parent);

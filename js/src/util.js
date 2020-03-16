@@ -74,7 +74,7 @@ export function setCookie(name, val) {
 export function summarizeComment(comment) {
 	return unsafeHTML(`${comment.name} on
 		<a href="${comment.link}">${comment.article_title}</a>
-		at ${comment.time_posted}`);
+		at ${strftime('%Y %b %d, %A, %R', new Date(comment.time_posted))}`);
 }
 
 // Used for pages that have a column layout.

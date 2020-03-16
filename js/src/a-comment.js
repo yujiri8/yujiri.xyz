@@ -90,11 +90,17 @@ customElements.define('a-comment', class extends LitElement {
 			`:html`
 				<b id="name"
 					style="${this.comment.name === 'Yujiri'? 'color:var(--yellowcolor)' : ''}">
-					${this.comment.name}</b>
+					${this.comment.name}
+				</b>
 			`}
-			<small>${this.comment.time_posted}
+			<small>
+				<span style="${new Date(this.comment.time_posted) < this.timestamp?
+						'color:orange' : ''}">
+					${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.comment.time_posted))}
+				</span>
 				${this.comment.time_changed? html`
-					- <span style="color:orange">edited ${this.comment.time_changed}</span>
+					- <span style="color:orange">edited ${strftime('%Y %b %d, %A, %R',
+						new Date(this.comment.time_changed))}</span>
 				`:''}
 			</small>
 		</div>
@@ -125,7 +131,8 @@ customElements.define('a-comment', class extends LitElement {
 			`}
 		`:''}
 		${this.admin? html`
-			<button @click="${() => util.api('DELETE', 'comments', undefined, this.comment.id)}">Delete</button>
+			<button @click="${() => util.api('DELETE', 'comments', undefined, this.comment.id)}">
+				Delete</button>
 		`:''}
 		`;
 	}

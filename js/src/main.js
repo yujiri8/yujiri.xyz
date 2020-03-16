@@ -1,3 +1,8 @@
+import 'lit-toast';
+// This syntax seems to be necessary.
+import * as strftime from 'strftime';
+window.strftime = strftime;
+
 import './util.js';
 import './yujiri-navbar.js';
 import './expand-note.js';
@@ -7,7 +12,6 @@ import './auth-popup.js';
 import './notifs-panel.js';
 import './spem-search.js';
 import './image-card.js';
-import 'lit-toast';
 
 // Error codes.
 window.errorCodes = {

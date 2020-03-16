@@ -48,7 +48,8 @@ def process_file(infile, outfile, templates):
 	with open(outfile, 'w', encoding='utf-8') as f: f.write(output)
 
 def get_last_modified(*files):
-	return datetime.datetime.utcfromtimestamp(max(os.path.getmtime(file) for file in files))
+	return datetime.datetime.utcfromtimestamp(max(os.path.getmtime(file) for file in files)).\
+		replace(tzinfo = datetime.timezone.utc)
 
 def parse_directives(article):
 	"""Processes the template directives at the top of a source file."""
@@ -86,7 +87,7 @@ def build_article(article, template_txt, path, last_modified):
 	if path.endswith('.html'): path = path[:-5]
 	if path.endswith('index'): path = path[:-5]
 	args['PATH'] = path
-	if not args.get('NO_TIMESTAMP'): args['TIMESTAMP'] = last_modified.strftime('%Y %b %d, %A, %R')
+	if not args.get('NO_TIMESTAMP'): args['TIMESTAMP'] = last_modified.isoformat()
 	template = jinja_env.from_string(template_txt)
 	return template.render(args)
 

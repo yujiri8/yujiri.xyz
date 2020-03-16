@@ -18,8 +18,8 @@ class Word(models.Model):
 	def __str__(self):
 		return "%s, last modified %s, time_added %s" % (
 			self.word,
-			self.time_modified.strftime('%Y %b %d, %A, %R'),
-			self.time_added.strftime('%Y %b %d, %A, %R'),
+			self.time_modified.isoformat(),
+			self.time_added.isoformat(),
 		)
 	def dict(self, raw = False):
 		return {
@@ -28,8 +28,8 @@ class Word(models.Model):
 			'notes': markdown(self.notes) if not raw else self.notes,
 			'translations': self.translations,
 			'tags': self.tags,
-			'time_modified': self.time_modified.strftime('%Y %b %d, %A, %R (UTC)'),
-			'time_added': self.time_added.strftime('%Y %b %d, %A, %R (UTC)'),
+			'time_modified': self.time_modified.isoformat(),
+			'time_added': self.time_added.isoformat(),
 		}
 	def change(self, new):
 		self.meaning = new.meaning
@@ -65,9 +65,10 @@ class Comment(models.Model):
 	user_agent = models.TextField(null=True)
 	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 	def __str__(self):
-		txt = "%s on %s at %s" % (self.name, self.article_title, self.time_posted.strftime("%Y %b %d, %A, %R"))
+		txt = "%s on %s at %s" % (self.name, self.article_title,
+			self.time_posted.strftime("%Y %b %d, %A, %R (UTC)"))
 		if self.time_changed:
-			txt += " (edited %s)" % (self.time_changed.strftime("%Y %b %d, %A, %R"),)
+			txt += " (edited %s)" % (self.time_changed.strftime("%Y %b %d, %A, %R (UTC)"),)
 		return txt
 	def dict(self, user, raw = False):
 		cmt = {
@@ -75,11 +76,11 @@ class Comment(models.Model):
 			'name': self.name,
 			'reply_to': self.reply_to,
 			'body': markdown(self.body) if not raw else self.body,
-			'time_posted': self.time_posted.strftime('%Y %b %d, %A, %R (UTC)'),
+			'time_posted': self.time_posted.isoformat(),
 			'has_replies': len(Comment.objects.filter(reply_to = str(self.id))),
 		}
 		if self.time_changed:
-			cmt['time_changed'] = self.time_changed.strftime('%Y %b %d, %A, %R (UTC)')
+			cmt['time_changed'] = self.time_changed.isoformat()
 		# If a user is provided, attach that user's sub status and ownership flag to the comment.
 		if user:
 			try:
@@ -94,7 +95,7 @@ class Comment(models.Model):
 			'name': self.name,
 			'article_title': self.article_title,
 			'link': self.article_path + '?c=' + str(self.id) + '#comment-section',
-			'time_posted': self.time_posted.strftime('%Y %b %d, %A, %R'),
+			'time_posted': self.time_posted.isoformat(),
 		}
 	def validate(self):
 		"""Validates the comment, and if invalid, returns a string explanation."""
