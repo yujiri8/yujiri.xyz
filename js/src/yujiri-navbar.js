@@ -18,20 +18,19 @@ customElements.define('yujiri-navbar', class extends LitElement {
 		return [styles, css`
 		:host([hidden]) { display: none; }
 		:host {
-			display: flex;
-			flex-direction: column;
 			position: sticky;
 			top: 0;
 			width: 100%;
-			background-color: grey;
-			color: white;
+			display: grid;
+			justify-content: center;
 			text-align: center;
 			padding: 0.3em;
+			background-color: grey;
+			color: white;
 		}
 		.top {
-		        display: flex;
-		        /*grid-template-columns: 1fr minmax(auto, 2fr) 1fr;*/
-		        justify-content: space-evenly;
+			display: flex;
+			justify-content: space-between;
 		}
 		nav {
 			font-size: 1.3em;
@@ -77,6 +76,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 					<button @click="${this.login}">Login</button>
 				`}
 			</div>
+			<div style="width: 2em"></div>
 			<div class="center">
 				<label for="theme-switch"><small>Dark mode</small></label>
 				<mwc-switch id="theme-switch" @change="${this.toggleTheme}"></mwc-switch>
