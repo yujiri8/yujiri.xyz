@@ -56,7 +56,7 @@ customElements.define('notifs-panel', class extends LitElement {
 				commenting as it.
 				</p>
 				<label for="name">name:</label>
-				<input type="text" id="name" value="${this.name}">
+				<input type="text" id="name" placeholder="${this.name}">
 				<button @click="${this.setName}">submit</button>
 			</div>
 		`:''}
