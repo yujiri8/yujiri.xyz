@@ -33,7 +33,7 @@
 
 * Currently, novel chapters are not templated. This is regrettable.
 
-* **DNS**: a TXT record on @ of `"v=spf1 a:yujiri.xyz ~all"` is required to make email delivery work.
+* **DNS**: a TXT record on @ of `v=spf1 a:yujiri.xyz ~all` is required to make email delivery work.
 
 # Instructions
 
