@@ -308,6 +308,10 @@ def setpubkey(req):
 	if not user: return HttpResponse(status = 401)
 	key = req.FILES['key']
 	user.pubkey = key.read()
+	# Make sure it's a valid key before we accept it.
+	k = pgpy.PGPKey()
+	try: k.parse(bytes(user.pubkey))
+	except: return HttpResponse("Invalid key. You need an ASCII-armored PGP key.", status = 400)
 	# Change the token after this.
 	user.auth = gen_auth_token()
 	user.save()

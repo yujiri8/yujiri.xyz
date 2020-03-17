@@ -3,7 +3,7 @@
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
 export async function api(method, url, query, body) {
-	if (typeof body != 'string') body = JSON.stringify(body);
+	if (typeof body != 'string' && !(body instanceof FormData)) body = JSON.stringify(body);
 	if (typeof query == 'object') {
 		let qs = Object.entries(query).map(fmtQueryParam).join('&');
 		if (qs.length) url = url + "?" + qs;

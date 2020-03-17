@@ -64,7 +64,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		<div class="outline">
 			<p>
 			You can upload a PGP public key. If you do, reset emails will be encrypted,
-			you'll be able to exclude others from comments as your name, and you'll
+			you'll be able to exclude others from commenting as your name, and you'll
 			be able to edit your comments.
 			</p>
 			${this.key? html`<p>Your current key's fingerprint is ${this.key}.</p>` : ''}
@@ -140,8 +140,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		const keyFile = this.shadowRoot.getElementById('key').files[0];
 		const formData = new FormData();
 		formData.append("key", keyFile);
-		// TODO this should use the main api handler somehow.
-		await fetch('/api/setpubkey', {method:"POST", body: formData});
+		await util.api('POST', 'setpubkey', undefined, formData);
 		window.location.reload();
 	}
 	async editSub(id, state) {
