@@ -159,17 +159,13 @@ function scrollFix() {
 	if (!window.location.hash) return;
 	const section = document.getElementById(window.location.hash.slice(1));
 	if (!section) return;
-	// This doesn't work without setTimeout.
-	setTimeout(() => {
-		const offset = section.offsetTop;
-		const navbarHeight = document.querySelector('yujiri-navbar').offsetHeight;
-		window.scrollTo(0, offset - navbarHeight);
-	}, 0);
+	const offset = section.offsetTop;
+	const navbarHeight = document.querySelector('yujiri-navbar').offsetHeight;
+	window.scrollTo(0, offset - navbarHeight);
 }
 
 window.addEventListener("load", scrollFix);
-window.addEventListener("popstate", scrollFix);
-//window.addEventListener("hashchange", scrollFix);
+window.addEventListener("hashchange", scrollFix);
 
 
 // A global utility to make a textarea grow when necessary.
