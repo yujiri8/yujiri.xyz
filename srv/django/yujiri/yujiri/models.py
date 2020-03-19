@@ -8,11 +8,11 @@ import uuid, datetime, html
 import markdown2
 
 class Word(models.Model):
-	word = models.CharField(max_length=30, primary_key=True)
-	meaning = models.CharField(max_length=200)
+	word = models.TextField(primary_key=True)
+	meaning = models.TextField()
 	notes = models.TextField()
-	translations = pg_fields.ArrayField(base_field=models.CharField(max_length=50))
-	tags = pg_fields.ArrayField(base_field=models.CharField(max_length=50))
+	translations = pg_fields.ArrayField(base_field=models.TextField())
+	tags = pg_fields.ArrayField(base_field=models.TextField())
 	time_added = models.DateTimeField(default=timezone.now)
 	time_modified = models.DateTimeField(default=timezone.now)
 	def __str__(self):
@@ -39,11 +39,11 @@ class Word(models.Model):
 		self.time_modified = timezone.now()
 
 class User(models.Model):
-	email = models.CharField(unique=True, max_length=100, null=True)
+	email = models.TextField(unique=True, null=True)
 	name = models.CharField(unique=True, max_length=30, null=True)
 	pubkey = models.BinaryField()
 	password = models.TextField()
-	auth = models.CharField(max_length=50)
+	auth = models.TextField()
 	admin = models.BooleanField(default = False)
 	def __str__(self):
 		return self.email
@@ -57,11 +57,11 @@ class Comment(models.Model):
 	time_posted = models.DateTimeField(default=timezone.now)
 	time_changed = models.DateTimeField(null=True)
 	name = models.CharField(max_length=30)
-	reply_to = models.CharField(max_length=200)
-	article_path = models.CharField(max_length=200)
-	article_title = models.CharField(max_length=200)
+	reply_to = models.TextField()
+	article_path = models.TextField()
+	article_title = models.TextField()
 	body = models.TextField()
-	ip = models.CharField(max_length=15, null=True)
+	ip = models.TextField(null=True)
 	user_agent = models.TextField(null=True)
 	user = models.ForeignKey(User, null=True, on_delete=models.SET_NULL)
 	def __str__(self):
