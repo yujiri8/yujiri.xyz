@@ -15,7 +15,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		return [styles, css`
 		:host([hidden]) { display: none; }
 		:host { display: block; }
-		.outline {
+		fieldset {
 		    border: 1px solid var(--weakcolor);
 		    border-radius: 4px;
 		}
@@ -38,7 +38,7 @@ customElements.define('notifs-panel', class extends LitElement {
 	}
 	render() {
 		return html`
-		<div class="outline">
+		<fieldset>
 			<p>
 			It's not strictly necessary to set a password since the cookie is stored
 			in your browser now, but if you clear the cookie, it'll be more convenient to have
@@ -47,10 +47,10 @@ customElements.define('notifs-panel', class extends LitElement {
 			<label for="pw">password:</label>
 			<input type="text" id="pw">
 			<button @click="${this.setPw}">submit</button>
-		</div>
+		</fieldset>
 		${this.key ? html`
 			<br>
-			<div class="outline">
+			<fieldset>
 				<p>
 				Now that you've set a key, you can claim your name, preventing others from
 				commenting as it.
@@ -58,10 +58,10 @@ customElements.define('notifs-panel', class extends LitElement {
 				<label for="name">name:</label>
 				<input type="text" id="name" placeholder="${this.name}">
 				<button @click="${this.setName}">submit</button>
-			</div>
+			</fieldset>
 		`:''}
 		<br>
-		<div class="outline">
+		<fieldset>
 			<p>
 			You can upload a PGP public key. If you do, reset emails will be encrypted,
 			you'll be able to exclude others from commenting as your name, and you'll
@@ -70,7 +70,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			${this.key? html`<p>Your current key's fingerprint is ${this.key}.</p>` : ''}
 			<input type="file" id="key" name="key">
 			<button @click="${this.setKey}">submit</button>
-		</div>
+		</fieldset>
 		<p>
 		Normally, you get notifications for replies to any comment you're subscribed
 		to or are subscribed to a parent of. Setting a comment to "ignore" will prevent
