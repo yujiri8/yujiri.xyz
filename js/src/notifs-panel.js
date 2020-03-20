@@ -134,6 +134,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		const nameBox = this.shadowRoot.getElementById('name');
 		await util.api('POST', 'setname', undefined, nameBox.value);
 		util.showToast('success', "Name set.");
+		nameBox.placeholder = nameBox.value;
 		nameBox.value = '';
 	}
 	async setKey() {
