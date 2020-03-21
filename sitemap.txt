@@ -128,6 +128,7 @@ https://yujiri.xyz/misc/anarchism_conversion
 https://yujiri.xyz/misc/contact
 https://yujiri.xyz/misc/logo
 https://yujiri.xyz/misc/masks
+https://yujiri.xyz/misc/names
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
 https://yujiri.xyz/music/a_retro_memory.ogg
@@ -186,6 +187,7 @@ https://yujiri.xyz/prismata/rush_units
 https://yujiri.xyz/prismata/secrets
 https://yujiri.xyz/prismata/tips
 https://yujiri.xyz/protagonism/
+https://yujiri.xyz/protagonism/add_subtract_rights
 https://yujiri.xyz/protagonism/age_of_consent
 https://yujiri.xyz/protagonism/altruism_examples
 https://yujiri.xyz/protagonism/anarchism
@@ -331,7 +333,9 @@ https://yujiri.xyz/reviews/star_wars
 https://yujiri.xyz/software/
 https://yujiri.xyz/software/caching
 https://yujiri.xyz/software/commands
+https://yujiri.xyz/software/css_cant
 https://yujiri.xyz/software/escape_sequences
+https://yujiri.xyz/software/enhanced_basic_wc
 https://yujiri.xyz/software/evil
 https://yujiri.xyz/software/features
 https://yujiri.xyz/software/fighting_over_keyboard
@@ -339,11 +343,13 @@ https://yujiri.xyz/software/filesystem_concepts
 https://yujiri.xyz/software/fish
 https://yujiri.xyz/software/forgot_password
 https://yujiri.xyz/software/go
+https://yujiri.xyz/software/headinglinks
 https://yujiri.xyz/software/install
 https://yujiri.xyz/software/javascript
 https://yujiri.xyz/software/kill_software
 https://yujiri.xyz/software/nano
 https://yujiri.xyz/software/nginx
+https://yujiri.xyz/software/objectivism
 https://yujiri.xyz/software/oop
 https://yujiri.xyz/software/overempowering_js
 https://yujiri.xyz/software/programming
@@ -401,6 +407,7 @@ https://yujiri.xyz/works/pillars_of_life/chapter10
 https://yujiri.xyz/works/pillars_of_life/chapter11
 https://yujiri.xyz/works/pillars_of_life/chapter12
 https://yujiri.xyz/works/poems/henry_the_hero
+https://yujiri.xyz/works/poems/ode_to_prismata
 https://yujiri.xyz/works/poems/solitude
 https://yujiri.xyz/works/poems/the_bright_raincloud
 https://yujiri.xyz/works/return_to_the_portrait/
