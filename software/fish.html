@@ -67,22 +67,9 @@ Zsh and bash both have these. They're not the most useful feature ever, but I mi
 
 <h2 class="bad">Case correction</h2>
 
-Fish tab completion or accepting suggestions will case-correct what you've typed in a lot of situations. Sometimes this is actually pretty neat, like for environment variables (since they're usually named in all caps). But what's truly horrid about this feature is that if you type letters and fish thinks they're the wrong case, it'll actually *display* them as the "corrected" case even before you press tab or accept a suggestion. But then, of course, if you enter the command without pressing tab, it receives the letters as the case you typed. So fish's command line is a liar.
+Fish tab completion or accepting suggestions will case-correct what you've typed in a lot of situations. Sometimes this is actually pretty neat, like for environment variables (since they're usually named in all caps). But what's truly horrid about this feature is that if you type letters and fish thinks they're the wrong case, it'll actually *display* them as the "corrected" case even before you press tab or accept a suggestion. But then, of course, if you enter the command without pressing tab, it receives the letters as the case you typed. So fish will show you a command and then execute a different one if you press enter.
 
 Another issue with the case correction is exemplified by an experience I had recently. I had `st TODO *` in my history (`st` is my `grep` alias - 'search text'), but `st todo *` more recently. I type `st TODO` - I was holding down shift - then accept suggestion to get the ` *`, and I get `st todo *`. I had typed the right thing and fish incorrected my case.
-
-<h2 class="bad"><i>Artificially</i> prevents the <code>=</code> syntax for modifying the environment</h2>
-
-I say it's artificial because the developers actually implemented the code they'd need to make it work:
-
-```
-> LSCOLORS=test ls
-fish: Unsupported use of '='. To run 'ls' with a modified environment, please use 'env LSCOLORS=test ls…'
-```
-
-So they literally wrote the code to parse the syntax and determine what you want to do so they could tell you that they don't support it. They *implemented the feature so fish could tell you it isn't supported*. Damn.
-
-They disallow command substitution in the same way: any attempt to use a command substitution as the command instead of as an argument is met with `fish: Command substitutions not allowed`, even though they obviously have the code to make this work. But I don't think this is as big of deal because it's almost never useful.
 
 <br>
 
