@@ -27,7 +27,7 @@ If the last line were indented too, it would only be printed if the password was
 <span class="highlight">`==` is used for checking whether things are equal because `=` is used for assigning things to variables.</span>
 `!=` is "not equal", and `>`, `<`, `>=` and `<=` all work as expected.
 
-**Exercise:** With this, you now have enough tools to implement a four-operation calculator (one that can do addition, subtraction, multiplication and division, and ask the user which one instead of just doing all four). Do it :)
+With this, you now have enough tools to implement a four-operation calculator (one that can do addition, subtraction, multiplication and division, and ask the user which one instead of just doing all four).
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
 ```
 operation = input("What operation?")
@@ -144,35 +144,35 @@ There's also the `bool` function to explicitly turn something into a Boolean. `x
 
 ## `else` and `elif`
 
-`else` can be used after an `if` block to automatically mean "do this only if we didn't just do the previous thing":
+`else` can be used after an `if` clause to automatically mean "do this only if we didn't just do the previous thing":
 
 ```
-if input() == 'y':
-	print("you said yes")
+if input() == 'hi':
+	print("You said hi")
 else:
-	print("you didn't say yes")
+	print("You didn't say hi")
 ```
 
 There's also `elif` as a shortcut for else-if. If you have a block like this:
 
 ```
 entry = input()
-if entry == 'y':
-	print("you said yes")
+if entry == 'hi':
+	print("You said hi")
 else:
-	if entry == 'n':
-		print("you said no")
+	if entry == 'bye':
+		print("You said bye")
 	else:
-		print("you said something else")
+		print("You said something else")
 ```
 you can rewrite it to:
 
 ```
 entry = input()
-if entry == 'y':
-	print("you said yes")
-elif entry == 'n':
-	print("you said no")
+if entry == 'hi':
+	print("you said hi")
+elif entry == 'bye':
+	print("you said bye")
 else:
 	print("you said something else")
 ```
@@ -180,10 +180,10 @@ The two are exactly the same.
 
 <!--Trent's markdown processor clobbers classes from <p>.-->
 <div class="highlight" markdown="1">
-By the way, new jargon: **nesting**: putting an intended block inside of another one. In the example without `elif`, the stuff under `else` was nested; it only even gets considered if the `else` clause is getting executed.
+New jargon: **nesting**: putting an intended block inside of another one. In the example without `elif`, the stuff under `else` was nested; it only even gets considered if the `else` clause is getting executed.
 </div>
 
-You can have any number of `elif` blocks.
+You can have any number of `elif` clause. Each one will only be executed if none of the previous ones were.
 
 # Looping
 
@@ -196,6 +196,18 @@ while input("guess the password:") != "secret123":
 <div class="highlight" markdown="1">
 New jargon: a special value that's used to exit a loop like this is often called a **sentry value**.
 </div>
+
+### The infinite loop
+
+At some point learning about loops, you're bound to make a certain kind of mistake that can result in a rather bizarre bug. Consider this code:
+```
+print("I'm going to count backwards from 10 to 0, by 3s.")
+num = 10
+while num != 0:
+	print(num)
+	num -= 3
+```
+Go ahead and run this to see what I mean. Obviously, my condition should've been `num > 0` because `num != 0` is `True` if `num` is negative. The reasoning I'm including this is so that when you inevitably encounter this at some point, you'll know what kind of thing must be causing it - a loop condition didn't evaluate to `False` when you thought it would. Also, very helpful tidbit: pressing `Ctrl-C` will generally stop a running program, which you can use to escape an infinite loop.
 
 I just have to show you a few more tricks before we can get to a cool assignment.
 

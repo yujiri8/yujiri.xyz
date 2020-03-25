@@ -52,7 +52,7 @@ The interactive prompt interprets math expressions just like math.
 5
 ```
 
-Note that Python's prompt doesn't print the result when you just assign to a variable. It shows the value of a variable when you put it by itself, or when you enter an expression (like `number + 2`) without assigning the result to another variable. Also note that `number + 2` didn't change the value of `number`; it just printed the value plus 2. `number = number + 2` would've changed the value of `number`.
+Note that Python's prompt doesn't print the result when you just assign to a variable. You can see the value of a variable by entering it on a line by itself, since Python reads it the same as if you just entered its value. Also note that `number + 2` didn't change the value of `number`; it just printed the value plus 2. `number = number + 2` would've changed the value of `number`.
 
 <p class="highlight">A valid variable name can only use letters, numbers, and the underscore, and can't start with a number.</p>
 
@@ -70,16 +70,13 @@ Now let's take a break from the math. There are just a couple other prerequisite
 
 ## Print
 
-First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never printed, even though it works in the interactive prompt. In the interactive prompt, Python automatically displays the result of an expression, but not when it's in a program. To make a program output text you need the `print` function:
+First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never printed, even though it works in the interactive prompt. In the interactive prompt, Python automatically displays the result of an expression, but not when it's in a saved program. To make a program output text you need the `print` function:
 
 ```
->>> print(5)
-5
->>> print(5 + 1)
-6
->>> product = 6 * 9
->>> print(product)
-54
+x = 12
+y = 2
+z = x + y
+print(z / y)
 ```
 
 <div class="highlight" markdown="1">
@@ -97,7 +94,7 @@ You can use either single or double quotes, as long as you use the same kind on 
 
 ## Escaping
 
-The next logical question about strings should be (if you already started thinking this then you get a cookie): if enclosure in quotes is how we tell Python where the strings starts and ends, how do we put literal quotes in a string? `print("it's")` works because the apostrophe is a single quote and that string is enclosed by double quotes, but if you need to print a string that has both types of quotes in them, it's not so simple. `print("I said, "it's okay."")` would look to Python like the string you want to print is `"I said, "` and for some reason you put `it's okay.""` after it. You would get an error. (Go ahead and try it so you see what errors look like, if you haven't seen one yet.)
+The next logical question about strings should be (if you already started thinking this then you get a cookie): if enclosure in quotes is how we tell Python where the strings starts and ends, how do we put literal quotes in a string? `print("it's")` works because the apostrophe is a single quote and that string is enclosed by double quotes, but if you need to print a string that has both types of quotes in them, it's not so simple. `print("I said, "it's okay."")` would look to Python like the string you want to print is `"I said, "` and for some reason you put `it's okay.""` after it. You would get an error. (Go ahead and try it so you see what errors look like, if you haven't seen one yet. And don't worry if error messages look like voodoo. I'll explain more about them later.)
 
 If you want to put literal quotation marks inside of a string that are the same kind as the ones enclosing the string, you need to "escape" them by putting a backslash before each one: `print('I said, "it\'s okay."')` or `print("I said, \"it's okay.\"")` will print `I said, "it's okay."`. A backlash inside of a string is [a special signal to treat the next character literally, or vice versa if it's a character that's normally literal](escape_sequences). To include a literal backlash, you can write `\\` - the first one tells Python to treat the second one literally.
 
@@ -107,12 +104,20 @@ The `+` and `*` operators also work on strings. Check this out:
 
 ```
 >>> 'hello' + 'friend'
-hellofriend
+'hellofriend'
 >>> 'hello' * 3
-hellohellohello
+'hellohellohello'
 ```
 
 (Note that they weren't separated by spaces. You might've already noticed, but <span class="highlight">the spaces I've been typing around everything are unnecessary; spaces inside code are generally ignored. They're just there to make it easier to read.</span> If you want to space-separate the output, put a space inside one of the string literals, like `'hello ' + 'friend'`.)
+
+You probably also noticed that this time the results of the operation were still printed with the quotes around them. Entering a string by itself just shows it in the form you'd have to type it in to get that value. `print` prints them without the quotes:
+```
+>>> 'hello'
+'hello'
+>>> print('hello')
+hello
+```
 
 <div class="highlight" markdown="1">
 Jargon: **concatenate**: to add sequences together. Using `+` on strings is "concatenating" the stings. Using `+` on numbers is *not* concatenation, because it gives you the total of the numbers, not the numbers stuck together. (This distinction will start to make more sense when we get into sequences in part 3.)
@@ -203,7 +208,7 @@ print(num1 + num2)
 ```
 </expand-note>
 
-**Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence, waiting for the user to press enter between each one.
+**Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence (as a substitute for asking them which one. I'll get to how to do that in chapter 2).
 
 **More interesting exercise:** How do you do the single-operation calculator in one line and without using any variables?
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
@@ -212,10 +217,26 @@ print(int(input('give me a number:')) + int(input('give me another number:')))
 ```
 </expand-note>
 
+There are just two appendices worth tacking on to this first chapter:
+
 ## Floats
 
-There's just one more thing I'm going to cover in this lesson. You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'3.5'` to an integer.) A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
+You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'3.5'` to an integer.) A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
 
-(If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This is not Python's fault; it's due to an inherent consequence of the way your hardware stores decimal values in memory and is explained [here](https://floating-point-gui.de/basic/).)
+(If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This is not Python's fault; it's due to an inherent consequence of the way your hardware stores decimal values in memory. There's a good explanation [here](https://floating-point-gui.de/basic/), but it's not important unless you're curious.)
+
+## Reading error messages
+
+So error messages probably look like a mess to you. For now, don't worry about the line `Traceback (most recent call last):` - we won't get into what that means until much later in this series. The second line shows you the name of the file your program was saved to, or `<stdin>` if you were just in the prompt (It stands for 'standard input', and I [explain the concept](unix_streams) in my Unix tutorial track, but that's not important here); the line number that caused the error (or 1 if you're in the prompt); and the `in <module>` part is another thing you don't need to worry about until much later when we start working with modules.
+
+The most important line is the last one, which looks like: `<Error type>: <Error message>`. Unless you're a way more accurate typist than me, you've probably seen at least three different kinds of errors by now:
+
+* `SyntaxError` means your code was malformed and Python didn't know to parse it. You'll get this if you forget the closing quote on a string, use a function without parentheses or write a nonsenical line like `a =`. Syntax errors are the only kind that will be caught as soon as you try to run the program - with other kinds of errors, Python won't know there's a problem until it gets to the line that has it, so you'll see the program execute up to that point and then crash.
+
+* `NameError` of course is what you get when you use a variable you didn't define. Often these are just typos.
+
+* `TypeError` is what you get for doing something like `5 + 'a'`.
+
+We'll see more error types in the future, but these are probably the three most common.
 
 [Next lesson: Flow control](pythontut2)
