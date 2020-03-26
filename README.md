@@ -11,7 +11,6 @@
 * paladin
 * entr
 * certbot (only to get certs)
-* git-lfs
 
 **Temporary**: I have made changes to py-markdown2's source code to make it support &lt;expand-note&gt;. These changes are essential, but a better solution is needed eventually.
 
@@ -60,8 +59,3 @@ Deploy the DNS TXT record and then the file as requested. Test that each are ava
 The Django server's config involves some settings that can't be exposed in the repo, so they're stored in secret.py protected by .gitignore. The necessary settings:
 
 * `SECRET_KEY`
-* `EMAIL_HOST_PASSWORD`
-
-# git-lfs
-
-This repo needs git-lfs to be uploaded to Github due to the RTTP downloads exceeding size limits.
