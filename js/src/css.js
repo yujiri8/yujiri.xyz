@@ -15,6 +15,10 @@ a:visited {
 }
 code, .code {
 	background-color: var(--codecolor);
+	font-size: 1.2em;
+}
+code {
+	white-space: pre-wrap;
 }
 hr {
 	border-color: var(--weakcolor);
