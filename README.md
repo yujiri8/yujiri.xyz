@@ -4,7 +4,8 @@
 * nginx
 * npm
 * jinja2
-* py37-markdown2
+* mistune (2.0.0a2)
+* python-slugify
 * pgpy
 * Beautiful Soup
 * mutt (for email notifications)
@@ -59,3 +60,7 @@ Deploy the DNS TXT record and then the file as requested. Test that each are ava
 The Django server's config involves some settings that can't be exposed in the repo, so they're stored in secret.py protected by .gitignore. The necessary settings:
 
 * `SECRET_KEY`
+
+# Markdown problem
+
+I have several unresolved issues with markdown processing. I explore them and the things I've tried [at dev.to](https://dev.to/yujiri8/the-quest-for-a-better-markdown-processor-31og).

@@ -79,8 +79,10 @@ z = x + y
 print(z / y)
 ```
 
-<div class="highlight" markdown="1">
+<div class="highlight">
+
 The parentheses after `print` are important - they tell Python what the `print` applies to. The reason it can't just print the rest of the line is because you need to be able to wrap other functions around it (we'll see this later on).
+
 </div>
 
 # Strings
@@ -119,17 +121,21 @@ You probably also noticed that this time the results of the operation were still
 hello
 ```
 
-<div class="highlight" markdown="1">
+<div class="highlight">
+
 Jargon: **concatenate**: to add sequences together. Using `+` on strings is "concatenating" the stings. Using `+` on numbers is *not* concatenation, because it gives you the total of the numbers, not the numbers stuck together. (This distinction will start to make more sense when we get into sequences in part 3.)
+
 </div>
 
 As an aside, you can now figure out how to make backslash-escaping completely unnecessary. Try to find another way to print a line of text that has both single and double quotes.
 
-<expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+<expand-note closedtext="Show solution" opentext="Hide solution">
+
 ```
 print('I said, "' + "it's okay." + '"')
 ```
 See how this works? I made it three separate strings: the first one is enclosed by single quotes, so the double quote inside it is literal; the second one is enclosed by double quotes, so the single-quote inside it is literal, and the last one just needs to contain the remaining double quote, so I put it in single quotes.
+
 </expand-note>
 
 This isn't to say you shouldn't use backslash-escaping (of course it's better than that mess), I just wanted to point out that they're never strictly necessary.
@@ -200,21 +206,26 @@ Protip: when you use a function with the `()` after its name, it's "replaced" wi
 
 Now you've got all the knowledge you need to make a program that asks for two numbers and then prints their sum (or whichever operation you choose to implement - we'll get to branching in the next lesson). I actually made this easier than I wanted to - my code snippets above pretty much contain the solution.
 
-<expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+<expand-note closedtext="Show solution" opentext="Hide solution">
+
 ```
 num1 = int(input('give me a number:'))
 num2 = int(input('give me another number:'))
 print(num1 + num2)
 ```
+
 </expand-note>
 
 **Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence (as a substitute for asking them which one. I'll get to how to do that in chapter 2).
 
 **More interesting exercise:** How do you do the single-operation calculator in one line and without using any variables?
-<expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
+<expand-note closedtext="Show solution" opentext="Hide solution">
+
 ```
 print(int(input('give me a number:')) + int(input('give me another number:')))
 ```
+
 </expand-note>
 
 There are just two appendices worth tacking on to this first chapter:

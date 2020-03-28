@@ -1,23 +1,15 @@
 #!/usr/local/bin/python3.7
 """Processes a source file and writes the final output to the production file."""
 
-import markdown2, jinja2
-from bs4 import BeautifulSoup as bs
+import jinja2
+import mistune
+from slugify import slugify
+import bs4
 import os, sys, datetime
 
 SRCDIR = '/root/src/'
 OUTDIR = '/root/html/'
 TEMPLATES = '/root/src/srv/scripts/'
-
-# Need a custom Markdown object to add header ids.
-markdowner = markdown2.Markdown(extras = ['header-ids'])
-markdowner.reset()
-
-class YujiriMarkdowner(markdown2.Markdown):
-	pass
-#	_block_tags_a = 'expand-note|' + markdown2.Markdown._block_tags_a
-#	_block_tags_b = 'expand-note|' + markdown2.Markdown._block_tags_b
-yujiri_markdown = YujiriMarkdowner(extras = ['code-friendly', 'fenced-code-blocks', 'markdown-in-html']).convert
 
 jinja_env = jinja2.Environment(autoescape = True)
 
@@ -79,7 +71,7 @@ def build_article(article, template_txt, path, last_modified):
 	# Retain only the article body.
 	article = article[article.find('\n\n')+2:]
 	if args.get('MARKDOWN'):
-		article = yujiri_markdown(article) \
+		article = mistune.markdown(article, escape=False) \
 			.replace('<pre><code>', '<pre class="code">') \
 			.replace('</code></pre>', '</pre>')
 	args['ARTICLE'] = add_fragment_links(article)
@@ -93,11 +85,11 @@ def build_article(article, template_txt, path, last_modified):
 
 def add_fragment_links(article):
 	"""Finds each heading and adds a pilcrow that's a permalink to it."""
-	dom = bs(article, features='lxml')
+	dom = bs4.BeautifulSoup(article, features='lxml')
 	for elem in dom.findAll(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
 		# Compute the id if it doesn't have one set.
 		if 'id' not in elem:
-			elem['id'] = markdowner.header_id_from_text(''.join(elem.strings), '', 0)
+			elem['id'] = slugify(''.join(elem.strings))
 		# Add the link.
 		link = dom.new_tag('a')
 		link['href'] = '#' + elem['id']

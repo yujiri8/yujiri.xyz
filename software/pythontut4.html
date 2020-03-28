@@ -139,7 +139,9 @@ I didn't really want to talk about methods until we got to objects or at least t
 So lists have this `remove` method that takes a value and deletes the first element in the list that is that value. (It does only get the first one; if `nums` were `[5, 4, 5]`, it would've been `[4, 5]` after the operation.)
 
 <div class="highlight" markdown="1">
+
 **Important jargon**: the value a function **returns** is the value it's replaced with when you execute it. For example, `input` *returns* the text entered.
+
 </div>
 
 The `remove` method of lists doesn't return anything.
@@ -176,9 +178,13 @@ And many others. Lists and tuples also have `count` and `index`.
 # Other useful list methods
 
 * `list.append(value)` - adds the value to the list in-place. Note that this way, you don't have to put brackets around it. (It's also slightly faster than using `+=`.)
+
 * `list.pop(i)` - removes the element at position `i` (default `-1`), and return it.
+
 * `list.insert(index, value)` - inserts the given `value` at the given `index`.
+
 * `list.reverse()` - reverses it in-place.
+
 * `list.clear()` - removes all elements. The difference between this and setting the variable to `[]` is that reassigning breaks shared references; `list.clear()` changes the list in-place.
 
 Even ints and floats have some methods, but they're all pretty obscure.
@@ -197,6 +203,7 @@ And whatever other operations you want to implement.
 When they're done manipulating their sentence, print it out with the first word capitalized like a proper sentence. Then print the number of times each letter occurs in the sentence.
 
 <expand-note opentext="Hide solution" closedtext="Show solution">
+
 ```
 menu = """
 	insert - specify a word to insert and the position to put it at
@@ -259,6 +266,7 @@ for letter in "abcdefghijklmnopqrstuvwxyz":
 	if frequency:
 		print(letter, "appears", frequency, "times")
 ```
+
 </expand-note>
 
 # Dictionaries
@@ -326,6 +334,7 @@ Here's a (hopefully) fun assignment. Write a program that lets a group of people
 Some functions that will help you here are the builtin `max` and `sum`, which take a sequence of any type and give you the max or total value, if applicable. (If you use them on a sequence of values that can't be compared, like `max([4, 'a'])`, you'll get an error.) You can do it without these, by implementing their logic yourself, but using the builtin ones will save you some effort.
 
 <expand-note opentext="Hide solution" closedtext="Show solution">
+
 ```
 # The value of each key will be a nested dict of all the player's data: 'scores', 'max', and 'average'
 data = {}
@@ -353,4 +362,5 @@ print("Everyone's average score:")
 for player in data:
 	print('\t' + player + ":", data[player]['average'])
 ```
+
 </expand-note>

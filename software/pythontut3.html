@@ -18,7 +18,9 @@ The most basic feature of sequences is the ability to access a specific item ins
 ```
 
 <div class="highlight" markdown="1">
+
 A critical property of indexes is that **they start at 0**. `"Hello"[0]` is `'H'`. `"Hello"[1]` is `'e'`. This is actually pretty common in computing.
+
 </div>
 
 You can also, of course, index with a variable.
@@ -29,7 +31,9 @@ You can also, of course, index with a variable.
 ```
 
 **Exercise:** make a program that asks the user for a string, and then a number, and prints out the character at that position in the string. (For extra fun, do it in one line.)
+
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 print(input("enter a string:")[int(input("enter a number:"))])
 ```
@@ -38,6 +42,7 @@ This might look hard to parse - indeed, it's bad enough that a serious programme
 1. `input("enter a string:")` is replaced with the string entered, leaving: `print('blah'[int(input("enter a number:"))])`
 2. `input("enter a number:")` is replaced with the next string entered, leaving: `print('blah'[int('3')])`
 3. `int('3')` is replaced with `3`, leaving: `print('blah'[3])`
+
 </expand-note>
 
 ## Negative index
@@ -45,7 +50,9 @@ This might look hard to parse - indeed, it's bad enough that a serious programme
 You might've already thought to try this and figured out how it works, but what happens if you run `"Hello"[-1]`?
 
 <div class="highlight" markdown="1">
+
 Negative indices start from the end. Note that this means *they are not subject to zero-indexing*, since -0 is the same as 0. 0 is the first element, 1 is the second element, -1 is the last element, -2 is the second-last. If you find this confusing, you're not alone :)
+
 </div>
 
 If you try to access an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
@@ -85,11 +92,15 @@ This slices from the beginning (because start position is omitted) to the end (b
 # Iteration
 
 <div class="highlight" markdown="1">
+
 Jargon: **iterate**: to loop with a sequence and do something with each element inside it. It can be used with either "on" or "over" as a preposition.
+
 </div>
 
 **Exercise**: use your knowledge of loops and indexing to write a program that gets a string from the user and then prints out each character inside it on its own line. (I'm about to introduce an easier way of doing this, but I want you to see how it can be done without it.)
+
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 string = input("give me a string:")
 index = 0
@@ -98,6 +109,7 @@ while index < len(string):
 	index += 1
 ```
 Note that I couldn't put the `input("give me a string:")` that defines the variable `string` inside the condition like `while index < len(input("give me a string:")):`. If you tried to solve this yourself before looking at the solution (which you should have), you probably ran into this, but the reason that doesn't work is that a `while` loop's condition is **evaluated** every time it's checked, since it has to know when to stop. So every time it loops, it would ask, is `index < len(input("give me a string:"))`?. And every time it asks that, it would execute `input("give me string:")` to find out what its value was, which means the user would be asked to enter a new string after every iteration of the loop. The solution was to execute `input("give me a string:")` once at the beginning, and store the value, so that when the `while` loop evaluates its condition every time, it's only asking whether `index` is less than the length of `string`, where `string` is the *result* of `input("give me a string:")`. This way, it doesn't ask the user for a new string every time.
+
 </expand-note>
 
 ## `for`
@@ -112,7 +124,9 @@ Note that with `for`, the expression that tells it the sequence to be iterated (
 In general, in Python you should never have to iterate in the fashion I had you come with before I told you about this, but many other languages require it (C, Javascript in some situations), so it's a very good problem to have solved.
 
 **Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the letter is in the string.
+
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 string = input("give me a string:")
 char_to_find = input("give me a single character:")
@@ -125,6 +139,7 @@ if found:
 else:
 	print(char, 'is not in', string)
 ```
+
 </expand-note>
 
 ## `in`
@@ -190,7 +205,9 @@ Saluations
 As you can see, tuples are subject to indexing, slicing, and the rest of the bag the same way strings are, but they aren't limited to holding strings; they can hold ints, floats, strings, Booleans, or any other type of value.
 
 <div class="highlight" markdown="1">
+
 **Warning!** Declaring a tuple with only a single element isn't done the way you might expect! `nums = (5)` does not make a tuple; since parentheses are also used as mathematical or logical operators, that statement would just set `nums` to `5`. Python only interprets parentheses as enclosing a tuple if there's at least one comma inside (or if there's nothing inside). To set `nums` to a one-element tuple, you could do `nums = (5,)` - unnecessary trailing commas are permitted. Actually, you can even just write `nums = 5,`.
+
 </div>
 
 You can also add tuples together:
@@ -201,8 +218,11 @@ You can also add tuples together:
 (1, 2, 3, 4, 5, 6)
 ```
 <div class="highlight" markdown="1">
+
 Something I struggled with when learning Python was trying to add a single element to a tuple like: `nums += 5`. This would raise a `TypeError`, saying `can only concatenate tuple (not "int") to tuple`. Remember, since `var1 += var2` is shorthand for `var1 = var1 + var2`, `nums += 5` is saying `nums = nums + 5`. To add something to a tuple, the new addend has to itself be made into a tuple, like: `nums += (5,)`.
+
 </div>
+
 In fact, you can also multiply tuples:
 ```
 >>> nums = (1, 2, 3)
@@ -350,6 +370,7 @@ characters removed: 118
 This is supposed to be a fairly difficult assignment for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on. <!--I'll include some hints if you want hints but not the full solution.-->
 
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 WORDS = ('free', 'liberty', 'tyrant', 'tyranny', 'oppress', 'rebel', 'revolt', 'revolution')
 caught = ()
@@ -392,6 +413,7 @@ for word in caught:
 print("words found:", words_caught_str)
 print("characters removed:", removed)
 ```
+
 </expand-note>
 
 [Previous lesson: Mutable types](pythontut4)

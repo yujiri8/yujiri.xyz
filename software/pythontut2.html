@@ -24,11 +24,12 @@ print("goodbye")
 
 If the last line were indented too, it would only be printed if the password was guessed correctly. It doesn't matter how much indentation you use; a single space or an entire tab are both acceptable, as long as it's the same amount as the other things that are supposed to be on that level. (You also can't *mix* tabs and spaces, because tabs can have different width in different environments, so it could be ambiguous.)
 
-<span class="highlight">`==` is used for checking whether things are equal because `=` is used for assigning things to variables.</span>
-`!=` is "not equal", and `>`, `<`, `>=` and `<=` all work as expected.
+<span class="highlight">`==` is used for checking whether things are equal because `=` is used for assigning things to variables.</span> `!=` is "not equal", and `>`, `<`, `>=` and `<=` all work as expected.
 
 With this, you now have enough tools to implement a four-operation calculator (one that can do addition, subtraction, multiplication and division, and ask the user which one instead of just doing all four).
+
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 operation = input("What operation?")
 num1 = float(input("first number:"))
@@ -42,6 +43,7 @@ if operation == '*':
 if operation == '/':
 	print(num1 / num2)
 ```
+
 </expand-note>
 
 ### Indentation in the prompt
@@ -56,10 +58,10 @@ The way the Python prompt handles indented blocks can be confusing. After a line
 
 * `%` is the "modulus" operator, which prints the remainder of integer division:
 
-	```
-	>>> print(11 % 2)
-	1
-	```
+		>>> print(11 % 2)
+		1
+
+	This operator is read 'mod'.
 
 You can add these to the calculator if you want, but I think you get it.
 
@@ -178,9 +180,10 @@ else:
 ```
 The two are exactly the same.
 
-<!--Trent's markdown processor clobbers classes from <p>.-->
 <div class="highlight" markdown="1">
+
 New jargon: **nesting**: putting an intended block inside of another one. In the example without `elif`, the stuff under `else` was nested; it only even gets considered if the `else` clause is getting executed.
+
 </div>
 
 You can have any number of `elif` clause. Each one will only be executed if none of the previous ones were.
@@ -194,7 +197,9 @@ while input("guess the password:") != "secret123":
 ```
 
 <div class="highlight" markdown="1">
+
 New jargon: a special value that's used to exit a loop like this is often called a **sentry value**.
+
 </div>
 
 ### The infinite loop
@@ -267,6 +272,7 @@ Note that I placed the line `string += newest_entry` so that it would not execut
 Once you understand how that's working, **Assignment:** make it so the user can enter 'clear' to clear the string, and 'copy' to be prompted to enter a number, and then copy the string that many times. The program should also print a unique message if the user enters nothing.
 
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+
 ```
 string = ''
 newest_entry = ''
@@ -288,6 +294,7 @@ print("Your final string was:", string)
 This one was a bit tricky. Previously, I had put the adding before the getting input so that `'exit'` wouldn't be added when the user exited. But now we have a special behavior when the user enters an empty string, so I moved the getting input to the beginning of the loop, and added a condition to prevent it from adding the entry to the string if it was `'exit'`. There are other possible solutions to this problem.
 
 **Thinking exercise:** how do you clear the string without using the `clear` command?
+
 </expand-note>
 
 [Next lesson: Sequences](pythontut3)

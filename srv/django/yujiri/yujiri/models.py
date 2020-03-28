@@ -5,7 +5,7 @@ import django.core.exceptions as exceptions
 
 import uuid, datetime, html
 
-import markdown2
+import mistune
 
 class Word(models.Model):
 	word = models.TextField(primary_key=True)
@@ -123,13 +123,11 @@ def markdown(text):
 	"""Processes both markdown and the <spem> tag."""
 	# unescape > so blockquotes and spoilers can work; stop bookmarklet links sneaking in via Markdown;
 	# and fix the order of the tags in <pre><code> blocks.
-	return markdown2.markdown(spemtag(html.escape(text, quote=False).replace('&gt;', '>')),
-		extras=['code-friendly', 'spoiler', 'tables', 'fenced-code-blocks']) \
+	return spemtag(mistune.markdown(text) \
 		.replace('<a href="javascript:', '') \
 		.replace('<pre><code>', '<pre class="code">') \
-		.replace('</code></pre>', '</pre>')
+		.replace('</code></pre>', '</pre>'))
 
 def spemtag(text):
-	"""Unescapes only the <spem>tag</spem>, the only HTML tag allowed for direct use in comments.
-	Expects > to be already unescaped; see markdown."""
-	return text.replace('&lt;spem>', '<spem>').replace('&lt;/spem>', '</spem>')
+	"""Unescapes only the <spem>tag</spem>, the only HTML tag allowed for direct use in comments."""
+	return text.replace('&lt;spem&gt;', '<spem>').replace('&lt;/spem&gt;', '</spem>')

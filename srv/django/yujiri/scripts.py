@@ -36,3 +36,11 @@ def update_article_names():
 		input(cmt.article_title + ' renamed to ' + newtitle)
 		cmt.article_title = newtitle
 		cmt.save()
+
+def mistune_migrate():
+	import re
+	for cmt in Comment.objects.all():
+		new = re.sub(r'\*\*\*(.+)\*\*\*', '**_\1_**', cmt.body)
+		if new != cmt.body and not input(new + '\n\n'):
+			cmt.body = new
+			cmt.save()

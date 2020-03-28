@@ -2,6 +2,7 @@ TITLE Review of the Fish shell
 NAV Review: Fish
 TEMPLATE DEFAULT
 MARKDOWN
+DESC Fish is a shell that emphasizes "user-friendliness" and discoverability. Despite that pitch, it's quite sophisticated.
 
 # How Fish and I met
 
@@ -29,8 +30,10 @@ This means if you have a number of files that start with the same few characters
 
 To be fair, this feature isn't a strict positive. There are some times when it results in unintended autocompletions where other shells wouldn't.
 
-<div class="indent" markdown="1">
+<div class="indent">
+
 Example: `qww` and `saw` exist. If I mean to type `rm q` but my finger slips and I type `rm a`, and then press tab and enter instantly because I'm confident that the autocompletion will work, fish completes me to `saw` - because that's the only filename in the directory with an `a` in it - and I end up removing the wrong file. But the times it helps far outweigh the times it hurts in my experience.
+
 </div>
 
 <h1 class="good">Better response on failed autocomplete than any other shell</h1>
@@ -78,11 +81,3 @@ Another issue with the case correction is exemplified by an experience I had rec
 <br>
 
 Verdict: fish is a good shell. I'd hate to go back to bash or even zsh now. I absolutely recommend fish.
-
-<!--
-<h3 class="bad">The newline command substition problem</h3>
-
-fish splits command substitutions on newlines no matter what, .
-Command substitution always replaces newlines with spaces, and then uses newline as the field
-separator. So there's no way to get the newlines back.
--->
