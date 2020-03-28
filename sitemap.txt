@@ -18,6 +18,7 @@ https://yujiri.xyz/argument/evolutionary_psychology
 https://yujiri.xyz/argument/experience_calculation
 https://yujiri.xyz/argument/fee_bystander
 https://yujiri.xyz/argument/first_round_capital
+https://yujiri.xyz/argument/fizzy_trans
 https://yujiri.xyz/argument/history_philosophy
 https://yujiri.xyz/argument/hypocritical_objectivism
 https://yujiri.xyz/argument/identity_politics
@@ -364,6 +365,7 @@ https://yujiri.xyz/software/readability
 https://yujiri.xyz/software/renpy
 https://yujiri.xyz/software/root
 https://yujiri.xyz/software/safety_choice
+https://yujiri.xyz/software/tool_saving_time
 https://yujiri.xyz/software/shell_basics
 https://yujiri.xyz/software/sqlite
 https://yujiri.xyz/software/tags
