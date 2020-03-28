@@ -13,8 +13,6 @@
 * entr
 * certbot (only to get certs)
 
-**Temporary**: I have made changes to py-markdown2's source code to make it support &lt;expand-note&gt;. These changes are essential, but a better solution is needed eventually.
-
 # Overview
 
 * The host runs FreeBSD and is managed with SSH.
