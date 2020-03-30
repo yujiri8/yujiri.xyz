@@ -36,11 +36,9 @@ customElements.define('comment-section', class extends LitElement {
 		<h1>Comments</h1>
 		<p>
 		You don't need an account or anything to post. Accounts are only for email notifications on replies.
-		Markdown formatting is supported. <span class="note">In particular, I use
-		<a href="https://github.com/trentm/python-markdown2">this markdown library</a> with the
-		<code>fenced-code-blocks</code> and <code>code-friendly</code> extras. I also support the &lt;spem&gt;
-		tag which makes text monospace like &lt;code&gt; but without changing the background color.
-		I use that tag for formatting <a href="/spem/">spem</a> text.</span>
+		Markdown formatting (<a href="https://github.com/lepture/mistune">this library</a>) is supported.
+		I also support the &lt;spem&gt; tag which makes text monospace like &lt;code&gt; but without
+		changing the background color. I use that tag for formatting <a href="/spem/">spem</a> text.
 		</p><p>
 		This article was last modified ${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.timestamp))}.
 		Comments made before then have orange timestamps.
