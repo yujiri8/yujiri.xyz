@@ -8,11 +8,11 @@ This time we're getting *real*, and I mean *real* real. You're going to learn ho
 
 # Function jargon
 
-First all, I've been saying the word already but to lay it out explicitly, a *function* is a part of a program that can be used ("called", or "invoked") from other parts of the program, as many times as you want. You can think of it as a mini-program. Built-in (predefined) functions we've already worked with include `print`, `input`, `int`, `str`, `float`, `len`, and a bunch more.
+First all, I've been saying the word already but to lay it out explicitly, a *function* is a part of a program that can be used ("called", or "invoked") from other parts of the program, as many times as you want. You can think of it as a mini-program. Built-in functions we've already worked with include `print`, `input`, `int`, `str`, `float`, `len`, and a bunch more.
 
 Any time you call a function, you put parentheses after it. The parentheses mean that you want the function to be called and replaced with its return value. The values put inside the parentheses are the **arguments** or **parameters** that you want the function to operate with.
 
-That concept - a function taking an argument - is part of what makes functions so powerful. They allow you to write code that can be reused (without copy-pasting it) on a new piece of data. Concrete examples will make this a lot clearer later on.
+That concept - a function taking an argument - is part of what makes them so powerful. They allow you to write code that can be reused,without copy-pasting it, on a new piece of data. Concrete examples will make this a lot clearer later on.
 
 So here's a simple example.
 ```
@@ -25,6 +25,14 @@ def grandiose_print(thing):
 After executing this code, I can do:
 ```
 >>> grandiose_print('hello')
+
+########################################
+
+hello
+
+########################################
+
+>>> grandiose_print('goodbye')
 
 ########################################
 
@@ -47,13 +55,11 @@ Now, we can do:
 5.333333333333333
 ```
 
-Note that if a function doesn't have a `return` statement, it just returns `None`. (It also returns `None` if you just write `return` without saying what to return. There is a use for this, which you'll soon figure out if you haven't already.)
+If a function doesn't have a `return` statement, it just returns `None`. (It also returns `None` if you just write `return` without saying what to return. There is a use for this, which you'll soon figure out if you haven't already.)
 
 # Why use functions?
 
-Functions provide two main benefits: encasulation and abstraction. <!---->
-
-The most obvious use of functions is to avoid repetition. If you have a program that does the same thing in a lot of places, you can put the duplicated lines in a function, and just call the function every time instead of repeating its source code.
+Functions provide two main benefits. The most obvious one is avoiding repetition. If you have a program that does the same thing in a lot of places, you can put the duplicated lines in a function, and just call the function every time instead of repeating its source code.
 
 But there's another tremendous benefit to using them, which is of [readability](readability). Even if a function is only used once, it can still be better than not making it a function, because it can make the logic of the program easier to follow. If you have 100 lines of code in a row that perform a task that can be divided into three phases, try making each phase a function. Then the main part can just look like:
 ```
@@ -61,7 +67,7 @@ phase1()
 phase2()
 phase3()
 ```
-Which makes it easier to see what it's doing at a glance. In a program of any significant size, being able to "zoom out" and see the logic from a higher-level perspective is essential to keeping track of it.
+Which makes it easier to see what it's doing at a glance (that is, if your phases have better names than that). In a program of any significant size, being able to "zoom out" and see the logic from a higher-level perspective is essential to keeping track of it.
 
 # Multiple arguments and return values
 
@@ -74,7 +80,9 @@ def find(string, substr):
 		return print(substr, 'is in', string + ', but not the same case')
 	print(substr, 'is not in', string, 'at all')
 ```
-Since `print` returns nothing (meaning it returns `None`), `return print(...` just calls `print` with the given argument and then again returns `None`. Note that I don't use `elif` and `else` here, but the function works as intended. That's because once the function hits a `return` statement, it stops and returns, so it doesn't even check the other conditions. This pattern of using `return` under each case as an alternative to `elif` / `else` is not uncommon, although in this particular case it might've been clearer to use `elif` and `else`. I just wanted to show you this is a thing. The main draw is normally that if there's a lot of code in the function after an `if` block, `return`ing inside the block saves you from having to indent the rest of the function under an `else`.
+Since `print` returns nothing (meaning it returns `None`), `return print(...` just calls `print` with the given argument and then again returns `None`.
+
+Note that I don't use `elif` and `else` here, but the function works as intended. That's because once the function hits a `return` statement, it stops and returns, so it doesn't even check the other conditions. This pattern of using `return` under each case as an alternative to `elif` / `else` is not uncommon, although in this particular case it might've been clearer to use `elif` and `else`. I just wanted to show you this is a thing. The main draw is normally that if there's a lot of code in the function after an `if` block, `return`ing inside the block saves you from having to indent the rest of the function under an `else`.
 
 You can also return multiple values:
 ```
@@ -90,11 +98,11 @@ And this is where we need to talk about unpacking tuples.
 >>> b
 6
 ```
-Well did you know you could do that? It's very useful with functions that return multiple values, as, the multiple values are actually returned as a tuple. Going back to `remainder_div`:
+Well did you know you could do that? It's very useful with functions that return multiple values, since, the multiple values are actually returned as a tuple. Going back to `remainder_div`:
 ```
->>> remainder_div(5, 2) # we'll get a tuple
+>>> remainder_div(5, 2) # This gives us a tuple
 (2, 1)
->>> quotient, remainder = remainder_div(5, 2)
+>>> quotient, remainder = remainder_div(5, 2) # This way, we get each value as a separate variable with only one line.
 >>> quotient
 2
 >>> remainder
@@ -129,14 +137,14 @@ By default, `sort` sorts in ascending order, because its `reverse` parameter def
 
 ## Variadic arguments
 
-Okay, these two features aren't useful that often, but I might as well teach them while I'll talking about functions. After all, you've already seen a function that uses both, and I don't want to keep you from unlocking its full power any longer :P
+Okay, these two features aren't useful that often, but I might as well teach them while I'll talking about functions. After all, you've already seen a function that uses both, and I don't want to keep you from unlocking its full power any longer :D
 ```
 def new_average(*nums):
 	return sum(nums) / len(nums)
 ```
 What's this? It's the same as the `average` function we wrote earlier, but it uses that weird `*` in front of the parameter name. That makes the parameter *variadic*, which means the caller can pass a varying number of arguments to `nums` and `nums` will be a tuple that contains all of them.
 
-But this means we don't have to wrap our numbers in a list or tuple to call it (In fact, we can't):
+But this means we don't have to wrap our numbers in a list or tuple to call it (In fact, we can't because then the function would get a tuple with our list of numbers as its first element):
 ```
 >>> new_average(1, 5, 6)
 4.0
@@ -158,7 +166,7 @@ You don't actually have to pass arguments in order, generally. There's another w
 a is for apple and b is for banana
 ```
 
-In fact, `print` has not one but *two* parameters with default values that you can only pass this way because the main parameter (the stuff to print) is variadic. You know how it always prints a newline after it even if your string doesn't end in a newline? (Keep in mind that a newline is not a blank line. A blank line is two newlines in a row.) You can stop this by setting the `end` parameter to an empty string:
+In fact, `print` has not one but *two* parameters with default values that you can only pass this way because the main parameter (the stuff to print) is variadic. You know how it always prints a newline after your string? (Keep in mind that a newline is not a blank line. A blank line is two newlines in a row.) You can stop this by setting the `end` parameter to an empty string:
 ```
 print("message 1", end='')
 print("message 2", end='')
@@ -204,7 +212,7 @@ NameError: name 'test' is not defined
 ```
 Well isn't that strange!
 
-The `global` keyword can be used to allow a function to assign to variables outside of it.
+By default, variables inside functions are *local*; they only exist inside the function. This helps prevent mistakes. If you want a function to assign to variables outside of it, use the `global` keyword:
 ```
 >>> def f():
 ...   global test
@@ -214,9 +222,41 @@ The `global` keyword can be used to allow a function to assign to variables outs
 6
 ```
 
-<div class="highlight" markdown="1">
+<div class="highlight">
+
 Note that you *can access* global variables from inside a function, you just can't *assign* them.
+
 </div>
+
+# The stack
+
+It's time for some more theory. So when you call a function, Python stops executing where it was at and goes to execute the function, and finishes the function before returning to the place it was called from. And as I've already shown, functions can call each other. Each time Python sees a new function call, it pauses the one it's currently executing to go execute the new one. It's useful to think of a "stack" of currently running functions:
+
+The bottom of the stack is the 'global scope', which isn't in any functions. When you call a function, it gets pushed onto this stack, and so it has to be finished and removed ('popped') before we can resume executing the one below it. This stack of execution is "first in, last out" (FILO).
+
+(The information about each function stored on the stack is a stack **frame**.)
+
+This understanding of the stack is reinforced by error messages. Before we introduced functions, the only errors you saw showed you a line number and the name of the file. Maybe you've already seen it, but if Python has an error inside a function, it shows you *two* filenames and line numbers: first the place the function was called, then the problematic line of the function <span class="note">With the line number still relative to the file - line 10 means the 10th line of the file, not the 10th line of the function</span>, with the "`<module>`" part replaced with the function name. If the error was in a function called from a function, it shows you three stack frames.
+
+And that's the meaning of the words "Traceback (most recent call last):"! It's showing you a trace from the bottom of the stack (the global scope) back to the line of the error, with the most recent call - the top function on the stack - last!
+
+Syntax errors, by the way, don't do this because they don't happen while runinng the function - Python scans the whole file for valid syntax before it executes anything, so if you have a syntax error inside a function, you'll only see the one line number.
+
+# Recursion
+
+Recursion means a function calling itself. Yes, you can do that!
+
+A good example of when you'd want to is for finding [the factorial of a number](https://en.wikipedia.org/wiki/Factorial):
+```
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+```
+Another example is when working with [a filesystem](filesystem_concepts), for example if you want to find the total size of a directory. That requires getting the size of each file inside, which means if the directory contains more directories, you would use a recursive function that would call itself on each subdirectory it found.
+
+You'll see if you make an error inside a recursive function that each time Python recurses, it's pushing a new stack frame, so if it only errors on the fifth time you'll see five frames in the error message.
 
 # Closures
 
@@ -229,13 +269,13 @@ Closures are rather confusing, rarely used, and it's okay if you find them diffi
 ...   return greeter
 ...
 >>> melancholy_greet = make_greeter('hi, ', '...') # melancholy_greet becomes a reference to the function returned by make_greeter...
->>> melancholy_greet("Bob") # ... and we can call like a normal function!
+>>> melancholy_greet("Bob") # ...and we can call it like a normal function!
 hi, Bob...
 >>> upbeat_greet = make_greeter('Howdy, ', '!')
 >>> upbeat_greet("Bob")
 Howdy, Bob!
 ```
-See how that's working? `make_greeter` returns a function, and we can use it to get different greeter functions by passing different arguments to `make_greeter`. I think the reason it's called a closure is because you "close" the parameters into the inner function, essentially baking them into its code so the returned function can have those parameters without needing to be passed them on each call.
+See how that's working? `make_greeter` returns a function, and we can use it to get different greeter functions by passing different arguments to `make_greeter`. I think the reason it's called a closure is because you "close" the parameters of `make_greeter` into the inner `greeter` function, essentially baking them into its code so the returned function can have those parameters without needing to be passed them on each call.
 
 (You can also pass functions as arguments to functions, by the way.)
 
@@ -268,18 +308,11 @@ incrementing from 1 to 2
 incrementing from 3 to 4
 ```
 
-# Docstrings
-
-The point of docstrings over comments is that the `pydoc` command-line tool displays docstrings.
-<!---->
-
 # `import`
 
 The `import` statement includes code from another file into your program. For example, let's say you had a function you used a lot and that you expected to use in future projects too. You write a module called something like `util` (for 'utilities' - this is a common abbreviation in programming):
 ```
 def ask_bool(question):
-	"""Asks the user a boolean question, and waits until they enter an answer
-	   that can be interpretered as 'yes' or 'no'."""
 	while True:
 		entry = input(question + '(y/n) ').lower().strip()
 		if entry in ('y', 'n', 'yes', 'no'):
@@ -311,13 +344,13 @@ The Python interpreter ships with a massive **standard library**, which is a col
 >>> random.randint(10, 20)
 12
 ```
-`random` provides lots of functions related to randomness, `randint` isn't the only one. For example, `random.random()` returns a random float between 0 and 1. `random.choice` is a shortcut that takes a sequence and gives you a random element from it, by generating a random int between 0 and the length of the sequence and then indexing.
+`random` provides lots of functions related to randomness, `randint` isn't the only one. For example, `random.random` returns a random float between 0 and 1. `random.choice` is a shortcut that takes a sequence and gives you a random element from it, by generating a random int between 0 and the length of the sequence and then indexing.
 
 We're gonna use this in our project, and it's gonna be *fun*...
 
 # `from`, `as`, and `*` imports
 
-One more think I better talk about while we're on imports. Three more things, actually. The `from` syntax allows you to import only some things from a module, but without the module name as a prefix (called a namespace prefix).
+One more thing I better talk about while we're on imports. Three more things, actually. The `from` syntax allows you to import only some things from a module, but without the module name as a prefix (called a namespace prefix).
 ```
 >>> from random import randint
 >>> randint(1, 5) # this doesn't need to be prefixed with 'random.' this way

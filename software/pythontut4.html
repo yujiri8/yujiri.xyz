@@ -336,23 +336,27 @@ Some functions that will help you here are the builtin `max` and `sum`, which ta
 <expand-note opentext="Hide solution" closedtext="Show solution">
 
 ```
-# The value of each key will be a nested dict of all the player's data: 'scores', 'max', and 'average'
+# The value of each key will be a nested dict of all
+# the player's data: 'scores', 'max', and 'average'
 data = {}
 
 while True:
 	name = input("Enter your name (blank to finish):")
 	if not name: break
+	# Initialize a blank list of scores for them.
 	data[name] = {'scores': []}
 	while True:
 		score = input("Enter a score (blank to finish):")
 		if not score: break
 		data[name]['scores'].append(int(score))
-	# now that we have all their scores, compute stats for them
+	# Now that we have all their scores, compute stats for them.
 	data[name]['average'] = sum(data[name]['scores']) / len(data[name]['scores'])
 	data[name]['max'] = max(data[name]['scores'])
 
 grand_max = {'name': '', 'score': 0}
 for player in data:
+	# If this player has a higher score than the highest we've found yet,
+	# make them the new highest.
 	if data[player]['max'] > grand_max['score']:
 		grand_max = {'name': player, 'score': data[player]['max']}
 
