@@ -2,6 +2,7 @@ https://yujiri.xyz/argument/
 https://yujiri.xyz/argument/association
 https://yujiri.xyz/argument/boilerplate_rules
 https://yujiri.xyz/argument/changing_language
+https://yujiri.xyz/argument/chat_debate
 https://yujiri.xyz/argument/citations
 https://yujiri.xyz/argument/condescending_conservative
 https://yujiri.xyz/argument/connotations
@@ -16,6 +17,7 @@ https://yujiri.xyz/argument/ethical_notions_personhood
 https://yujiri.xyz/argument/evasion
 https://yujiri.xyz/argument/evolutionary_psychology
 https://yujiri.xyz/argument/experience_calculation
+https://yujiri.xyz/argument/faction_ancap
 https://yujiri.xyz/argument/fee_bystander
 https://yujiri.xyz/argument/first_round_capital
 https://yujiri.xyz/argument/fizzy_trans
