@@ -156,7 +156,6 @@ export function parseQuery(raw) {
 
 // Fragment link fix, necessary because the navbar has position:sticky.
 function scrollFix() {
-	if (!window.location.hash) return;
 	const section = document.getElementById(window.location.hash.slice(1));
 	if (!section) return;
 	const offset = section.offsetTop;
