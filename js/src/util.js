@@ -121,6 +121,8 @@ window.resizeColumns = function() {
 };
 
 export function showToast(tone, msg) {
+	// This flag is set when navigating away to stop error toasts from firing.
+	if (window.noShowError) return;
 	const toast = document.getElementById('toast');
 	const color = {'err': '#f00', 'success': '#0f0'}[tone];
 	toast.setAttribute('style', `--lt-color:${color};`)
@@ -165,7 +167,8 @@ function scrollFix() {
 
 window.addEventListener("load", scrollFix);
 window.addEventListener("hashchange", scrollFix);
-
+// This flag stops error toasts from showing when a request is interrupted by navigating away.
+window.addEventListener("beforeunload", () => window.noShowError = true);
 
 // A global utility to make a textarea grow when necessary.
 export function autogrow(e) {
