@@ -44,3 +44,32 @@ def mistune_migrate():
 		if new != cmt.body and not input(new + '\n\n'):
 			cmt.body = new
 			cmt.save()
+
+def slurp_logs():
+	import json, datetime, os
+	with open('/var/log/nginx/access.log') as f:
+		for line in f:
+			if not line or line == '\n': continue
+			try:
+				args = json.loads(line)
+			except:
+				print(line)
+				raise
+			time = datetime.datetime.strptime(args['time'], '%d/%b/%Y:%H:%M:%S +0000').replace(
+				tzinfo = datetime.timezone.utc)
+			Log(
+				method = args['method'],
+				scheme = args['scheme'],
+				http2 = args['http2'],
+				host = args['host'],
+				path = args['uri'],
+				query = args['query'],
+				orig_path = args.get('request_uri'),
+				time = time,
+				duration = datetime.timedelta(microseconds = args['duration']*1000),
+				code = args['code'],
+				ip = args['ip'],
+				ua = args['user_agent'],
+				referer = args['referer'],
+			).save()
+#	os.truncate('/var/log/nginx/access.log', 0)

@@ -131,3 +131,21 @@ def markdown(text):
 def spemtag(text):
 	"""Unescapes only the <spem>tag</spem>, the only HTML tag allowed for direct use in comments."""
 	return text.replace('&lt;spem&gt;', '<spem>').replace('&lt;/spem&gt;', '</spem>')
+
+class Log(models.Model):
+	# The URL
+	method = models.TextField()
+	scheme = models.TextField()
+	http2 = models.TextField()
+	host = models.TextField()
+	orig_path = models.TextField(null=True)
+	query = models.TextField()
+	# Response
+	path = models.TextField()
+	time = models.DateTimeField()
+	duration = models.DurationField()
+	code = models.IntegerField()
+	# Analytics
+	ip = models.TextField()
+	ua = models.TextField()
+	referer = models.TextField()
