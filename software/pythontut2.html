@@ -212,7 +212,7 @@ while num != 0:
 	print(num)
 	num -= 3
 ```
-Go ahead and run this to see what I mean. Obviously, my condition should've been `num > 0` because `num != 0` is `True` if `num` is negative. The reasoning I'm including this is so that when you inevitably encounter this at some point, you'll know what kind of thing must be causing it - a loop condition didn't evaluate to `False` when you thought it would. Also, very helpful tidbit: pressing `Ctrl-C` will generally stop a running program, which you can use to escape an infinite loop.
+Go ahead and run this to see what I mean. Obviously, my condition should've been `num > 0` because `num != 0` is `True` if `num` is negative. The reasoning I'm including this is so that when you inevitably encounter this at some point, you'll know what kind of thing must be causing it - a loop condition didn't evaluate to `False` when you thought it would. Also, very helpful tidbit: pressing `Ctrl-C` will generally stop a running program, which you can use to escape an infinite loop. (Technically, it raises a `KeyboardInterrupt` error.)
 
 I just have to show you a few more tricks before we can get to a cool assignment.
 
