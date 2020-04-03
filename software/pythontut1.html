@@ -188,29 +188,31 @@ one word	another
 
 # Input
 
-`input` is the basic function for getting text input from the user. If you type `a = input()`, Python will wait for you to type something in after that, and then store what you type in the variable `a`.
-
-You can also specify a prompt to `input`:
+`input` is the basic function for getting text input from the user. Just doing `input()` by itself will wait for the user to type something thing in (stopping when they press enter). After that, you can think of the `input()` as if it gets *replaced* by what the user typed in, so you can use it like a literal value:
 ```
-text = input("give me some text:")
+print(input())
+```
+That one-line program will wait for the user to type something in, and then repeat it back to them. If the user types "hello", it's like that line becomes `print('hello')`. You could also store the input in a variable like `a = input()`, then do something else, and parrot it back with `print(a)` later.
+
+You can also give `input` a string value to use as a prompt:
+```
+text = input("give me some text: ")
 print("here's the text you gave me: " + text)
 ```
+(Note that `input` doesn't output a newline after its prompt, which `print` does. If you did `print("give me some text:")` and then `input()`, the user would be typing on the line below "give me some text".)
 
-So, with that done, can we use `input` to get numbers for our interactive calculator?
-
+So with that done, can we use `input` to get numbers for our interactive calculator?
 ```
->>> num = input("give me a number:")
-give me a number:5
+>>> num = input("give me a number: ")
+give me a number: 5
 >>> num
 '5'
 >>> num * 2
 '55'
 ```
+Hm... there's one problem with using `input` to make a calculator: it gives us a string, so when I tried to multiply it, it thought I was trying to multiply *the text* '5'.
 
-Hm... there's one problem with using `input` to make a calculator: it returns a string.
-
-`5` and `'5'` are *very* different - one is a number and the other is a string. It's kinda like [the difference between a number and a numeral](https://www.mathsisfun.com/numbers/numbers-numerals-digits.html). This is where the `int` function comes in: it converts a string to an int (integer).
-
+`5` and `'5'` are *very* different - one's a number and the other's a string. It's kinda like [the difference between a number and a numeral](https://www.mathsisfun.com/numbers/numbers-numerals-digits.html). This is where the `int` function comes in: it converts a string to an int (integer).
 ```
 >>> num = int('5')
 >>> num
@@ -221,17 +223,9 @@ Hm... there's one problem with using `input` to make a calculator: it returns a 
 
 (The `str` function also exists to turn a number into a string. You don't need it for `print`, though, because `print` already prints a string representation of its parameter.)
 
-Protip: when you use a function with the `()` after its name, it's "replaced" with its result, meaning you can use it anywhere you could use a literal value:
-```
->>> num = int(input())
-5
->>> num + 1
-6
-```
-
 # Calculator time!
 
-Now you've got all the knowledge you need to make a program that asks for two numbers and then prints their sum (or whichever operation you choose to implement - we'll get to branching in the next lesson). I actually made this easier than I wanted to - my code snippets above pretty much contain the solution.
+Now you've got all the knowledge you need to make a program that asks for two numbers and then prints their sum (or whichever operation you like - you can't ask the user which one they want, because that would require the `if` statement, which we'll get to in the next lesson). Combine what you've learned and you can do it in as little as three lines.
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
@@ -243,7 +237,7 @@ print(num1 + num2)
 
 </expand-note>
 
-**Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence (as a substitute for asking them which one. I'll get to how to do that in chapter 2).
+**Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence, as a substitute for asking the user which one they want.
 
 **More interesting exercise:** How do you do the single-operation calculator in one line and without using any variables?
 
