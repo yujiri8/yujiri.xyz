@@ -78,8 +78,8 @@ customElements.define('notifs-panel', class extends LitElement {
 		you receiving notifications even if you're subscribed to a parent of it.
 		Basically, it travels up the tree and obeys the first subscription or ignore it finds.
 		</p>
+		<input id="autosub" type="checkbox" ?checked="${this.autosub}" @change="${this.setAutosub}"></input>
 		<label for="autosub">Automatically subscribe to your own comments</label>
-		<input type="checkbox" ?checked="${this.autosub}" @change="${this.setAutosub}"></input>
 		<h2>Subscriptions</h2>
 		<table>
 			<thead><tr>
