@@ -5,16 +5,16 @@ import jinja2
 import mistune
 from slugify import slugify
 import bs4
-import os, sys, datetime
+import os, sys, datetime, argparse
 
-SRCDIR = '/root/src/'
-OUTDIR = '/root/html/'
-TEMPLATES = '/root/src/srv/scripts/'
+HOME = os.path.expanduser('~')
+SRCDIR = HOME+'/src/'
+OUTDIR = HOME+'/html/'
 
 jinja_env = jinja2.Environment(autoescape = True)
 
 def process_file(infile, outfile, templates):
-	print(infile, outfile, templates)
+	print(infile, outfile)
 	# If it's a directory, create it if it doesn't exist, then quit.
 	if os.path.isdir(infile):
 		if not os.path.exists(outfile): os.mkdir(outfile)
@@ -103,20 +103,22 @@ def add_fragment_links(article):
 	return dom
 
 if __name__ == '__main__':
-	try:
-		infile = sys.argv[1]
-	except:
-		print(sys.argv, ": invalid arguments. We need at least an infile; "
-			"optionally an outfile, and a template dir.")
+	parser = argparse.ArgumentParser()
+	parser.add_argument('infiles', nargs = '*') # optional if -r is passed
+	parser.add_argument('-o', dest = 'stdout', action = 'store_true')
+	parser.add_argument('-t', dest = 'templatedir', default = HOME+'/src/srv/scripts/')
+	parser.add_argument('-r', dest = 'recursive', action = 'store_true')
+	args = parser.parse_args()
+	if args.recursive:
+		import glob
+		args.infiles = (f for f in glob.glob(SRCDIR+'/**', recursive=True)
+			if '/js/' not in f and '/srv/' not in f)
+	elif not len(args.infiles):
+		print('if not generating everything, need at least one filename', file = sys.stderr)
 		sys.exit(1)
-	infile = os.path.abspath(infile)
-	try:
-		outfile = sys.argv[2]
-	except:
+	for arg in args.infiles:
+		infile = os.path.abspath(arg)
 		outfile = infile.replace(SRCDIR, OUTDIR)
 		# strip '.html' from the end, for Nginx's benefit
 		if outfile.endswith('.html'): outfile = outfile[:-5]
-	try:
-		TEMPLATES = sys.argv[3]
-	except: pass
-	process_file(infile, outfile, TEMPLATES)
+		process_file(infile, args.stdout or outfile, args.templatedir)
