@@ -9,6 +9,7 @@ customElements.define('notifs-panel', class extends LitElement {
 			email: {type: String, attribute: false},
 			user: {type: String, attribute: false},
 			subs: {type: Array, attribute: false},
+			autosub: {type: Boolean, attribute: false},
 		}
 	}
 	static get styles() {
@@ -77,7 +78,8 @@ customElements.define('notifs-panel', class extends LitElement {
 		you receiving notifications even if you're subscribed to a parent of it.
 		Basically, it travels up the tree and obeys the first subscription or ignore it finds.
 		</p>
-		<div>
+		<label for="autosub">Automatically subscribe to your own comments</label>
+		<input type="checkbox" ?checked="${this.autosub}" @change="${this.setAutosub}"></input>
 		<h2>Subscriptions</h2>
 		<table>
 			<thead><tr>
@@ -119,7 +121,9 @@ customElements.define('notifs-panel', class extends LitElement {
 	async fetchData() {
 		const resp = await util.api('GET', 'notifs/see');
 		try {
-			this.subs = (await resp.json()).subs; // The email field may be deprecated.
+			const data = await resp.json();
+			this.subs = data.subs;
+			this.autosub = data.autosub;
 		} catch {
 			util.showToast('err', "Couldn't understand response from server");
 		}
@@ -144,8 +148,12 @@ customElements.define('notifs-panel', class extends LitElement {
 		await util.api('POST', 'setpubkey', undefined, formData);
 		window.location.reload();
 	}
+	async setAutosub(e) {
+		await util.api('POST', 'setautosub', undefined, e.target.checked);
+		util.showToast('success', "Setting saved");
+	}
 	async editSub(id, state) {
-		await util.api('POST', 'notifs/edit', undefined, {id: id, state: state});
+		await util.api('POST', 'notifs', undefined, {id: id, state: state});
 		this.fetchData();
 	}
 });

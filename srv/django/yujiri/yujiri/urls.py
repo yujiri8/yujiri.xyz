@@ -38,5 +38,6 @@ urlpatterns = [
     path('api/setpw', comments.setpw),
     path('api/setname', comments.setusername),
     path('api/setpubkey', comments.setpubkey),
+    path('api/setautosub', comments.setautosub),
     path('api/stats', stats.stats),
 ]

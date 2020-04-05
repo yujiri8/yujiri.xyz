@@ -119,7 +119,7 @@ def accept_comment(req):
 	cmt.save()
 	send_reply_notifs(cmt)
 	# Subscribe users to their own comments by default.
-	if cmt.user:
+	if cmt.user and cmt.user.autosub:
 		Subscription(user = cmt.user, comment = cmt, sub = True).save()
 	resp = HttpResponse(status = 204)
 	if clear_auth:
@@ -230,7 +230,7 @@ def see_subs(req):
 	subs = Subscription.objects.filter(user = user)
 	resp = JsonResponse({
 		'subs':	[sub.dict() for sub in subs],
-		'email': user.email,
+		'autosub': user.autosub,
 	})
 	return resp
 
@@ -297,11 +297,8 @@ def setusername(req):
 	if not user: return HttpResponse(status = 401)
 	# Save username.
 	user.name = req.body.decode('utf-8')
-	# Change the token after this.
-	user.auth = gen_auth_token()
 	user.save()
-	resp = HttpResponse(status = 204)
-	return grant_auth(resp, user)
+	return HttpResponse(status = 204)
 
 def setpubkey(req):
 	user = common.check_auth(req)
@@ -317,6 +314,16 @@ def setpubkey(req):
 	user.save()
 	resp = HttpResponse(status = 204)
 	return grant_auth(resp, user)
+
+def setautosub(req):
+	user = common.check_auth(req)
+	if not user: return HttpResponse(status = 401)
+	try:
+		user.autosub = json.loads(req.body)
+	except:
+		return HttpResponse(status = 400)
+	user.save()
+	return HttpResponse(status = 204)
 
 def gen_auth_token(): return secrets.token_urlsafe(32)
 

@@ -45,6 +45,7 @@ class User(models.Model):
 	password = models.TextField()
 	auth = models.TextField()
 	admin = models.BooleanField(default = False)
+	autosub = models.BooleanField(default = True)
 	def __str__(self):
 		return self.email
 	def subs(self):
