@@ -5,9 +5,9 @@ import jinja2
 import mistune
 from slugify import slugify
 import bs4
-import os, sys, datetime, argparse
+import os, sys, datetime, argparse, pwd
 
-HOME = os.path.expanduser('~')
+HOME = pwd.getpwuid(os.getuid()).pw_dir
 SRCDIR = HOME+'/src/'
 OUTDIR = HOME+'/html/'
 
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 	if args.recursive:
 		import glob
 		args.infiles = (f for f in glob.glob(SRCDIR+'/**', recursive=True)
-			if '/js/' not in f and '/srv/' not in f)
+			if '/js/' not in f and '/srv/' not in f and '.gitignore' not in f)
 	elif not len(args.infiles):
 		print('if not generating everything, need at least one filename', file = sys.stderr)
 		sys.exit(1)
