@@ -66,11 +66,12 @@ customElements.define('comment-submit-area', class extends LitElement {
 		const bodyElem = this.shadowRoot.getElementById('body');
 		// Set the email cookie before sending the request, so it will be filled in if login is required.
 		util.setCookie('email', emailElem.value);
-		await util.api('POST', 'comments', {
+		await util.api('POST', 'comments', undefined, {
 			name: nameElem.value,
 			email: emailElem.value,
 			reply_to: this.reply_to || window.location.pathname,
-		}, bodyElem.value);
+			body: bodyElem.value,
+		});
 		// Dispatch the event to load the comment in.
 		this.dispatchEvent(new CustomEvent('comment-posted',
 			{bubbles: true, composed: true, detail: this.reply_to}))

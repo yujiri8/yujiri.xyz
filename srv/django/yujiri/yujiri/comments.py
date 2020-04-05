@@ -63,10 +63,11 @@ def recent_comments(req):
 	return JsonResponse([comment.summary_dict() for comment in comments], safe = False)
 
 def accept_comment(req):
-	reply_to = req.GET.get('reply_to')
-	email = req.GET.get('email')
-	name = req.GET.get('name')
-	if not reply_to:
+	try:
+		req_dict = json.loads(req.body)
+		reply_to = req_dict['reply_to']
+		body = req_dict['body']
+	except (json.decoder.JSONDecodeError, KeyError):
 		return HttpResponse(status = 400)
 	# If it's a reply, get the article path from the parent comment.
 	if '/' not in reply_to:
@@ -81,9 +82,9 @@ def accept_comment(req):
 		if reply_to.endswith('/index'): reply_to = reply_to[:-5]
 		article_path = reply_to
 	cmt = Comment(
-		name = name,
+		name = req_dict.get('name'),
 		reply_to = reply_to,
-		body = req.body.decode('utf-8'),
+		body = body,
 		article_path = article_path,
 		article_title = common.get_article_title(article_path),
 		ip = req.META.get('REMOTE_ADDR'),
@@ -94,26 +95,27 @@ def accept_comment(req):
 	if err: return HttpResponse(err, status = 400)
 	# Prevent name impersonation.
 	try:
-		name_user = User.objects.get(name = name)
+		name_user = User.objects.get(name = cmt.name)
 	except exceptions.ObjectDoesNotExist:
 		pass
 	else:
+		# The name is claimed; this better be them.
 		if not cmt.user or cmt.user != name_user: return HttpResponse(status = 401)
 	# Check for an email.
 	subscribe = clear_auth = False
-	if email:
+	if req_dict.get('email'):
 		# Determine if the email is already claimed.
 		try:
-			email_user = User.objects.get(email = email)
+			email_user = User.objects.get(email = req_dict['email'])
 		except exceptions.ObjectDoesNotExist:
 			# The email isn't claimed yet, so assume they have it and try to register it.
-			cmt.user, err = register_email(email)
+			cmt.user, err = register_email(req_dict['email'])
 			if err: return err
 			# Clear their auth token, so they don't remain logged in as someone else if
 			# they used to be.
 			clear_auth = True
 		else:
-			# They're trying to subscribe someone else's email!
+			# It's a registered user's email. This better be them.
 			if cmt.user != email_user: return HttpResponse(status = 401)
 	# Everthing looks valid; post it.
 	cmt.save()
