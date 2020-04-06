@@ -12,6 +12,6 @@ Additionally, most destructive mistakes either wouldn't be protected by not bein
 
 Automatic ZFS snapshots made from (root's) crontab mean I essentially can't cause my system any serious harm except with ZFS commands, which again require root anyway.
 
-I have never had a major disaster as a result of being root. The worst I ever did was attempt to `rm /*` (not `rm -r`, since I wasn't using my aliases - it was a shell script gone wrong). I deleted a couple of things like `/COPYRIGHT` and `/entropy`, which I recovered from ZFS snapshots, and all was well. The whole event costed me only about 1 hour (and most of that time was spent assessing the damage rather than recovering from it.)
+I have never had a major disaster as a result of being root. The worst I ever did was try to `rm /*` (not `rm -r`, since I wasn't using my aliases - it was a shell script gone wrong). I deleted a couple of things like `/COPYRIGHT` and `/entropy`, which I recovered from ZFS snapshots, and all was well. The whole event costed me only about 1 hour (and most of that time was spent assessing the damage rather than recovering from it.)
 
 So that's why I live as root. I'm very happy with the decision, and find the pervasive insistence that it's some kind of horrible mistake a little insulting. I know what I'm doing with my own system and [don't need to be protected from myself](safety_choice).
