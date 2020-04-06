@@ -50,19 +50,19 @@ def parse_directives(article):
 		if line == '':
 			# End of header.
 			break
-		parts = line.split(' ')
-		if len(parts) == 1:
-			args[parts[0]] = True
-		elif parts[0] in ('CSS', 'JS'):
-			args[parts[0]].append(' '.join(parts[1:]))
+		directive, _, param = line.partition(' ')
+		if not param:
+			args[directive] = True
+		elif directive in ('CSS', 'JS'):
+			args[directive].append(param)
 		# A few shortcuts.
-		elif parts[0] == "TEMPLATE":
+		elif directive == "TEMPLATE":
 			args['JS'].append('/bundle.js')
 			args['CSS'].append('/global.css')
-			if parts[1] == 'COLUMNS':
+			if param == 'COLUMNS':
 				args['ONLOAD'] = args['ONRESIZE'] = 'resizeColumns()'
 		else:
-			args[parts[0]] = ' '.join(parts[1:])
+			args[directive] = param
 
 	return args
 
