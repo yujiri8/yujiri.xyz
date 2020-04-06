@@ -151,7 +151,7 @@ And I didn't reach these conclusions all on my own! [The github golang wiki conf
 
 <h2 class="bad">Compiler red tape hampers experimentation in debugging</h2>
 
-The Go compiler won't compile a program with an unused import or variable (although it does allow unused functions, function parameters, and global variables). It's great to have the compiler *warn* us about these things, but *preventing* us from compiling it is honestly absurd. Very often when I'm debugging I comment something out and it results in an unused variable or import, and Go refuses to compile. Ugh... go back into the source and comment out the declaration too.
+The Go compiler won't compile a program with an unused import or variable (although it does allow unused functions, function parameters, and global variables). It's great to have the compiler *warn* us about these things, but *preventing* us from compiling it is honestly absurd. Very often when I'm debugging I comment something out and it results in an unused variable or import, and Go refuses to compile. Ugh... gotta go back into the source and comment out the declaration too.
 
 The [Go FAQ](https://golang.org/doc/faq#unused_variables_and_imports) actually address this:
 
@@ -167,7 +167,7 @@ Compilers are for verifying that code works and making it executable; *linters* 
 
 It's not a huge deal, but I've frequently been bitten by the inability to have a function parameter with a default value. If there's some obscure option that a function rarely needs to vary then it needs to be specified every time. Sometimes in another language you'd use an optional parameter because most callers just want to use the default value, but in Go if you ever change that default value, you also have to change it in every place that calls the function. It also goes a long way toward making code less readable.
 
-The standard library suffers from this with functions like `strconv.FormatInt`, which requires a base parameter, `strconv.FormatFloat`, which needs four parameters.
+The standard library suffers from this with functions like `strconv.FormatInt`, which needs a base parameter, and `strconv.FormatFloat`, which needs *four* parameters.
 
 Not supporting default values also increases the need for comments, since often that means you just have to say what the parameter should be by default in the docstring.
 
