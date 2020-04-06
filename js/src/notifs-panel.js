@@ -119,7 +119,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		`;
 	}
 	async fetchData() {
-		const resp = await util.api('GET', 'notifs/see');
+		const resp = await util.api('GET', 'notifs');
 		try {
 			const data = await resp.json();
 			this.subs = data.subs;
@@ -153,7 +153,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		util.showToast('success', "Setting saved");
 	}
 	async editSub(id, state) {
-		await util.api('POST', 'notifs', undefined, {id: id, state: state});
+		await util.api('PUT', 'notifs', undefined, {id: id, state: state});
 		this.fetchData();
 	}
 });

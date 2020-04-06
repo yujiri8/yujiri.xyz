@@ -204,6 +204,21 @@ def prove_email(req):
 	resp = HttpResponseRedirect('/notifs')
 	return grant_auth(resp, user)
 
+def subs_router(req):
+	if req.method == "PUT":
+		return edit_subs(req)
+	return see_subs(req)
+
+def see_subs(req):
+	user = common.check_auth(req)
+	if not user: return HttpResponse(status = 401)
+	subs = Subscription.objects.filter(user = user)
+	resp = JsonResponse({
+		'subs':	[sub.dict() for sub in subs],
+		'autosub': user.autosub,
+	})
+	return resp
+
 def edit_subs(req):
 	user = common.check_auth(req)
 	if not user: return HttpResponse(status = 401)
@@ -225,16 +240,6 @@ def edit_subs(req):
 			sub = Subscription(user = user, comment = cmt, sub = body.get('state'))
 		sub.save()
 	return HttpResponse(status = 204)
-
-def see_subs(req):
-	user = common.check_auth(req)
-	if not user: return HttpResponse(status = 401)
-	subs = Subscription.objects.filter(user = user)
-	resp = JsonResponse({
-		'subs':	[sub.dict() for sub in subs],
-		'autosub': user.autosub,
-	})
-	return resp
 
 def send_reply_notifs(new_comment):
 	listening = set()
