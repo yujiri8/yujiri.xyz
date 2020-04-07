@@ -262,7 +262,7 @@ This code will compile and then panic at runtime with `panic: value method main.
 
 But how is that possible? I checked if it was `nil`!
 
-The reason is because of how interfaces work under the hood. The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a large number of people have been confused by it. In brief, interfaces are never `nil` if they have a defined concrete type, even if they hold a `nil` pointer of that type.
+The reason is because of how interfaces work under the hood. The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a lot of people have been confused by it. In brief, interfaces are never `nil` if they have a defined concrete type, even if they hold a `nil` pointer of that type.
 
 <h3 class="bad"><code>var</code> versus <code>:=</code> - meaningless decision</h3>
 
