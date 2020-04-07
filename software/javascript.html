@@ -176,6 +176,7 @@ In a language that has `==` and `===`, you would think `==` would compare by val
 I talked about this a lot in my review of Python, but Javascript does worse than just having these boilerplate syntax features. [Semicolons will usually be automatically inserted by the interpreter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion), so *often* you don't need them, but if you lean on that fact, sometimes semicolons will be inserted incorrectly and break your code in bizarre ways. And you can't even say "Just don't lean on the feature", because the nature of the feature precludes that. Everyone forgets semicolons sometimes in semicolon languages.
 
 <h3 class="bad">Object constructors for primitive types</h3>
+
 ```
 x = 5;
 y = new Number(5);
