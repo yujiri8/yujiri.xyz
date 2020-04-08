@@ -67,12 +67,13 @@ phase1()
 phase2()
 phase3()
 ```
-Which makes it easier to see what it's doing at a glance (that is, if your phases have better names than that). In a program of any significant size, being able to "zoom out" and see the logic from a higher-level perspective is essential to keeping track of it.
+Which makes it easier to see what it's doing at a glance (that is, if your functions have more descriptive names than that). In a program of any significant size, being able to "zoom out" and see the logic from a higher-level perspective is essential to keeping track of it.
 
 # Multiple arguments and return values
 
 A function can take multiple arguments, like `list.insert` does.
 ```
+# TODO bad example
 def find(string, substr):
 	if substr in string:
 		return print(substr, 'is in', string)
@@ -89,7 +90,6 @@ You can also return multiple values:
 def remainder_div(dividend, divisor):
 	return dividend // divisor, dividend % divisor
 ```
-
 And this is where we need to talk about unpacking tuples.
 ```
 >>> a, b = (3, 6)
@@ -133,7 +133,7 @@ To give one example of a builtin function (a method) that has a default paramete
 >>> l.sort(reverse = True)
 [4, 3, 2, 2]
 ```
-By default, `sort` sorts in ascending order, because its `reverse` parameter defaults to False. But if you pass it True, it sorts in descending order.
+By default, `sort` sorts in ascending order, because its `reverse` parameter defaults to `False`. But if you pass it `True`, it sorts in descending order.
 
 ## Variadic arguments
 
@@ -153,7 +153,14 @@ But this means we don't have to wrap our numbers in a list or tuple to call it (
 ```
 Which looks nicer to call?
 
-This is how `print` works, of course. You don't need to wrap your argments in a list to pass multiple things to `print`.
+This is how `print` works, of course. You don't need to wrap your arguments in a list to pass multiple things to `print`.
+
+The same syntax can be used to pass multiple arguments out of a sequence:
+```
+>>> nums = (1, 5, 6)
+>>> new_average(3, *nums) # the same as passing 3, 1, 5, 6
+3.75
+```
 
 ## Keyword arguments
 
@@ -165,7 +172,6 @@ You don't actually have to pass arguments in order, generally. There's another w
 >>> print_two(b = 'for banana', a = 'for apple')
 a is for apple and b is for banana
 ```
-
 In fact, `print` has not one but *two* parameters with default values that you can only pass this way because the main parameter (the stuff to print) is variadic. You know how it always prints a newline after your string? (Keep in mind that a newline is not a blank line. A blank line is two newlines in a row.) You can stop this by setting the `end` parameter to an empty string:
 ```
 print("message 1", end='')
@@ -176,7 +182,7 @@ This will print:
 ```
 message 1message 2message 3
 ```
-It also has the `sep` parameter, which controls what gets printed between each argument. `sep` defaults to `' '`.
+It also has the `sep` parameter, which controls what gets printed between each argument. As you've seen, `sep` defaults to `' '`.
 
 ## Arbitrary keyword arguments
 
@@ -190,7 +196,7 @@ Okay, one last trick about arguments. There's a rarely useful thing you can do t
 the argument a was passed apple
 the argument b was passed banana
 ```
-Get it? The double-asterisk makes it a dictionary! You can pass any arguments you want to the function, and it's just like passing the dictionary but the syntax can be nicer sometimes.
+Get it? The double-asterisk makes it a dictionary! You can pass any arguments you want to the function, and it's just like passing a dictionary but the syntax can be nicer sometimes.
 
 # Scoping issues
 
@@ -232,15 +238,15 @@ Note that you *can access* global variables from inside a function, you just can
 
 It's time for some more theory. So when you call a function, Python stops executing where it was at and goes to execute the function, and finishes the function before returning to the place it was called from. And as I've already shown, functions can call each other. Each time Python sees a new function call, it pauses the one it's currently executing to go execute the new one. It's useful to think of a "stack" of currently running functions:
 
-The bottom of the stack is the 'global scope', which isn't in any functions. When you call a function, it gets pushed onto this stack, and so it has to be finished and removed ('popped') before we can resume executing the one below it. This stack of execution is "first in, last out" (FILO).
+The bottom of the stack is the 'global scope', which isn't in any functions. When you call a function, it gets pushed onto this stack, and so it has to be finished and removed ('popped') before we can resume executing the one below it (the one that called it). This stack of execution is "first in, last out" (FILO).
 
-(The information about each function stored on the stack is a stack **frame**.)
+(The information about each function stored on the stack is called a stack **frame**.)
 
 This understanding of the stack is reinforced by error messages. Before we introduced functions, the only errors you saw showed you a line number and the name of the file. Maybe you've already seen it, but if Python has an error inside a function, it shows you *two* filenames and line numbers: first the place the function was called, then the problematic line of the function <span class="note">With the line number still relative to the file - line 10 means the 10th line of the file, not the 10th line of the function</span>, with the "`<module>`" part replaced with the function name. If the error was in a function called from a function, it shows you three stack frames.
 
 And that's the meaning of the words "Traceback (most recent call last):"! It's showing you a trace from the bottom of the stack (the global scope) back to the line of the error, with the most recent call - the top function on the stack - last!
 
-Syntax errors, by the way, don't do this because they don't happen while runinng the function - Python scans the whole file for valid syntax before it executes anything, so if you have a syntax error inside a function, you'll only see the one line number.
+Syntax errors, by the way, don't do this because they don't happen while running the function - Python scans the whole file for valid syntax before it executes anything, so if you have a syntax error inside a function, you'll only see the one line number.
 
 # Recursion
 
@@ -254,7 +260,7 @@ def factorial(n):
     else:
         return n * factorial(n - 1)
 ```
-Another example is when working with [a filesystem](filesystem_concepts), for example if you want to find the total size of a directory. That requires getting the size of each file inside, which means if the directory contains more directories, you would use a recursive function that would call itself on each subdirectory it found.
+Another example is when working with [a filesystem](filesystem_concepts), for example if you want to find the total size of a directory. That requires getting the size of each file inside, which means if the directory contains more directories, you would use a recursive function that would call itself for each subdirectory it found, and add the total for the subdirectory to the total for the top-level directory.
 
 You'll see if you make an error inside a recursive function that each time Python recurses, it's pushing a new stack frame, so if it only errors on the fifth time you'll see five frames in the error message.
 
@@ -263,7 +269,6 @@ You'll see if you make an error inside a recursive function that each time Pytho
 Closures are rather confusing, rarely used, and it's okay if you find them difficult to understand at this point. But you can define a function inside a function and even return it.
 ```
 >>> def make_greeter(prefix, suffix):
-...   x = 0
 ...   def greeter(name):
 ...     print(prefix + name + suffix)
 ...   return greeter
@@ -310,16 +315,16 @@ incrementing from 3 to 4
 
 # `import`
 
-The `import` statement includes code from another file into your program. For example, let's say you had a function you used a lot and that you expected to use in future projects too. You write a module called something like `util` (for 'utilities' - this is a common abbreviation in programming):
+The `import` statement includes code from another file into your program. Let's say you had a function you used a lot and that you expected to use in future projects too. You write a module called something like `util` (for 'utilities' - this is a common abbreviation in programming):
 ```
 def ask_bool(question):
 	while True:
-		entry = input(question + '(y/n) ').lower().strip()
+		entry = input(question).lower().strip()
 		if entry in ('y', 'n', 'yes', 'no'):
 			return entry in ('y', 'yes')
 		print("not a valid answer.")
 ```
-This could be a useful function for any command-line program that might need to ask its user a boolean question, which is probably a lot of programs. So you put this in your `util.py` file. Then, in your main file, you could write:
+This could be a useful function for any command-line program that might need to ask its user a Boolean question, which is probably a lot of programs. So you put this in a file named `util.py`. Then, in your main file, you could write:
 ```
 import util
 
@@ -369,9 +374,11 @@ If you want to import everything from a module without the namespace prefix, you
 ```
 The most common time I use this is when I'm experimenting in the prompt and just want to import a module with a one-letter name so I do as little as typing as possible.
 
+You can also import multiple modules on one line like `import random, util`.
+
 # Tic Tac... Toe?
 
-Would you believe you have the skills to write a tic tac toe game, complete with an AI that makes intelligent moves? Because you do.
+Want to write a Tic Tac Toe game with an AI opponent? Because you've got everything you need.
 
 This is a much larger project than anything we've done before, which calls for some planning. Programmers often use "pseudocode" to plan out how a program's going to work before we start writing it. Here's some pseudocode:
 ```
@@ -382,6 +389,143 @@ While neither player has won and the board isn't full:
 	Switch who's turn it is
 Show the final state of the board and congratulate the winner.
 ```
-This kind of skeleton can be very useful; if you dive into writing code without an idea of how it's going to work, you'll often regret it. You'll probably want a function to check whether the game has an outcome yet, and if so who. Getting the player's move and determining the computer's move should also be in functions. Which leads me to the other big obstacle: the AI.
+This kind of skeleton can be very useful; if you dive into writing code without an idea of how it's going to work, you'll often regret it. You'll probably want a function to check whether the game has an outcome yet, and if so who. Getting the player's move and determining the computer's move should also be in functions.
 
-Writing AI for Tic Tac Toe is a lot simpler than it sounds.
+For now, feel free to just have the computer make random moves if you want. But it should make valid moves - it shouldn't try to go in an occupied spot, for example.
+
+Also, make sure the player doesn't have to restart the program to play again! It should offer to play again after the game. I recommend putting that `ask_bool` function in a `util` module and importing it. Another place it would be good to use is for asking the player whether they want to move first.
+
+This is gonna be tough. My solution is almost 130 lines, not counting the `ask_bool` function I import! (Though it's heavy on comments.) Remember, if you get stumped by an error, the timeless debugging technique of insering `print` statements near places you suspect might be responsible to find out if variables aren't what you thought they were. And use functions everywhere you see fit. I ended up with 6 of them, not counting `ask_bool`.
+
+<expand-note closedtext="Show solution" opentext="Hide solution">
+
+```
+import random, util
+
+def print_board(board):
+	i = 1 # A variable to keep track of whether we're on the last row.
+	for row in board:
+		print('|'.join(row))
+		# Don't print the horizontal separator after the bottom.
+		if i != len(board):
+			print('-----')
+		i += 1
+
+def play():
+	# Initialize an empty 3x3 board.
+	board = [
+		[' ', ' ', ' '],
+		[' ', ' ', ' '],
+		[' ', ' ', ' '],
+	]
+	if util.ask_bool("Do you want the first move? (X goes first.)"):
+		player_turn = True
+		player_symbol = 'X'
+		ai_symbol = 'O'
+	else:
+		player_turn = False
+		player_symbol = 'O'
+		ai_symbol = 'X'
+	while not get_outcome(board):
+		print("\nThe board is:")
+		print_board(board)
+		if player_turn:
+			player_move(board, player_symbol)
+		else:
+			ai_move(board, ai_symbol)
+		# not True is False and not False is True, so this little
+		# trick is a convenient way to toggle a Boolean value.
+		player_turn = not player_turn
+	print("\nThe final board is:")
+	print_board(board)
+	outcome = get_outcome(board)
+	if outcome == player_symbol:
+		print("Yon won!")
+	elif outcome == ai_symbol:
+		print("The AI won!")
+	else:
+		print("It's a draw!")
+	# Give some space after the end of the match.
+	print("\n")
+
+def ai_move(board, symbol):
+	# Pick a random spot. First, compile a list of open spaces.
+	open = []
+	# We need the counter variables here.
+	row_num = 0
+	for row in board:
+		# col_num has to be reset each row.
+		col_num = 0
+		for space in row:
+			if space == ' ':
+				open.append((row_num, col_num))
+			col_num += 1
+		row_num += 1
+	row, col = random.choice(open)
+	board[row][col] = symbol
+
+def player_move(board, symbol):
+	while True:
+		move = input("Enter a row and a space, side by side, like '23' if you want"
+			" to go in the 3rd (right) space of the 2nd (middle) row.")
+		# Although the user sees them as numbered 1-3, we need to subtract
+		# one to use them as indexes, since Python is zero-indexed, meaning
+		# the spaces are numbered 0-2.
+		row = int(move[0]) - 1
+		col = int(move[1]) - 1
+		if board[row][col] == ' ':
+			board[row][col] = symbol
+			return
+		print("That space is taken! You can't go there!")
+
+# As far as I can think of, the easiest way to tell whether someone has won
+# is to hardcode all the possible combinations of spaces that win. Each space
+# is a tuple of the row and column it's at - zero-indexed, of course.
+# WAYS_TO_WIN is a tuple because it should never be modified.
+WAYS_TO_WIN = (
+	# horizontal wins
+	((0, 0), (0, 1), (0, 2)),
+	((1, 0), (1, 1), (1, 2)),
+	((2, 0), (2, 1), (2, 2)),
+	# vertical wins
+	((0, 0), (1, 0), (2, 0)),
+	((0, 1), (1, 1), (2, 1)),
+	((0, 2), (1, 2), (2, 2)),
+	# diagonals
+	((0, 0), (1, 1), (2, 2)),
+	((0, 2), (1, 1), (2, 0)),
+)
+
+def get_outcome(board):
+	# Check if the player's won.
+	if has_victory(board, 'X'): return 'X'
+	if has_victory(board, 'O'): return 'O'
+	# If nobody's won, check if the board is full.
+	for row in board:
+		for space in row:
+			if space == ' ': return
+	# If there were any open spaces, we would've
+	# returned False when we found them. return
+	# an empty space to signify a draw.
+	return ' '
+
+def has_victory(board, symbol):
+	for way in WAYS_TO_WIN:
+		has_all_squares = True
+		for row, col in way:
+			if board[row][col] != symbol:
+				has_all_squares = False
+		if has_all_squares:
+			return True
+
+# The main part.
+while True:
+	play()
+	if not util.ask_bool("Want to play again?"):
+		print("Thanks for playing.")
+		break
+```
+
+</expand-note>
+
+I left it out of the main assignment because it's not essential practice for learning functions, but it's certainly a good exercise, and not as difficult as it sounds if you plan out and pseudocode the AI's strategy before you jump into it. If you feel like it, keep the old random AI function around and name them `random_ai_move` and `smart_ai_move` or something, and let the player pick which one they want to face! (You could have a local variable `ai_move` inside `play`, and set it to `random_ai_move` or `smart_ai_move` after the player picks.)
