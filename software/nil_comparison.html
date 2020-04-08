@@ -100,7 +100,7 @@ I can't speak on Python vs Ruby because I don't know Ruby, but as an example, he
 
 * Browsers execute Javascript.
 
-* Relatedly, Javascript is designed around the concept of a single-threaded event loop. Python does also have the GIL that makes it effectively single-threaded for CPU-bound purposes, `async`, `await`, and the `asyncio` module, but the event loop isn't the primal, intrinsic concept it is in Javascript. For one example, Javascript doesn't even a built-in equivalent to `time.sleep`, since that's a blocking operation, but you can implement one with `setTimeout` and promises.
+* Relatedly, Javascript is designed around the concept of a single-threaded event loop. Python does also have the GIL that makes it effectively single-threaded for CPU-bound purposes, `async`, `await`, and the `asyncio` module, but the event loop isn't the primal, intrinsic concept it is in Javascript. For one example, Javascript doesn't even have a built-in equivalent to `time.sleep`, since that's a blocking operation, but you can implement one with `setTimeout` and promises.
 
 * A lot of things that are runtime errors in Python are silent in Javascript, such as assigning past the end of an array or passing the wrong number of argments to a function. Javascript also does implicit type conversions in many cases that should be TypeErrors. (Let's be honest, there's absolutely no defending `[] - {}` being `NaN`.)
 
