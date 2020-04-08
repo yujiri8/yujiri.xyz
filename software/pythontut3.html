@@ -40,7 +40,9 @@ print(input("enter a string:")[int(input("enter a number:"))])
 This might look hard to parse - indeed, it's bad enough that a serious programmer might do it on multiple lines [just for readability's sake](readability) - so I'll dissect it for ya. Assuming I enter `blah` and `3`, the code can be parsed like this:
 
 1. `input("enter a string:")` is replaced with the string entered, leaving: `print('blah'[int(input("enter a number:"))])`
+
 2. `input("enter a number:")` is replaced with the next string entered, leaving: `print('blah'[int('3')])`
+
 3. `int('3')` is replaced with `3`, leaving: `print('blah'[3])`
 
 </expand-note>
@@ -80,6 +82,24 @@ If you omit one or both numbers of the slice, it goes to the beginning or end:
 ```
 Note that `'pizza'[:-1]` is `'pizz'` while `'pizza'[:]` is `'pizza'`. An omitted start position is the same as `0`, but an omitted end position is *not* the same as `-1`. `-1` is the last item, so slicing up to `-1` cuts it out.
 
+An invalid slice range, where the start position is greater than the end position (like `[5:1]`), will just quietly return an empty string.
+
+**Exercise**: Try making a program that accepts a string and then prints it back limited to a specified max length. If the string has to be cut off, it should end with `...` to indicate there's more - but the total printed length should be exactly the maximum, including the ellipsis. For example, if you choose 10 as the max length and I enter `Hi my friend`, it should print `Hi my f...`.
+
+<expand-note closedtext="Show solution" opentext="Hide solution">
+
+```
+limit = 10
+msg = input("Type a string to truncate to " + str(limit) + " characters: ")
+
+if len(msg) > limit:
+    msg = msg[:limit-3] + "..."
+
+print(msg)
+```
+
+</expand-note>
+
 ## Slice step
 
 Okay, this is a rather obscure feature, but I might as well demonstrate it while I'm talking about this. You can have a third number inside the slice brackets, which specifies the "step" size:
@@ -105,8 +125,8 @@ Jargon: **iterate**: to loop with a sequence and do something with each element 
 string = input("give me a string:")
 index = 0
 while index < len(string):
-	print(string[index])
-	index += 1
+    print(string[index])
+    index += 1
 ```
 Note that I couldn't put the `input("give me a string:")` that defines the variable `string` inside the condition like `while index < len(input("give me a string:")):`. If you tried to solve this yourself before looking at the solution (which you should have), you probably ran into this, but the reason that doesn't work is that a `while` loop's condition is **evaluated** every time it's checked, since it has to know when to stop. So every time it loops, it would ask, is `index < len(input("give me a string:"))`?. And every time it asks that, it would execute `input("give me string:")` to find out what its value was, which means the user would be asked to enter a new string after every iteration of the loop. The solution was to execute `input("give me a string:")` once at the beginning, and store the value, so that when the `while` loop evaluates its condition every time, it's only asking whether `index` is less than the length of `string`, where `string` is the *result* of `input("give me a string:")`. This way, it doesn't ask the user for a new string every time.
 
@@ -117,7 +137,7 @@ Note that I couldn't put the `input("give me a string:")` that defines the varia
 One of the most important keyword related to sequences: `for` is an alternate loop construction that makes iterating on a sequence much easier:
 ```
 for letter in input("enter a word:"):
-	print(letter)
+    print(letter)
 ```
 Note that with `for`, the expression that tells it the sequence to be iterated (in this case, the result of `input("enter a word:")`) is only evaluated once, and then it just internally runs the loop with `letter` set to each character in that string. So with `for` it's safe to put the `input` in the `for` line.
 
@@ -132,12 +152,12 @@ string = input("give me a string:")
 char_to_find = input("give me a single character:")
 found = False
 for char in string:
-	if char == char_to_find:
-		found = True
+    if char == char_to_find:
+        found = True
 if found:
-	print(char, 'is in', string)
+    print(char, 'is in', string)
 else:
-	print(char, 'is not in', string)
+    print(char, 'is not in', string)
 ```
 
 </expand-note>
@@ -170,12 +190,12 @@ Now that we're iterating on stuff, it's a very good time to introduce two handy 
 ```
 number = 0
 while number < 10:
-	number += 1
-	if number == 5: # skip 5 for no reason
-		continue
-	print("the next number is", number)
-	if input("want to see another? (y/n)") == 'n':
-		break
+    number += 1
+    if number == 5: # skip 5 for no reason
+        continue
+    print("the next number is", number)
+    if input("want to see another? (y/n)") == 'n':
+        break
 ```
 
 # Tuples
@@ -254,12 +274,12 @@ This is also a good time to introduce a couple of minor features about line brea
 When you need to break a statement across multiple lines, you're allowed to do so if it contains commas:
 ```
 names = (
-	'Alice',
-	'Bob',
-	'Carl',
-	'Dana',
-	'Elijah',
-	'Fiona',
+    'Alice',
+    'Bob',
+    'Carl',
+    'Dana',
+    'Elijah',
+    'Fiona',
 )
 ```
 (The comma after the last element is optional, but I always add it when I'm doing multiline things like this. I find it looks nicer and makes it easier to change the order of the elements.)
@@ -268,12 +288,12 @@ But if it's not with commas, you need to use a backslash at the end of the line:
 ```
 # This will raise a syntax error:
 #sentence = "The " + "quick " + "brown " + "fox " +
-#	"jumps"
+#    "jumps"
 
 # This works:
 sentence = "The " + "quick " + "brown " + \
-	"fox " + "jumps " + "over " + \
-	"the " + "lazy" + "dog"
+    "fox " + "jumps " + "over " + \
+    "the " + "lazy" + "dog"
 ```
 
 You can also put two string literals together *without* the `+`, and it will be assumed:
@@ -341,9 +361,7 @@ By convention, variable names in Python are all-lowercase, but there's an except
 
 With that, you're ready to write a much more fun program than you did in the last chapter.
 
-The government hires you to write a program to automatically censor messages that contain politically unacceptable speech. There's a predefined set of words you're searching for (for the exercise, you can pick what they are). Your program must accept multi-line input (a blank line signals the end of the message) and then output: the message with all lines containing dirty words removed; and some metadata for the overseer of the censorship department, including an account of which unacceptable words were found in the message (all listed on one line, without the parentheses you get when you print a tuple, but with commas placed appropriately), and the total number of characters that were removed.
-
-Additionally, the filter should impose a message length limit of 280 characters (including the newlines, including the one at the end of the last non-blank line). If a message is longer than that, it should be cut off and terminated with "..." so that exactly the first 280 characters (including the added `...`) of the message are outputted. In either case, a blank line should be printed between the message and the statistics.
+The government hires you to write a program to automatically censor messages that contain politically unacceptable speech. There's a predefined set of words you're searching for (for the exercise, you can pick what they are). Your program must accept multi-line input (a blank line signals the end of the message) and then output: the message with all lines containing dirty words removed; and some metadata for the overseer of the censorship department, including an account of which unacceptable words were found in the message (all listed on one line, without the parentheses you get when you print a tuple, but with commas placed appropriately), and the number of lines removed.
 
 For example, if the words to be censored are "oppress", "free", and "rebel", and the message is:
 ```
@@ -363,13 +381,13 @@ This is terrible. We shouldn't be prevented from doing X.
 I don't know, maybe I'm just getting crazy ideas.
 It wouldn't work anyway, right?
 Oh well, I guess there's nothing we can do about it.
-I'll have to go do Y instead. I didn't ...
+I'll have to go do Y instead. I didn't want to do Y, though.
 
 words found: oppress, rebel, free
-characters removed: 118
+lines removed: 2
 ```
 
-This is supposed to be a fairly difficult assignment for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on. <!--I'll include some hints if you want hints but not the full solution.-->
+This is supposed to be a fairly difficult assignment for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on.
 
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
 
@@ -380,40 +398,38 @@ removed = 0
 message = ''
 
 while True:
-	line = input() + '\n' # re-add the newline (which input leaves out) so we count it as a character
-	# empty line signals end of input
-	if line == '\n': break
-	# since this is after we break out if the line was empty,
-	# everything after this in the loop is dealing with a non-empty line.
-	# next step: search for dirty words.
-	censor = False
-	for word in WORDS:
-		if word in line:
-			censor = True
-			if word not in caught: caught += (word,)
-	if censor:
-		removed += len(line)
-	else:
-		message += line
+    line = input()
+    # empty line signals end of input
+    if not line: break
+    # since this is after we break out if the line was empty,
+    # everything after this in the loop is dealing with a non-empty line.
+    # next step: search for dirty words.
+    censor = False
+    for word in WORDS:
+        if word in line:
+            # if we find a dirty word, mark the line to be
+            # censored, but don't break since we want to see
+            # if there are any other dirty words in it.
+            censor = True
+            # add it to the list of words we've
+            # found if it isn't already in there.
+            if word not in caught: caught += (word,)
+    if censor:
+        removed += 1
+    if not censor:
+        # re-add the newline, since input strips it
+        message += line + '\n'
 
-# truncate the message
-if len(message) > 280:
-	# we have to re-add the newline that we cut off so there will still be
-	# a blank line between it and the statistics. this means cutting off
-	# 4 characters, not 3.
-	print(message[:276] + '...\n')
-	removed += len(message) - 280
-else:
-	print(message)
+print(message)
 
 # statistics
 words_caught_str = ''
 for word in caught:
-	words_caught_str += word
-	if caught[-1] != word: # avoid putting a comma after the last word.
-		words_caught_str += ', '
+    words_caught_str += word
+    if caught[-1] != word: # avoid putting a comma after the last word.
+        words_caught_str += ', '
 print("words found:", words_caught_str)
-print("characters removed:", removed)
+print("lines removed:", removed)
 ```
 
 </expand-note>
