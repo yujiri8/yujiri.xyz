@@ -45,7 +45,7 @@ And that's what's so important about lists: they're mutable.
 >>> nums[0] = 1.5
 [1.5, 2, 4]
 ```
-So you might be wondering why you would ever use tuples. Well, there at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <span class="note">Some languages offer a general way of making it impossible to change a variable, but Python does not.</span> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
+So you might be wondering why you would ever use tuples. Well, there are at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <span class="note">Some languages offer a general way of making it impossible to change a variable, but Python does not.</span> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
 
 # Shared reference
 
@@ -125,7 +125,7 @@ For a list or tuple, comparison is done by comparing each element in sequence, a
 
 ## `None`
 
-There's a special value called `None` that's very similar to `False`, but useful to have as an alternative. The difference in functionality is that `None` can't act like 0 or be compared with other numbers (that raises a `TypeError`). `None` does evaluate to `False` when used as a condition. But using `None` instead of `False` can make your code clearer, because setting a variable to `False` implies that it's only ever supposed to have a boolean value. Using `None` communicates that the variable is meant to hold another type of value at some point or in some situation, but doesn't right now. I'll show you at least an example later where using `None` is better than using `False`, even though either would work.
+There's a special value called `None` that's very similar to `False`, but useful to have as an alternative. The difference in functionality is that `None` can't act like 0 or be compared with other numbers (that raises a `TypeError`). `None` does evaluate to `False` when used as a condition. But using `None` instead of `False` can make your code clearer, because setting a variable to `False` implies that it's only ever supposed to have a boolean value. Using `None` communicates that the variable is meant to hold another type of value at some point or in some situation, but doesn't right now. I'll show you an example later where using `None` is better than using `False`, even though either would work.
 
 # Methods
 
@@ -144,7 +144,7 @@ So lists have this `remove` method that takes a value and deletes the first elem
 
 </div>
 
-The `remove` method of lists doesn't return anything.
+The `remove` method of lists doesn't return anything, or to be more accurate, it returns `None`.
 
 Strings have a few cool methods I didn't mention before (no need to memorize all these):
 ```
