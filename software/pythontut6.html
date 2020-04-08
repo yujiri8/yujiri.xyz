@@ -212,6 +212,16 @@ You can read more about the possible modes of opening [in the online Python docs
 
 There are also more interesting methods for reading and writing. `readline` reads until a newline (but you can also pass it a maximum number of characters to read). `readlines` reads all of the lines in a file and returns them as a list. `writelines` takes a list of strings and writes them all as lines. (Also, the writing methods return the number of bytes written.) You can try those out if you want.
 
+# Closing files
+
+When you open a file, you should make sure you close it when you're done. Leaving files open can cause [memory leaks](https://en.wikipedia.org/wiki/Memory_leak) in long-running programs, and files opened for writing aren't guaranteed to *actually* write their data as soon as you call `file.write` - sometimes the data is "buffered" and only synchronized with the hard drive every few minutes. It depends a lot on your operating system and stuff. Closing the file ensures the data has been written. Python might automatically close files when your reference to the them (your variable named `file` or whatever) goes out of scope (eg. the function it was defined in returns), but you can't rely on this. Here's how to close a file properly:
+```
+file = open('notes.txt', 'w')
+file.write("note")
+file.close()
+```
+And after that, `file` is closed and can't be used, but you can open it again with another `file = open(...` if you have more stuff to write.
+
 # `repr` and `eval`
 
 For the assignment I'm going to suggest, there are two functions that'll be incredibly useful. `repr` is for 'representation' and returns a string that represents whatever you pass it. You know how at the interactive prompt you can just enter `var` and it'll show you what `var` is, but it's not exactly the same as `print(var)` (mostly with strings)? `repr` is the interactive prompt behavior. This is useful because...
@@ -262,7 +272,10 @@ print("Welcome to ScoreTracker 2.0!", menu)
 def load_scores():
     # This is the only one that needs to declare scores as global,
     # because it's the only one that needs to assign to the name.
-    global scores
+    global scores, unsaved_changes
+    # Make file None so that we won't get a NameError
+    # later on if it fails to open.
+    file = None
     try:
         file = open(SAVE_FILE)
         raw = file.read()
@@ -275,9 +288,17 @@ def load_scores():
         print("Error when loading scores:", e)
     else:
         print("Scores loaded successfully.")
+        # If we just loaded scores, there are no unsaved changes.
+        unsaved_changes = False
+    finally:
+        # Don't try to close the file if it's None
+        # (meaning we never opened it). That would
+        # raise another error.
+        if file: file.close()
 
 def save_scores():
     global unsaved_changes # Need to be able to change this globally.
+    file = None
     try:
         file = open(SAVE_FILE, 'w')
         file.write(repr(scores))
@@ -287,6 +308,8 @@ def save_scores():
     else:
         print("Scores saved successfully.")
         unsaved_changes = False
+    finally:
+        if file: file.close()
 
 def show_scores():
     # Don't just show nothing if there are no scores.
