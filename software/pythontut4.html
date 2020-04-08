@@ -206,52 +206,51 @@ When they're done manipulating their sentence, print it out with the first word 
 
 ```
 menu = """
-	insert - specify a word to insert and the position to put it at
-	remove - specify a word to be removed
-	pop - specify a position to remove the word at that position
-	save - save the sentence's current state
-	load - restore the saved sentence
-	done - print out the final sentence
+    insert - specify a word to insert and the position to put it at
+    remove - specify a word to be removed
+    pop - specify a position to remove the word at that position
+    save - save the sentence's current state
+    load - restore the saved sentence
+    done - print out the final sentence
 """
 
 sentence = input("enter a sentence: ")
 wordlist = sentence.split(' ')
 save = None
 while True:
-	print("The following operations are available:\n" + menu)
-	operation = input("What do you wanna do? ")
-	if operation == 'insert':
-		word = input('What word should we insert? ')
-		position = int(input('And what position should we put it at? '))
-		if position >= len(wordlist):
-			print("Unfortunately, there aren't that many words, so that's an invalid position.")
-			continue
-		wordlist.insert(position, word)
-	elif operation == 'remove':
-		word = input("What word should we remove? ")
-		# Remove all of them, not just the first one.
-		while word in wordlist:
-			wordlist.remove(word)
-	elif operation == 'pop':
-		position = int(input('Which number word should we remove? '))
-		if position >= len(wordlist):
-			print("Unfortunately, there aren't that many words, so that's an invalid position.")
-			continue
-		wordlist.pop(position)
-	elif operation == 'save':
-		save = wordlist[:]
-		print('The sentence "' + sentence + '" has been saved.')
-	elif operation == 'load':
-		if save is None:
-			print("Sorry, but it looks like you forgot to save the sentence.")
-		else:
-			wordlist = save[:]
-	elif operation == 'done':
-		break
-	else:
-		print("That's not a valid choice. Try again.")
-		
-	print("The sentence is currently:", ' '.join(wordlist))
+    print("The following operations are available:\n" + menu)
+    operation = input("What do you wanna do? ")
+    if operation == 'insert':
+        word = input('What word should we insert? ')
+        position = int(input('And what position should we put it at? '))
+        if position >= len(wordlist):
+            print("Unfortunately, there aren't that many words, so that's an invalid position.")
+            continue
+        wordlist.insert(position, word)
+    elif operation == 'remove':
+        word = input("What word should we remove? ")
+        # Remove all of them, not just the first one.
+        while word in wordlist:
+            wordlist.remove(word)
+    elif operation == 'pop':
+        position = int(input('Which number word should we remove? '))
+        if position >= len(wordlist):
+            print("Unfortunately, there aren't that many words, so that's an invalid position.")
+            continue
+        wordlist.pop(position)
+    elif operation == 'save':
+        save = wordlist[:]
+        print('The sentence "' + sentence + '" has been saved.')
+    elif operation == 'load':
+        if save is None:
+            print("Sorry, but it looks like you forgot to save the sentence.")
+        else:
+            wordlist = save[:]
+    elif operation == 'done':
+        break
+    else:
+        print("That's not a valid choice. Try again.")
+    print("The sentence is currently:", ' '.join(wordlist))
 
 # Capitalize the first word.
 wordlist[0] = wordlist[0].title()
@@ -261,10 +260,10 @@ print("Your final sentence is:\n" + new_sentence)
 
 print("\nLetter frequency:")
 for letter in "abcdefghijklmnopqrstuvwxyz":
-	frequency = new_sentence.lower().count(letter)
-	# Don't print the number of times if it's 0.
-	if frequency:
-		print(letter, "appears", frequency, "times")
+    frequency = new_sentence.lower().count(letter)
+    # Don't print the number of times if it's 0.
+    if frequency:
+        print(letter, "appears", frequency, "times")
 ```
 
 </expand-note>
@@ -341,30 +340,30 @@ Some functions that will help you here are the builtin `max` and `sum`, which ta
 data = {}
 
 while True:
-	name = input("Enter your name (blank to finish):")
-	if not name: break
-	# Initialize a blank list of scores for them.
-	data[name] = {'scores': []}
-	while True:
-		score = input("Enter a score (blank to finish):")
-		if not score: break
-		data[name]['scores'].append(int(score))
-	# Now that we have all their scores, compute stats for them.
-	data[name]['average'] = sum(data[name]['scores']) / len(data[name]['scores'])
-	data[name]['max'] = max(data[name]['scores'])
+    name = input("Enter your name (blank to finish):")
+    if not name: break
+    # Initialize a blank list of scores for them.
+    data[name] = {'scores': []}
+    while True:
+        score = input("Enter a score (blank to finish):")
+        if not score: break
+        data[name]['scores'].append(int(score))
+    # Now that we have all their scores, compute stats for them.
+    data[name]['average'] = sum(data[name]['scores']) / len(data[name]['scores'])
+    data[name]['max'] = max(data[name]['scores'])
 
 grand_max = {'name': '', 'score': 0}
 for player in data:
-	# If this player has a higher score than the highest we've found yet,
-	# make them the new highest.
-	if data[player]['max'] > grand_max['score']:
-		grand_max = {'name': player, 'score': data[player]['max']}
+    # If this player has a higher score than the highest we've found yet,
+    # make them the new highest.
+    if data[player]['max'] > grand_max['score']:
+        grand_max = {'name': player, 'score': data[player]['max']}
 
 print("The highest score ever was", grand_max['score'], "by", grand_max['name'])
 
 print("Everyone's average score:")
 for player in data:
-	print('\t' + player + ":", data[player]['average'])
+    print('\t' + player + ":", data[player]['average'])
 ```
 
 </expand-note>
