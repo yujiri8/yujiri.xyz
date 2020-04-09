@@ -338,6 +338,7 @@ https://yujiri.xyz/software/
 https://yujiri.xyz/software/caching
 https://yujiri.xyz/software/commands
 https://yujiri.xyz/software/css_cant
+https://yujiri.xyz/software/data_hiding
 https://yujiri.xyz/software/escape_sequences
 https://yujiri.xyz/software/enhanced_basic_wc
 https://yujiri.xyz/software/evil
