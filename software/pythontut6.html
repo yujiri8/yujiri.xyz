@@ -17,11 +17,13 @@ Terminology note: the terms "error" and "exception" are pretty interchangeable, 
 You can override this using the `try` and `except` statements. Here's a demonstration:
 ```
 try:
-    entry = float(input("enter a number, please: "))
+    num = float(input("Enter a number, please: "))
 except:
-    print("That's not a number, you dimwit!")
+    print("That's not a number, you dimwit! I'll just use 5 as a fallback.")
+    num = 5
+print("The number + 1 is", num + 1)
 ```
-You can run that to see it work. If an exception is raised by something inside a `try` block, it won't crash; instead, it'll go to the `except` block after it. With that, try making the calculator from part 1, but if the user enters a non-number, it should explain their mistake and then let them try again.
+You can run that to see it work. If an exception is raised by something inside a `try` block, it won't crash; instead, it'll go to the `except` block after it, and if that finishes without any further errors, it'll proceed with the program. With that, try making the calculator from part 1, but if the user enters a non-number, it should explain their mistake and then let them try again.
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
@@ -71,10 +73,9 @@ Of course, you wouldn't actually want to handle `NameError`s that way either - y
 
 You can also assign one `except` clause to multiple types of errors:
 ```
-try:
-    int('blah')
-except (TypeError, ValueError) as e:
-    print("TypeError or ValueError:", e)
+try: int('blah')
+except (TypeError, ValueError):
+    print("TypeError or ValueError")
 ```
 
 # `except` ... `as`
@@ -84,7 +85,6 @@ With the `as` clause, you can get a reference to the exception. Let me show you 
 try: do_something()
 except Exception as e:
     print("the following error occured:", e)
-print("but since we caught it with an except clause, we can go right on.")
 ```
 Run that so you see how it works.
 
@@ -92,9 +92,29 @@ Run that so you see how it works.
 
 Okay well actually that's not quite true. There are some exception types that are not considered a subtype of `Exception` - like `KeyboardInterrupt`. Technically it's `BaseException` that encompasses any exception type - but `Exception` would usually be the one you want, since catching `KeyboardInterrupt` would mess with the user's ability to use Ctrl-C to get out of the program.
 
+## `pass`
+
+Python needs to see some code after anything that ends in `:` (like `if`, `while`, `except`, or whatever); putting nothing is an `IndentationError`:
+```
+>>> if True:
+...
+  File "<stdin>", line 2
+
+    ^
+IndentationError: expected an indented block
+```
+I suspect the reason for this is that an empty block is most likely to be a mistake made by a programmer who forgot to indent stuff properly. Which is true for `if`. But if you want to have a block that does nothing, you can use the `pass` keyword. This is useful when you want to silently ignore an error:
+```
+try:
+    entry = float(input("enter a number, please: "))
+except:
+    pass
+```
+That way, an error getting or converting the input would just be ignored, since it'd be caught by an `except` clause that doesn't do anything. Not that you'd want to silently ignore such an error, but there are situations where you do.
+
 # `raise`
 
-`raise` lets you deliberately raise an exception. Why would you want to do that? Well, quite often actually, when you want a specific set of conditions to count as an error for the purposes of your program even if they're not a Python error. Imagine you want the user to enter a number within a specific range. If you get the input from `input`, you would use `int` or `float` to convert it to a number, but trying to convert `'50'` to a number won't raise an error because 50 is a perfectly valid number, just not valid for your use case.
+`raise` lets you deliberately raise an exception. Why would you want to do that? Well, quite often actually, when you want some set of conditions to count as an error for the purposes of your program even if they're not a Python error. Imagine you want the user to enter a single-digit number. If you get the input from `input`, you would use `int` or `float` to convert it to a number, but trying to convert `'50'` to a number won't raise an error because 50 is a perfectly valid number, just not valid for your use case.
 
 Now, if you were getting it from the user interactively in a command-line setting, like we've been doing, you wouldn't need `raise` because you could just modify `safe_getnum` to also make sure the number's within your range before returning it. The better examples for this are when it's in a non-interactive setting so you can't ask them to try again, like if you're reading data from a file that was saved earlier; or when the function that checks whether the data is valid isn't the same one that's fetching it. Hard to give a good example when we haven't gone outside the domain of command-line applications yet (which we will at the end of this series), but `safe_getnum` with a specific acceptable number range could've been written like this:
 ```
@@ -105,7 +125,7 @@ def safe_getnum(prompt, min, max):
 
 rating = get_number("How many stars do you give it?", 1, 5)
 ```
-And yes, you can raise normal error types with custom messages like that. I could also have just done `raise ValueError`, without even the parentheses, but then it wouldn't show a useful message to tell me what was wrong with the value.
+And this way trying to get the rating would crash if they entered an invalid number of stars. And yes, you can raise normal error types with custom messages like that. I could also have just done `raise ValueError`, without even the parentheses, but then it wouldn't show a useful message to tell me what was wrong with the value.
 
 Here's a real-world example: in the Javascript (code that runs in the browser) on my website, the function that gets called when you try to post a comment raises an error if it gets a response from the server telling it it didn't succeed (which isn't inherently considered an error in Javascript). In Javascript the keyword is `throw` instead of `raise`, but it's the same concept. This lets the calling function look like (it's not literally like this):
 ```
