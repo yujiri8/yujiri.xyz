@@ -11,7 +11,6 @@ import './recent-comments.js';
 import './auth-popup.js';
 import './notifs-panel.js';
 import './spem-search.js';
-import './image-card.js';
 
 // Error codes.
 window.errorCodes = {
