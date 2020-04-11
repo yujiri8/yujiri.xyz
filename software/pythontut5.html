@@ -73,21 +73,7 @@ Which makes it easier to see what it's doing at a glance (that is, if your funct
 
 # Multiple arguments and return values
 
-A function can take multiple arguments, like `list.insert` does.
-```
-# TODO bad example
-def find(string, substr):
-	if substr in string:
-		return print(substr, 'is in', string)
-	if substr.lower() in string.lower():
-		return print(substr, 'is in', string + ', but not the same case')
-	print(substr, 'is not in', string, 'at all')
-```
-Since `print` returns nothing (meaning it returns `None`), `return print(...` just calls `print` with the given argument and then again returns `None`.
-
-Note that I don't use `elif` and `else` here, but the function works as intended. That's because once the function hits a `return` statement, it stops and returns, so it doesn't even check the other conditions. This pattern of using `return` under each case as an alternative to `elif` / `else` is not uncommon, although in this particular case it might've been clearer to use `elif` and `else`. I just wanted to show you this is a thing. The main draw is normally that if there's a lot of code in the function after an `if` block, `return`ing inside the block saves you from having to indent the rest of the function under an `else`.
-
-You can also return multiple values:
+A function can take multiple arguments (`list.insert` is one you've seen that does) and return multiple values:
 ```
 def remainder_div(dividend, divisor):
 	return dividend // divisor, dividend % divisor
@@ -259,9 +245,10 @@ A good example of when you'd want to is for finding [the factorial of a number](
 def factorial(n):
     if n == 1:
         return 1
-    else:
-        return n * factorial(n - 1)
+    return n * factorial(n - 1)
 ```
+Note that this function works as intended even though I don't use `else`. Since `return` exits the function, I don't need to use `else` because if `n == 1` was `True`, it would've already returned and not gotten to the next line. This pattern is pretty common. If the `if` block ends in an inevitable return, I prefer not to indent the entire rest of the function (the benefit is more obvious with longer functions).
+
 Another example is when working with [a filesystem](filesystem_concepts), for example if you want to find the total size of a directory. That requires getting the size of each file inside, which means if the directory contains more directories, you would use a recursive function that would call itself for each subdirectory it found, and add the total for the subdirectory to the total for the top-level directory.
 
 You'll see if you make an error inside a recursive function that each time Python recurses, it's pushing a new stack frame, so if it only errors on the fifth time you'll see five frames in the error message.
