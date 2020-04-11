@@ -266,6 +266,12 @@ Another example is when working with [a filesystem](filesystem_concepts), for ex
 
 You'll see if you make an error inside a recursive function that each time Python recurses, it's pushing a new stack frame, so if it only errors on the fifth time you'll see five frames in the error message.
 
+# Functions as objects
+
+Have you ever tried typing the name of a function at the prompt without the parentheses we always put around function calls? If you haven't, try it.
+
+Functions are really their own data type, they just can't be meaningfully displayed as a string. We'll get a lot deeper into the meaning of this in chapter 7, but for now, keep in mind that functions are values just like anything else. You can assign a function to a variable, pass a function to another and have it call the one you pass, and do other cool stuff, like closures.
+
 # Closures
 
 Closures are rather confusing, rarely used, and it's okay if you find them difficult to understand at this point. But you can define a function inside a function and even return it.
@@ -283,8 +289,6 @@ hi, Bob...
 Howdy, Bob!
 ```
 See how that's working? `make_greeter` returns a function, and we can use it to get different greeter functions by passing different arguments to `make_greeter`. I think the reason it's called a closure is because you "close" the parameters of `make_greeter` into the inner `greeter` function, essentially baking them into its code so the returned function can have those parameters without needing to be passed them on each call.
-
-(You can also pass functions as arguments to functions, by the way.)
 
 There's also the `nonlocal` keyword. Somebody on Stackoverflow called Anon wrote such a perfect concise explanation of the difference between `nonlocal` and `global` that I'll [just link it](https://stackoverflow.com/a/1261961/12211329).
 
