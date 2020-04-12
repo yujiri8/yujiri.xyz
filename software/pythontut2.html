@@ -80,9 +80,6 @@ if not (color == 'red' or color == 'green' or color == 'blue'):
 
 if color == 'yellow' and num != 6 or num == 6 and color != 'yellow':
 	print("You share one of my favorites, but not the other")
-
-if (color == 'red' and 635 < num < 700) or (color == 'green' and 520 < num < 560):
-	print("Your favorite number is within the wavelength range in nanometers of your favorite color")
 ```
 
 Note the way `and` and `or` are combined up there. In general (this is true of most programming languages), `or` is less "tight" than `and`, meaning `A and B or C` means `(A and B) or C`, not `A and (B or C)`. `not` is tighter than either of them. Of course, you can use parentheses to override the default precedence.
