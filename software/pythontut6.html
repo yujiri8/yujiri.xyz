@@ -196,14 +196,16 @@ Up to this point, even after learning randomness, you haven't had any way to kee
 
 `open` is the basic function we need:
 ```
-file = open("notes.txt", 'w') # the 'w' means that we're opening it for writing. I'll explain more about that later.
+# the 'w' means that we're opening it for writing. I'll explain more about that later.
+file = open("notes.txt", 'w')
 file.write("This is a test note. It'll still be in the file after the program ends.")
 ```
 If you run this, you'll notice the file `notes.txt` was created and has the text we wrote to it. It's just a text file, completely independent of the program now.
 
 So if we want to open it later for reading:
 ```
-file = open('notes.txt', 'r') # the 'r' is default, so we didn't need to specify it, but I'm showing it for clarity.
+# the 'r' is default, so we didn't need to specify it, but I'm showing it for clarity.
+file = open('notes.txt', 'r')
 print("the file contained:")
 print(file.read())
 ```
