@@ -80,6 +80,8 @@ class Comment(models.Model):
 			'time_posted': self.time_posted.isoformat(),
 			'has_replies': len(Comment.objects.filter(reply_to = str(self.id))),
 		}
+		if self.user and self.user.admin:
+			cmt['admin'] = True
 		if self.time_changed:
 			cmt['time_changed'] = self.time_changed.isoformat()
 		# If a user is provided, attach that user's sub status and ownership flag to the comment.

@@ -89,7 +89,8 @@ customElements.define('a-comment', class extends LitElement {
 				<input id="name" value="${this.comment.name}">
 			`:html`
 				<b id="name"
-					style="${this.comment.name === 'Yujiri'? 'color:var(--yellowcolor)' : ''}">
+					style="${this.comment.admin? 'color:var(--yellowcolor)' : ''}"
+					title="${this.comment.admin? 'admin' : ''}">
 					${this.comment.name}
 				</b>
 			`}
