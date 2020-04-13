@@ -132,6 +132,7 @@ https://yujiri.xyz/misc/contact
 https://yujiri.xyz/misc/logo
 https://yujiri.xyz/misc/masks
 https://yujiri.xyz/misc/names
+https://yujiri.xyz/misc/resume
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
 https://yujiri.xyz/music/a_retro_memory.ogg
