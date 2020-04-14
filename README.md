@@ -4,7 +4,7 @@
 * nginx
 * npm
 * jinja2
-* mistune (2.0.0a2)
+* mistune v2
 * python-slugify
 * pgpy
 * Beautiful Soup
