@@ -138,7 +138,7 @@ customElements.define('a-comment', class extends LitElement {
 		`;
 	}
 	async setNotifs(state) {
-		await util.api('POST', 'notifs/edit', undefined, {id: this.comment.id, state: state});
+		await util.api('POST', 'notifs', undefined, {id: this.comment.id, state: state});
 		this.comment.sub = state;
 		this.requestUpdate();
 	}
