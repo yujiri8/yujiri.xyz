@@ -127,6 +127,7 @@ https://yujiri.xyz/game_design/turn_timers
 https://yujiri.xyz/game_design/turn_waiting
 https://yujiri.xyz/
 https://yujiri.xyz/logo24-thick.png
+https://yujiri.xyz/misc/
 https://yujiri.xyz/misc/apostasy
 https://yujiri.xyz/misc/anarchism_conversion
 https://yujiri.xyz/misc/contact
