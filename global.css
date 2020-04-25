@@ -101,11 +101,11 @@ tbody.checkered tr:nth-child(odd) {
 }
 
 /* spoilers */
-.spoiler {
+.spoiler, .spoiler * {
 	background-color: var(--textcolor);
 }
 /* this is necessary to stop links from showing through */
-.spoiler:not(:hover) a {
+.spoiler:not(:hover) * {
 	color: var(--textcolor);
 }
 .spoiler:hover {

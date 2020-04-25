@@ -426,6 +426,8 @@ https://yujiri.xyz/works/poems/ode_to_prismata
 https://yujiri.xyz/works/poems/solitude
 https://yujiri.xyz/works/poems/the_bright_raincloud
 https://yujiri.xyz/works/return_to_the_portrait/
+https://yujiri.xyz/works/return_to_the_portrait/guide
+https://yujiri.xyz/works/return_to_the_portrait/critique
 https://yujiri.xyz/works/the_pygon_hybrid/
 https://yujiri.xyz/works/the_pygon_hybrid/changelog
 https://yujiri.xyz/works/the_pygon_hybrid/chapter01
