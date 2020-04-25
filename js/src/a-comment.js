@@ -95,9 +95,9 @@ customElements.define('a-comment', class extends LitElement {
 				</b>
 			`}
 			<small>
-				<span style="${new Date(this.comment.time_posted) < this.timestamp?
+				<span style="${new Date(this.comment.time_added) < this.timestamp?
 						'color:orange' : ''}">
-					${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.comment.time_posted))}
+					${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.comment.time_added))}
 				</span>
 				${this.comment.time_changed? html`
 					- <span style="color:orange">edited ${strftime('%Y %b %d, %A, %R',
@@ -138,7 +138,7 @@ customElements.define('a-comment', class extends LitElement {
 		`;
 	}
 	async setNotifs(state) {
-		await util.api('POST', 'notifs', undefined, {id: this.comment.id, state: state});
+		await util.api('PUT', 'users/notifs', undefined, {id: this.comment.id, state: state});
 		this.comment.sub = state;
 		this.requestUpdate();
 	}

@@ -3,7 +3,7 @@
 import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
 export async function api(method, url, query, body) {
-	if (typeof body != 'string' && !(body instanceof FormData)) body = JSON.stringify(body);
+	if (typeof body != 'string') body = JSON.stringify(body);
 	if (typeof query == 'object') {
 		let qs = Object.entries(query).map(fmtQueryParam).join('&');
 		if (qs.length) url = url + "?" + qs;
@@ -74,7 +74,7 @@ export function setCookie(name, val) {
 export function summarizeComment(comment) {
 	return unsafeHTML(`${comment.name} on
 		<a href="${comment.link}">${comment.article_title}</a>
-		at ${strftime('%Y %b %d, %A, %R', new Date(comment.time_posted))}`);
+		at ${strftime('%Y %b %d, %A, %R', new Date(comment.time_added))}`);
 }
 
 // Used for pages that have a column layout.

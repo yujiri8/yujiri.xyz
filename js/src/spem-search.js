@@ -52,7 +52,7 @@ customElements.define('spem-search', class extends LitElement {
 			<input-list id="notes" class="indent"></input-list>
 		</div>
 		<div>
-			<p>Notes (regex - Python3 stdlib dialect)</p>
+			<p>Notes (regex - PostgreSQL dialect)</p>
 			<input-list id="notes-regex" class="indent"></input-list>
 		</div>
 		<br>
@@ -213,7 +213,7 @@ customElements.define('spem-search', class extends LitElement {
 		util.showToast('success', `${word} deleted`);
 	}
 	async fetchWord(word) {
-		const resp = await util.api('GET', 'spem/words', {word: word, no_markdown: true});
+		const resp = await util.api('GET', 'spem/words', {word: word, raw: true});
 		try {
 			var newWord = (await resp.json())[0];
 		} catch {

@@ -1,6 +1,8 @@
 # Dependencies
 
-* django
+* SQLAlchemy
+* FastAPI
+* uvicorn
 * nginx
 * npm
 * jinja2
@@ -17,7 +19,7 @@
 
 * The host runs FreeBSD and is managed with SSH.
 
-* The entire repository goes under `~root`, as `~/src`.
+* The repository is installed as `~/src`.
 
 * Nginx serves all static files - including articles - from an output dir, `~/html`.
 

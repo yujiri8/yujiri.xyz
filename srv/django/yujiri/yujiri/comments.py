@@ -241,9 +241,10 @@ def edit_subs(req):
 		sub.save()
 	return HttpResponse(status = 204)
 
-def send_reply_notifs(new_comment):
+def send_reply_notifs(db, new_comment):
 	listening = set()
 	ignoring = set()
+	# Never notify people about their own comment.
 	if new_comment.user: ignoring.add(new_comment.user)
 	# Travel up the tree, finding the lowest-level subscription or ignore for each user.
 	comment = new_comment

@@ -90,7 +90,7 @@ customElements.define('comment-section', class extends LitElement {
 		this.insertComments(comments, reply_to);
 		// Recursively fetch replies to comments that have them.
 		for (let comment of comments) {
-			if (comment.has_replies) this.loadComments(comment.id);
+			if (comment.replies) this.loadComments(comment.id);
 		}
 	}
 	insertComments(comments, reply_to) {
@@ -124,7 +124,7 @@ customElements.define('comment-section', class extends LitElement {
 	async signup() {
 		const email = this.shadowRoot.getElementById('email').value;
 		setCookie('email', email);
-		await api('POST', 'notifs/claim', undefined, email);
+		await api('POST', 'users/claim', undefined, email);
 		showToast('success', "Confirmation email sent.");
 	}
 	// Takes a child and parent element and indents the child under the parent element in-place.

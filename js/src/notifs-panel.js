@@ -119,7 +119,7 @@ customElements.define('notifs-panel', class extends LitElement {
 		`;
 	}
 	async fetchData() {
-		const resp = await util.api('GET', 'notifs');
+		const resp = await util.api('GET', 'users/notifs');
 		try {
 			const data = await resp.json();
 			this.subs = data.subs;
@@ -130,30 +130,28 @@ customElements.define('notifs-panel', class extends LitElement {
 	}
 	async setPw() {
 		const pwBox = this.shadowRoot.getElementById('pw');
-		await util.api('POST', 'setpw', undefined, pwBox.value);
+		await util.api('PUT', 'users/setpw', undefined, pwBox.value);
 		util.showToast('success', "Password set.");
 		pwBox.value = '';
 	}
 	async setName() {
 		const nameBox = this.shadowRoot.getElementById('name');
-		await util.api('POST', 'setname', undefined, nameBox.value);
+		await util.api('PUT', 'users/setname', undefined, nameBox.value);
 		util.showToast('success', "Name set.");
 		nameBox.placeholder = nameBox.value;
 		nameBox.value = '';
 	}
 	async setKey() {
 		const keyFile = this.shadowRoot.getElementById('key').files[0];
-		const formData = new FormData();
-		formData.append("key", keyFile);
-		await util.api('POST', 'setpubkey', undefined, formData);
+		await util.api('PUT', 'users/setkey', undefined, await keyFile.text());
 		window.location.reload();
 	}
 	async setAutosub(e) {
-		await util.api('POST', 'setautosub', undefined, e.target.checked);
+		await util.api('PUT', 'users/setautosub', undefined, e.target.checked);
 		util.showToast('success', "Setting saved");
 	}
 	async editSub(id, state) {
-		await util.api('PUT', 'notifs', undefined, {id: id, state: state});
+		await util.api('PUT', 'users/notifs', undefined, {id: id, state: state});
 		this.fetchData();
 	}
 });
