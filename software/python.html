@@ -76,7 +76,7 @@ There's also the `yield` keyword to easily turn a function into a generator.
 
 In fact, I didn't find this out until recently but generators are actually coroutines. You can catch a return value from `yield` and use `gen.send()` on the calling end to feed it values. I haven't gotten to use this yet, but it sounds really cool.
 
-<h2 class="good">Libraries for everything</h2>
+<h2 class="good">Ecosystem</h2>
 
 Python is such a popular language that you can pretty much always find a library that does anything you need. [The standard library](https://docs.python.org/3/library/index.html) itself is so extensive, CSV, JSON, HTTP, TLS, emails, regex, base64 and almost any other encoding you can think of are just a tiny fraction of what it can do out of the box. If somehow you need something that isn't there it's probably pre-packaged in standard repositories for your operating system. In the worst case it's available through [pip](https://pypi.org/project/pip), Python's package manager.
 
@@ -96,44 +96,7 @@ When I was new to Python I actually loved the lack of type checking and argued t
 
 The only real exception I can think of is a list of ints with `None` as a valid value, but other languages with static typing have ways of accomplishing that. In Haskell for example you could use the `Maybe` monad. Then the type system would provide you this flexibility while still making sure you won't have any type errors at runtime. In C you could use a struct with fields `int value` and `bool valid` (or more probably a union; I haven't used unions in C yet but from what I understand they exist to solve this very problem).
 
-Of course, it's not as if this shortcoming could be easily removed from Python by adding compile-time type checks, because
-Python doesn't have [any concept of interfaces](oop). It relies on this duck typing to not suffer a major
-loss of polymorphism.
-
-<h1 class="bad">Object-orientedness and inheritance are clunky</h1>
-
-Honestly, I think that by having no static type checking, Python removes a lot of the benefits of using objects over dictionaries. Here's what I see as the two biggest differences between structs and maps in a language like, say, Go, besides having methods:
-
-* Structs have an immutable field set. You can't assign to a nonexistent attribute of a struct, which provides mistake protection and promotes clarity by making sure you can always see all the attributes an object might have just by looking at the struct definition.
-The Python interpreter doesn't complain in the slightest when you assign to `ship.sheild`, leaving you with a very difficult-to-track-down bug.
-
-* Structs can have fields of mixed types, while map has to have all its keys be the same type and all its values be the same type. There are uses for both. But Python, having no static typing, completely removes this difference and makes both types subject to the same potential for mistakes and bugs.
-
-Also, constructor functions are rather boilerplate-esque in Python...
-```
-class A:
-	def __init__(self, attr1, attr2, attr3):
-		self.attr1 = attr1
-		self.attr2 = attr2
-		self.attr3 = attr3
-```
-Really, we have to write the name of each attribute three times? This is one of the only areas where C is more streamlined than Python, and it is more streamlined by *a lot*.
-```
-struct A {
-	int   field1;
-	int   field2;
-	char  field3[10];
-}
-```
-Much better. To be fair, Python's way does allow to easily set non-zero default values for an object's attributes, which in C or Go you'd have to write a wrapper constructor for. But that feature doesn't at all need this much bulk to accomodate it. They could have just taken the C/Go syntax and added the option to put a default value after the field name.
-
-And when you want to call a parent constructor, guess what you have to do? This:
-```
-class B(A):
-	def __init__(self, attr1, attr2, attr3, attr4):
-		super().__init__(att1, attr2, attr3)
-```
-Yes, you have to explicitly call the parent constructor *and* pass in the entire argument list. As if that wasn't bad enough, the syntax for calling the parent constructor looks like a hack. Nowhere else in Python is it idiomatic to directly call the __...__ methods.
+Of course, it's not as if this shortcoming could be easily removed from Python by adding compile-time type checks, because Python doesn't have [any concept of interfaces](oop). It relies on this duck typing to not suffer a major loss of polymorphism.
 
 <h2 class="bad">Performance</h2>
 
