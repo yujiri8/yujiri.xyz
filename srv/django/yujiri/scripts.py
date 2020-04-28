@@ -73,3 +73,47 @@ def slurp_logs():
 				referer = args['referer'],
 			).save()
 #	os.truncate('/var/log/nginx/access.log', 0)
+
+import json
+def dump_spem():
+	with open('spem.json', 'w') as f:
+		json.dump(list(word.dict(raw=True) for word in Word.objects.all()), f)
+
+def dump_comments():
+	with open('cmt.json', 'w') as f:
+		json.dump(list({
+			'id': str(cmt.id),
+			'name': cmt.name,
+			'time_added': cmt.time_posted.isoformat(),
+			'time_changed': cmt.time_changed.isoformat() if cmt.time_changed else None,
+			'reply': cmt.reply_to,
+			'article_path': cmt.article_path,
+			'article_title': cmt.article_title,
+			'body': cmt.body,
+			'ip': cmt.ip,
+			'ua': cmt.user_agent,
+			'reply_to': cmt.reply_to,
+			'user_id': cmt.user.id if cmt.user else None,
+		} for cmt in Comment.objects.all()), f)
+
+def dump_users():
+	with open('users.json', 'w') as f:
+		json.dump(list({
+			'email': user.email,
+			'id': user.id,
+			'name': user.name,
+			'pubkey': bytes(user.pubkey).decode('ascii'),
+			'auth': user.auth,
+			'password': user.password,
+			'admin': user.admin,
+			'autosub': user.autosub,
+		} for user in User.objects.all()), f)
+
+
+def dump_subs():
+	with open('subs.json', 'w') as f:
+		json.dump(list({
+			'user': sub.user.id,
+			'cmt': str(sub.comment.id),
+		} for sub in Subscription.objects.all()), f)
+

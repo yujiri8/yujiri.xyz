@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine, Column, ForeignKey, Integer, String, DateTime, Boolean, Binary, ARRAY
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship, dynamic_loader, backref
+from sqlalchemy.orm import sessionmaker, relationship
 
 import datetime
 
@@ -15,13 +15,14 @@ class User(Base):
 	id = Column(Integer, primary_key = True)
 	email = Column(String, unique = True)
 	name = Column(String, unique = True)
-	key = Column(Binary)
+	key = Column(String)
 	pw = Column(String)
 	auth = Column(String, nullable = False)
 	admin = Column(Boolean, default = False, nullable = False)
 	autosub = Column(Boolean, default = True, nullable = False)
 	# related objects
-	comments = dynamic_loader('Comment', back_populates = 'user')
+	comments = relationship('Comment', back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
+	subs = relationship('Subscription', back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
 	def __repr__(self):
 		return self.email
 
@@ -32,14 +33,16 @@ class Comment(Base):
 	time_changed = Column(DateTime)
 	name = Column(String, nullable = False)
 	reply_to = Column(String, nullable = False)
+	# These fields are stored for the sake of /recent_comments performance.
 	article_path = Column(String, nullable = False)
 	article_title = Column(String, nullable = False)
 	body = Column(String, nullable = False)
 	ip = Column(String)
 	ua = Column(String)
 	# related objects
-	user_id = Column(Integer, ForeignKey('users.id'))
+	user_id = Column(Integer, ForeignKey('users.id', ondelete = 'set null'))
 	user = relationship('User', back_populates = 'comments')
+	subs = relationship('Subscription', back_populates = 'comment', lazy = 'dynamic', passive_deletes = 'all')
 	def __repr__(self):
 		txt = f"{self.name} on {self.article_title} at {self.time_added.strftime('%Y %b %d, %A, %R (UTC)')}"
 		if self.time_changed:
@@ -85,10 +88,10 @@ class Comment(Base):
 class Subscription(Base):
 	__tablename__ = 'subs'
 	id = Column(Integer, primary_key = True)
-	comment_id = Column(Integer, ForeignKey('comments.id', ondelete='cascade'), nullable = False)
-	user_id = Column(Integer, ForeignKey('users.id', ondelete='cascade'), nullable = False)
-	user = relationship('User', backref = backref('subs', cascade = 'delete, delete-orphan', lazy = 'dynamic'))
-	comment = relationship('Comment', backref = backref('subs', cascade = 'delete, delete-orphan', lazy = 'dynamic'))
+	comment_id = Column(Integer, ForeignKey('comments.id', ondelete = 'cascade'), nullable = False)
+	user_id = Column(Integer, ForeignKey('users.id', ondelete = 'cascade'), nullable = False)
+	user = relationship('User', back_populates = 'subs')
+	comment = relationship('Comment', back_populates = 'subs')
 	sub = Column(Boolean, nullable = False, default = True)
 	def __repr__(self):
 		if self.sub: return f"{self.user} subbed to {self.comment}"
