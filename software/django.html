@@ -69,7 +69,7 @@ Another downside of all the packages is that my database was bloated. With a bas
 
 You declare all your endpoints in a centralized location, which I like, but you can't specify HTTP verbs there. If you want to use the same path with `GET` and `POST` having different functions, you have to actually declare a single route there and bind it to a handler that checks the verb and then defers it to the approrpiate *actual* handler. A very kludgy workaround for something so simple and that (I presume) is such a common use.
 
-(Update: a dev.to commenter informed me that you do this if you're using class-based views instead of function-based ones. I never used class-based views; they didn't make sense for my use case.)
+(Update: a dev.to commenter informed me that you can do this if you're using class-based views instead of function-based ones. I never used class-based views; they didn't make sense for my use case.)
 
 <h2 class="bad"><code>HttpResponse</code> exceptions not leveraged as much as they could be</h2>
 
