@@ -96,6 +96,24 @@ Again, in some situations you could use `xoffset` to get around this, but that's
 
 I don't think I need to elaborate here. It's not needed that often, but this would've been the first thing I'd think of if I wrote the ATL specification.
 
+<h2 class="bad">The zorder problem</h2>
+
+Here's a common problem that needs solving in visual novels: different characters are shown on screen at once, and we generally want whoever's speaking to be "on top".
+
+The zorder solution: each image onscreen has a zorder and images with higher zorders are shown on top of lower zorders. Whenever a character who's partly behind someone else has a line, you increase their zorder to be higher than the surrounding characters'.
+
+The central problem of the zorder system is a lack of *purity*, in the functional sense. Since characters' zorders increase throughout a conversation as they need to be put on top of each other (but rarely decrease since it's always the person who's speaking that motivates a change), snippets of conversation have *side effects*, which makes it very troublesome to edit them or write nonlinear scenes, because if you change a snippet of conversation, it can affect the zorders everyone comes out of it with, which means everything from then until the next screen clear could need to be edited to reflect it.
+
+Renpy also has the `behind` keyword to save you from having to keep track of the ugly growing zorder numbers, but it seems to be syntactic sugar on `zorder` (ie. it adjusts the character's zorder to put them behind the given other characters), and so it has its own problem. Imagine I have four characters on screen:
+
+Alice(zorder 2), Bob(zorder 3), Carl(zorder 1), Dana(zorder 2)
+
+Carl needs to start speaking. So I `show dana behind carl`, then `show bob behind carl`. Problem is, that puts Bob behind Alice as well!
+
+In general, to avoid these unintended side effects we need the zorder change to be *on the character who's motivating the change* and not on the characters around them, otherwise the effects can ripple, requiring me to also `show alice behind bob` - three separate `show` statements for one character's zorder change.
+
+`behind` is exactly the wrong solution. An `infrontof` keyword (ideally with an `all` parameter) would've been 100x more helpful.
+
 <!--
 <h2 class="bad">
 <code>default</code>, <code>define</code>, <code>init python</code> and <code>python early</code> are all very confusing
