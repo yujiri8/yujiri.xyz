@@ -44,7 +44,7 @@ I don't know any other language that handles all these tasks as elegantly as Pyt
 
 <h1 class="good">Beautiful error handling</h1>
 
-Python gives you nice stack traces and line numbers on exceptions without you lifting a finger. You can also throw errors with custom context really easily with `raise` ... `from`, and the `finally` statement is convenient for making sure something gets executed on the way out, like closing a file. It's not quite as versatile as Go's defer statement since you can only use finally in the context of `try` ... `except`, but given how many orders of magnitude easier it is to get good tracebacks in Python, you really can't complain. No other langage I've seen makes error handling anywhere near this easy. 90% of the time you don't even have to think about errors. Usually what you'd do in Go or C is just throw the error anyway, so Python saves you a tremendous amount of time and boilerplate in favor of sensible default behavior.
+Python gives you nice stack traces and line numbers on exceptions without you lifting a finger. The `finally` statement is convenient for making sure something gets executed on the way out, like closing a file. It's not quite as versatile as Go's defer statement since you can only use finally in the context of `try` ... `except`, but given how many orders of magnitude easier it is to get good tracebacks in Python, you really can't complain. No other langage I've seen makes error handling anywhere near this easy. 90% of the time you don't even have to think about errors. Usually what you'd do in Go or C is just throw the error anyway, so Python saves you a tremendous amount of time and boilerplate in favor of sensible default behavior.
 
 <h2 class="good">Streamlined and readable syntax</h2>
 

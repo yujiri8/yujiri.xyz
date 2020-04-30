@@ -271,7 +271,7 @@ This is also a good time to introduce a couple of minor features about line brea
 
 ### Line continuation
 
-When you need to break a statement across multiple lines, you're allowed to do so if it contains commas:
+When you need to break a statement across multiple lines, you're allowed to do so if it's enclosed in parentheses or brackets:
 ```
 names = (
     'Alice',
@@ -284,7 +284,7 @@ names = (
 ```
 (The comma after the last element is optional, but I always add it when I'm doing multiline things like this. I find it looks nicer and makes it easier to change the order of the elements.)
 
-But if it's not with commas, you need to use a backslash at the end of the line:
+But if it's not with parentheses or brackets, you need to use a backslash at the end of the line:
 ```
 # This will raise a syntax error:
 #sentence = "The " + "quick " + "brown " + "fox " +
