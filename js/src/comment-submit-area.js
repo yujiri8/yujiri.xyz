@@ -98,5 +98,6 @@ customElements.define('comment-submit-area', class extends LitElement {
 	async unpreview() {
 		this.previewHTML = '';
 		await this.updateComplete;
+		util.autogrow({target: this.shadowRoot.getElementById('body')});
 	}
 });
