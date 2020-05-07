@@ -124,7 +124,7 @@ customElements.define('spem-search', class extends LitElement {
 				<td>${word.translations.join(', ')}</td>
 				<td style="text-align: left; min-width: ${Math.min(30, word.notes.length/2)}em">
 					${unsafeHTML(word.notes)}</td>
-				<td>${unsafeHTML(word.tags.map(w => `<span class="tag">${w}</span>`)
+				<td>${unsafeHTML(word.tags.map(t => `<span class="tag">${t}</span>`)
 					.join(', '))}</td>
 				${this.admin? html`<td>
 					<button @click="${() => this.deleteWord(word.word)}">Delete</button>
