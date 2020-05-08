@@ -1,0 +1,13 @@
+TITLE Review: Doki Doki Exit Music
+NAV Exit Music
+TEMPLATE DEFAULT
+
+Exit Music is a Doki Doki Literature Club mod that tries to be dark and edgy (and succeeds). It focuses on Natsuki and MC trying to protect her from her abusive father. I'd only recommend it to someone who's finished all the better DDLC mods and is willing to take a lot of bad to get more good.
+
+The main objection I have to it is the way it misportrays and smears Sayori and Yuri:
+
+* After the opening scene where MC saves Sayori from hanging herself, he takes her to a hospital. This already shows a complete misunderstanding of Sayori's depression. The problem was never that she didn't feel loved or cared for, but that she didn't feel she *deserved* to be loved and cared for. She saw no value in herself outside of making her friends happy, and thought she was a burden on everyone that had to care about her. Thus there is nothing that would make her feel worse than being hospitalized for her condition. Possibly even worse, later in the game <span class="spoiler">when it's become clear to everyone that MC is in love with Natsuki, Sayori confronts him and tries to guilt him into ditching Natsuki in favor of her.</span> The Sayori I know and love from the original game would *never* do that. She wanted MC to be happy even at her own expense. This mod might make one think the author didn't play DDLC and the only description they were given of Sayori was "depressed suicidal friend". I honestly think someone who knew only that about her might do a better job portraying her.
+
+* Yuri is outright villified. She takes her Act 2-style obsession (which doesn't even make sense as Monika hasn't messed with her in this timeline) as far as <span class="spoiler">sending MC pictures of her naked with his name carved into her skin</span>, and at one point <span class="spoiler">she's making physical advances toward MC and he has to threaten her to get her off him</span>. And then there's the part where it's revealed she <span class="spoiler">told Natsuki that MC had decided to ditch her in favor of Yuri, leading Natsuki to cut herself as well.</span> It's an outright plothole that <span class="spoiler">Natsuki believed her, let alone that she at first *didn't* believe *MC* when he told her it was a lie, and punched him.</span>
+
+Despite all these horrible flaws, the Natsuki drama is good, and the ending is <span class="spoiler">faithful to the spirit of the original game</span>. It also has some good new music.

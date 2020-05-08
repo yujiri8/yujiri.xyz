@@ -1,0 +1,7 @@
+TITLE The Taboo of Vanity
+NAV The Taboo of Vanity
+TEMPLATE DEFAULT
+
+The Taboo of Vanity is the name I give to the taboo on philosophy, religion, politics, or anything else that, you know, actually matters. This taboo is one of the worst things about the world that isn't overtly violent. If people discussed these things every day, every person would have extensive experience thinking about them and contending with opposing ideas. They would be much harder to indoctrinate. But no, all that stuff is socially outlawed, and as a result most people are raised not even really realizing that there's a question to be asked and that the ideology they were trained to embrace as a child *might* not be right simply because they never considered anything else. By the time they're adults, most people are so used to not thinking for themselves that it's almost impossible to get them to start.
+
+I get that it's because those topics tends to get heated. But that's *because they're important*! People often say things like "What's the big deal? Why u get so mad over this anarchism thing?" And I'm like um, because [millions of innocent people are being threatened into following completely arbitrary laws and giving up their fairly earned income](anarchism) or [rotting in cages](imprisonment) for being brave as we speak? How's that for a reason? When shit like this is going on honestly how can you excuse talking about anything else?

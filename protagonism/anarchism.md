@@ -2,7 +2,6 @@ TITLE Why you should be an Anarchist
 NAV Anarchism
 TEMPLATE DEFAULT
 DESC Whether something is "the law" doesn't change whether it's right, and so it doesn't make it okay to force people to do it.
-MARKDOWN
 
 Most people seem to recognize the government that rules over them as more or less "corrupt", but in fact the whole concept is morally depraved.
 

@@ -27,15 +27,8 @@ def process_file(infile, outfile, templates):
 		if not os.path.exists(outfile):
 			os.link(infile, outfile)
 		return
-	# Read the article first.
-	with open(infile, encoding='utf-8') as f:
-		article = f.read()
-	# Right now, this is the only template.
-	templatefile = templates + 'article.html'
-	with open(templatefile, encoding='utf-8') as f:
-		template = f.read()
 	# Generate the output before writing it, so we don't truncate the file.
-	output = build_article(article, template, infile[len(SRCDIR):], get_last_modified(infile))
+	output = build_article(infile, templates, infile[len(SRCDIR):], get_last_modified(infile))
 	# Write the output.
 	with open(outfile, 'w', encoding='utf-8') as f: f.write(output)
 
@@ -66,11 +59,18 @@ def parse_directives(article):
 
 	return args
 
-def build_article(article, template_txt, path, last_modified):
+def build_article(filename, templates, path, last_modified):
+	# Read the article first.
+	with open(infile, encoding='utf-8') as f:
+		article = f.read()
+	# Right now, this is the only template.
+	templatefile = templates + 'article.html'
+	with open(templatefile, encoding='utf-8') as f:
+		template_txt = f.read()
 	args = parse_directives(article)
 	# Retain only the article body.
 	article = article[article.find('\n\n')+2:]
-	if args.get('MARKDOWN'):
+	if filename.endswith('.md'):
 		article = mistune.markdown(article, escape=False) \
 			.replace('<pre><code>', '<pre class="code">') \
 			.replace('</code></pre>', '</pre>')

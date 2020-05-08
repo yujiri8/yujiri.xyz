@@ -1,0 +1,11 @@
+TITLE Don't hate Prismata for every set being an autowin
+NAV Don't hate Prismata for every set being an autowin
+TEMPLATE DEFAULT
+
+When new players hear things like "Base set is a p2 win with optimal play from both sides", they sometimes think that Lunarch should do something about this, make it more balanced. But the truth is that this problem is inevitable in any turn-based deterministic game.
+
+Imagine a tree of every possible game state. Each state where the winner is decided is marked as a winning position for that player. For each position that comes directly before a decided position, look at all of the possible ones after it, and if any of them is a win for the player who's turn it is, then this position is also a win for that player (because optimal play means they can get it to a winning position from here). Otherwise it's a win for the other player.
+
+You can assign a theorical optimal-play victor to every possible Prismata gamestate this way, and therefore, even at the start of the game, there's always a player - p1 or p2 - who can force a win regardless of how the other plays. It works for any turn-based deterministic game - Tic-Tac-Toe, Connect Four, Checkers, Chess, Go, whatever. They're *all* autowins (or auto-draws).
+
+So, two potential criticisms remain: one that Prismata sets should all be autodraws instead of autowins, and the other that turn-based determinstic strategy games are simply fundamentally flawed. I quite like turn-based deterministic strategy (it's the only way to do a real *pure* strategy game), so I'm not going to give up the genre just because of this one issue. The other criticism, I concede. Prismata is not a perfect game. But in most sets it only takes a very small mistake to make the theorically-winning player lose to optimal play from the theorically-losing player, and it has a high [skill ceiling](/game_design/depth) (ie. playing perfectly for an entire match is very difficult). So log in, hop in queue and let's enjoy this flawed but amazing game together.

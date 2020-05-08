@@ -1,0 +1,25 @@
+TITLE Forking Interests in Game Design
+NAV Forking interests
+TEMPLATE DEFAULT
+
+One really bad idea that game designers keep coming back to (intentionally or not) is **forking disparate interests**. This comes in a few forms:
+
+* **In-game versus out-of-game.** Pay to win is the most egregious example of this - punish players for prioritizing real life over games. Buying a video game is already giving up money for enjoyment, and everyone does that to some extent, but the enjoyment of games is a particular emotional phenomenon that's severely damaged if each in-game decision has a real life cost. You won't be thinking about how to win but about how to balance your goal of winning with your goal of being responsible, and wondering if you're spending too much on games will be a constant source of unhappiness.
+
+	I've said before that one of the main advantages of video games over sports is that they make your real-life body irrelevant. Wealth is the same way (except that the average disparity between players is a lot larger). Designers who defend this practice for single-player games seem to argue that "we're not making it harder for anyone; the game works just fine if you don't pay, you can just pay to make it easier". But that's an incerdibly phony excuse. PvE games should have [adjustable difficulty](difficulty_settings) anyway to account for the vast differences in player skill <span class="note">Barring games whose mechanics don't really support adjusting the difficulty, like puzzle games, but then pay to win can't apply to such a game either</span>, which makes this mechanic unnecessary. And it's even worse when it comes to PvP games. No one wants to lose to their opponent's wallet.
+
+	Another form of this flaw is situations where the optimal strategy is to do nothing for a while. Any game that has [non-instant health regeneration during safe spots (but not no regeneration)](healing) is an example of this, or PvP shooters that encourage camping. You're making the player choose either boredom or competitive disadvantage. Why would you do that?
+
+	A case I really want to rag on is the loot system in [Mass Effect](/reviews/mass_effect): Andromeda. There's no drawback to picking up loot, but you still have to do it manually, which takes time. Either play the game as harder than it was balanced to be or spend time on something you don't enjoy.
+
+	You know, if you think about it, this is really the same thing as grinding, except that it's limited (an improvement) and it makes you feel worse about the decision to not do it (a detriment), because you feel like you're leaving behind something you earned.
+
+* **Game versus story.** Example: RPGs that let you upgrade a "persuade" skill or something similar that gives you additional story options with the same pool of points you spend on your combat abilities. Story games are supposed to be about merging a story and a game, not forcing the player to pick one or the other to be the way they want.
+
+	Part of the reason this is so bad is the way it betrays the promise of a player-inserted story game. If the player character is "me", then I should be able to say any option I want that makes sense in context. If the writers acknowledge that the persuade option is something I could say and they already programmed the response for it, then it's bullshit for them not to let my character say it.
+
+	Worse, usually the result of putting points into persuade skills is being able to get through quests without doing any fighting, but that just kills the entire appeal of the *game* part of the game! If I wanted to read a choose your own adventure, I wouldn't be playing Mass Effect and have the difficulty set to insanity.
+
+* **Now versus later - outside of a section.** [Dark Souls](/reviews/dark_souls)'s weapon upgrading system (in fact, most games' weapon upgrading systems) makes you choose between spending scarce and irrecoverable titanite to upgrade the weapon you have now, making the game easier immediately but then making it harder when you find a new weapon that outmodes your current one, or saving your titanite to invest in a future weapon, which makes the game harder for the current area but easier later on. Both options break the difficulty curve. The players who upgrade their weapon immediately in that situation are the ones who needed to because they weren't good enough to get through without it. But now they won't have the titanite later on when they need it for their next weapon. That means the game gets *harder* in the long-term for weaker players, while the good players experience a transient bump in difficulty followed by either using the titanite later and the game gets *easier* to reward them for proving they don't need it, or they just go the whole game without using it. Sounds like fun!
+
+	I should be clear that abilities like passive buffs in combat systems typical of JRPGs are *not* an example of this. Short-term versus long-term *inside of a self-contained challenge* is fine. The problem is when the consequences extend outside of the current fight into the entire rest of the game.

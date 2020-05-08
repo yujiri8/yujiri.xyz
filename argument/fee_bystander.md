@@ -1,0 +1,22 @@
+TITLE Yes, Tyler Curtis, The Bystander Effect Exists
+NAV Yes, Tyler Curtis, The Bystander Effect Exists
+TEMPLATE DEFAULT
+DESC The bystander effect is a consequence of simple logic.
+
+Tyler Curtis of FEE posted [an article](https://fee.org/articles/the-bystander-effect-myth-or-fact/) arguing that the Bystander Effect is a myth. He is so wrong that I have to debunk him.
+
+I won't discuss whether the story about Genovese is true, because I don't need it to be; my beliefs aren't predicated on [contingent data](citations) but on [logical consistency and years of experience with the human mind](philosophy). I did recently [experience the effect firsthand](/protagonism/bystander) at the expense of a victim of violent abuse, but I'll explain why regardless of whether my story is true it's impossible to rationally doubt that the bystander effect exists.
+
+The Bystander Effect is a consequence of simple logic. When a lone human sees a problem and has the power to intervene, they're urged [by conscience](/protagonism/conscience) to do so. But if you see a bunch of other people that aren't intervening, you're being shown numerous examples of "normal" people displaying the opinion that intervention is not appropriate. Unless you have an iron conviction that it is this will make you doubt. Note that intervening is an irrevocable decision in terms of how the other bystanders will see you, but if you wait to intervene, you can ascertain whether the consensus is that you should intervene and if it is you can do so later without being seen as a coward for waiting. Of course, the longer everyone waits, the more everyone gets the impression that the consensus is negative.
+
+One may argue that if support for intervention is hesitant then having more bystanders helps because if any one them intervenes everyone else will get the signal that it's appropriate, and one would be correct. Having more bystanders does not always reduce the likelihood of intervention - it depends on the bystanders and on the type of emergency - but it's completely obvious that each non-intervening bystander makes it harder for other bystanders.
+
+There may also be [a gaslighting effect](https://en.wikipedia.org/wiki/Gaslighting) that could explain the Genovese story. If you think intervention is unquestionably appropriate but you still see a crowd doing nothing, one possible result is that you lose confidence not only in your moral judgement, but in your understanding of what's going on. "Surely if a dozen other people saw rape in public they'd intervene - people aren't *that* horrible - and so I must be misunderstanding. There must be something I'm not seeing or not realizing."
+
+Normally, in situations where intervention is completely uncontroversial, the bystander effect won't stop the bystanders from intervening, but it will likely delay them as they each check if anyone else is going to. This is arguably a separate matter from the bystander effect though.
+
+Another type of situation the bystander effect undeniably happens in is if each bystander is making the decision individually - in series - and then leaving the area. An excellent example is people stranded on the side of the road. You see someone like this not too infrequently and most often there are dozens of cars driving by because, well, someone else will help that guy. Someone else will come along who's got less important things to do than I do. Although that's arguably justified, it's a very good example of the bystander effect. Most people would be much more likely to help if they knew they'd be the only person passing by for a while, because then they know the consequences of not intervening are more severe.
+
+In situations where the primary motivation to not intervene is the belief that intervening puts oneself in danger (such as if you see someone being assaulted by a stronger person), then there's the opposite effect because having more people that might help you increases the safety of helping.
+
+But that's not what the bystander effect is about. In situations where there's any question at all about the appropriateness of intervention, the bystander effect takes effect and makes it harder to intervene. If you're the only one who intervenes, you draw potentially negative attention to yourself (this is exactly how my example worked). Few people want to be the *first* to act in that situation.
