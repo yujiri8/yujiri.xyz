@@ -2,6 +2,7 @@
 
 * SQLAlchemy
 * FastAPI
+* Alembic
 * uvicorn
 * nginx
 * npm
@@ -13,7 +14,7 @@
 * mutt (for email notifications)
 * paladin
 * entr
-* certbot (only to get certs)
+* certbot
 
 # Overview
 
@@ -23,7 +24,7 @@
 
 * Nginx serves all static files - including articles - from an output dir, `~/html`.
 
-* A Django backend manages comments, the Spem dictionary, and any other dynamic aspects.
+* A FastAPI/SQLAlchemy backend manages comments, the Spem dictionary, and any other dynamic aspects.
 
 * The frontend uses lit-element and webpack to bundle all JS components and dependenices into a single file.
 
@@ -54,12 +55,6 @@ As far as I know, there's no way to do it with cron because wildcard certs have 
 `certbot -d yujiri.xyz,\*.yujiri.xyz --manual certonly`
 
 Deploy the DNS TXT record and then the file as requested. Test that each are available before telling certbot to proceed.
-
-# Django secret settings
-
-The Django server's config involves some settings that can't be exposed in the repo, so they're stored in secret.py protected by .gitignore. The necessary settings:
-
-* `SECRET_KEY`
 
 # Markdown problem
 

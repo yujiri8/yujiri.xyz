@@ -4,9 +4,9 @@ server {
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
 
-	server_name uvicorn.yujiri.xyz;
+	server_name yujiri.xyz;
 
-	root /root/htmltest;
+	root /root/html;
 
 	index index;
 	error_page 404 /404;

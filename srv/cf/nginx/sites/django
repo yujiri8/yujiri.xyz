@@ -4,7 +4,7 @@ server {
 	listen 443 ssl http2;
 	listen [::]:443 ssl http2;
 
-	server_name yujiri.xyz;
+	server_name django.yujiri.xyz;
 
 	root /root/html;
 
