@@ -23,7 +23,7 @@ def get_article_title(path):
 	if path.endswith('/'):
 		path += 'index'
 	if os.path.exists(ROOT + path + '.md'):
-		path + '.md'
+		path += '.md'
 	else:
 		path += '.html'
 	with open(ROOT + path, encoding='utf-8') as f:

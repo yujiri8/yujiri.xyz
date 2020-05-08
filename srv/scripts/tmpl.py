@@ -20,7 +20,7 @@ def process_file(infile, outfile, templates):
 		if not os.path.exists(outfile): os.mkdir(outfile)
 		return
 	# If it's not a templated article, just hard-link it if it isn't already.
-	if not infile.endswith('.html') or ('/chapter' in infile and 'works/' in infile):
+	if not infile.endswith('.html') and not infile.endswith('.md') or ('/chapter' in infile and 'works/' in infile):
 		# Have to remove it first if it exists but it's a different file.
 		if os.path.exists(outfile) and not os.path.samefile(infile, outfile):
 			os.remove(outfile)
@@ -119,6 +119,7 @@ if __name__ == '__main__':
 	for arg in args.infiles:
 		infile = os.path.abspath(arg)
 		outfile = infile.replace(SRCDIR, OUTDIR)
-		# strip '.html' from the end, for Nginx's benefit
+		# strip .html or .md from the end, for Nginx's benefit
 		if outfile.endswith('.html'): outfile = outfile[:-5]
+		elif outfile.endswith('.md'): outfile = outfile[:-3]
 		process_file(infile, args.stdout or outfile, args.templatedir)
