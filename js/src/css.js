@@ -112,7 +112,7 @@ input, textarea, button {
 textarea {
 	max-width: 100%;
 	width: 60em;
-	height: 12em;
+	min-height: 8em;
 }
 button {
 	cursor: pointer;
