@@ -6,9 +6,13 @@ import datetime
 
 import util
 
-db = create_engine('postgres://localhost/?user=postgres&database=sqlalchemy')
 Base = declarative_base()
-Session = sessionmaker(bind = db)
+
+def connect(dbname):
+	global db, Session
+	# TODO ideally return these instead of using a global ref.
+	db = create_engine(f'postgres://localhost/?user=postgres&database={dbname}')
+	Session = sessionmaker(bind = db)
 
 class User(Base):
 	__tablename__ = 'users'
@@ -153,8 +157,8 @@ class Log(Base):
 	ua = Column(String, nullable = False)
 	referer = Column(String, nullable = False)
 
-def initdb():
+def createdb():
 	Base.metadata.create_all(db)
 def resetdb():
 	Base.metadata.drop_all(db)
-	initdb()
+	createdb()

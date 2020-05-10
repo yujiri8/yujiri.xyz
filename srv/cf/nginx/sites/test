@@ -27,17 +27,8 @@ server {
 	rewrite ^/works/rttp_downloads(.*) /works/return_to_the_portrait$1 permanent;
 	rewrite ^/computing(.*) /software$1 permanent;
 	# API
-	location /api {
-		uwsgi_pass unix:/tmp/django-dev.sock;
-		include uwsgi_params;
-	}
-	# Django admin
-	location /admin {
-		uwsgi_pass unix:/tmp/django-dev.sock;
-		include uwsgi_params;
-	}
-	location /static {
-		root /root/src/srv/django/dev/yujiri;
-		try_files $uri $uri/ =404;
+	location /api/ {
+		proxy_pass http://unix:/tmp/uvicorn-dev.sock:/;
+		proxy_set_header X-Forwarded-For $remote_addr;
 	}
 }

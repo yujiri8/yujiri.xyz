@@ -2,8 +2,18 @@ from fastapi import FastAPI, Request, Response, HTTPException, BackgroundTasks
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import PlainTextResponse
 
-import db, comments, users, spem, util
-import emails, email_templates
+import argparse
+
+# This setup must be done before importing route handlers, since common.py depends on the Sessionmaker reference.
+parser = argparse.ArgumentParser()
+parser.add_argument('--db', dest = 'db', required = True)
+parser.add_argument('--socket', dest = 'socket', required = True)
+args = parser.parse_args()
+
+import db
+db.connect(args.db)
+
+import comments, users, spem, util, emails, email_templates
 
 app = FastAPI()
 
@@ -26,3 +36,6 @@ async def other_err_handler(req: Request, exc: Exception):
 @app.exception_handler(RequestValidationError)
 async def validation_err_handler(req: Request, exc: Exception):
 	return Response(status_code = 400)
+
+import uvicorn
+uvicorn.run(app, uds = args.socket)

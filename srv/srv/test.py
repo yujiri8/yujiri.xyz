@@ -6,9 +6,7 @@ from sqlalchemy.orm import sessionmaker
 import db
 from db import User, Comment, Subscription
 
-# Reset these to connect to a test database.
-db.db = create_engine('postgres://localhost/?user=postgres&database=sqlalchemytest')
-Session = sessionmaker(bind = db.db)
+db.connect('test')
 
 class TestFailed(Exception): pass
 
