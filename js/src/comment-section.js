@@ -56,6 +56,10 @@ customElements.define('comment-section', class extends LitElement {
 		</comment-submit-area>
 		${parseQuery(window.location.search).c? html`
 			You're viewing a subtree of the comments.
+			${this.comments[0] && !this.comments[0].reply_to.startsWith('/')? html`
+			    <a href="${window.location.origin + window.location.pathname}?c=${
+			        this.comments[0].reply_to}#comment-section">view parent</a> or
+			`:''}
 			<a href="${window.location.origin + window.location.pathname}#comment-section">
 				view all comments on this page</a>
 		`:''}

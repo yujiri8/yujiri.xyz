@@ -75,6 +75,10 @@ customElements.define('a-comment', class extends LitElement {
 			<a href="${window.location.origin + window.location.pathname +
 				`?c=${this.comment.id}`}#comment-section">
 				view subtree
+				<!-- if the replies weren't returned, the property is a count of them -->
+				${typeof this.comment.replies === 'number' && this.comment.replies?
+				    "(more replies)"
+				:''}
 			</a>
 		</div>
 		${this.replyOpen? html`
@@ -82,7 +86,9 @@ customElements.define('a-comment', class extends LitElement {
 			</comment-submit-area>
 		`:''}
 		<div class="indent">
-		    ${this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
+		    ${this.comment.replies instanceof Array?
+		        this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)
+		    :''}
 		</div>
 		`;
 	}
