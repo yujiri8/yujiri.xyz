@@ -29,29 +29,33 @@ It's a **silent protagonist** game. So much for role-playing! I can't express ho
 
 It's not fatal though. Unlike Dark Souls, Undertale's major NPCs play meaningful roles in the story and have significant depth (that you don't have to 100%, cross-reference every item description, read game files and headcanonize into conclusions that have almost no basis in the actual game, which is how lore seems to work in Dark Souls).
 
-# Poor communication
+# Story
 
-On several occasions, the role-playing is harmed by poor communication with the player about what's an option:
+The game revolves around your decisions whether to spare monsters that fight you. I was disappointed, though not very surprised, that this doesn't involve any real exploration of that possibility space. There's no dialogue where you try to actually reason with the monsters; you can never ask anyone why they're trying to kill you, you just solve their little ad-hoc conversation puzzle (see below). And most of the random encounter monsters are too impersonal for said conversation puzzles to feel like anything other than a boring minigame. Their designs and names tend to be jokes that all their dialogue revolves around. You're told in some conditional dialogue that "each of those monsters could be someone else's [close friend]", but that notion carries very little power when the random encounter monsters have such un-person-like, ad-hoc psychology and never get another word after you spare them.
 
-* In the Ruins after Toriel leaves you and tells you to stay put, my first intent was to obey, both because it's a very reasonable decision in-universe and because Toriel already saved my character's life; but after walking around in the previous area for a few minutes and calling her, I realized I had no choice but to go outside, even though in-universe it still made more sense to stay.
+Of course, changing this would've been a massive overhaul because it would've required thinking up a way to prevent exposition from getting out too soon.
 
-* Before the battle against Undyne where Monster Kid falls and needs help, I didn't help him because I thought I still had cutscene immobility. When he judged me for not helping him after Undyne did, I went to all the trouble of loading a save. I wanted to do everything in my power to convince Undyne I had good intentions, because I realized that like Toriel, her actions were justified from her perspective.
+You find out why the monsters are trying to kill you halfway through, and it's a pretty damn good reason, but even after that you can't try to reason with them. In the case of the boss who more or less explains it to you, the only way to spare her is <span class="spoiler">fleeing on a specific turn</span> and then she just stops trying to kill you after that, even though there's no reason that should change anything that refusing to attack her doesn't.
 
-* In the battles against both <span class="spoiler">Toriel</span> and <span class="spoiler">Undyne</span>, you're given every reason to think you made sparing them impossible by some previous choice. If trying to spare or talk the first three times yields no promising dialogue, it's not reasonable to expect the player to keep trying it.
+Other than that though, all the main characters are solid, nuanced and have real development. Even characters I'd previously planned to kill, I ended up finding quite likable and their actions much more defensible in hindsight.
 
-	In <span class="spoiler">Undyne</span>'s case, I was confident from spoilers I'd seen that she could be spared outside of a Pacifist run, so when it didn't work in the beginning, I thought I just had to deal heavy damage first (which was a reasonable expectation because there are other enemies that work that way). I tried a bunch more times to spare her after she tapped into her second wind, and some of her dialogue gave me hope, but she dies over time at that phase. That was disappointing. Turns out you actually just have to check the Mercy menu again on the turn you turn back to red, and the Flee option is suddenly present. (To be fair, this makes sense in hindsight given the dialogue in the beginning of the fight.)
+Honestly, my opinion of the game went from 5/10 to 9/10 just over the period *from the end of the final boss to the end of the game* on my first (Neutral) run. I can't even talk about it much without ruining it, but I guess a spoiler tag would do: it involves <span class="spoiler">meta stuff in the style of [Doki Doki Literature Club](/reviews/ddlc)</span>, and an incredibly satisfying return of someone from the beginning. It delivered a feeling like I was miraculously lucky just to be able to try again.
+
+Both the Pacifist and Genocide endings hold mind-blowing reveals that the other doesn't. The Pacifist ending is absolutely glorious. It involves all the characters, and has an epilogue about as good as [Lost Odyssey](/reviews/lost_odyssey)'s.
+
+I'm awed by how much work is put into the many different Neutral endings. I only saw one (Papyrus's), but I read about the possibilities on the wiki and... wow.
+
+## Morality
+
+One thing I'm disappointed about is that the game doesn't lend any serious consideration to the idea that it is justified for <span class="spoiler">the monsters to kill you to free them all</span>. There's not even an ending where you <span class="spoiler">voluntarily submit to this</span>, even though that's the most logical way for this to end if the protagonist has good intentions (and was the ending I thought I was going for on my first run).
+
+Of course, I have to make the monarchy criticism. It normalizes monarchy by having both a king and a queen as designated goodguys, like all too much fantasy fiction. It also normalizes [schools](/protagonism/children). But the [enforcement](/protagonism/enforcement) of these institutions is never seen or mentioned, leaving it possible that the schools aren't coercive and the monarchic titles are misnomers, which I guess makes it still an improvement over the par for this world's fiction?
 
 # Combat conversation system is capricious
 
-In general, getting enemies to be spareable involves the Act menu dialogue options, which let you (forgo an attack to) make some attempt at conversation or other non-violent action during a fight. There's often no predictable logic to what options will work. Sometimes I'd lose a few rounds trying all the conversation options on an enemy that apparently can't be talked down before dealing damage (like Froggit), and wish I hadn't wasted life trying.
+In general, getting enemies to be spareable involves the Act menu dialogue options, which let you (forgo an attack to) make some attempt at conversation or other non-violent action during a fight. Unfortunately, there's often no predictable logic to what options will work. I recommend asking the wiki if you want to spare an enemy and don't feel like guessing in the dark. I used the wiki heavily during my Pacifist run and never regretted it. Each character has a separate "In Battle" page, so it's not too hard to do so without spoiling stuff.
 
-I recommend asking the wiki if you want to spare an enemy and don't feel like guessing in the dark. I used the wiki heavily during my Pacifist run and never regretted it. Each character has a separate "In Battle" page, so it's not too hard to do so without spoiling stuff.
-
-There's also the Flee command; I never figured out exactly how it works. Early on it seemed to be 100% reliable, but it's not; I thought for some time you could only flee against a single enemy, but that's not it either; I saw exceptions on both sides. I couldn't find anything on it on Google either. I think it just has like an 80% chance to work or something. The main downside for a Pacifist run is that fleeing doesn't give you gold either, while sparing enemies without fleeing still sometimes gets you gold.
-
-# Normal monsters are boring
-
-Most of the random-encounter monsters that you're supposed to be trying to spare (if not doing Genocide) do not make it attractive. Their designs and names tend to be jokes that all their dialogue revolves around. The point is made in some conditional dialogue that "each of those monsters could be someone else's [close friend]", but that notion carries very little power when the monsters have such un-person-like, ad-hoc psychology and never get another word after you spare them. Of course, changing this would've presented a massive challenge for Toby because it would've required thinking up a way to prevent exposition from getting out too soon.
+There's also the Flee command; I never figured out exactly how it works. Early on it seemed to be 100% reliable, but it's not; then I thought for some time you could only flee against a single enemy, but that's not it either; I saw exceptions on both sides. I couldn't find anything on it on Google either. I think it just has a high chance to work. The main downside for a Pacifist run is that fleeing doesn't give you gold either, while sparing enemies without fleeing still sometimes gets you gold.
 
 # Humor
 
@@ -64,22 +68,6 @@ The overworld consists largely of puzzles, most of which aren't too difficult, t
 The game is significantly harmed by the lack of a fast travel and the slow movement. It makes it very unappealing to revisit previous areas, which is especially bad since that's required for a lot of important scenes.
 
 There's also a pretty egregious trial and error room in the beginning where there's a floor of only a tile type you've seen that you fall through to a lower room if you step on, but it turns out there's a path you can walk on without falling, and you just have to find it by trial and error.
-
-# Story
-
-Honestly, my opinion of the game went from a 5/10 to a 9/10 just over the period *from the end of the final boss to the end of the game* on my first (Neutral) run. I can't even talk about it much without ruining it, but I guess a spoiler tag would do: it involves <span class="spoiler">meta stuff in the style of [Doki Doki Literature Club](/reviews/ddlc)</span>, and an incredibly satisfying return of someone from the beginning.
-
-All of the main characters are excellent, nuanced and endearing and have significant development. Even characters I'd previously planned to kill, I ended up finding quite likable, and their actions much more defensible in hindsight.
-
-Both the Pacifist and Genocide endings hold mind-blowing reveals that the other doesn't. The Pacifist ending is absolutely glorious. It involves all the characters, and an epilogue about as good as [Lost Odyssey](/reviews/lost_odyssey)'s.
-
-I'm awed by how much work is put into the many different Neutral endings. I only saw one (Papyrus's), but I read about the possibilities on the wiki and... wow.
-
-## Morality
-
-One thing I'm disappointed about is that the game doesn't lend any serious consideration to the idea that it is justified for <span class="spoiler">the monsters to kill you to free them all</span>. There's not even an ending where you <span class="spoiler">voluntarily submit to this</span>, even though that's the most logical way for this to end if the protagonist has good intentions (and was the ending I thought I was going for on my first run).
-
-Of course, I have to make the monarchy criticism. It normalizes monarchy by having both a king and a queen as designated goodguys, like all too much fantasy fiction. It also normalizes [schools](/protagonism/children). But the [enforcement](/protagonism/enforcement) of these institutions is never seen or mentioned, leaving it possible that the schools aren't coercive and the monarchic titles are misnomers, which I guess makes it still an improvement over the par for this world's fiction?
 
 <br>
 
