@@ -16,3 +16,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [How I left Catholicism](apostasy)
 
 [My names and the story of Evan](names)
+
+[Considering saying something makes you wiser](public_wisdom)
