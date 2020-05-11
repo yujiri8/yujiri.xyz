@@ -11,6 +11,7 @@ customElements.define('comment-section', class extends LitElement {
 			user: {type: String},
 			admin: {type: Boolean},
 			timestamp: {type: String},
+			comments: {type: Array},
 		}
 	}
 	static get styles() {
@@ -29,7 +30,9 @@ customElements.define('comment-section', class extends LitElement {
 		super();
 		this.user = readCookie('email');
 		this.admin = readCookie('admin');
-		this.addEventListener('comment-posted', e => this.loadComments(e.detail));
+		this.comments = [];
+		this.loadComments();
+		this.addEventListener('comment-posted', this.loadComments);
 	}
 	render() {
 		return html`
@@ -57,65 +60,22 @@ customElements.define('comment-section', class extends LitElement {
 				view all comments on this page</a>
 		`:''}
 		<div id="comments">
+		    ${this.comments.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
 		</div>
 		`;
 	}
-	async firstUpdated() {
-		super.firstUpdated();
+	async loadComments() {
 		const subtree = parseQuery(window.location.search).c;
-		// This is a janky solution, but we need to fetch the
-		// specific comment first if we're looking at a subtree.
-		if (subtree) {
-			const req = await api('GET', 'comments', {id: subtree});
-			try {
-				var comment = await req.json();
-			} catch (err) {
-				showToast('err', "Couldn't understand response from server");
-				throw err;
-			}
-			// pass '/' as reply_to even though it's false, because this needs to be treated as the root.
-			this.insertComments([comment], '/');
-		}
-		// Now load everything under the subtree root, or all the comments.
-		this.loadComments(subtree || window.location.pathname);
-	}
-	async loadComments(reply_to) {
-		const req = await api('GET', 'comments', {reply_to: reply_to});
+		const resp = await api('GET', 'comments', subtree?
+			{id: subtree}
+			: {reply_to: window.location.pathname}
+		);
 		try {
-			var comments = await req.json();
+			const data = await resp.json();
+			this.comments = data instanceof Array? data : [data];
 		} catch (err) {
 			showToast('err', "Couldn't understand response from server");
 			throw err;
-		}
-		this.insertComments(comments, reply_to);
-		// Recursively fetch replies to comments that have them.
-		for (let comment of comments) {
-			if (comment.replies) this.loadComments(comment.id);
-		}
-	}
-	insertComments(comments, reply_to) {
-		// Reverse them so more recent are last. Due to the way I insert them, they'd otherwise be in reverse.
-		comments.reverse();
-		// If these are not top-level comments, they need to be indented under their parent.
-		// TODO ideally find a more declarative way of doing this.
-		if (!reply_to.includes('/')) {
-			const parent = this.getComment(reply_to);
-			var addComment = c => {
-				this.increaseIndent(c, parent);
-				parent.insertAdjacentElement('afterEnd', c);
-			};
-		} else {
-			const commentSection = this.shadowRoot.getElementById('comments');
-			var addComment = c => commentSection.insertBefore(c, commentSection.firstChild);
-		}
-		for (let comment of comments) {
-			if (this.getComment(comment.id)) continue;
-			const commentElem = document.createElement('a-comment');
-			commentElem.id = comment.id;
-			commentElem.comment = comment;
-			commentElem.timestamp = new Date(this.timestamp);
-			addComment(commentElem);
-			window.c = commentElem;
 		}
 	}
 	getComment(id) {
@@ -126,13 +86,6 @@ customElements.define('comment-section', class extends LitElement {
 		setCookie('email', email);
 		await api('POST', 'users/claim', undefined, email);
 		showToast('success', "Confirmation email sent.");
-	}
-	// Takes a child and parent element and indents the child under the parent element in-place.
-	increaseIndent(child, parent) {
-		// Shortcut.
-		const parentStyle = getComputedStyle(parent);
-		const parentIndent = parseInt(parentStyle['margin-left']) / parseInt(parentStyle['font-size']);
-		child.style['margin-left'] = parentIndent + 1 + 'em';
 	}
 });
 

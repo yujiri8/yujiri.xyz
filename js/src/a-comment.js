@@ -58,6 +58,7 @@ customElements.define('a-comment', class extends LitElement {
 		this.key = util.readCookie('key');
 		this.admin = util.readCookie('admin');
 		this.user = util.readCookie('email');
+		this.replies = [];
 	}
 	render() {
 		return html`
@@ -80,6 +81,9 @@ customElements.define('a-comment', class extends LitElement {
 			<comment-submit-area reply_to="${this.comment.id}" user="${this.user}">
 			</comment-submit-area>
 		`:''}
+		<div class="indent">
+		    ${this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
+		</div>
 		`;
 	}
 	renderHeader() {

@@ -52,14 +52,13 @@ class Comment(Base):
 		if self.time_changed:
 			txt += f" (edited {self.time_changed.strftime('%Y %b %d, %A, %R')})"
 		return txt
-	def dict(self, session, user = None, raw = False):
+	def dict(self, session, user = None, raw = False, recursion = 5):
 		cmt = {
 			'id': str(self.id),
 			'name': self.name,
 			'reply_to': self.reply_to,
 			'body': util.markdown(self.body) if not raw else self.body,
 			'time_added': self.time_added.isoformat(),
-			'replies': len(session.query(Comment).filter_by(reply_to = str(self.id)).all()),
 		}
 		if self.user and self.user.admin:
 			cmt['admin'] = True
@@ -71,6 +70,14 @@ class Comment(Base):
 			if sub: cmt['sub'] = sub.sub
 			else: cmt['sub'] = None
 			cmt['owned'] = user == self.user
+		# Load at most `recursion` levels deep.
+		if recursion:
+			cmt['replies'] = [c.dict(session, user, raw, recursion - 1) for c in
+				session.query(Comment).filter_by(reply_to = str(self.id)).
+				order_by(Comment.time_added.desc()).all()]
+		else:
+			# If we aren't loading them, just send the count of how many are left.
+			cmt['replies'] = session.query(Comment).filter_by(reply_to = str(self.id)).count()
 		return cmt
 	def summary_dict(self):
 		return {

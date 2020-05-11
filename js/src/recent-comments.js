@@ -40,9 +40,9 @@ customElements.define('recent-comments', class extends LitElement {
 		this.load();
 	}
 	async load() {
-		const req = await api('GET', 'recent_comments', {count: this.count});
+		const resp = await api('GET', 'recent_comments', {count: this.count});
 		try {
-			this.comments = await req.json();
+			this.comments = await resp.json();
 		} catch (err) {
 			showToast('err', "Couldn't understand response from server");
 			throw err;
