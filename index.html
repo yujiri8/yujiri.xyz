@@ -162,8 +162,15 @@ I also have a presence on <a href="https://twitter.com/Yujiri3">Twitter</a>, <a 
 </p>
 -->
 <p><b>May 11:</b>
-New article: <a href="misc/public_wisdom">Considering saying something makes you wiser</a>, and I finally got around to redoing <a href="protagonism/market">The free market in a nutshell</a>.
-</p>
+<ul>
+<li><p>New article: <a href="misc/public_wisdom">Considering saying something makes you wiser</a></p></li>
+<li><p>I finally got around to redoing <a href="protagonism/market">The free market in a nutshell</a></p></li>
+<li><p>
+Comment section improvements! It loads all the comments in one batch, instead of recursing through the tree getting one level each time. This drastically reduces the time it takes to finish loading the tree. Of course, it makes it take a lot longer to load the top comments since the server can't return them until it loads everything, but I think that'll be okay. I'm planning to also limit the number of replies on a single level it fetches automatically. And I got to ditch net lines of code, which feels great.</p>
+<p></p>
+I also the view parent link to make navigating subtrees easier! Another improvement I should probably make is to make it so navigating the comment tree doesn't reload the page.
+</li>
+</ul>
 <p><b>May 10:</b>
 New poem: <a href="works/poems/the_shaft">The Shaft</a>.
 </p>
