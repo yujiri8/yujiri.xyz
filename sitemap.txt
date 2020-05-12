@@ -134,6 +134,7 @@ https://yujiri.xyz/misc/contact
 https://yujiri.xyz/misc/logo
 https://yujiri.xyz/misc/masks
 https://yujiri.xyz/misc/names
+https://yujiri.xyz/misc/public_wisdom
 https://yujiri.xyz/misc/resume
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
@@ -430,6 +431,7 @@ https://yujiri.xyz/works/poems/henry_the_hero
 https://yujiri.xyz/works/poems/ode_to_prismata
 https://yujiri.xyz/works/poems/solitude
 https://yujiri.xyz/works/poems/the_bright_raincloud
+https://yujiri.xyz/works/poems/the_shaft
 https://yujiri.xyz/works/return_to_the_portrait/
 https://yujiri.xyz/works/return_to_the_portrait/guide
 https://yujiri.xyz/works/return_to_the_portrait/critique
