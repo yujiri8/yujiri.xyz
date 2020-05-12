@@ -13,6 +13,6 @@ Today I went through the process of setting up online access to the second of tw
 
 * Disabling pasting. If I can't paste into the password field, I'm strongly disincentivized to use a long password. This is especially bad for passwords that use the "pure random data from /dev/random" approach I used for some passwords in the past.
 
-Web designers, can I get your attention for one sentence? **Lumping arbitrary restrictions on your users' passwords doesn't make them stronger.**
+Managers, can I get your attention for one sentence? **Lumping arbitrary restrictions on your users' passwords doesn't make them stronger.**
 
 Another thing I ran into that's just an interface issue is not checking that the password and confirm password fields match until submit is clicked. Come on, we have event listeners and web components' render templates now that make it trivial to have an indication appear whenever the content's unequal.
