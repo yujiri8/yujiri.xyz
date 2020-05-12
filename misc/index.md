@@ -18,3 +18,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [My names and the story of Evan](names)
 
 [Considering saying something makes you wiser](public_wisdom)
+
+[How I left axiological retribution](axiological_retribution)
