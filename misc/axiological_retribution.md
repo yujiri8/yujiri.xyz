@@ -11,7 +11,7 @@ I believed this pretty much for my whole life up until I was 20 or 21. An intere
 
 So I thought it would be interesting to write about why I stopped believing it, and what I think of it now.
 
-Ultimately, the reason I stopped was because it presented philosophical quandary that could be resolved by throwing the doctrine out: if a good person's welfare was good and a sufficiently evil person's welfare was bad, there had to be a zero line. And worse, that line *wasn't at the **merit** zero line*: imagining a person created out of thin air, they must start at moral neutrality, I figured. But their welfare was not valueless. It was positive. So if the welfare zero line wasn't at the merit zero line, where was it and why? There didn't seem to be a satisfactory answer.
+Ultimately, the reason I stopped was because it presented philosophical quandary that could be resolved by throwing the doctrine out: if a good person's welfare was good and a sufficiently evil person's welfare was bad, there had to be a zero line. And worse, that line _wasn't at the **merit** zero line_: imagining a person created out of thin air, they must start at moral neutrality, I figured. But their welfare was not valueless. It was positive. So if the welfare zero line wasn't at the merit zero line, where was it and why? There didn't seem to be a satisfactory answer.
 
 But by the time I thought of that, I'd already grown much less attached to the doctrine. My departure from it started with more emotional causes, and I don't think the above would've convinced me if I hadn't had the emotional changes first.
 
