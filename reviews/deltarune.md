@@ -27,6 +27,8 @@ The OST is still good. The main battle track is a nice development from the Unde
 
 The dynamic puzzle dialogue is really well done. If you get stuck at most puzzles, a companion gives you hints. It makes it feel like the puzzles are in-universe and solved by the characters, rather than just a gameplay gimmick. I can barely think of any other games that've done this (the boost pad puzzle in Undertale if you call Papyrus was like this except that Papyrus doesn't actually give a hint).
 
+Random encounters are also visible on the overworld now, which is nice.
+
 I *guess* I would still play Deltarune chapter 2 if it ever came out, but only on the hopes it'd be better than this. From Undertale to Deltarune is a [Spy Kids 1](spy_kids) to [Spy Kids 2](spy_kids_2) level downgrade.
 
 # Full retrospective (spoilers)
@@ -57,7 +59,7 @@ At the worst of it, you come across Susie and Lancer lazing in chairs while they
 
 Next encounter, Susie and Lancer attack and Susie promises to switch back to your team if you win. Thank god it's a fight where you can attack without ruining the pacifist ending. Lancer also ends up joining. The writer vaguely tries to make him sympathetic by referencing how he never knew what friendship felt like and is so happy to be following you. It doesn't work.
 
-It's not long after that that Toby deploys the "forced RPG capture and cardboard prison" trope when Lancer, the prince (I don't even remember if that was said earlier), calls in the guard to attack and capture you. Susie breaks out, finds Lancer, and he openly admits it was him who ordered the guards to capture them, and that he planned to imprison them for "eternity"... because he didn't want them to kill his dad. And *Susie* of all people *doesn't even attack* at first. She has some lines like "No... I get it. Why would anyone wanne be my friend anyway?" Yes, the strawman chaotic evil person responds to being betrayed and imprisoned by her friend - the least tolerable character we all want to see butchered by now - by not blaming him.
+It's not long after that that the game deploys the "forced RPG capture and cardboard prison" trope when Lancer, the prince (I don't even remember if that was said earlier), calls in the guard to attack and capture you. Susie breaks out, finds Lancer, and he openly admits it was him who ordered the guards to capture them, and that he planned to imprison them for "eternity"... because he didn't want them to kill his dad. And *Susie* of all people *doesn't even attack* at first. She has some lines like "No... I get it. Why would anyone wanna be my friend anyway?" Yes, the strawman chaotic evil person responds to being betrayed and imprisoned by her friend - the least tolerable character we all want to see butchered by now - by not blaming him.
 
 This is F- level storytelling. For any other game, I'd be out by now. I honestly would've guessed this was a fan-made sequel to Undertale by the kind of the person who makes DDLC mods like Spark of Hope.
 
@@ -69,7 +71,7 @@ So we all get out and get to the king. As this king has imprisoned countless inn
 
 We find Lancer talking to the king and trying to explain that he didn't kill the other characters. The king, furious with Lancer, takes him hostage and says he'll kill him if Kris and the others don't surrender. And there's no choice to not surrender. Forced to sacrifice ourselves for *Lancer*. Luckily Lancer breaks out and flees and the three of us do get to fight the king.
 
-I was pleasantly surprirsed that the fight actually offered some resistance. In fact, this was the only fight in the game where I had to use any healing items. I still got it on my first try.
+I was pleasantly surprised that the fight actually offered some resistance. In fact, this was the only fight in the game where I had to use any healing items. I still got it on my first try.
 
 The king eventually yields, and to nobody's surprise I'm forced by cutscene to spare him. Ralsei heals him, and he actually betrays us and attacks. The characters manage to best him again without gameplay... and then I still don't get a choice to kill him.
 
@@ -77,7 +79,7 @@ That's about it. Kris and Susie are able to leave the underground and get back t
 
 Toriel calls Kris. Naturally, Kris tells her nothing. This conversation takes a dark turn when Toriel says she "will have to punish" Kris for being late and that he "will have to go to bed early". I know we can't really make this situation work because Kris doesn't tell her what happened, but why would Toby turn Toriel into a vengeful parent who will respond to behavior she knows she doesn't know the story of and has no reason to think was malicious by sentencing someone to imprisonment?
 
-I lookd around for familiar characters before heading home and found Undyne, Asgore, and Sans. Undyne was the only person I found that I could discuss the underground with, and she doesn't believe Kris.
+I looked around for familiar characters before heading home and found Undyne, Asgore, and Sans. Undyne was the only person I found that I could discuss the underground with, and she doesn't believe Kris.
 
 Undyne also says that Kris is "Asgore's kid", which is odd because it seems like Toriel and Asgore never got back together - they don't live together, and when I delivered flowers from Asgore (who's a gardener) to Toriel, she was unhappy to find out they were from him.
 
