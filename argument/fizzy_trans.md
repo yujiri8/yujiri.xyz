@@ -3,13 +3,13 @@ NAV Transgenderism in Fizzy's server
 TEMPLATE DEFAULT
 DESC An experience I had reinforcing my negative perception of trannies as sexist assholes who can't take disagreement.
 
-I've [explained](/protagonism/gender) why I disapprove of transgenderism, but my case isn't completely airtight - as main_gi once pointed out to me, it's possible from my perspective that most trans people have a legitimate genetic issue that causes their "discomfort" rather than them having sexist attitudes.
+I've [explained](/protagonism/gender) why I disapprove of transgenderism, but my case isn't completely airtight - as main_gi once pointed out to me, it's possible for all I know that most trans people have a legitimate genetic issue that causes their "discomfort" rather than them having sexist attitudes.
 
 Well today, I followed an invite to Fizzy the Mutualist's Discord server. I thought it was a great opportunity to learn about mutualism, an anarchist ideology I knew very little about. Who knew, maybe mutualism has the next insight I need.
 
 After joining the server, I saw the rules, which included the usual leftist "don't disagree with us about anything related to gender" clauses, as vague as ever (words like 'harass', 'prejudice', 'anti-' used). I reluctantly agreed planning not to start a discussion about it. So the gatekeeper, Fizzy's right-hand Qpoter, came to ask me one question first: "What do you think of trans peeps".
 
-I was thoroughly discouraged. Hadn't I just agreed to the TOS? And why that question in particular? If she'd asked me about gays or bisexuals, I could have honestly answered that I don't have a problem with them at all. Why did it have to be trans peeps? Did these people know who I was or something?
+I was thoroughly discouraged. Hadn't I just agreed to the TOS? And why that question in particular? If she'd asked me about gays or bisexuals, I could have honestly answered that I don't have a problem with them at all. Why did it have to be trans peeps?
 
 I idled and deliberated for a long time on how to word my next message. I wasn't going to be dishonest, but I had to be really careful. It would decide whether I was allowed to learn from a mutualist.
 
@@ -45,7 +45,7 @@ Unfortunately I didn't start screenshotting until halfway through the conversati
 
 ![screenshot 1](fizzy_trans_1.png)
 
-Yep. You read that right: "physical race doesn't exist". I used to tell right-wingers they were committing a strawman when they accused leftists of this, but they're not; there really are a lot of liberals who completely reject the concept of race as even a useful categorization of biological traits. Search any search engine for "race is a social construct" for more.
+Yep. You read that right: "physical race doesn't exist". I used to tell right-wingers they were committing a strawman when they accused leftists of this, but they're not; there really are a lot of liberals who completely reject the concept of race as even a useful categorization of biological traits. Search for "race is a social construct" for more.
 
 To be fair, the argument "Who is "most people"? That's a very vague reference" took me off balance. If the leftist usage of the terms came to be legitimately the standard, I might have to change my stance on trans pronouns. I was actually a bit scared that that might already be true. Is it possible? Could I actually have to concede that if they pulled some convincing citations? But of course they were as source-bare I was.
 
@@ -81,7 +81,7 @@ I think the single most embarrassing thing in all of their responses is how he s
 
 ---
 
-So this experience is one more reason for me to think few if any trannies have any justification I don't know about and they're just assholes.
+So this experience is one more reason for me to think my disdain for transgenderism is justified.
 
 Once again, I remind the reader that [my screenshots don't prove anything](screenshots). You're taking my word that it all happened, and if you don't, I don't blame you.
 
