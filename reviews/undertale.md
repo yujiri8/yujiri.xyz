@@ -39,7 +39,7 @@ You find out why the monsters are trying to kill you halfway through, and it's a
 
 Other than that though, all the main characters are solid, nuanced and have real development. Even characters I'd previously planned to kill, I ended up finding quite likable and their actions much more defensible in hindsight.
 
-Honestly, my opinion of the game went from 5/10 to 9/10 just over the period *from the end of the final boss to the end of the game* on my first (Neutral) run. I can't even talk about it much without ruining it, but I guess a spoiler tag would do: it involves <span class="spoiler">meta stuff in the style of [Doki Doki Literature Club](/reviews/ddlc)</span>, and an incredibly satisfying return of someone from the beginning. It delivered a feeling like I was miraculously lucky just to be able to try again.
+Honestly, my opinion of the game went from 5/10 to 9/10 just over the period *from the end of the final boss to the end of the game* on my first (Neutral) run. I can't even talk about it much without ruining it, but I guess a spoiler tag would do: it involves <span class="spoiler">meta stuff in the style of [Doki Doki Literature Club](/reviews/ddlc)</span>, and an incredibly satisfying return of someone from the beginning. No other game has made me feel so lucky to be able to try again.
 
 Both the Pacifist and Genocide endings hold mind-blowing reveals that the other doesn't. The Pacifist ending is absolutely glorious. It involves all the characters, and has an epilogue about as good as [Lost Odyssey](/reviews/lost_odyssey)'s.
 
