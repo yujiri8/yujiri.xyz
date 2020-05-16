@@ -113,19 +113,6 @@ In general, to avoid these unintended side effects we need the zorder change to 
 
 `behind` is exactly the wrong solution. An `infrontof` keyword (ideally with an `all` parameter) would've been 100x more helpful.
 
-<!--
-<h2 class="bad">
-<code>default</code>, <code>define</code>, <code>init python</code> and <code>python early</code> are all very confusing
-</h2>
-<p>
-The documentation on most (not all) of these is <a href="https://www.renpy.org/dev-doc/html/python.html">here</a>, .
-</p><p>
-And besides <code>init python</code>, there's a statement called <code>python early</code> that's mentioned in the documentation,
-but seemingly never explained - I searched for it for about twenty minutes. Just before giving up on finding out what it does
-I found <a href="https://lemmasoft.renai.us/forums/viewtopic.php?t=4045">a forum thread</a> where PyTom answers the question.
-Couldn't we have at least called it<code>early python</code> to be consistent?
-</p>-->
-
 <h3 class="bad"><code>persistent</code> object returns <code>None</code> on accessing undefined fields</h3>
 
 No, that's really what happens. [Javascript](javascript) has infected Renpy. Goodbye run-time typo detection.
