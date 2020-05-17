@@ -25,7 +25,7 @@ And now the value list, in no particular order:
 
 * **Compassion** - good behavior aims to alleviate suffering.
 
-* **Consent** - good behavior aims to [give people the option to not interact with others](consent), provided they afford others the same option. [Longer exploration here](property); and [here's the impetus for believing it's a prime value](luck).
+* **Peace** - good behavior aims to [give people the option to not interact with others](consent), provided they afford others the same option. [Longer exploration here](property); and [here's the impetus for believing it's a prime value](luck).
 
 * **Agency** - good behavior aims to give people the ability to take meaningful actions.
 
