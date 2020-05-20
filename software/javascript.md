@@ -15,21 +15,19 @@ The type correction features most browsers' devtools I've seen foist on you are 
 
 But the in-browser command-line experience has some compensatory advantages. Due to the nature of browser devtools, it's an out-of-the-box feature to be able to use it interactively while the page is running. That's pretty useful.
 
-<h1 class="good">I actually love how it handles objects.</h1>
+<h2 class="good">Object syntax</h2>
 
-Javascript objects are dictionaries. They're just mappings of string keys to values.
-
-I sincerely think that if you don't have any type safety whatsoever in your language and objects are going to be totally mutable, you should not distinguish between objects and dicts, because that loses all the meaningful differences.
+Object syntax is so much easier to work with than in any other language I've seen. Literals don't usually need quotation marks around keys (`{id: 5, name: 'Bob'}`), and they support bracket syntax to evaluate an expression as a key (`property = 'name'; obj[property]` is like `obj.name`). And then there there are super convenient things like [object spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
 <h2 class="good">Good functional programming features</h2>
 
-Most dynamic languages have `map`, `filter`, `reduce`, and lambdas, but I think Javascript one-ups Python here with [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). I use them every day; I can't describe how much nicer I find them than using the `function` keyword. And the syntax is intuitive, too; it *looks* like you're taking the parameter list and doing something with it. Python has lambdas and in-function `def`, but lambdas are limited to just a `return` statement and `def` doesn't handle scoping the same way arrow functions do ([this article on Pylint](https://pythonspeed.com/articles/pylint/) shows an example of the difference where you would want the arrow function behavior).
+Most dynamic languages have `map`, `filter`, `reduce`, and lambdas, but I think Javascript one-ups Python here with [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). I use them every day; I can't describe how much nicer they are than using the `function` keyword. And the syntax is intuitive, too; it *looks* like you're taking the parameter list and doing something with it. Python has lambdas and in-function `def`, but lambdas are limited to just a `return` statement and `def` doesn't handle scoping the same way arrow functions do ([this article on Pylint](https://pythonspeed.com/articles/pylint/) shows an example of the difference where you would want the arrow function behavior).
 
 There are other functional programming features in Javascript, like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>.bind</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code>.call</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>.apply</code></a>, but those are niche compared to arrow functions.
 
 <h3 class="good">Template strings are pretty useful</h3>
 
-I'll be honest, I was pretty skeptical of [this feature](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when I first found out. I thought it was adding a new syntactic construction to the language for no good reason. But after working with web components via Lit-Element I've learned to appreciate it; it really does help readability when so much logic is embedded in the component's render template.
+I'll be honest, I was pretty skeptical of [this feature](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when I first found out. I thought it was adding new syntax to the language [for no good reason](features). But after working with web components via Lit-Element I've learned to appreciate it; it really does help readability when so much logic is embedded in the component's render template.
 
 <h1 class="bad">No type checking</h1>
 
@@ -64,7 +62,7 @@ I found out the hard way that `setTimeout` silently does nothing if you pass its
 
 <h1 class="bad">Arrays aren't really arrays</h1>
 
-This took me a while to understand, but arrays are really just a type of object. (No wonder you can't add arrays in the way you'd expect...) This has many bad corellaries. One is that you can assign past the end of an array and you just get "empty items" inbetween;
+This took me a while to understand, but arrays are really just a type of object. (No wonder you can't add arrays in the way you'd expect...) This has many bad corellaries. One is that you can assign past the end of an array and you just get "empty items" inbetween:
 ```
 arr = [];
 arr[5] = 'x';
@@ -206,9 +204,5 @@ arr = ['a', 'b', 'c', 'd'];
 arr.slice(1, 3); // Returns ['b', 'c']
 ```
 It's not horrible, but it's a good deal more verbose than most other languages.
-
-<h3 class="bad">Single versus double quotes - meaningless decision</h3>
-
-Another point from my review of Python. Having to constantly make this decision distracts me and breeds inconsistent style.
 
 <!--https://wsvincent.com/javascript-parseint-map/-->

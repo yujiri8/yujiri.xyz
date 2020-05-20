@@ -74,7 +74,7 @@ if err != nil {
 	// The returned error will be, "When doing X: ..."
 }
 ```
-In addition to how tedious all this is, the compiler doesn't even help you out here. It doesn't print a warning if you leave an error unchecked (If you're catching from a function that returns multiple values then it'll make sure you have the right number of variables, but if you don't try to catch the return value of the function at all then the error just gets silently ignored.) Especially when 90% of the time what you do in these incessant error handling blocks is just return the error or `log.Fatal` if it's top-level), why not have that be the default behavior? Why should our language *default* to silently ignoring every error we don't specifically handle? That's just asking for debugging nightmares.
+In addition to how tedious all this is, the compiler doesn't even help you out here. It doesn't print a warning if you leave an error unchecked (If you're catching from a function that returns multiple values then it'll make sure you have the right number of variables, but if you don't try to catch the return value of the function at all then the error just gets silently ignored.) Especially when 90% of the time what you do in these incessant error handling blocks is just return the error (or `log.Fatal` if it's top-level), why not have that be the default behavior? Why should our language *default* to silently ignoring every error we don't specifically handle? That's just asking for debugging nightmares.
 
 Just to drive home how indefensible this design is, I want to mention that at least two other major languages have ways of handling errors that are similar to Go but at least fix the problems with silently ignored errors. These are Haskell and Rust. In Haskell the `Either` Monad is essentially equivalent to how Go handles errors (you have to check them manually); but the type system forces you to check them because before you do you have the wrong type - you have an `Either`. You have to `case` on it and find out whether the value is `Left` (a type indicating failure) or `Right` (the type it returns on success).
 
@@ -279,9 +279,9 @@ You have to declare a variable before you can use it, and there are two ways: `v
 	var x = 5
 	x, y := getMeTwoInts()
 	```
-	And you might think looking at that that the takeaway is that you should default to `:=` inside a function. But some Gophers would argue that preventing repeat declarations helps avoids bugs - there *are* some cases in other languages where I've been bitten by declaring a variable with the same name as an old one and not realizing it. And there are some additional cases where you can't use `:=`...
+	And you might think looking at that that the takeaway is that you should default to `:=` inside a function. I lean that way myself, but not every Gopher agrees, and consistency within a project is nice. And there are some additional cases where you can't use `:=`...
 
-* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`. You have to use  `var x *Thingy`. Similarly, when initializing a non-pointer struct to its zero value, while you can use `x := Thingy{}`, `var x Thingy` is arguably nicer looking. I don't know of any times where you can't use `var`, and we'd certainly prefer our style to be consistent...
+* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`. You have to use `var x *Thingy`. Similarly, when initializing a non-pointer struct to its zero value, while you can use `x := Thingy{}`, `var x Thingy` is arguably nicer looking. I don't know of any times where you can't use `var`, and we'd certainly prefer our style to be consistent...
 
 And this is unfortunately one of the areas where `go fmt` doesn't have an opinion.
 
@@ -294,16 +294,6 @@ And this is unfortunately one of the areas where `go fmt` doesn't have an opinio
 I'm somewhat skeptical about differentiating between different sizes of ints in the first place. I'm sure there are performance drawbacks to how Python does limitless, auto-reallocating ints, but I'm skeptical that they're big enough to justify a modern language distinguishing these types. But Go doesn't just distinguish the different types; if you have an `int` and an `int32` or `int64`, you can't do math with them together, you can't even compare them. It doesn't seem like there's any way at all in which "is this int32 less than or greater than this int64" is an unmeaningful or unclear question. I've had to write simple math expressions of the form `x = round(y*z)` but needed three type casts: `intVar = int(math.Round(float64(otherIntVar) * float64(float32Var)))`, and ended up having to span multiple lines. I think a little type coercion is warranted here.
 
 [The Go FAQ](https://golang.org/doc/faq#conversions) discusses this too. Their first point doesn't apply to `int32` with `int64`, the next two also wouldn't be problems for this case since an `int32` always fits in an `int64`, and the concerns about the compiler are probably valid. I don't think it's necessarily a mistake they've made that they haven't implemented this feature, but the fact is that *only* burdens the compiler and not the usability of the language. And my points here are supposed to be about how worth using the language is rather than how smart its designers were (see how I mentioned the ecosystem which obviously isn't a trait of the language itself).
-
-<h3 class="bad">Magic comments</h3>
-
-Some built-in tools, like `go generate`, read magic comments in the source code and *can even incorrectly interpret them inside multiline strings*. (Source: `go help generate` output, Go version 1.12.8.)
-
-Literally the whole point of comments is that they don't do anything. Any built-in tool that reads and reacts to comments in a way that affects the functionality is doing something deeply wrong on a philosophical level.
-
-And yes, I know that the possibility of it actually interpreting something that isn't supposed to be a `go generate` annotation is extremely small, but that doesn't excuse the choice to overload an existing symbol when there are tons more not being used. They could have used @ or # for annotations.
-
-I forgive [GObject Introspection](https://gi.readthedocs.io/en/latest) because that's a technology that isn't part of C; it had to build on top of it and I can't think of a better way to provide that wonderful functionality. But Google developers were in control of both Go and `go generate`; they could have and should have just added a dedicated syntax for annotations that would be read by Go tools.
 
 ---
 

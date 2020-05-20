@@ -1,5 +1,5 @@
-TITLE FAQ for Communists and Capitalists
-NAV FAQ for Communists and Capitalists
+TITLE Communist/Capitalist FAQ
+NAV Communist/Capitalist
 TEMPLATE DEFAULT
 DESC An FAQ of sorts to debunk the most common bad talking points from both communists and capitalists.
 

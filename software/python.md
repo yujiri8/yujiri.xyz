@@ -41,10 +41,6 @@ A lot of common tasks that take for loops or verbose idioms in other languages a
 
 I don't know any other language that handles all these tasks as elegantly as Python. It also doesn't require you to define a "main" function, nor to import a couple of modules before you can do really anything at all (like [Go](go) does). And I'm not saying those latter two things are pointless bad design, but they make it harder to write a simple test program quickly, which is part of what makes Python such a great tutorial language and the interactive prompt so useful.
 
-<h1 class="good">Beautiful error handling</h1>
-
-Python gives you nice stack traces and line numbers on exceptions without you lifting a finger. The `finally` statement is convenient for making sure something gets executed on the way out, like closing a file. It's not quite as versatile as Go's defer statement since you can only use finally in the context of `try` ... `except`, but given how many orders of magnitude easier it is to get good tracebacks in Python, you really can't complain. No other langage I've seen makes error handling anywhere near this easy. 90% of the time you don't even have to think about errors. Usually what you'd do in Go or C is just throw the error anyway, so Python saves you a tremendous amount of time and boilerplate in favor of sensible default behavior.
-
 <h2 class="good">Streamlined and readable syntax</h2>
 
 Python's syntax is great for a lot of reasons.
@@ -55,7 +51,7 @@ Another advantage besides the parsimony appeal is that in a language that relies
 
 * **No semicolons and parentheses around conditions.** The reason I think `\` line continuation is better than semicolons is because line continuation is needed on a minority of lines, therefore it's better to need extra noise to continue lines than to need extra noise to end a line. As for parentheses around conditions, as far as I'm aware the argued benefit is that they make it possible to elide the braces for one-line blocks (as if that's even worth this cost), but Python's got that covered with colons and indentation.
 
-* ***English.*** Python's boolean operators are `and`, `or`, and `not`, instead of the more traditional `&&`, `||`, and `!`. Humans read English, so a programming language that uses English words to express concepts that correspond easily to them is always going to be more readable. The faster you parse the characters on the screen as a logical concept, the more efficient you'll be. Especially the for loop: what alien in the universe would rather read `for (let i = 0; i < seq.length; i++) {` than `for elem in seq:`? The line literally says what it does instead of making you parse out three separate statements each full of non-English symbols. And if you want the counter explicitly you can do `for i, elem in enumerate(seq):`.
+* _**English.**_ Python's boolean operators are `and`, `or`, and `not`, instead of the more traditional `&&`, `||`, and `!`. Humans read English, so a programming language that uses English words to express concepts that correspond easily to them is always going to be more readable. The faster you parse the characters on the screen as a logical concept, the more efficient you'll be. Especially the for loop: what alien in the universe would rather read `for (let i = 0; i < seq.length; i++) {` than `for elem in seq:`? The line literally says what it does instead of making you parse out three separate statements each full of non-English symbols. And if you want the counter explicitly you can do `for i, elem in enumerate(seq):`.
 
 <h2 class="good">Generators and comprehensions</h2>
 
@@ -80,6 +76,14 @@ In fact, I didn't find this out until recently but generators are actually corou
 Python is such a popular language that you can pretty much always find a library that does anything you need. [The standard library](https://docs.python.org/3/library/index.html) itself is so extensive, CSV, JSON, HTTP, TLS, emails, regex, base64 and almost any other encoding you can think of are just a tiny fraction of what it can do out of the box. If somehow you need something that isn't there it's probably pre-packaged in standard repositories for your operating system. In the worst case it's available through [pip](https://pypi.org/project/pip), Python's package manager.
 
 From what I can tell Python's `ctypes` module is also quite effective at interfacing with C code without native Python bindings. I haven't used it for much in practice, but I did play with it a little bit and it looks amazing.
+
+<h3 class="good"><code>with</code></h3>
+
+The `with` keyword and the context manager interface solves a lot of the same problems as Go's `defer` statement. It's not as flexible as `defer`, but it's still a welcome feature that I benefit from any time I use files or anything else that supports the interface.
+
+<h3 class="good">f-strings and raw-strings</h3>
+
+Since I found out about f-strings (which wasn't until after [Javascript](javascript) converted me to the idea behind them), I've found them useful in more and more places. Nowadays I almost always refactor concatenation involving variables to f-strings. Raw strings are also very handy for regex.
 
 ---
 
@@ -133,13 +137,9 @@ I've had the displeasure of working with timestamps in Python. It was a displeas
 
 <h3 class="bad">Mutable default arguments</h3>
 
-I debated about putting this on here, but I think it's a sufficiently crazy gotcha to be counted as a criticism that default arguments persist if they're mutable data structures. If you have a function with an argument that defaults to `[]`, and you call the function in such a way that it ends up modifying that list, the next time you call the function it'll default to the damn modified version. I can't see when this would ever be the desired behavior and it's extremely counter-intuitive. I ended up getting around it by having the arg actually default to None and then `if arg == None: arg = []`. That's a hacky solution.
+I debated about putting this on here, but I think it's a sufficiently unreasonable gotcha to be counted as a criticism that default arguments persist if they're mutable data structures. If you have a function with an argument that defaults to `[]`, and you call the function in such a way that it ends up modifying that list, the next time you call the function it'll default to the damn modified version. I can't see when this would ever be the desired behavior and it's extremely counter-intuitive. I ended up getting around it by having the arg actually default to None and then `if arg == None: arg = []`. That's a hacky solution.
 
 And yes, I do know why this is the case (functions are objects), but that doesn't make it a good behavior or not extremely confusing for people who haven't run into that yet. And moreover it's possible to become quite proficient in Python without acquiring the understanding that functions are objects (I sure didn't until I'd been using it for a few years).
-
-<h3 class="bad">Single versus double quotes - meaningless decision</h3>
-
-Okay, this is a *really* small nitpick, I admit. But it bothers me to have two options that are functionally equivalent but neither is obviously better (single-quotes are easier to type but more likely to require escaping). It raises the question of "which one should I use?" and so I have to spend time making that decision every time I type a string. And the decision never really matters, but inconsistency in coding style bugs the hell out of me, as I believe it does out of most programmers, so I wish strings just had to use one or the other and the other would have a different meaning. It's not entirely obvious what; maybe single-quotes could be byte strings (instead of `b'text'` being the literal syntax for byte strings) and double-quotes could be Unicode strings? IDK. But this violates the [Zen of Python](https://www.python.org/dev/peps/pep-0020) principle that "There should be one-- and preferably only one --obvious way to do it."
 
 <br>
 
