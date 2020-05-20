@@ -1,6 +1,7 @@
 TITLE Against variable declarations
 NAV Against variable declarations
 TEMPLATE DEFAULT
+DESC My main argument against variable declarations in that they create unnecessary coupling within a function.
 
 In "dynamic" languages like [Python](https://yujiri.xyz/software/python) and Ruby, there's usually no concept of *declaring* a variable, you just assign to it. In compiled languages on the other hand, you usually have to *declare* a variable before assigning to it (or at the same time as the first assignment) with a different syntax.
 

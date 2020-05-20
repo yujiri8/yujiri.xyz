@@ -1,9 +1,9 @@
 TITLE FAQ for Communists and Capitalists
 NAV FAQ for Communists and Capitalists
 TEMPLATE DEFAULT
-MARKDOWN
+DESC An FAQ of sorts to debunk the most common bad talking points from both communists and capitalists.
 
-As [an Anarchist](/protagonism/anarchism) who spends a lot of time in [Anarcho-capitalist](faction_ancap) circles, and also some time in Anarcho-communist circles trying to win them over, I've gotten fairly tired of having to debunk the same arguments again and again, so I'm going to try compiling an FAQ of sorts where the most common talking points raised by both sides are refuted.
+As [an Anarchist](/protagonism/anarchism) who spends a lot of time in [Anarcho-capitalist](faction_ancap) circles, and also some time in Anarcho-communist circles trying to win them over, I've gotten fairly tired of having to debunk the same arguments again and again, so I'm going to try compiling an FAQ of sorts where the most common bad talking points raised by both sides are refuted.
 
 ## Communists
 
