@@ -4,6 +4,7 @@ https://yujiri.xyz/argument/boilerplate_rules
 https://yujiri.xyz/argument/changing_language
 https://yujiri.xyz/argument/chat_debate
 https://yujiri.xyz/argument/citations
+https://yujiri.xyz/argument/communist_capitalist_faq
 https://yujiri.xyz/argument/condescending_conservative
 https://yujiri.xyz/argument/connotations
 https://yujiri.xyz/argument/creationism
@@ -44,7 +45,6 @@ https://yujiri.xyz/argument/same_person
 https://yujiri.xyz/argument/screenshots
 https://yujiri.xyz/argument/selflike
 https://yujiri.xyz/argument/shane_utilitarianism
-https://yujiri.xyz/argument/socialism_not_greedy
 https://yujiri.xyz/argument/statistics
 https://yujiri.xyz/argument/the_origin_of_consciousness
 https://yujiri.xyz/argument/tu_quoque
