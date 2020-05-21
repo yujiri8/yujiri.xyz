@@ -39,7 +39,7 @@ Most of billionaires' wealth is in the form of investments and capital, not flat
 
 Okay, I'm coming to your house to use your computer and you can't control what I do with it.
 
-Again, the real disagreement seems to be about the legitimacy of your boss's propery claim. Argue against that instead of a consequence of it, if you want to promote understanding.
+Again, the real disagreement seems to be about the legitimacy of your boss's property claim. Argue against that instead of a consequence of it, if you want to promote understanding.
 
 ## Capitalists
 
@@ -47,7 +47,7 @@ Again, the real disagreement seems to be about the legitimacy of your boss's pro
 
 This is a circular objection that presupposes the Ancap value system. A communist most likely disagrees that [people retaining possession of what they naturally acquire](/protagonism/luck) is of supreme importance to ethics.
 
-Also note that this can be made to look the opposite way: while a poor socialist apears greedier than a poor capitalist, a rich socialist (let's assume a nonhypocristical one) appears *less* greedy than a rich capitalist.
+Also note that this can be made to look the opposite way: while a poor socialist appears greedier than a poor capitalist, a rich socialist (let's assume a nonhypocritical one) appears *less* greedy than a rich capitalist.
 
 ### "Communism has failed historically"
 
@@ -59,7 +59,7 @@ Not any more than it's No True Scotsman to argue Anarcho-capitalism doesn't have
 
 ### "You can't argue against capitalism while you're benefitting from it"
 
-Entirely wrong and hypocritical. You can think a system is corrupt even if you benefit from it. If I steal a hundred dollars from someone else and give them to you, are you going to take "you can't criticize this system of exploitation because you benfit from it!" as a defense?
+Entirely wrong and hypocritical. You can think a system is corrupt even if you benefit from it. If I steal a hundred dollars from someone else and give them to you, are you going to take "you can't criticize this system of exploitation because you benefit from it!" as a defense?
 
 Besides, the premise that they're benefitting from it [is in dispute](disputed_premise). This argument is no more valid than when statists say "You can't say the state is illegitimate while you use its services".
 

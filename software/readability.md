@@ -3,7 +3,7 @@ NAV Why readability is important
 TEMPLATE DEFAULT
 DESC When I was new to programming, I didn't value readability enough, and hope to save others from making the same mistake.
 
-When I was new to programming, I didn't value readability nearly enough. I preferred to write compact code as much as possible to the extent that I'd remove all spaces that weren't syntactically neceesary and write things code:
+When I was new to programming, I didn't value readability nearly enough. I preferred to write compact code as much as possible to the extent that I'd remove all spaces that weren't syntactically necessary and write things like:
 ```
 while condition:
  if someobject.method(x,y)[0]+1==otherobject.attr:someobject.othermethod()
