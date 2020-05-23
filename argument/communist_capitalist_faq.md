@@ -15,9 +15,7 @@ If you disagree about the legitimacy of your employer's claim to own the tools a
 
 ### "My boss is obviously not paying me what my work is worth, because if they did, there would be no profit for them."
 
-That logic doesn't work because value is relative. If I have a loaf of bread but no water and you have a bottle of water but no bread, I could give you half the bread in exchange for half the water. In this trade, *both* of us profit. That's why you can't argue from "A is making a profit in this exchange with B" to "B is not also making a profit" - there are obvious counterexamples to that reasoning.
-
-<!--But even if you somehow didn't understand that, if your time was worth more *to you* than the wage, you wouldn't be doing the job.-->
+That logic doesn't work because value is relative. If I have a loaf of bread but no water and you have a bottle of water but no bread, I could give you half the bread in exchange for half the water. In this trade, even though we're not changing the amount of stuff we have, *both* of us profit. That's why you can't argue from "A is making a profit in this exchange with B" to "B is not also making a profit" - there are obvious counterexamples to that reasoning.
 
 ### "How is it fair that someone can inherit tons of wealth and never have to work a day in their life, but still benefit from others?"
 
@@ -31,9 +29,18 @@ If this results in Bob never having to work, that doesn't mean he or Alice explo
 
 Remember that, see above, benefitting from others does not mean exploiting them.
 
-### "Billionaires are just hoarding billions of dollars without benefitting anyone."
+<!--
+### "Billionaires are hoarding billions of dollars while there are starving people in the world. That's horrible."
 
-Most of billionaires' wealth is in the form of investments and capital, not flat cash. Jeff Bezos does not have a billion dollars in his pocket. To give even a large chunk of it away, he would have to sell or downsize Amazon, putting tons of low- and middle-class people out of a job.
+It is, to an extent. While many of them give millions to philanthropic projects, I realize that doesn't mean much to them and we can probably agree they're assholes. But I think there's some factual misunderstanding here. Most of billionaires' wealth is in the form of investments and capital, not flat cash. Jeff Bezos does not have a hundred billion dollars in his bank account. He might have a few billion, but most of his "wealth" is Amazon, so it's not like he could just give half of it to the poor. To give even a large chunk of it away, he would have to sell or downsize Amazon, putting tons of low- and middle-class people out of a job.
+-->
+<!--
+### "It's not right for someone to have so much money without doing the work."
+
+I'm not going to dispute whether they've done work, because that's not the ethical standard we apply anywhere else.
+
+If I give you a gift, you're getting something you didn't work for. That doesn't mean it's wrong for you to have it. That's just not how morals work. It doesn't matter if you worked for it. What matters is whether you got it through voluntary interactions. Thus, even if the boss *didn't* do any work to "earn" his wealth, *that's not what matters*, what matters is whether the way he got it was voluntary.
+-->
 
 ### "My boss shouldn't be able to order me around on the job."
 
@@ -45,7 +52,7 @@ Again, the real disagreement seems to be about the legitimacy of your boss's pro
 
 ### "If it's greedy to want to keep everything you have, how is it not greedy to want to take what someone else has?"
 
-This is a circular objection that presupposes the Ancap value system. A communist most likely disagrees that [people retaining possession of what they naturally acquire](/protagonism/luck) is of supreme importance to ethics.
+This is a circular objection that presupposes the Ancap value system. A communist disagrees that [people retaining possession of what they naturally acquire](/protagonism/luck) is of supreme importance to ethics.
 
 Also note that this can be made to look the opposite way: while a poor socialist appears greedier than a poor capitalist, a rich socialist (let's assume a nonhypocritical one) appears *less* greedy than a rich capitalist.
 
@@ -66,5 +73,3 @@ Besides, the premise that they're benefitting from it [is in dispute](disputed_p
 ### "Communism requires a state"
 
 *Ancoms don't think so.* Whether their ideas can actually be successfully implemented without a state is wholly irrelevant to the question of *whether they want a state*, and outside of that, this is a conclusion that takes arguing for, not a premise to take for granted. Note that Ancoms usually accuse Ancaps of being statist "because private property requires a state to enforce". If you don't want to hear more of that BS argument, you shouldn't raise it against them.
-
-<!--I should make this a column layout.-->

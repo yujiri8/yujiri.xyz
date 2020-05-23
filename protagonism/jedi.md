@@ -6,9 +6,9 @@ I'm putting this article under Protagonism even though it only exists because I 
 
 1. The Jedi [support a state](/protagonism/anarchism).
 
-2. The Jedi forbid ["revenge"](/protagonism/retribution), by which of course they mean any action that punishes someone outside of *immediate* danger; they usually disapprove of killing a dangerous murderer or tyrant as long as he isn't *in the act* of attacking. This is [ironic](https://www.youtube.com/watch?v=A2GN_jM1DuI) since they support a government, and all governments take revenge.
+2. The Jedi forbid ["revenge"](/protagonism/retribution), by which of course they mean any action that punishes someone outside of *immediate* danger; they usually disapprove of killing a dangerous murderer or tyrant as long as he isn't *in the act* of attacking. This is [ironic](https://www.youtube.com/watch?v=A2GN_jM1DuI) since they support a government, and all governments [use punitive violence](enforcement) against peaceful acts.
 
-3. My main criticism of the Jedi order's spirituality would be the way it seems to revolve around the suppression of emotion. Emotions are not a force for evil; while it's true they can be a source of temptation, they can also be a source of exhortation. Anger, shame, sympathy, and any other emotion can inspire a person to stick their neck out to fight evil, seek self-improvement, or make sacrifices for the less fortunate. Even if you don't believe in axiological retribution, anger can at least help ward off fear.
+3. My main criticism of the Jedi order's spirituality would be the way it seems to revolve around the suppression of emotion. Emotions are not a force for evil; while it's true they can be a source of temptation, they can also be a source of exhortation. Anger, shame, sympathy, and any other emotion can inspire a person to stick their neck out to fight evil, seek self-improvement, or make sacrifices for the less fortunate.
 
 4. The Jedi have a chain of command; there's no basis for the legitimacy of such a thing in a religious order based on a static creed.
 

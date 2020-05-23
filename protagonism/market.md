@@ -4,29 +4,27 @@ TEMPLATE DEFAULT
 
 Libertarians, and to a lesser extent [conservatives](left_right), are often heard rambling about how great the Free Market is and how it solves all problems and the government should get out of it. For the sake of people who might be perfectly earnest but unfortunately raised to believe many falsehoods about economics and haven't questioned them yet, I thought I'd make an article explaining what this talk is about. For this article, I'll assume there's no disagreement about [the legitimacy of property claims](property), since that's a separate issue and should be resolved first. This article's just about the pragmatic case for a free market.
 
-The free market is based on a couple of simple observations, the first of which is: **the person best equipped to run your life is you.** And almost all government involvement in anything ignores this fact, and as a result does not help the people it's supposed to.
+The free market is based on a couple of simple observations, the first of which is: **the person best equipped to run your life is you.** Almost all government involvement ignores this truth, and as a result does not help the people it's supposed to.
 
 One of the starkest examples is [the minimum wage](leftist_economics). A minimum wage takes choices away from poor people. Employment is voluntary - an employee is free to not work for a company that won't pay them as much as they want. Therefore, if someone's working a low-paying job in a free market society, it *must* be because they value that wage more than their time spent on anything else, otherwise they wouldn't be working there. So what does a minimum wage actually do?
 
 ![How Minimum Wage Works](minimum_wage.jpg)
 
-Since employers retain the choice to not hire, it *stops low-skill workers from finding jobs* as often as it gets them higher pay. A minimum wage only gets you higher pay if it's still lower than the maximum amount profitable for the employer.
+Since employers retain the choice to not hire, it *stops low-skill workers from finding jobs* as often as it gets them higher pay. A minimum wage can only get you higher pay if it's still lower than the maximum amount profitable for the employer; if it's higher than that, it just stops you from finding a job. And of course, that maximum profitable amount varies way too much for any "minimum" wage to be set without destroying the lives of people who would've otherwise worked for less.
 
-The lesson is that each person should be in control of their own economic choices, not some out-of-touch politician or voter.
+The lesson is that each person should be in control of their own choices, not some out-of-touch politician or voter.
 
 In fact, there's [some](https://www.law.gmu.edu/assets/files/publications/working_papers/1004ExcludingUnfitWorkers.pdf) [evidence](http://www.princeton.edu/~tleonard/papers/retrospectives.pdf) that the minimum wage was *invented with this realization* for the purpose of preventing undesired groups of people from finding jobs.
 
-All sorts of regulations work the same way, although many of them are even more destructive.
+All sorts of regulations work the same way, although many of them are even more destructive. Consider <a rel="nofollow" href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements">food regulations</a>. Ostensibly, they make sure companies don't sell dangerous products - implying that without them, there would be nothing to stop companies from selling dangerous products. But is that accurate?
 
-Consider <a rel="nofollow" href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements">food regulations</a>. Ostensibly, they make sure companies don't sell dangerous products - implying that without them, there would be nothing to stop companies from selling dangerous products. But is that accurate?
-
-Without the FDA, we would be able to choose on an individual basis whether to buy food from a given company, knowing it hadn't been inspected. If we didn't want to buy food without an inspection, we could hire independent auditors to inspect the food company. They could choose to submit to the inspection or not, and if they didn't, we could consider that a failed inspection and refuse to buy from them; if they did then we could make a decision in light of the inspection's results. Of course, hiring independent inspectors would cost us extra money, but here's the thing: *So do the FDA regulations!*
+Without the FDA, we would be able to choose on an individual basis whether to buy food from a given company, knowing it hadn't been inspected. If we didn't want to buy food without an inspection, we could hire independent auditors to inspect the food company. They could choose to submit to the inspection or not, and if they didn't, we could consider that a failed inspection and refuse to buy from them; if they did then we could make a decision in light of the inspection's results. Of course, hiring independent inspectors would cost us extra money, but here's the thing: *so do the FDA regulations!*
 
 The FDA (and every other regulatory agency) is a government body funded with our tax money, so the situation we currently have is as if there's that same independent inspector, but we don't have a choice in whether to hire them. The only difference is that we're *not allowed* to decide the cost is greater than the risk of uninspected products.
 
 (If you argue that we *are* allowed to make the decision by voting, then seriously think that through - putting aside that the FDA isn't even elected, [do you have a choice if you can only make it with the cooperation of millions of other people?](voting_consent))
 
-So that's why we should abolish the FDA, and you don't need to [be an anarchist](anarchism) to agree. Regulations don't protect consumers, they take away the consumers' choices.
+So that's why we should abolish the FDA, and you don't need to [be an anarchist](anarchism) to agree. Regulations don't protect consumers, they take away consumers' choices.
 
 ## Incentives of a business
 
