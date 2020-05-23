@@ -135,15 +135,12 @@ export function titleCase(str) {
 
 // Adapted from code by jsdw from Stack Overflow. Pass window.location.search.
 export function parseQuery(raw) {
-	// Go ahead and artificially skip empty queries.
-	if (typeof raw != "string" || raw.length == 0) return {};
 	raw = raw.slice(1); // Drop the initial ?.
 	const entries = raw.split("&");
 	const query = {};
 	for (let entry of entries) {
 		const pieces = entry.split("=");
 		const param = decodeURIComponent(pieces[0]);
-		if (param.length == 0) continue; // Empty param names.
 		const value = decodeURIComponent(pieces[1]);
 		if (query[param] == undefined) {
 			query[param] = value;
