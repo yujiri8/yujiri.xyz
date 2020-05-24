@@ -27,7 +27,7 @@ Your own attacks are modulated by a "watch this beam move and press it close to 
 
 It's a **silent protagonist** game. So much for role-playing! I can't express how much this harms the potential of a story with intricate lore and lots of conflict resolution for the player character to have no dialogue in most situations. As with [Dark Souls](/reviews/dark_souls_story), it's often used to prevent the player from asking questions that any reasonable person would ask and that would presumably get an informative answer. The player's interactions with Undyne are harmed the most.
 
-It's not fatal though. Unlike Dark Souls, Undertale's major NPCs play meaningful roles in the story and have significant depth (that you don't have to 100%, cross-reference every item description, read game files and headcanonize into conclusions that have almost no basis in the actual game, which is how lore seems to work in Dark Souls).
+It's not fatal though. Unlike Dark Souls, Undertale's major NPCs play meaningful roles in the story and have significant depth (for which you don't have to 100%, cross-reference every item description, read game files and headcanonize into conclusions that have almost no basis in the actual game, which is how lore seems to work in Dark Souls).
 
 # Story
 
@@ -66,8 +66,6 @@ Undertale is denser with laugh-out-loud moments than any other game I've seen. P
 The overworld consists largely of puzzles, most of which aren't too difficult, though there were two I looked up: the two where there's no explicit puzzle but proceeding involves pressing the action button with no obvious target. (To be fair, one of the two seems legitimate to me in retrospect.)
 
 The game is significantly harmed by the lack of a fast travel and the slow movement. It makes it very unappealing to revisit previous areas, which is especially bad since that's required for a lot of important scenes.
-
-There's also a pretty egregious trial and error room in the beginning where there's a floor of only a tile type you've seen that you fall through to a lower room if you step on, but it turns out there's a path you can walk on without falling, and you just have to find it by trial and error.
 
 <br>
 

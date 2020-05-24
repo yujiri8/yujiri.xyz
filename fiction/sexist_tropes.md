@@ -25,7 +25,7 @@ Some writers seem to try to avoid that result by taking it farther and making th
 
 The most obvious way to be misogynist: just put very few or no women in the story. Look no farther than some of the [Assassin's Creed](/reviews/assassins_creed) games for a perfect example of this. In the historical past of the games (which is where most of them takes place), the first game has exactly one notable female character, and she is in exactly one scene. Assassin's Creed: Revelations has one female character also, and she is a rescued love interest. Assassin's Creed 3 has exactly one significant female character, and she dies to motivate her son (see below) when she really should have just been the protagonist of the story honestly. Unless you have a specific reason to make an exception, about half the characters should be female.
 
-As for other examples, the Greybears in Skyrim and the guards in Oblivion are all-male for no reason; it's especially pointless in the case of the Greybeards, who are not even fighters. It seems to be only that the writers based their ideas about the Greybeards on real-world priesthood, which is all-male for many religions, and so it may not have even occurred to them to do anything different. While [Mistborn](/reviews/mistborn) is a mostly non-sexist story, there's still no real reason why there is only one female member of Team Good out of like... eight of them? I guess they add Tindwyl in book 2, along with about that many more male characters.
+As for other examples, the Greybears in Skyrim and the guards in Oblivion are all-male for no reason; it's especially pointless in the case of the Greybeards, who are not even fighters. It seems to be only that the writers based their ideas about the Greybeards on real-world priesthood, which is all-male for many religions, and so it may not have even occurred to them to do anything different. While [Mistborn](/reviews/mistborn) is a mostly non-sexist story, there's still no real reason why there's only one female member of Team Good out of like... 8 of them? I guess they add Tindwyl in book 2, along with about that many more male characters.
 
 ### The damsel in distress
 
@@ -51,18 +51,16 @@ Men are almost never seen naked in fiction. But female nudity is everywhere, whe
 
 For some reason 'lady' is almost a derogatory term in some cases. Consider the following scenario (this is pretty much something that happens in [Mass Effect](/reviews/mass_effect) 2 and that the player isn't given a choice to even object to): a woman returns to her house and finds that the police are searching it and there's a guard by the door that won't let her in. She argues with him, but he says, "The law is the law, lady. You can't change it." That sounds natural, doesn't it? But what if the genders are reversed and the guard says, "The law is the law, man. You can't change it." That sounds weird and makes us think, "is there something wrong with being a man?" and rightly so.
 
-### *All* the combatant men are melee fighters, *all* the combatant women are archers/mages/medics or other supportive roles
+### Grossly exaggerated physical power gap
 
-Women are not so much physically weaker than men that they can't ever be fit for a frontline combat role. If you have multiple combatants of both genders and various disciplines of combat in a story or game, you should have at least one female frontline fighter and one male support fighter. Erring on the side of the gender role is fine in this case because this one has some basis in biology, but don't exaggerate reality.
-
-(The reason I consider this trope misogynist and not misandrist is because generally the idea is that women aren't strong/tough enough to be frontline warriors and not that men aren't intelligent enough to be mages or something.)
-<!--Examples: .-->
+Not too much to say. Sometimes even stories that don't use a female character as a damsel in distress do this, like the Doki Doki Literature Club mod [A Brand New Day](/reviews/ddlc_mods/a_brand_new_day) where girls sit out a fight they could be helping with, though that example could also be framed as misandrist.
 
 ### Women need help with basic physical tasks
 
 I *really* hate to say it, but [Doki Doki Literature Club](/reviews/ddlc) is going to have to be my example here. In an optional scene, the following excerpt takes place:
 
 <div class="indent" markdown="1">
+
 "Sayori hastily bends down to pick up the piece she dropped."
 
 "But being inattentive of her surroundings, she bumps right into me."
@@ -86,6 +84,7 @@ MC: "Let's sit down, Sayori..."
 Sayori: "Y-Yeah..."
 
 "I grab Sayori's arm and help her sit at the desk."
+
 </div>
 
 I get that Sayori is clumsy, but does she really need help with picking up a pencil and *sitting down*? 1-year-olds do those activities on their own.
@@ -94,4 +93,4 @@ I get that Sayori is clumsy, but does she really need help with picking up a pen
 
 ### Men are just, women are kind
 
-This is distinct from the misandrist trope that fathers are harsh and mothers are loving, because there the implication is that one is good and the other is bad while here the implication is that both are good, they just specialize in different virtues. And there's nothing wrong with that in a vacuum, it's just that it's so much more common than the reverse that it's kind of assumed, both in fiction and in real life. We could use some stories that [invert the stereotypes to remind us that this isn't intrinsic to human nature](choosing_gender).
+This is distinct from the misandrist trope that fathers are harsh and mothers are loving, because there the implication is that one is good and the other is bad while here the implication is that both are good, they just specialize in different virtues. And there's nothing wrong with that in a vacuum, the problem is that it's a cultural *belief* - many people actually think this is built in to our biology. We could use some stories that [invert the stereotypes to erode that belief](choosing_gender).
