@@ -151,10 +151,11 @@ async def setname(req: Request, resp: Response, env = Depends(env)):
 async def setkey(req: Request, resp: Response, env = Depends(env)):
 	if not env.user: raise HTTPException(status_code = 401)
 	# Make sure it's a valid key before we accept it.
-	file = await req.body()
-	k = pgpy.PGPKey()
-	try: k.parse(file)
-	except ValueError:
+	try:
+		file = (await req.body()).decode('utf8')
+		k = pgpy.PGPKey()
+		k.parse(file)
+	except ValueError as e:
 		raise HTTPException(status_code = 400, detail = "Invalid key. You need an ASCII-armored PGP key.")
 	env.user.key = file
 	# Change the token after this.
@@ -167,4 +168,3 @@ async def setautosub(req: Request, env = Depends(env)):
 	if not env.user: raise HTTPException(status_code = 401)
 	env.user.autosub = json.loads(await req.body())
 	env.db.commit()
-
