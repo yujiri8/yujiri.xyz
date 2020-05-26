@@ -7,7 +7,7 @@ DESC Go has several virtues, but also lots of frustrations, horrible error handl
 
 I'll start by telling the story of my experience with the language. I was thinking when I wrote [my opinion on Python](python) that that would be a special thing just for then because Python has so much significance to me, but when I started to write this I figured it would be a good thing to do for all my language opinion articles.
 
-It started after my application to work as an intern at [Lunarch Studios](https://lunarchstudios.com) developing [Prismata](/reviews/prismata) was rejected. That day was an awakening for me. Before that everyone I knew had always told me I was super smart and way above the curve in skills for the my age, even though I had spent most of the preceding few years playing games and working almost 0 hours a day. And until that day, I had believed it.
+It started after my application to work as an intern at [Lunarch Studios](http://lunarchstudios.com) developing [Prismata](/reviews/prismata) was rejected. That day was an awakening for me. Before that everyone I knew had always told me I was super smart and way above the curve in skills for the my age, even though I had spent most of the preceding few years playing games and working almost 0 hours a day. And until that day, I had believed it.
 
 It wasn't just the rejection. It was the interview. I was a lot more disappointed in myself than the interviewer was with how long it took me to solve the clock problem. Even before I got the rejection notice, I realized that I had been fooled. I wasn't super smart. I was normal smart. And it was time to start catching up on skills.
 

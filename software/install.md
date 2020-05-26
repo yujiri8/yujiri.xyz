@@ -102,7 +102,7 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`antiword`](http://www.winfield.demon.nl/index.html) - convert `.doc` files to plaintext.
 
-* [`zip`](http://www.info-zip.org/Zip.html) - tool to work with the Windows-standard `.zip` file format.
+* [`zip`](http://infozip.sourceforge.net/Zip.html) - tool to work with the Windows-standard `.zip` file format.
 
 * [`rar`](https://rarlab.com), `unrar` - tools for `.rar` files. (They're separate packages on FreeBSD.)
 

@@ -108,7 +108,7 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [Got Haskell and Markdown syntax highlighting added](https://savannah.gnu.org/bugs?58130)
 
-* [OGS](https://online-go.com): found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
+* [Fix Go syntax highlighting of `chan` keyword](https://savannah.gnu.org/bugs/?58424)
 
 ### Other
 
@@ -117,6 +117,8 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 * [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations](https://github.com/haskell-gi/haskell-gi/pull/263)
 
 * [ROXTerm](https://github.com/realh/roxterm): [Helped track down incorrect linker flags causing the build process to fail on some systems](https://github.com/realh/roxterm/issues/203)
+
+* [OGS](https://online-go.com): found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
 
 ## Human Languages
 

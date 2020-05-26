@@ -71,7 +71,7 @@ Depicting abuse toward children? You mean [twitter](https://twitter.com/justwubb
 
 > * Child pornography content;
 
-Cause [that's *soooo* different from adult pornography](/protaogonism/age_of_consent). A reasonable person might argue child pornography is usually obtained coercively and that's probably true, but even if so, it doesn't mean *viewing* it is any more harmful than viewing adult pornography.
+Cause [that's *soooo* different from adult pornography](/protagonism/age_of_consent). A reasonable person might argue child pornography is usually obtained coercively and that's probably true, but even if so, it doesn't mean *viewing* it is any more harmful than viewing adult pornography.
 
 > * Racist content and content promoting violence against various minorities (like Ku Klux Klan propaganda or videos of actual hate crime being perpetrated);
 

@@ -14,17 +14,14 @@ Another important element in applicable media is the use of music. Of course, a 
 
 I think the reason this is so important is that it mirrors how *we* react. Most if not all of us, if something like that happened while we were speaking, would trail off our voices and give a moment of silence.
 
-* Using dramatic or ominous music is really dangerous and needs to be done carefully, because it's one of the easiest ways to fall into melodrama. [Dark Souls](/reviews/dark_souls) boss fights being the pinnacle example of course. 
-Listen to [this track](https://www.youtube.com/watch?v=DzWFWCH_lTE) and you'll
-see what I mean: music that just screams at the player "It's a big monster! Be scared!" is not scary or dramatic. It's melodramatic. Especially since in practice the only thing the player is afraid of is being sent back to the bonfire and having to run a mile back to the arena before they're allowed to face the boss again. For this to work, the audience has to
-already be invested in the characters *and* they have to take the danger seriously even before you added the music. Also, doing this in a video game is extra questionable because the player knows there aren't any real consequences - even for the in-universe characters - if they die. I'm not saying it's impossible, but I can't think of a time I've seen this done and not
-thought "Ugh, would you just turn off the damn music so I can focus on the fight, your bullshit gameplay mechanics facilitate more frustration than fear". Heroic music is almost always a better fit for games.
+* Using dramatic or ominous music is really dangerous and needs to be done carefully, because it's one of the easiest ways to fall into melodrama. [Dark Souls](/reviews/dark_souls) boss fights being the pinnacle example of course. Listen to [this track](https://www.youtube.com/watch?v=ovjd22Rkhlk) and you'll see what I mean: music that just screams at the player "It's a big monster! Be scared!" is not scary or dramatic. It's melodramatic. Especially since in practice the only thing the player is afraid of is being sent back to the bonfire and having to run a mile back to the arena before they're allowed to face the boss again. For this to work, the audience has to already be invested in the characters *and* they have to take the danger seriously even before you added the music. Also, doing this in a video game is extra questionable because the player knows there aren't any real consequences - even for the in-universe characters - if they die. I'm not saying it's impossible, but I can't think of a time I've seen this done and not thought "Ugh, would you just turn off the damn music so I can focus on the fight, your bullshit gameplay mechanics facilitate more frustration than fear". Heroic music is almost always a better fit for games.
 
 One pitfall I want to mention briefly is that having your POV shout their friend's name in all caps upon seeing them die is not realistic or relatable. It's not how a real person would react - none that I know at least - and it shows no thought, nothing that helps us feel with them. It's also incredibly cliched.
 
 Now lemme talk about some examples of scenes in other people's work that worked and some that didn't.
 
 Doki Doki Literature Club is a masterpiece in this regard. For an example, I'll go through MC's reaction to (major spoiler!) <span class="spoiler">Sayori's death</span>. <expand-note contentId="1"></expand-note>
+
 <div class="hidden indent" id="1" markdown="1">
 His first thought: "What the hell?" He starts with a general expression of shock before any thoughts about about the ramifications of what he's seeing. The line is repeated one additional time.
 

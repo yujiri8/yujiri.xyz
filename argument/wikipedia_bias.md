@@ -70,7 +70,7 @@ My jaw is open as I read this. Why would you go so far out of your way and out o
 
 This whole paragraph is insane grabage. Demean - sure. "Brutalize"? Just wow. TIL that prejudiced language *without prejudiced action* is *brutal* and *cruel*. No, brutality and cruelty can only exist when you have significant power over the person, which is clearly not the case in modern-day America with its intense anti-discrimination culture and laws.
 	
-It's also laughably bullshit that they say "In some countries, including the United States, hate speech is constitutionally protected." What they meant to say is "In some countries, including the United States, hate speech is not [punished with violence"](enforcement).
+It's also laughably bullshit that they say "In some countries, including the United States, hate speech is constitutionally protected." What they meant to say is "In some countries, including the United States, hate speech is not [punished with violence](/protagonism/enforcement)".
 
 Also lmao at their sentence "Many of these sites contain Internet forums and news briefs that emphasize a particular viewpoint". Because emphasizing a particular viewpoint is an unusual and wrong <span class="note">no wait, "brutal"!</span> thing to do, and it's totally not what Wikipedia is doing here.
 
@@ -104,18 +104,18 @@ And their section farther down on "Protection from discrimation" *exclusively* m
 
 > Lying is the act of both knowingly and intentionally or willfully making a false statement. Normal lies are defensive and are told to avoid the consequences of truth telling. They are often white lies that spare another's feelings, reflect a pro-social attitude, and make civilized human contact possible. Pathological lying can be described as a habituation of lying. It is when an individual consistently lies for no personal gain.
 
-... What the fuck? Did you just claim that white lying makes civilized human contact possible? Like exclusively portraying "white lies" as good is bad enough, but damn. That's about [as wrong as saying the state makes civilized human contact possible](anarchism).
+... What the fuck? Did you just claim that white lying makes civilized human contact possible? Like exclusively portraying "white lies" as good is bad enough, but damn. That's about [as wrong as saying the state makes civilized human contact possible](/protagonism/anarchism).
 
 Also, guess what their citation is for that sentence? <a rel="nofollow" href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1600-0447.1988.tb05068.x">A PDF you have to buy</a>.
 
-<h4><a rel="nofollow" href="nofollow">https://en.wikipedia.org/wiki/Gender_binary</a> (added 2019 Sep 22)</h4>
+<h4><a rel="nofollow" href="https://en.wikipedia.org/wiki/Gender_binary">https://en.wikipedia.org/wiki/Gender_binary</a> (added 2019 Sep 22)</h4>
 
 > Gender binary (also known as gender binarism, binarism, or genderism)[1][2][3] is the classification of gender into two distinct, opposite, and disconnected forms of masculine and feminine, whether by social system or cultural belief.
 
-'...by social system or cultural belief'. They explicitly exclude the possibility that [the gender binary is a scientific truth](gender)!
+'...by social system or cultural belief'. They explicitly exclude the possibility that [the gender binary is a scientific truth](/protagonism/gender)!
 
 Also, "disconnected" means nothing here; it's pure [linguistic cloaking](/argument/dirty_tactics). The word "opposite" also doesn't apply in any meaningful sense.
 
 > Within the LGBT community, gender binarism may create institutionalized structures of power, and individuals who identify outside traditional gender binaries may experience discrimination and harassment within the LGBT community.	Most of this discrimination stems from societal expectations of gender that are expressed in the LGBT community. But many LGBT people and many youth activist groups advocate against gender binarism within the LGBT community. Many individuals within the LGBT+ community report an internal hierarchy of power status. A specific example of this would include a white, gay man who behaves as "masculine" as being more powerful. However, those who do not identify within a binary system experience being at the bottom of the hierarchy. The multitude of different variables such as race, ethnicity, age, gender, and more can lower or raise one's perceived power.[19]
 
-No kidding, [liberals](left_right) are sexist! Of course, it's those damn "right-wingers"' fault for being so *hateful*...
+No kidding, [liberals](/protagonism/left_right) are sexist! Of course, it's those damn "right-wingers"' fault for being so *hateful*...
