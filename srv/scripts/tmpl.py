@@ -77,6 +77,7 @@ def build_article(filename, templates, path, last_modified):
 	args['ARTICLE'] = add_fragment_links(article)
 	# Strip index and .html from the canonical URL.
 	if path.endswith('.html'): path = path[:-5]
+	elif path.endswith('.md'): path = path[:-3]
 	if path.endswith('index'): path = path[:-5]
 	args['PATH'] = path
 	if not args.get('NO_TIMESTAMP'): args['TIMESTAMP'] = last_modified.isoformat()
