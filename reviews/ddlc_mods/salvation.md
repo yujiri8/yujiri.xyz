@@ -2,7 +2,7 @@ TITLE Review: Doki Doki Salvation
 NAV Doki Doki Salvation
 TEMPLATE DEFAULT
 
-[Doki Doki Salvation](https://www.dokidokisalvation.ml/) is a Doki Doki Literature Club mod where MC decides to check on Sayori the night before the festival, and talks her out of hanging herself. Monika, meanwhile, has lost her ability to tamper with the game and is not happy about it.
+Doki Doki Salvation is a Doki Doki Literature Club mod where MC decides to check on Sayori the night before the festival, and talks her out of hanging herself. Monika, meanwhile, has lost her ability to tamper with the game and is not happy about it.
 
 The mod is mostly linear, and focuses on Sayori, but it's fair to all the girls. It ends with <span class="spoiler">Monika confessing to everyone</span>, and a satisfying and believable scene around it. Assuming you choose to <span class="spoiler">spare Monika, the game delivers the happy ending it promised</span>.
 
