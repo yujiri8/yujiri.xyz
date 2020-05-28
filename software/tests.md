@@ -5,7 +5,7 @@ DESC I think tests are not quite as important or useful as most people think the
 
 ![Tests are overrated - change my mind](tests_overrated.jpg)
 
-There's seemingly a universal consensus that automated testing is the best and no one writes enough tests. In fact, the We Need More Tests culture appears so dominant and so dogmatic that I've been timid about even suggesting this in developer circles. I think tests are *not quite* as important or useful as most people think they are. I hope this doesn't make me an outlaw.
+There's seemingly a universal consensus that automated testing is the bees' knees and no one writes enough tests. In fact, the We Need More Tests culture appears so dominant and so dogmatic that I've been timid about even suggesting this in developer circles. I think tests are not as important or useful as most people think they are. I hope this doesn't make me an outlaw.
 
 At my job, a lot of the tests we have basically boil down to writing a second copy of the code that does the same thing in a less elegant way to make sure it gets the same result. We have methods on our domain objects like:
 ```
@@ -104,3 +104,5 @@ That quote is an excellent example of why I think the push for tests is going to
 Pragmatically, maybe so, but that's not an argument for _why those developers are **right** to be dismissive_ (though to be fair, I'm not saying it was meant to be).
 
 So, testing advocates: do you think it's possible that tests are *just a little bit* overrated?
+
+Update: some time after writing this, I found the paper [Why Most Unit Testing is Waste](https://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf) by James Coplien. It's a lot longer, but he makes excellent points.
