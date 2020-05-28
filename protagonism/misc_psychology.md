@@ -1,5 +1,5 @@
-TITLE Miscellaneous Insights On Psychology
-NAV Miscellaneous Psychology Insights
+TITLE Miscellaneous psychology insights
+NAV Miscellaneous psychology insights
 TEMPLATE DEFAULT
 
 There are a few miscellaneous pecularities about the way emotions work that I'm making this article to explain.
