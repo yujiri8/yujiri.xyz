@@ -7,7 +7,7 @@ DESC The chance of a piece of writing being intelligent is inversely proportiona
 
 Capitalism, socialism, nationalism, liberalism, leftism, fascism, individualism, collectivism, globalism, <!--colonialism?,--> modernism, progressivism, traditionalism, and leftism. If I could delete all occurrences of all these words from all writing and everyone's memory, I would do it.
 
-A few that are quite a bit less harmful are libertarianism, conservatism, and anarchism. These words are much closer to having a consensus on their meaning. But still many libertarians disavow the Libertarian Party as not really libertarian and some libertarians claim you have to be a self-ownership absolutist to be a libertarian; anarchism has several factions that insist the other is not remotely anarchist; conservatism has at least a few agreed-on tenets.
+A few that are quite a bit less harmful are libertarianism, conservatism, and anarchism. These words are much closer to having a consensus on their meaning. But still many libertarians disavow the Libertarian Party as not really libertarian and some claim you have to be a self-ownership absolutist to be a libertarian; anarchism has several factions that insist the other is not remotely anarchist; conservatism has at least a few agreed-on tenets.
 
 I don't include communism because I think there are actually few disagreements about its meaning; socialism, though, is often used as if it means something very different (many more will identify as socialists or 'democratic socialists' than as communists).
 
