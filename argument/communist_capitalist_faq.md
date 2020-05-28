@@ -1,5 +1,5 @@
 TITLE Communist/Capitalist FAQ
-NAV Communist/Capitalist
+NAV Communist/Capitalist FAQ
 TEMPLATE DEFAULT
 DESC An FAQ of sorts to debunk the most common bad talking points from both communists and capitalists.
 
@@ -47,6 +47,10 @@ If I give you a gift, you're getting something you didn't work for. That doesn't
 Okay, I'm coming to your house to use your computer and you can't control what I do with it.
 
 Again, the real disagreement seems to be about the legitimacy of your boss's property claim. Argue against that instead of a consequence of it, if you want to promote understanding.
+
+## "Property requires violence to enforce."
+
+Stopping murder requires using violence against those who do it. Ancaps think defending their property is the same thing on a smaller scale, so this argument is circular. Once again, target the legitimacy of property.
 
 ## Capitalists
 
