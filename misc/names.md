@@ -11,7 +11,7 @@ I must've been just starting to [develop my own religion as I left the church](a
 
 Yes, I did that.
 
-In typical Yujiri fashion, it took me about a month of thinking this was my duty, the true path forward, my Purpose, to finally muster the courage. It was incredibly terrifying. I'd been raised in a horribly isolationist family culture where neighbors were never to be spoken to if you were a kid, and stepping on their property to do this would've been a High Crime in the view of others, or so I imagined at the time. After I finally did it, I told myself aloud that it was the bravest thing I'd ever done, and I was certainly correct.
+In typical Yujiri fashion, it took me about a month of thinking this was my duty, the true path forward, my Purpose, to finally muster the courage. It was so terrifying. I'd been raised in a horribly isolationist family culture where neighbors were never to be spoken to if you were a kid, and stepping on their property to do this would've been a High Crime in the view of others, or so I imagined at the time. After I finally did it, I told myself aloud that it was the bravest thing I'd ever done, and I was certainly correct.
 
 I had signed the letter "The Shadow Evangelist". And looking at it, I wanted a new name, a "Protagonist name", although Protagonism wasn't called that back then (it was probably long before even 'Prodigalism'). Ryan was my 'secular' name. I should have a different name as a Protagonist. So I took Evan Shad out of the signature, and started to think of that as my Protagonist name.
 

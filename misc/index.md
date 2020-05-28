@@ -22,3 +22,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [How I left axiological retribution](axiological_retribution)
 
 [The Bystander Effect - a story of my failure](bystander)
+
+[Why I organize this site this way](structure)
