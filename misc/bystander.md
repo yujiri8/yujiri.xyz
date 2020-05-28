@@ -15,8 +15,8 @@ I wasn't surprised at myself for being too cowardly. There were dozens of people
 
 It might've been easier to speak at the monster but not retaliate. But if I'd done that, all the other people in my group would remember me as the person who was too cowardly to stick up for the innocent, and worse, they wouldn't see it that way - they'd see it as me having an emotional outburst in public that overcame my "better" judgement.
 
-But also, that wouldn't have been that useful. Probably most of the other adults there disapproved, but decided it "wasn't their place" to intervene. If I use words and not my fists, I'm sending the message that the solution to violence is to ask the attacker to stop. And that's wrong. That belief is why this kind of problem will never be solved. That's the mindset behind [voting](anarchism), the most useless thing anyone ever did. I still should've done that over nothing, though!
+But also, that wouldn't have been that useful. Probably most of the other adults there disapproved, but decided it "wasn't their place" to intervene. If I use words and not my fists, I'm sending the message that the solution to violence is to ask the attacker to stop. And that's wrong. That belief is why this kind of problem will never be solved. That's the mindset behind [voting](/protagonism/anarchism), the most useless thing anyone ever did. I still should've done that over nothing, though!
 
 I watched an innocent child get violently assaulted in public and did fucking nothing. I actively made the situation worse, by contributing to [the bystander effect](/argument/fee_bystander). If anyone else noticed and recognized this socially acceptable violence for what it is, I was one more person in the room turning a blind eye, setting a bad example, making it harder to do anything.
 
-That's how I am. That's how this world is. [Kids are property and no one gives a fuck](children).
+That's how I am. That's how this world is. [Kids are property and no one gives a fuck](/protagonism/children).

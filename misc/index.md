@@ -20,3 +20,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [Considering saying something makes you wiser](public_wisdom)
 
 [How I left axiological retribution](axiological_retribution)
+
+[The Bystander Effect - a story of my failure](bystander)
