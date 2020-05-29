@@ -99,9 +99,7 @@ https://yujiri.xyz/game_design/aaa
 https://yujiri.xyz/game_design/balance_stats
 https://yujiri.xyz/game_design/bowsers_inside_story
 https://yujiri.xyz/game_design/brute_force_skills
-https://yujiri.xyz/game_design/call_of_duty
 https://yujiri.xyz/game_design/casual_games
-https://yujiri.xyz/game_design/ccg_balance
 https://yujiri.xyz/game_design/cheap_difficulty
 https://yujiri.xyz/game_design/depth
 https://yujiri.xyz/game_design/deterministic_variety
