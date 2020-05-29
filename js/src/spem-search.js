@@ -75,7 +75,7 @@ customElements.define('spem-search', class extends LitElement {
 				<input-list id="admin-tags" class="indent" .options="${this.tags}"></input-list>
 			</div>
 			<label for="admin-notes">
-			<textarea id="admin-notes" @input="${util.autogrow}"></textarea>
+			<textarea id="admin-notes" @input="${autogrow}"></textarea>
 			<br>
 			<button @click="${this.addWord}">jini</button>
 			<button @click="${this.changeWord}">yɪŋ</button>

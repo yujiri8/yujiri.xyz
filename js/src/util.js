@@ -168,7 +168,7 @@ window.addEventListener("hashchange", scrollFix);
 window.addEventListener("beforeunload", () => window.noShowError = true);
 
 // A global utility to make a textarea grow when necessary.
-export function autogrow(e) {
+window.autogrow = e => {
 	const textarea = e.target;
 	// Clear the property first so it can shrink too.
 	textarea.style.height = 'inherit';
