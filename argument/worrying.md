@@ -1,7 +1,7 @@
 TITLE Worrying is not irrational
 NAV Worrying is not irrational
 TEMPLATE DEFAULT
-DESC Emotions aren't a strategic action. Talking about whether they help "solve the problem" is troll logic.
+DESC Emotions aren't a strategic action. Saying they don't help "solve the problem" is troll logic.
 
 I've seen [memes](https://www.reddit.com/r/ZenHabits/comments/1ve041/what_is_the_use_of_worrying/) and [posters](https://zenpencils.com/comic/39-shantideva-what-me-worry/) in a few places now (I've seen that image as a poster in real life) making the argument that "worrying" is never a good idea because it isn't necessary if you can solve your problem and it doesn't help if you can't solve your problem. This argument is so ludicrously bullshit I have to make an article ripping it apart.
 
