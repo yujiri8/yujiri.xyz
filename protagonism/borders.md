@@ -21,13 +21,13 @@ A more interesting concern, if not more significant. Immigration may cause more 
 
 > Anti-discrimination laws threaten to commit additional acts of force against Americans, who will in some cases not be allowed to exercise freedom of association with the immigrants.
 
-Related to pro-border #1, Nullus Maximus raised this <a rel="nofollow" href="https://www.zerothposition.com/2015/11/24/the-pragmatic-libertarian-case-against-open-borders/">here</a>. But is this so significant? In how many cases will this happen, and how severe will the injustices be? It does exist, but surely this is the weakest point.
+Related to pro-border #1, I've heard this raised by alt-righted former Ancaps. But is this so significant? In how many cases will this happen, and how severe will the injustices be? It does exist, but surely this is the weakest point.
 
 ### Anti-border #1: The borders are illegitimate.
 
 > Obviously, the state's borders do not enclose private property by any conception of libertarian ethics, so preventing people from crossing them is prima facie an illegitimate use of force.
 
-This is very large; by itself, it seems to preclude any libertarian stance in favor of borders outside of [consequentialism](consequentialism). Some libertarians try to interpret the NAP in such a way that closed borders count as self-defense because of the violations of our rights that will occur if they're allowed in, even though the immigrants will not be the ones initiating force or even necessarily asking for it; but the implications of this are questionable at best: what would happen if we applied the same principle to people already in America? Would it mean that Americans who receive lots of welfare are legitimate targets for self-defense? I find it dubious that any self-claimed libertarian would stand by such a thing.
+This is huge; by itself, it precludes any libertarian stance in favor of borders outside of [consequentialism](consequentialism), and we know how most libertarians abhor consequentialism. Some of the alt-righted ones I mentioned earlier try to interpret the NAP in such a way that closed borders count as self-defense because of the violations of our rights that will occur if they're allowed in, even though the immigrants will not be the ones initiating force or even necessarily asking for it; but the implications of that are nasty: what would happen if we applied the same principle to people already in America? Wouldn't that mean Americans who receive lots of welfare are legitimate targets for self-defense? I find it dubious that any self-claimed libertarian would stand by such a thing.
 
 ### Anti-border #2: Taxes.
 
@@ -43,8 +43,8 @@ This was hinted at in [Jessica Flanigan's post Political Authority and the Basic
 
 ### Anti-border #4: Violence.
 
-> Even if we believe it's right to keep immigrants out to defend our property, that doesn't entail that it's right to use the violent means necessary to do so. State-enforced borders will mean border police using violence those who try to enter illegally, and justifying keeping them out [is not the same as justifying what harm will come to them at the hands of American police](https://yujiri.xyz/protagonism/enforcement).
+> Even if we believe it's right to keep immigrants out to defend our property, that doesn't entail that it's right to use the means necessary to do so. State-enforced borders will mean border police using violence against those who try to enter illegally, and justifying keeping them out [is not the same as justifying what harm will come to them at the hands of American police](/protagonism/enforcement). We know police have no concept of proportionality of force.
 
 ---
 
-Considering all this, I find it quite clear that libertarians must support open borders. The points against borders clearly outweigh those for.
+Considering all this, I find it quite clear that libertarians must oppose closed borders. The points against clearly outweigh those for.
