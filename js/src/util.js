@@ -29,7 +29,7 @@ export async function api(method, url, query, body) {
 function fmtQueryParam(entry) {
 	const k = entry[0];
 	const v = entry[1];
-	if (typeof v == 'object') // this should only be the case if it's an array
+	if (v instanceof Array)
 		return v.map(i => encodeURIComponent(k) + '=' + encodeURIComponent(i)).join('&');
 	return encodeURIComponent(k) + '=' + encodeURIComponent(v);
 }
