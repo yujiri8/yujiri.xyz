@@ -1,7 +1,7 @@
 TITLE Return To The Portait ending guide
 NAV Ending guide
 TEMPLATE DEFAULT
-DESC Return To The Portrait
+DESC Return To The Portrait ending guide, with spoilers.
 
 There are three main endings: save Adam, save Libitina, or save neither.
 
