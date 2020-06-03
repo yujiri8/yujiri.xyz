@@ -124,7 +124,7 @@ class Word(Base):
 	time_added = Column(DateTime, nullable = False, default = datetime.datetime.now)
 	time_changed = Column(DateTime, nullable = False, default = datetime.datetime.now)
 	def __repr__(self):
-		return f"{self.word}, last modified {self.time_changed}, time_added {self.time_added}"
+		return f"{self.word}, last changed {self.time_changed}, time_added {self.time_added}"
 	def dict(self, raw = False):
 		return {
 			'word': self.word,
@@ -141,7 +141,7 @@ class Word(Base):
 		self.notes = new.notes
 		self.translations = new.translations
 		self.tags = new.tags
-		self.time_modified = datetime.datetime.now()
+		self.time_changed = datetime.datetime.now()
 
 
 class Log(Base):

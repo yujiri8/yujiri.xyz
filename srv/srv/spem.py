@@ -39,7 +39,7 @@ async def get_words(
 		filters.append(Word.notes_regex.op('~')(notes_regex))
 	# Search.
 	filter = reduce(lambda x, y: x & y, filters)
-	words = env.db.query(Word).filter(filter)
+	words = env.db.query(Word).filter(filter).order_by(Word.time_changed.desc())
 	return [word.dict(raw) for word in words]
 
 class WordParams(BaseModel):
