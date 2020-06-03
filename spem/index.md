@@ -38,7 +38,7 @@ Quick links:
 
 [Open question (please comment): variable dereferencing?](dereference)
 
-[Other open questions (6)](rfc)
+[Other open questions (7)](rfc)
 
 <br>
 

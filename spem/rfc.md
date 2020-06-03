@@ -5,6 +5,10 @@ TEMPLATE DEFAULT
 (There are more open questions in [the dictionary](search). Ones that are specifically about an existing
 word go in the word's Notes field; to search for them, put "Open question" in the Notes box.)
 
+## Pronoun revamp
+
+Currently, <spem>ni</spem> is self and <spem>ɪl</spem> is 'the'/'it'. I've mentioned before the idea of separating <spem>ɪl</spem> into two words: one for an aforementioned entity and one for an entity that hasn't been mentioned yet, but is inferrable. So the idea I'm having now is: <spem>ni</spem> becomes the inferrable entity because it most closely fits with <spem>mi</spem> and <spem>ŋi</spem>; <spem>nɑi</spem> becomes the aforementioned entity; <spem>ɪl</spem> becomes 'self'.
+
 ## The adjective/noun distinction
 
 I've written a lot about this in [this comment](index?c=101#comment-section) and its subtree. In [this below comment](?c=386#comment-section), I started to change my mind.
@@ -45,4 +49,4 @@ the others if I used them for a while.
 
 ## Unnecessary consent
 
-I have the adverbs <spem>jo</spem> and <spem>mo</spem> to indicate consent and thereby talk about rights. But there's an ambiguity: if I steal and you whack me in the head to get your stuff back, there might be a sense where it makes sense you did this without my consent, but it doesn't carry the moral weight it normally does because I don't *need* to consent to giving back stolen property. Maybe we need both pairs of words.
+I have the adverbs <spem>jo</spem> and <spem>mo</spem> to indicate consent and thereby talk about rights. But there's an ambiguity: if I steal and you whack me in the head to get your stuff back, there might be a sense in which you whacked me without my consent, but it doesn't carry the moral weight it normally does because I don't *need* to consent since I'm the one who stole. Maybe we need both pairs of words.
