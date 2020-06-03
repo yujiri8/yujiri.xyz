@@ -89,7 +89,7 @@ customElements.define('spem-search', class extends LitElement {
 		</p><p>
 		So for example if you want to find all the words that could be translated as
 		'of', search for that in the Translation box. If you search for that in the Meaning
-		box, you might get for example a word that means "the opposite of".
+		box, you might get a word that means "the opposite of".
 		</p><p>
 		On the other hand, if you remember the distinction Spem makes between the different meanings
 		of English 'of' but not what the words for them are, you could search in the Meaning

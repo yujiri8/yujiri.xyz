@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Header, Body, Response, Request, Depends, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Header, Body, Response, Request, Depends, BackgroundTasks, Query
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from sqlalchemy.sql.functions import func
@@ -17,7 +17,7 @@ async def get_words(
 	word = '',
 	meaning = '',
 	translation = '',
-	tags: list = [],
+	tag: List[str] = Query([]), # named 'tag' so the individual params can be named that
 	notes = '',
 	notes_regex = '',
 	raw: bool = False,
@@ -31,8 +31,8 @@ async def get_words(
 		filters.append(Word.meaning.op('~')("\\m" + m + "\\y"))
 	if translation:
 		filters.append(Word.translations.any(translation))
-	if tags:
-		filters.append(Word.tags.contains(tags))
+	for individual_tag in tag:
+		filters.append(Word.tags.any(individual_tag))
 	if notes:
 		filters.append(func.lower(Word.notes).contains(notes.lower()))
 	if notes_regex:
