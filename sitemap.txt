@@ -30,6 +30,7 @@ https://yujiri.xyz/argument/inflammation
 https://yujiri.xyz/argument/iq
 https://yujiri.xyz/argument/learning_language
 https://yujiri.xyz/argument/liking
+https://yujiri.xyz/argument/moderation
 https://yujiri.xyz/argument/myth_of_respect
 https://yujiri.xyz/argument/national_debt
 https://yujiri.xyz/argument/noncomparative
@@ -46,6 +47,7 @@ https://yujiri.xyz/argument/screenshots
 https://yujiri.xyz/argument/selflike
 https://yujiri.xyz/argument/shane_utilitarianism
 https://yujiri.xyz/argument/statistics
+https://yujiri.xyz/argument/tags
 https://yujiri.xyz/argument/the_origin_of_consciousness
 https://yujiri.xyz/argument/tu_quoque
 https://yujiri.xyz/argument/what_if_everyone
@@ -129,12 +131,14 @@ https://yujiri.xyz/misc/
 https://yujiri.xyz/misc/apostasy
 https://yujiri.xyz/misc/anarchism_conversion
 https://yujiri.xyz/misc/axiological_retribution
+https://yujiri.xyz/misc/bystander
 https://yujiri.xyz/misc/contact
 https://yujiri.xyz/misc/logo
 https://yujiri.xyz/misc/masks
 https://yujiri.xyz/misc/names
 https://yujiri.xyz/misc/public_wisdom
 https://yujiri.xyz/misc/resume
+https://yujiri.xyz/misc/structure
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
 https://yujiri.xyz/music/a_retro_memory.ogg
@@ -200,7 +204,6 @@ https://yujiri.xyz/protagonism/anarchism
 https://yujiri.xyz/protagonism/anarchism_history
 https://yujiri.xyz/protagonism/anarchist_memes
 https://yujiri.xyz/protagonism/borders
-https://yujiri.xyz/protagonism/bystander
 https://yujiri.xyz/protagonism/cartesian
 https://yujiri.xyz/protagonism/charity
 https://yujiri.xyz/protagonism/children
@@ -278,12 +281,14 @@ https://yujiri.xyz/protagonism/personal_determinism
 https://yujiri.xyz/protagonism/power
 https://yujiri.xyz/protagonism/promises
 https://yujiri.xyz/protagonism/property
+https://yujiri.xyz/protagonism/protagonism
 https://yujiri.xyz/protagonism/quarantine
 https://yujiri.xyz/protagonism/r_shitstatistssay_msg_banned.png
 https://yujiri.xyz/protagonism/r_shitstatistssay_msg_to_mods.png
 https://yujiri.xyz/protagonism/r_shitstatistssay_response_from_mods.png
 https://yujiri.xyz/protagonism/resign
 https://yujiri.xyz/protagonism/retribution
+https://yujiri.xyz/protagonism/revolution
 https://yujiri.xyz/protagonism/rights_language
 https://yujiri.xyz/protagonism/rules
 https://yujiri.xyz/protagonism/sheltering_children
@@ -387,7 +392,6 @@ https://yujiri.xyz/software/top_menu
 https://yujiri.xyz/software/tutorial_structure
 https://yujiri.xyz/software/shell_basics
 https://yujiri.xyz/software/sqlite
-https://yujiri.xyz/software/tags
 https://yujiri.xyz/software/tests
 https://yujiri.xyz/software/unix_manual
 https://yujiri.xyz/software/unix_permissions
