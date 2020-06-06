@@ -84,7 +84,9 @@ async def add_word(params: WordParams, env = Depends(env)):
 async def change_word(params: WordParams, env = Depends(env)):
 	require_admin(env.user)
 	validate(params)
-	word = env.db.query(Word).filter_by(word = params.word).one()
+	word = env.db.query(Word).filter_by(word = params.word).one_or_none()
+	if not word:
+		raise HTTPException(status_code = 400, detail = "No such word")
 	word.change(params)
 	env.db.commit()
 
