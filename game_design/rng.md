@@ -89,7 +89,9 @@ slap a bandaid on an otherwise dreadfully shallow game. The deepest game in the 
 orders of magnitude. So this doesn't make randomness a good thing or even a necessary evil, just a crutch that can cover for some of
 the weaknesses of an uninspired design by replacing it with other problems.
 
-<br>---
+<br>
+
+---
 
 <br>
 
