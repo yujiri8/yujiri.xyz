@@ -137,10 +137,7 @@ customElements.define('spem-search', class extends LitElement {
 		</div>
 		<p>
 		Sometimes, even when a word has an English word that's an exact parallel and is perfectly clear, I try to
-		fill the Meaning field with a formal definition anyway. The reason I do this is because sometimes I think
-		a word is perfectly clear, but I'm wrong. So when I try to come up with a precise definition
-		for a clear word and miss, that's actually a good thing if someone comments on it, because then I and
-		probably others gain a deeper understanding of what the word means.
+		fill the Meaning field with a formal definition anyway, just as a philosophical exercise.
 		</p>
 		`;
 	}
