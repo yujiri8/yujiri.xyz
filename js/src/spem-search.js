@@ -33,54 +33,63 @@ customElements.define('spem-search', class extends LitElement {
 	}
 	render() {
 		return html`
-		<div id="search-tools">
-		<label for="word">Word</label>
-		<input id="word" type="text" autocapitalize="off">
-		<br>
-		<label for="meaning">Meaning</label>
-		<input id="meaning" type="text" autocapitalize="off">
-		<br>
-		<label for="translation">Translation</label>
-		<input id="translation" type="text" autocapitalize="off">
-		<br>
-		<div>
-			<p>Tags</p>
-			<input-list id="tags" class="indent" type="select" .options="${this.tags}"></input-list>
-		</div>
-		<div>
-			<p>Notes</p>
-			<input-list id="notes" class="indent"></input-list>
-		</div>
-		<div>
-			<p>Notes (regex - PostgreSQL dialect)</p>
-			<input-list id="notes-regex" class="indent"></input-list>
-		</div>
-		<br>
-		<button @click="${this.search}">Search</button>
-		</div>
-		${this.admin? html`
-			<div id="admin-tools">
-			<label for="admin-word">θɑr</label>
-			<input id="admin-word" type="text" autocapitalize="off">
-			<br>
-			<label for="admin-meaning">kel ɪl θen nɑ</label>
-			<input id="admin-meaning" type="text" autocapitalize="off">
-			<br>
-			<div>
-				<p>kel nɑi θetsu ɪl av</p>
-				<input-list id="admin-translations" class="indent"></input-list>
+		<div style="display:flex; flex-wrap:wrap">
+			<div style="flex:1; min-width:18em">
+				<div style="display:flex; flex-wrap:wrap">
+					<div>
+						<label for="word">Word</label>
+						<input id="word" type="text" autocapitalize="off">
+						<br>
+						<label for="meaning">Meaning</label>
+						<input id="meaning" type="text" autocapitalize="off">
+						<br>
+						<label for="translation">Translation</label>
+						<input id="translation" type="text" autocapitalize="off">
+					</div>
+					<div>
+						<label for="tags">Tags</label>
+						<input-list id="tags" class="indent" type="select" .options="${this.tags}"></input-list>
+					</div>
+					<div>
+						<label for="notes">Notes</label>
+						<input-list id="notes" class="indent"></input-list>
+					</div>
+					<div>
+						<label for="notes-regex">Notes (regex - PostgreSQL dialect)</label>
+						<input-list id="notes-regex" class="indent"></input-list>
+					</div>
+				</div>
+				<br>
+				<button @click="${this.search}">Search</button>
 			</div>
-			<div>
-				<p>Tags</p>
-				<input-list id="admin-tags" class="indent" .options="${this.tags}"></input-list>
-			</div>
-			<label for="admin-notes">
-			<textarea id="admin-notes" @input="${autogrow}"></textarea>
-			<br>
-			<button @click="${this.addWord}">jini</button>
-			<button @click="${this.changeWord}">yɪŋ</button>
-			</div>
-		`:''}
+			${this.admin? html`
+				<fieldset style="flex:1; min-width:18em">
+					<legend>Admin</legend>
+					<div style="display:flex; flex-wrap:wrap">
+						<div>
+							<label for="admin-word">θɑr</label>
+							<input id="admin-word" type="text" autocapitalize="off">
+							<br>
+							<label for="admin-meaning">kel ɪl θen nɑ</label>
+							<input id="admin-meaning" type="text" autocapitalize="off">
+						</div>
+						<div>
+							<label for="admin-translations">kel nɑi θetsu ɪl av</label>
+							<input-list id="admin-translations" class="indent"></input-list>
+						</div>
+						<div>
+							<label for="admin-tags">Tags</label>
+							<input-list id="admin-tags" class="indent" .options="${this.tags}"></input-list>
+						</div>
+					</div>
+					<label for="admin-notes">Notes</label>
+					<textarea id="admin-notes" @input="${autogrow}" style="display:block; width:100%"></textarea>
+					<button @click="${this.addWord}">jini</button>
+					<button @click="${this.changeWord}">yɪŋ</button>
+					<button @click="${e => this.fetchWord(this.shadowRoot.getElementById('admin-word').value)}">gi kei</button>
+				</fieldset>
+			`:''}
+		</div>
 		<p>
 		The Translation box expects an exact English word and will try to find the Spem words
 		needed to express the equivalent, even if the translation isn't direct. (Note that this
@@ -151,12 +160,12 @@ customElements.define('spem-search', class extends LitElement {
 			util.showToast('err', "Couldn't understand response from server");
 		}
 		await this.updateComplete;
-		const args = util.parseQuery(window.location.search);
+		const args = util.parseQuery(location.search);
 		const params = ['word', 'meaning', 'translation', 'tag', 'notes', 'notes_regex'];
 		if (params.some(p => p in args)) this.pageloadSearch();
 	}
 	async pageloadSearch() {
-		const args = util.parseQuery(window.location.search);
+		const args = util.parseQuery(location.search);
 		this.shadowRoot.getElementById('word').value = args.word || '';
 		this.shadowRoot.getElementById('meaning').value = args.meaning || '';
 		this.shadowRoot.getElementById('translation').value = args.translation || '';
@@ -182,8 +191,8 @@ customElements.define('spem-search', class extends LitElement {
 				if (event.keyCode === 13) this.search();
 			});
 		}
-		// Esc on the window should search.
-		window.addEventListener('keyup', e => {
+		// Esc on the should search.
+		addEventListener('keyup', e => {
 			if (e.keyCode === 27) this.search();
 		});
 	}
@@ -220,6 +229,7 @@ customElements.define('spem-search', class extends LitElement {
 		this.shadowRoot.getElementById('admin-word').value = newWord.word;
 		this.shadowRoot.getElementById('admin-meaning').value = newWord.meaning;
 		this.shadowRoot.getElementById('admin-notes').value = newWord.notes;
+		autogrow({target: this.shadowRoot.getElementById('admin-notes')});
 		this.shadowRoot.getElementById('admin-translations').setData(newWord.translations);
 		this.shadowRoot.getElementById('admin-tags').setData(newWord.tags);
 	}

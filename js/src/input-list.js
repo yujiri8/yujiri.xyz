@@ -22,6 +22,11 @@ customElements.define('input-list', class extends LitElement {
 	}
 	render() {
 		return html`
+		<!-- This is here so the input-list will keep its width if there are no inputs. -->
+		<div style="visibility:hidden; height:0">
+			<input id="hide">
+			<button>x</button>
+		</div>
 		<div id="inputs"></div>
 		<button @click="${this.addInput}">+</button>
 		`;
@@ -51,11 +56,13 @@ customElements.define('input-list', class extends LitElement {
 		return elem;
 	}
 	getData() {
-		return Array.from(this.shadowRoot.querySelectorAll('input, select')).map(elem => elem.value);
+		return Array.from(this.shadowRoot.querySelectorAll('input:not(#hide), select')).map(
+			elem => elem.value);
 	}
 	setData(items) {
 		// Clear the field.
-		Array.from(this.shadowRoot.querySelectorAll('input, select')).map(elem => elem.parentNode.remove());
+		Array.from(this.shadowRoot.querySelectorAll('input:not(#hide), select')).map(
+			elem => elem.parentNode.remove());
 		// Add items with the new data.
 		for (let item of items) {
 			const newInput = this.addInput();
