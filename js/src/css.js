@@ -28,6 +28,7 @@ hr {
 }
 spem {
 	font-family: monospace;
+	font-size: 1.2em;
 }
 /* distinguish quotes better */
 blockquote {
