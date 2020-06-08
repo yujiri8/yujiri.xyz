@@ -73,8 +73,7 @@ async def post_comment(
 		ua = user_agent,
 		user = env.user,
 	)
-	err = cmt.validate()
-	if err: raise HTTPException(status_code = 400, detail = err)
+	cmt.validate()
 	# Prevent name impersonation.
 	name_user = env.db.query(User).filter_by(name = cmt.name).one_or_none()
 	if name_user and (not cmt.user or cmt.user != name_user):

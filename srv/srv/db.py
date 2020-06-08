@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, ForeignKey, Integer, String, DateTime, Boolean, Binary, ARRAY
+from sqlalchemy import create_engine, Column, ForeignKey, Integer, String, DateTime, Boolean, ARRAY
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
@@ -13,6 +13,8 @@ def connect(dbname):
 	# TODO ideally return these instead of using a global ref.
 	db = create_engine(f'postgres://localhost/?user=postgres&database={dbname}')
 	Session = sessionmaker(bind = db)
+
+class ModelError(ValueError): pass
 
 class User(Base):
 	__tablename__ = 'users'
@@ -90,11 +92,11 @@ class Comment(Base):
 	def validate(self):
 		"""Validates the comment, and if invalid, returns a string explanation."""
 		if not self.name:
-			return "You need a name"
+			raise ModelError("You need a name")
 		if self.name.strip() != self.name:
-			return "Your name mustn't have leading or trailing whitespace"
+			raise ModelError("Your name mustn't have leading or trailing whitespace")
 		if len(self.name) > 30:
-			return "You cannot possibly need a name longer than 30 characters."
+			raise ModelError("You cannot possibly need a name longer than 30 characters.")
 
 class Subscription(Base):
 	__tablename__ = 'subs'
@@ -135,14 +137,16 @@ class Word(Base):
 			'time_changed': self.time_changed.isoformat(),
 			'time_added': self.time_added.isoformat(),
 		}
-	def change(self, new):
-		self.word = new.word
-		self.meaning = new.meaning
-		self.notes = new.notes
-		self.translations = new.translations
-		self.tags = new.tags
-		self.time_changed = datetime.datetime.now()
-
+	def validate(self):
+		self.word = self.word.strip()
+		self.meaning = self.meaning.strip()
+		self.translations = [t.strip() for t in self.translations if t.strip()]
+		self.tags = [t.strip() for t in self.tags if t.strip()]
+		self.notes = self.notes.strip()
+		if not self.word:
+			raise ModelError("Word can't be empty")
+		if not self.meaning:
+			raise ModelError("Meaning can't be empty")
 
 class Log(Base):
 	__tablename__ = 'logs'

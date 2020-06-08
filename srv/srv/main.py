@@ -33,6 +33,10 @@ async def http_err_handler(req: Request, exc: Exception): #, bg: BackgroundTasks
 async def other_err_handler(req: Request, exc: Exception):
 	return Response(status_code = exc.status_code, content = exc.detail)
 
+@app.exception_handler(db.ModelError)
+async def model_err_handler(req: Request, exc: Exception):
+	return Response(status_code = 400, content = str(exc))
+
 @app.exception_handler(RequestValidationError)
 async def validation_err_handler(req: Request, exc: Exception):
 	return Response(status_code = 400)

@@ -1,14 +1,13 @@
-from fastapi import APIRouter, HTTPException, Header, Body, Response, Request, Depends, BackgroundTasks, Query
-from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, HTTPException, Request, Depends, Query
 from pydantic import BaseModel
 from sqlalchemy.sql.functions import func
 
 from typing import List
 from functools import reduce
+import datetime
 
 from db import Word
 from common import env, require_admin
-import util
 
 router = APIRouter()
 
@@ -49,13 +48,6 @@ class WordParams(BaseModel):
 	tags: List[str]
 	notes: str
 
-def validate(word):
-	word.word = word.word.strip()
-	word.meaning = word.meaning.strip()
-	word.translations = [t.strip() for t in word.translations]
-	word.tags = [t.strip() for t in word.tags]
-	word.notes = word.notes.strip()
-
 @router.get('/spem/tags')
 async def get_tags(env = Depends(env)):
 	tags = set()
@@ -67,27 +59,32 @@ async def get_tags(env = Depends(env)):
 @router.post('/spem/words')
 async def add_word(params: WordParams, env = Depends(env)):
 	require_admin(env.user)
-	validate(params)
-	already = env.db.query(Word).filter_by(word = params.word).one_or_none()
-	if already:
-		raise HTTPException(status_code = 400, detail = "There's already a word called that.")
-	env.db.add(Word(
+	word = Word(
 		word = params.word,
 		meaning = params.meaning,
 		translations = params.translations,
 		tags = params.tags,
 		notes = params.notes,
-	))
+	)
+	word.validate()
+	if env.db.query(Word).filter_by(word = word.word).one_or_none():
+		raise HTTPException(status_code = 400, detail = "There's already a word called that.")
+	env.db.add(word)
 	env.db.commit()
 
 @router.put('/spem/words')
 async def change_word(params: WordParams, env = Depends(env)):
 	require_admin(env.user)
-	validate(params)
 	word = env.db.query(Word).filter_by(word = params.word).one_or_none()
 	if not word:
 		raise HTTPException(status_code = 400, detail = "No such word")
-	word.change(params)
+	word.word = params.word
+	word.meaning = params.meaning
+	word.notes = params.notes
+	word.translations = params.translations
+	word.tags = params.tags
+	word.time_changed = datetime.datetime.now()
+	word.validate()
 	env.db.commit()
 
 @router.delete('/spem/words')
