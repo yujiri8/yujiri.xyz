@@ -123,7 +123,11 @@ window.resizeColumns = function() {
 export function showToast(tone, msg) {
 	// This flag is set when navigating away to stop error toasts from firing.
 	if (window.noShowError) return;
-	const toast = document.getElementById('toast');
+	// If there's already a toast, remove it. We can't reuse it because re-calling show doesn't update the text.
+	let toast = document.querySelector('lit-toast');
+	if (toast) toast.remove();
+	toast = document.createElement('lit-toast');
+	document.body.appendChild(toast);
 	const color = {'err': '#f00', 'success': '#0f0'}[tone];
 	toast.setAttribute('style', `--lt-color:${color};`)
 	toast.show(msg);
