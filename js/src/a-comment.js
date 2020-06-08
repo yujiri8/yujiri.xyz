@@ -142,8 +142,7 @@ customElements.define('a-comment', class extends LitElement {
 			`}
 		`:''}
 		${this.admin? html`
-			<button @click="${() => util.api('DELETE', 'comments', undefined, this.comment.id)}">
-				Delete</button>
+			<button @click="${this.delete}">Delete</button>
 		`:''}
 		`;
 	}
@@ -179,5 +178,9 @@ customElements.define('a-comment', class extends LitElement {
 			throw err;
 		}
 		this.comment = comment;
+	}
+	async delete() {
+		await util.api('DELETE', 'comments', undefined, this.comment.id);
+		this.remove();
 	}
 });
