@@ -17,7 +17,9 @@ Let me take a quick opportunity to hound you about this first: learning to progr
 
 ## What's with this "prompt"?
 
-When you open IDLE, you'll probably see a window that shows a message about the Python version and stuff and then a line starting with `>>>`. In most languages, to write a program, you have to save the source code to a file and then execute the file. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. The `>>>` is the "prompt", which just means it's waiting for you to enter code. The result of each command you type is displayed on the next line without the `>>>`. You might also hear this called the Python "shell" or REPL (read-evaluate-print loop).
+In most languages, to write a program, you have to save the source code to a file and then execute the file. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. This is called the interactive prompt, the Python shell, or the REPL (read-evaluate-print loop). Please follow along with this for now by starting IDLE or the appropriate Python command.
+
+When you open IDLE (or start Python from the command line), you'll probably see a message about the Python version and stuff and then a line starting with `>>>`. The `>>>` means it's waiting for you to enter code. The result of each command you type is displayed on the next line without the `>>>`. The `>>>` is called a "prompt" (I know it's confusing because that word refers to both this symbol and the Python shell).
 
 To write a saved program in IDLE, you can go to File -> New File in the top menu, and then when you run it with Run -> Run Module, the output will show up in the prompt window. But I highly recommend sticking with the interactive prompt at first. It's awesome.
 
