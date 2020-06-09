@@ -2,19 +2,19 @@ TITLE Resume
 NAV Resume
 TEMPLATE DEFAULT
 
-This is sort of an informal draft, excluding some stuff I'd know to include in a submission like detail about education.
+This is sort of an informal draft, excluding some stuff I'd know to include in a submission education details.
 
 Legal name: Ryan Westlund
 
 Email: rlwestlund@gmail.com
 
-PGP key fingerprint: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E70D0BBD08947)
+PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E70D0BBD08947)
 
 [Github: yujiri8](https://github.com/yujiri8)
 
 # Skills
 
-* **Proficient in**: Python, Go, Javascript, Unix shell scripting, HTML and CSS, regular expressions
+* **Proficient in**: Python, Go, Javascript, Unix shell, HTML and CSS, Regular expressions
 
 * **Moderate ability in**: Haskell, C, SQL
 
@@ -28,7 +28,7 @@ PGP key fingerprint: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&se
 
 * FreeBSD - main operating system for many years. Proficient with a command-line interface and configuring and troubleshooting FreeBSD.
 
-* Elasticsearch, Kibana
+* [Elasticsearch](https://www.elastic.co/elasticsearch/), [Kibana](https://elastic.co/kibana)
 
 * [Pygame](https://pygame.org), Python game development framework
 
@@ -82,39 +82,15 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 ## Open source contributions
 
-### FreeBSD
+* FreeBSD: A few bug reports in base system tools, helped keep some ports up to date
 
-* [Update sysutils/paladin port](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=236111)
+* [Paladin](https://github.com/rwestlund/paladin): Fixed multiple showstopper bugs, added SIGINFO support
 
-* [Update sysutils/paladin port](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=239810)
-
-* [Report crash in /usr/bin/diff](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=241714)
-
-* [Incorrect error logging in freebsd-update](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=230243)
-
-### [Paladin](https://github.com/rwestlund/paladin)
-
-* Fixed a major bug causing Paladin to not correctly track the number of running children
-
-* Fixed a bug causing it to not wait for children to exit before exiting itself after receiving SIGTERM
-
-* Added SIGINFO support
-
-### [GNU Nano](https://nano-editor.org)
-
-* [Fix syntax highlighting to better handle empty strings in Python](https://savannah.gnu.org/patch?9801)
-
-* [Improve syntax highlighting for Javascript and HTML](https://savannah.gnu.org/patch?9865)
-
-* [Got Haskell and Markdown syntax highlighting added](https://savannah.gnu.org/bugs?58130)
-
-* [Fix Go syntax highlighting of `chan` keyword](https://savannah.gnu.org/bugs/?58424)
-
-### Other
+* [GNU Nano](https://nano-editor.org): Several improvements to syntax highlighting, including adding support for Haskell and Markdown
 
 * GTK: [Fix missing GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012)
 
-* [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations](https://github.com/haskell-gi/haskell-gi/pull/263)
+* [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations causing some functions to be unusable](https://github.com/haskell-gi/haskell-gi/pull/263)
 
 * [ROXTerm](https://github.com/realh/roxterm): [Helped track down incorrect linker flags causing the build process to fail on some systems](https://github.com/realh/roxterm/issues/203)
 
@@ -128,14 +104,9 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 # Other projects
 
-* [The Spem conlang](https://yujiri.xyz/spem/). Intended to be a very elegant and semantically accurate language that I would want to speak in real life. ~600 words added.
+* [The Spem conlang](https://yujiri.xyz/spem/). Intended to be an elegant and semantically accurate language that I would want to speak in real life. ~600 words added.
 
 * [Music](https://yujiri.xyz/music/): 12 hymn remixes/covers and 16 original songs written in LMMS, ~1-2 minutes each; 2 that I'm proud of.
-
-<!--
-# Other skills
-* Basic knowledge of circuit analysis and proficiency with a multimeter, breadboards and soldering
--->
 
 # Education
 
@@ -145,6 +116,4 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 autism diagnosis
 
 I have many phonic tics, including echolalia, palilalia, and lexilalia (although none of them go to the point of repeating words aloud)
-
-won $125 in Prismata tournaments
 -->

@@ -9,7 +9,7 @@ Just because something is foolish or even immoral *does not* entail that it's ju
 
 The most revealing form of this is the way American ["liberals"](left_right) talk about their designs for the world. I hear them ask "what are the *pros and cons* of (forcing people to do) X", and <a rel="nofollow" href="https://www.youtube.com/watch?v=pTwPHuE_HrU">"to even out wealth, we should tax it"</a>, and <a rel="nofollow" href="https://www.reddit.com/r/changemyview/comments/74dvaz/cmv_the_united_states_should_have_mandatory/">"mass slavery would have three main benefits"</a>. They phrase things from an impersonal perspective, as if there's no such thing as something that's *not your decision*.
 
-And then they go on Youtube and <a rel="nofollow" href="https://www.youtube.com/watch?v=fGoWLWS4-kU">rant about consent</a>, like they have any right to talk about such a thing.
+And then they go on Youtube and <a rel="nofollow" href="https://www.youtube.com/watch?v=fGoWLWS4-kU">rant about consent</a>.
 
 I once explained to a liberal man that drivers' licenses are tyranny because it's evil to [use violence against people](enforcement) for no other crime than driving without your approval. His response: "Well, I don't know if we can just get rid of that whole system... I'd wanna see some certification before I let someone drive." To him, all decisions are his. If he thinks it would be safer, it's just automatically justified to impose it on *other* people, no matter how much cruelty it takes to enforce it.
 
