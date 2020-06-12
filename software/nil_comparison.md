@@ -33,7 +33,7 @@ These descriptions amount to exactly the same thing (when you fill in that Pytho
 >
 > Python was designed by Guido van Rossum.
 
-Nothing whatsoever to do with a comparison of the languages.
+Nobody cares!
 
 > ### File extension
 >
@@ -41,7 +41,7 @@ Nothing whatsoever to do with a comparison of the languages.
 >
 > Python files are saved with .py extension.
 
-Nothing whatsoever to do with a comparison of the languages.
+Nobody cares!
 
 > ### Data Types
 >

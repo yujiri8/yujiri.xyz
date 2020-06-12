@@ -45,10 +45,10 @@ Obviously, different languages have different concepts to teach, so adhering exa
 1. Arithmetic, strings (including conversion), and IO
 2. `if`, `else`, `elif`, all sorts of Boolean crap
 3. Tuples, indexing, slicing, `in`, `len`, `for` (and how all this applies to strings), `break`/`continue`
-4. Shared reference and mutability, lists and dicts; and methods of sequence types (this is as far as I've finished it)
+4. Shared reference and mutability, lists and dicts; and methods of sequence types
 5. Functions and imports
 6. Exception crap and file IO
-7. Classes
+7. Classes (this is as far as I've finished it)
 8. Generators, comprehensions, context managers, and other informal interfaces (like iteration)
 9. Some discussion of real-world applications, and probably a preliminary dive with a GUI app using a toolkit like GTK, TCP chat server, or similar project
 
