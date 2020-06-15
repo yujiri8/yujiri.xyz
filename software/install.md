@@ -30,8 +30,6 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`chromium`](https://www.chromium.org/Home) - Chromium web browser (different from but related to Chrome).
 
-* [`qutebrowser`](https://www.qutebrowser.org) - A web browser in [Python](python) and Qt with a design philosophy of keyboard-centrism and efficiency of use for advanced users. You have to give it a fair chance and give yourself time to learn the hotkeys. I like Qutebrowser, despite not being a Vim user; honestly the biggest thing holding me back from using it right now is that the ctrl-shift-U trick for unicode typing doesn't work in it for whatever reason. And I need unicode typing for [Spem](/spem/).
-
 ## Networking
 
 * [`py37-httpie`](https://httpie.org), [`curl`](https://curl.haxx.se), [`wget`](https://www.gnu.org/s/wget/) - swiss army knives of HTTP (and some other protocols). `curl` and `wget` are both classics written in C; `wget` is GNU software and `curl` is MIT licensed. `httpie` is a much younger implemention in Python (also BSD-licensed) and is nicer in just about every way, but doesn't support everything the others do. I keep all three installed.
@@ -152,3 +150,6 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * `xinput` - get information about X input devices.
 
+## Other
+
+* `linux-base-c7` - files needed for Linux compatibility. Also load kernel modules `linux`, `linux64`, and `linux_common`.
