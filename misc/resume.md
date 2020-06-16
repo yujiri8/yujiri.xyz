@@ -88,11 +88,11 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [GNU Nano](https://nano-editor.org): Several improvements to syntax highlighting, including adding support for Haskell and Markdown
 
+* [Micro](https://micro-editor.github.io): A few improvements to synax highlighting
+
 * GTK: [Fix missing GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012)
 
 * [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations causing some functions to be unusable](https://github.com/haskell-gi/haskell-gi/pull/263)
-
-* [ROXTerm](https://github.com/realh/roxterm): [Helped track down incorrect linker flags causing the build process to fail on some systems](https://github.com/realh/roxterm/issues/203)
 
 * [OGS](https://online-go.com): found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
 
