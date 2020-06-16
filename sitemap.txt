@@ -29,6 +29,8 @@ https://yujiri.xyz/argument/identity_politics
 https://yujiri.xyz/argument/inflammation
 https://yujiri.xyz/argument/iq
 https://yujiri.xyz/argument/learning_language
+https://yujiri.xyz/argument/left_right
+https://yujiri.xyz/argument/leftist_economics
 https://yujiri.xyz/argument/liking
 https://yujiri.xyz/argument/moderation
 https://yujiri.xyz/argument/myth_of_respect
@@ -229,8 +231,6 @@ https://yujiri.xyz/protagonism/group_identity
 https://yujiri.xyz/protagonism/imprisonment
 https://yujiri.xyz/protagonism/impurity
 https://yujiri.xyz/protagonism/jedi
-https://yujiri.xyz/protagonism/left_right
-https://yujiri.xyz/protagonism/leftist_economics
 https://yujiri.xyz/protagonism/legislation_enforcement
 https://yujiri.xyz/protagonism/life
 https://yujiri.xyz/protagonism/luck
