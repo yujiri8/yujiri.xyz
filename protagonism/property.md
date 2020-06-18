@@ -6,26 +6,21 @@ The principle of peace, that people must not force perceptions on each other, is
 
 ### Restitution
 
-As per [the formal statement of the in my moral system](virtues), intentionally violating someone else's consent forfeits your own to the same degree.  An unintentional violation of someone
-else's consent doesn't forfeit your own, but it does require you to perform restitution at least up to the point where
-your loss is as great as theirs (and if you have the option to do this and don't then you do forfeit your own consent). The
-reason that it only goes halfway is because once you perform half-restitution, their loss has been cut in half, and so you've
-actually *already* sacrificed your own rights to fully the same extent - because they've gone back up as you've gone down.
-Intentional crimes go all the way because you knew what you were doing and chose it, which constitutes giving your consent, so
-you can't claim equal victim status. Whereas in the unintentional case, neither of you is at fault; both of you are victims once
-you perform restitution.
+Pinning down how much restitution is owed for an aggression is pretty murky. The rules I've most confident in are:
 
-And yes, this does mean in cases where you have partial knowledge - such as if you do something that you think will cause someone else $10's worth of property damage but it ends up costing them $100's worth - then the first $10 must be fully restituted and the rest half-restituted.
+* For an unintentional harm, the amount owed is the minimum of until the harm is fully repaired or until it costs the cuplrit as much as the original harm.
 
-In an uncertainty case, such as if you do something that you think has a 50% chance to cause X property damage, if nothing ends up happening then you don't owe restitution, although you've still sinned against both Compassion and Consent and can (barring some justification) be punished on the grounds of retribution. If the damage does end up happening, you owe an amount of restitution halfway between it being a total accident and being totally on purpose.
+* For an intentional but [justified (but undeserved)](consequentialism) harm, the amonut owed is the minimum of until the harm is fully repaired or until it costs the culprit twice as much as the original harm.
+
+* For an intentional and unjustified harm, the amount owed is the maximum of the rule for intentional but justified harm and until it costs the culprit as much as the original harm.
 
 ### Bodily autonomy
 
-Since people are forced to feel what happens to their body, it's wrong to affect another person's body against their will. This is the most obvious instance of ownership. [It isn't limited to pain or injury either](/argument/propaganda#harm-hurt-violence). It is violence to force any type of perception onto someone, including tickling or continuing to speak to someone who requests to be left alone. Both of those acts force a perception onto someone else.
+Since people are forced to feel what happens to their body, it's wrong to affect another person's body against their will. This is the most obvious instance of ownership. [It isn't limited to pain or injury either](/argument/propaganda#harm-hurt-violence). It's violence to force any type of perception onto someone, including tickling or continuing to speak to someone who requests to be left alone. Both of those acts force a perception onto someone else.
 
 ### External property by possession
 
-Possessing something allows you to use it in ways that affect your experience, so taking it away would count as forcing an effect on someone. In light of [metaphysics](metaphysics), this is just an extension of bodily autonomy because there's not difference of kind between your limbs and your possessions, only a difference of degree.
+Possessing something allows you to use it in ways that affect your experience, so taking it away would count as forcing an effect on someone. In light of [metaphysics](metaphysics), this is just an extension of bodily autonomy because there's no difference of kind between your limbs and your possessions, only a difference of degree.
 
 <!--It doesn't have to be in your immediate physical control the whole time. If you find an unowned piece of matter and place it in your house or somewhere else where you'll be able to retrieve it, it remains your property because you haven't really lost possession of it, just stored it temporarily. If you drop it off a cliff, or do something else that prevents any foreseeable future of you getting it back, you'll have a Lost and Found scenario, see below.-->
 
@@ -33,11 +28,11 @@ But "possession" is an iffy term here, because there's a caveat:
 
 ### No ownership of power
 
-Ownership by possession only works because power can normally be used in ways that affect its user. So if you were to have legitimate ownership by possession of something that allows you to affect the lives of other people in another universe, but you don't actually get any feedback, even indirect, on what happens over there, then it wouldn't be your property. Someone else who stole the object wouldn't actually be affecting you at all.
+Ownership by possession only works because power can normally be used in ways that affect its user. So if you were to possess something that allows you to affect the lives of other people in another universe, but you don't get any feedback, even indirect, on what happens over there, then it wouldn't be your property. Someone else who stole the power wouldn't actually be affecting you at all.
 
 ### External property by investment
 
-If your action changes something, such as if you build something, cut down a tree, or just move something unowned to a new place, then others must not prevent you from enjoying the result of your actions. To do so would be destroying your labor, and would be violence in the same way as punching someone, if less salient.
+If your action changes something, such as if you build something, cut down a tree, or just move something unowned to a new place, then others must not prevent you from enjoying the result of your actions. To do so would be destroying your labor, and would be violence in the same way as punching someone, only less salient.
 
 This stacks with ownership by possession. Violating either one without the other (taking from someone what they possess by luck or collecting the benefits of their labor that they don't possess and not compensating them) is theft; violating both at once (taking from someone what they've created and possess) is double the gravity.
 
