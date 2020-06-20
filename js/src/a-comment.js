@@ -11,7 +11,6 @@ customElements.define('a-comment', class extends LitElement {
 			loggedIn: {type: Boolean},
 			key: {type: Boolean},
 			admin: {type: Boolean},
-			user: {type: String},
 			replyOpen: {type: Boolean},
 			editMode: {type: Boolean},
 		}
@@ -54,10 +53,9 @@ customElements.define('a-comment', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.loggedIn = util.readCookie('auth');
+		this.loggedIn = util.readCookie('auth') && util.readCookie('email');
 		this.key = util.readCookie('key');
 		this.admin = util.readCookie('admin');
-		this.user = util.readCookie('email');
 		this.replies = [];
 	}
 	render() {
@@ -81,7 +79,7 @@ customElements.define('a-comment', class extends LitElement {
 			</a>
 		</div>
 		${this.replyOpen? html`
-			<comment-submit-area reply_to="${this.comment.id}" user="${this.user}">
+			<comment-submit-area reply-to="${this.comment.id}" ?logged-in="${this.loggedIn}">
 			</comment-submit-area>
 		`:''}
 		<div class="indent">
@@ -114,7 +112,7 @@ customElements.define('a-comment', class extends LitElement {
 				`:''}
 			</small>
 		</div>
-		${this.loggedIn && this.user? html`
+		${this.loggedIn? html`
 			<div class="actions">${this.renderActions()}</div>
 		`:''}
 		`;

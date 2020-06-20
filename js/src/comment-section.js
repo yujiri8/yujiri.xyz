@@ -8,10 +8,10 @@ import {styles} from './css.js';
 customElements.define('comment-section', class extends LitElement {
 	static get properties() {
 		return {
-			user: {type: String},
-			admin: {type: Boolean},
+			loggedIn: {type: String, attribute: false},
+			admin: {type: Boolean, attribute: false},
 			timestamp: {type: String},
-			comments: {type: Array},
+			comments: {type: Array, attribute: false},
 		}
 	}
 	static get styles() {
@@ -28,7 +28,7 @@ customElements.define('comment-section', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.user = readCookie('email');
+		this.loggedIn = readCookie('auth') && readCookie('email');
 		this.admin = readCookie('admin');
 		this.comments = [];
 		this.loadComments();
@@ -51,7 +51,7 @@ customElements.define('comment-section', class extends LitElement {
 			<input type="email" id="email">
 			<button @click="${this.signup}">Make account without posting / recover account</button>
 		</div>
-		<comment-submit-area open user="${this.user}" reply_to="${location.pathname}">
+		<comment-submit-area open ?logged-in="${this.loggedIn}" reply-to="${location.pathname}">
 		</comment-submit-area>
 		${parseQuery(location.search).c? html`
 			You're viewing a subtree of the comments.

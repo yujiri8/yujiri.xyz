@@ -39,7 +39,7 @@ async def preview_comment(req: Request):
 
 class PostCommentParams(BaseModel):
 	name: str
-	email: str
+	email: str = ''
 	reply_to: str
 	body: str
 @router.post('/comments')
@@ -77,33 +77,25 @@ async def post_comment(
 	# Prevent name impersonation.
 	name_user = env.db.query(User).filter_by(name = cmt.name).one_or_none()
 	if name_user and (not cmt.user or cmt.user != name_user):
-		raise HTTPException(status_code = 401)
-	# Check for an email.
-	clear_auth = False
-	if params.email:
+		raise HTTPException(status_code = 401, detail =
+			"That name is taken by a registered user.")
+	# If it's not a logged in user, check for an email.
+	if not cmt.user and params.email:
 		# Determine if the email is already claimed.
 		email_user = env.db.query(User).filter_by(email = params.email).one_or_none()
 		if not email_user:
 			# The email isn't claimed yet, so assume they have it and try to register it.
 			cmt.user = users.register_email(env.db, params.email)
-			# Clear their auth token, so they don't remain logged in as someone else if
-			# they used to be.
-			clear_auth = True
-		elif cmt.user != email_user:
-			# It's a registered user's email, and this isn't them.
-			raise HTTPException(status_code = 401,
-				detail = "Looks like you're trying to impersonate someone.")
+		else:
+			# It's a registered user's email.
+			raise HTTPException(status_code = 401, detail = "That email belongs to a registered user." +
+				" If it's you and you just claimed it, check your inbox for a registration link.")
 	env.db.add(cmt)
 	# Subscribe the user who posted it.
 	if cmt.user and cmt.user.autosub:
 		env.db.add(Subscription(user = cmt.user, comment = cmt))
 	env.db.commit()
 	bg.add_task(send_reply_notifs, env.db, cmt)
-	if clear_auth:
-		response.set_cookie('auth', '', max_age = 0)
-		response.set_cookie('email', '', max_age = 0)
-		response.set_cookie('key', '', max_age = 0)
-		response.set_cookie('admin', '', max_age = 0)
 
 class EditCommentParams(BaseModel):
 	id: int
