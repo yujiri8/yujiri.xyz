@@ -44,7 +44,7 @@ export async function handleErr(resp) {
 		return showToast('err', "Couldn't understand response from server");
 	}
 	if (!text || text.includes("<html")) // Don't display HTML responses.
-		text = window.errorCodes[resp.status] || `Error ${resp.status}`;
+		text = errorCodes[resp.status] || `Error ${resp.status}`;
 	showToast('err', text);
 }
 
@@ -137,7 +137,7 @@ export function titleCase(str) {
 	return str.split(' ').map(s => s[0].toUpperCase() + s.slice(1)).join(' ').replace(' Of', ' of')
 }
 
-// Adapted from code by jsdw from Stack Overflow. Pass window.location.search.
+// Adapted from code by jsdw from Stack Overflow. Pass location.search.
 export function parseQuery(raw) {
 	raw = raw.slice(1); // Drop the initial ?.
 	const entries = raw.split("&");
@@ -159,17 +159,17 @@ export function parseQuery(raw) {
 
 // Fragment link fix, necessary because the navbar has position:sticky.
 function scrollFix() {
-	const section = document.getElementById(window.location.hash.slice(1));
+	const section = document.getElementById(location.hash.slice(1));
 	if (!section) return;
 	const offset = section.offsetTop;
 	const navbarHeight = document.querySelector('yujiri-navbar').offsetHeight;
-	window.scrollTo(0, offset - navbarHeight);
+	scrollTo(0, offset - navbarHeight);
 }
 
-window.addEventListener("load", scrollFix);
-window.addEventListener("hashchange", scrollFix);
+addEventListener("load", scrollFix);
+addEventListener("hashchange", scrollFix);
 // This flag stops error toasts from showing when a request is interrupted by navigating away.
-window.addEventListener("beforeunload", () => window.noShowError = true);
+addEventListener("beforeunload", () => window.noShowError = true);
 
 // A global utility to make a textarea grow when necessary.
 window.autogrow = e => {

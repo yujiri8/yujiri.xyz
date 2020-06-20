@@ -107,7 +107,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 	}
 	computePath() {
 		// Get an aray of the category components. Trim /(index).
-		let parts = window.location.pathname.replace(/\/(index)?$/, '').split('/');
+		let parts = location.pathname.replace(/\/(index)?$/, '').split('/');
 		parts = parts.slice(1); // Don't count the inevitable empty first component.
 		// Root page is a special case.
 		if (parts.length == 0) return "Yujiri's homepage";
@@ -143,7 +143,7 @@ customElements.define('yujiri-navbar', class extends LitElement {
 	}
 	async login() {
 		await login();
-		window.location.reload();
+		location.reload();
 	}
 	logout() {
 		document.cookie = 'auth=; path=/; max-age=0';

@@ -69,7 +69,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		await util.api('POST', 'comments', undefined, {
 			name: nameElem.value,
 			email: emailElem.value,
-			reply_to: this.reply_to || window.location.pathname,
+			reply_to: this.reply_to || location.pathname,
 			body: bodyElem.value,
 		});
 		// Dispatch the event to load the comment in.

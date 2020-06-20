@@ -51,16 +51,15 @@ customElements.define('comment-section', class extends LitElement {
 			<input type="email" id="email">
 			<button @click="${this.signup}">Make account without posting / recover account</button>
 		</div>
-		<comment-submit-area open user="${this.user}"
-			reply_to="${window.location.pathname}">
+		<comment-submit-area open user="${this.user}" reply_to="${location.pathname}">
 		</comment-submit-area>
-		${parseQuery(window.location.search).c? html`
+		${parseQuery(location.search).c? html`
 			You're viewing a subtree of the comments.
 			${this.comments[0] && !this.comments[0].reply_to.startsWith('/')? html`
-			    <a href="${window.location.origin + window.location.pathname}?c=${
+			    <a href="${location.origin + location.pathname}?c=${
 			        this.comments[0].reply_to}#comment-section">view parent</a> or
 			`:''}
-			<a href="${window.location.origin + window.location.pathname}#comment-section">
+			<a href="${location.origin + location.pathname}#comment-section">
 				view all comments on this page</a>
 		`:''}
 		<div id="comments">
@@ -69,10 +68,9 @@ customElements.define('comment-section', class extends LitElement {
 		`;
 	}
 	async loadComments() {
-		const subtree = parseQuery(window.location.search).c;
+		const subtree = parseQuery(location.search).c;
 		const resp = await api('GET', 'comments', subtree?
-			{id: subtree}
-			: {reply_to: window.location.pathname}
+			{id: subtree} : {reply_to: location.pathname}
 		);
 		try {
 			const data = await resp.json();

@@ -30,9 +30,9 @@ customElements.define('notifs-panel', class extends LitElement {
 		this.subs = [];
 		if (!util.readCookie('auth')) {
 			this.setAttribute('hidden', 'true');
-			return window.addEventListener('load', async () => {
+			return addEventListener('load', async () => {
 				await util.login();
-				window.location.reload();
+				location.reload();
 			});
 		}
 		this.fetchData();
@@ -144,7 +144,7 @@ customElements.define('notifs-panel', class extends LitElement {
 	async setKey() {
 		const keyFile = this.shadowRoot.getElementById('key').files[0];
 		await util.api('PUT', 'users/setkey', undefined, await keyFile.text());
-		window.location.reload();
+		location.reload();
 	}
 	async setAutosub(e) {
 		await util.api('PUT', 'users/setautosub', undefined, e.target.checked);

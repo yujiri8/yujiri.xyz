@@ -72,8 +72,7 @@ customElements.define('a-comment', class extends LitElement {
 			`}
 			<hr>
 			<button @click="${() => this.replyOpen = true}">Reply</button>
-			<a href="${window.location.origin + window.location.pathname +
-				`?c=${this.comment.id}`}#comment-section">
+			<a href="${location.origin + location.pathname}?c=${this.comment.id}#comment-section">
 				view subtree
 				<!-- if the replies weren't returned, the property is a count of them -->
 				${typeof this.comment.replies === 'number' && this.comment.replies?
