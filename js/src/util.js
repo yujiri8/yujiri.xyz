@@ -174,7 +174,12 @@ window.addEventListener("beforeunload", () => window.noShowError = true);
 // A global utility to make a textarea grow when necessary.
 window.autogrow = e => {
 	const textarea = e.target;
-	// Clear the property first so it can shrink too.
+	// Temporarily add a bottom margin equal to the height of the textarea.
+	// This prevents a glitch that scrolls the viewport upward when the textarea contracts.
+	const prevMarginBottom = textarea.style.marginBottom;
+	textarea.style.marginBottom = textarea.scrollHeight + 'px';
+	// We have to clear the height first so it can also shrink when text is deleted.
 	textarea.style.height = 'inherit';
 	textarea.style.height = textarea.scrollHeight + 2 + 'px';
+	textarea.style.marginBottom = prevMarginBottom;
 }
