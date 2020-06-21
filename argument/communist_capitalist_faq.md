@@ -3,7 +3,7 @@ NAV Communist/Capitalist FAQ
 TEMPLATE DEFAULT
 DESC An FAQ of sorts to debunk the most common bad talking points from both communists and capitalists.
 
-As [an Anarchist](/protagonism/anarchism) who spends a lot of time in [Anarcho-capitalist](faction_ancap) circles, and also some time in Anarcho-communist circles trying to win them over, I've gotten fairly tired of having to debunk the same arguments again and again, so I'm going to try compiling an FAQ of sorts where the most common bad talking points raised by both sides are refuted.
+As [an Anarchist](/protagonism/anarchism) who spends a lot of time in [anarcho-capitalist](faction_ancap) circles, and also some time in anarcho-communist circles trying to win them over, I've gotten fairly tired of having to debunk the same arguments again and again, so I'm going to try compiling an FAQ of sorts where the most common bad talking points raised by both sides are refuted.
 
 ## Communists
 
@@ -48,7 +48,7 @@ Okay, I'm coming to your house to use your computer and you can't control what I
 
 Again, the real disagreement seems to be about the legitimacy of your boss's property claim. Argue against that instead of a consequence of it, if you want to promote understanding.
 
-## "Property requires violence to enforce."
+### "Property requires violence to enforce."
 
 Stopping murder requires using violence against those who do it. Ancaps think defending their property is the same thing on a smaller scale, so this argument is circular. Once again, target the legitimacy of property.
 
@@ -62,11 +62,11 @@ Also note that this can be made to look the opposite way: while a poor socialist
 
 ### "Communism has failed historically"
 
-Most Ancoms believe [historical communist nations](https://www.historylearningsite.co.uk/modern-world-history-1918-to-1980/russia-1900-to-1939/life-in-ussr-under-stalin/) did not practice anything close to their principles, so pointing to the failures of those socities as proof of the failure of Ancom ideology is pointing to the failure of an ideology that your opponent *rejects* as an argument against your opponent's ideology. There's no shard of logic to it.
+Most Ancoms believe historical communist nations did not practice anything close to their principles, so pointing to the failures of those socities as proof of the failure of anarcho-communism is pointing to the failure of an ideology that your opponent *rejects* as an argument against your opponent's ideology. There's no shard of logic to it.
 
 > But that's No True Scotsman
 
-Not any more than it's No True Scotsman to argue Anarcho-capitalism doesn't have the problems of modern American corporatism.
+Not any more than it's No True Scotsman to argue anarcho-capitalism doesn't have the problems of modern American corporatism.
 
 ### "You can't argue against capitalism while you're benefitting from it"
 
