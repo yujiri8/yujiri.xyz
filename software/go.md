@@ -170,7 +170,7 @@ The standard library suffers from this with functions like `strconv.FormatInt`, 
 
 Not supporting default values also increases the need for comments, since often that means you just have to say what the parameter should be by default in the docstring.
 
-You can't do default field values in structs either, so to accomplish that you have to write a wrapper constructor (which means writing all the field names three times - the same problem I have with Python constructors). It doesn't seem like it would be hard to support this. The syntax for a Go struct definition already has an obvious place for it:
+You can't do default field values in structs either, so to accomplish that you have to write a wrapper constructor (which means writing all the field names three times). It doesn't seem like it would be hard to support this. The syntax for a Go struct definition already has an obvious place for it:
 ```
 type Stuff struct {
 	1 Field1 int
