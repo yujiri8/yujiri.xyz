@@ -63,7 +63,9 @@ customElements.define('comment-section', class extends LitElement {
 				view all comments on this page</a>
 		`:''}
 		<div id="comments">
-		    ${this.comments.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
+		    ${this.comments.map(c => html`
+		        <a-comment .comment="${c}" .timestamp="${new Date(this.timestamp)}"></a-comment>
+		    `)}
 		</div>
 		`;
 	}

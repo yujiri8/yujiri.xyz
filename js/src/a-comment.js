@@ -8,6 +8,7 @@ customElements.define('a-comment', class extends LitElement {
 	static get properties() {
 		return {
 			comment: {type: Object},
+			timestamp: {type: Object},
 			loggedIn: {type: Boolean},
 			key: {type: Boolean},
 			admin: {type: Boolean},
@@ -84,7 +85,9 @@ customElements.define('a-comment', class extends LitElement {
 		`:''}
 		<div class="indent">
 		    ${this.comment.replies instanceof Array?
-		        this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)
+		        this.comment.replies.map(c => html`
+		            <a-comment .comment="${c}" .timestamp="${this.timestamp}"></a-comment>
+		        `)
 		    :''}
 		</div>
 		`;
