@@ -1,4 +1,5 @@
 import {LitElement, html, css} from 'lit-element';
+import './login-pane.js';
 
 import * as util from './util.js';
 import {styles} from './css.js';
@@ -39,6 +40,7 @@ customElements.define('notifs-panel', class extends LitElement {
 	}
 	render() {
 		return html`
+		<login-pane no-settings-link></login-pane>
 		<fieldset>
 			<p>
 			It's not strictly necessary to set a password since the cookie is stored

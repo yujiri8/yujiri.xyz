@@ -8,7 +8,6 @@ customElements.define('a-comment', class extends LitElement {
 	static get properties() {
 		return {
 			comment: {type: Object},
-			timestamp: {type: Object},
 			loggedIn: {type: Boolean},
 			key: {type: Boolean},
 			admin: {type: Boolean},
@@ -85,9 +84,7 @@ customElements.define('a-comment', class extends LitElement {
 		`:''}
 		<div class="indent">
 		    ${this.comment.replies instanceof Array?
-		        this.comment.replies.map(c => html`
-		            <a-comment .comment="${c}" .timestamp="${this.timestamp}"></a-comment>
-		        `)
+		        this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)
 		    :''}
 		</div>
 		`;
@@ -105,9 +102,9 @@ customElements.define('a-comment', class extends LitElement {
 				</b>
 			`}
 			<small>
-				<span style="${new Date(this.comment.time_added) < this.timestamp?
+				<span style="${new Date(this.comment.time_added) < timestamp?
 						'color:orange' : ''}">
-					${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.comment.time_added))}
+					${strftime('%Y %b %d, %A, %R', new Date(this.comment.time_added))}
 				</span>
 				${this.comment.time_changed? html`
 					- <span style="color:orange">edited ${strftime('%Y %b %d, %A, %R',

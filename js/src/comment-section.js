@@ -2,6 +2,7 @@ import {LitElement, html, css} from 'lit-element';
 
 import './a-comment.js';
 import './comment-submit-area.js';
+import './login-pane.js';
 import {readCookie, setCookie, api, showToast, parseQuery} from './util.js';
 import {styles} from './css.js';
 
@@ -10,20 +11,13 @@ customElements.define('comment-section', class extends LitElement {
 		return {
 			loggedIn: {type: String, attribute: false},
 			admin: {type: Boolean, attribute: false},
-			timestamp: {type: String},
 			comments: {type: Array, attribute: false},
 		}
 	}
 	static get styles() {
 		return [styles, css`
 		:host([hidden]) { display: none; }
-		:host {
-			margin: var(--outer-margins);
-			display: block;
-		}
-		div#signup {
-			margin-bottom: 2em;
-		}
+		:host { display: block; }
 		`];
 	}
 	constructor() {
@@ -38,19 +32,17 @@ customElements.define('comment-section', class extends LitElement {
 		return html`
 		<h1>Comments</h1>
 		<p>
-		You don't need an account or anything to post. Accounts are only for email notifications on replies.
+		You can post without an account; if you provide an email, an account will be created and a confirmation email
+		sent. Accounts provide reply notifications, and, with a PGP key uploaded, the ability to edit your comments.
+		</p><p>
 		Markdown formatting (<a href="https://github.com/lepture/mistune">this library</a>) is supported.
 		I also support the &lt;spem&gt; tag which makes text monospace like &lt;code&gt; but without
-		changing the background color. I use that tag for formatting <a href="/spem/">spem</a> text.
+		changing the background color, meant for <a href="/spem/">spem</a> text.
 		</p><p>
-		This article was last modified ${strftime('%Y %b %d, %A, %R (UTC)', new Date(this.timestamp))}.
-		Comments made before then have orange timestamps.
+		Comments made before the page's modification timestamp have orange timestamps.
 		</p>
-		<div id="signup">
-			<label for="email">Email address:</label>
-			<input type="email" id="email">
-			<button @click="${this.signup}">Make account without posting / recover account</button>
-		</div>
+		<login-pane></login-pane>
+		<br>
 		<comment-submit-area open ?logged-in="${this.loggedIn}" reply-to="${location.pathname}">
 		</comment-submit-area>
 		${parseQuery(location.search).c? html`
@@ -63,9 +55,7 @@ customElements.define('comment-section', class extends LitElement {
 				view all comments on this page</a>
 		`:''}
 		<div id="comments">
-		    ${this.comments.map(c => html`
-		        <a-comment .comment="${c}" .timestamp="${new Date(this.timestamp)}"></a-comment>
-		    `)}
+		    ${this.comments.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
 		</div>
 		`;
 	}
@@ -81,15 +71,6 @@ customElements.define('comment-section', class extends LitElement {
 			showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
-	}
-	getComment(id) {
-		return this.shadowRoot.getElementById(id);
-	}
-	async signup() {
-		const email = this.shadowRoot.getElementById('email').value;
-		setCookie('email', email);
-		await api('POST', 'users/claim', undefined, email);
-		showToast('success', "Confirmation email sent.");
 	}
 });
 

@@ -158,9 +158,16 @@ I also have a presence on <a href="https://twitter.com/Yujiri3">Twitter</a>, <a 
 <p>Recent update log:</p>
 <expand-note open openText="collapse" closedText="show">
 <!--
-<p><b>June :</b>
-</p>
 -->
+<p><b>June 23:</b>
+Several changes:
+</p>
+<ul>
+<li>Login panel is now in the comment section, so the navbar is less cramped on mobile.</li>
+<li>Timestamp is just outside of the comment section, so it renders without Javascript.</li>
+<li>Most importantly, the navbar is no longer a web component and the nav HTML is computed on the server, so you can still have navigation without Javascript.</li>
+<li>The make/recover account button no longer appears while logged in.</li>
+</ul>
 <p><b>June 20:</b>
 I cleared old history, fixed <a href="https://github.com/yujiri8/yujiri.xyz/issues/21">the comment box bug</a> and made it so the email entry box doesn't appear if you're logged in. I thought it was confusing as to how it works (since it's your autosub setting that determines whether you subscribe to it) and raised questions about scenarios like being logged in and commenting with the email field empty or filled with something else.
 </p>

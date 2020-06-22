@@ -30,13 +30,26 @@
 </head>
 <body onload="{{ONLOAD}}" onresize="{{ONRESIZE}}">
 
-<yujiri-navbar navtitle="{{NAV}}"></yujiri-navbar>
+<div class="navbar">
+	<div style="flex:1"></div>
+	<nav>{{NAV|safe}}</nav>
+	<div style="flex:1; display:flex; justify-content:flex-end">
+		<theme-switch></theme-switch>
+	</div>
+</div>
 
 <article>{{ARTICLE|safe}}</article>
 
-{% if not NO_COMMENTS %}
-	<br><hr>
-	<comment-section id="comment-section" timestamp="{{TIMESTAMP}}"></comment-section>
+{% if not NO_TIMESTAMP or not NO_COMMENTS %}
+<br><hr>
+<div style="margin: var(--outer-margins)">
+	{% if not NO_TIMESTAMP %}
+		<p>This page was last modified <span id="timestamp">{{TIMESTAMP}}</span> (UTC)</p>
+	{% endif %}
+	{% if not NO_COMMENTS %}
+		<comment-section id="comment-section"></comment-section>
+	{% endif %}
+</div>
 {% endif %}
 
 <auth-popup id="authenticator"></auth-popup>

@@ -5,15 +5,16 @@ import jinja2
 import mistune
 from slugify import slugify
 import bs4
-import os, sys, datetime, argparse, pwd
+import os, sys, datetime, argparse, pwd, re
 
 HOME = pwd.getpwuid(os.getuid()).pw_dir
 SRCDIR = HOME+'/src/'
 OUTDIR = HOME+'/html/'
+TEMPLATEDIR = '/srv/scripts/'
 
 jinja_env = jinja2.Environment(autoescape = True)
 
-def process_file(infile, outfile, templates):
+def process_file(srcdir, infile, outfile):
 	print(infile, outfile)
 	# If it's a directory, create it if it doesn't exist, then quit.
 	if os.path.isdir(infile):
@@ -27,9 +28,8 @@ def process_file(infile, outfile, templates):
 		if not os.path.exists(outfile):
 			os.link(infile, outfile)
 		return
-	# Generate the output before writing it, so we don't truncate the file.
-	output = build_article(infile, templates, infile[len(SRCDIR):], get_last_modified(infile))
-	# Write the output.
+	# Generate the output before writing it, so we don't truncate the file until we're ready to write.
+	output = build_article(infile, srcdir)
 	with open(outfile, 'w', encoding='utf-8') as f: f.write(output)
 
 def get_last_modified(*files):
@@ -56,15 +56,14 @@ def parse_directives(article):
 				args['ONLOAD'] = args['ONRESIZE'] = 'resizeColumns()'
 		else:
 			args[directive] = param
-
 	return args
 
-def build_article(filename, templates, path, last_modified):
+def build_article(filename, srcdir):
 	# Read the article first.
-	with open(infile, encoding='utf-8') as f:
+	with open(filename, encoding='utf-8') as f:
 		article = f.read()
 	# Right now, this is the only template.
-	templatefile = templates + 'article.html'
+	templatefile = srcdir + '/srv/scripts/article.html'
 	with open(templatefile, encoding='utf-8') as f:
 		template_txt = f.read()
 	args = parse_directives(article)
@@ -75,12 +74,14 @@ def build_article(filename, templates, path, last_modified):
 			.replace('<pre><code>', '<pre class="code">') \
 			.replace('</code></pre>', '</pre>')
 	args['ARTICLE'] = add_fragment_links(article)
+	if not args.get('NO_TIMESTAMP'):
+		args['TIMESTAMP'] = get_last_modified(filename).strftime('%Y %b %d, %A, %R')
 	# Strip index and .html from the canonical URL.
-	if path.endswith('.html'): path = path[:-5]
-	elif path.endswith('.md'): path = path[:-3]
-	if path.endswith('index'): path = path[:-5]
-	args['PATH'] = path
-	if not args.get('NO_TIMESTAMP'): args['TIMESTAMP'] = last_modified.isoformat()
+	if filename.endswith('.html'): filename = filename[:-5]
+	elif filename.endswith('.md'): filename = filename[:-3]
+	if filename.endswith('/index'): filename = filename[:-6]
+	args['PATH'] = filename[len(srcdir):]
+	args['NAV'] = navbar_html(args['PATH'], args.get('NAV'))
 	template = jinja_env.from_string(template_txt)
 	return template.render(args)
 
@@ -103,24 +104,51 @@ def add_fragment_links(article):
 		elem.unwrap()
 	return dom
 
+def navbar_html(path, nav_directive):
+	parts = path.split('/')
+	# Root page is a special case.
+	exceptions = {
+		'fiction': 'Storytelling',
+		'mc_revenge': "MC's Revenge",
+		'': 'yujiri.xyz',
+	}
+	navhtml = ''
+	running_path = ''
+	for part in parts[:-1]:
+		# Poems don't have their own index.
+		if part == 'poems': continue
+		# Exception for DDLC mods.
+		if part == 'ddlc_mods':
+			navhtml += f'<a class="yujiri-link" href="{running_path}ddlc">DDLC mods</a> &gt; '
+			running_path += part + '/'
+			continue
+		display_name = exceptions.get(part) or part.replace('_', ' ').title()
+		running_path += part + '/'
+		navhtml += f'<a class="yujiri-link" href="{running_path}">{display_name}</a> &gt; '
+	return navhtml + (nav_directive or exceptions.get(parts[-1]) or parts[-1].replace('_', ' ').title())
+
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
-	parser.add_argument('infiles', nargs = '*') # optional if -r is passed
+	parser.add_argument('infiles', nargs = '*') # ignored if -r is passed
 	parser.add_argument('-o', dest = 'stdout', action = 'store_true')
-	parser.add_argument('-t', dest = 'templatedir', default = HOME+'/src/srv/scripts/')
 	parser.add_argument('-r', dest = 'recursive', action = 'store_true')
+	parser.add_argument('-s', dest = 'srcdir', default = SRCDIR)
+	parser.add_argument('-d', dest = 'outdir', default = OUTDIR)
 	args = parser.parse_args()
+	# Normalize dir names to end in one slash. I can't use * because it will match twice.
+	args.srcdir = os.path.abspath(args.srcdir)
+	args.outdir = os.path.abspath(args.outdir)
 	if args.recursive:
 		import glob
-		args.infiles = (f for f in glob.glob(SRCDIR+'/**', recursive=True)
+		args.infiles = (f for f in glob.glob(args.srcdir+'/**', recursive=True)
 			if '/js/' not in f and '/srv/' not in f and '.gitignore' not in f)
 	elif not len(args.infiles):
 		print('if not generating everything, need at least one filename', file = sys.stderr)
 		sys.exit(1)
 	for arg in args.infiles:
 		infile = os.path.abspath(arg)
-		outfile = infile.replace(SRCDIR, OUTDIR)
-		# strip .html or .md from the end, for Nginx's benefit
+		outfile = infile.replace(args.srcdir, args.outdir)
+		# Strip .html or .md from the end, for Nginx's benefit.
 		if outfile.endswith('.html'): outfile = outfile[:-5]
 		elif outfile.endswith('.md'): outfile = outfile[:-3]
-		process_file(infile, args.stdout or outfile, args.templatedir)
+		process_file(args.srcdir, infile, args.stdout or outfile)

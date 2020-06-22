@@ -117,6 +117,7 @@ async def edit_subs(params: EditSubsParams, env = Depends(env)):
 	cmt = env.db.query(Comment).get(params.id)
 	if params.state is None:
 		env.db.query(Subscription).filter_by(user = env.user, comment = cmt).delete()
+		env.db.commit()
 		return
 	# Avoid creating duplicates.
 	sub = env.user.subs.filter_by(comment = cmt).one_or_none()

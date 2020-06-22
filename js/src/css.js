@@ -30,7 +30,6 @@ spem {
 	font-family: monospace;
 	font-size: 1.2em;
 }
-/* distinguish quotes better */
 blockquote {
 	border-left: 6px solid #00ffff;
 	margin: 0.5em 1em 0.5em 1em;
@@ -66,7 +65,6 @@ tbody.checkered tr:nth-child(odd) {
 	background-color: #222222;
 }
 
-/* spoilers */
 .spoiler {
 	background-color: var(--textcolor);
 }
@@ -77,6 +75,25 @@ tbody.checkered tr:nth-child(odd) {
 .spoiler:hover {
 	color: var(--bgcolor);
 }
+.note:before {
+	content: '[';
+}
+.note:after {
+	content: ']';
+}
+.note {
+	color: var(--notecolor);
+}
+/* stuff for reviews */
+.good {
+	color: blue;
+}
+.bad {
+	color: red;
+}
+.mixed {
+	color: var(--yellowcolor);
+}
 
 /* Stop things from overflowing horizontally (don't ask me why the overflow-y thing works) */
 pre {
@@ -86,14 +103,8 @@ img {
 	max-width: 100%;
 }
 
-/* stuff for reviews */
-.good {
-	color: blue;
-}
-.bad {
-	color: red;
-}
-.mixed {
+
+a.yujiri-link, a.yujiri.link:visited {
 	color: var(--yellowcolor);
 }
 
@@ -119,15 +130,5 @@ button {
 	cursor: pointer;
 	border-radius: 5px;
 	background-color: var(--buttonbgcolor);
-}
-
-.note:before {
-	content: '[';
-}
-.note:after {
-	content: ']';
-}
-.note {
-	color: var(--notecolor);
 }
 `;

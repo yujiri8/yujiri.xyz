@@ -1,4 +1,4 @@
-/* Color themes. */
+/* color themes */
 :root {
 	--outer-margins: 1em;
 	--bgcolor: white;
@@ -25,6 +25,7 @@
 	--notecolor: #9f9;
 }
 
+/* body styling */
 body {
 	font-family: sans-serif;
 	margin: 0; /* Remove UA edge spacing */
@@ -37,45 +38,32 @@ article {
 	margin-top: calc(var(--outer-margins) + 1em);
 }
 
-/* stuff shared with the components */
 * {
 	box-sizing: border-box;
 }
-/* Misc color adjustments */
-a {
-	color: var(--linkcolor);
+
+/* navbar styles */
+.navbar {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding: 0.3em;
+	background-color: grey;
+	color: white;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
 }
-a:visited {
-	color: var(--linkvisitedcolor);
+nav {
+	font-size: 1.25em;
+	text-align: center;
 }
-code, .code {
-	background-color: var(--codecolor);
-	font-size: 1.2em;
+
+.yujiri-link, .yujiri-link:visited {
+	color: yellow;
 }
-code {
-	white-space: pre-wrap;
-	word-break: break-word;
-}
-hr {
-	border-color: var(--weakcolor);
-}
-.indent {
-	margin-left: 1em;
-}
-spem {
-	font-family: monospace;
-	font-size: 1.2em;
-}
-/* distinguish quotes better */
-blockquote {
-	border-left: 6px solid #00ffff;
-	margin: 0.5em 1em 0.5em 1em;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-}
-.highlight {
-	background-color: #ff06;
-}
+
 
 /* column-layout pages */
 div.row {
@@ -84,6 +72,67 @@ div.row {
 }
 div.column {
 	min-width: 18em;
+}
+
+/* inline */
+code, .code {
+	background-color: var(--codecolor);
+	font-size: 1.2em;
+}
+code {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+spem {
+	font-family: monospace;
+	font-size: 1.2em;
+}
+.highlight {
+	background-color: #ff06;
+}
+/* links need these set specifically */
+a {
+	color: var(--linkcolor);
+}
+a:visited {
+	color: var(--linkvisitedcolor);
+}
+.spoiler, .spoiler * {
+	background-color: var(--textcolor);
+}
+/* this is necessary to stop links from showing through */
+.spoiler:not(:hover) * {
+	color: var(--textcolor);
+}
+.spoiler:hover {
+	color: var(--bgcolor);
+}
+.note:before {
+	content: '[';
+}
+.note:after {
+	content: ']';
+}
+.note {
+	color: var(--notecolor);
+}
+/* Unfortunately, this couldn't be avoided for disconnected expand notes. */
+.hidden {
+	display: none;
+}
+
+/* block styling */
+hr {
+	border-color: var(--weakcolor);
+}
+.indent {
+	margin-left: 1em;
+}
+blockquote {
+	border-left: 6px solid #00ffff;
+	margin: 0.5em 1em 0.5em 1em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
 }
 
 /* tables */
@@ -100,18 +149,6 @@ table, th, td {
 }
 tbody.checkered tr:nth-child(odd) {
 	background-color: #222222;
-}
-
-/* spoilers */
-.spoiler, .spoiler * {
-	background-color: var(--textcolor);
-}
-/* this is necessary to stop links from showing through */
-.spoiler:not(:hover) * {
-	color: var(--textcolor);
-}
-.spoiler:hover {
-	color: var(--bgcolor);
 }
 
 /* Stop things from overflowing horizontally (don't ask me why the overflow-y thing works) */
@@ -144,21 +181,6 @@ a.sectionlink {
 }
 a.sectionlink:visited {
 	color: inherit;
-}
-
-/* Unfortunately, this couldn't be avoided for disconnected expand notes. */
-.hidden {
-	display: none;
-}
-
-.note:before {
-	content: '[';
-}
-.note:after {
-	content: ']';
-}
-.note {
-	color: var(--notecolor);
 }
 
 /* Middle finger to you browsers. I will not let you mutilate my h1s into h2s inside <article>. */
