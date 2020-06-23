@@ -9,7 +9,7 @@
 	--codecolor: #eee;
 	--linkcolor: #00e;
 	--linkvisitedcolor: #50a;
-	--yellowcolor: #cc0; /* yellow needs to be darker on a white background to look good */
+	--yellowcolor: #aa0; /* yellow needs to be darker on a white background to look good */
 	--notecolor: #090;
 }
 [data-theme="dark"] {
