@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dir=~/src/srv/cf
+dir=~/src/srv/cfg
 
 ln -f $dir/paladin.conf /usr/local/etc/
 ln -f $dir/nginx/nginx.conf /usr/local/etc/nginx/
