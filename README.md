@@ -56,9 +56,9 @@ Deploy the DNS TXT record and then the file as requested. Test that each are ava
 
 # Dev subdomain
 
-`test.yujiri.xyz` is set up by installing a separate copy of the repository in `~/dev`. Nginx's config serves the dev subdomain from `~/htmltest`. The command to run the dev API server:
+`dev.yujiri.xyz` is set up by installing a separate copy of the repository in `~/dev`. Nginx's config serves the dev subdomain from `~/devhtml`. The command to run the dev API server:
 
-`p ~/dev/srv/srv/main.py --db test --socket /tmp/uvicon-dev.sock`
+`p ~/dev/srv/srv/main.py --db dev --socket /tmp/uvicon-dev.sock`
 
 # Markdown problems
 
