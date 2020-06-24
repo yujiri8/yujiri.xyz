@@ -79,9 +79,9 @@ arrEmpty = [,,,];
 arrUndefined = [undefined, undefined, undefined];
 console.log(emptyArr[0], arrEmpty[0], arrUndefined[0]); // undefined undefined undefined
 console.log(emptyArr.length, arrEmpty.length, arrUndefined.length); // 0 3 3
-emptyArr.map(i => console.log('found item:', i)); /// []
-arrEmpty.map(i => console.log('found item:', i)); /// [ <3 empty items> ]
-emptyArr.map(i => console.log('found item:', i)); /* prints:
+emptyArr.map(i => console.log('found item:', i)); /// prints nothing
+arrEmpty.map(i => console.log('found item:', i)); /// prints nothing
+arrUndefined.map(i => console.log('found item:', i)); /* prints:
 found item: undefined
 found item: undefined
 found item: undefined
