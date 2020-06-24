@@ -9,27 +9,39 @@ Most people seem to recognize the government that rules over them as more or les
 
 First, let me dispel the notion that there's any moral obligation to follow the law. There are four possible ways you can be morally called do what someone else says (besides their commands being things you should've done anyway):
 
-1. When handling someone else's property. While you might argue things like roads are the government's property (they aren't and we'll get to that), at best that would cover a very small subset of laws. Most importantly, taxation itself can't be justified on this ground, because the earnings of your labor are *your* property, not the government's.
+1. When handling someone else's property. While you might argue things like roads are the government's property (they aren't and we'll get to that), at best that would cover a tiny subset of laws. Most importantly, taxation itself can't be justified on this ground, because the earnings of your labor are *your* property, not the government's. Furthermore, said government property *exists because of* taxation, hence why we can't consider it "government property": you can't build something with someone else's money and then claim it's your property.
 
 2. When in debt. But you don't owe anything to the government. You might argue that they protect you from crime (they don't and we'll get to that) or build roads or whatever other benefits, but they fund all those things with *your money*, so it's not a favor; at best it's a transaction and there's no sense in which you owe them obedience for it, even if we assume you consented to the "transaction".
 
-3. Altruism. It's morally admirable to help others when you can do so easily. This is obviously of no use for justifying the state because you don't arrest someone for refusing to act in altruism.
+3. Altruism. It's morally admirable to help others when you can do so easily, but this is obviously of no use for justifying government because you don't arrest someone for refusing to act in altruism.
 
-4. If you gave your word voluntarily. This is the big one - constitutionalists often declare that a legitimate government rules with the "consent of the governed". Unfortunately for them, none of us ever gave our word voluntarily that we'd follow this system. We've been forced into it since birth whether we like it or not.
+4. If you gave your word voluntarily. This is the big one - opponents of anarchism often declare that a legitimate government rules with the "consent of the governed". Unfortunately for them, none of us ever consented to this system. We've been forced into it since birth whether we like it or not.
 
-	* One defense I've heard a lot is the "if you don't like it, leave", implying that just living in your house constitutes consent to be ruled by the local government. This is a circular argument because it already assumes the government owns the area they claim to. I couldn't go to your house and say "You have to follow these rules, and if you don't like it, you can leave your house". I can only do that in *my* house.
+	* A common response is that a *democratic* government is okay because the leaders are chosen by the people. The obvious problem with this argument is that it treats "the people" as a single person. In a group of 5 friends, can 4 of them decide that "the group" wants to go out to dinner and force the fifth to come with them? You need *unanimous* consent for a group arrangement, not just a majority, not even 99%. Likewise, you can't say "the people" chose a leader unless you mean *all* of them.
 
-	* Another is the "lineage" defense, which you're most likely to hear from constitutionalists: that the founders of America consented to the system, and that we're bound by their decision. But no one would ever apply that same logic to anything else. A contract I sign doesn't bind my children, let alone for the rest of their lives!
+		People who are determined to defend government will often try to argue that even if a citizen of a democracy *doesn't* vote for the winning candidate, they somehow consent to be ruled by them anyway. For this to work, you would have to argue all three of:
 
-		Besides, even the formation of America wasn't *unanimous*. A legitimate contract requires the consent of *everyone* involved, not just 2/3 or even 99% of them.
+		1. If you vote for a politician, you consent to be ruled by them.
 
-Clearly, there's no basis for a goverment's authority. Yet [they impose it with violence](enforcement): if you break any of their "laws" or don't give them the money they say you "owe", armed men come to take you away, and will escalate force if you resist. We're now scrambling to find a difference between a government and a Mafia gang who moves in and says, "You townsfolk all consent, you have to give us half your income and do whatever we decide but we'll let you infleunce who our leader is every few years and build a couple of useful things with the money we steal from you". (Spoiler: there isn't one.)
+		2. If you vote *against* the winning candidate, you consent to be ruled by them anyway by participating in the system.
 
-You might still think it's possible to have a benevolent government if the only laws they enforce are just prohibiting objectively, universally immoral behavior such as assault. <span class="note">Though note that this means it isn't a democracy. If your laws are determined by objective, universal principles, they can't simultaneously be determined by popular vote.</span> Certainly an ideal person will use all the power at their disposal to punish such actions even though they know they don't have authority over anyone. But *even if you erase all unjust laws*, there's still a massive difference between such a government and a conscientious vigilante: **funding**.
+		3. If you don't vote, you consent to be ruled by the winning candidate by not voting against them.
 
-Governments get their funding nonconsensually through taxes. Do you disagree with some of their actions or their methods or just think they're ineffective and someone else would be a better protector of justice if given the money? Too bad, better pay anyway or you'll be put in jail.
+		So there's no way to not consent? Obviously, that reasoning is complete bunk. (Not only are they not all true, but they are *all* false, as we will see later.)
 
-There's no way to come close to morally justifying this. No one would *ever* a defend a private vigilante doing it and saying "it's everyone's duty to fund the enforcement of justice", no matter how effective or how uncontroversial the vigilante was.
+	* Another common one is the "if you don't like it, leave", implying that just living in your house constitutes consent to be ruled by the local government. This is a circular argument because it already assumes the government owns the area they claim to. I couldn't go to your house and say "You have to follow these rules, and if you don't like it, you can leave your house". I can only do that in *my* house.
+
+	* Another is the "lineage" defense, another favorite of constitutionalists: that the founders of America consented to the system, and that we're bound by their decision. But no one would ever apply that same logic to anything else. A contract I sign doesn't bind my children, let alone for the rest of their lives!
+
+		Besides, even the formation of America wasn't *unanimous*.
+
+Clearly, there's no basis for a goverment's authority. But they're in desperate need of a basis because [they impose it with violence](enforcement): if you break any of their "laws" or don't give them the money they say you "owe", armed enforcers come to take you away, and will escalate force if you resist. We're now scrambling to find a difference between a government and a Mafia gang who moves in and says, "You all consent, you have to give us half your income and do whatever we decide but we'll let you infleunce who our leader is every few years and build a couple of useful things with the money we steal from you". (Spoiler: there isn't one.)
+
+You might still think it's possible to have a benevolent government if the only laws they enforce are just prohibiting objectively immoral behavior such as murder. <span class="note">Though note that this means it isn't a democracy. If your laws are determined by objective, universal principles, they can't simultaneously be determined by popular vote.</span> Certainly it would be admirable to use all the power at your disposal to stop murder even though you know you don't have authority over anyone. But *even if you erase all unjust laws*, there's still a massive difference between such a government and a conscientious vigilante: **funding**.
+
+Governments get their funding nonconsensually through taxes. Do you disagree with some of their actions or their methods or just think they're ineffective and someone else would be a better protector of justice if given the money? Too bad, better pay anyway or you'll be put [in jail](imprisonment).
+
+There's no way to come close to morally justifying this. No one would *ever* a defend a vigilante doing it and saying "it's everyone's duty to fund the enforcement of justice", no matter how effective or how uncontroversial the vigilante was. It's called extortion, and it's insanity.
 
 # Practical concerns about anarchy
 
@@ -37,7 +49,7 @@ So that's it for the principle arguments. We've established that governments are
 
 ## Protection
 
-Obviously, there would still be violent criminals in an anarchy, and they would need to be stopped. This is the most common talking point for people who say "well I don't see a way it could work off the top of my head so obviously anarchy is impossible and we need the violent state to rule us".
+Obviously, there would still be violent criminals in an anarchy, and they would need to be stopped. This is the most common talking point for people who say "well I don't see a way it could work off the top of my head so obviously anarchy is impossible and we need the violent state to protect us from violent criminals".
 
 There is no reason protection can't be provided as a [market service](market) the way most things already are. Even necessities are provided successfully this way: if you want food and can't or don't want to grow it yourself, you buy it from someone who has it <span class="note">I realize there's a concern about welfare here; many poor people in governed countries are sustained by welfare programs. I get to that down below</span>. Therefore, if you want people to protect you or find the person who robbed you, you pay them.
 
