@@ -2,11 +2,11 @@ TITLE The free market in a nutshell
 NAV The free market in a nutshell
 TEMPLATE DEFAULT
 
-Libertarians, and to a lesser extent [conservatives](left_right), are often heard rambling about how great the Free Market is and how it solves all problems and the government should get out of it. For the sake of people who might be perfectly earnest but unfortunately raised to believe many falsehoods about economics and haven't questioned them yet, I thought I'd make an article explaining what this talk is about. For this article, I'll assume there's no disagreement about [the legitimacy of property claims](property), since that's a separate issue and should be resolved first. This article's just about the pragmatic case for a free market.
+Libertarians, and to a lesser extent [conservatives](/argument/left_right), are often heard rambling about how great the Free Market is and how it solves all problems and the government should get out of it. For the sake of people who might be perfectly earnest but unfortunately raised to believe many falsehoods about economics and haven't questioned them yet, I thought I'd make an article explaining what this talk is about. For this article, I'll assume there's no disagreement about [the legitimacy of property claims](/protagonism/property), since that's a separate issue and should be resolved first. This article's just about the pragmatic case for a free market.
 
 The free market is based on a couple of simple observations, the first of which is: **the person best equipped to run your life is you.** Almost all government involvement ignores this truth, and as a result does not help the people it's supposed to.
 
-One of the starkest examples is [the minimum wage](leftist_economics). A minimum wage takes choices away from poor people. Employment is voluntary - an employee is free to not work for a company that won't pay them as much as they want. Therefore, if someone's working a low-paying job in a free market society, it *must* be because they value that wage more than their time spent on anything else, otherwise they wouldn't be working there. So what does a minimum wage actually do?
+One of the starkest examples is [the minimum wage](/argument/leftist_economics). A minimum wage takes choices away from poor people. Employment is voluntary - an employee is free to not work for a company that won't pay them as much as they want. Therefore, if someone's working a low-paying job in a free market society, it *must* be because they value that wage more than their time spent on anything else, otherwise they wouldn't be working there. So what does a minimum wage actually do?
 
 ![How Minimum Wage Works](minimum_wage.jpg)
 
@@ -22,7 +22,7 @@ Without the FDA, we would be able to choose on an individual basis whether to bu
 
 The FDA (and every other regulatory agency) is a government body funded with our tax money, so the situation we currently have is as if there's that same independent inspector, but we don't have a choice in whether to hire them. The only difference is that we're *not allowed* to decide the cost is greater than the risk of uninspected products.
 
-(If you argue that we *are* allowed to make the decision by voting, then seriously think that through - putting aside that the FDA isn't even elected, [do you have a choice if you can only make it with the cooperation of millions of other people?](voting_consent))
+(If you argue that we *are* allowed to make the decision by voting, then seriously think that through - putting aside that the FDA isn't even elected, do you have a choice if you can only make it with the cooperation of millions of other people?)
 
 So that's why we should abolish the FDA, and you don't need to [be an anarchist](anarchism) to agree. Regulations don't protect consumers, they take away consumers' choices.
 
@@ -42,7 +42,7 @@ Some people will be averse to these arguments because many of the big corporatio
 
 ## Monopolies
 
-The typical argument for how the market can "fail" is that if a company produces better products than someone else, they'll make more money and become more powerful and therefore be able to provide even better services, and drive all their competitors out of business. And once that happens, once there's only one firm providing something, they can charge as much as they want for it because you can't get it anywhere else. But there are *so* many reasons this wouldn't be a problem in a free market.
+The typical argument for how the market can "fail" is that if a company produces better products than someone else, they'll make more money and become more powerful and therefore be able to provide even better services, and drive all their competitors out of business. And once that happens, once there's only one firm providing something, they can charge as much as they want for it because you can't get it anywhere else. But there are many reasons this wouldn't be a problem in a free market.
 
 1. No matter how much power a market firm gets, they stay dependent on their consumers to keep that power. I could have a billion dollars and a thousand employees, but if no one wants to buy from me, if I'm not still producing products that people want and selling them at a price people are willing to pay for them, I lose all my power.
 
