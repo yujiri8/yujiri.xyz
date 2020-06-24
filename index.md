@@ -146,44 +146,51 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 </card-series>
 <recent-comments></recent-comments>
 </div>
-<hr>
-<p>
-This site wouldn't be what it is without my dedicated contributor main_gi. He's been my de-facto editor for a long time, has helped me with CSS troubles, found two vulnerabilities in my comment feature, and even contributed valuable insight that got me to change some beliefs. His page is <a href="https://igniam.xyz">here</a>.
-</p><p>
-The above photos, where they're not mine, are from: <a href="https://pxhere.com/en/photo/986424">unknown pxhere user</a>, <a href="https://negativespace.co/pen-notebook-notepad-paper-writing/">Aaron Burden</a>, <a href="https://pixabay.com/illustrations/ratings-stars-quality-best-ranking-1482011/">sthenostudio</a>, and <a href="https://unsplash.com/photos/tN9h1vuAp6Y">César A. Mazillo Jr</a>.
-</p><p>
-I also have a presence on <a href="https://twitter.com/Yujiri3">Twitter</a>, <a href="https://dev.to/yujiri8">dev.to</a>, <a href="https://www.youtube.com/channel/UCmTi4rq5oOp2S9UER0BH3sQ">Youtube</a> (on Youtube I currently only post <a href="reviews/ddlc">DDLC</a>-related content), and <a href="https://minds.com/yujiri">minds.com</a> (passively trying out, might start posting more in the future).
-</p>
-<hr>
-<p>Recent update log:</p>
+
+---
+
+This site wouldn't be what it is without my dedicated contributor main_gi. He's been my de-facto editor for a long time, has helped me with CSS troubles, found two vulnerabilities in my comment feature, and even contributed valuable insight that got me to change some beliefs. His page is [here](https://igniam.xyz).
+
+The above photos, where they're not mine, are from: [unknown pxhere user](https://pxhere.com/en/photo/986424), [Aaron Burden](https://negativespace.co/pen-notebook-notepad-paper-writing/), [sthenostudio](https://pixabay.com/illustrations/ratings-stars-quality-best-ranking-1482011/), and [César A. Mazillo Jr](https://unsplash.com/photos/tN9h1vuAp6Y).
+
+I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https://dev.to/yujiri8), [Youtube](https://www.youtube.com/channel/UCmTi4rq5oOp2S9UER0BH3sQ) (on Youtube I currently only post [DDLC](reviews/ddlc)-related content), and [minds.com](https://minds.com/yujiri) (passively trying out, might start posting more in the future).
+
+---
+
+Recent update log:
+
 <expand-note open openText="collapse" closedText="show">
-<!--
--->
-<p><b>June 23:</b>
+
+**June 24:**
+Deleted a couple of obsolete articles, several minor edits, and added [In defense of communism](argument/communism).
+
+**June 23:**
 Several changes:
-</p>
-<ul>
-<li>Login panel is now in the comment section, so the navbar is less cramped on mobile.</li>
-<li>Timestamp is just outside of the comment section, so it renders without Javascript.</li>
-<li>Most importantly, the navbar is no longer a web component and the nav HTML is computed on the server, so you can still have navigation without Javascript.</li>
-<li>The make/recover account button no longer appears while logged in.</li>
-</ul>
-<p><b>June 20:</b>
-I cleared old history, fixed <a href="https://github.com/yujiri8/yujiri.xyz/issues/21">the comment box bug</a> and made it so the email entry box doesn't appear if you're logged in. I thought it was confusing as to how it works (since it's your autosub setting that determines whether you subscribe to it) and raised questions about scenarios like being logged in and commenting with the email field empty or filled with something else.
-</p>
-<p><b>June 16:</b>
-It's been a while. Updated <a href="argument/wikipedia_bias">Wikipedia's neutrality policy is a sham</a> to not object to the policy itself so much, and moved <a href="argument/left_right">An attempt to pin down the meaning of political 'left' and 'right'</a> and <a href="argument/leftist_economics">The common error behind leftist economics</a> to Argument.
-</p>
-<p><b>June 8:</b>
-I improved the layout of the <a href="spem/search">Spem dictionary interface</a> so it uses the horizontal space more on wide screens. Good God, I hate CSS. I spent a few hours and there's still a lot to be desired. The things I want are so simple, but CSS... the damn thing is a pile of inscrutable special cases instead of an elegant, organized way of describing layout like you'd expect from a language dedicated to that only.
-</p>
-<p><b>June 7:</b>
-Added a link on the Argument index to <a href="https://www.xanthir.com/b4y30">the article that converted me to base 6</a>.
-</p>
-<p><b>June 6:</b>
+
+* Login panel is now in the comment section, so the navbar is less cramped on mobile.
+
+* Timestamp is just outside of the comment section, so it renders without Javascript.
+
+* Most importantly, the navbar is no longer a web component and the nav HTML is computed on the server, so you can still have navigation without Javascript.
+
+* The make/recover account button no longer appears while logged in.
+
+**June 20:**
+I cleared old history, fixed [the comment box bug](https://github.com/yujiri8/yujiri.xyz/issues/21) and made it so the email entry box doesn't appear if you're logged in. I thought it was confusing as to how it works (since it's your autosub setting that determines whether you subscribe to it) and raised questions about scenarios like being logged in and commenting with the email field empty or filled with something else.
+
+**June 16:**
+It's been a while. Updated [Wikipedia's neutrality policy is a sham](argument/wikipedia_bias) to not object to the policy itself so much, and moved [An attempt to pin down the meaning of political 'left' and 'right'](argument/left_right) and [The common error behind leftist economics](argument/leftist_economics) to Argument.
+
+**June 8:**
+I improved the layout of the [Spem dictionary interface](spem/search) so it uses the horizontal space more on wide screens. Good God, I hate CSS. I spent a few hours and there's still a lot to be desired. The things I want are so simple, but CSS... the damn thing is a pile of inscrutable special cases instead of an elegant, organized way of describing layout like you'd expect from a language dedicated to that only.
+
+**June 7:**
+Added a link on the Argument index to [the article that converted me to base 6](https://www.xanthir.com/b4y30).
+
+**June 6:**
 Changed the tags of a lot of Spem words, and added several new ones, including <spem>rɪl</spem>, <spem>hoi</spem>, <spem>teu</spem>, <spem>dim</spem>, and <spem>ði</spem>; and removed <spem>pel</spem>.
-</p>
-<p><b>June 3:</b>
-I wrote <a href="protagonism/protagonism">What's a Protagonist?</a> and got back to Spem a little bit, revising possession verbs (again) so that there's a better way to express giving.
-</p>
+
+**June 3:**
+I wrote [What's a Protagonist?](protagonism/protagonism) and got back to Spem a little bit, revising possession verbs (again) so that there's a better way to express giving.
+
 </expand-note>
