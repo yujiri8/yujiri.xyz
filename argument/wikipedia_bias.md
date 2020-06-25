@@ -2,7 +2,7 @@ TITLE Wikipedia's neutrality policy is a sham
 NAV Wikipedia's Bias
 TEMPLATE DEFAULT
 
-I used to think Wikipedia's neutrality policy was entirely perverse; I don't think that anymore, though I do think Wikipedians tend to see neutrality as a goal for its own sake. *That* is perverse. True neutrality is impossible; not just impractical, but incoherent because any statement about anything is a statement of fact that someone might disagree with. But it is possible to practicea heuristic sort of neutrality by avoiding explicit stances on widely controversial issues, and there is a reasonable pragmatic argument for doing so even if you have a stance.
+I used to think Wikipedia's neutrality policy was entirely perverse; I don't think that anymore, though I do think Wikipedians tend to see neutrality as a goal for its own sake. *That* is perverse. True neutrality is impossible; not just impractical, but incoherent because any statement about anything is a statement of fact that someone might disagree with. But it is possible to practice a heuristic sort of neutrality by avoiding explicit stances on widely controversial issues, and there is a reasonable pragmatic argument for doing so even if you have a stance.
 
 But Wikipedia doesn't. They have a very clear and consistent political bias toward [liberal](/argument/left_right) positions. I did *not* specifically go looking for this, I accumulated these examples over about two weeks of occasionally landing on Wikipedia in my browsing, noting the really egregious ones in a text file, and eventually I decided I wanted to make an article about it all. In that short time I've found everything from personal libel to blatant political propaganda.
 

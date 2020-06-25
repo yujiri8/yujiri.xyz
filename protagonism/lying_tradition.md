@@ -15,4 +15,4 @@ There is, as with many traditions, a much deeper and more insidious idea being t
 
 There's also a case, though much less important, that the expectation of regular gifts breeds [a degenerate entitlement in children](sheltering_children). The reaction children sometimes have to being dissatisfied with what they receive (as I sometimes was) is strong evidence that this is so.
 
-One thing that's that just astonishing about this is the incredible irony of a parent telling their kids the Santa Claus lie, and then complaining when they don't receive obedience. Maybe if you didn't go out of your way to tell them their possessions didn't come from you, they'd be more grateful?!? Fucking morons.
+One thing that's just astonishing about this is the incredible irony of a parent telling their kids the Santa Claus lie, and then complaining when they don't receive obedience. Maybe if you didn't go out of your way to tell them their possessions didn't come from you, they'd be more grateful?!? Fucking morons.
