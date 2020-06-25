@@ -2,7 +2,7 @@ TITLE Resume
 NAV Resume
 TEMPLATE DEFAULT
 
-This is sort of an informal draft, excluding some stuff I'd know to include in a submission education details.
+This is sort of an informal draft, excluding some stuff I'd know to include in a submission like education details.
 
 Legal name: Ryan Westlund
 
