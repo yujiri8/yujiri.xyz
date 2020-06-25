@@ -1,6 +1,7 @@
 TITLE In defense of communism
 NAV In defense of communism
 TEMPLATE DEFAULT
+DESC Markets are great, but the pragmatic comparison is not as one-sided as we like to think.
 
 Preface: I've always thought communism got too much hate in non-communist circles, especially since everyone but a pure [anarcho-capitalist](faction_ancap) supports nonconsensual redistribution of wealth *in some situations*. I wouldn't want to live in a commune myself, not even a voluntary one, but the pragmatic comparison between communes and [markets](/protagonism/market) is not as one-sided as market advocates believe.
 
