@@ -4,7 +4,7 @@ TEMPLATE DEFAULT
 
 This page kind of serves three purposes: part of my Unix tutorial track, a place to recommend stuff to more experienced Unixers, and a personal checklist for when I set up a new system. Not everything's aimed at all three.
 
-Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, which might be different on other systems. (And for the Unix beginers, most Linux distros probably have a lot of these preinstalled.)
+Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, which might be different on other systems. (And for the Unix beginers, most Linux distros probably have a lot of these preinstalled.) Except Python packages - I [recommend](https://dev.to/yujiri8/dreams-of-an-ideal-world-package-managers-1d7e) installing those from pip, so I'll use their pip names.
 
 ## Basic terminal utilities
 
@@ -32,17 +32,17 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 ## Networking
 
-* [`py37-httpie`](https://httpie.org), [`curl`](https://curl.haxx.se), [`wget`](https://www.gnu.org/s/wget/) - swiss army knives of HTTP (and some other protocols). `curl` and `wget` are both classics written in C; `wget` is GNU software and `curl` is MIT licensed. `httpie` is a much younger implemention in Python (also BSD-licensed) and is nicer in just about every way, but doesn't support everything the others do. I keep all three installed.
+* [`httpie`](https://httpie.org), [`curl`](https://curl.haxx.se), [`wget`](https://www.gnu.org/s/wget/) - swiss army knives of HTTP (and some other protocols). `curl` and `wget` are both classics written in C; `wget` is GNU software and `curl` is MIT licensed. `httpie` is a much younger implemention in Python (also BSD-licensed) and is nicer in just about every way, but doesn't support everything the others do. I keep all three installed.
 
 * [`youtube_dl`](https://yt-dl.org) - Download videos from Youtube and a few other sites. Yeah, apparently this isn't illegal...
 
-* [`nmap`](https://nmap.org) - "network mapper". `nmap` is a tool for network exploration and security auditing, widely known as a port scanner; the package also contains `ncat`, which is a more sophisticated version of `nc` that supports TLS!
+* [`nmap`](https://nmap.org) - "network mapper". `nmap` is a tool for network exploration and security auditing, widely known as a port scanner. The package also contains `ncat`, which is a more sophisticated version of `nc` that supports TLS!
 
-* [`tor`](https://torproject.org) - The Onion Router, a network anonymity tool. I strongly recommend you read about this if you haven't heard of it.
+* [`tor`](https://torproject.org) - The Onion Router, a network anonymity tool. I recommend you read about this if you haven't heard of it.
 
 * [`vnstat`](https://humdi.net/vnstat/) - analyze network traffic statistics over long times.
 
-* [`py37-scapy`](https://scapy.net) - Python library for sending and analyzing packets. *Horrible* documentation, but I think it is really powerful if you learn to use it.
+* [`scapy`](https://scapy.net) - Python library and interactive tool for sending and analyzing packets. *Horrible* documentation, but I think it is really powerful if you learn to use it.
 
 * [`wireshark`](https://wireshark.org)/`tshark` - Wireshark is a renowned packet analysis tool. It can't *send* custom packets like Scapy can as far as I know, but for receiving and analyzing them it's much easier to use without trawling through huge amounts of vague documentation and experimenting for hours. `tshark` is a terminal version of wireshark. For some horrible reason, you can't have both installed at once on FreeBSD, and I remember thinking Wireshark's interface was horrid.
 
