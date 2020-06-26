@@ -157,17 +157,6 @@ export function parseQuery(raw) {
 	return query;
 }
 
-// Fragment link fix, necessary because the navbar has position:sticky.
-function scrollFix() {
-	const section = document.getElementById(location.hash.slice(1));
-	if (!section) return;
-	const offset = section.offsetTop;
-	const navbarHeight = document.querySelector('yujiri-navbar').offsetHeight;
-	scrollTo(0, offset - navbarHeight);
-}
-
-addEventListener("load", scrollFix);
-addEventListener("hashchange", scrollFix);
 // This flag stops error toasts from showing when a request is interrupted by navigating away.
 addEventListener("beforeunload", () => window.noShowError = true);
 
