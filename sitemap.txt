@@ -365,6 +365,7 @@ https://yujiri.xyz/software/headinglinks
 https://yujiri.xyz/software/install
 https://yujiri.xyz/software/javascript
 https://yujiri.xyz/software/kill_software
+https://yujiri.xyz/software/lang_baseline
 https://yujiri.xyz/software/nano
 https://yujiri.xyz/software/nginx
 https://yujiri.xyz/software/nil_comparison
