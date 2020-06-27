@@ -1,20 +1,20 @@
 # Dependencies
 
-* SQLAlchemy
-* FastAPI
-* Alembic
-* uvicorn
-* nginx
+* [SQLAlchemy](https://sqlalchemy.org)
+* [FastAPI](https://fastapi.tiangolo.com)
+* [Alembic](https://alembic.sqlalchemy.org)
+* [uvicorn](https://www.uvicorn.org)
+* [nginx](https://nginx.org/en/)
 * npm
-* jinja2
-* mistune v2
-* python-slugify
-* pgpy
-* Beautiful Soup
-* mutt (for email notifications)
-* paladin
-* entr
-* certbot
+* [Jinja2](https://jinja.palletsprojects.com)
+* [mistune](https://github.com/lepture/mistune) v2
+* [python-slugify](https://github.com/un33k/python-slugify)
+* [PGPy](https://github.com/SecurityInnovation/PGPy)
+* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+* [mutt](http://www.mutt.org/#general-info) (for email notifications)
+* [Paladin](https://github.com/rwestlund/paladin)
+* [entr](http://entrproject.org)
+* [Certbot](https://certbot.eff.org/about/)
 
 # Overview
 
