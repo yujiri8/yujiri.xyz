@@ -161,6 +161,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**June 26:**
+Added [The GOLD Spec](software/gold) and [My baseline for language reviews](software/lang_baseline).
+
 **June 24:**
 Deleted a couple of obsolete articles, several minor edits, and added [In defense of communism](argument/communism).
 
