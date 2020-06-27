@@ -31,35 +31,3 @@ One major trait I think is legitimately horizontal is interpretation versus comp
 * No other useful tooling. Compiler doesn't have red tape, but also doesn't help out.
 
 (I'm posting this, but I haven't updated my reviews yet.)
-
-<!--
-Python:
-+ `breakpoint()`
-+++ Concise
-++ syntax
-++ generators and comprehensions
-++ ecosystem/stdlib
-+ else/finally
-++ context mgr
-+ f strings, raw strings
---- type checking
-
-Go:
-+++ concurrency
-+++ tooling
-++ interop with C
-++ docs
-++ eco
-++ defer
-++ structs / interfaces
---- errors
---- no generics
---- verbosity
-- red tape
-- no default values
-- interfaces not matching
-- no capturing only one return value
-	# also mention no tuples through a channel
-- persistent gotchas with nil and panicking/hanging (I guess also nil being a backdoor)
-- converting between int types
--->

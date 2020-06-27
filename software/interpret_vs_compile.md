@@ -7,7 +7,7 @@ I know some interpreted languages, some compiled languages, and some that can do
 
 ### Interpretation
 
-* Can use with without the clunk of writing a file, saving it to disk, running it, editing it and running it again when it doesn't work, and then removing it
+* Can use without the clunk of writing a file, saving it to disk, running it, editing it and running it again from the start when it doesn't work, and then removing it
 
 * No danger of accidentally not rebuilding after a change and running the old binary. Much debugging time has been lost to that.
 

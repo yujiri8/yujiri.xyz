@@ -161,6 +161,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**June 27:**
+Added [Interpreted languages versus compiled languages](software/interpret_vs_compile) and revised my language reviews with my more explicit, consistent standards.
+
 **June 26:**
 Added [The GOLD Spec](software/gold) and [My baseline for language reviews](software/lang_baseline).
 
