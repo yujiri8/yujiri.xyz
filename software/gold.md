@@ -125,15 +125,15 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 # Misc
 
-* There are no variadic functions, just take lists as arguments.
-
-* You can have multiple functions with the same name if they have different type signatures. As long as the calls aren't ambiguous.
-
 `import module [as name]` tell the language about another file that needs to be loaded. The module name can be the name of a package to find in a library directory, or a filesystem path.
 
 `exit Int` - exit the process with the given status.
 
-* `STDIN`, `STDOUT`, `STDERR`, and `ARGS` are available as global names without imports.
+* There are no variadic functions, just take lists as arguments.
+
+* You can have multiple functions with the same name if they have different type signatures. As long as the calls aren't ambiguous.
+
+* `STDIN`, `STDOUT`, `STDERR`, `ARGS`, and `ENV` are available as global names without imports.
 
 # Infix operators
 
