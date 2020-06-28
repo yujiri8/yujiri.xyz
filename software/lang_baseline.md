@@ -29,5 +29,3 @@ One major trait I think is legitimately horizontal is interpretation versus comp
 * A decent command-line documentation tool
 
 * No other useful tooling. Compiler doesn't have red tape, but also doesn't help out.
-
-(I'm posting this, but I haven't updated my reviews yet.)
