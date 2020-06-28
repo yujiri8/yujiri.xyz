@@ -87,7 +87,7 @@ def build_article(filename, srcdir):
 
 def add_fragment_links(article):
 	"""Finds each heading and adds a pilcrow that's a permalink to it."""
-	dom = bs4.BeautifulSoup(article, features='lxml')
+	dom = bs4.BeautifulSoup(article, features='html.parser')
 	for elem in dom.findAll(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
 		# Compute the id if it doesn't have one set.
 		if 'id' not in elem:
