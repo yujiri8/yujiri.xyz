@@ -173,3 +173,15 @@ def createdb():
 def resetdb():
 	Base.metadata.drop_all(db)
 	createdb()
+
+if __name__ == '__main__':
+	import sys
+	if len(sys.argv) < 2:
+		print("Need a DB name and then optionally 'create' or 'reset'.", file = sys.stderr)
+		sys.exit(1)
+	connect(sys.argv[1])
+	if len(sys.argv) >= 3 and sys.argv[2] == 'create': createdb()
+	elif len(sys.argv) >= 3 and [2] == 'reset': resetdb()
+	else:
+		# If no command, opens the database shell. For use with the -i interpreter flag.
+		s = Session()
