@@ -11,13 +11,15 @@ I know some interpreted languages, some compiled languages, and some that can do
 
 * No danger of accidentally not rebuilding after a change and running the old binary. Much debugging time has been lost to that.
 
+* Portability. The same code can run on any operating system that has the interpreter. With a compiled language, different platforms get different binaries.
+
 I used to also think interpreters had the benefit of not needing a separate compile step before running. But that's not true. Most compilers have an option to build and then run (and not save the built executable) with one command, and even if they didn't, it would be trivial to write a shell function for it.
 
 ### Compilation
 
 * Better performance
 
-* Better portability. A program in an interpreted language always needs the interpreter to run; if you can compile to native code and link statically, you can ship a binary without worrying about dependencies on the target machine
+* No dependencies. A program in an interpreted language always needs the interpreter to run; if you can compile to native code and link statically, you can ship a binary without worrying about dependencies on the target machine.
 
 	This applies even to proprietary software that never runs on a client machine. At my job, our production server doesn't have the dependencies of our application installed. We use [Go](https://yujiri.xyz/software/go), so we build the server program into a single executable with no dependencies (other than libc and libthr) and just copy it over to the development server. We've had to copy over supporting binaries a few times too for one-time stuff, and I think those experiences would've been a lot worse if the prod server had to also have all the dependencies installed to run them.
 
