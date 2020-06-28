@@ -11,6 +11,8 @@ Storytelling has been a passion of mine ever since I was 13. I'm not currently w
 
 [Return To The Portrait](return_to_the_portrait/): Another mod, more ambitious
 
+[Doki Doki Programming Club](https://www.youtube.com/watch?v=l1XwKFuTd6s): a two-video series that may or may not be continued.
+
 ### Poems
 
 [The Bright Raincloud](poems/the_bright_raincloud) - a tribute to Sayori
