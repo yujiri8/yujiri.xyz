@@ -361,6 +361,7 @@ https://yujiri.xyz/software/fish
 https://yujiri.xyz/software/forgot_password
 https://yujiri.xyz/software/go
 https://yujiri.xyz/software/gold
+https://yujiri.xyz/software/haskell
 https://yujiri.xyz/software/headinglinks
 https://yujiri.xyz/software/install
 https://yujiri.xyz/software/interpret_vs_compile
