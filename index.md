@@ -133,11 +133,6 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 	<img src="category_images/reading.jpg" alt="My Works">
 	<div class="card-text">Novels, DDLC mods, poems</div>
 </a>
-<a class="card" href="ci">
-	<div class="card-title"><b>Counterplay Infinity</b></div>
-	<img src="category_images/ci.png" alt="Counterplay Infinity">
-	<div class="card-text">A minimalist, proof-of-concept fighting game I made a couple years ago that doesn't live up to its name.</div>
-</a>
 <a class="card" href="misc/">
 	<div class="card-title"><b>Miscellany</b></div>
 	<img src="category_images/logo.svg" alt="Miscellany">
@@ -160,6 +155,9 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
+
+**June 28:**
+Removed the Counterplay Infinity page and stopped hosting the game. I didn't want to keep it running anymore - it was a potential security risk - and its link card was taking up space. Really the only reason I was still hosting it was because I started hosting it before I got disillusioned.
 
 **June 27:**
 Added [Interpreted languages versus compiled languages](software/interpret_vs_compile), revised my language reviews with my more explicit, consistent standards, and finally [reviewed Haskell](software/haskell).
