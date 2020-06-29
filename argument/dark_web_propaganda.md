@@ -75,7 +75,7 @@ Cause [that's *soooo* different from adult pornography](/protagonism/age_of_cons
 
 > * Racist content and content promoting violence against various minorities (like Ku Klux Klan propaganda or videos of actual hate crime being perpetrated);
 
-As with any claim about violence, it applies far more to politics than it does to anything illegal. All of politics is promotion of violence against some minority, since [a single person is certainly a minority](identity_politics). The most widespread racism is either police racism or [liberal counterracism](/protagonism/left_right).
+As with any claim about violence, it applies far more to politics than it does to anything illegal. All of politics is promotion of violence against some minority, since [a single person is certainly a minority](/protagonism/identity_politics). The most widespread racism is either police racism or [liberal counterracism](left_right).
 
 > * Marketplace for hiring hitmen (though for the most part these services are reported to be yet more Bitcoin scams – still, some of them are for real);
 

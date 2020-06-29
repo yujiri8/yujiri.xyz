@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**June 29:**
+My old article "The inherent logical problem with identity politics" has been superseded by [Protagonist versus leftist ideas of bigotry](protagonism/bigotry).
+
 **June 28:**
 Removed the Counterplay Infinity page and stopped hosting the game. I didn't want to keep it running anymore - it was a potential security risk - and its link card was taking up space. Really the only reason I was still hosting it was because I started hosting it before I got disillusioned.
 
