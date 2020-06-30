@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**June 30:**
+I posted [part 8 of The Concise Python Tutorial](software/pythontut8).
+
 **June 29:**
 My old article "The inherent logical problem with identity politics" has been superseded by [Protagonist versus leftist ideas of bigotry](protagonism/bigotry).
 

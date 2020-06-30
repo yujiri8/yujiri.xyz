@@ -859,3 +859,5 @@ Encapsulation is keeping everything that deals with an object tucked away inside
 
 Polymorphism means the ability to treat different types of objects the same way - for example, calling the same method on them - and having them react differently. Classes achieve polymorphism because different classes can have different behavior in the same methods, so some code somewhere can just call `target.receive(attack)` and not have to worry about how that particular type of target handles it. Without classes, we probably would've ended up having that part of the code check what type of ship the target is and have a big `if..elif..elif..else` chain for each ship type's unique behavior.
 -->
+
+[Next lesson: Extras](pythontut8)
