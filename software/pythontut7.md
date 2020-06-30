@@ -19,9 +19,9 @@ See any downsides of this approach? I can think of several:
 
 2. If rectangles themselves are modeled as lists, then what about lists of rectangles? Nested lists work fine, but they're prone to mistakes. Maybe you have a function somewhere that takes a list of rectangles and does `for rect in rectangles:` and you accidentally pass just a plain rectangle to it, forgetting to make it a one-item list by surrounding it with `[]`.
 
-	Well, if rectangles themselves were rects, this would still work at first, since it would end up iterating *on the dimensions* of the one rectangle instead of on each rectangle. The worst possibility is that it might not crash, but do the wrong thing instead, and you'd be in for a frustrating debugging experience.
+	Well, if rectangles themselves were lists, this would still work at first, since it would end up iterating *on the dimensions* of the one rectangle instead of on each rectangle. The worst possibility is that it might not crash, but do the wrong thing instead, and you'd be in for a frustrating debugging experience.
 
-	Even if it did crash, the error message would probably not be very clear - if it tries to find the width of each rectangle in the list it's expecting with `rect[0]`, you would see `TypeError: 'int' object is not subscriptable` (because `rect` would be a width value and numbers can't be indexed (or 'subscripted')).
+	Even if it did crash, the error message would probably not be very clear - if it tries to find the width of each rectangle in the list it's expecting with `rect[0]`, you would see `TypeError: 'int' object is not subscriptable`, because `rect` would be a width value and numbers can't be indexed (or 'subscripted').
 
 3. What if you decided each rectangle should store not only its dimensions but its position, or maybe a color or some other property? You would have to change the way you stored rectangles everywhere from `[width, height]` to `[width, height, x, y]` or something, and make sure nothing you'd already done depended on rectangles being only two elements. Even worse if you wanted to put the position numbers *before* the dimension numbers in the list, since that would mean changing the index numbers everywhere.
 
@@ -247,7 +247,7 @@ class Rectangle(Shape):
         self.width = width
         self.height = height
 ```
-With that weird line, we call the `Shape` constructor and pass it the parameters that are of `Shape` rather than `Rectangle`. The `Shape` constructor does all of its stuff to our `Rectangle` object. Since we're calling the constructor directly from the `Shape` class instead of from an instance of it, the `self` parameter isn't already filled in and we have to pass it the `self` that refers to the `Rectangle` object under construction.
+With that weird line, we call the `Shape` constructor and pass it the parameters that are of `Shape` rather than `Rectangle`. The `Shape` constructor does all of its stuff to our `Rectangle` object. Since we're calling the constructor directly with `__init__` instead of using the class name, the `self` parameter isn't already filled in and we have to pass it the `self` that refers to the `Rectangle` object under construction.
 
 So that's pretty cool innit? You can re-use common code between classes with inheritance.
 

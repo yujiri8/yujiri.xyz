@@ -138,7 +138,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `or`, `and`, `not` - in ascending order of how closely they bind
 
-* `<`, `>`, `<=`, `>=` - comparisons that return Bool
+* `==`, `!=`, `<`, `>`, `<=`, `>=` - comparisons that return Bool
 
 * `<>` - comparison that returns Tri
 
@@ -153,8 +153,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 ## Non-looping
 
 ```
-branch
-if cond1
+branch if cond1
 	do_1()
 if cond2
 	do_2()
@@ -163,8 +162,7 @@ else
 ```
 Single statement clauses can be written on the same line with a colon:
 ```
-branch
-if cond1: do_1()
+branch if cond1: do_1()
 if cond2: do_2()
 else: do_default()
 ```
@@ -181,15 +179,13 @@ function(branch if cond1: val1; if cond2: val2; else: val3)
 ```
 `branch` is always necessary so that there's never any ambiguity about whether a lone `if` or `if-else` is part of the preceding `branch` or not. For example:
 ```
-branch
-if cond1: do_1()
+branch if cond1: do_1()
 if cond2: do_2()
 if unrelated_cond: do_thing_that_should_happen_regardless_of_cond1_and_cond2()
 ```
 I don't want to need to indent branches under `branch`, or have an `endbranch` keyword or something. So that last part should just be written as:
 ```
-branch
-if cond1: do_1()
+branch if cond1: do_1()
 if cond2: do_2()
 branch if unrelated_cond: do_thing_that_should_happen_regardless_of_cond1_and_cond2()
 ```
