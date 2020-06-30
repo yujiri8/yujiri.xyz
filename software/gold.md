@@ -2,7 +2,7 @@ TITLE The GOLD Spec
 NAV The GOLD Spec
 TEMPLATE DEFAULT
 
-I've been enamored with the fantasy of making a programming language for a while. Not that I think I ever will, but I like to think about how it would work. I think I've learned a lot from studying very different languages and that I know how to combine the best ideas from all of them. I also think some of my ideas are genuinely original (as far as I've seen) and pretty good. I also think there's some chance someone who *is* in a position to design or influence a language will read this and get my good ideas. So here's the working spec for what I'd consider an ideal language. It's working name is Gold and stands for "Go Over Limits, Doofus".
+I've been enamored with the fantasy of making a programming language for a while. Not that I think I ever will, but I like to think about how it would work. I think I've learned a lot from studying very different languages and that I know how to combine the best ideas from all of them. I also think some of my ideas are genuinely original (as far as I've seen) and pretty good. And there's some chance someone who *is* in a position to design or influence a language will read this and get my good ideas. So here's the working spec for what I'd consider an ideal language. It's working name is Gold and stands for "Go Over Limits, Doofus".
 
 # Basic usage
 
@@ -22,7 +22,7 @@ I've been enamored with the fantasy of making a programming language for a while
 
 * The `ignore` statement in an `err` block means don't throw the error but continue.
 
-* A block indented under `try` has the following (unintended) `err` statement apply to the whole block.
+* An `err` statement after a block indented under `try` applies to the whole block (the `err` statement should not be indented).
 
 Ignore an error:
 ```
@@ -93,7 +93,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `dict[key]` is lookup syntax for a Dict.
 
-* '.' is access syntax for Struct fields. It's also method syntax: there's no difference in definition between a function and a method; any function can be called with the `.` syntax as if it were a method of its first argument.
+* `.` is access syntax for Struct fields. It's also method syntax: there's no difference in definition between a function and a method; any function can be called with the `.` syntax as if it were a method of its first argument.
 
 
 * `[a, b, c, d]` is List syntax.
@@ -108,9 +108,8 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 ## Stylistic stuff
 
-* Trailing commas allowed everywhere
+* When inside parens or a similar character and breaking across lines, you don't need commas:
 
-	Actually, when inside parens or a similar character and breaking across lines, you don't even need commas:
 	```
 	items = [
 		item1
@@ -125,7 +124,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 # Misc
 
-`import module [as name]` tell the language about another file that needs to be loaded. The module name can be the name of a package to find in a library directory, or a filesystem path.
+`import module [as name]` tells the language about another file that needs to be loaded. The module name can be the name of a package to find in a library directory, or a filesystem path.
 
 `exit Int` - exit the process with the given status.
 
@@ -203,7 +202,7 @@ while condition
 	statement()
 ```
 
-`for counter, item from items where criterion` - iterates on elements of `items` where `criterion` evaluates to `true`, binding the element and the iteration counter to `item` and `counter`. *Counter is not incremented when an item is skipped due to failing the criterion. If you want it to still increment, filter using a `continue` statement instead of the `where` clause in the loop header.*
+`for counter, item from items where criterion` - iterates on elements of `items` where `criterion` is `true`, binding the element and the iteration counter to `item` and `counter`. *Counter is not incremented when an item is skipped due to failing the criterion. If you want it to still increment, filter using a `continue` statement instead of the `where` clause in the loop header.*
 
 `break` and `continue` can take an arg that says how many levels of loop out to go.
 
@@ -230,7 +229,7 @@ double_num = num =>
 
 # Default value
 greet = (name = "Anon") =>
-	print "Hi, " ++ name ++ "!"
+	print "Hi, " + name + "!"
 ```
 
 # Types

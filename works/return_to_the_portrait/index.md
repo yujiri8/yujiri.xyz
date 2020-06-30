@@ -26,18 +26,18 @@ The unzipped source is [on Github](https://github.com/yujiri8/rttp).
 
 ## Retrospective
 
-I spent over a year on this. It was a rough one with this and everything else in my life fighting for attention. I had a bad habit of putting too many things on my plate without thinking it through, but this might've taught me a lesson for good. At some points I wondered if it was a mistake to start this. Once I even considered dropping it. I can't express how ecstatic I am to be "free" from RTTP (that's really how I felt about it at times), and finally able to really pursue other projects, but I'm glad I stuck at it. This is an accomplishment I'll remember.
+I spent over a year on this. It was a rough one with this and everything else in my life fighting for attention. I had a bad habit of putting too many things on my plate without thinking it through, but this might've taught me a lesson for good. At some points I wondered if it was a mistake to start this. Once I even considered dropping it. I can't express how ecstatic I was to be "free" from RTTP (that's really how I felt about it at times), and finally able to really pursue other projects, but I'm glad I stuck at it. This is an accomplishment I'll remember.
 
-RTTP definitely taught me *a lot* about storytelling. I'd like to write about some of the wisdom I've gained from the pains, though I'm not sure when I'll get around to that. It also gave me enough experience with Renpy to be qualified to [review it](/software/renpy).
+RTTP taught me *a lot* about storytelling. I'd like to write about some of the wisdom I've gained from the pains, though I'm not sure when I'll get around to that. It also gave me enough experience with Renpy to be qualified to [review it](/software/renpy).
 
 I wrote [a self-critique](critique).
 
 ## Assets 4 u!
-
-Also... I spent $791 comissioning assets, so [donations](https://paypal.me/yujiri) would be very much appreciated :P
 
 Most of the art I comissioned is Creative Commons Attribution, which means you can also use it in your own DDLC mods! Just credit me for shellin' it out for 'em and the artist I shelled out to:
 
 * <span class="spoiler">Linda, Libitina, Albert, and Adam</span>'s sprites are by [Plural Roses](https://reddit.com/u/15LarueA) (PluralRoses#0136). Also <span class="spoiler">the warehouse interior water pit room (not the room at the back with the machinery)</span>. For the characters, I also edited them somewhat. They're divided into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool.
 
 * <span class="spoiler">Cult facility and warehouse exterior</span> backgrounds are by [TomTC](https://deviantart.com/tomtc). These ones also have the non-derivative term, so derivatives aren't allowed.
+
+Also... I spent $791 comissioning these assets, so [donations](https://paypal.me/yujiri) would be very much appreciated :P
