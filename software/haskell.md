@@ -23,7 +23,7 @@ So while I'm nowhere near Haskell mastery and don't know if I ever will be, I'm 
 
 <h1 class="good">Interactive AND compiled</h1>
 
-When I found out that there was a language that both compiles to native code and has an interactive prompt, I seriously started to anticipate that I'd end up thinking Haskell was the nigh-perfect language and I'd never need to use anything else (besides necessities like C and [Javascript](https://yujiri.xyz/software/javascript)). In this regard at least, Haskell really is the best of both worlds between Go and Python.
+When I found out that there was a language that both compiles to native code and has an interactive prompt, I seriously started to think I'd stumbled onto the perfect language. In this regard at least, Haskell really is the best of both worlds between Go and Python.
 
 <h1 class="good">The type system</h1>
 
@@ -75,7 +75,7 @@ In theory, you shouldn't need to log in a pure function because you can compose 
 
 <h1 class="bad">Package management is a nightmare</h1>
 
-I'm afraid this is another "it's bad because I don't understand it" criticism, but Haskell's package management experience is just a nightmare. There are several different pieces of software involved: `ghc-pkg`, [Cabal](https://www.haskell.org/cabal/), [cabal-install](https://wiki.haskell.org/Cabal-Install) (which is a separate package from Cabal), [Stack](https://docs.haskellstack.org), [hpack](https://github.com/sol/hpack#readme), and ([the Haskell Platform](https://www.haskell.org/platform/) seems to just bundle a few of those things). All (besides hpack which I haven't used) are poorly documented and seem to freak out with inexplicable behavior at random times (by which I mean, *every* time).
+I'm afraid this is another "it's bad because I don't understand it" criticism, but Haskell's package management experience is just a nightmare. There are several different pieces of software involved: `ghc-pkg`, [Cabal](https://www.haskell.org/cabal/), [cabal-install](https://wiki.haskell.org/Cabal-Install) (which is a separate package from Cabal), [Stack](https://docs.haskellstack.org), and [hpack](https://github.com/sol/hpack#readme) ([the Haskell Platform](https://www.haskell.org/platform/) seems to just bundle a few of those things). All (besides hpack which I haven't used) are poorly documented and seem to freak out with inexplicable behavior at random times (by which I mean, *every* time).
 
 The most obvious solution is just to use cabal-install with GHC directly. Unfortunately, cabal-install is a capricious demon that hates coders and exists to confound them and inflict depression. Sometimes I get errors saying an import is ambiguous because there are two packages it could refer to... and they're the same version of the same package. Sometimes I can import something in the REPL but not build with it. Sometimes I finally get a package to work and then the next day I can't import it because "the package is hidden", and I have no idea what I changed. [`ghc-pkg expose` isn't the solution either](https://www.haskell.org/cabal/FAQ.html#hidden-packages-b). All the time I run into situations where it seems like the only way to fix a problem is to delete and reinstall everything Haskell-related.
 

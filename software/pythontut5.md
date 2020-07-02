@@ -387,7 +387,7 @@ For now, feel free to just have the computer make random moves if you want. But 
 
 Also, make sure the player doesn't have to restart the program to play again! It should offer to play again after the game. I recommend putting that `ask_bool` function in a `util` module and importing it. Another place it would be good to use is for asking the player whether they want to move first.
 
-This is gonna be tough. My solution is almost 130 lines, not counting the `ask_bool` function I import! (Though it's heavy on comments.) Remember, if you get stumped by an error, the timeless debugging technique of insering `print` statements near places you suspect might be responsible to find out if variables aren't what you thought they were. And use functions everywhere you see fit. I ended up with 6 of them, not counting `ask_bool`.
+This is gonna be tough. My solution is 92 lines of code, not counting the `ask_bool` function I import! (Though it's heavy on comments.) Remember, if you get stumped by an error, the timeless debugging technique of insering `print` statements near places you suspect might be responsible to find out if variables aren't what you thought they were. And use functions everywhere you see fit. I ended up with 6 of them, not counting `ask_bool`.
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
@@ -520,6 +520,6 @@ while True:
 
 </expand-note>
 
-I left it out of the main project because it's not essential practice for learning functions, but it's certainly a good exercise, and not as difficult as it sounds if you plan out and pseudocode the AI's strategy before you jump into it. If you feel like it, keep the old random AI function around and name them `random_ai_move` and `smart_ai_move` or something, and let the player pick which one they want to face! (You could have a local variable `ai_move` inside `play`, and set it to `random_ai_move` or `smart_ai_move` after the player picks.)
+Once you've done that: want to try improving the AI so it can't lose? I left it out of the main project because it's not essential practice for learning functions, but it's certainly a good exercise, and not as difficult as it sounds if you plan out and pseudocode the AI's strategy before you jump into it. If you feel like it, keep the old random AI function around and name them `random_ai_move` and `smart_ai_move` or something, and let the player pick which one they want to face! (You could have a local variable `ai_move` inside `play`, and set it to `random_ai_move` or `smart_ai_move` after the player picks.)
 
 [Next lesson: Exceptions and IO](pythontut6)

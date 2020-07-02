@@ -42,6 +42,7 @@ And that's what's so important about lists: they're mutable.
 ```
 >>> nums = [1, 2, 4]
 >>> nums[0] = 1.5
+>>> nums
 [1.5, 2, 4]
 ```
 So you might be wondering why you would ever use tuples. Well, there are at least two reasons you might want your data structures to be immutable. One is if the data is supposed to be a constant, and any modification of it would certainly be a mistake. You might want to just make the list immutable to make sure you don't accidentally modify it. <span class="note">Some languages offer a general way of making it impossible to change a variable, but Python does not.</span> (Immutable data types also have better performance if you aren't going to modify them.) The other big reason is to avoid shared reference.
@@ -80,8 +81,7 @@ It changed both! That's because there was actually only ever one list. `words` w
 But then there's this finding:
 ```
 >>> words = ['hi', 'hello']
->>> words2 = words
->>> words2 = words2 + ['hey']
+>>> words2 = words + ['hey']
 >>> words
 ['hi', 'hello']
 >>> words2

@@ -48,15 +48,15 @@ Obviously, different languages have different concepts to teach, so adhering exa
 4. Shared reference and mutability, lists and dicts; and methods of sequence types
 5. Functions and imports
 6. Exception crap and file IO
-7. Classes (this is as far as I've finished it)
-8. Generators, comprehensions, context managers, and other informal interfaces (like iteration)
+7. Classes
+8. Generators, comprehensions, context managers, and other informal interfaces (this is as far as I've finished it)
 9. Some discussion of real-world applications, and probably a preliminary dive with a GUI app using a toolkit like GTK, TCP chat server, or similar project
 
 I thought it through carefully and I'm convinced it's a pretty good order, but hey, my tutorial's still lacking in feedback, so I'd much appreciate it if you'd go check it out (especially if you're a beginner).
 
 [The official Python tutorial](https://docs.python.org/3/tutorial/index.html) has a fairly similar structure to mine, but I think it's a bad move to introduce lists, indexing and slicing, the `end` parameter of `print`, and *raw strings* (seriously how often do we use those? I didn't even know about them until after years of knowing Python) before the basic `if`/`else` structure. And worst of all they teach the source encoding directive before pretty much any actual code. That's a baffling decision for a tutorial whose intro suggests it's supposed to be for people new to programming. I've still never found an occasion to use that.
 
-The book that taught me, Michael Dawson's [Python Progrmaming for the Absolute Beginniner](https://www.amazon.com/Python-Programming-Absolute-Beginner-3rd/dp/1435455002), is also pretty similar to mine (I took some inspiration from it). I could make a few criticisms of its structure (comments and line continuations discussed before variables, string methods before `if`), but it's a good book.
+The book that taught me, Michael Dawson's [Python Programming for the Absolute Beginner](https://www.amazon.com/Python-Programming-Absolute-Beginner-3rd/dp/1435455002), is also pretty similar to mine (I took some inspiration from it). I could make a few criticisms of its structure (comments and line continuations discussed before variables, string methods before `if`), but it's a good book.
 
 [Learn You A Haskell](http://learnyouahaskell.com/chapters) is a fairly good one (my only huge gripe is, again, how long it defers text input). Haskell is a very different language (pure functional / lazy), so it goes like (it has a much longer chapter length than most other tutorials):
 

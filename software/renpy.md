@@ -5,7 +5,7 @@ DESC Most of Renpy's DSLs are confusing and full of as many arbitrary restrictio
 
 # How Renpy and I met
 
-[Renpy](https://renpy.org) is a visual novel engine. I got into after playing [Doki Doki Literature Club](/reviews/ddlc), which is made with it. DDLC is far and away the best story I've ever seen and had such a huge impact on me than it was the first game I ever played mods for. There's a large modding community and they've come up with some really great extensions to the story. After playing a few (I got lucky and tried most of the best ones first), I was finally motivated to make one myself.
+[Renpy](https://renpy.org) is a visual novel engine. I got into it after playing [Doki Doki Literature Club](/reviews/ddlc), which is made with it. DDLC is far and away the best story I've ever seen and had such a huge impact on me than it was the first game I ever played mods for. There's a large modding community and they've come up with some really great extensions to the story. After playing a few (I got lucky and tried most of the best ones first), I was finally motivated to make one myself.
 
 Hence came [MC's Revenge](/kaliruk/mc_revenge), a project I picked up from another modder who abandoned it for adoption. I finished MCR and the reception was good, so not long later I took up a much larger project that I'd actually been planning while I was making MCR, [Return To The Portrait](/kaliruk/return_to_the_portrait).
 

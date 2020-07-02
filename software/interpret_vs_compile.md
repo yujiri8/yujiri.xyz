@@ -11,7 +11,7 @@ I know some interpreted languages, some compiled languages, and some that can do
 
 * No danger of accidentally not rebuilding after a change and running the old binary. Much debugging time has been lost to that.
 
-* Portability. The same code can run on any operating system that has the interpreter. With a compiled language, different platforms get different binaries.
+* Portability. The same code can run on any operating system that has the interpreter. With a compiled language, different platforms need different binaries.
 
 I used to also think interpreters had the benefit of not needing a separate compile step before running. But that's not true. Most compilers have an option to build and then run (and not save the built executable) with one command, and even if they didn't, it would be trivial to write a shell function for it.
 

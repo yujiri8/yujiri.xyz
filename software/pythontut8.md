@@ -163,7 +163,7 @@ Well, actually, `map` and `filter` don't deal with sequences directly in Python,
 ```
 And `filter` works like this:
 ```
->>> for num in map(lambda n: n > 5, range(1, 10)):
+>>> for num in filter(lambda n: n > 5, range(1, 10)):
 ...  print(num)
 6
 7
@@ -207,7 +207,7 @@ with open('text.txt') as f:
 	contents = f.read()
 # more code...
 ```
-That's all it takes - the file will be automatially closed after the `with` block.
+That's all it takes - the file will be automatically closed after the `with` block.
 
 The way it works is:
 
@@ -223,7 +223,7 @@ SQL database connections are another thing that usually implements the context m
 
 We haven't dealt with the `bytes` type yet. In Python, strings are [unicode](https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/) by default, as they're meant for representing text, not binary data. You'll get an error if you try to read the contents of a non-text file (like an image). To accomplish that, you need to know about `bytes`, which is a type that's basically the same as `str` except it's meant for dealing with binary data.
 
-The syntax for bytes literals is putting `b` before the quote. `b'hello' is the same as 'hello'` excepts it's bytes instead of string. For converting between bytes and string, you can use `bytes.decode` and `str.encode`:
+The syntax for bytes literals is putting `b` before the quote. `b'hello' is the same as 'hello'` except it's bytes instead of string. For converting between bytes and string, you can use `bytes.decode` and `str.encode`:
 ```
 >>> text = 'hello'
 >>> binary = b'hello'
@@ -339,7 +339,7 @@ def f(num):
 ```
 Then you'll see that help text in pydoc.
 
-Some of the info you see in pydoc has to do with super advanced stuff about how Python's memory management works under the hood (like the `__weakref__` attribute it usually lists on classes), so feel free to ignore things you don't understand. It also makes use of type annotations, and a feature I haven't explored: you know how function arguments can be passed positionally or by name? Well, they decided there should be a way to define a function so that certain parameters *must* to be passed by position and certain ones *must* be passed by name. I think it's a questionable feature, but you'll see the syntax in pydoc, and the spec for it is [PEP 570](https://www.python.org/dev/peps/pep-0570/#syntax-and-semantics).
+Some of the info you see in pydoc has to do with super advanced stuff about how Python's memory management works under the hood (like the `__weakref__` attribute it usually lists on classes), so feel free to ignore things you don't understand. It also makes use of type annotations, and a feature I haven't explored: you know how function arguments can be passed positionally or by name? Well, they decided there should be a way to define a function so that certain parameters *must* be passed by position and certain ones *must* be passed by name. I think it's a questionable feature, but you'll see the syntax in pydoc, and the spec for it is [PEP 570](https://www.python.org/dev/peps/pep-0570/#syntax-and-semantics).
 
 ---
 

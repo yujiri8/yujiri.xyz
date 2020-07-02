@@ -113,9 +113,9 @@ NameError: name 'blah' is not defined
 ```
 For now, don't worry about the line `Traceback (most recent call last):` - we won't get into what that means until much later in this series. The second line shows you the name of the file your program was saved to, or `<stdin>` if you were just in the prompt (It stands for 'standard input', and I [explain the concept](unix_streams) in my Unix tutorial track, but that's not important here); the line number that caused the error (or 1 if you're in the prompt); and the `in <module>` part is another thing you don't need to worry about until much later when we start working with modules.
 
-The most important line is the last one, which shows what the actual problem is. There are a lot of different kinds of errors, but here are some of the most common ones:
+The most important line is the last one, which shows what the actual problem is. Here are some of the most common kinds of errors:
 
-* `SyntaxError` means your code was malformed and Python didn't know to parse it. You'll get this if you forget the closing quote on a string, try to use a function without parentheses or write a nonsenical line like `a =`. Syntax errors are the only kind that will be caught as soon as you try to run the program - with other kinds of errors, Python won't know there's a problem until it gets to the line that has it, so you'll see the program execute up to that point and then crash. (As a result, syntax errors don't show the "`Traceback (most recent call last):`" line.)
+* `SyntaxError` means your code was malformed and Python didn't know to parse it. You'll get this if you forget the closing quote on a string, try to use a function without parentheses or write a nonsenical line like `a =`. Syntax errors are the only kind that will be caught as soon as you try to run the program, since with other kinds of errors, Python won't know there's a problem until it gets to the line that has it, so you'll see the program execute up to that point and then crash. (As a result, syntax errors don't show the "`Traceback (most recent call last):`" line.)
 
 * `NameError` of course is what you get when you use a variable you didn't define. The most common cause of this is typo (again, unless you're a way more accurate typist than me).
 
