@@ -208,7 +208,7 @@ Fails with `not enough arguments in call to f1` and `multiple-value f2() in sing
 
 <h3 class="bad">No inline branching</h3>
 
-Go doesn't a conditional operator or any other type of control-flow-as-expression. I've been in a lot of situations, like with CSV, where I have a long row of values:
+Go doesn't have a conditional operator or any other type of control-flow-as-expression. I've been in a lot of situations, like with CSV, where I have a long row of values:
 ```
 	field1,
 	field2,
@@ -300,7 +300,7 @@ And this is unfortunately one of the areas where `go fmt` doesn't have an opinio
 
 <h3 class="bad">Different int types can't be used together without explicit conversion</h3>
 
-you can't do math with an `int` and an `int32` or `int64` together, you can't even compare them. It doesn't seem like there's any way in which "is this int32 less than or greater than this int64" is an unmeaningful or unclear question. I've had to write simple math expressions of the form `intVar = round(otherIntVar * float32Var)` but needed three type casts: `intVar = int(math.Round(float64(otherIntVar) * float64(float32Var)))`, and ended up having to span multiple lines. I think a little type coercion is warranted here.
+You can't do math with an `int` and an `int32` or `int64` together, you can't even compare them. It doesn't seem like there's any way in which "is this int32 less than or greater than this int64" is an unmeaningful or unclear question. I've had to write simple math expressions of the form `intVar = round(otherIntVar * float32Var)` but needed three type casts: `intVar = int(math.Round(float64(otherIntVar) * float64(float32Var)))`, and ended up having to span multiple lines. I think a little type coercion is warranted here.
 
 [The Go FAQ](https://golang.org/doc/faq#conversions) discusses this too. Their first point doesn't apply to `int32` with `int64`, the next two also wouldn't be problems for this case since an `int32` always fits in an `int64`, and the concerns about the compiler are probably valid. I don't think it's necessarily a mistake they've made that they haven't implemented this feature, but the fact is that *only* burdens the compiler and not the usability of the language. And my points here are supposed to be about how worth using the language is rather than how smart its designers were (see how I mentioned the ecosystem which obviously isn't a trait of the language itself).
 

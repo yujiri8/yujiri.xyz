@@ -92,7 +92,7 @@ Since I found out about f-strings (which wasn't until after [Javascript](https:/
 
 <h3 class="good">Keyword arguments</h3>
 
-Another handy little feature that improves readability and plays well with default arguments. Keyword arguments provide the clarity on the calling side of an argument dictionary without losing the clarity on the function side of listing the parameters in the unction header, and without the syntactic noise of braces and quotes.
+Another handy little feature that improves readability and plays well with default arguments. Keyword arguments provide the clarity on the calling side of an argument dictionary without losing the clarity on the function side of listing the parameters in the function header, and without the syntactic noise of braces and quotes.
 
 <h3 class="good"><code>breakpoint</code></h3>
 
