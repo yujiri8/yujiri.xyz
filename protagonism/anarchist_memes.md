@@ -25,9 +25,6 @@ Cops versus mercenaries, which is worse?
 Everyone's favorite popular strawman of anarchism:
 <img loading="lazy" src="memes/crime_strawman.jpg" alt="memes/crime_strawman.jpg">
 
-Alternate version:
-<img loading="lazy" src="memes/nap_not_pacifism.jpg" alt="memes/nap_not_pacifism.jpg">
-
 Believe it or not, I've actually heard statists accuse us of supporting slavery on several occasions.
 <img loading="lazy" src="memes/slavery_strawman.jpg" alt="memes/slavery_strawman.jpg">
 
@@ -45,15 +42,11 @@ Believe it or not, I've actually heard statists accuse us of supporting slavery 
 
 <img loading="lazy" src="memes/force_others_to_give_you_money.jpg" alt="memes/force_others_to_give_you_money.jpg">
 
-<img loading="lazy" src="memes/greed.jpg" alt="memes/greed.jpg">
-
 <img loading="lazy" src="memes/background_checks.jpg" alt="memes/background_checks.jpg">
 
 <img loading="lazy" src="memes/guncontrol.jpg" alt="memes/guncontrol.jpg">
 
 <img loading="lazy" src="memes/voting_asymmetry.jpg" alt="memes/voting_asymmetry.jpg">
-
-<img loading="lazy" src="memes/make_it_mandatory.jpg" alt="memes/make_it_mandatory.jpg">
 
 <img loading="lazy" src="memes/outlaw_all_the_things.jpg" alt="memes/outlaw_all_the_things.jpg">
 
