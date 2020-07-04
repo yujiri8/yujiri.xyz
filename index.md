@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 3:**
+Added [FreeBSD source code is bullshit](software/unix_src).
+
 **June 30:**
 I posted [part 8 of The Concise Python Tutorial](software/pythontut8).
 

@@ -400,6 +400,7 @@ https://yujiri.xyz/software/sqlite
 https://yujiri.xyz/software/tests
 https://yujiri.xyz/software/unix_manual
 https://yujiri.xyz/software/unix_permissions
+https://yujiri.xyz/software/unix_src
 https://yujiri.xyz/software/unix_streams
 https://yujiri.xyz/software/why_program
 https://yujiri.xyz/software/why_root
