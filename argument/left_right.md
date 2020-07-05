@@ -1,6 +1,7 @@
 TITLE The real meaning of political "left" and "right"
 NAV The real meaning of political left and right
 TEMPLATE DEFAULT
+DESC It might be helpful to pinpoint exactly what ideas are being conflated in left-right.
 
 I've long said that the terminology of "left/liberal/democrat versus right/conservative/republican" in American politics bugs me because each side of that alleged spectrum isn't a single idea, but a random amalgamation of unrelated ideas artificially lumped together.
 
