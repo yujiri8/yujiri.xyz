@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 5:**
+Added [Dialog practice: best and worst lines in Star Wars](fiction/dialog_star_wars).
+
 **July 3:**
 Added [FreeBSD source code is bullshit](software/unix_src).
 
