@@ -16,7 +16,7 @@
 
 * **DNS**: a TXT record on @ of `v=spf1 a:yujiri.xyz ~all` is required to make email delivery work.
 
-* Unrelated to the website, the server also runs a Tor node.
+* Unrelated to the website, the server also runs a Tor node and an [Yggdrasil](https://yggdrasil-network.github.io) node.
 
 # Instructions
 
