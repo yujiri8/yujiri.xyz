@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3.7
+
 from sqlalchemy import create_engine, Column, ForeignKey, Integer, String, DateTime, Boolean, ARRAY
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship

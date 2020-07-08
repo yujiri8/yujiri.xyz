@@ -22,9 +22,9 @@
 
 `srv/scripts/install1.sh` does the first half of the setup. The certificate must be deployed before running `srv/scripts/install2.sh`.
 
-Individual commands for development and maintenance:
+Individual commands:
 
-* `srv/scripts/install-cfg.sh` installs nginx and paladin configs.
+* `srv/scripts/install-cfg.sh` installs config files.
 
 * `srv/scripts/tmpl.py -r` traverses the source dir and fills the entire output dir appropriately.
 
@@ -33,6 +33,12 @@ Individual commands for development and maintenance:
 * `npm run d` builds the JS and installs it to the dev dir.
 
 * `npx webpack` builds the JS without installing anywhere.
+
+* `srv/srv/db.py <dbname> create` creating tables. (The database itself must exist.)
+
+* `srv/srv/db.py <dbname> reset` resets a database (destroying existing data).
+
+* `python3.7 -i srv/srv/db.py <dbname>` opens the REPL with the ORM ready for use.
 
 # Renew wildcard cert
 
