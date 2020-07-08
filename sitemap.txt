@@ -393,6 +393,7 @@ https://yujiri.xyz/software/readability
 https://yujiri.xyz/software/renpy
 https://yujiri.xyz/software/root
 https://yujiri.xyz/software/safety_choice
+https://yujiri.xyz/software/tab_completion
 https://yujiri.xyz/software/tool_saving_time
 https://yujiri.xyz/software/top_menu
 https://yujiri.xyz/software/tutorial_structure

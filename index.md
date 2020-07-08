@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 7:**
+Added [Breadth-first versus depth-first autocompletion](software/tab_completion).
+
 **July 5:**
 Added [Dialog practice: best and worst lines in Star Wars](fiction/dialog_star_wars).
 
