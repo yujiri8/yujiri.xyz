@@ -19,11 +19,11 @@ fish's best features all work out of the box: syntax highlighting, history-based
 
 Other shells I've used can only autocomplete a filename if you type the start of it. fish's autocompletion is more advanced. From what I can tell, the algorithm is:
 
-* If what you've typed matches the beginning of any filenames, autocomplete to that one or the biggest prefix common to all of them. If there's no prefix common to all of them after what you've typed, fallthrough to next rule.
+* If what you've typed matches the beginning of any filenames, autocomplete to that one or the biggest prefix common to all of them. If there's nothing that starts with what you've typed, proceed to the next rule.
 
-* If what you've typed matches a contiguous part of any filename, even if it's not at the beginning, autocomplete to that one, or if there's more than one, fallthrough.
+* If what you've typed matches a contiguous part of exactly one filename, even if it's not at the beginning, autocomplete to that one. If no matches, proceed to the next rule.
 
-* If any filenames contain the characters you've typed in order, try to autocomplete to that one, or if there's more than one, fail.
+* If exactly one filename contains the characters you've typed in order, autocomplete to that one.
 
 This means if you have a number of files that start with the same few characters, you can skip that part and just type the first letter or two that's different. In another shell, you'd have to type at least the first character of the common part and autocomplete that first.
 

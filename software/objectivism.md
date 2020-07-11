@@ -3,7 +3,7 @@ NAV Objectivism in software
 TEMPLATE DEFAULT
 DESC There IS such thing as a "better" language, tool, or framework; stop dismissing it with "they're just different".
 
-There are [a lot](https://dev.to/imohd23/comment/lldh) [of people](https://dev.to/cyberhck/comment/l1hg) in the software community who express the attitude that neither of two things - be them languages, tools, frameworks, or style conventions - is better or worse; they're "just different". Sometimes they'll [go as far as to say](https://devrant.com/rants/2416266/why-do-people-compare-languages-like-c-vs-java-c-vs-python-c-vs-elixir-all-langu) "People compare languages because they are retarded really" (it's in the comments there).
+There are [a lot](https://dev.to/imohd23/comment/lldh) [of people](https://dev.to/cyberhck/comment/l1hg) in the software community who express the attitude that neither of two things - languages, tools, frameworks, or style conventions - is better or worse; they're "just different". Sometimes they'll [go as far as to say](https://devrant.com/rants/2416266/why-do-people-compare-languages-like-c-vs-java-c-vs-python-c-vs-elixir-all-langu) "People compare languages because they are retarded really" (it's in the comments there).
 
 Obviously, non-vertical differences are huge in software. There are tons of ways two things can be better for different situations. But there are also, undeniably, ways a tool or language can just be better than another in general (not to say *strictly* better, but better *overall*, and to a large enough extent that the other [should be abandoned](https://yujiri.xyz/software/kill_software)).
 
