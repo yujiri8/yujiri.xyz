@@ -10,7 +10,7 @@ One major trait I think is legitimately horizontal is interpretation versus comp
 
 * Static typing with inheritance and generics but no sum types or type inference. Type systems missing those features are a hindrance at times, but as long as it has the first two, I consider it a clear (and massive) plus over no type checking. I've lost too much time in my life to dynamic typing to not believe it's a terrible thing. I believe a type system done right is rarely or never a hindrance and enormously beneficial.
 
-* [Exceptions](https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/) (ie. errors throw unless explicitly caught) (but not `else`/`finally`)
+* [Exceptions](https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/) (ie. errors throw unless explicitly caught) and reliable stack traces (but not `else`/`finally`)
 
 * Basic sequence operations: search, insert, remove by index, remove by value, sort, reverse. Most of these should be doable without convoluted expressions like `items = items[:i] + new_item + items[i:]`. Doing *all* of them concisely counts as above the baseline.
 

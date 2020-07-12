@@ -15,7 +15,7 @@ Object syntax is so much easier to work with than in any other language I've see
 
 <h2 class="good">Interactive</h2>
 
-This might actually be a somewhat unfair praise as I said I wouldn't bring up DOM APIs and this is only the case in the browser, not [Node](https://nodejs.org), as far as I know. But I don't think it counts as DOM APIs. Due to the nature of browser devtools, it's an out-of-the-box feature to be able to use Javascript interactively while the page is running. Even Python's interactive mode doesn't do *that*.
+This might actually be a somewhat unfair praise as I said I wouldn't bring up DOM APIs and this is only the case in the browser, not [Node](https://nodejs.org), as far as I know. But I don't think it counts as DOM APIs. Due to the nature of browser devtools, it's an out-of-the-box feature to be able to use Javascript interactively while the page is running. Even [Python](https://yujiri.xyz/software/python)'s interactive mode doesn't do *that*.
 
 On the other hand, the type correction features most browsers' devtools foist on you are disgusting. When I'm typing a name it always opens a suggestion box that covers the rest of the command history if there's any name defined that starts with what I have, and it fucking rebinds the enter key to "accept suggestion" (not tab for some god-forsaken reason), so I get hoodwinked by that on a regular basis. Worst of all, typing out the full name of a suggestion doesn't make the box go away, so I have to press enter twice if I'm ending a statement with a defined name.
 

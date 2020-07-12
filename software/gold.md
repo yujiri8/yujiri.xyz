@@ -120,7 +120,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * lower_snake_case for variable and function names, SCREAMING_SNAKE_CASE for constants, UpperCamelCase for type and maybe module names.
 
-* Tabs for indentation
+* Tabs for indentation. Set your editor to display them as 4 spaces so you don't have to pull your hair out.
 
 # Misc
 
@@ -293,7 +293,7 @@ enum Color
 	"green"
 	"yellow"
 ```
-Color is inferred to be an enum of String. So a context that requires a Color will accept a String variable, but error at runtime if it isn't one of these values.
+Color is inferred to be an enum of String, so it can be casted to string without a converter function.
 
 The enum values can also be given names:
 ```
