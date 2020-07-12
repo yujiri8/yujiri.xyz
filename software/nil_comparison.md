@@ -25,7 +25,7 @@ But eventually they get to their "Side by Side Comparison - Ruby vs Python in Ta
 >
 > Python is an interpreted high-level programming language for general purpose programming.
 
-These descriptions amount to exactly the same thing (when you fill in that Python is also object-oriented and reflective and Ruby is also high-level), but they're worded very differently which gives the impression that they're saying something different. Terrible considering how the article seems to be aimed at novices, who wouldn't be able to tell that these descriptions are identical.
+These descriptions amount to exactly the same thing (when you fill in that Python is also object-oriented, dynamic and reflective and Ruby is also high-level and interpreted), but they're worded very differently which gives the impression that they're saying something different. Terrible considering how the article seems to be aimed at novices, who wouldn't be able to tell that these descriptions are identical.
 
 > ### Designer
 >
@@ -45,11 +45,11 @@ Nobody cares!
 
 > ### Data Types
 >
->Ruby has data types such as numbers, strings, arrays, hashes.
+> Ruby has data types such as numbers, strings, arrays, hashes.
 >
 > Python has data types such as numbers, strings, lists, dictionaries, tuples.
 
-Why list the ones they both have?!? You didn't write that they both have Booleans, so why write that they both have numbers and strings? At least this one mentions *some* meaningful difference.
+Why list the ones they both have?!? You didn't write that they both have Booleans, so why write that they both have numbers and strings? And why use different names for the same types? There is *one* legitimate difference here, but to someone who didn't already know it, it probably wouldn't even be obvious which one (especially because Python uses the word *tuple* to mean something completely different from what it means in other languages).
 
 > ### Switch/Case
 >
@@ -95,26 +95,4 @@ Again, this one sounds meaningful, although it requires me to look up elsewhere 
 
 When I look up a comparison of two languages, I'm asking what the difference in ideology is. An excellent quote from Paul Graham is ["Languages are half technology and half religion"](http://www.paulgraham.com/avg.html). No one cares what the name of the import keyword is. How does the language think about problems?
 
-I can't speak on Python vs Ruby because I don't know Ruby, but as an example, here are some meaningful comparisons between [Python](https://yujiri.xyz/software/python) and [Javascript](https://yujiri.xyz/software/javascript) (both dynamically typed interpreted languages, so like Python and Ruby they have more in common than not):
-
-* Browsers execute Javascript.
-
-* Relatedly, Javascript is designed around the concept of a single-threaded event loop. Python does also have the GIL that makes it effectively single-threaded for CPU-bound purposes, `async`, `await`, and the `asyncio` module, but the event loop isn't the primal, intrinsic concept it is in Javascript. For one example, Javascript doesn't even have a built-in equivalent to `time.sleep`, since that's a blocking operation, but you can implement one with `setTimeout` and promises.
-
-* A lot of things that are runtime errors in Python are silent in Javascript, such as assigning past the end of an array or passing the wrong number of argments to a function. Javascript also does implicit type conversions in many cases that should be TypeErrors. (Let's be honest, there's absolutely no defending `[] - {}` being `NaN`.)
-
-* Python has much better built-in support for common array operations: negative indexing, slice syntax, etc.
-
-* Javascript's standard library is much weaker.
-
-* Javascript has variable declarations (`const`, `let`, and `var`).
-
-* Javascript has some handy functional programming facilities Python doesn't, particularly arrow functions.
-
-* Python supports passing parameters by name.
-
-* Python has comprehensions.
-
-And I make no apology for being obviously non-neutral; these two [just aren't equally good](https://yujiri.xyz/software/objectivism).
-
-The takeaway: if you ever write a comparison of two languages or tools, compare what actually matters, not the names of keywords and the file extensions!
+I can't speak on Python vs Ruby because I don't know Ruby, but as an example, [this comparison of OCaml and Standard ML](http://adam.chlipala.net/mlcomp/) is sparkling. It's lengthy, but even if you limited it to the length of this Ruby versus Python article, it cites and explains all sorts of meaningful differences in syntax, semantics, type system, tooling, and module system instead of wasting your time.
