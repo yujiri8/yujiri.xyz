@@ -4,10 +4,8 @@ import os, pwd
 
 def markdown(text):
 	"""Processes both markdown and the <spem> tag."""
-	# stop bookmarklet links sneaking in via Markdown,
-	# and fix the order of the tags in <pre><code> blocks.
+	# Fix the order of the tags in <pre><code> blocks.
 	return spemtag(mistune.markdown(text) \
-		.replace('<a href="javascript:', '') \
 		.replace('<pre><code>', '<pre class="code">') \
 		.replace('</code></pre>', '</pre>'))
 
