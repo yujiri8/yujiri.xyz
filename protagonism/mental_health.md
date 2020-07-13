@@ -1,6 +1,7 @@
 TITLE The Dangerous Propaganda of "Mental Health"
 NAV "Mental health"
 TEMPLATE DEFAULT
+DESC The things considered "mental disorders" are mostly value judgements.
 
 "Mental health" is a very vague and dangerous phrase. We [know from reason](metaphysics) that the mind is a separate entity from the brain or any other piece of matter and cannot be "handicapped" or "sick" in the way the body can, so we should be very suspicious from the get-go when someone uses this term. It suggests a sort of intrinsic deficiency, something different in kind from just emotional problems.
 
