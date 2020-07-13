@@ -1,11 +1,9 @@
 TITLE Rebuttal to "The Ethical Notions of Personhood and Savagery"
 NAV Rebuttal: The Ethical Notions of Personhood and Savagery
 TEMPLATE DEFAULT
-DESC No, sufficiently evil people are not "not people". It's just an emotional bias.
+DESC No, sufficiently evil people are not "not people". That's just emotional nonsense.
 
-Rebuttal target:
-<a rel="nofollow" href="https://www.zerothposition.com/2017/09/20/ethical-notions-personhood-savagery/">
-The Ethical Notions of Personhood and Savagery, by Insula Qui on Zeroth Position</a>
+Rebuttal target: <a rel="nofollow" href="https://www.zerothposition.com/2017/09/20/ethical-notions-personhood-savagery/">The Ethical Notions of Personhood and Savagery, by Insula Qui on Zeroth Position</a>
 
 ---
 
