@@ -24,6 +24,7 @@ async def get_comments(reply_to = '', id: int = 0, raw: bool = False, env = Depe
 	# Case 2: a specific comment requested.
 	elif id:
 		comment = env.db.query(Comment).get(id)
+		if not comment: raise HTTPException(status_code = 404)
 		return comment.dict(env.db, user = env.user, raw = raw)
 	else:
 		raise HTTPException(status_code = 400)
