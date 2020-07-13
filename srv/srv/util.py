@@ -4,7 +4,7 @@ import os, pwd
 
 def markdown(text):
 	"""Processes both markdown and the <spem> tag."""
-	# unescape > so blockquotes and spoilers can work; stop bookmarklet links sneaking in via Markdown;
+	# stop bookmarklet links sneaking in via Markdown,
 	# and fix the order of the tags in <pre><code> blocks.
 	return spemtag(mistune.markdown(text) \
 		.replace('<a href="javascript:', '') \
