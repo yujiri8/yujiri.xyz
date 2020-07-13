@@ -80,6 +80,8 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`cloc`](https://github.com/AlDanial/cloc) - Count Lines Of Code. The advantages over `wc` are that it can count blank lines and comments separately from code lines, can automatically find just the source code files in a hierarchy, and it can separate them by language.
 
+* `rlwrap` - ever used a CLI application that really needed some goddamn line editing? Use the ReadLine Wrapper.
+
 ## Hardware and filesystems
 
 * [`dmidecode`](https://www.nongnu.org/dmidecode/) - massive amount of info on all hardware. I can't think of any commonly useful information I don't know how to get without this command, but `dmidecode` simplifies things.
