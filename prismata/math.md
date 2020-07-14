@@ -53,7 +53,7 @@ So how do we calculate BV? You might think we can just use the cost of Barrier, 
 
 Wall costs 6.67 according the value for Behemium that we computed earlier, and gives you 3 BV. That means that in base set 1 BV is worth approximately 2.22 gold.
 
-But have to account for one more thing. If you defend with *only* Walls, you get exploited. In a real game, even if most of your defense budget is spent on Walls, you usually throw in a couple of Engineers for defensive granularity. So now we're off to find Engineer's BV and mix it with Wall's somehow.
+But you have to account for one more thing. If you defend with *only* Walls, you get exploited. In a real game, even if most of your defense budget is spent on Walls, you usually throw in a couple of Engineers for defensive granularity. So now we're off to find Engineer's BV and mix it with Wall's somehow.
 
 You might think Engineer's BV is 2 because it costs 2 gold, but that would be very wrong. Engineer isn't prompt you see. When you buy it, you're paying 2 gold *now* for 1 defense *next turn*. (Compare to Wall, where you pay 6.67 now and get 3 defense now.) That means Engineer's real BV is 2 * inflation since you had to pay the cost one turn ago, and with standard Drone inflation, that means 2.67. So in base set BV is between 2.22 and 2.67, but closer to 2.22. I approximate it as 2.3 in all my calculations.
 
