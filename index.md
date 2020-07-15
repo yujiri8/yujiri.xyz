@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 14:**
+New rant: [Build systems are a scourge](software/build_systems).
+
 **July 10:**
 Added a link in the software index to [this Uberpython article](https://uberpython.wordpress.com/2012/09/23/why-im-not-leaving-python-for-go/) as my argument for exceptions over error returns.
 
