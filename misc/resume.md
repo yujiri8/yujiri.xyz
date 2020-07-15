@@ -88,7 +88,7 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [GNU Nano](https://nano-editor.org): Several improvements to syntax highlighting, including adding support for Haskell and Markdown
 
-* [Micro](https://micro-editor.github.io): A few improvements to synax highlighting
+* [Micro](https://micro-editor.github.io): Improvements to synax highlighting and language support for comment plugin
 
 * GTK: [Fix missing GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012)
 
