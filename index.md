@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 17:**
+New argument: [Stop freaking out about self-promotion](argument/self_promotion).
+
 **July 14:**
 New rant: [Build systems are a scourge](software/build_systems).
 
