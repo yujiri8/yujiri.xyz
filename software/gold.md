@@ -69,10 +69,6 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * [No variable declarations](declarations). `x = 5`. If you need to specify a type, `x = Int 5`.
 
-* No syntactic need for a 'main' function
-
-* Overloaded operators (eg. `+` can work on ints, strings and lists)
-
 * `#` for comments, because it's only 1 char.
 
 * `#{`..`#}` for a comment block to easify commenting out many lines at once.
@@ -95,7 +91,6 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `.` is access syntax for Struct fields. It's also method syntax: there's no difference in definition between a function and a method; any function can be called with the `.` syntax as if it were a method of its first argument.
 
-
 * `[a, b, c, d]` is List syntax.
 
 * `[a; b; c; d]` is Array syntax.
@@ -105,6 +100,13 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 * `{a: b, c: d}` is Dict syntax.
 
 * `_` is a null variable name; it doesn't store the result. Mostly used for unpacking tuples.
+
+* Line continuations are done like:
+	```
+	start_of_long_line \
+	\ end_of_line_line
+	```
+	This way neither line can look complete, and there's no indentation confusion.
 
 ## Stylistic stuff
 
@@ -124,13 +126,17 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 # Misc
 
-`import module [as name]` tells the language about another file that needs to be loaded. The module name can be the name of a package to find in a library directory, or a filesystem path.
+* `import module [as name]` tells the language about another file that needs to be loaded. The module name can be the name of a package to find in a library directory, or a filesystem path. Its contents will be namespaced.
 
-`exit Int` - exit the process with the given status.
+	Importing a file never runs code - all execution is traceable to `main`.
+
+* `exit Int` - exit the process with the given status.
 
 * There are no variadic functions, just take lists as arguments.
 
 * You can have multiple functions with the same name if they have different type signatures. As long as the calls aren't ambiguous.
+
+* Binary operators can be given behavior on custom types because they're aliases for functions. For example, `+` is `_add`.
 
 * `STDIN`, `STDOUT`, `STDERR`, `ARGS`, and `ENV` are available as global names without imports.
 
