@@ -123,7 +123,7 @@ Python isn't just an interactive language (which I don't mention the pros or con
 
 It's actually hard for me to come up with many criticisms of Python. There's only one thing that regularly annoys me, and that's something I actually expect from a language.
 
-<qh1 class="bad">No type checking</h1>
+<h1 class="bad">No type checking</h1>
 
 Even with Python's above-average debugging experience, the lack of type checking has cost me almost as much time and happiness as [Go's error handling](https://yujiri.xyz/software/go#error-handling-is-verbose-tedious-and-mistake-prone).
 

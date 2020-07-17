@@ -1,5 +1,5 @@
 TITLE Why you should learn programming even if you won't be a developer
-NAV Why To Learn Programming
+NAV Why you should learn programming even if you won't be a developer
 TEMPLATE DEFAULT
 DESC Some knowledge of programming is very useful even outside of writing software.
 
@@ -7,7 +7,7 @@ I strongly believe programming is an undervalued skill set. Yes, it's highly val
 
 ## Programming is not harder to learn than other skill sets
 
-Non-technical people often have this idea that programmers (as well as those in any other STEM field) are super smart and like complex things. This idea honestly drives me nuts. *We aren't smarter than you!* I'm not "smarter" than an athlete any more than modern-day humans are "smarter" than our medieval ancestors.
+Non-technical people often have this idea that programmers (as well as those in any other STEM field) are super smart and like complex things. This idea honestly drives me nuts. *It's not true!* We're not "smarter" than you any more than modern-day humans are "smarter" than our medieval ancestors.
 
 Also, intelligence isn't about complexity. Intelligence is about simplicity.
 

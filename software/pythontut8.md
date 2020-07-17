@@ -223,7 +223,7 @@ SQL database connections are another thing that usually implements the context m
 
 We haven't dealt with the `bytes` type yet. In Python, strings are [unicode](https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/) by default, as they're meant for representing text, not binary data. You'll get an error if you try to read the contents of a non-text file (like an image). To accomplish that, you need to know about `bytes`, which is a type that's basically the same as `str` except it's meant for dealing with binary data.
 
-The syntax for bytes literals is putting `b` before the quote. `b'hello' is the same as 'hello'` except it's bytes instead of string. For converting between bytes and string, you can use `bytes.decode` and `str.encode`:
+The syntax for bytes literals is putting `b` before the quote. `b'hello'` is the same as `'hello'` except it's bytes instead of string. For converting between bytes and string, you can use `bytes.decode` and `str.encode`:
 ```
 >>> text = 'hello'
 >>> binary = b'hello'
