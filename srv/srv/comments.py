@@ -112,8 +112,7 @@ async def edit_comment(params: EditCommentParams, env = Depends(env)):
 	cmt.name = params.name
 	cmt.body = params.body
 	cmt.time_changed = datetime.datetime.now()
-	err = cmt.validate()
-	if err: raise HTTPException(status_code = 400, detail = err)
+	cmt.validate()
 	env.db.add(cmt)
 	env.db.commit()
 
