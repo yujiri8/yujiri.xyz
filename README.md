@@ -56,7 +56,7 @@ The website hosts the [MC's Revenge](https://yujiri.xyz/works/mc_revenge/) and [
 
 `dev.yujiri.xyz` is set up by installing a separate copy of the repository in `~/dev`. Nginx's config serves the dev subdomain from `~/devhtml`. The command to run the dev API server:
 
-`python3.7 ~/dev/srv/srv/main.py --db dev --socket /tmp/uvicon-dev.sock`
+`~/dev/srv/srv/main.py --db dev --socket /tmp/uvicon-dev.sock`
 
 # Markdown problems
 
