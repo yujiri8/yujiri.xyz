@@ -13,8 +13,6 @@ Fast-forward to when I'm 15, my old teacher sent me a book: *Python Programming 
 
 Obviously this wasn't entirely the languages' fault; me being much older and more mature was also a big factor as was having a book specifically geared toward my sweet tooth of game programming. But to this day I feel a sense of allegiance to Python, since it was the third language to try to teach me programming and the first to succeed. And Python was the only one that had to do it almost entirely without human guidance (my teacher was no longer over my shoulder).
 
-To this day I retain the belief that, at least of the languages I've seen, Python is the one true language for learning to program. Every other language is a vastly inferior gateway into the art. The two main reasons are the ability to use it interactively and the general lack of boilerplate, which I'll discuss at greater length.
-
 ---
 
 ## Modes of use
@@ -27,7 +25,7 @@ My only huge gripe with Python - and it's a huge one - is the total lack of type
 
 It feels like a cruel taunt that Python has type annotations, but they don't do anything, not even at runtime (although libraries like Pydantic use them, it's not at all as if they solve the problem).
 
-As a dynamic language though, Python has excellent metaprogramming facilities. All the operators use dunder methods, so you can give custom types behavior for `<`/`>`, `in`, indexing, iteration (generators are amazing!), you name it. There's basically no "magic" that only works for builtin types. Libraries like [Pydantic](https://pydantic-docs.helpmanual.io) and [SQLAlchemy](https://www.sqlalchemy.org) leverage this stuff to implement incredible stuff like syntactic suport for ORM queries and a vestige of runtime type-checking.
+As a dynamic language though, Python has excellent metaprogramming facilities. All the operators use dunder methods, so you can give custom types behavior for `<`/`>`, `in`, indexing, iteration (generators are amazing!), you name it. There's basically no "magic" that only works for builtin types. Libraries like [Pydantic](https://pydantic-docs.helpmanual.io) and [SQLAlchemy](https://www.sqlalchemy.org) leverage these features to implement incredible stuff like syntactic suport for ORM queries and a vestige of runtime type-checking.
 
 Class boilerplate is pretty bad with the basic way of implementing constructors: each attribute name has to be written three times (listed in the constructor parameters and then `self.field = field` in the body), inheritance is nasty if your subclass needs its own constructor (you have to invoke the parent's dunder method directly, which looks like a hack, and repeat the whole argument list), and you don't even get a sane `__repr__` implementation for free - objects will just print like `<MyClass object at 0x801434f50>` by default.
 
@@ -59,7 +57,7 @@ Python's syntax is great for a lot of reasons.
 
 There are a lot of handy syntactic sugars that involve prefixing string literals with a letter.
 
-* f-strings opt into interpolation: `f'text {var} text' == 'text' + str(var) + 'text'`. You can embed arbitrary expressions inside f-string braces, and they're automatically converted to strings, so they're quite powerful (though not quite as powerful as [Javascript template strings](https://yujiri.xyz/software/javascript#template-strings-are-pretty-useful) because you can't embed loops).
+* f-strings opt into interpolation: `f'text {var} text' == 'text' + str(var) + 'text'`. You can embed arbitrary expressions inside f-string braces, and they're automatically converted to strings, so they're quite powerful (though not quite as powerful as [Javascript template strings](https://yujiri.xyz/software/javascript#template-strings) because you can't embed loops).
 
 * Raw strings let you opt out of interpreting escape sequences: `r'\n' == '\\n'`. These are extremely handy for regex.
 
@@ -68,7 +66,7 @@ There are a lot of handy syntactic sugars that involve prefixing string literals
 ### Keyword arguments
 
 Another handy little feature that improves readability and plays well with default arguments:
-```
+```python
 def func(arg1, arg2):
 	print('arg1 is', arg1, 'and arg2 is', arg2)
 func(arg2 = True, arg1 = False) # prints "arg1 is False and arg2 is True"
@@ -82,11 +80,11 @@ Generators and comprehensions are a pretty nifty pair of features with a lot of 
 Apparently, generators are actually coroutines. You can catch a return value from `yield` and use `gen.send()` on the calling end to feed it values. I haven't gotten to use this yet, but it sounds really cool.
 
 The inline generator expressions and comprehensions are a fantastic innovation. In a lot of ways they function like a more readable version of map/filter (which are both implemented as returning iterators in Python 3). For example:
-```
+```python
 l = [num*100 for num in range(10) if num % 2 == 0]
 ```
 That's equivalent to:
-```
+```python
 l = list(map(lambda num: num*100, filter(lambda num: num % 2 == 0, range(10))))
 ```
 Not only does the comprehension do both operations in one, but again the familiar English words *in* and *if* are more readable than "list... map... lambda... filter... lambda... wait what is this doing again?". And then that nauseating stack of parentheses that you'd probably miscount the first time and get a syntax error. They also have [performance benefits over `map` and `filter`](https://dev.to/yujiri8/python-performance-benefits-of-generator-expressions-49od).
@@ -128,7 +126,7 @@ PyPy also isn't *always* faster; it uses [JIT compilation](https://en.wikipedia.
 ## Resource management
 
 Python's main solution for resource management is the context manager interface and the `with` keyword that uses it. The most common example is with files:
-```
+```python
 with open(filename) as f:
 	# Use the file
 # ...
@@ -155,4 +153,4 @@ From what I can tell Python's `ctypes` module is also quite effective at interfa
 
 <br>
 
-My overall opinion is that Python is an excellent language; especially for learning, but by no means only for that. It deserves its popularity... something I don't say of many other things.
+My overall opinion is that Python is an excellent language. Especially for learning, but by no means only for that. It deserves its popularity... something I don't say of many other things.
