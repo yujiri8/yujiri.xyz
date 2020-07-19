@@ -39,12 +39,12 @@ customElements.define('auth-popup', class extends LitElement {
 		</mwc-dialog>
 		`;
 	}
-	async run() {
+	async run(initialMsg) {
 		// Reset stuff incase there was a canceled attempt before.
 		this.email = util.readCookie('email');
 		this.shadowRoot.getElementById('email').value = this.email;
 		this.shadowRoot.getElementById('pw').value = '';
-		this.errMsg = '';
+		this.errMsg = initialMsg || '';
 		// Retry until they succeed or cancel (which throws an exception).
 		while (true) {
 			this.open = true;

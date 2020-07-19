@@ -17,7 +17,9 @@ export async function api(method, url, query, body) {
 	if (resp.status == 401) {
 		// Don't try to recursively make the login request. Let the auth popup handle retries.
 		if (url == 'login') return resp;
-		await login();
+		// Set this flag for callers who want to know whether the request required login.
+		window.loginRequired = true;
+		await login(await resp.text());
 		return api(method, url, undefined, body);
 	} else if (!resp.ok) {
 		throw handleErr(resp);
@@ -34,7 +36,7 @@ function fmtQueryParam(entry) {
 	return encodeURIComponent(k) + '=' + encodeURIComponent(v);
 }
 
-export const login = () => document.querySelector('auth-popup').run();
+export const login = (initialMsg) => document.querySelector('auth-popup').run(initialMsg);
 
 export async function handleErr(resp) {
 	// Check for a message from the server.

@@ -68,6 +68,10 @@ customElements.define('comment-submit-area', class extends LitElement {
 		const bodyElem = this.shadowRoot.getElementById('body');
 		// Set the email cookie before sending the request, so it will be filled in if login is required.
 		if (emailElem) util.setCookie('email', emailElem.value);
+		// Store whether they had to log in, as that means it was an existing account and we
+		// shouldn't tell them they'll receive a confirmation email (the auth form will set
+		// this to true if it appears).
+		window.loginRequired = false;
 		await util.api('POST', 'comments', undefined, {
 			name: nameElem.value,
 			...emailElem && {email: emailElem.value},
@@ -78,7 +82,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		this.dispatchEvent(new CustomEvent('comment-posted',
 			{bubbles: true, composed: true, detail: this.reply_to}));
 		// Show a toast if it was a new poster making an account.
-		if (emailElem && emailElem.value)
+		if (emailElem && emailElem.value && !window.loginRequired)
 			util.showToast('success', "You'll receive a confirmation email about your account creation.");
 		// Close the submit area if it's not the top-level one.
 		if (!this.reply_to.includes('/')) this.remove();
