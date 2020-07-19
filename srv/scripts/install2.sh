@@ -10,6 +10,7 @@ psql -U postgres 'CREATE DATABASE sqlalchemy'
 python3.7 ~/src/srv/srv/db.py sqlalchemy create
 psql -U postgres 'CREATE DATABASE dev'
 python3.7 ~/src/srv/srv/db.py dev create
+psql -U postgres 'CREATE DATABASE test' # used for automated tests
 service paladin enable
 service paladin start
 service tor enable
