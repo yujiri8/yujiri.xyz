@@ -1,9 +1,9 @@
-TITLE Golang Review
+TITLE Go Review
 NAV Review: Go
 TEMPLATE DEFAULT
-DESC Go has several virtues, but horrible error handling and is needlessly primitive in several ways.
+DESC Go is verbose and primitive, not what I'd call a good language, but it has strengths.
 
-# How Go and I met
+## How Go and I met
 
 I'll start by telling the story of my experience with the language. I was thinking when I wrote [my opinion on Python](https://yujiri.xyz/software/python) that that would be a special thing just for then because Python has so much significance to me, but when I started to write this I figured it would be a good thing to do for all my language opinion articles.
 
@@ -17,64 +17,41 @@ At first, I hated Go. And I still stand by most of the complaints I had. But it 
 
 So here's what I think of the language now.
 
-<h1 class="good">Concurrency facilities are fabulous</h1>
+## Modes of use
 
-Go really does make concurrency as easy as its advocates claim. Goroutines are a primitive feature, have a great syntax, can make use of parallelism without multiprocessing, and channels make it a lot easier to communicate between them without worrying about race conditions than it is with threads in other languages. I've done some threading in Python, and while it wasn't nearly as bad as I was led to believe it would be, it was a lot more painful than using goroutines.
+Go compiles to native code with static linking by default, which [I like](https://yujiri.xyz/software/go). It also supports dynamic linking and compiling to shared libraries that can be used by other languages. So as far as modes of use I'd definitely prefer to use Go over a dynamic language. As great as REPLs are, I'd rather miss one than have all programs always tied to the interpreter and all the dependencies *and* lose performance.
 
-One of the things I like about channels is how their semantics correspond to Unix pipes. Receiving from a closed channel returns the zero value immediately, sending to a closed channel panics (SIGPIPE), and you can survive it with a `defer`/`recover` pattern, which is reminiscent of a signal handler.
+## Error handling
 
-The `select` statement also makes non-blocking channel IO easy, as well as buffered channels; and some of the other concurrency stuff is also amazing, like `sync.WaitGroup`.
+Go's error handling approach is easily the worst thing about it. There are five main problems with it: it's verbose, it's mistake-prone, errors carry almost no information, it breaks composability, and it doesn't play well with some other Go features.
 
-<h1 class="good">Tooling is amazing</h1>
-
-Go is the first language I've seen with not only a standard style, but a built-in tool to auto-format your code. I've always been a bit of a maverick when it comes to code style, but when I write Go I'm pleased to know that I'll just run `go fmt` on my code and it'll look just like everyone else's without me having to worry about whether I'm violating the style convention or put any effort into following it. I love having an autoformatter tool just put an end to most disagreements and decisions about style and let the language make everyone consistent.
-
-![coding style](coding_style.jpg)
-
-But it's even better than that. [Goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) is an improved version of `go fmt` that also can usually handle your imports for you, adding missing ones and removing unused ones and even automatically sorting them, and there are also some really good third-party vetting and linting tools, like [golangci-lint](https://github.com/golangci/golangci-lint).
-
-<h2 class="good">Excellent built-in documentation</h2>
-
-Go has the best documentation of any language I've seen. Not only is there a built-in command line tool that can autogenerate documentation for any code from its comments and type signatures, but the standard library is usually really good about having those comments be clear and complete.
-
-<h2 class="good"><code>defer</code></h2>
-
-The `defer` statement, which queues a function call for execution when the current function exits, is incredibly useful. It's useful particularly for errors (making sure something gets executed without putting it in every error-handling block), but even outside of that, I use it all over the place. If you ever have something you want executed at the end of a function and the function could end at multiple places, `defer` comes to the rescue, and that's surprisingly often in my experience.
-
-<h2 class="good">Ecosystem</h2>
-
-Go has been around for less than half as long as Python, but somehow the wealth of packages for it seems to be almost if not equally vast. Most of it's on github; `go get` is a built-in command to install them and works like a charm, and [govendor](https://github.com/kardianos/govendor) is a more sophisticated package manager that makes it easy to install all dependencies of a project with a single command.
-
-<br>
-
----
-
-<br>
-
-<h1 class="bad">Error handling is verbose, tedious and mistake-prone</h1>
-
-Most Go functions signal failure by returning an error instead of raising an exception. They do this with a separate return slot - for example `os.Open` has the signature `Open(name string) (*File, error)`. So to handle errors sensibly in Go, you have to catch the error return value after every function call that might possibly return one and add the signature
+Failure is signaled by returning error values instead of raising exceptions; for example `os.Open` has the signature `Open(name string) (*File, error)`. You're supposed to catch both the File pointer and the error and check the error manually before doing anything with the file. Here's the signature boilerplate:
 ```
+file, err := os.Open("file")
 if err != nil {
-	return err /* alternately log.Fatal(err) */
+	return err
 }
 ```
-Which gets *really* verbose when you have to add this after almost every statement. Worse, you still don't get any context doing this. If an error gets returned through a chain of 5 functions you have only the original error message when you get to the point where you log it, not anything to indicate how this function got called. In my experience the standard way of getting around this is with [this non-builtin package](https://github.com/pkg/errors), and that still involves writing all the error messages yourself and getting no line numbers.
+You have to do this after *every single function call that might fail*. (It can be written with the function call and condition on the same line, but that's questionable style.) This boilerplate can easily take up 20% of a Go program.
+
+And the errors themselves carry only the error message, not a stack trace or even a line number, so if an error gets returned through a stack of 5 functions, you have only slightly more to go on than if you just saw "error, figure it out yourself". [This package](https://github.com/pkg/errors) has been created by the community (no, it's not even stdlib) to make it easier to get context with your errors. It enables this:
 ```
 if err != nil {
 	return errors.Wrap(err, "When doing X")
 	// The returned error will be, "When doing X: ..."
 }
 ```
-In addition to how tedious all this is, the compiler doesn't even help you out here. It doesn't print a warning if you leave an error unchecked (If you're catching from a function that returns multiple values then it'll make sure you have the right number of variables, but if you don't try to catch the return value of the function at all then the error just gets silently ignored.) Especially when 90% of the time what you do in these incessant error handling blocks is just return the error (or `log.Fatal` if it's top-level), why not have that be the default behavior? Why should our language *default* to silently ignoring every error we don't specifically handle? That's just asking for debugging nightmares.
+Better, but we're still not getting a line number, so in a large codebase it can still be a hassle to track down where in the source that error message is from. And we have to write the error messages ourselves, which is tedious and prone to wrong error messages if you copy-paste. Boy, line numbers sure would be great.
 
-Just to drive home how indefensible this design is, I want to mention that at least two other major languages have ways of handling errors that are similar to Go but at least fix the problems with silently ignored errors. These are Haskell and Rust. In Haskell the `Either` Monad is essentially equivalent to how Go handles errors (you have to check them manually); but the type system forces you to check them because before you do you have the wrong type - you have an `Either`. You have to `case` on it and find out whether the value is `Left` (a type indicating failure) or `Right` (the type it returns on success).
+My biggest criticism of Go is that its error-handling paradigm is "silently ignore errors unless told otherwise".
 
-As another big advantage of Haskell's `Either` system, they only take up one return slot, so you can still compose functions than return errors and if the first one returns a `Left` then the others won't try to proceed; if the first one returns a `Right` value then the others receive it as normal and proceed down the chain.
+But perhaps even worse than all the tedium is what happens if you *forget* to handle an error: *silent runtime failures*, very similar in principle to [`{} - []` being `NaN`](https://yujiri.xyz/software/javascript), something most Gophers rightly ridicule. And the compiler doesn't even help you out. It doesn't print a warning if you leave an error unchecked (if you're catching from a function that returns multiple values then it'll make sure you have the right number of variables, but if you aren't catching the return value then the compiler is silent.)
 
-I don't know Rust myself, but I've read that it has a very similar system: any function that could fail returns a `Result`; and the type system forces you to make sure the Result is a successful one before you do something with it.
+I think the fact that 90% of the time what you do in these incessant error handling blocks is just return the error (or `log.Fatal` if it's top-level) is a pretty conclusive argument that propagating errors upward should be the default.
 
-There's actually another substantial drawback to Go's error-handling system: it doesn't work well with `defer`. Since you have to manually check the error to not silently ignore it, any error returned from a deferred call will get ignored. As far as I'm aware, the only way to get around this is to do something like:
+How does it break composibility? Because if `func1` returns a `Thing` and an `error` and `func2` takes a `Thing`, you can't just do `func2(func1())` - you have to call `func1` and catch the error and check it manually before deciding whether to call `func2`. Similarly, helper functions are made expensive because you can't just have a function that concisely wraps another and doesn't have to know about its possibility of failure; you have to catch and return the error at *every step* to stop it from getting swallowed (unless the return types match exactly).
+
+Finally, this error handling approach doesn't work well with `defer` (see below). Since you have to manually check the error to not silently ignore it, any error returned from a deferred call will get ignored. The only way to get around it is to do something like:
 ```
 defer func(){
 	err = theThingIWantedToDefer()
@@ -85,27 +62,186 @@ defer func(){
 ```
 But that's so much clunkier than a normal `defer` call that we sometimes just leave errors here unchecked, if an error's unlikely to occur.
 
-<h1 class="bad">No generics</h1>
+## Type system
 
-Go basically handles structs and interfaces [the right way](https://yujiri.xyz/software/oop), except that it doesn't support generics. Ugh...
+Pretty primitive: no parameterized types (generics; although I [hear those might be added to Go 2](https://blog.golang.org/generics-next-step) which would significantly improve my opinion of the language), no product types (multiple return values is a special case) and no sum types (though you can [hack a vestige of them into existence](https://dev.to/yujiri8/implementing-maybe-in-go-124l)).
 
-In Python or [Javascript](https://yujiri.xyz/software/javascript) or Haskell or really most other languages, even if they didn't include a built-in function to, say, find the max of a list of numbers, you could at least write it once and it would work on lists of any numeric type or any other value that can be compared with `<`/`>`. In Go not so. There are a few built-in things like `append` that are generic, but you can't define your own generic functions.
+It does have [a fairly enlightened way of thinking about objects](https://yujiri.xyz/software/oop) though. It uses concise structs and struct embedding for inheritance, and methods are basically just functions that take the struct as an argument with a special syntax. Polymorphism is in the form of interfaces, which consist of only method signatures and allow any type that implements them to be used as the interface type. Reflection is powerful enough for good JSON support and [an ORM](https://gorm.io).
 
-I've had a Go project where we wrote a function called `MaxInt`. It accepted `[]int` and returned `int`. But then we changed the values we were using it on to be `int32` instead of `int`, and `MaxInt` no longer worked on them because the argument was the wrong type. I changed `MaxInt` to `MaxInt32`, but if we ever have a need to do this on `int`s or `int64`s anywhere in the codebase, we'll have to make a separate function.
+It also has first-class functions (as long as the full type signature matches), and enums.
 
-It's not like this was necessary or anything. Haskell's type system shows us how we can support generics without sacrificing any of the benefits of a strict type system. In Haskell this function's type signature would be `Ord a => [a] -> a` (translation: it takes a list of any type, denoted `a`, such that `a` can be meaningfully ordered, and returns a single value of the same type). You'd write it once and it would work on Ints, Floats, Chars, and anything else that has some defined behavior for `>`/`<`; while still giving you a compile-time error if you try to use it on something that isn't a list or a list of things that can't be meaningfully ordered.
+Go can *sort of* get around the lack of generics with `interface{}` since an empty interface is implemented by every type; this is how `sort.Slice` in the standard library works (see below for why it can't take `[]interface{}`). But that sacrifices type-checking: since it only requires that its argument satisfy `interface{}`, Go can't even check at compile-time that it's getting a slice, so `sort.Slice` compiles successfully and then panics at run-time if you use it on something that isn't a slice.
 
-Go can sometimes get around this by using the type `interface{}`; this is how `sort.Slice` in the standard library works (see below for why it can't take `[]interface{}`); but that sacrifices all the benefits of static typing. Since it only requires that its argument satisfy `interface{}`, Go can't even check at compile-time that it's getting a slice, so `sort.Slice` compiles successfully and then panics at run-time if you use it on something that isn't a slice.
+A subtler issue is that type information is lost if you pass a value to a function that takes an interface, and the function does something to the value and returns it. It has to be returned as the interface type, since that's all the function knows about its argument - meaning the caller loses the information of which specific type it is, even if it's provably the same object. Unlike for example [Haskell](https://yujiri.xyz/software/haskell), Go's type checker is not smart enough for a specific type to "reappear" on the other side of a function that takes an interface. This isn't a big issue since you can basically get it back with a type assertion on the returned value, but it's inconvenient and the type assertion can't be type-checked.
 
-And this still wouldn't work if you wanted to catch the return value (`sort.Slice` works in place), because it would have to return `interface{}` because that's all the function knows about its type. Unlike Haskell, Go doesn't allow a specific type to "reappear" on the other side of a function that takes an interface.
+### null
 
-<h1 class="bad">Get ready to reinvent the wheel... <i>a lot</i></h1>
+Null is not dealt with. Pointers, slices, maps, and channels can all be `nil`, with no compile-time checking and disastrous results for a mistake:
 
-Lots of common tasks, particularly slice operations, are extremely verbose:
+* Dereferencing a nil pointer panics. (Unlike C, at least the panic is guaranteed and comes with a stack trace.)
 
-* Append and concatenate are not terrible: `items = append(items, item)` and `items = append(items, others...)`. They're annoying if `items` is a struct field or otherwise has a long time.
+* A nil slice is actually interchangeable with an empty slice for most purposes, but not all; for example it comes out as null in JSON... and a struct field that's a slice type is nil if it's unset, not empty.
 
-* Delete an item from a slice: `items = append(items[:i], items[i+1:]...)` Yuck... I gotta really look at that to tell what's going on (especially since we're using the *append* function to *remove* items...). Also, this doesn't give you the item removed.
+* A nil map can be read from and iterated as if it's an empty map, but setting a key panics.
+
+* nil channels are infintely worse than any of that: [a send to or receive from a nil channel blocks forever](https://dave.cheney.net/2014/03/19/channel-axioms) instead of crashing. Single instances of this mistake have costed me hours.
+
+The non-pointer ones are easy mistakes to make because declaring those types, for example `var nums = []int`, makes it nil; you're supposed to use `make` to initialize them if you don't want nil.
+
+There's also a gotcha with nil interfaces:
+```
+package main
+
+import "fmt"
+
+type Cat struct {}
+
+func (c Cat) Speak() {
+	fmt.Println("Meow")
+}
+
+type Animal interface {
+	Speak()
+}
+
+func main () {
+	var c *Cat
+	listen(c)
+}
+
+func listen(a Animal) {
+    if a == nil {
+        return
+    }
+    a.Speak()
+}
+```
+This code will compile and then panic at runtime with `panic: value method main.Cat.Speak called using nil *Cat pointer`.
+
+But how is that possible? I checked if it was nil!
+
+The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a lot of people have been confused by it. In brief, interfaces are never nil if they have a defined concrete type, even if they hold a nil pointer of that type.
+
+### Interfaces sometimes don't match when they should
+
+A struct with a method that returns a pointer to a struct that implements an interface isn't considered to implement an interface with a method that returns that interface; `[]struct{}` can't be passed for `[]interface{}`.
+
+[The Go FAQ](https://golang.org/doc/faq#covariant_types) discusses this and explains that they implemented it this way because "If two methods return different types, they are not doing the same thing. Programmers who want covariant result types are often trying to express a type hierarchy through interfaces. In Go it's more natural to have a clean separation between interface and implementation."
+
+![vague and unconvincing](vague_and_unconvincing.jpg)
+
+### Numeric type are incompatible
+
+You can't do math with an `int` and an `int32` or `int64` together, you can't even compare them. It doesn't seem like there's any way in which "is this int32 less than or greater than this int64" is an unmeaningful or unclear question. I've had to write simple math expressions of the form `intVar = round(otherIntVar * float32Var)` but needed three type casts: `intVar = int(math.Round(float64(otherIntVar) * float64(float32Var)))`, and ended up having to span multiple lines. I think a little type coercion is warranted here.
+
+[The Go FAQ](https://golang.org/doc/faq#conversions) discusses this too. Their first point doesn't apply to `int32` with `int64`, the next two also wouldn't be problems for this case since an `int32` always fits in an `int64`, and the concerns about the compiler are probably valid. My point isn't that it's necessarily a mistake that they haven't implemented this feature, but that doing so would *only* burdens the compiler and not the usability of the language.
+
+This makes the lack of generics worse, since a function that operates on `[]int` doesn't even work on `[]int32`.
+
+## Syntax
+
+Go uses braces to mark blocks, but thankfully doesn't require semicolons and parentheses around conditions. Channels and goroutines get intuitive dedicated syntax: `go func()` to launch a goroutine running `func`, `channel <- value` to send on a channel and `value <- channel` to receive. There's no interpolated string syntax, but that's not essential, and there are multiline strings with backquotes.
+
+It's unfortunate that all the binary operators and syntax features like indexing and `range` are special magic for built-in types. There's no interface you can implement to use them on custom or library types. `time.Time` has methods `Add` and `Sub` instead of `+` and `-`, `After` and `Before` instead of `<` and `>`, etc.
+
+### No inline branching
+
+Go doesn't have a conditional operator or any other type of control-flow-as-expression. I've been in a lot of situations, like with CSV, where I have a long row of values:
+```
+	field1,
+	field2,
+	field3,
+```
+And a lot of them need to be converted to string but can't be without a conditional operator because they're a type like [`null.Time`](https://github.com/guregu/null) which requires null checking. So I have to do the logic before writing the CSV row and use a temporary variable for the string representation. This makes my code not only bigger but *less clear*, since formatting the value is separated from the place I format it for.
+
+The relevant FAQ section:
+
+>There is no ternary testing operation in Go. You may use the following to achieve the same result:
+>
+>```
+>if expr {
+>    n = trueVal
+>} else {
+>    n = falseVal
+>}
+>```
+>
+>The reason `?:` is absent from Go is that the language's designers had seen the operation used too often to create impenetrably complex expressions. The if-else form, although longer, is unquestionably clearer. A language needs only one conditional control flow construct. 
+
+The if/else does make this single construct clearer (I guess), but if it takes up 5 times as much space, you can fit less code on the screen, which harms readability.
+
+And if a language needs only one conditional control flow construct, then why does Go have `switch`?
+
+### No default values in function args
+
+I've frequently been bitten by the inability to have a function parameter with a default value. Without default values, everything that calls a function has to know what the default is. It's a form of unnecessary coupling, which damages both readability and maintainability.
+
+The standard library suffers from it with functions like `strconv.FormatInt`, which needs a base parameter, and `strconv.FormatFloat`, which needs *four* parameters.
+
+Not supporting default values also increases the need for comments, since it often means you just have to say what the parameter should be by default in the docstring.
+
+### No way to capture only one return value of a function inline
+
+A function that returns two values has to be called and caught on its own if you only want one value. You can't do `f1(f2()[0])` because you'll get `multiple-value f2() in single-value context` even if f1 takes one argument and it's the same type as f2's first return value.
+
+Curiously, while Go does support composing functions that return multiple values with other functions that accept the same types, this only works as a special case, not with more arguments. For example,
+
+```
+func main() {
+	f1(f2())
+}
+func f2() (int, int, int) {
+        return 4, 5, 6
+}
+func f1(a int, b int, c int) {
+        fmt.Println(a, b, c)
+}
+
+```
+works, but
+```
+func main() {
+        f1(f2(), 6)
+}
+
+func f2() (int, int) {
+        return 4, 5
+}
+func f1(a int, b int, c int) {
+        fmt.Println(a, b, c)
+}
+```
+
+Fails with `not enough arguments in call to f1` and `multiple-value f2() in single-value context`. (And yes, I tried replacing the call with `f1(f2()..., 6)`; that gives `unexpected literal 6, expecting )`.) Why implement this as a confusing special case instead of letting it work the way Python does? Go has the `...` equivalent to Python's `*`. Why not let it work consistently?
+
+### Variable declarations
+
+Having these [makes little sense when the compiler also finds unused vars](https://yujiri.xyz/software/declarations), but oh well. And there are two syntaxes for it: `var val = 5` or `val := 5`. Most of the time they're interchangeable, but there are subtle differences:
+
+* `:=` can't be used outside of a function; you have to use `var` for global variables. I'm not sure what the reason for this is, but it's what they decided.
+
+* `var` requires that *all* variables on the left are new. This will fail to compile:
+	```
+	var x = 5
+	var x, y = getMeTwoInts()
+	```
+	But this works:
+	```
+	var x = 5
+	x, y := getMeTwoInts()
+	```
+
+* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`.
+
+So while I generally prefer the more concise `:=`, there are cases where you *have* to use `var`, and we'd certainly prefer to keep our style consistent... So basically it's an area rife for style disagreements where `go fmt` doesn't have an opinion.
+
+## Array operations
+
+Most array operations are extremely verbose.
+
+* Append and concatenate are not terrible: `items = append(items, item)` and `items = append(items, others...)`. Annoying if `items` is a struct field or otherwise has a long time, since you have to write it twice.
+
+* Delete an item from a slice: `items = append(items[:i], items[i+1:]...)` Yuck... I gotta really look at that to tell what's going on, especially since we're using the *append* function to *remove* items. This also doesn't give you the item removed; it gets worse if you want something equivalent to Python's `list.pop`.
 
 * Insert an element into a slice at an arbitrary position? This is where it gets terrible. `items = append(items[:i], append([]T{item}, items[i:]...)...)` where T is the type of the items. It has to be this way because a single variadic parameter can't take both a singleton argument and a variadic argument.
 
@@ -140,170 +276,60 @@ Lots of common tasks, particularly slice operations, are extremely verbose:
 
 And I didn't reach these conclusions all on my own! [The github golang wiki confirms that these are really the simplest ways to do these things in Go](https://github.com/golang/go/wiki/SliceTricks) (insert and delete have alternate solutions but they're multi-line and arguably not any more readable). For a language that's supposedly so pragmatic, this is inexcusable.
 
-And did I mention console input? It's a mess. `fmt.Scan`, `fmt.Scanln`, `fmt.Scanf`, `bufio.Scanner`, `bufio.Reader`... which one of these should we use? I once spent several hours messing around with these and couldn't find a way that was safe against newlines, whitespace, and Ctrl-D. The solution used in [this project](https://github.com/rwestlund/gosh) was to make a `bufio.Scanner` on `os.Stdin`, call `scanner.Scan()`, check the bool result, if it's true then call `scanner.Text()` to get the entry, if it's false then call `scanner.Err()` to get any error. Phew. It's even worse when every time you have to check an error, you gain 2-3 lines from that alone.
+And without generics, you can't even really implement these yourself like you could in say, OCaml (another language sorely lacking in them although not this bad). [This library](https://github.com/thoas/go-funk) implements them using reflection, but that of course sacrifices type checking as well as incurs a huge performance cost.
 
-<h2 class="bad">No default values in function args</h2>
+## Concurrency
 
-I've frequently been bitten by the inability to have a function parameter with a default value. If there's some obscure option that a function rarely needs to vary then it needs to be specified every time, and if the default ever changes, you also have to change it in every place that calls the function. It severely damages both readability and maintainability.
+One of Go's main marketing points is "concurrent by design", and it's true - it's definitely the best concurrency experience I've had. It uses green threads called goroutines which have a great syntax and can do parallel processing as easily as concurrent IO. Communication between them is done with channels, which are a flexible message queue system that support synchronous send and receive, asynchronous send and receive and selecting on multiple channels with the builtin `select` statement, and an option to be buffered so they can hold a few pending messages before sending blocks.
 
-The standard library suffers from this with functions like `strconv.FormatInt`, which needs a base parameter, and `strconv.FormatFloat`, which needs *four* parameters.
+One of the things I like about channels is how their semantics correspond to Unix pipes. Receiving from a closed channel returns the zero value immediately, sending to a closed channel panics (SIGPIPE), and you can survive it with a `defer`/`recover` pattern, which is reminiscent of a signal handler.
 
-Not supporting default values also increases the need for comments, since often that means you just have to say what the parameter should be by default in the docstring.
+Some of the other concurrency stuff is also amazing, like `sync.WaitGroup`.
 
-<h3 class="bad">Interfaces sometimes don't match when they should</h3>
+My only notable gripe with channels is their behavior if `nil`. I've also heard people complain that there's no way to have an *infinitely* buffered channel that never blocks, and it sounds like a valid criticism to me but I've never run into it.
 
-A struct with a method that returns a pointer to a struct that implements an interface isn't considered to implement an interface with a method that returns that interface; `[]struct{}` can't be passed for `[]interface{}`.
+## Resource management
 
-[The Go FAQ](https://golang.org/doc/faq#covariant_types) discusses this and explains that they implemented it this way because "If two methods return different types, they are not doing the same thing. Programmers who want covariant result types are often trying to express a type hierarchy through interfaces. In Go it's more natural to have a clean separation between interface and implementation."
+For handling resource cleanup, Go has `defer`, which queues a function call for execution when the current function returns. Deferred calls are run even if the function panics.
 
-![vague and unconvincing](vague_and_unconvincing.jpg)
+It's a very flexible solution; it can be used with any function call and doesn't require implementing an interface. I also like that `defer` doesn't indent the area the resource is used for. Python's equivalent does, and it often feels like a needless indent to me.
 
-<h3 class="bad">Compiler red tape hampers experimentation in debugging</h3>
+But a notable downside is that is that you can't have it execute *before* the current function exits. For example, if you open a file, defer closing it, do your stuff with it and then do the same with a second file, the first one stays open until you're done with the second. With a solution like Python's `with`, each resource is closed as soon as you're done with it.
 
-The Go compiler won't compile a program with an unused import or variable (although it does allow unused functions, function parameters, and global variables). It's great to have the compiler *warn* us about these things, but *preventing* us from compiling it is honestly absurd. All the time when I'm debugging I comment something out and it results in an unused variable or import, and Go refuses to compile. Ugh... gotta go back into the source and comment out the declaration too.
+## Tooling
+
+Go is the first language I've seen with not only a standard style, but a built-in code formatter. I've always been a bit of a maverick when it comes to code style, but when I write Go I just run `go fmt` and it look just like everyone else's without any effort! I love having an autoformatter tool just put an end to most disagreements and decisions about style and let the language make everyone consistent.
+
+![coding style](coding_style.jpg)
+
+But it's even better than that. [Goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) is an improved version of `go fmt` that also can usually handle your imports for you, adding missing ones and removing unused ones and even automatically sorting them, and there are also some really good third-party vetting and linting tools, like [golangci-lint](https://github.com/golangci/golangci-lint).
+
+There's no [build system hell](https://yujiri.xyz/software/build_systems). `go build` Just Works. `go get` is a built-in package manager (or at least an installer) and also Just Works; and [govendor](https://github.com/kardianos/govendor) is a more sophisticated package manager that I've had some bad experiences with, but overall it's satisfactory.
+
+### Compiler red tape
+
+My only criticism related to tooling. The compiler won't compile a program with an unused import or variable (although it does allow unused functions, function parameters, and global variables). It's great to have the compiler *warn* us about these things, but *preventing* us from compiling it is just absurd. All the time in debugging I comment something out and it results in an unused variable or import, and Go refuses to compile. Ugh... gotta go back into the source and comment out the declaration too.
 
 The [Go FAQ](https://golang.org/doc/faq#unused_variables_and_imports) actually address this:
 
 > First, if it's worth complaining about, it's worth fixing in the code. (And if it's not worth fixing, it's not worth mentioning.) Second, having the compiler generate warnings encourages the implementation to warn about weak cases that can make compilation noisy, masking real errors that should be fixed.
 
-This reasoning is so obviously wrong it's hard to believe it's sincere. Yes, it *is* worth fixing, which is why I didn't `git add`! It's *not* worth delaying my test and forcing me to fix code that *will never be run outside of this test* so that it takes me longer to get the final commit ready and fixed.
+This reasoning is so obviously wrong it's hard to believe it's sincere. Yes, it *is* worth fixing, which is why I didn't `git add`! It's *not* worth delaying my test and forcing me to fix code that *will never be run outside of this test* so that it takes me longer to get the final commit ready and fixed. This justification is written as if debugging isn't a thing.
 
 And their point about "encourages the implementation to warn about weak cases..."? Arguing that the language spec should treat unused code as fatal errors because treating it as non-fatal will lead to people writing Go compilers that will output so much unimportant noise that the unused code warnings will get ignored is such an insane stretch that you might as well say Go shouldn't allow programs to log to stderr unless they're crashing because that will lead to people writing programs that generate so much log volume that important stuff will get ignored.
 
 Compilers are for verifying that code works and making it executable; *linters* are for things like this. In fact, `go vet` comes with Go and does this exact thing.
 
-<h3 class="bad">No way to capture only one return value of a function inline</h3>
+## Documentation
 
-A function that returns two values has to be called and caught on its own if you only want one value. You can't do `x = func1(func2()[0])` because you'll get `multiple-value func2() in single-value context` even if func1 takes one argument and it's the same type as func2's first return value. This isn't a huge deal, but it's an annoyance that forces you to write more verbose code.
+Go has the best documentation of any language I've seen, as well as the most sophisticated CLI tool for generating and viewing it. For example I can view the source of a symbol in a library using `go doc -src`, without having to go find the source myself; that's a feature I haven't seen in other languages' equivalents.
 
-Similarly, while Go does support composing functions that return multiple values with other functions that accept the same types, this only seems to work as a special case, not with more arguments. For example,
+## Stdlib and ecosystem
 
-```
-func main() {
-	f1(f2())
-}
-func f2() (int, int, int) {
-        return 4, 5, 6
-}
-func f1(a int, b int, c int) {
-        fmt.Println(a, b, c)
-}
-
-```
-works, but
-```
-func main() {
-        f1(f2(), 6)
-}
-
-func f2() (int, int) {
-        return 4, 5
-}
-func f1(a int, b int, c int) {
-        fmt.Println(a, b, c)
-}
-```
-
-Fails with `not enough arguments in call to f1` and `multiple-value f2() in single-value context`. (And yes, I tried replacing the call with `f1(f2()..., 6)`; that gives `unexpected literal 6, expecting )`.) Why implement this as a confusing special case instead of letting it work the way Python does? Go has the `...` equivalent to Python's `*`. Why not let it work consistently?
-
-<h3 class="bad">No inline branching</h3>
-
-Go doesn't have a conditional operator or any other type of control-flow-as-expression. I've been in a lot of situations, like with CSV, where I have a long row of values:
-```
-	field1,
-	field2,
-	field3,
-```
-And a lot of them need to be converted to string but can't be without a conditional operator because they're a type like [`null.Time`](https://github.com/guregu/null) which requires null checking. So I have to do the logic before writing the CSV row and use a temporary variable for the string representation. A frequent moderate annoyance.
-
-The relevant FAQ section:
-
->There is no ternary testing operation in Go. You may use the following to achieve the same result:
->
->```
->if expr {
->    n = trueVal
->} else {
->    n = falseVal
->}
->```
->
->The reason `?:` is absent from Go is that the language's designers had seen the operation used too often to create impenetrably complex expressions. The if-else form, although longer, is unquestionably clearer. A language needs only one conditional control flow construct. 
-
-The if/else does make this single construct clearer (I guess), but if it takes up 5 times as much space, you can fit less code on the screen, which harms readability.
-
-And if a language needs only one conditional control flow construct, then why does Go have `switch`?
-
-<h3 class="bad">Perils of <code>nil</code></h3>
-
-There are some infamous gotchas related to `nil`, many of which seem like they could've been implemented better.
-
-Maps and channels both require `make` to initialize them; forgetting to do this and using the standard `var x Type` syntax leaves them as `nil`, with disastrous results. If you make a map with `var dict map[string]string` and then try to assign to an entry in the map, Go compiles happily and then panics.
-
-It's much worse with channels. A send to or receive from a `nil` *channel* [blocks forever](https://dave.cheney.net/2014/03/19/channel-axioms) instead of crashing. Single instances of this mistake have costed me hours.
-
-There's also a gotcha with `nil` and interfaces. Check out this code:
-```
-package main
-
-import "fmt"
-
-type Cat struct {}
-
-func (c Cat) Speak() {
-	fmt.Println("Meow")
-}
-
-type Animal interface {
-	Speak()
-}
-
-func main () {
-	var c *Cat
-	listen(c)
-}
-
-func listen(a Animal) {
-    if a == nil {
-        return
-    }
-    a.Speak()
-}
-```
-This code will compile and then panic at runtime with `panic: value method main.Cat.Speak called using nil *Cat pointer`.
-
-But how is that possible? I checked if it was `nil`!
-
-The reason is because of how interfaces work under the hood. The [Go FAQ](https://golang.org/doc/faq#nil_error) explains it, indicating that a lot of people have been confused by it. In brief, interfaces are never `nil` if they have a defined concrete type, even if they hold a `nil` pointer of that type.
-
-<h3 class="bad"><code>var</code> versus <code>:=</code> - meaningless decision</h3>
-
-You have to declare a variable before you can use it, and there are two ways: `var val = 5` or `val := 5`. Most of the time they're interchangeable, but it's worse than the string quotation thing in Python and Javascript, because they're actually not interchangeable, and some of the differences are rather subtle.
-
-* `:=` can't be used outside of a function; you have to use `var` for global variables. I'm not sure what the reason for this is, but it's what the designers decided.
-
-* `var` requires that *all* variables on the left are new. This will fail to compile:
-	```
-	var x = 5
-	var x, y = getMeTwoInts()
-	```
-	But this works:
-	```
-	var x = 5
-	x, y := getMeTwoInts()
-	```
-	And you might think looking at that that the takeaway is that you should default to `:=` inside a function. I lean that way myself, but not every Gopher agrees, and consistency within a project is nice. And there are some additional cases where you can't use `:=`...
-
-* You can't use `:=` for initializing a nil pointer. `x *Thingy := nil` fails with `non-name x *Thingy on left side of :=`, `use of untyped nil`, and `undefined: x`. You have to use `var x *Thingy`. Similarly, when initializing a non-pointer struct to its zero value, while you can use `x := Thingy{}`, `var x Thingy` is arguably nicer looking. I don't know of any times where you can't use `var`, and we'd certainly prefer our style to be consistent...
-
-And this is unfortunately one of the areas where `go fmt` doesn't have an opinion.
-
-<h3 class="bad">Different int types can't be used together without explicit conversion</h3>
-
-You can't do math with an `int` and an `int32` or `int64` together, you can't even compare them. It doesn't seem like there's any way in which "is this int32 less than or greater than this int64" is an unmeaningful or unclear question. I've had to write simple math expressions of the form `intVar = round(otherIntVar * float32Var)` but needed three type casts: `intVar = int(math.Round(float64(otherIntVar) * float64(float32Var)))`, and ended up having to span multiple lines. I think a little type coercion is warranted here.
-
-[The Go FAQ](https://golang.org/doc/faq#conversions) discusses this too. Their first point doesn't apply to `int32` with `int64`, the next two also wouldn't be problems for this case since an `int32` always fits in an `int64`, and the concerns about the compiler are probably valid. I don't think it's necessarily a mistake they've made that they haven't implemented this feature, but the fact is that *only* burdens the compiler and not the usability of the language. And my points here are supposed to be about how worth using the language is rather than how smart its designers were (see how I mentioned the ecosystem which obviously isn't a trait of the language itself).
+Go has been around for less than half as long as Python, but its [standard library](https://golang.org/pkg/) and ecosystem seem to be almost if not equally vast. You pretty much can't find anything there isn't a Go library for. The community is also pretty good at documentation their packages.
 
 ---
 
-So at the end of the day, if I'm saying whether Go is a "good" language or not, I'm gonna have to say no. Despite how much positive attention it seems to be getting, it doesn't seem to have been made with a mindset of learning from the flaws of other languages and combining good ideas from them.
+<br>
+
+My final opinion of Go is fairly negative. The error-handling is pretty much a deal breaker for me; I'd even rather use dynamic typing. But it has several advantages over each of the other languages I know. I could see myself choosing it someday for something concurrency-heavy.

@@ -27,7 +27,7 @@ async def get_words(
 	if word:
 		filters.append(Word.word.in_(word.split(' ')))
 	for m in meaning.split(' '):
-		filters.append(Word.meaning.op('~')("\\m" + m + "\\y"))
+		filters.append(Word.meaning.op('~')(r"\m" + m + r"\y"))
 	if translation:
 		filters.append(Word.translations.any(translation))
 	for individual_tag in tag:

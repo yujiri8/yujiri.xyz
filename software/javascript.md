@@ -3,43 +3,26 @@ NAV Review: Javascript
 TEMPLATE DEFAULT
 DESC Javascript is mostly a mess. It's full of traps and never just throws a big loud error when it should.
 
-<!--https://blog.logrocket.com/a-complete-guide-to-threads-in-node-js-4fa3898fe74f/-->
-
-I know Javascript is a language a lot of people already agree is terrible, but now that I've got a substantial amount of experience with it myself, I think it'll be fun to write a language opinion article where I get to be more ranty. Of course, in keeping with my tradition, I'll have to open with the good things first. How Javascript And I Met isn't particularly interesting (I just chose to learn it because of its unique ability to run in a browser and because it was a bad thing not to have on my resume as a programmer), so I'll skip that.
+I know Javascript is a language a lot of people already agree is terrible, but now that I've got a substantial amount of experience with it myself, I think it'll be fun to write a language opinion article where I get to be more ranty. How Javascript And I Met isn't particularly interesting (I just chose to learn it because of its unique ability to run in a browser and because it was a bad thing not to have on my resume as a programmer), so I'll skip that.
 
 Also, I'll stick to talking about Javascript itself, not the DOM APIs. I'll probably write separately about those someday.
 
-<h2 class="good">Object syntax</h2>
+---
 
-Object syntax is so much easier to work with than in any other language I've seen. Literals don't usually need quotes around keys (`{id: 5, name: 'Bob'}`), and they support bracket syntax to evaluate an expression as a key (`property = 'name'; obj[property]` is like `obj.name`). And then there there are super convenient things like [object spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+## Modes of use
 
-<h2 class="good">Interactive</h2>
+Like most interpreted languages, Javascript has a REPL (including for the server-side implementation in [Node](https://nodejs.org)), but it goes beyond that: due to the nature of browser devtools, it's an out-of-the-box feature to be able to use Javascript interactively while the page is running. Even [Python](https://yujiri.xyz/software/python)'s interactive mode doesn't do *that*. The Node REPL, for its part, features use of colors in some output, which is nice.
 
-This might actually be a somewhat unfair praise as I said I wouldn't bring up DOM APIs and this is only the case in the browser, not [Node](https://nodejs.org), as far as I know. But I don't think it counts as DOM APIs. Due to the nature of browser devtools, it's an out-of-the-box feature to be able to use Javascript interactively while the page is running. Even [Python](https://yujiri.xyz/software/python)'s interactive mode doesn't do *that*.
+(Browser REPLs do too, but browser REPLs are *garbage* in other ways. Autoclosing braces trips me more often than it helps and the type correction features they foist on me are disgusting: when I'm typing a name it always opens a suggestion box that covers the rest of the command history if there's any name defined that starts with what I have, and it fucking rebinds the enter key to "accept suggestion" (not tab for some god-forsaken reason), so I get hoodwinked by that on a regular basis. Worst of all, typing out the full name of a suggestion doesn't make the box go away, so I have to press enter twice if I'm ending a statement with a defined name.)
 
-On the other hand, the type correction features most browsers' devtools foist on you are disgusting. When I'm typing a name it always opens a suggestion box that covers the rest of the command history if there's any name defined that starts with what I have, and it fucking rebinds the enter key to "accept suggestion" (not tab for some god-forsaken reason), so I get hoodwinked by that on a regular basis. Worst of all, typing out the full name of a suggestion doesn't make the box go away, so I have to press enter twice if I'm ending a statement with a defined name.
+## Type system
 
-<h2 class="good">Good functional programming features</h2>
-
-Most dynamic languages have `map`, `filter`, `reduce`, and lambdas, but I think Javascript one-ups Python here with [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). I use them every day; I can't describe how much nicer they are than using the `function` keyword. And the syntax is intuitive, too; it *looks* like you're taking the parameter list and doing something with it. Python has lambdas and in-function `def`, but lambdas are limited to just a `return` statement and `def` doesn't handle scoping the same way arrow functions do ([this article on Pylint](https://pythonspeed.com/articles/pylint/) shows an example of the difference where you would want the arrow function behavior).
-
-There are other functional programming features in Javascript, like <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind"><code>.bind</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call"><code>.call</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code>.apply</code></a>, but those are niche compared to arrow functions.
-
-<h3 class="good">Template strings are pretty useful</h3>
-
-I'll be honest, I was pretty skeptical of [this feature](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when I first found out. I thought it was adding new syntax to the language [for no good reason](features). But after working with web components via Lit-Element I've learned to appreciate it; it's really great when so much logic is embedded in the component's render template.
-
-<h1 class="bad">No type checking</h1>
-
-This wastes enormous amounts of my time on debugging. And it's made worse by Javascript's propensity for silence, which I'll get to next.
-
+As I've said in other places, I've lost too much time to the lack of type checking to not think it's a massive evil.
 "Just use [TypeScript](https://www.typescriptlang.org)! Problem solved!"
 
 No, problem not solved. Using TypeScript adds third-party dependencies, complicates my build process further, and requires a time investment to learn it. I'm not saying TypeScript isn't good or helpful (I haven't used it), but as a tool separate from the language itself, it shouldn't be used to defend the flaws of Javascript.
 
-<h1 class="bad">Silence</h1>
-
-At least in Python, most things that should be compile-time errors are still run-time errors. But in Javascript they're often silent failures. For example, accessing a nonexistent slot of an array or object gives you `undefined`.
+And Javascript's lack of type checking is actually way worse than other dynamic languages. At least in others (Python etc), most things that should be compile-time errors are still run-time errors. But in Javascript they're often silent failures. For example, accessing a nonexistent slot of an array or object gives you `undefined`.
 
 But you can define one of the values to be `undefined` and it's now in there!
 ```javascript
@@ -55,11 +38,11 @@ You also don't get an error when passing too many arguments to a function.
 function f(param) { console.log(param) };
 f(1, 2, 3); // Just prints 1
 ```
-And I found out the hard way that `setTimeout` silently does nothing if you pass its arguments in the wrong order. Okay, that only seems to be the case in browsers, but still. That was how I lost most of a day of work.
+And I found out the hard way that in browsers, `setTimeout` silently does nothing if you pass its arguments in the wrong order. That was how I lost most of a day of work.
 
-<h2 class="bad">Arrays aren't really arrays</h2>
+### Arrays are objects?
 
-Despite being implemented as linked lists, Javascript arrays are treated like a type of object. This has many bad corellaries. One is that you can assign past the end of an array and you just get "empty items" inbetween:
+Despite being implemented internally as linked lists, Javascript arrays are treated like a type of object in a lot of ways. One is that you can assign past the end of an array and you just get "empty items" inbetween:
 ```javascript
 arr = [];
 arr[5] = 'x';
@@ -69,7 +52,9 @@ delete(arr[5]);
 arr; // [ <6 empty items> ]
 arr.length; // 6
 ```
-And note that those empty items *aren't the same as undefined*. Or they are, but they're not. Check this out:
+See what I mean about arrays being objects? It's like you're just assigning keys in an object, and array indices don't have any special meaning (though they still print sensibly).
+
+And those empty items *aren't the same as undefined* (if they were, that would imply a deeper difference between arrays and objects than Javascript seems to want to admit). Or they are, but they're not. Check this out:
 ```javascript
 emptyArr = [];
 arrEmpty = [,,,];
@@ -86,13 +71,13 @@ found item: undefined
 ```
 It's like the holy trinity of `undefined`!
 
-This is because arrays have a `length` attribute that stores the number of elements they supposedly have. So when you assign to an index, it changes the length, and then when you look at the array all the slots inbetween that don't exist as keys in the array are presented as these "empty items". `delete` is meant for removing a key from an object, so when used on an array, it only deletes the key and doesn't collapse the others or modify the `length` attribute, so it just leaves an empty slot behind. That's a silly newb trap.
+This is because arrays have a `length` attribute that stores the number of elements they supposedly have. So when you assign to an index, it changes the length, and then when you look at the array all the slots inbetween that don't exist as keys in the array are presented as these "empty items". `delete` is meant for removing a key from an object, so when used on an array, it only deletes the key and doesn't collapse the others or modify the `length` attribute, so it just leaves an empty slot behind. What a terrible newb trap.
 
 You also can't add arrays with `+`; the `.push` method is how you're supposed to add elements to the end, and `.concat` is for adding arrays. The main way to delete from an array is `.splice`, but there are a lot of others depending on the specifics. [This article](https://love2dev.com/blog/javascript-remove-from-array/) goes through a bunch of them.
 
 For some reason, [.splice is also how you insert elements](https://stackoverflow.com/questions/586182/how-to-insert-an-item-into-an-array-at-a-specific-index-javascript). [The one method is basically a swiss army knife](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) instead of using different functions to accomplish different tasks.
 
-<h3 class="bad">This implicit type conversion is outrageous</h3>
+### This type coercion is outrageous
 
 A lot of people who rant about Javascript mention this. Let me just jump into the examples:
 ```javascript
@@ -121,55 +106,29 @@ A lot of people who rant about Javascript mention this. Let me just jump into th
 {} - {}; // NaN
 {} / []; // SyntaxError: Invalid regular expression: missing /. ?!?!?!
 ```
-I don't oppose all type coercion. I hate, for example, in [Go](https://yujiri.xyz/software/go) when you can't even compare `int` to `int32` without an explicit conversion. But this? Not only it is through the roof, it's wildly inconsistent and unintuitable. Most of these should raise exceptions.
+I don't oppose all type coercion. For example, I support coercing between different numeric types. But this? Not only it is through the roof, it's wildly inconsistent, unintuitable, and most of the ones involving arrays and objects are completely indefensible nonsense. An operation that doesn't involve numbers should never come out as `NaN`; that's not what `NaN` means.
 
-<h3 class="bad">Iteration is a mess</h3>
+In general, things that are almost certainly mistakes should raise exceptions, not silently return a nonsensical value.
 
-Javascript has three different for loop constructions: the C-style `for (let i = 0; i < items.length; i++) {`; then `for (let i in items) {`, and `for (let i of items) {`. What are the differences? Can we maybe use these two latter constructions to elide the antiquated C bullshit?
+### `null` vs `undefined`
 
-Well, no. `for`..`in` is for iterating on the keys of an object... but objects in Javascript have string keys. And do you know what that means happens when you try to use this on an Array?
-```javascript
-nums = [5, 16, -3];
-for (let i in nums) {
-    console.log(i + 1);
-}
-/* Prints
-01
-11
-21
-*/
-```
-Because arrays are technically objects and so their keys as given by `for`..`in` are of course the *string* indices. This works for some use cases, but if you try to add to the index counter, it'll break your code in bizarre ways.
+There are *two* primitive values that represent the lack of a value, and they're different:
 
-`for`..`of`, on the other hand, *only* gives you the values. Not the keys. And of course there's no easy way to get the key from the value; there's nothing equivalent to Python's `enumerate`, as far as I know. So, we still need to use antiquated C bullshit to iterate in Javascript.
+1. For function parameters, passing `undefined` causes the parameter to get its default value. Passing `null` causes it to get `null`.
 
-<h3 class="bad">Variable declarations are a mess</h3>
+2. `undefined` doesn't come out in JSON; `null` comes out as `null`.
 
-Assigning to an undefined variable in Javascript by default creates a *global* variable, if you don't use `'use strict';` at the top of the file. Besides this unfortunate fact, there are *three* different keywords for declaring variables that all have subtle differences:
+To be fair, there is some kind of logic here in retrospect: `undefined` is something unset; `null` more represents an intentionally lack of a value. But the distinction is still unnecessary and confusing.
 
-* `var` - creates a function-local variable. That's all it does.
+And any Javascript extraordinaire is probably familiar with the baffling fact that `typeof null === 'object'`. This is, in fact, [a historical bug that became standardized to avoid breaking code that depended on the bug](https://2ality.com/2013/10/typeof-null.html).
 
-* `let` - two differences from `var`. It's *block-scoped* instead of function-scoped, and it doesn't allow redeclaring the variable with `let` later.
+### Objects can't compare for equality
 
-* `const` - like `let`, but makes the variable immutable.
+`==` on objects (including arrays) compares for identity, not equality. If you want to test whether two objects are equal, you have to iterate over their keys.
 
-What an elegant and straightforward system!
+In a language that has `==` and `===`, you would think `==` would compare by value for objects, and `===` would compare identity. But no, in the one case where the distinction would be actually helpful instead of a nefarious newb trap, they do the same thing.
 
-<h3 class="bad">Barren standard library</h3>
-
-The JS stdlib is missing a lot of standard fare. No titlecase. No randint. No strftime (though it does have a curious-but-neato sort of wildcard-strptime). No functions to parse and format query strings. Pretty important for a language that's almost exclusively used on the web. At least we have ones to [encode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) and [decode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent) URI *components*.
-
-<h3 class="bad">Objects can't compare for equality</h3>
-
-`==` on Objects (including Arrays) compares for identity, not equality. If you want to test whether two Objects are equal, you have to iterate over their keys.
-
-In a language that has `==` and `===`, you would think `==` would compare by value for objects, and `===` would compare identity. But no, they do the same thing.
-
-<h3 class="bad">Boilerplate syntax - semicolons, parentheses around conditions</h3>
-
-I talked about this a lot in my review of Python, but Javascript does worse than just having these boilerplate syntax features. [Semicolons will usually be automatically inserted by the interpreter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion), so *often* you don't need them, but if you lean on that fact, sometimes semicolons will be inserted incorrectly and break your code in bizarre ways. And you can't even say "Just don't lean on the feature", because the nature of the feature precludes that. Everyone forgets semicolons sometimes in semicolon languages.
-
-<h3 class="bad">Object constructors for primitive types</h3>
+### Object constructors for primitive types
 
 ```javascript
 x = 5;
@@ -188,17 +147,87 @@ val = new Boolean(false);
 ```
 Because objects are always true.
 
-<h3 class="bad">Distinction between <code>null</code> and <code>undefined</code> is confusing and unnecessary</h3>
+## Error handling
 
-There are *two* primitive values that represent the lack of a value. `null` and `undefined` are semantically different; for function parameters, passing `undefined` causes the parameter to get its default value. Passing `null` causes it to get `null`. Now *that's* nice and intuitive.
+Javascipt uses exceptions like other dynamic languages, but it's lacking over Python and Ruby in that it doesn't support catching only specific types of exceptions. `catch` always catches everything and you have to manually check and reraise if you only wanted to catch some kinds. And like the others, [it catches name errors](https://dev.to/yujiri8/why-do-all-the-dynamic-languages-catch-name-errors-by-default-5317). Ugh.
 
-<h3 class="bad">Lack of syntactic support for arrays</h3>
+It does give good stack traces, and has the finally statement.
 
-Javascript, perhaps owing to the way it treats arrays as objects, supports neither negative indices nor slicing. Just compare the readability difference:
+## Syntax
+
+Javascript has the C syntax as far as semicolons, braces, and parentheses around conditions. I talked about this a lot in my review of Python, but Javascript does worse than just having this boilerplate: [semicolons will usually be automatically inserted by the interpreter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion), so *often* you don't need them, but if you lean on that fact, sometimes semicolons will be inserted incorrectly and break your code in bizarre ways. And you can't even say "Just don't lean on the feature", because the nature of the feature precludes that. Everyone forgets semicolons sometimes in semicolon languages.
+
+### Lack of syntactic support for arrays
+
+Perhaps because of the way Javascript treats arrays as objects, it supports neither negative indices nor slicing. Just compare the readability difference:
 ```javascript
 arr[-5];
-arr[arr.length - 5];
+arr[arr.length - 5]; // And imagine if arr was longer
 
 arr[1:3];
 arr.slice(1, 3);
 ```
+
+### Variable declarations are a mess
+
+Assigning to an undefined variable in Javascript by default creates a *global* variable, if you don't use `'use strict';` at the top of the file. Besides this unfortunate fact, there are *three* different keywords for declaring variables that all have subtle differences:
+
+* `var` - creates a function-local variable. That's all it does.
+
+* `let` - two differences from `var`. It's *block-scoped* instead of function-scoped, and it doesn't allow redeclaring the variable with `let` later.
+
+* `const` - like `let`, but makes the variable immutable.
+
+What an elegant and straightforward system!
+
+### Iteration
+
+Javascript has three different for loop constructs: the C-style `for (let i = 0; i < items.length; i++) {`, `for (let i in items) {`, and `for (let i of items) {`. What are the differences? Can we maybe use these two latter constructions to elide the antiquated C bullshit?
+
+Well, no. `for`..`in` is for iterating on the keys of an object... but objects in Javascript have string keys. And do you know what that means happens when you try to use this on an Array?
+```javascript
+nums = [5, 16, -3];
+for (let i in nums) {
+    console.log(i + 1);
+}
+/* Prints
+01
+11
+21
+*/
+```
+Because arrays are technically objects and so their keys as given by `for`..`in` are of course the *string* indices. This works for some use cases, but if you try to add to the index counter, it'll break your code in bizarre ways.
+
+`for`..`of`, on the other hand, *only* gives you the values. Not the keys. And of course there's no easy way to get the key from the value; there's nothing equivalent to Python's `enumerate`, as far as I know. There's also no `range`. So, we still sometimes need antiquated C bullshit to iterate in Javascript.
+
+While I'm on the topic of iteration, I find it interesting that in ES6 Javascript picked up [an iterator/generator interface](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) like Python's. No generator expressions or comprehensions, though.
+
+### Object syntax
+
+Javascript's syntax for objects is much nicer than other languages. Literals don't usually need quotes around keys (`{id: 5, name: 'Bob'}`), and they support bracket syntax to evaluate an expression as a key (`property = 'name'; obj[property]` is like `obj.name`). And then there there are super convenient things like [object spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Template strings
+
+I'll be honest, I was pretty skeptical of [template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) when I first found out. I thought it was adding new syntax to the language [for no good reason](https://yujiri.xyz/software/features). But after working with web components via Lit-Element I've learned to appreciate it; it's really great when so much logic is embedded in the component's render template. Javascript's template strings are more powerful than Python's f-strings because they can embed loops.
+
+### Arrow functions
+
+Most dynamic languages have `map`, `filter`, `reduce`, and lambdas, but I think Javascript leads the others (or at least Python) in the functional programming department with [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions). I use them every day; I can't describe how much nicer they are than using the `function` keyword. And the syntax is intuitive, too; it *looks* like you're taking the parameter list and doing something with it. Python has lambdas and in-function `def`, but lambdas are limited to just a `return` statement and `def` doesn't handle scoping the same way arrow functions do ([this article on Pylint](https://pythonspeed.com/articles/pylint/) shows an example of the difference where you would want the arrow function behavior).
+
+## Concurrency
+
+As Javascript was born in the single-threaded, event-driven environment of the browser, its concurrency features revolve around IO rather than parallel processing. Node, however, does support using [OS threads](https://blog.logrocket.com/a-complete-guide-to-threads-in-node-js-4fa3898fe74f/) to do actual parallelism, so that's cool, even if it can't be done nearly as cleanly as async/await. I haven't really used the threading so I can't comment much more on it.
+
+## Stdlib and ecosystem
+
+The JS stdlib is missing a lot of standard fare. No titlecase. No randint. No strftime (though it does have a curious-but-neato sort of wildcard-strptime). No regex escape! The community [made a package on NPM for it](https://www.npmjs.com/package/escape-string-regexp) even though it's only a few lines, because people kept [hand-rolling it and getting it wrong](https://stackoverflow.com/questions/3561493/is-there-a-regexp-escape-function-in-javascript).
+
+Oh, wait, there are [at least](https://www.npmjs.com/package/regex-escape) [three](https://www.npmjs.com/package/escape-regex-string) [others](https://www.npmjs.com/package/escape-regex). I guess the community didn't actually succeed in standardizing. This is why I say language designers underrate putting things in the stdlib.
+
+Anyway, there's also no functions to parse and format query strings. Pretty important for a language that's almost exclusively used on the web. At least we have ones to [encode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) and [decode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent) URI *components*.
+
+A problem that seems to plague the NPM ecosystem is overdependency. Everything has a huge amount of dependencies. You can barely install anything without populating your `node_modules` with at least a hundred directories.
+
+A lot of the dependencies are nonsense packages, which provide a single function of often just *one* line (and not ones that are tricky like the regex escape). [This article](https://medium.com/commitlog/the-internet-is-at-the-mercy-of-a-handful-of-people-73fac4bc5068) is a good read on the situation.
+
+Ecosystems of other languages don't have this problem. Even [Django](https://yujiri.xyz/software/django), the giant all-the-features Python web framework, has only *3* dependencies, including indirect.
