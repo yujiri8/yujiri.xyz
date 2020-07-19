@@ -21,6 +21,6 @@ COOKIE_LIFETIME = 2592000
 
 def require_admin(user):
 	if not user:
-		raise HTTPException(status = 401)
+		raise HTTPException(status_code = 401)
 	if not user.admin:
-		raise HTTPException(status = 403)
+		raise HTTPException(status_code = 403)
