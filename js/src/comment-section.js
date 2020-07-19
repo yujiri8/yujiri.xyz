@@ -3,7 +3,7 @@ import {LitElement, html, css} from 'lit-element';
 import './a-comment.js';
 import './comment-submit-area.js';
 import './login-pane.js';
-import {readCookie, setCookie, api, showToast, parseQuery} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('comment-section', class extends LitElement {
@@ -22,8 +22,8 @@ customElements.define('comment-section', class extends LitElement {
 	}
 	constructor() {
 		super();
-		this.loggedIn = readCookie('auth') && readCookie('email');
-		this.admin = readCookie('admin');
+		this.loggedIn = util.readCookie('auth') && util.readCookie('email');
+		this.admin = util.readCookie('admin');
 		this.comments = [];
 		this.loadComments();
 		this.addEventListener('comment-posted', this.loadComments);
@@ -45,30 +45,30 @@ customElements.define('comment-section', class extends LitElement {
 		<br>
 		<comment-submit-area open ?logged-in="${this.loggedIn}" reply-to="${location.pathname}">
 		</comment-submit-area>
-		${parseQuery(location.search).c? html`
+		${util.parseQuery(location.search).c? html`
 			You're viewing a subtree of the comments.
 			${this.comments[0] && !this.comments[0].reply_to.startsWith('/')? html`
-			    <a href="${location.origin + location.pathname}?c=${
-			        this.comments[0].reply_to}#comment-section">view parent</a> or
+				<a href="${location.origin + location.pathname}?c=${
+					this.comments[0].reply_to}#comment-section">view parent</a> or
 			`:''}
 			<a href="${location.origin + location.pathname}#comment-section">
 				view all comments on this page</a>
 		`:''}
 		<div id="comments">
-		    ${this.comments.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
+			${this.comments.map(c => html`<a-comment .comment="${c}"></a-comment>`)}
 		</div>
 		`;
 	}
 	async loadComments() {
-		const subtree = parseQuery(location.search).c;
-		const resp = await api('GET', 'comments', subtree?
+		const subtree = util.parseQuery(location.search).c;
+		const resp = await util.api('GET', 'comments', subtree?
 			{id: subtree} : {reply_to: location.pathname}
 		);
 		try {
 			const data = await resp.json();
 			this.comments = data instanceof Array? data : [data];
 		} catch (err) {
-			showToast('err', "Couldn't understand response from server");
+			util.showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
 	}

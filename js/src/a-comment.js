@@ -74,7 +74,7 @@ customElements.define('a-comment', class extends LitElement {
 				view subtree
 				<!-- if the replies weren't returned, the property is a count of them -->
 				${typeof this.comment.replies === 'number' && this.comment.replies?
-				    "(more replies)"
+					"(more replies)"
 				:''}
 			</a>
 		</div>
@@ -83,9 +83,9 @@ customElements.define('a-comment', class extends LitElement {
 			</comment-submit-area>
 		`:''}
 		<div class="indent">
-		    ${this.comment.replies instanceof Array?
-		        this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)
-		    :''}
+			${this.comment.replies instanceof Array?
+				this.comment.replies.map(c => html`<a-comment .comment="${c}"></a-comment>`)
+			:''}
 		</div>
 		`;
 	}

@@ -28,5 +28,5 @@ if (currentTheme) document.documentElement.setAttribute('data-theme', currentThe
 // Put a global reference to the timestamp.
 addEventListener('load', () => {
 	window.timestr = document.getElementById('timestamp').innerText;
-	window.timestamp = new Date(timestr);
+	window.timestamp = new Date(window.timestr);
 });

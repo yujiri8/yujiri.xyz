@@ -2,7 +2,6 @@ import {LitElement, html, css} from 'lit-element';
 import '@material/mwc-switch';
 
 import {styles} from './css.js';
-import {readCookie, login} from './util.js';
 
 customElements.define('theme-switch', class extends LitElement {
 	static get styles() {

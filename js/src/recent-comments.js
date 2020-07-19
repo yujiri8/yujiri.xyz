@@ -1,7 +1,6 @@
 import {LitElement, html, css} from 'lit-element';
-import {unsafeHTML} from 'lit-html/directives/unsafe-html.js';
 
-import {readCookie, api, showToast, summarizeComment} from './util.js';
+import * as util from './util.js';
 import {styles} from './css.js';
 
 customElements.define('recent-comments', class extends LitElement {
@@ -28,7 +27,7 @@ customElements.define('recent-comments', class extends LitElement {
 		<h2>Recent comments</h2>
 		<div id="comments">
 			${this.comments?
-				this.comments.map(c => html`<p>${summarizeComment(c)}</p>`)
+				this.comments.map(c => html`<p>${util.summarizeComment(c)}</p>`)
 				: "Loading..."
 			}
 		</div>
@@ -40,11 +39,11 @@ customElements.define('recent-comments', class extends LitElement {
 		this.load();
 	}
 	async load() {
-		const resp = await api('GET', 'recent_comments', {count: this.count});
+		const resp = await util.api('GET', 'recent_comments', {count: this.count});
 		try {
 			this.comments = await resp.json();
 		} catch (err) {
-			showToast('err', "Couldn't understand response from server");
+			util.showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
 	}

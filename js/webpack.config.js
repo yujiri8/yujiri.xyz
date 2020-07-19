@@ -1,4 +1,5 @@
 const config = (env, argv) => ({
+  mode: (!env || !env.dev)? 'production' : 'development',
   entry: './src/main.js',
   output: {
     path: __dirname + '/dist',
@@ -9,7 +10,7 @@ const config = (env, argv) => ({
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       }
     ]

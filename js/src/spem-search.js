@@ -86,7 +86,7 @@ customElements.define('spem-search', class extends LitElement {
 					<textarea id="admin-notes" @input="${autogrow}" style="display:block; width:100%"></textarea>
 					<button @click="${this.addWord}">jini</button>
 					<button @click="${this.changeWord}">yɪŋ</button>
-					<button @click="${e => this.fetchWord(this.shadowRoot.getElementById('admin-word').value)}">gi kei</button>
+					<button @click="${() => this.fetchWord(this.shadowRoot.getElementById('admin-word').value)}">gi kei</button>
 				</fieldset>
 			`:''}
 		</div>
