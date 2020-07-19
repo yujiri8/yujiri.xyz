@@ -8,13 +8,12 @@
         "ecmaVersion": 11,
         "sourceType": "module"
     },
+    "plugins": [
+    	"only-warn"
+   	],
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "no-constant-condition": [

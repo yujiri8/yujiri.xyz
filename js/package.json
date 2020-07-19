@@ -4,26 +4,27 @@
   "description": "yujiri.xyz website",
   "private": true,
   "scripts": {
-    "d": "webpack --env.dev && cp dist/* /root/devhtml/",
-    "p": "webpack && cp dist/bundle.js /root/html/"
+    "d": "webpack --env.dev && cp dist/* ~/devhtml/",
+    "p": "webpack && cp dist/bundle.js ~/html/"
   },
   "author": "Yujiri (Ryan Westlund)",
   "license": "BSD-3-Clause",
   "devDependencies": {
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
-    "babel-plugin-bare-import-rewrite": "^1.5.1",
+    "babel-plugin-bare-import-rewrite": "^2.0.0",
     "eslint": "^7.5.0",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-only-warn": "^1.0.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@material/mwc-dialog": "0.15.0",
-    "@material/mwc-snackbar": "0.15.0",
-    "@material/mwc-switch": "0.15.0",
+    "@material/mwc-dialog": "0.17.2",
+    "@material/mwc-snackbar": "0.17.2",
+    "@material/mwc-switch": "0.17.2",
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1",
     "lit-toast": "^1.2.0",
