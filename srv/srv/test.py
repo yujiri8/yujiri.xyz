@@ -13,7 +13,7 @@ class TestFailed(Exception): pass
 def setup():
 	"""Clear the DB, then add a user, a comment by them, and subscribe them to it."""
 	db.resetdb()
-	s = Session()
+	s = db.Session()
 	try:
 		u = User(email = 'user@example.com', auth = '')
 		c = Comment(user = u, name = '', body = '', article_path = '', article_title = '', reply_to = '')
@@ -27,7 +27,7 @@ def setup():
 
 def delete_comment_orm():
 	"""Delete the comment using Session.delete so it happens at the ORM level."""
-	s = Session()
+	s = db.Session()
 	try:
 		u = s.query(User).one()
 		c = s.query(Comment).one()
@@ -43,7 +43,7 @@ def delete_comment_orm():
 
 def delete_comment_db():
 	"""Delete the column using Query.delete so it happens at the database level."""
-	s = Session()
+	s = db.Session()
 	try:
 		c = s.query(Comment).one()
 		s.query(Comment).filter_by(id = c.id).delete()
