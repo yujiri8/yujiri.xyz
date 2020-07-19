@@ -29,7 +29,7 @@ And what's this CMake thing? Wait, it's *not* a dialect of `make`?
 
 When I submitted my [patch to GTK to fix a GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012), I wanted to compile GTK after my change first, because I was terrified of how I'd feel if I submitted a patch that broke the build, as sure as I was that that was impossible. I spent about 12 hours trying to do so before giving up. The quest led me through installing Meson, Ninja, hunting down dependencies manually after each failed compilation informed me of another one, googling cryptic error messages and reading old mailing list archives, trying on an Ubuntu system after giving up on the FreeBSD one, and finally deciding I'd just submit the merge request and hope it worked (it did).
 
-While GTK was the worst, *Most* C projects I've worked with have given me huge trouble building them.
+While GTK was the worst, *most* C projects I've worked with have given me huge trouble building them.
 
 The [Javascript](https://yujiri.xyz/software/javascript) ecosystem has a similar situation drowned in `webpack`, `babel`, `rollup`, and several config files, but it's more defensible because those tools solve problems that aren't created by the Javascript interpreters (minifying and bundling to save bandwidth, package imports, polyfills...).
 
@@ -37,7 +37,7 @@ The [Javascript](https://yujiri.xyz/software/javascript) ecosystem has a similar
 
 [Haskell](https://yujiri.xyz/software/haskell) and OCaml are even worse than C. With these ML family languages, it seems like the compiler was never meant to be usable on its own. So people wrote a dozen different tools to wrap the compiler so you can actually use it. All of said tools introduce their own problems, so you still can't actually build anything with them, and the solution is always to install and use another tool on top of it.
 
-With OCaml, `ocamlopt` is the native code compiler (`ocamlc` is a bytecode compiler and `ocaml` is an interpreter). `dune` is the "build system". `opam` is the "package manager". `ocamlfind` and `ocamlbuild` are involved in some tangled way. All the documentation is out of date and nothing they say works.
+With OCaml, `ocamlopt` is the native code compiler (`ocamlc` is a bytecode compiler and `ocaml` is an interpreter). `dune` is the "build system". `opam` is the "package manager". Then what are `ocamlfind` and `ocamlbuild`, you ask? I don't know, but they're involved in some tangled way. All the documentation is out of date and nothing they say works.
 
 The built-in `Str` module apparently requires explicit linking. If you're using `ocaml`, you can load it with `#load "str.cma";;`. *But that directive is invalid syntax* to `ocamlopt` and `ocamlc`, which want [command-line arguments instead](https://caml.inria.fr/pub/docs/manual-ocaml/libstr.html) - *different* ones.
 

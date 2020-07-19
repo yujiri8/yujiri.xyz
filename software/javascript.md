@@ -228,6 +228,16 @@ Anyway, there's also no functions to parse and format query strings. Pretty impo
 
 A problem that seems to plague the NPM ecosystem is overdependency. Everything has a huge amount of dependencies. You can barely install anything without populating your `node_modules` with at least a hundred directories.
 
-A lot of the dependencies are nonsense packages, which provide a single function of often just *one* line (and not ones that are tricky like the regex escape). [This article](https://medium.com/commitlog/the-internet-is-at-the-mercy-of-a-handful-of-people-73fac4bc5068) is a good read on the situation.
+A lot of the dependencies are nonsense packages, which provide a single function of often just *one* line (and not even ones that are tricky like the regex escape). [This article](https://medium.com/commitlog/the-internet-is-at-the-mercy-of-a-handful-of-people-73fac4bc5068) is a good read on the situation.
 
 Ecosystems of other languages don't have this problem. Even [Django](https://yujiri.xyz/software/django), the giant all-the-features Python web framework, has only *3* dependencies, including indirect.
+
+---
+
+<br>
+
+I guess I should write some kind of conclusion. The conclusion is that Javascript is bad and you should feel bad. I think it's a tragedy that server-side Javascript ever became a thing and it should become not a thing, because the place where you have no choice but to use Javascript is the only place where it makes sense to Javascript. Other dynamic languages, like Python, Ruby, and Julia, are hands-down superior to Javascript if you can choose either.
+
+Javascript has gotten quite a lot better in recent years with the addition of async/await, modules, and great features like arrow functions. I feel terrible for people who had to use it on the server before all that. But even *with* those things, it seems to be asymptotically catching up at best; the few things Javascript does *better* than other dynamic languages are small deals while the downsides are huge; and many are systemic problems that can't be fixed because of compatibility requirements.
+
+I want to say that I don't think Javascript's flaws are primarily blameable on the designers being dumb. It's a harder job than making most languages, since they have much less ability to fix things - the fundamental problem is that the people writing the code don't control what interpreter and version is used to run it. But whatever the causes, the flaws are there, and we should avoid using Javascript where better alternatives are readily available.

@@ -26,7 +26,7 @@ Go compiles to native code with static linking by default, which [I like](https:
 Go's error handling approach is easily the worst thing about it. There are five main problems with it: it's verbose, it's mistake-prone, errors carry almost no information, it breaks composability, and it doesn't play well with some other Go features.
 
 Failure is signaled by returning error values instead of raising exceptions; for example `os.Open` has the signature `Open(name string) (*File, error)`. You're supposed to catch both the File pointer and the error and check the error manually before doing anything with the file. Here's the signature boilerplate:
-```
+```go
 file, err := os.Open("file")
 if err != nil {
 	return err
@@ -35,7 +35,7 @@ if err != nil {
 You have to do this after *every single function call that might fail*. (It can be written with the function call and condition on the same line, but that's questionable style.) This boilerplate can easily take up 20% of a Go program.
 
 And the errors themselves carry only the error message, not a stack trace or even a line number, so if an error gets returned through a stack of 5 functions, you have only slightly more to go on than if you just saw "error, figure it out yourself". [This package](https://github.com/pkg/errors) has been created by the community (no, it's not even stdlib) to make it easier to get context with your errors. It enables this:
-```
+```go
 if err != nil {
 	return errors.Wrap(err, "When doing X")
 	// The returned error will be, "When doing X: ..."
@@ -49,10 +49,10 @@ But perhaps even worse than all the tedium is what happens if you *forget* to ha
 
 I think the fact that 90% of the time what you do in these incessant error handling blocks is just return the error (or `log.Fatal` if it's top-level) is a pretty conclusive argument that propagating errors upward should be the default.
 
-How does it break composibility? Because if `func1` returns a `Thing` and an `error` and `func2` takes a `Thing`, you can't just do `func2(func1())` - you have to call `func1` and catch the error and check it manually before deciding whether to call `func2`. Similarly, helper functions are made expensive because you can't just have a function that concisely wraps another and doesn't have to know about its possibility of failure; you have to catch and return the error at *every step* to stop it from getting swallowed (unless the return types match exactly).
+How does it break composability? Because if `func1` returns a `Thing` and an `error` and `func2` takes a `Thing`, you can't just do `func2(func1())` - you have to call `func1` and catch the error and check it manually before deciding whether to call `func2`. Similarly, helper functions are made expensive because you can't just have a function that concisely wraps another and doesn't have to know about its possibility of failure; you have to catch and return the error at *every step* to stop it from getting swallowed (unless the return types match exactly).
 
 Finally, this error handling approach doesn't work well with `defer` (see below). Since you have to manually check the error to not silently ignore it, any error returned from a deferred call will get ignored. The only way to get around it is to do something like:
-```
+```go
 defer func(){
 	err = theThingIWantedToDefer()
 	if err != nil {
@@ -89,7 +89,7 @@ Null is not dealt with. Pointers, slices, maps, and channels can all be `nil`, w
 The non-pointer ones are easy mistakes to make because declaring those types, for example `var nums = []int`, makes it nil; you're supposed to use `make` to initialize them if you don't want nil.
 
 There's also a gotcha with nil interfaces:
-```
+```go
 package main
 
 import "fmt"
@@ -147,7 +147,7 @@ It's unfortunate that all the binary operators and syntax features like indexing
 ### No inline branching
 
 Go doesn't have a conditional operator or any other type of control-flow-as-expression. I've been in a lot of situations, like with CSV, where I have a long row of values:
-```
+```go
 	field1,
 	field2,
 	field3,
@@ -158,7 +158,7 @@ The relevant FAQ section:
 
 >There is no ternary testing operation in Go. You may use the following to achieve the same result:
 >
->```
+>```go
 >if expr {
 >    n = trueVal
 >} else {
@@ -186,7 +186,7 @@ A function that returns two values has to be called and caught on its own if you
 
 Curiously, while Go does support composing functions that return multiple values with other functions that accept the same types, this only works as a special case, not with more arguments. For example,
 
-```
+```go
 func main() {
 	f1(f2())
 }
@@ -199,7 +199,7 @@ func f1(a int, b int, c int) {
 
 ```
 works, but
-```
+```go
 func main() {
         f1(f2(), 6)
 }
@@ -221,12 +221,12 @@ Having these [makes little sense when the compiler also finds unused vars](https
 * `:=` can't be used outside of a function; you have to use `var` for global variables. I'm not sure what the reason for this is, but it's what they decided.
 
 * `var` requires that *all* variables on the left are new. This will fail to compile:
-	```
+	```go
 	var x = 5
 	var x, y = getMeTwoInts()
 	```
 	But this works:
-	```
+	```go
 	var x = 5
 	x, y := getMeTwoInts()
 	```
@@ -246,7 +246,7 @@ Most array operations are extremely verbose.
 * Insert an element into a slice at an arbitrary position? This is where it gets terrible. `items = append(items[:i], append([]T{item}, items[i:]...)...)` where T is the type of the items. It has to be this way because a single variadic parameter can't take both a singleton argument and a variadic argument.
 
 * Want to try *reversing* a slice? Go's about to throw you for a loop.
-	```
+	```go
 	for i := len(items)/2 - 1; i >= 0; i-- {
 		opp := len(items) - 1 - i
 		items[i], items[opp] = items[opp], items[i]
@@ -255,7 +255,7 @@ Most array operations are extremely verbose.
 	As an additional downside of this not being a built-in oneliner, every time you type this out there's a chance you'll make a mistake, and it'll probably be a logic bug that'll take at least a good five to ten minutes to track down if it's part of a big project.
 
 * You want to even just test for membership in a slice? Time for another for loop.
-	```
+	```go
 	var found bool
 	for i := range items {
 		if items[i] == item {
