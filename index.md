@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 20:**
+New: [Confessions of a keyboard warrior](misc/keyboard_warrior).
+
 **July 19:**
 I've redone my programming language reviews in a new style that's more "topic by topic" than "good things minus bad things". I don't use colored headings anymore because I think that was kind of limiting me to a one-sided tone within each section, and I use headings hierarchically now instead of using them to indicate magnitude (I think there are SEO benefits).
 

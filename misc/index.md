@@ -7,15 +7,17 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 
 [Resume](resume)
 
+[Why I organize this site this way](structure)
+
 [The logo explained](logo)
-
-[Wearing many masks](masks)
-
-[How I became an Anarchist](anarchism_conversion)
 
 [How I left Catholicism](apostasy)
 
+[How I became an Anarchist](anarchism_conversion)
+
 [My names and the story of Evan](names)
+
+[Wearing many masks](masks)
 
 [Considering saying something makes you wiser](public_wisdom)
 
@@ -23,4 +25,4 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 
 [The Bystander Effect - a story of my failure](bystander)
 
-[Why I organize this site this way](structure)
+[Confessions of a keyboard warrior](keyboard_warrior)
