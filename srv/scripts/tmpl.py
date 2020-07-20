@@ -70,9 +70,7 @@ def build_article(filename, srcdir):
 	# Retain only the article body.
 	article = article[article.find('\n\n')+2:]
 	if filename.endswith('.md'):
-		article = mistune.markdown(article, escape=False) \
-			.replace('<pre><code>', '<pre class="code">') \
-			.replace('</code></pre>', '</pre>')
+		article = mistune.markdown(article, escape = False, plugins = ['strikethrough'])
 	args['ARTICLE'] = add_fragment_links(article)
 	if not args.get('NO_TIMESTAMP'):
 		args['TIMESTAMP'] = get_last_modified(filename).strftime('%Y %b %d, %A, %R')

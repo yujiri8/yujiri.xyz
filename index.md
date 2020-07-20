@@ -156,6 +156,17 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 19:**
+I've redone my programming language reviews in a new style that's more "topic by topic" than "good things minus bad things". I don't use colored headings anymore because I think that was kind of limiting me to a one-sided tone within each section, and I use headings hierarchically now instead of using them to indicate magnitude (I think there are SEO benefits).
+
+I also scrapped the article where I laid out a baseline for language reviews, since I don't think that makes much sense with the new style.
+
+I also fixed a minor bug that would cause the "you'll receive a confirmation email about your account creation" message to appear when logging in while posting a comment. And the auth popup can now show specific error messages like "that name is claimed by a registered user" instead of always "invalid credentials".
+
+I also unlinked the Uberpython article. It's a good article, but when redoing my Go review I decided I had a lot more points to make about the error handling, so I ended up going through it myself. And Uberpython is a Wordpress site, yuck.
+
+Finally, I enabled the strikethrough plugin on the mistune markdown processor, so you can now use `~~text~~`.
+
 **July 17:**
 New articles:
 

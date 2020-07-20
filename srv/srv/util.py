@@ -4,10 +4,7 @@ import os, pwd
 
 def markdown(text):
 	"""Processes both markdown and the <spem> tag."""
-	# Fix the order of the tags in <pre><code> blocks.
-	return spemtag(mistune.markdown(text) \
-		.replace('<pre><code>', '<pre class="code">') \
-		.replace('</code></pre>', '</pre>'))
+	return spemtag(mistune.markdown(text, plugins = ['strikethrough']))
 
 def spemtag(text):
 	"""Unescapes only the <spem>tag</spem>, the only HTML tag allowed for direct use in comments."""
