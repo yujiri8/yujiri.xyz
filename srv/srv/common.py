@@ -19,8 +19,11 @@ async def env(auth = Cookie('')):
 # a month
 COOKIE_LIFETIME = 2592000
 
-def require_admin(user):
+def require_login(user):
 	if not user:
-		raise HTTPException(status_code = 401)
+		raise HTTPException(status_code = 401, detail = '')
+
+def require_admin(user):
+	require_login(user)
 	if not user.admin:
-		raise HTTPException(status_code = 403)
+		raise HTTPException(status_code = 403, detail = '')

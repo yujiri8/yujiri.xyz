@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import datetime
 
 from db import User, Comment, Subscription
-from common import env
+from common import env, require_login, require_admin
 from email_templates import *
 import users, util, emails, email_templates
 
@@ -24,7 +24,7 @@ async def get_comments(reply_to = '', id: int = 0, raw: bool = False, env = Depe
 	# Case 2: a specific comment requested.
 	elif id:
 		comment = env.db.query(Comment).get(id)
-		if not comment: raise HTTPException(status_code = 404)
+		if not comment: raise HTTPException(status_code = 404, detail = "That comment doesn't exist")
 		return comment.dict(env.db, user = env.user, raw = raw)
 	else:
 		raise HTTPException(status_code = 400)
@@ -58,7 +58,7 @@ async def post_comment(
 	# Otherwise, make sure it exists.
 	else:
 		if not util.article_exists(params.reply_to):
-			raise HTTPException(status_code = 404)
+			raise HTTPException(status_code = 404, detail = "That article doesn't exist")
 		if params.reply_to == '/404':
 			return HttpException(status_code = 400, detail = "You can't comment on that URL")
 		# Strip 'index'.
@@ -78,8 +78,7 @@ async def post_comment(
 	# Prevent name impersonation.
 	name_user = env.db.query(User).filter_by(name = cmt.name).one_or_none()
 	if name_user and (not cmt.user or cmt.user != name_user):
-		raise HTTPException(status_code = 401, detail =
-			"That name is taken by a registered user.")
+		raise HTTPException(status_code = 401, detail = "That name is taken by a registered user.")
 	# If it's not a logged in user, check for an email.
 	if not cmt.user and params.email:
 		# Determine if the email is already claimed.
@@ -105,10 +104,9 @@ class EditCommentParams(BaseModel):
 @router.put('/comments')
 async def edit_comment(params: EditCommentParams, env = Depends(env)):
 	cmt = env.db.query(Comment).get(params.id)
-	if not env.user:
-		raise HTTPException(status_code = 401)
+	require_login(env.user)
 	if env.user != cmt.user and not env.user.admin:
-		raise HTTPException(status_code = 403)
+		raise HTTPException(status_code = 403, detail = '')
 	cmt.name = params.name
 	cmt.body = params.body
 	cmt.time_changed = datetime.datetime.now()
@@ -119,10 +117,7 @@ async def edit_comment(params: EditCommentParams, env = Depends(env)):
 @router.delete('/comments')
 async def delete_comment(req: Request, env = Depends(env)):
 	id = int(await req.body())
-	if not env.user:
-		raise HTTPException(status_code = 401)
-	if not env.user.admin:
-		raise HTTPException(status_code = 403)
+	require_admin(env.user)
 	env.db.query(Comment).filter_by(id = id).delete()
 	env.db.commit()
 

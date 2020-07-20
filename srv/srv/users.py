@@ -9,7 +9,7 @@ import re, datetime, secrets, hashlib, urllib.parse, json
 from typing import Any
 
 from db import User, Comment, Subscription
-from common import env, COOKIE_LIFETIME
+from common import env, require_login, COOKIE_LIFETIME
 from email_templates import *
 import emails, util
 
@@ -99,8 +99,7 @@ async def prove_email(token, env = Depends(env)):
 
 @router.get('/users/notifs')
 async def see_subs(env = Depends(env)):
-	if not env.user:
-		raise HTTPException(status_code = 401)
+	require_login(env.user)
 	resp = {
 		'subs':	[sub.dict() for sub in env.user.subs],
 		'autosub': env.user.autosub,
@@ -112,8 +111,7 @@ class EditSubsParams(BaseModel):
 	state: Any
 @router.put('/users/notifs')
 async def edit_subs(params: EditSubsParams, env = Depends(env)):
-	if not env.user:
-		raise HTTPException(status_code = 401)
+	require_login(env.user)
 	cmt = env.db.query(Comment).get(params.id)
 	if params.state is None:
 		env.db.query(Subscription).filter_by(user = env.user, comment = cmt).delete()
@@ -129,7 +127,7 @@ async def edit_subs(params: EditSubsParams, env = Depends(env)):
 
 @router.put('/users/setpw')
 async def setpw(req: Request, resp: Response, env = Depends(env)):
-	if not env.user: raise HTTPException(status_code = 401)
+	require_login(env.user)
 	env.user.pw = hash_pw(await req.body())
 	# Change the token after this.
 	env.user.auth = gen_auth_token()
@@ -138,7 +136,7 @@ async def setpw(req: Request, resp: Response, env = Depends(env)):
 
 @router.put('/users/setname')
 async def setname(req: Request, resp: Response, env = Depends(env)):
-	if not env.user: raise HTTPException(status_code = 401)
+	require_login(env.user)
 	# To avoid the uniqueness constraint, empty usernames must be internally None, not '',
 	# but are converted to '' for the client.
 	env.user.name = (await req.body()).decode('utf8') or None
@@ -150,7 +148,7 @@ async def setname(req: Request, resp: Response, env = Depends(env)):
 
 @router.put('/users/setkey')
 async def setkey(req: Request, resp: Response, env = Depends(env)):
-	if not env.user: raise HTTPException(status_code = 401)
+	require_login(env.user)
 	# Make sure it's a valid key before we accept it.
 	try:
 		file = (await req.body()).decode('utf8')
@@ -166,6 +164,6 @@ async def setkey(req: Request, resp: Response, env = Depends(env)):
 
 @router.put('/users/setautosub')
 async def setautosub(req: Request, env = Depends(env)):
-	if not env.user: raise HTTPException(status_code = 401)
+	require_login(env.user)
 	env.user.autosub = json.loads(await req.body())
 	env.db.commit()
