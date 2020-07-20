@@ -13,13 +13,6 @@ import './auth-popup.js';
 import './notifs-panel.js';
 import './spem-search.js';
 
-// Error codes.
-window.errorCodes = {
-	400: "Bad request",
-	404: "Not found",
-	500: "Server error. I should receive an automatic email about this, so with luck I'll fix it soon.",
-	502: "Seems like the server isn't running. Hopefully I'll fix this ASAP.",
-}
 
 // Apply saved theme.
 const currentTheme = localStorage.getItem('theme');

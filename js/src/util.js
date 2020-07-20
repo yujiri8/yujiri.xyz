@@ -36,6 +36,15 @@ function fmtQueryParam(entry) {
 	return encodeURIComponent(k) + '=' + encodeURIComponent(v);
 }
 
+const errorCodes = {
+	401: "Not logged in?",
+	400: "Bad request",
+	403: "You don't have permission to do that.",
+	404: "Not found",
+	500: "Server error. I should receive an automatic email about this, so with luck I'll fix it soon.",
+	502: "Seems like the server isn't running. Hopefully I'll fix this ASAP.",
+}
+
 export const login = (initialMsg) => document.querySelector('auth-popup').run(initialMsg);
 
 export async function handleErr(resp) {
