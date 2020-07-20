@@ -64,7 +64,7 @@ customElements.define('a-comment', class extends LitElement {
 			<div class="header">${this.renderHeader()}</div>
 			<hr>
 			${this.editMode? html`
-				<textarea id="body" @input="${autogrow}">${this.comment.body}</textarea>
+				<textarea id="body" @input="${util.autogrow}">${this.comment.body}</textarea>
 			`:html`
 				<div class="body" id="body">${unsafeHTML(this.comment.body)}</div>
 			`}

@@ -83,7 +83,7 @@ customElements.define('spem-search', class extends LitElement {
 						</div>
 					</div>
 					<label for="admin-notes">Notes</label>
-					<textarea id="admin-notes" @input="${autogrow}" style="display:block; width:100%"></textarea>
+					<textarea id="admin-notes" @input="${util.autogrow}" style="display:block; width:100%"></textarea>
 					<button @click="${this.addWord}">jini</button>
 					<button @click="${this.changeWord}">yɪŋ</button>
 					<button @click="${() => this.fetchWord(this.shadowRoot.getElementById('admin-word').value)}">gi kei</button>
@@ -229,7 +229,7 @@ customElements.define('spem-search', class extends LitElement {
 		this.shadowRoot.getElementById('admin-word').value = newWord.word;
 		this.shadowRoot.getElementById('admin-meaning').value = newWord.meaning;
 		this.shadowRoot.getElementById('admin-notes').value = newWord.notes;
-		autogrow({target: this.shadowRoot.getElementById('admin-notes')});
+		util.autogrow({target: this.shadowRoot.getElementById('admin-notes')});
 		this.shadowRoot.getElementById('admin-translations').setData(newWord.translations);
 		this.shadowRoot.getElementById('admin-tags').setData(newWord.tags);
 	}

@@ -13,7 +13,6 @@ import './auth-popup.js';
 import './notifs-panel.js';
 import './spem-search.js';
 
-
 // Apply saved theme.
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) document.documentElement.setAttribute('data-theme', currentTheme);

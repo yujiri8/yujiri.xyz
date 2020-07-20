@@ -172,7 +172,7 @@ export function parseQuery(raw) {
 addEventListener("beforeunload", () => window.noShowError = true);
 
 // A global utility to make a textarea grow when necessary.
-window.autogrow = e => {
+export function autogrow(e) {
 	const textarea = e.target;
 	// Temporarily add a bottom margin equal to the height of the textarea.
 	// This prevents a glitch that scrolls the viewport upward when the textarea contracts.

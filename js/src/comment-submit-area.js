@@ -56,7 +56,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		${this.previewHTML? html`
 			<div id="preview">${unsafeHTML(this.previewHTML)}</div>
 		`:html`
-			<textarea id="body" @input="${autogrow}"
+			<textarea id="body" @input="${util.autogrow}"
 				placeholder="Your comment...">${this.savedContents}</textarea>
 		`}
 		`;
@@ -104,6 +104,6 @@ customElements.define('comment-submit-area', class extends LitElement {
 	async unpreview() {
 		this.previewHTML = '';
 		await this.updateComplete;
-		autogrow({target: this.shadowRoot.getElementById('body')});
+		util.autogrow({target: this.shadowRoot.getElementById('body')});
 	}
 });
