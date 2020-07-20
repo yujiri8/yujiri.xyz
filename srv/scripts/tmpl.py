@@ -73,7 +73,7 @@ def build_article(filename, srcdir):
 		article = mistune.markdown(article, escape = False, plugins = ['strikethrough'])
 	args['ARTICLE'] = add_fragment_links(article)
 	if not args.get('NO_TIMESTAMP'):
-		args['TIMESTAMP'] = get_last_modified(filename).strftime('%Y %b %d, %A, %R')
+		args['TIMESTAMP'] = get_last_modified(filename).strftime('%Y %b %d, %a, %R')
 	# Strip index and .html from the canonical URL.
 	if filename.endswith('.html'): filename = filename[:-5]
 	elif filename.endswith('.md'): filename = filename[:-3]

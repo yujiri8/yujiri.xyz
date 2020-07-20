@@ -85,7 +85,7 @@ export function setCookie(name, val) {
 export function summarizeComment(comment) {
 	return unsafeHTML(`${comment.name} on
 		<a href="${comment.link}">${comment.article_title}</a>
-		at ${strftime('%Y %b %d, %A, %R', new Date(comment.time_added))}`);
+		at ${formatDate(comment.time_added)}`);
 }
 
 // Used for pages that have a column layout.
@@ -182,4 +182,12 @@ window.autogrow = e => {
 	textarea.style.height = 'inherit';
 	textarea.style.height = textarea.scrollHeight + 2 + 'px';
 	textarea.style.marginBottom = prevMarginBottom;
+}
+
+const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+export function formatDate(d) {
+	d = new Date(d); // Incase it's in string form. This won't change the value of a Date object.
+	return `${d.getUTCFullYear()} ${monthNames[d.getMonth()]} ${d.getDate()},
+		${dayNames[d.getDay()]}, ${d.getHours()}:${d.getMinutes()}`;
 }

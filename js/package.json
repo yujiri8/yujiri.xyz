@@ -27,7 +27,6 @@
     "@material/mwc-switch": "0.17.2",
     "lit-element": "^2.3.1",
     "lit-html": "^1.2.1",
-    "lit-toast": "^1.2.0",
-    "strftime": "^0.10.0"
+    "lit-toast": "^1.2.0"
   }
 }
