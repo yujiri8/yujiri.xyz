@@ -22,7 +22,7 @@ This same thing happened to me with font sizes. I had a phase in my teenage year
 
 ## If you don't think anyone else will ever read it, you are probably not correct.
 
-Almost any time you write non-throwaway code, it's a good idea to have it posted on your Github page, personal website, or somewhere else where people can see your accomplishments. I had several projects in my early years that I told myself no one would ever read and I turned out to be wrong ([Pixeldodge](https://github.com/yujiri8/pixeldodge), [Spacestation Defense](https://github.com/yujiri8/spacestation-defense), and the [Prismata](/reviews/prismata) bot I took down for other reasons, but *was* read by at least one other coder).
+Almost any time you write non-throwaway code, it's a good idea to have it posted on your Github page, personal website, or somewhere else where people can see your accomplishments. I had several projects in my early years that I told myself no one would ever read and I turned out to be wrong. The only surviving one is [Spacestation Defense](https://github.com/yujiri8/spacestation-defense) (I unpublished the others because I became absolutely embarrassed about them).
 
 A future you is also the most likely "other person" to end up reading it. Just because you can understand your code now doesn't mean you will be if you leave it and come back to it after a month. It's not the same when you didn't just write yesterday. Again, if you think that won't happen, you're probably wrong.
 
