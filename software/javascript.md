@@ -232,6 +232,10 @@ A lot of the dependencies are nonsense packages, which provide a single function
 
 Ecosystems of other languages don't have this problem. Even [Django](https://yujiri.xyz/software/django), the giant all-the-features Python web framework, has only *3* dependencies, including indirect.
 
+### Filesystem imports
+
+Javascript is one of few languages that allows arbitrary filesystem path imports. In Node for example I can do `util = require('../util.js')`. This is nice. Imports are usually much less flexible than that in other languages.
+
 ---
 
 <br>
