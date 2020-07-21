@@ -6,11 +6,11 @@ The principle of peace, that people must not force perceptions on each other, is
 
 ### Restitution
 
-Pinning down how much restitution is owed for an aggression is pretty murky. The rules I've most confident in are:
+Pinning down how much restitution is owed for an aggression is pretty murky. The rules I'm most confident in are:
 
 * For an unintentional harm, the amount owed is the minimum of until the harm is fully repaired or until it costs the cuplrit as much as the original harm.
 
-* For an intentional but [justified (but undeserved)](consequentialism) harm, the amonut owed is the minimum of until the harm is fully repaired or until it costs the culprit twice as much as the original harm.
+* For an intentional but [justified (but undeserved)](consequentialism) harm, the amount owed is the minimum of until the harm is fully repaired or until it costs the culprit twice as much as the original harm.
 
 * For an intentional and unjustified harm, the amount owed is the maximum of the rule for intentional but justified harm and until it costs the culprit as much as the original harm.
 
