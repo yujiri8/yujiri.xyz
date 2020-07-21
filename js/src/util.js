@@ -184,10 +184,15 @@ export function autogrow(e) {
 	textarea.style.marginBottom = prevMarginBottom;
 }
 
-const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+// Takes a number and pads its string representation to 2 digits.
+export function leftpad(num) {
+	if (num >= 10) return String(num);
+	return '0' + num;
+}
+
 const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export function formatDate(d) {
 	d = new Date(d); // Incase it's in string form. This won't change the value of a Date object.
-	return `${d.getUTCFullYear()} ${monthNames[d.getMonth()]} ${d.getDate()},
-		${dayNames[d.getDay()]}, ${d.getHours()}:${d.getMinutes()}`;
+	return `${d.getUTCFullYear()}-${leftpad(d.getMonth()+1)}-${leftpad(d.getDate())}
+		${dayNames[d.getDay()]} ${leftpad(d.getHours())}:${leftpad(d.getMinutes())}`;
 }
