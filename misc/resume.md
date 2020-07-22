@@ -2,7 +2,7 @@ TITLE Resume
 NAV Resume
 TEMPLATE DEFAULT
 
-This is sort of an informal draft, excluding some stuff I'd know to include in a submission like education details.
+This is sort of an informal draft.
 
 Legal name: Ryan Westlund
 
@@ -16,7 +16,7 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 * **Proficient in**: Python, Go, Javascript, Unix shell, HTML and CSS, Regular expressions
 
-* **Moderate ability in**: Haskell, C, SQL
+* **Moderate ability in**: Haskell, Julia, C, Rust, SQL
 
 ## Technologies and Frameworks
 
@@ -88,7 +88,7 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [GNU Nano](https://nano-editor.org): Several improvements to syntax highlighting, including adding support for Haskell and Markdown
 
-* [Micro](https://micro-editor.github.io): Improvements to synax highlighting and language support for comment plugin
+* [Micro](https://micro-editor.github.io): Improvements to syntax highlighting, including adding Renpy support, and to comment plugin
 
 * GTK: [Fix missing GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012)
 
