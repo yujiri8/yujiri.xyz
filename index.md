@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 22:**
+New: [Existing bigotry analysis: sexism](argument/bigotry).
+
 **July 20:**
 New: [Confessions of a keyboard warrior](misc/keyboard_warrior).
 
