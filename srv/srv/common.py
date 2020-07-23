@@ -1,4 +1,4 @@
-from fastapi import Request, Cookie, HTTPException
+from fastapi import Cookie, HTTPException
 
 from db import Session, User
 

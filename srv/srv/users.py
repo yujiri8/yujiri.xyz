@@ -1,11 +1,10 @@
-from fastapi import APIRouter, HTTPException, Cookie, Header, Response, Request, Depends, File
-from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, HTTPException, Response, Request, Depends
 from starlette.responses import RedirectResponse
 from pydantic import BaseModel
 
 import pgpy
 
-import re, datetime, secrets, hashlib, urllib.parse, json
+import re, secrets, hashlib, urllib.parse, json
 from typing import Any
 
 from db import User, Comment, Subscription

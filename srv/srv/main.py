@@ -2,7 +2,6 @@
 
 from fastapi import FastAPI, Request, Response, HTTPException, BackgroundTasks
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import PlainTextResponse
 
 import argparse
 

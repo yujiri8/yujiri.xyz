@@ -110,7 +110,7 @@ class Subscription(Base):
 	sub = Column(Boolean, nullable = False, default = True)
 	def __repr__(self):
 		if self.sub: return f"{self.user} subbed to {self.comment}"
-		else: return f"{self.user} ignoring {self.comment}"
+		return f"{self.user} ignoring {self.comment}"
 	def dict(self):
 		return {
 			'comment': self.comment.summary_dict(),

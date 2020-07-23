@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Header, Body, Response, Request, Depends, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Header, Response, Request, Depends, BackgroundTasks
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
@@ -7,7 +7,7 @@ import datetime
 from db import User, Comment, Subscription
 from common import env, require_login, require_admin
 from email_templates import *
-import users, util, emails, email_templates
+import users, util, emails
 
 router = APIRouter()
 
@@ -22,12 +22,11 @@ async def get_comments(reply_to = '', id: int = 0, raw: bool = False, env = Depe
 			order_by(Comment.time_added.desc())
 		return [c.dict(env.db, user = env.user, raw = raw) for c in comments]
 	# Case 2: a specific comment requested.
-	elif id:
+	if id:
 		comment = env.db.query(Comment).get(id)
 		if not comment: raise HTTPException(status_code = 404, detail = "That comment doesn't exist")
 		return comment.dict(env.db, user = env.user, raw = raw)
-	else:
-		raise HTTPException(status_code = 400)
+	raise HTTPException(status_code = 400)
 
 @router.get('/recent_comments')
 async def recent_comments(count: int = 10, env = Depends(env)):
@@ -60,7 +59,7 @@ async def post_comment(
 		if not util.article_exists(params.reply_to):
 			raise HTTPException(status_code = 404, detail = "That article doesn't exist")
 		if params.reply_to == '/404':
-			return HttpException(status_code = 400, detail = "You can't comment on that URL")
+			raise HTTPException(status_code = 400, detail = "You can't comment on that URL")
 		# Strip 'index'.
 		if params.reply_to.endswith('/index'): params.reply_to = params.reply_to[:-5]
 		article_path = params.reply_to
