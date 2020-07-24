@@ -29,7 +29,7 @@ Most of my excerpts here are interactive sessions, and so lines that start with 
 
 First, let me demonstrate the calculator use:
 
-```
+```python
 >>> 5 + 2
 7
 >>> 7 / 5
@@ -44,7 +44,7 @@ The interactive prompt interprets math expressions just like math.
 
 A variable is like a name you can set to mean whatever you want. `number = 5` assigns the value `5` to the name `number`. Hereafter, we could include `number` in our calculations and it would have this value:
 
-```
+```python
 >>> number = 5
 >>> number + 2
 7
@@ -58,7 +58,7 @@ Note that Python's prompt doesn't print the result when you just assign to a var
 
 This lets us do slightly more interesting stuff:
 
-```
+```python
 >>> x = 12
 >>> y = 2
 >>> z = x + y
@@ -72,7 +72,7 @@ Now let's take a break from the math. There are just a couple other prerequisite
 
 First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never displayed, even though it works in the prompt. In the shell, Python automatically displays the result of an expression, but not when it's in a saved program. To make a program output text you need the `print` function:
 
-```
+```python
 x = 12
 y = 2
 z = x + y
@@ -94,7 +94,7 @@ You might've assumed this, but programming is **case-sensitive**: that function 
 # Strings
 
 `print` can print anything, not just numbers, so now we're going to talk about **strings**, another very important data type. A "string" meaning a string of text. String *literals* (as opposed to a variable that holds a string) always have to be enclosed in quotes, so that Python knows to interpret them as literal text instead of the name of a variable or something. The quotes are not themselves part of the string, though:
-```
+```python
 >>> print("hello")
 hello
 ```
@@ -105,7 +105,7 @@ Strings are going to be essential to building our calculator, but before we get 
 ## Reading error messages
 
 Unless you're a way more accurate typist than me, there's a good chance you've already seen an error message, and it looked like a mess. If you haven't, try entering a line like `blah` and you should see something like this:
-```
+```python
 >>> blah
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -131,7 +131,7 @@ If you want to put literal quotation marks inside of a string that are the same 
 
 The `+` and `*` operators also work on strings. Check this out:
 
-```
+```python
 >>> 'hello' + 'friend'
 'hellofriend'
 >>> 'hello' * 3
@@ -141,7 +141,7 @@ The `+` and `*` operators also work on strings. Check this out:
 (Note that they weren't separated by spaces. You might've already noticed, but <span class="highlight">the spaces I've been typing around everything are unnecessary; spaces inside code are generally ignored. They're just there to make it easier to read.</span> If you want to space-separate the output, put a space inside one of the string literals, like `'hello ' + 'friend'`.)
 
 You probably also noticed that this time the results of the operation were still printed with quotes around them. Entering a string by itself just shows it in the form you'd have to type it in to get that value. `print` prints them without the quotes:
-```
+```python
 >>> 'hello'
 'hello'
 >>> print('hello')
@@ -158,7 +158,7 @@ As an aside, you can now figure out how to make backslash-escaping completely un
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 print('I said, "' + "it's okay." + '"')
 ```
 See how this works? I made it three separate strings: the first one is enclosed by single quotes, so the double quote inside it is literal; the second one is enclosed by double quotes, so the single-quote inside it is literal, and the last one just needs to contain the remaining double quote, so I put it in single quotes.
@@ -172,7 +172,7 @@ This isn't to say you shouldn't use backslash-escaping (of course it's better th
 Okay, this one isn't essential to our immediate mission, but while we're talking about backlash escapes I better mention what they can do besides escape quotes. This won't take long, I promise.
 
 There are several normal letters that, if escaped inside of a string, take on a special meaning instead of the other way around like quotes do. The most common example is `n`. `\n` inside of a string stands for 'newline':
-```
+```python
 >>> print('line 1\nline 2')
 line 1
 line 2
@@ -180,7 +180,7 @@ line 2
 `print` is also necessary to interpret the escape sequences. If you just type `'line 1\nline 2'`, the string will, again, be shown back the way you would have to type it to get that value.
 
 Another common escape sequence is `\t` for tab:
-```
+```python
 >>> print('one word\tanother')
 one word	another
 ```
@@ -190,20 +190,20 @@ one word	another
 # Input
 
 `input` is the basic function for getting text input from the user. Just doing `input()` by itself will wait for the user to type something thing in (stopping when they press enter). After that, you can think of the `input()` as if it gets *replaced* by what the user typed in, so you can use it like a literal value:
-```
+```python
 print(input())
 ```
 That one-line program will wait for the user to type something in, and then repeat it back to them. If the user types "hello", it's like that line becomes `print('hello')`. You could also store the input in a variable like `a = input()`, then do something else, and parrot it back with `print(a)` later.
 
 You can also give `input` a string value to use as a prompt:
-```
+```python
 text = input("give me some text: ")
 print("here's the text you gave me: " + text)
 ```
 (Note that `input` doesn't output a newline after its prompt, which `print` does. If you did `print("give me some text:")` and then `input()`, the user would be typing on the line below "give me some text".)
 
 So with that done, can we use `input` to get numbers for our interactive calculator?
-```
+```python
 >>> num = input("give me a number: ")
 give me a number: 5
 >>> num
@@ -214,7 +214,7 @@ give me a number: 5
 Hm... there's one problem with using `input` to make a calculator: it gives us a string, so when I tried to multiply it, it thought I was trying to multiply *the text* '5'.
 
 `5` and `'5'` are *very* different - one's a number and the other's a string. It's kinda like [the difference between a number and a numeral](https://www.mathsisfun.com/numbers/numbers-numerals-digits.html). This is where the `int` function comes in: it converts a string to an int (integer).
-```
+```python
 >>> num = int('5')
 >>> num
 5
@@ -230,7 +230,7 @@ Now you've got all the knowledge you need to make a program that asks for two nu
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 num1 = int(input('give me a number:'))
 num2 = int(input('give me another number:'))
 print(num1 + num2)
@@ -244,7 +244,7 @@ print(num1 + num2)
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 print(int(input('give me a number:')) + int(input('give me another number:')))
 ```
 

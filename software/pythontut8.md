@@ -15,7 +15,7 @@ Generators are one of the most awesome applications of what I taught about class
 To really understand how generators work, it's useful to understand how iteration really works under the hood. Between all the things you can iterate on - tuples, lists, strings, dicts - there's a common interface or protocol, called *iterable*. An iterable is anything that has an `__iter__` method that returns an *iterator*. An *iterator* in turn is something that has a `__next__` method that returns the next item.
 
 To see how all sequence types implement these, check this out (`iter` and `next` are builtin functions that call the `__iter__` and `__next__` methods, just for readability):
-```
+```python
 >>> nums = [4, 5, 6]
 >>> # List are iterables. That means I can get an iterator from them.
 >>> iterator = iter(nums)
@@ -41,7 +41,7 @@ With this knowledge... you could actually make your own iterable types. You coul
 About the difference between an iterator and an iterable: an iteratable is something you can get an iterator out of. A list is *not* an iterator. Each time you loop over the list with `for`, you're making a new list iterator thingy that gives you the list elements in sequence. One thing that makes this confusing is that iterators *also* implement the `__iter__` method that returns an iterator - they just have it return themselves, for compatibility.
 
 So back to generators. Generators are basically a special kind of iterator defined with the `yield` keyword, which lets you turn a function directly into a generator without the trouble of defining a class and both methods. Here's a demo of `yield`:
-```
+```python
 def first_5_nums():
 	num = 0
 	while num < 5:
@@ -49,7 +49,7 @@ def first_5_nums():
 		num += 1
 ```
 It kind of looks like `yield` is similar to `return` except it doesn't end the function, eh? Indeed that's pretty much how it works:
-```
+```python
 >>> generator = first_5_nums()
 >>> next(generator)
 0
@@ -67,7 +67,7 @@ Traceback (most recent call last):
 StopIteration
 ```
 So to convert this to the `for` syntax:
-```
+```python
 >>> for num in first_5_nums():
 >>>  print(num)
 0
@@ -80,7 +80,7 @@ So to convert this to the `for` syntax:
 So what's the benefit of using `yield` instead of building a list and returning `[0, 1, 2, 3, 4]`? The benefit, of course, is that the generator doesn't compute the whole list up-front. Imagine you wanted to iterate on a series of a billion items. It'd be bad if you had to create the whole list up-front, as that would take a lot of memory and your CPU might stall the program for a while to compute all that. Better to use only one number at a time and compute them as needed. Another benefit is that if it turned out you only needed the first few, you wouldn't have to compute the remaining billion.
 
 The builtin function `range` is basically my `first_5_nums`, but more general since you can tell it how many numbers:
-```
+```python
 >>> for x in range(10): print(x)
 0
 1
@@ -98,7 +98,7 @@ As you can see, `range` is handy for cases where you want to do something a spec
 Some python tutorials teach `range` a lot sooner than I did, but I chose to put it off because it looks like it returns a list of numbers, but it doesn't - it returns a generator - and I didn't want to introduce a function that relied on generators before introducing generators.
 
 Another handy built-in generator function, similar to `range`, is `enumerate`:
-```
+```python
 >>> for i, word in enumerate(('hello', 'goodbye', 'nevermind')):
 ...   print('word #' + str(i), 'is', word)
 ...
@@ -112,7 +112,7 @@ As an exercise, try implementing a function that generates [the fibonacci sequen
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 def fibonacci():
 	current = (0, 1)
 	while True:
@@ -131,7 +131,7 @@ Python's generator *expressions* and comprehensions are another badass applicati
 ## `lambda`
 
 `lambda` is a keyword that defines an anonymous function. What they can do is limited - only return something - but here's an example:
-```
+```python
 >>> double = lambda x: x * 2
 >>> double(6)
 12
@@ -147,7 +147,7 @@ Lambdas are occasionally handy when you have a function that expects a function 
 * `filter` takes a function and a sequence, calls the function on each element, and returns a new sequence of only the elements where the function returned a truthy value.
 
 Well, actually, `map` and `filter` don't deal with sequences directly in Python, they take iterables and return generators so they can be more widely applicable. You can use them like this:
-```
+```python
 >>> nums = range(1, 10) # With two args, range starts at the first one and stops just before the second one.
 >>> for num in map(lambda n: n ** 2, nums):
 ...  print(num)
@@ -162,7 +162,7 @@ Well, actually, `map` and `filter` don't deal with sequences directly in Python,
 81
 ```
 And `filter` works like this:
-```
+```python
 >>> for num in filter(lambda n: n > 5, range(1, 10)):
 ...  print(num)
 6
@@ -173,7 +173,7 @@ And `filter` works like this:
 So generator expressions basically improve on this by accomplishing the same tasks as `map` and `filter`, but being more readable. A generator expression version of `map(lambda n: n ** 2, nums)` would be `(n ** 2 for n in nums)`. The two are identical, but the generator expression uses English words instead of Greek words.
 
 You can put an `if` clause in the generator expression too: the filter equivalent would be `(n for n in nums if n > 5)`. Admittedly, generators don't look as superior with `filter` as they do with `map` since you still have to write `for n in`. But the other great thing about generator expressions is you can do both in one. Imagine you wanted . Here are the two ways:
-```
+```python
 map(lambda n: n ** 2, filter(lambda n: n > 5, nums))
 # Or...
 (n ** 2 for n in nums if n > 5)
@@ -181,7 +181,7 @@ map(lambda n: n ** 2, filter(lambda n: n > 5, nums))
 Take your pick.
 
 I also mentioned *comprehensions* at the start of this section, and I left them for second because I think it's more intuitive to learn generator expressions first. A comprehension is basically a generator expression that eagerly evaluates the whole thing into a real sequence type. Here's an example of a list comprehension:
-```
+```python
 [n ** 2 for n in nums if n > 5]
 ```
 It's the same thing as the generator above except you get a list. Despite the benefit of the "lazy evaluation" that generators provide, sometimes it's more convenient to just get a list.
@@ -193,7 +193,7 @@ Oh wait, I haven't actually talked about sets yet have I? Short detour here.
 Python features a "set" type which is like a list but can't have duplicates and the order of its elements doesn't matter - so it's a set in the mathematical sense. The constructor for them is called `set` and their literal syntax is just like lists, except they use `{` and `}` instead of `[` and `]`. (There's no *empty* set literal because `{}` is the empty dict literal; to make an empty set you can just use `set()`.)
 
 With that out of the way, here are some comprehensions like the above that build a set or dict instead of a list:
-```
+```python
 {n ** 2 for n in nums if n > 5} # set
 {n: n ** 2 for n in nums if n > 5} # dict. This one stores the original number as the key and its square as the value.
 ```
@@ -202,7 +202,7 @@ There aren't tuple comprehensions because the parenthesis syntax is used for gen
 # Context managers
 
 Context manager is another interface, like generators. They come in handy when you have something you need done at the end of a block regardless of how it exits. For example, you know how you're supposed to close files after reading or writing them? Files are context managers, so the keyword that takes advantage of the context manager interface, `with`, can make dealing with files easier:
-```
+```python
 with open('text.txt') as f:
 	contents = f.read()
 # more code...
@@ -224,7 +224,7 @@ SQL database connections are another thing that usually implements the context m
 We haven't dealt with the `bytes` type yet. In Python, strings are [unicode](https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/) by default, as they're meant for representing text, not binary data. You'll get an error if you try to read the contents of a non-text file (like an image). To accomplish that, you need to know about `bytes`, which is a type that's basically the same as `str` except it's meant for dealing with binary data.
 
 The syntax for bytes literals is putting `b` before the quote. `b'hello'` is the same as `'hello'` except it's bytes instead of string. For converting between bytes and string, you can use `bytes.decode` and `str.encode`:
-```
+```python
 >>> text = 'hello'
 >>> binary = b'hello'
 >>> text == binary.decode('utf8') # The parameter specifies the character encoding. You want utf8 unless you know what you're doing.
@@ -250,13 +250,13 @@ You can prefix a string's opening quote with `r` to make a "raw" string, which d
 # Conditional expressions (inline `if`/`else`)
 
 Imagine you have a block like:
-```
+```python
 if cond: first_arg = 1
 else: first_arg = 2
 func(var, second_arg, third_arg, fourth_arg, fifth_arg)
 ```
 and you thought it was too long and wished you could shorten it. Well, you can. There's actually a way to put that `if`/`else` expression *in* the function call - you don't even need a variable. Here's how it's done:
-```
+```python
 func(1 if cond else 2, second_arg, third_arg, fourth_arg, fifth_arg)
 ```
 The expression `1 if cond else 2` evaluates to 1 if `cond`, and else, it's `2`. Admittedly it's kinda confusing because in the normal form of Python conditionals, the result when the condition is true comes *after* the if, whereas with inline conditionals it goes before. But this is good to know.
@@ -264,7 +264,7 @@ The expression `1 if cond else 2` evaluates to 1 if `cond`, and else, it's `2`. 
 # Decorators
 
 Decorators let you wrap a function with another one. To illustrate what I mean, let's say I have three functions called `func1`, `func2`, and `func3`, and I want to make each one of them do something before and after it executes. But I don't want to put the code inside each one. One thing I could do without decorators is:
-```
+```python
 # Accepts a bare function and returns it with the setup and exit code wrapped around it.
 def funcwrapper(func):
 	# Use the variadic argument and variadic keyword arguments
@@ -280,7 +280,7 @@ func2 = funcwrapper(func2)
 func3 = funcwrapper(func3)
 ```
 Decorators are syntactic sugar for this. With a decorator, I would go to the places the functions are defined and put `@funcwrapper` before them:
-```
+```python
 @funcwrapper
 def func1():
 	# func1 code
@@ -293,13 +293,13 @@ This wasn't a very interesting demo, but there's a lot you can do with decorator
 # Type annotations and reflection
 
 Type annotations are a way of specifying what the type of a variable should be, although Python won't enforce it. For example:
-```
+```python
 # Why would you want such a useless function?
 def increment(num: int):
 	return num + 1
 ```
 That `: int` part is the type annotation, and tells us that the function `increment` expects `num` to be an `int`. But Python still doesn't complain if you pass a different type. So what's even the point of this? Well the point is that we can build on it using some features that would be classified as [**reflection**](https://en.wikipedia.org/wiki/Reflection_(computer_programming)). You've seen how we can use things like the `__dict__` attribute of objects to inspect their "insides". Type annotations are similarly discoverable:
-```
+```python
 # A pretty meaningless function
 >>> def increment(num: int = 0):
 ...	 return num + 1
@@ -327,12 +327,12 @@ It's even better than that - pydoc can generate equivalent documentation on *you
 Pydoc will save your life.
 
 There's one other thing you need to know about it though: it uses *docstrings* to generate the documentation. Docstrings are something I've left until now because there's no real point to them outside of pydoc, but they're a different kind of comment meant for generating documentation. They're written as triple-quoted strings at the beginning of a function or class. You won't get much on a function defined like:
-```
+```python
 # Takes a number and doubles it.
 def f(num): return num * 2
 ```
 But if you define it like:
-```
+```python
 def f(num):
 	"""Takes a number and doubles it."""
 	return num * 2

@@ -7,14 +7,14 @@ DESC Intro to Python flow control - branching and looping: the keywords if, else
 
 This time you're learning about flow control. The most basic flow control construct is `if` (don't mind the double-equals sign thing, I'll explain that soon):
 
-```
+```python
 if input("You'll never guess my super secret password! Just try:") == 'password':
 	print("you guessed my password... :(")
 ```
 
 Note that the line under the `if` condition has to be **indented** (prefixed with space); that's the only way Python knows what exactly the `if` condition applies to. Here's a more complete example:
 
-```
+```python
 print("hello")
 if input("You'll never guess my super secret password! Just try:") == 'password':
 	print("you guessed my password... :(")
@@ -29,7 +29,7 @@ With this, you now have enough tools to implement a four-operation calculator (o
 
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
 
-```
+```python
 operation = input("What operation?")
 num1 = float(input("first number:"))
 num2 = float(input("first number:"))
@@ -67,7 +67,7 @@ You can add these to the calculator if you want, but I think you get it.
 ## `and`, `or`, and `not`
 
 Demonstrating these basic keywords:
-```
+```python
 num = int(input('enter your favorite number: '))
 color = input('enter your favorite color: ')
 
@@ -90,12 +90,12 @@ Also note that each condition has to stand on its own; I couldn't write `if colo
 All this talk of conditions introduces a new data type: something that is either true or false. The word for this is [**Boolean**](https://en.wikipedia.org/wiki/Boolean_data_type). Every condition evaluates to a Boolean value.
 
 You can also use conditions as values:
-```
+```python
 >>> print(5 > 3)
 True
 ```
 And store them in variables:
-```
+```python
 primary_color = color == 'red' or color == 'green' or color == 'blue'
 grey_color = color == 'white' or color == 'grey' or color == 'black'
 print(primary_color or grey_color)
@@ -104,7 +104,7 @@ This will print `True` if your color is one of the six.
 
 Boolean variables are also very useful for remembering past stuff:
 
-```
+```python
 matched_greeting = input("Hello") == 'Hello'
 
 input("(Long conversation...)")
@@ -118,7 +118,7 @@ Do note that the literal values for Booleans are spelled `True` and `False`, not
 ## Boolean coercion
 
 A value of any type can be used in place of a Boolean. Let me just jump into examples:
-```
+```python
 if 0:
 	print("0 is True")
 if 1:
@@ -144,7 +144,7 @@ There's also the `bool` function to explicitly turn something into a Boolean. `x
 
 `else` can be used after an `if` clause to automatically mean "do this only if we didn't just do the previous thing":
 
-```
+```python
 if input() == 'hi':
 	print("You said hi")
 else:
@@ -153,7 +153,7 @@ else:
 
 There's also `elif` as a shortcut for else-if. If you have a block like this:
 
-```
+```python
 entry = input()
 if entry == 'hi':
 	print("You said hi")
@@ -165,7 +165,7 @@ else:
 ```
 you can rewrite it to:
 
-```
+```python
 entry = input()
 if entry == 'hi':
 	print("you said hi")
@@ -187,7 +187,7 @@ You can have any number of `elif` clause. Each one will only be executed if none
 # Looping
 
 Looping is where things get a heck of a lot more interesting. `while` is the keyword used to keep executing a block of code while the condition stays true:
-```
+```python
 while input("guess the password:") != "secret123":
 	print("you have to guess the password to get out")
 ```
@@ -201,7 +201,7 @@ New jargon: a special value that's used to exit a loop like this is often called
 ### The infinite loop
 
 At some point learning about loops, you're bound to make a certain kind of mistake that can result in a rather bizarre bug. Consider this code:
-```
+```python
 print("I'm going to count backwards from 10 to 0, by 3s.")
 num = 10
 while num != 0:
@@ -219,7 +219,7 @@ Augmented assignment operators are a nice convenience. Mathematical operators ca
 ## Printing multiple things
 
 You can actually pass any number of values to `print`, and by default it'll separate them with spaces:
-```
+```python
 >>> print("Hello", 5, "aliens")
 Hello 5 aliens
 ```
@@ -232,7 +232,7 @@ Note that `input` doesn't support this; if you try to pass multiple comma-separa
 ## Comments
 
 Finally, it's about time we talk about **comments**. Lines that start with `#`, or anything after a `#` in a line, are comments, and do nothing. Python ignores them.
-```
+```python
 >>> # Hi, this would be invalid syntax outside of a comment
 >>> # x = 5 (just to show that code after a comment does nothing)
 >>> x # x is not defined because the above assignment was in a comment, and thus was not executed
@@ -243,7 +243,7 @@ NameError: name 'x' is not defined
 This might seem like a silly feature (it did to me when I was ten), but comments are extremely useful to explain to people reading the source code what your code is doing and why, or even as reminders for your own future self. Sure, not necessary for little programs like this, but for complicated projects with hundreds or thousands of lines of code, comments are essential.
 
 Also note that hash signs *inside a string* get neutralized without needing to be backslashed:
-```
+```python
 >>> a='#'
 >>> print(a)
 #
@@ -253,7 +253,7 @@ It's a very common practice to use comments to temporarily disable a block of co
 # String builder time!
 
 Okay, now we're gonna do something fun.
-```
+```python
 string = ''
 newest_entry = ''
 while newest_entry != 'exit':
@@ -269,7 +269,7 @@ Once you understand how that's working, **Exercise:** make it so the user can en
 
 <expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
 
-```
+```python
 string = ''
 newest_entry = ''
 while newest_entry != 'exit':

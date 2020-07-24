@@ -8,21 +8,21 @@ DESC I think tests are not quite as important or useful as most people think the
 There's seemingly a universal consensus that automated testing is the bees' knees and no one writes enough tests. In fact, the We Need More Tests culture appears so dominant and so dogmatic that I've been timid about even suggesting this in developer circles. I think tests are not as important or useful as most people think they are. I hope this doesn't make me an outlaw.
 
 At my job, a lot of the tests we have basically boil down to writing a second copy of the code that does the same thing in a less elegant way to make sure it gets the same result. We have methods on our domain objects like:
-```
+```go
 func (t *Thing) ChangeInfo(x int, y string) {
 	thing.X = x
 	thing.Y = y
 }
 ```
 And tests for these methods like:
-```
+```go
 thing = NewThing(args)
 thing.ChangeInfo(x, y)
 assert thing.X == x
 assert thing.Y == y
 ```
 or a method like:
-```
+```go
 func (t *Thing) ChangeInfo(x int, y string) {
 	thing.X = x
 	thing.Y = y
@@ -30,7 +30,7 @@ func (t *Thing) ChangeInfo(x int, y string) {
 }
 ```
 with a test like:
-```
+```go
 thing1 = NewThing(args)
 thing2 = NewThing(args)
 thing1.SyncNeeded = false
@@ -40,7 +40,7 @@ thing2.ChangeInfo(x, y)
 assert thing1 == thing2
 ```
 or:
-```
+```go
 thing = NewThing(args)
 err = thing.ChangeThreeAttrs(0, ptr, "hello")
 assert err != nil
@@ -55,7 +55,7 @@ err = thing.ChangeThreeAttrs(5, ptr, "hello")
 assert err == nil
 ```
 where `ChangeThreeAttrs` is literally:
-```
+```go
 func (t *Thing) ChangeThreeAttrs(
 	intArg int,
 	refArg OtherThing,

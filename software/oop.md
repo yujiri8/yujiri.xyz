@@ -9,7 +9,7 @@ When [I first started learning Python](python), I was sold the typical OOP advoc
 
 A Hero class and an Enemy class. `player`, an instance of Hero, fires at `alien`, an instance of Enemy.
 The code looked something like this:
-```
+```python
 class Hero:
 	def shoot(self, target):
 		target.die()

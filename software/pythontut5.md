@@ -16,7 +16,7 @@ Any time you call a function, you put parentheses after it. The parentheses mean
 That concept - a function taking an argument - is part of what makes them so powerful. They allow you to write code that can be reused,without copy-pasting it, on a new piece of data. Concrete examples will make this a lot clearer later on.
 
 So here's a simple example.
-```
+```python
 def grandiose_print(thing):
 	print("\n" + '#' * 40 + "\n")
 	print(thing)
@@ -24,7 +24,7 @@ def grandiose_print(thing):
 	
 ```
 After executing this code, I can do:
-```
+```python
 >>> grandiose_print('hello')
 
 ########################################
@@ -45,12 +45,12 @@ goodbye
 Not a very useful function, I'll admit, but it demonstrates the concept.
 
 To make a function return something, use the `return` statement:
-```
+```python
 def average(nums):
 	return sum(nums) / len(nums)
 ```
 Now, we can do:
-```
+```python
 >>> result = average([3, 5, 8])
 >>> result
 5.333333333333333
@@ -63,7 +63,7 @@ If a function doesn't have a `return` statement, it just returns `None`. (It als
 Functions provide two main benefits. The most obvious one is avoiding repetition. If you have a program that does the same thing in a lot of places, you can put the duplicated lines in a function, and just call the function every time instead of repeating its source code.
 
 But there's another tremendous benefit to using them, which is of [readability](readability). Even if a function is only used once, it can still be better than not making it a function, because it can make the logic of the program easier to follow. If you have 100 lines of code in a row that perform a task that can be divided into three phases, try making each phase a function. Then the main part can just look like:
-```
+```python
 phase1()
 phase2()
 phase3()
@@ -73,12 +73,12 @@ Which makes it easier to see what it's doing at a glance (that is, if your funct
 # Multiple arguments and return values
 
 A function can take multiple arguments (`list.insert` is one you've seen that does) and return multiple values:
-```
+```python
 def remainder_div(dividend, divisor):
 	return dividend // divisor, dividend % divisor
 ```
 And this is where we need to talk about unpacking tuples.
-```
+```python
 >>> a, b = (3, 6)
 >>> a
 3
@@ -86,7 +86,7 @@ And this is where we need to talk about unpacking tuples.
 6
 ```
 Well did you know you could do that? It's very useful with functions that return multiple values, since, the multiple values are actually returned as a tuple. Going back to `remainder_div`:
-```
+```python
 >>> remainder_div(5, 2) # This gives us a tuple
 (2, 1)
 >>> quotient, remainder = remainder_div(5, 2) # This way, we get each value as a separate variable with only one line.
@@ -100,19 +100,19 @@ I don't think I've shown you any builtin functions up to this point that return 
 # Default arguments
 
 Check this out:
-```
+```python
 def greet(name = 'mate'):
 	print("Hello,", name + '.')
 ```
 Now you can use this to greet people and it'll just address them as "mate" if you don't specify their name.
-```
+```python
 >>> greet("Bob")
 Hello, Bob.
 >>> greet()
 Hello, mate.
 ```
 To give one example of a builtin function (a method) that has a default parameter, `list.sort`.
-```
+```python
 >>> l = [4, 2, 3, 2]
 >>> l.sort()
 >>> l
@@ -125,14 +125,14 @@ By default, `sort` sorts in ascending order, because its `reverse` parameter def
 ## Variadic arguments
 
 Okay, these two features aren't useful that often, but I might as well teach them while I'll talking about functions. After all, you've already seen a function that uses both, and I don't want to keep you from unlocking its full power any longer :D
-```
+```python
 def new_average(*nums):
 	return sum(nums) / len(nums)
 ```
 What's this? It's the same as the `average` function we wrote earlier, but it uses that weird `*` in front of the parameter name. That makes the parameter *variadic*, which means the caller can pass a varying number of arguments to `nums` and `nums` will be a tuple that contains all of them.
 
 But this means we don't have to wrap our numbers in a list or tuple to call it (In fact, we can't because then the function would get a tuple with our list of numbers as its first element):
-```
+```python
 >>> new_average(1, 5, 6)
 4.0
 >>> average([1, 5, 6]) # the old average function from earlier
@@ -143,7 +143,7 @@ Which looks nicer to call?
 This is how `print` works, of course. You don't need to wrap your arguments in a list to pass multiple things to `print`.
 
 The same syntax can be used to pass multiple arguments out of a sequence:
-```
+```python
 >>> nums = (1, 5, 6)
 >>> new_average(3, *nums) # the same as passing 3, 1, 5, 6
 3.75
@@ -152,7 +152,7 @@ The same syntax can be used to pass multiple arguments out of a sequence:
 ## Keyword arguments
 
 You don't actually have to pass arguments in order, generally. There's another way to make sure you're passing the right ones.
-```
+```python
 >>> def print_two(a, b):
 ...   print("a is", a, "and b is", b)
 ...
@@ -160,13 +160,13 @@ You don't actually have to pass arguments in order, generally. There's another w
 a is for apple and b is for banana
 ```
 In fact, `print` has not one but *two* parameters with default values that you can only pass this way because the main parameter (the stuff to print) is variadic. You know how it always prints a newline after your string? (Keep in mind that a newline is not a blank line. A blank line is two newlines in a row.) You can stop this by setting the `end` parameter to an empty string:
-```
+```python
 print("message 1", end='')
 print("message 2", end='')
 print("message 3", end='')
 ```
 This will print:
-```
+```python
 message 1message 2message 3
 ```
 It also has the `sep` parameter, which controls what gets printed between each argument. As you've seen, `sep` defaults to `' '`.
@@ -174,7 +174,7 @@ It also has the `sep` parameter, which controls what gets printed between each a
 ## Arbitrary keyword arguments
 
 Okay, one last trick about arguments. There's a rarely useful thing you can do that's like a fusion of keyword and variadic args:
-```
+```python
 >>> def test(**args):
 ...   for key in args:
 ...     print('the argument', key, 'was passed', args[key])
@@ -190,7 +190,7 @@ Get it? The double-asterisk makes it a dictionary! You can pass any arguments yo
 Okay, now we're going to deal with a conceptual hurdle that accompanies functions. Scoping isn't as difficult to get the hang of as shared reference if you ask me, but it's still a stumbling block for many people (sure was for me).
 
 You might've noticed that variables assigned inside of a function don't stay set outside of it:
-```
+```python
 >>> def f():
 ...   test = 5
 ...   print(test)
@@ -206,7 +206,7 @@ NameError: name 'test' is not defined
 Well isn't that strange!
 
 By default, variables inside functions are *local*; they only exist inside the function. This helps prevent mistakes. If you want a function to assign to variables outside of it, use the `global` keyword:
-```
+```python
 >>> def f():
 ...   global test
 ...   test = 6
@@ -240,7 +240,7 @@ Syntax errors, by the way, don't do this because they don't happen while running
 Recursion means a function calling itself. Yes, you can do that!
 
 A good example of when you'd want to is for finding [the factorial of a number](https://en.wikipedia.org/wiki/Factorial):
-```
+```python
 def factorial(n):
     if n == 1:
         return 1
@@ -261,7 +261,7 @@ Functions are really their own data type, they just can't be meaningfully displa
 # Closures
 
 Closures are rather confusing, rarely used, and it's okay if you find them difficult to understand at this point. But you can define a function inside a function and even return it.
-```
+```python
 >>> def make_greeter(prefix, suffix):
 ...   def greeter(name):
 ...     print(prefix + name + suffix)
@@ -279,7 +279,7 @@ See how that's working? `make_greeter` returns a function, and we can use it to 
 There's also the `nonlocal` keyword. Somebody on Stackoverflow called Anon wrote such a perfect concise explanation of the difference between `nonlocal` and `global` that I'll [just link it](https://stackoverflow.com/a/1261961/12211329).
 
 Here's a possible use of closures with `nonlocal`:
-```
+```python
 >>> def get_counter():
 ...   x = 0
 ...   def counter():
@@ -308,7 +308,7 @@ incrementing from 3 to 4
 # `import`
 
 The `import` statement includes code from another file into your program. Let's say you had a function you used a lot and that you expected to use in future projects too. You write a module called something like `util` (for 'utilities' - this is a common abbreviation in programming):
-```
+```python
 def ask_bool(question):
 	while True:
 		entry = input(question).lower().strip()
@@ -317,7 +317,7 @@ def ask_bool(question):
 		print("not a valid answer.")
 ```
 This could be a useful function for any command-line program that might need to ask its user a Boolean question, which is probably a lot of programs. So you put this in a file named `util.py`. Then, in your main file, you could write:
-```
+```python
 import util
 
 # Some code
@@ -328,7 +328,7 @@ answer = util.ask_bool("Are you sure?")
 ```
 
 The Python interpreter ships with a massive **standard library**, which is a collection of builtin modules you can import. Let's finally introduce the `random` module.
-```
+```python
 >>> import random
 >>> random.randint(1, 5) # results may vary ;)
 4
@@ -348,7 +348,7 @@ We're gonna use this in our project, and it's gonna be *fun*...
 # `from`, `as`, and `*` imports
 
 One more thing I better talk about while we're on imports. Three more things, actually. The `from` syntax allows you to import only some things from a module, but without the module name as a prefix (called a namespace prefix).
-```
+```python
 >>> from random import randint
 >>> randint(1, 5) # this doesn't need to be prefixed with 'random.' this way
 2
@@ -360,7 +360,7 @@ NameError: name 'choice' is not defined
 If you want to import everything from a module without the namespace prefix, you can use `from module import *`. Go ahead and try it.
 
 `as` lets you import a module with a different name:
-```
+```python
 >>> import random as r
 >>> r.randint(1, 5)
 ```
@@ -391,7 +391,7 @@ This is gonna be tough. My solution is 92 lines of code, not counting the `ask_b
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 import random, util
 
 def print_board(board):

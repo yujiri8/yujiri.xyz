@@ -4,8 +4,19 @@
 import jinja2
 import mistune
 from slugify import slugify
+import pygments, pygments.lexers, pygments.formatters
 import bs4
-import os, sys, datetime, argparse, pwd, re
+import os, sys, datetime, argparse, pwd, re, html
+
+# Note this code is duplicated on the server.
+class HighlightRenderer(mistune.HTMLRenderer):
+	def block_code(self, code, lang = None):
+		if lang:
+			lexer = pygments.lexers.get_lexer_by_name(lang)
+			formatter = pygments.formatters.HtmlFormatter(linenos = False, cssclass="pygments")
+			return pygments.highlight(code, lexer, formatter)
+		return '<pre class="code">' + html.escape(code) + '</pre>'
+markdown = mistune.create_markdown(renderer = HighlightRenderer(escape = False), plugins = ['strikethrough'])
 
 HOME = pwd.getpwuid(os.getuid()).pw_dir
 SRCDIR = HOME+'/src/'
@@ -31,10 +42,6 @@ def process_file(srcdir, infile, outfile):
 	# Generate the output before writing it, so we don't truncate the file until we're ready to write.
 	output = build_article(infile, srcdir)
 	with open(outfile, 'w', encoding='utf-8') as f: f.write(output)
-
-def get_last_modified(*files):
-	return datetime.datetime.utcfromtimestamp(max(os.path.getmtime(file) for file in files)).\
-		replace(tzinfo = datetime.timezone.utc)
 
 def parse_directives(article):
 	"""Processes the template directives at the top of a source file."""
@@ -70,10 +77,11 @@ def build_article(filename, srcdir):
 	# Retain only the article body.
 	article = article[article.find('\n\n')+2:]
 	if filename.endswith('.md'):
-		article = mistune.markdown(article, escape = False, plugins = ['strikethrough'])
+		article = markdown(article)
 	args['ARTICLE'] = add_fragment_links(article)
 	if not args.get('NO_TIMESTAMP'):
-		args['TIMESTAMP'] = get_last_modified(filename).strftime('%Y-%m-%d %a %R')
+		args['TIMESTAMP'] =	datetime.datetime.utcfromtimestamp(os.path.getmtime(filename)) \
+			.replace(tzinfo = datetime.timezone.utc).strftime('%Y-%m-%d %a %R')
 	# Strip index and .html from the canonical URL.
 	if filename.endswith('.html'): filename = filename[:-5]
 	elif filename.endswith('.md'): filename = filename[:-3]

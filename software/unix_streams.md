@@ -8,7 +8,7 @@ DESC The default streams are stdin, stdout, and stderr - standard input, standar
 Some terms you'll encounter a lot in the Unix world are *stdin*, *stdout* and *stderr*. These stand for standard input, output, and error, and are the main ways processes do I/O. For example, the `cat` command after reading the named file writes its contents to stdout. Normally when you run `cat` in a terminal its stdout will be the terminal, so you'll see the text of the file appear on screen. But you can make it go somewhere else instead.
 
 The `|` character (that's a pipe, not a 1, I, or l) is the symbol used by most [shells](shell_basics) to redirect a command's stdout to be the stdin of another command. For example, if you have a progam called `sendemail` that lets you type text when you run it and then sends it as an email, but you want to automatically feed it the contents of a file named `letter`, one way to do it is:
-```
+```sh
 cat letter | sendemail
 ```
 `sendemail` will run as if you had manually typed the contents of `letter` into it, and you won't have to do anything else.
@@ -31,8 +31,6 @@ example. But you could do this with any program, saving its output to a file ins
 <!--Maybe use a note to give the example of tee-->
 
 Another useful form of this is **command substitution**, which lets you use the stdout of a command as arguments to another. Most shells do this with backquotes (\`). For example, <code>stat &#96;cat files&#96;</code> will run `cat files`, reading the text from the file named `files`, and then run `stat` on each file listed in there.
-<!--, and then-->
-<!--run <code>stat</code> on each file it finds. Hopefully you're starting to see just how insanely useful this stuff can get.-->
 
 Shells do have ways of redirecting stderr, mixing it in with stdout or sending it to a different file, et cetera, but I think you get the idea now. The rest of that stuff is just a matter of looking up the syntax for your shell.
 

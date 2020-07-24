@@ -38,14 +38,14 @@ This would solve most of the problems above, but not all of them - you would sti
 And since dicts can also be iterated with `for..in`, there's still the potential for very confusing errors if you had to deal with sequences of rectangles anywhere.
 
 The solution of **classes** is very similar to the dictionary approach, but basically involves each rectangle *knowing* that it's a rectangle and having the `perimeter` function attached to it, and the triangles know they're triangles and have their own `perimeter` function attached, so code that needs the perimeter of a shape can just call `shape.perimeter()` and the shape itself would worry about how to calculate it. Here's the beginning of how we could define a `Rectangle` data type:
-```
+```python
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
 ```
 That `__init__` thing is a special function name; it's the `Rectangle` class's **constructor**, which is called whenever I make a new Rectangle. The first parameter, `self`, refers to the `Rectangle` being created. Let's see what happens when I make some Rectangles:
-```
+```python
 >>> r1 = Rectangle(5, 7)
 >>> r1.width, r1.height
 (5, 7)
@@ -58,7 +58,7 @@ So I only actually pass 2 arguments. You'll see if you try to pass 3 that it tel
 So you can see that when you make an object (or *instance*) of a class, you basically treat the class name as if it were the name of a function. It kind of is. And that calls the constructor. `self` starts out as an empty object, and we assign the `width` and `height` parameters we got to `self.width` and `self.height`. When a constructor returns `None` (which remember is the default), it actually returns `self` (and if you try to make it return something else, that's considered a `TypeError`).
 
 If you're curious, you already tried and found this, but this has the downside that while I can print its attributes normally, I can't get useful information by printing the Rectangle itself:
-```
+```python
 >>> r1
 <__main__.Rectangle object at 0x801442310>
 ```
@@ -67,7 +67,7 @@ Well isn't that useless! With a dictionary `{'width': 5, 'height': 7}`, I could 
 Python doesn't automatically know how objects of a custom class should be displayed. We can tell it how, but we'll get to that farther below.
 
 First: I mentioned that `self` starts out as an "empty object". What's an *empty* object like?
-```
+```python
 >>> class Thing: pass
 ...
 >>> t1 = Thing()
@@ -86,7 +86,7 @@ AttributeError: type object 'Thing' has no attribute 'name'
 The analogy to a dictionary should be obvious. I can basically store whatever attributes I want on it with whatever values, just like keys on a dictionary. The only advantage so far is that I access attributes with the more convenient `.` syntax instead of brackets.
 
 Perhaps the real fundamental difference between an object and a dictionary is how an object can fall back to its class. With the beginning of the `Rectangle` class above, the attributes were attached to `self` inside the constructor, meaning each `Rectangle` had its *own* `width` and `height`. You can also put attributes on the class itself, and we'll see what that does:
-```
+```python
 >>> class Rectangle:
 ...   width = 4
 ...   height = 4
@@ -104,7 +104,7 @@ Perhaps the real fundamental difference between an object and a dictionary is ho
 With no constructor explicitly defined, I pass no arguments to `Rectangle()`. But they still have the `width` and `height` defined directly under the class. Obviously we wouldn't want to do this for a rectangle's dimensions because each rectangle has to have its *own* dimensions. And while we can set them separately after initializing them, it's way more convenient to be able to pass them as arguments to the constructor. You'll see why the fallback concept is useful later.
 
 First, to fully understand what happens when we put the attributes on the class, let's play with this a little more:
-```
+```python
 >>> Rectangle.height
 4
 >>> Rectangle.height = 5
@@ -112,7 +112,7 @@ First, to fully understand what happens when we put the attributes on the class,
 (5, 5)
 ```
 I changed `height` on the class and it looks like it changed it on *all* existing Rectangles. This is about to get more interesting:
-```
+```python
 >>> r1.height = 6
 >>> r1.height
 6
@@ -131,7 +131,7 @@ So changing the class's attributes only seems to update the objects I hadn't alr
 But if the Rectangle object has its own `height`, it doesn't look at its class. So we didn't see the fallback before when we had the constructor because the lines `self.width = width` and `self.height = height` were setting the attributes on each rectangle as it was built, so they never had to fall back.
 
 The `__dict__` attribute of an object shows you the object's own attributes. This is extremely useful for illustrating attribute fallback:
-```
+```python
 >>> r1.__dict__
 {'height': 6}
 >>> r2.__dict__
@@ -140,7 +140,7 @@ The `__dict__` attribute of an object shows you the object's own attributes. Thi
 So there you go. That's how objects work. An object in Python is esentially a dictionary combined with a class name. When you try to access an attribute, you'll get it if it exists, or if the object doesn't have its own attribute named that, it'll see if the class has one. When you set the attribute on an object, it sets it on the object itself, not on the class.
 
 By far the most common use of the fallback is for *methods* - those functions attached to a data type like `list.insert`. `perimeter` can be one of those, and we'll call it like `r1.perimeter()` instead of `rectangle_perimeter(r1)`. It's time to implement that perimeter method. (I'll also bring back the constructor since we'd want it if we were doing this geometry simulator thing for real.)
-```
+```python
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -149,7 +149,7 @@ class Rectangle:
         return self.width*2 + self.height*2
 ```
 With the class defined this way, we could get any `Rectangle` object's perimeter from that method:
-```
+```python
 >>> r1 = Rectangle(5, 4)
 >>> r1.perimeter()
 18
@@ -162,7 +162,7 @@ Ha! The syntax is clearer than `perimeter(r1)` too because it *looks* like the p
 So now the `self` parameter might be a little more intuitive. Our `perimeter` method actually exists on the class, but when we access it using an object of the class instead of the class itself, that parameter is filled in with the object we're calling it from. This is the other essential magic of classes. Basically, `obj.method(*args)` is translated to `method(obj, *args)`.
 
 There's a whole lot more we would do though to make the `Rectangle` class really worth it over using dictionaries. You know how `Rectangle`s don't print as anything helpful? We can fix that. `__init__` isn't the only special method. If we define a `__repr__` method on the class, it'll tell Python how to treat it with `repr` (which is also how the prompt works). Remember the difference between `repr` and `str` from part 6? No worries if you don't because `__str__` falls back to `__repr__` if `__str__` doesn't exist (meaning if we define just a `__repr__`, both `repr`/the prompt and `str`/`print` will use it). Most types want the same behavior for those methods anyway.
-```
+```python
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -181,7 +181,7 @@ class Rectangle:
 Try printing a `Rectangle` now!
 
 These special `__...__` methods, by the way, are called "dunder" methods. And there's even more we can do with them. What if we could use `+` on two `Rectangle`s to find the smallest `Rectangle` containing them both?
-```
+```python
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -218,7 +218,7 @@ Let's say you went forward with this geometry simulator program and had classes 
 With only the tools I gave above, you'd have to do this by defining the common attributes and methods separately on each class. But there's a better way.
 
 Inheritance is a way to re-use the functionality of a "base" or "parent" class when defining a class based on it - the subclass or "child" class. Here's an example of how you could do it:
-```
+```python
 class Shape:
     def __init__(self, x, y, color):
         self.x = x
@@ -240,7 +240,7 @@ Then `Rectangle` would be declared with `class Rectangle(Shape):` instead of `cl
 Well actually that doesn't quite do it. Since `Rectangle` defines its own constructor (and has to because it has attributes `Shape` doesn't), `Rectangle`'s constructor overrides `Shape`'s, and so when you make a `Rectangle`, it calls the `Rectangle` constructor and never invokes the `Shape` one.
 
 Not to worry, there's a one-line solution for this, albeit it's kind of ugly:
-```
+```python
 class Rectangle(Shape):
     def __init__(self, x, y, color, width, height):
         Shape.__init__(self, x, y, color)
@@ -252,7 +252,7 @@ With that weird line, we call the `Shape` constructor and pass it the parameters
 So that's pretty cool innit? You can re-use common code between classes with inheritance.
 
 You can actually inherit from built-in types too! You know how `list.remove` only removes the first occurence? What if you wanted a data type that acts just like a list but also has a method to remove *every* occurence of the specified value?
-```
+```python
 class Mylist(list):
     def remove_all(self, item):
         while item in self:
@@ -261,7 +261,7 @@ class Mylist(list):
 This declares `Mylist` as a special kind of `list` that can also `remove_all`, which gets around that little inconvenience of `list.remove`. And note that since we aren't adding new constructor parameters, we don't need to override so we don't need to do that ugly stuff to call the `list` constructor - `Mylist` just inherits it.
 
 Of course, to give a list this behavior you'd need to explicitly make it a `Mylist` like this:
-```
+```python
 >>> nums = Mylist([1, 3, 3, 5, 3, 2, 1, 3])
 >>> nums.remove_all(3)
 >>> nums
@@ -270,7 +270,7 @@ Of course, to give a list this behavior you'd need to explicitly make it a `Myli
 It wouldn't change the behavior of lists you create with just the literal list syntax.
 
 A common use of inheritance is for custom error types. If you want to define a custom *type* of error, as opposed to raising a built-in error type with a custom message (so you can handle it with a separate `except` clause), it actually only takes *one* line:
-```
+```python
 class MyError(ValueError): pass
 ```
 Since we didn't put any attributes on `MyError`, it inherits everything from `ValueError`, so functionally a `MyError` works exactly the same as a `ValueError` and just has a different name.
@@ -690,7 +690,7 @@ There's just a couple other things you should know about classes before you try 
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 import random
 
 class Ship:

@@ -11,6 +11,7 @@
 	--linkvisitedcolor: #50a;
 	--yellowcolor: #aa0; /* yellow needs to be darker on a white background to look good */
 	--notecolor: #090;
+	--monospace-sizefix: 1.2em; /* monospace text is small by default, needs to be upsized */
 }
 [data-theme="dark"] {
 	--bgcolor: #080808;
@@ -82,7 +83,7 @@ div.column {
 /* inline */
 code, .code {
 	background-color: var(--codecolor);
-	font-size: 1.2em;
+	font-size: var(--monospace-sizefix);
 }
 code {
 	white-space: pre-wrap;
@@ -90,7 +91,7 @@ code {
 }
 spem {
 	font-family: monospace;
-	font-size: 1.2em;
+	font-size: var(--monospace-sizefix);
 }
 .highlight {
 	background-color: #ff06;
@@ -194,3 +195,29 @@ h1 {
 	margin-block-start: 0.67em;
 	margin-block-end: 0.67em;
 }
+
+.pygments > pre { font-size: var(--monospace-sizefix) }
+
+.pygments  { background: #232629; color: #fff }
+.pygments .c, .pygments .c1, .pygments .cm { color: #aaa; font-style: italic } /* comments */
+.pygments .ch { color: #aaa; font-style: italic } /* shebang */
+.pygments .cp, .pygments .cpf { color: #777; font-style: italic } /* preprocessor */
+.pygments .cs { color: #777; font-style: italic } /* special comment */
+.pygments .gp { color: #fff } /* 'generic prompt' */
+.pygments .k, .pygments .kr { color: #99f; font-weight: bold } /* keywords */
+.pygments .kd { color: #ff0 } /* declaration */
+.pygments .kc { color: #0f0 } /* constant */
+.pygments .kn { color: #99f; font-weight: bold } /* 'namespace' (`package` and `import` in Go) */
+.pygments .kp { color: #7686bb; font-weight: bold } /* pseudo */
+.pygments .kt { color: #f7f } /* type */
+.pygments .w { color: #bbbbbb } /* 'whitespace' */
+.pygments .p, .pygments .o { color: #fb2 } /* punct and ops */
+.pygments.m, .pygments .mi, .pygments .mb, .pygments .mo, .pygments .mh, .pygments .mf, .pygments.il { color: #4FB8CC } /* numbers */
+.pygments .s, .pygments .sa, .pygments .sb, .pygments .sc, .pygments .sd, .pygments .sh, .pygments .sx, .pygments .sr, .pygments .ss, .pygments .s1, .pygments .s2, .pygments.dl { color: #5c9 } /* strings */
+.pygments .se { color: #5c9 } /* escape */
+.pygments .si { color: #5c9 } /* interpolation */
+.pygments .vc { color: #7AB4DB; font-weight: bold } /* vars */
+.pygments .vg { color: #BE646C; font-weight: bold }
+.pygments .vi { color: #7AB4DB; font-weight: bold }
+.pygments .vm { color: #7AB4DB; font-weight: bold }
+.pygments .err { color: #a61717; background-color: #e3d2d2 }

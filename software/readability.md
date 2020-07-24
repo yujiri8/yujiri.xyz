@@ -4,7 +4,7 @@ TEMPLATE DEFAULT
 DESC When I was new to programming, I didn't value readability enough, and hope to save others from making the same mistake.
 
 When I was new to programming, I didn't worry about readability at all. Instead I valued compactness to such an extent that I'd remove all spaces that weren't syntactically necessary and write things like:
-```
+```python
 while condition:
  if someobject.method(x,y)[0]+1==otherobject.attr:someobject.othermethod()
 ```

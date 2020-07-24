@@ -50,7 +50,7 @@ Functional programming means thinking about code as a transformation of data rat
 In functional programming, a function is a function in the mathematical sense - a formula for converting input to output and nothing more. Thus functions aren't allowed to change anything other than their return values or depend on anything other than their arguments. This can seem extremely limiting, but keeping as many things as deterministic as possible and the I/O and non-deterministic aspects as isolated as possible can go a long way toward making it easier to keep track of the logic and avoid bugs.
 
 One example of functional programming is the `map`, `filter`, and `reduce` functions that a lot of languages have. If you wanted to take a list of items and apply some transformation to each of them, here's how you'd do it procedurally (I'll use Python as the example language, so that there won't be a red herring difference in verbosity):
-```
+```python
 def get_sqroots(nums):
 	sqroots = []
 	for num im nums:
@@ -60,7 +60,7 @@ def get_sqroots(nums):
 That's not bad, but if you're not used to this whole pattern of for loops and iterating it takes a second to figure out what's going on. We're building a new list and then adding in each new value. Despite how this is a task that really can and should be described in one thought, we're instead describing how we're getting there instead of just what we're achieving.
 
 Here's a functional way of approaching the problem:
-```
+```python
 def get_sqroots(nums):
 	return map(lambda x: x ** 0.5, nums)
 ```

@@ -14,7 +14,7 @@ Up to this point, you haven't had any way to *not* crash the program if there's 
 Terminology note: the terms "error" and "exception" are pretty interchangeable, at least when it comes to Python. When you try to use `int` to convert something that can't be converted to an int, it **raises** an exception, which by default leads to a crash.
 
 You can override this using the `try` and `except` statements. Here's a demonstration:
-```
+```python
 try:
     num = float(input("Enter a number, please: "))
 except:
@@ -26,7 +26,7 @@ You can run that to see it work. If an exception is raised by something inside a
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 def safe_getnum(prompt):
     while True:
         try:
@@ -46,7 +46,7 @@ Isn't that a cool power to have unlocked! There's a lot more cool stuff I need t
 # Exception types
 
 You know how there are all those different types of errors? You can make an `except` clause that only catches one kind.
-```
+```python
 def safe_getnum(prompt):
     while True:
         try:
@@ -55,7 +55,7 @@ def safe_getnum(prompt):
             print("That's not a number.")
 ```
 This is actually way better in general since you would almost never want `NameError`s to be caught. If you catch all exception types under the assumption that any error is because the user entered something invalid, then if you had, say, spelled `inupt` instead of `input` in the `try` clause, it would be raising a `NameError` every time, before even asking for input. But with only the naive exception clause, the program would be shouting at you that "That's not a number." repeatedly even though you hadn't entered anything. If the real error is a typo in your code, you certainly wouldn't want it to be handled the same as a `TypeError`. You could write this:
-```
+```python
 def safe_getnum(prompt):
     while True:
         try:
@@ -71,7 +71,7 @@ def safe_getnum(prompt):
 Of course, you wouldn't actually want to handle `NameError`s that way either - you'd probably just want to let it crash so you could see the line number - but it shows how you can handle multiple types of exceptions differently.
 
 You can also assign one `except` clause to multiple types of errors:
-```
+```python
 try: int('blah')
 except (TypeError, ValueError):
     print("TypeError or ValueError")
@@ -80,7 +80,7 @@ except (TypeError, ValueError):
 # `except` ... `as`
 
 With the `as` clause, you can get a reference to the exception. Let me show you what I mean.
-```
+```python
 try: do_something()
 except Exception as e:
     print("the following error occured:", e)
@@ -94,7 +94,7 @@ Okay well actually that's not quite true. There are some exception types that ar
 ## `pass`
 
 Python needs to see some code after anything that ends in `:` (like `if`, `while`, `except`, or whatever); putting nothing is an `IndentationError`:
-```
+```python
 >>> if True:
 ...
   File "<stdin>", line 2
@@ -103,7 +103,7 @@ Python needs to see some code after anything that ends in `:` (like `if`, `while
 IndentationError: expected an indented block
 ```
 I suspect the reason for this is that an empty block is most likely to be a mistake made by a programmer who forgot to indent stuff properly. Which is true for `if`. But if you want to have a block that does nothing, you can use the `pass` keyword. This is useful when you want to silently ignore an error:
-```
+```python
 try:
     entry = float(input("enter a number, please: "))
 except:
@@ -116,7 +116,7 @@ That way, an error getting or converting the input would just be ignored, since 
 `raise` lets you deliberately raise an exception. Why would you want to do that? Well, quite often actually, when you want some set of conditions to count as an error for the purposes of your program even if they're not a Python error. Imagine you want the user to enter a single-digit number. If you get the input from `input`, you would use `int` or `float` to convert it to a number, but trying to convert `'50'` to a number won't raise an error because 50 is a perfectly valid number, just not valid for your use case.
 
 Now, if you were getting it from the user interactively in a command-line setting, like we've been doing, you wouldn't need `raise` because you could just modify `safe_getnum` to also make sure the number's within your range before returning it. The better examples for this are when it's in a non-interactive setting so you can't ask them to try again, like if you're reading data from a file that was saved earlier; or when the function that checks whether the data is valid isn't the same one that's fetching it. Hard to give a good example when we haven't gone outside the domain of command-line applications yet (which we will at the end of this series), but `safe_getnum` with a specific acceptable number range could've been written like this:
-```
+```python
 def safe_getnum(prompt, min, max):
     num = int(input(prompt))
     if not (min < num > max):
@@ -127,7 +127,7 @@ rating = get_number("How many stars do you give it?", 1, 5)
 And this way trying to get the rating would crash if they entered an invalid number of stars. And yes, you can raise normal error types with custom messages like that. I could also have just done `raise ValueError`, without even the parentheses, but then it wouldn't show a useful message to tell me what was wrong with the value.
 
 Here's a real-world example: in the Javascript (code that runs in the browser) on my website, the function that gets called when you try to post a comment raises an error if it gets a response from the server telling it it didn't succeed (which isn't inherently considered an error in Javascript). In Javascript the keyword is `throw` instead of `raise`, but it's the same concept. This lets the calling function look like (it's not literally like this):
-```
+```python
 # Read the name and comment the user entered.
 name = read_comment_name_box()
 body = read_comment_text_box()
@@ -135,7 +135,7 @@ send_network_request("POST_COMMENT", name, body)
 show_notification("comment posted successfully")
 ```
 while `send_network_request`, paraphrased, looks like:
-```
+```python
 def send_network_request(request_type, *parameters):
     response_code = send_to_server(request_type, *parameters)
     if response_code != 200: # 200 means OK
@@ -144,7 +144,7 @@ def send_network_request(request_type, *parameters):
 And so if it gets an unsuccessful response code, the exception, since it's not caught, will stop the first function in its tracks and it won't show you the success message. It's useful to have the error-handling done inside `send_network_request` because that's the same function that's used in a dozen other places, and this way the error-handling only has to exist in one place. Otherwise, every place that called it would have to duplicate the code checking if it was successful.
 
 Sometimes you use `except`...`raise` when you do want to raise the error, but want to do something first. For example:
-```
+```python
 def 3_phase_plan():
     phase1()
     try:
@@ -163,7 +163,7 @@ In fact, my comment Javascript kind of does this too. The function that sends re
 # `try`, `except`, `else`
 
 When you have a `try` followed by one or more `except` clauses, you can put an `else` clause after it, and it'll execute if there were no exceptions. This is different from just putting the code after the whole `try`/`except` block, because code in the `else` clause won't execute if there was an exception, but it was caught safely by an `except` clause. Code after the whole error-handling block would.
-```
+```python
 try:
     num = int(input("enter a number:"))
 except TypeError:
@@ -176,7 +176,7 @@ print("Regardless of whether you entered a number or not, thanks for your visit.
 # `finally`
 
 `finally` can be used kind of like `else` here, except it executes no matter what. It'll execute if everything worked, or if one of the `except` clauses was executed, or if there was an uncaught exception. It even executes on the way out if one of the clauses executes a `return` statement. Let's imagine we want to do something that involves creating a temporary file, and we want to make sure we don't leave the file existing when we're done:
-```
+```python
 try:
     create_temp_file()
     do_something()
@@ -194,7 +194,7 @@ This makes sure we always remove our temporary file at the end, whether an error
 Up to this point, even after learning randomness, you haven't had any way to keep anything persistent. You wouldn't have been able to, for example, store the high scores somewhere in the score reporter program so the players wouldn't have to re-enter all their scores when they got a new one to see what the new stats were. Now it's time to learn how to save things persistently, by using text files.
 
 `open` is the basic function we need:
-```
+```python
 # the 'w' means that we're opening it for writing. I'll explain more about that later.
 file = open("notes.txt", 'w')
 file.write("This is a test note. It'll still be in the file after the program ends.")
@@ -202,7 +202,7 @@ file.write("This is a test note. It'll still be in the file after the program en
 If you run this, you'll notice the file `notes.txt` was created and has the text we wrote to it. It's just a text file, completely independent of the program now.
 
 So if we want to open it later for reading:
-```
+```python
 # the 'r' is default, so we didn't need to specify it, but I'm showing it for clarity.
 file = open('notes.txt', 'r')
 print("the file contained:")
@@ -222,7 +222,7 @@ Also, all of this only works for text files. For reading and writing binary file
 ## Other reading and writing methods
 
 There are other ways to read and write to files besides doing it all at once. the `read` method has an optional parameter; if you pass a number, it'll read at most that many characters and then stop. You can read more characters from the file later on and they'll be read from the position you left off at. (A possible use case that comes to mind is if you're going to read a file that might be massive, and don't want your program to lag as it loads it the whole thing upfront.)
-```
+```python
 file = open('notes.txt', 'r')
 print(file.read(5)) # prints only the first 5 characters in the file
 print(file.read(5)) # prints the next 5
@@ -236,7 +236,7 @@ There are also more interesting methods for reading and writing. `readline` read
 # Closing files
 
 When you open a file, you should make sure you close it when you're done. Leaving files open can cause [memory leaks](https://en.wikipedia.org/wiki/Memory_leak) in long-running programs, and files opened for writing aren't guaranteed to *actually* write their data as soon as you call `file.write` - sometimes the data is "buffered" and only synchronized with the hard drive every few minutes. It depends a lot on your operating system and stuff. Closing the file ensures the data has been written. Python might automatically close files when your reference to the them (your variable named `file` or whatever) goes out of scope (eg. the function it was defined in returns), but you can't rely on this. Here's how to close a file properly:
-```
+```python
 file = open('notes.txt', 'w')
 file.write("note")
 file.close()
@@ -248,7 +248,7 @@ And after that, `file` is closed and can't be used, but you can open it again wi
 For the project I'm going to suggest, there are two functions that'll be incredibly useful. `repr` is for 'representation' and returns a string that represents whatever you pass it. You know how at the interactive prompt you can just enter `var` and it'll show you what `var` is, but it's not exactly the same as `print(var)` (mostly with strings)? `repr` is the interactive prompt behavior. This is useful because...
 
 `eval` is the inverse of `repr`. `eval` take a string and returns the Python object that the string describes. Here are examples:
-```
+```python
 >>> nums = eval('[1, 2, 3, 4]')
 >>> nums
 [1, 2, 3, 4]
@@ -268,7 +268,7 @@ Preferably do it without catching all exception types. If you're not sure which 
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
-```
+```python
 import util
 
 menu = """Menu:

@@ -10,7 +10,7 @@ Last time things were starting to get interesting. This time we're going to intr
 # Lists
 
 The first data type is lists, which are mostly the same as tuples but way more useful in practice. The syntax for list literals uses brackets instead of parentheses:
-```
+```python
 >>> nums = [1, 7, 4]
 >>> nums[2]
 4
@@ -24,7 +24,7 @@ So what's the big difference?
 # Mutability
 
 If you played with tuples and strings, you might've noticed that you can't assign to individual items in them:
-```
+```python
 >>> nums = (1, 2, 4)
 >>> nums[1] = 3
 Traceback (most recent call last):
@@ -39,7 +39,7 @@ TypeError: 'str' object does not support item assignment
 (If this were possible, I would've given you an exercise involving it for part 3.)
 
 And that's what's so important about lists: they're mutable.
-```
+```python
 >>> nums = [1, 2, 4]
 >>> nums[0] = 1.5
 >>> nums
@@ -52,7 +52,7 @@ So you might be wondering why you would ever use tuples. Well, there are at leas
 Get ready for something really hard. Remember when I told you that `x += y` is just shorthand for `x = x + y`? That was kind of an oversimplification. It's true *for immutable data types*, but for mutable things like lists, there's a difference.
 
 Mutable data types exhibit **shared reference**. With immutable types, if you assign one variable to another, and then change one, the other stays:
-```
+```python
 >>> x = 5
 >>> y = x
 >>> x += 1
@@ -67,7 +67,7 @@ Mutable data types exhibit **shared reference**. With immutable types, if you as
 ('hi', 'hello', 'hey')
 ```
 They don't stay linked. Lists, however:
-```
+```python
 >>> words = ['hi', 'hello']
 >>> words2 = words
 >>> words += ['hey']
@@ -79,7 +79,7 @@ They don't stay linked. Lists, however:
 It changed both! That's because there was actually only ever one list. `words` was set to refer to a list, then `words2` was set to the value of `words`, so when you change one, both names see it as changed. Whereas with tuples or strings or ints, since they're immutable, when you do `words2 += ('hey',)`, what's really happening is that it expands to `words2 = words2 + ('hey',)`, so a second tuple is being created that consists of `words2 + ('hey',)`. When `words2` is a list, on the other hand, `words2 += ['hey']` concatenates `['hey']` to the *existing* list stored in `words2`. We call it adding 'in-place' or *mutating* the existing list, as opposed to making a new one and assigining the new one to the same variable.
 
 But then there's this finding:
-```
+```python
 >>> words = ['hi', 'hello']
 >>> words2 = words + ['hey']
 >>> words
@@ -92,7 +92,7 @@ If you use `=` (not `+=`), `words2` is reassigned and stops referring to the sam
 To understand how this works, you need to understand the difference between a variable and its value. Variables in Python are nothing more than names. If you do `nums = [1, 2, 3]` and then later `nums = [4, 5, 6]`, you don't change the list, you change `nums`. This distinction is important. The list itself is a block of data stored in memory somewhere. The new list is stored in a different memory location. But when you do `nums2 = nums`, it makes `nums2` refer to the same underlying data as `nums`, as opposed to making an identical copy.
 
 The `is` operator is really useful for understanding this:
-```
+```python
 >>> list1 = [1, 2, 3]
 >>> list2 = [1, 2, 3]
 >>> list1 == list2
@@ -129,7 +129,7 @@ There's a special value called `None` that's very similar to `False`, but useful
 # Methods
 
 I didn't really want to talk about methods until we got to objects or at least to functions, but oh well, I can't avoid this any longer. For now, let's just say that methods are basically functions attached to a specific data type and with a special `.` syntax. Here's an example:
-```
+```python
 >>> nums = [5, 4]
 >>> nums.remove(5)
 >>> nums
@@ -146,7 +146,7 @@ So lists have this `remove` method that takes a value and deletes the first elem
 The `remove` method of lists doesn't return anything, or to be more accurate, it returns `None`.
 
 Strings have a few cool methods I didn't mention before (no need to memorize all these):
-```
+```python
 >>> word = 'hello'
 >>> word.index('e')
 1
@@ -203,7 +203,7 @@ When they're done manipulating their sentence, print it out with the first word 
 
 <expand-note opentext="Hide solution" closedtext="Show solution">
 
-```
+```python
 menu = """
     insert - specify a word to insert and the position to put it at
     remove - specify a word to be removed
@@ -270,7 +270,7 @@ for letter in "abcdefghijklmnopqrstuvwxyz":
 # Dictionaries
 
 Another crucial data type is the dictionary (usually just called a dict). A real dictionary has a definition for each word. A Python dict has a 'value' for each 'key', and you can lookup a key to get its value:
-```
+```python
 >>> spanish = {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
 >>> print(spanish['casa'])
 'house'
@@ -280,7 +280,7 @@ How neat is that!
 Dicts don't respect order, by the way, so `{'a': 'z', 'b': 'y'}` and `{'b': 'y', 'a': 'z'}` are identical dicts.
 
 Dicts don't store duplicates, so when you assign to a key, it gets that value regardless of what it had or whether it existed before:
-```
+```python
 >>> spanish['hablar'] = 'talk'
 {'casa': 'house', 'hola': 'hello', 'si': 'yes'}
 >>> spanish
@@ -290,13 +290,13 @@ Dicts don't store duplicates, so when you assign to a key, it gets that value re
 {'casa': 'house', 'hola': 'hello', 'si': 'yes', 'hablar': 'speak'}
 ```
 To remove a key from a dictionary, you can use `del`:
-```
+```python
 >>> del spanish['hola']
 >>> spanish
 {'casa': 'house', 'si': 'yes', 'hablar': 'speak'}
 ```
 When you try to access a dictionary key that doesn't exist, you get an error:
-```
+```python
 >>> spanish['entender'] # it means 'understand', by the way, but I haven't put it in the dictionary
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -312,7 +312,7 @@ I guess now that you know dicts, there's one more case where you would use tuple
 ### Iterating on dicts
 
 `for` and `in` both treat dicts as sequences of keys, so:
-```
+```python
 >>> 'casa' in spanish
 True
 >>> 'house' in spanish
@@ -333,7 +333,7 @@ Some functions that will help you here are the builtin `max` and `sum`, which ta
 
 <expand-note opentext="Hide solution" closedtext="Show solution">
 
-```
+```python
 # The value of each key will be a nested dict of all
 # the player's data: 'scores', 'max', and 'average'
 data = {}

@@ -8,14 +8,14 @@ In "dynamic" languages like [Python](https://yujiri.xyz/software/python) and Rub
 In general, the argument for declarations is mistake protection: if for example a variable is misspelled, it'll be a name that wasn't declared, or if you misspell it the time you declare it, all the other times it's used will be undeclared names. So you hear about your mistake at compile time. In languages that silently allow such misspellings, they can cost a lot of time and happiness on debugging. But I don't think this makes a good argument for having variable declarations, because you can have a compiler check for unused names or names that are used before being *assigned* without requiring a different syntax for declaration. GHC can do that (though it takes a command-line flag to enable checking for unused vars).
 
 My main argument against variable declaration is that they create unnecessary coupling within a function. For example, consider this approximation of some code for an endpoint handler I've worked on, in the [Go](https://yujiri.xyz/software/go) language:
-```
+```go
 var job, err = getJob(args.JobID)
 if err != nil {
 	return errors.Wrap(err, "When getting job")
 }
 ```
 This code works. But let's say it needs to change. The endpoint also needs to check the user that's hitting it and make sure they have appropriate permissions. I need to add the following code before fetching the job:
-```
+```go
 var user, err = getUser(userID)
 if err != nil {
 	return errors.Wrap(err, "When getting user")

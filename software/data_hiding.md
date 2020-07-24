@@ -8,7 +8,7 @@ In [object-oriented](oop) theory, you <a rel="nofollow" href="https://www.techop
 Notice that nothing in a language without `public`/`private` keywords stops you from having loose coupling and marking attributes not meant for external use with a convention like a `_` prefix. The discussion isn't about the benefits of loose coupling (those are obvious), which is why Wikipedia's car manufacturer example is a false analogy. The concept of data hiding isn't just about *not* accessing implementation details from the outside, but *preventing* said access.
 
 And why do people [claim](https://www.ruby-lang.org/en/documentation/ruby-from-other-languages/to-ruby-from-python/) Python doesn't offer that? The phrase "`_voluntary_` underscore `__convention__`" is a misrepresentation of how Python works - attributes starting with `__` are *actually* private:
-```
+```python
 >>> class Secret:
 ...   def __init__(self):
 ...     self.__secret = True

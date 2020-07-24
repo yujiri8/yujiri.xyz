@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 24:**
+Syntax highlighting support in code blocks in here! Both articles and comments. Courtesy of [Pygments](https://pygments.org). Enjoy.
+
 **July 22:**
 New: [Existing bigotry analysis: sexism](argument/bigotry).
 
