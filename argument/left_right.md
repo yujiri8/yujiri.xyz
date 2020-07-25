@@ -53,7 +53,7 @@ Rightists do not invent a fake concept of gender as separate from sex.
 
 <div class="indent">
 
-Leftists insist that there's (in America) serious widespread bigotry against women, non-whites, non-hereosexuals, Muslims, and the disabled. Rightists tend to perceive American society as mostly non-bigoted.
+Leftists insist that there's (in America) serious widespread bigotry against women, non-whites, non-heterosexuals, Muslims, and the disabled. Rightists tend to perceive American society as mostly non-bigoted.
 
 Whatever the fact of the situation, many leftists are so attached to fighting perceived bigotry against those groups that they've developed some degree of counter-bigotry against the "dominant class" of white, straight, cisgender, upper-class males. And I'm not just talking about the [double standard on physical assault](/fiction/sexist_tropes) that you see quite often even outside of movies (conservatives seem to be just as guilty of excusing that); some liberals [are *way* worse](https://www.youtube.com/watch?v=v11wfp8vmrM) (be prepared for explicit content if you follow that link).
 

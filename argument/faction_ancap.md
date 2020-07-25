@@ -7,45 +7,47 @@ Here I'll explore anarcho-capitalism, debunk strawmen of it, offer legitimate cr
 
 My background with the ideology is that Ancaps pretty much converted me away from [Chaos Anarchism](/misc/anarchism_conversion) and convinced me to identify as an Ancap for some time (I don't call myself that anymore). I've spent a *lot* of time in their circles, debated with them, memed with them, and consider them essential allies and mostly friends.
 
-# The ideology
+## The ideology
 
-First, definitions.
+As with any ideology, different believers interpret it differently, whether someone counts as an anarcho-capitalist can be up for debate, and there's probably no way of putting it that would be agreeable to all of them. [This video](https://www.youtube.com/watch?v=8GazZBvHhgQ) might, but gets there by focusing on the common sense corollaries rather than the finer points. In general, anarcho-capitalists believe:
 
-**Anarchism** - this is my own dictionary - [is the belief that no one can legitimately change the law](/protagonism/democracy_nihilism). In Ancaps' dictionaries, anarchism is generally seen as synonymous with capitalism (for reasons I'll explore later).
+1. Freedom of association (the right to not interact) is the only real right; other rights are only valid insofar as they follow from it. The sanctity of freedom of association is called self-ownership and entails the non-aggression principle (NAP).
 
-**Capitalism** - in the Ancap dictionary - means property rights and freedom of association, and any government interference with [the market](/protagonism/market) is anti-capitalist. This contrasts with the dictionary of their opponents: most who say they oppose capitalism use the word to describe government actions and interventions on behalf of corporations that <a rel="nofollow" href="https://www.investopedia.com/terms/i/incorporate.asp">give business owners legal privileges that contradict market principles</a>. By the Ancap definition of capitalism, these things are *anti-*capitalist and unethical.
+2. People can acquire private property by homesteading or trade, including of natural resources, and retain exclusive ownership in absence. This exclusive ownership is a corollary of freedom of association.
 
-When I talk about Anarcho-capitalism in a vacuum, I'm usually talking about only the combination of anarchism and capitalism, but for this article I'm talking more about the movement than just what the principles themselves entail.
+3. People have absolute authority over their property; there is nothing they can't do with it as long as they don't violate others' rights. This includes offering permission to use it under a condition of payment, and hence wage labor and rent.
 
-There are additional differences in how property rights work between mainstream Ancap thought and statist thought: **anarcho-capitalists almost always reject intellectual property altogether, but support land tenure.** I'll explore why I think this is inconsistent below.
+This entails anarchism because [government inherently violates property rights](/protagonism/anarchism).
 
-In [Protagonist terms](/protagonism/virtues), the ideology is a near-supreme valuation of consent, plus a somewhat flawed conception of what consent is and applies to.
+Ancaps' definition of capitalism is not the existing system. Most point out that the existing balance of power is in many ways a result of government intervention on behalf of corporations in the form of tax subsidies, regulatory capture, occupational licensing (outlawing competition), etc. These things can't be justified by Ancap principles and so they consider them unethical and *anti*-capitalist.
 
-Ancaps describe themselves as libertarians, but adamantly distinguish themselves from the "Libertarian Party", which they often describe as not really libertarian for believing in "minimal" government. They also use the label "voluntarist" or "voluntaryist" (which I think is much better for them PR-wise).
+There's also some qualitative difference in how property rights work between Ancap thought and statist thought; anarcho-capitalists almost always reject intellectual property altogether, since "ideas are not scarce".
 
-Almost all Ancaps are [deontologists](/protagonism/consequentialism). David Friedman is a notale consequentialist Ancap, but deontologism is dominant enough that you can safely assume it.
+Almost all Ancaps are [deontologists](/protagonism/consequentialism). David Friedman is a notale consequentialist one, but deontologism is dominant enough that you can safely assume it.
 
-Many Ancaps (but far from all) consider themselves right-wing and most hate communism as much as statism. The "right" referred to here is other values and cultural norms [considered right-wing](/protagonism/left_right), minus a few that are obviously anti-anarchist like the conservative infatuation with police.
+Ancaps who self-identify as right-wing are usually referring mostly to [the communist vs capitalist interpretation of left and right](left_right). Ancaps usually don't care much about the cultural interpretations of left and right, but you can find both within them.
 
-# Strawmen
+Ancaps describe themselves as libertarians, but adamantly distinguish themselves from the "Libertarian Party", which they often describe as not really libertarian for not following the principles to their conclusion: anarchism. They also use the label "voluntarist" or "voluntaryist" and "market anarchist".
 
-* Ancaps are not pacifists. They recognize the legitimacy of violence in defense or retaliation against aggressors; they use the word **aggression** to mean *initiatory* force and are adamant about the distinction; and they usually also recognize a clear threat of aggression as ground to retaliate. You can definitely find a few that are pacifists, but pinning this on all Ancaps is like saying all Muslims support ISIS. This strawman is mostly used by conservatives and minarchists.
+## Strawmen
 
-* Ancaps don't have a problem with modes of organization other than traditional capitalist business models, as long as no one's forced to participate (though their definition of *forced* is often questioned; see below). There is nothing about an opt-in commune or worker co-op that's incompatible with Ancap ethics (though they do usually to believe employer-employee structures are more efficient).
+* A popular strawman among conservatives and minarchists is that Ancaps are pacifists. This is completely false. They recognize the legitimacy of violence in defense or retaliation against aggressors; they use the word **aggression** to mean *initiatory* force and are adamant about the distinction; and they usually also recognize a clear threat of aggression as ground to retaliate. You can definitely find a few that are pacifists, but pinning this on all Ancaps is like saying all Muslims support ISIS.
 
-# Derivation and absolutism
+* Ancaps don't have a problem with modes of organization other than traditional capitalist business models, as long as no one's forced to participate (though their definition of *forced* is often questioned; see below). There is nothing about an opt-in commune or worker co-op that's incompatible with Ancap ethics (though they do usually believe employer-employee structures are more efficient).
 
-Ancaps almost always refer to [self-ownership](https://www.youtube.com/watch?v=8GazZBvHhgQ) and [the homestead principle](https://en.wikipedia.org/wiki/Homestead_principle) as the basis of their ideology; NAP stands for non-aggression principle. Many if not most of them rely on <a rel="nofollow" href="https://mises.org/library/argumentation-ethics-and-liberty-concise-guide">argumentation ethics</a> as their argument. I've ripped it to shreds [here](/protagonism/conscience) and in a couple of other places, and Jason Brennan has [done so as well](https://bleedingheartlibertarians.com/2013/12/hoppes-argumentation-ethics-argument-refuted-in-under-60-seconds/).
+## Derivation and absolutism
 
-The worst problem with the Ancap movement is their absolutism. Many or most of them claim it's never moral to violate property rights for any reason, since argumentation ethics locks them into that. You can raise "one person to save the world" and they're prepared to stand by no. You can raise "steal to survive" and most will say that *they* would be disgusted with that person for not helping and refuse to associate with them, but that using force is still completely unethical.
+Most Ancaps think it's never moral to violate property rights for any reason, You can raise "one person to save the world" and they won't [ridicule the hypothetical](dirty_tactics#ridiculing-hypotheticals); they're prepared to stand by no. You can raise "steal to survive" and most will say that *they* would be disgusted with the person with the food for not helping and refuse to associate with them, but that forcing them to feed the starving person is still completely unethical.
 
-# The definition of 'force'
+Why would they believe something so crazy? Mostly, because their argument locks them into it. Ancaps generally give some some version of <a rel="nofollow" href="https://mises.org/library/argumentation-ethics-and-liberty-concise-guide">argumentation ethics</a> as their "argument" for why proprtery rights have to be lexically prior to anything else. I've ripped it to shreds [here](/protagonism/conscience), and Jason Brennan has [done so as well](https://bleedingheartlibertarians.com/2013/12/hoppes-argumentation-ethics-argument-refuted-in-under-60-seconds/).
 
-A common criticism from Ancoms (or those who are somewhere between the two) is that Ancaps claim they want everything to be voluntary, but support employer-employee relationships that are in fact involuntary because it's practically impossible to survive in a capitalist society without working for a capitalist, and draw an equivalency between "choose your boss" and "choose your tyrant". This criticism makes sense in a way because it's true that the way most people use the words 'voluntary' or 'force' doesn't match how Ancaps use them. To an Ancap, if you *technically* had a choice in [the metaphysical sense](/protagonism/metaphysics), then it's voluntary, period (unless you were threatened with force, since that means you didn't have a metaphysical choice to not associate).
+## The definition of 'force'
+
+A common criticism from Ancoms (or those who are somewhere between the two) is that Ancaps claim they want everything to be voluntary, but support employer-employee relationships that are in fact involuntary because it's practically impossible to survive in a capitalist society without working for a capitalist, and draw an equivalency between "choose your boss" and "choose your tyrant". This criticism makes sense in a way because it's true that Ancaps use the words 'voluntary' and 'force' a little differently from how others do. To an Ancap, if you *technically* had a choice in [the metaphysical sense](/protagonism/metaphysics), then it's voluntary, period (unless you were threatened with force, since that means you didn't have a metaphysical choice to not associate).
 
 Arguments often turn out to be severely hampered just by different definitions of voluntary. One can define a word any way one wants as long as one's clear about it, but I do think the Ancap definition is better because it's both an ethically important concept and one that can't easily be represented without that word, but that's exactly why [my own moral system](/protagonism/virtues) treats consent and compassion as separate values either of which can be outweighed by a large enough amount of the other. I find it absolutely insane to think you can't violate property rights to save a life, or even for a smaller need than that (like to save someone from being raped). So my solution is to use the Ancap definition of voluntary but admit that it isn't all there is to ethics, and sometimes it's moral to use involuntary means.
 
-# Real anarchists?
+## Real anarchists?
 
 Ancaps and Ancoms are always fighting about who's the "real anarchists". Both insist the other is inherently authoritarian and effectively statist. It's really sad to see. What I've noticed from debating with them is the way they define statism:
 
@@ -55,7 +57,7 @@ Ancaps and Ancoms are always fighting about who's the "real anarchists". Both in
 
 I define statism to be [the idea that some group of people can legitimately change the law](/protagonism/democracy_nihilism). So I consider both of them valid anarchists.
 
-# The inconsistency with property mechanics
+## The inconsistency with property mechanics
 
 Ancaps say intellectual property is invalid because ideas are not scarce and so can't be owned. But here's the thing: *neither is land use*. While land itself is *physically* scarce, the relevant corollary of scarcity isn't present because [someone can generally "trespass" on your land without depriving you of it](/protagonism/property#trespassing-isn-t-the-crime-you-think-it-is). If you really believe that it can't violate property rights to benefit from someone's labor without their consent because it doesn't deprive them of it, doesn't that collapse absentee ownership altogether? As long as I can use it without depriving you of it, it's effectively non-scarce, so why can't I trespass, or (insert euphoric Marxist) use your factory equipment without your consent?
 
@@ -63,7 +65,7 @@ I've yet to get a satisfactory answer to this from an Ancap.
 
 I have another disagreement with them on property rights, namely [sharing nature](/protagonism/property#sharing-nature), but that's not an inconsistency on their part.
 
-# The psychology
+## The psychology
 
 One of the core appeals of NAP purism is its simplicity. It promises to answer basically all questions about ethics with a single sweeping answer.
 
@@ -71,7 +73,7 @@ In one reddit argument, a proponent raised the point that "The reason morals are
 
 But on closer inspection, that destroys the whole point. As soon as you say the words "the reason morals are necessary ...", you imply that morals are something we make up to achieve our goals, which destroys the whole concept of morals. If morals themselves are a means to an end, then *there are no morals*.
 
-## The danger of logic
+### The danger of logic
 
 Ancaps are a great example of what might be a way deeper insight I'm starting to have: **logic is dangerous**. A misguided loyalty to "logic" can lead you to some very dark places ideologically.
 
@@ -83,7 +85,7 @@ Nullus Maximus is the best example of what this can do to someone. He regularly 
 
 Another terrible consequence you can see on them is how this absolutist loyalty to self-ownership drives them away from being able to make any moral judgements of peaceful actions. The better Ancaps realize that it's legitimate for them to think an action is bad even if it's peaceful (and thus 'ethical'), but others <a rel="nofollow" href="https://youtu.be/AspFfALQSsU?t=119">seem to really want to hide from that concept</a>.
 
-# So what the hell's with the "alt-right"?
+## So what the hell's with the "alt-right"?
 
 A common accusation is the "libertarian to alt-right pipeline". Most libertarians of course deny such a thing exists, and understandably so, but I've seen it myself.
 
