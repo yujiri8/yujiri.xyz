@@ -93,6 +93,8 @@ After much philosophy, I've identified 16 prime emotions, not counting the negat
 
 **Footnote on Empowerment/Disempowerment**: This accounts for the pleasure of physical exercise, but also things like the powerful feeling of the weapons in Halo 1 and the way a lot of CCG cards seem to appeal to an "awesome factor". It's also part of the enjoyment of winning at games in general (the other part being pride), and the enjoyment of customization.
 
+Disempowerment is the frustration we often feel "at nature"; hence why empowerment (manifested in outlets like punching bags) relieves it.
+
 **Footnote on Engagement/Boredom**: This can be understood as the "fun of trying", whereas Empowerment is "the fun of winning".
 
 **Footnote on Novelty Fun/Boredom**: This "feeling of progress" notion is the reason why game players seem to universally enjoy mechanics like having levels be locked until they've beaten the previous level, even though from a logical perspective it seems like this is strictly worse for the player.
@@ -113,8 +115,6 @@ After much philosophy, I've identified 16 prime emotions, not counting the negat
 
 * Of course, losing an argument or being the last one to solve a puzzle is often embarrassing, because it makes you appear less intelligent, and everyone wishes they were intelligent.
 
-**Footnote on Schadenfreude/Anger**: Sometimes, when you're having a really hard time with something (programming triggers me like this all the time), self-pity would be the "natural" response, but you might feel something you'd rather label as "frustration" instead. I believe this is actually the feeling I'm labeling "anger", and it comes from implicitly personifying fortune as victimizing you. The reason for doing this is that it can be more comfortable due to the shifting of the blame off yourself and thereby elevating your self-opinion. It can even lead to some synthesized schadenfreude when you finally get it working (I experienced this a lot when I was younger). One should avoid this though; it's worse for your productivity in my experience, and also you're likely to end up taking your anger out with other people and making their day worse as well.
-
 <br>
 
 A few notes about things that aren't on the list and what they're composed of:
@@ -124,5 +124,3 @@ A few notes about things that aren't on the list and what they're composed of:
 * Gaming "tilt" (at least as I used to feel it) is frustration, combined with zero or more of a couple others: humbling (finding out I'm not as good as I thought), embarrassment (losing to a much weaker player), and losing rating is a trigger of both (since it's both how I measure my own skill and how other people measure my skill).
 
 * I think "grief" is composed of self-pity (from how much worse your life will be without the person), loneliness, and sympathy.
-
-<!--* I think the feeling of agitation from being around someone you don't like is actually just instinct - you associate negative emotions with being around those people, so just being around them can make you feel unhappy even if nothing's happening. Their presence is a reminder. Likewise the feeling that it's pleasant to be with someone you like even if you're not interacting with them.-->
