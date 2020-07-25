@@ -36,7 +36,7 @@ I wrote [a self-critique](critique).
 
 Most of the art I comissioned is Creative Commons Attribution, which means you can also use it in your own DDLC mods! Just credit me for shellin' it out for 'em and the artist I shelled out to:
 
-* <span class="spoiler">Linda, Libitina, Albert, and Adam</span>'s sprites are by [Plural Roses](https://reddit.com/u/15LarueA) (PluralRoses#0136). Also <span class="spoiler">the warehouse interior water pit room (not the room at the back with the machinery)</span>. For the characters, I also edited them somewhat. They're divided into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool.
+* <span class="spoiler">Linda, Libitina, Albert, and Adam</span>'s sprites are by [Plural Roses](https://reddit.com/u/15LarueA) (DactylDami#0136). Also <span class="spoiler">the warehouse interior water pit room (not the room at the back with the machinery)</span>. For the characters, I also edited them somewhat. They're divided into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool.
 
 * <span class="spoiler">Cult facility and warehouse exterior</span> backgrounds are by [TomTC](https://deviantart.com/tomtc). These ones also have the non-derivative term, so derivatives aren't allowed.
 
