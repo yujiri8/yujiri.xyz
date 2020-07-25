@@ -81,7 +81,7 @@ def build_article(filename, srcdir):
 	args['ARTICLE'] = add_fragment_links(article)
 	if not args.get('NO_TIMESTAMP'):
 		args['TIMESTAMP'] =	datetime.datetime.utcfromtimestamp(os.path.getmtime(filename)) \
-			.replace(tzinfo = datetime.timezone.utc).strftime('%Y-%m-%d %a %R')
+			.replace(tzinfo = datetime.timezone.utc)
 	# Strip index and .html from the canonical URL.
 	if filename.endswith('.html'): filename = filename[:-5]
 	elif filename.endswith('.md'): filename = filename[:-3]

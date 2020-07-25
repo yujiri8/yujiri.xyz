@@ -19,6 +19,6 @@ if (currentTheme) document.documentElement.setAttribute('data-theme', currentThe
 
 // Put a global reference to the article timestamp.
 addEventListener('load', () => {
-	window.timestr = document.getElementById('timestamp').innerText;
+	window.timestr = document.getElementById('timestamp').getAttribute('datetime');
 	window.timestamp = new Date(window.timestr);
 });
