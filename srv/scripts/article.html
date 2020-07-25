@@ -51,7 +51,7 @@
 	{% if not NO_TIMESTAMP %}
 		<p>This page was last modified <time id="timestamp"
 				datetime="{{TIMESTAMP.replace(tzinfo = None).isoformat()}}">
-			{{TIMESTAMP.strftime('%Y-%m-%d %a %R')}}</time> (UTC)
+			{{TIMESTAMP.strftime('%Y-%m-%d %R')}}</time> (UTC)
 		</p>
 	{% endif %}
 	{% if not NO_COMMENTS %}

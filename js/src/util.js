@@ -190,9 +190,8 @@ export function leftpad(num) {
 	return '0' + num;
 }
 
-const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export function formatDate(d) {
 	d = new Date(d); // Incase it's in string form. This won't change the value of a Date object.
 	return `${d.getUTCFullYear()}-${leftpad(d.getMonth()+1)}-${leftpad(d.getDate())}
-		${dayNames[d.getDay()]} ${leftpad(d.getHours())}:${leftpad(d.getMinutes())}`;
+		${leftpad(d.getHours())}:${leftpad(d.getMinutes())}`;
 }
