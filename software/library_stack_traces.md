@@ -1,6 +1,7 @@
 TITLE Including library code in stack traces
 NAV Including library code in stack traces
 TEMPLATE DEFAULT
+DESC We're almost never interested in stack frames from libraries, so they shouldn't be shown the same way.
 
 One thing that bothers me a lot in stack traces is when they include library code, even standard library, and treat it the same as my code. The least helpful stack trace is one that clutters the actually useful information with frames from the bowels of a dependency I have nothing to do with and that certainly aren't responsible for the problem.
 
@@ -76,14 +77,13 @@ Traceback (most recent call last):
       field_info=field_info,
     File "/usr/local/lib/python3.7/site-packages/fastapi/utils.py", line 130, in create_response_field
       f"Invalid args for response field! Hint: check that {type_} is a valid pydantic field type"
-  fastapi.exceptions.FastAPIError: Invalid args for response field! Hint: check that default='' extra={} is a valid pydanti
-  c field type
+  fastapi.exceptions.FastAPIError: Invalid args for response field! Hint: check that default='' extra={} is a valid pydantic field type
 ```
 There are two frames here that are my code, and neither of them is the problem.
 
-(If you're interested, the problem was that my route's header paramaters were flagged with type annotations: `x_forwarded_for: Header('')` when it should've been `x_forwarded_for = Header('')`. [FastAPI](https://fastapi.tiangolo.com) uses reflection a lot in the form of looking at route handlers' argument defaults and type annotations to know what to pass them, but I forgot which was for which kind of parameter: type annotations are used for getting the `Response`, `Request`, and a few other things, but not for `Header`s or most other kinds of "individual" parameters. Hence the above error.
+(If you're interested, the problem was that my route's header paramaters were flagged with type annotations: `x_forwarded_for: Header('')` when it should've been `x_forwarded_for = Header('')`. [FastAPI](https://fastapi.tiangolo.com) uses reflection a lot in the form of looking at route handlers' argument defaults and type annotations to know what to pass them, but I forgot which was for which kind of parameter: type annotations are used for getting the `Response`, `Request`, and a few other things, but not for `Header`s or most other kinds of "individual" parameters. Hence the above completely useless error.
 
-In Rust and Julia, stack traces include *even the standard library* by default.
+In Rust and Julia, stack traces include *even the standard library* by default. At least Python doesn't do that.
 
 I understand that in theory this information *could* be useful (though it's never been to me), but there are better ways to provide information that's significantly less likely to be useful than other information.
 

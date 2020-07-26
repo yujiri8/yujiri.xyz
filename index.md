@@ -156,6 +156,14 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**July 26:**
+Added [Including library code in stack traces](software/library_stack_traces).
+
+I have a memory of using something recently where my first suggestion was used, but I can't remember what it was. It apparently wasn't Julia or Rust.
+
+**July 25:**
+Added [Why do all the dynamic languages catch name errors by default?](software/catch_name_errors). Used to be only [on dev.to](https://dev.to/yujiri8/why-do-all-the-dynamic-languages-catch-name-errors-by-default-5317), but I decided it was worthy of a spot here.
+
 **July 24:**
 Syntax highlighting support in code blocks in here! Both articles and comments. Courtesy of [Pygments](https://pygments.org). Enjoy.
 

@@ -363,7 +363,7 @@ https://yujiri.xyz/software/install
 https://yujiri.xyz/software/interpret_vs_compile
 https://yujiri.xyz/software/javascript
 https://yujiri.xyz/software/kill_software
-https://yujiri.xyz/software/library_errors
+https://yujiri.xyz/software/library_stack_traces
 https://yujiri.xyz/software/nano
 https://yujiri.xyz/software/nginx
 https://yujiri.xyz/software/nil_comparison
