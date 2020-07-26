@@ -40,8 +40,6 @@ Believe it or not, I've actually heard statists accuse us of supporting slavery 
 
 <img loading="lazy" src="memes/fair_share.jpg" alt="memes/fair_share.jpg">
 
-<img loading="lazy" src="memes/force_others_to_give_you_money.jpg" alt="memes/force_others_to_give_you_money.jpg">
-
 <img loading="lazy" src="memes/background_checks.jpg" alt="memes/background_checks.jpg">
 
 <img loading="lazy" src="memes/guncontrol.jpg" alt="memes/guncontrol.jpg">
