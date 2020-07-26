@@ -81,7 +81,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `""` is syntactic sugar for List Byte.
 
-* `"""`...`"""` are blockquotes.
+* `"""`...`"""` are multiline strings.
 
 * <code>&#96;&#96;</code> are template strings like in Javascript.
 
