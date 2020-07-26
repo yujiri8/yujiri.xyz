@@ -149,7 +149,7 @@ Because objects are always true.
 
 ## Error handling
 
-Javascipt uses exceptions like other dynamic languages, but it's lacking over Python and Ruby in that it doesn't support catching only specific types of exceptions. `catch` always catches everything and you have to manually check and reraise if you only wanted to catch some kinds. And like the others, [it catches name errors](https://dev.to/yujiri8/why-do-all-the-dynamic-languages-catch-name-errors-by-default-5317). Ugh.
+Javascipt uses exceptions like other dynamic languages, but it's lacking over Python and Ruby in that it doesn't support catching only specific types of exceptions. `catch` always catches everything and you have to manually check and reraise if you only wanted to catch some kinds. And like the others, [it catches name errors](https://yujiri.xyz/software/catch_name_errors). Ugh.
 
 It does give good stack traces, and has the finally statement.
 

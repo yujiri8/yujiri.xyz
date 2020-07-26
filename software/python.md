@@ -39,7 +39,7 @@ Python uses exceptions like most dynamic languages, but it has markedly better f
 
 An uncaught error comes with a full stack trace by default, with filenames, function names, line numbers, and the line text for each stack frame. It can be a bit verbose, but too much information is better than too little. I've never had a better time with error handling than with Python.
 
-Pretty much my only dissatisfaction with Python's error handling is that `NameError` is a subtype of `Exception` instead of `BaseException`, meaning you can't [have an `except` clause that matches all "normal" error types but not typos](https://dev.to/yujiri8/why-do-all-the-dynamic-languages-catch-name-errors-by-default-5317). That's just stupid.
+Pretty much my only dissatisfaction with Python's error handling is that `NameError` is a subtype of `Exception` instead of `BaseException`, meaning you can't [have an `except` clause that matches all "normal" error types but not typos](https://yujiri.xyz/software/catch_name_errors). That's just stupid.
 
 ## Syntax
 
