@@ -64,7 +64,7 @@ Anakin: Ah... well... negotations with a lightsaber.
 
 </div>
 
-However, the exchange is really out of place. It takes place in the heat of battle as a conversational island - indicating that the writer knew it was unbelievable, but just wanted to slip this joke in. And Anakin's question makes no sense even as a joke. Is he implying that it's normal for senators to look diplomatic solutions when caught in the heat of battle? It would be a little funny if that were the case or if Padme had said something earlier about finding a diplomatic solution, but it's not and she didn't.
+However, the exchange is really out of place. It takes place in the heat of battle as a conversational island - indicating that the writer knew it was unbelievable, but just wanted to slip this joke in. And Anakin's question makes no sense even as a joke. Is he implying that it's normal for senators to look for diplomatic solutions when caught in the heat of battle? It would be a little funny if that were the case or if Padme had said something earlier about finding a diplomatic solution, but it's not and she didn't.
 
 ---
 
