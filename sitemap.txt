@@ -25,6 +25,7 @@ https://yujiri.xyz/argument/faction_ancap
 https://yujiri.xyz/argument/fee_bystander
 https://yujiri.xyz/argument/first_round_capital
 https://yujiri.xyz/argument/fizzy_trans
+https://yujiri.xyz/argument/grouping_notifs
 https://yujiri.xyz/argument/history_philosophy
 https://yujiri.xyz/argument/hypocritical_objectivism
 https://yujiri.xyz/argument/identity_politics
