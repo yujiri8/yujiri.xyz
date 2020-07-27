@@ -22,6 +22,9 @@ Some time ago I made a whole bunch of Anarchist memes, but I kind of forgot abou
 Cops versus mercenaries, which is worse?
 <img loading="lazy" src="memes/cops_mercenaries.jpg" alt="memes/cops_mercenaries.jpg">
 
+More relevant today than ever before:
+<img loading="lazy" src="memes/antifa_boogaloo.jpg" alt="memes/antifa_boogaloo.jpg">
+
 Everyone's favorite popular strawman of anarchism:
 <img loading="lazy" src="memes/crime_strawman.jpg" alt="memes/crime_strawman.jpg">
 
