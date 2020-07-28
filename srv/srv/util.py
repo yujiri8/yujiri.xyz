@@ -1,7 +1,7 @@
 import mistune
 import pygments, pygments.lexers, pygments.formatters
 
-import os, pwd
+import os, pwd, html
 
 # Note this code is duplicated in tmpl.py.
 class HighlightRenderer(mistune.HTMLRenderer):
