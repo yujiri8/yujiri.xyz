@@ -2,7 +2,7 @@ TITLE Dynamic typing is a sin
 NAV Dynamic typing is a sin
 TEMPLATE DEFAULT
 
-Obviously the title is a bit hyperbolic as [my own favorite language](https://yujiri.xyz/software/python) is a dynamic one, but the last few years of learning many different languages have convinced me that dynamic typing is bad and there are no good reasons for a general purpose language to use it. Note that I'm *not* saying there are no good reasons to *use* a dynamic language, only that there are no good reasons to *make* one (there can be good reasons to use existing dynamic languges because existing static languages are imperfect; I'm interested in design theory here, not convincing anyone to abandon their favorite dynamic language).
+Obviously the title is a bit hyperbolic as [my own favorite language](https://yujiri.xyz/software/python) is a dynamic one, but the last few years of learning many different languages have convinced me that dynamic typing is bad and there are no good reasons for a general purpose language to use it. Note that I'm *not* saying there are no good reasons to *use* a dynamic language, only that there are no good reasons to *make* one (there can be good reasons to use existing dynamic languages because existing static languages are imperfect; I'm interested in design theory here, not convincing anyone to abandon their favorite dynamic language).
 
 I think the main benefit of static typing - catching mistakes earlier so development is faster - is obvious, but there are less obvious ones:
 
@@ -10,7 +10,7 @@ I think the main benefit of static typing - catching mistakes earlier so develop
 
 2. **Code analyzers.** Linters and vetters can never be very good in dynamic languages, because so much of the information necessary to determine what's a mistake isn't available until runtime. Dynamic languages use features like constructing types and changing what names are defined in a namespace at runtime. This makes it impossible for a static analyzer to *not* occasionally turn up false positives.
 
-	This is why I don't use [mypy](https://mypy-lang.org), as much as I appreciate the idea of it. When I set it up on my website's codebase, it found 18 'errors', none of which indicated a problem.
+	This is why I don't use [mypy](http://mypy-lang.org), as much as I appreciate the idea of it. When I set it up on my website's codebase, it found 18 'errors', none of which indicated a problem.
 
 3. **Documentation**. Without type signatures, we have to document what a function expects in another way. Type signatures, since they're formal, are easier to parse (for the same reason bulleted lists make information easier to parse) and aren't easy to forget to write. Who's had the experience of reading a Python function's documentation that *just doesn't say* what it expects or returns?
 

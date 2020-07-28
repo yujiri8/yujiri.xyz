@@ -17,12 +17,9 @@ Like most interpreted languages, Javascript has a REPL (including for the server
 
 ## Type system
 
-As I've said in other places, I've lost too much time to the lack of type checking to not think it's a massive evil.
-"Just use [TypeScript](https://www.typescriptlang.org)! Problem solved!"
+I've written at length about why [dynamic typing is a sin](https://yujiri.xyz/software/typing), and workarounds like [TypeScript](https://www.typescriptlang.org) can at best mitigate the destruction.
 
-No, problem not solved. Using TypeScript adds third-party dependencies, complicates my build process further, and requires a time investment to learn it. I'm not saying TypeScript isn't good or helpful (I haven't used it), but as a tool separate from the language itself, it shouldn't be used to defend the flaws of Javascript.
-
-And Javascript's lack of type checking is actually way worse than other dynamic languages. At least in others (Python etc), most things that should be compile-time errors are still run-time errors. But in Javascript they're often silent failures. For example, accessing a nonexistent slot of an array or object gives you `undefined`.
+And Javascript's lack of type checking is actually way worse than even other dynamic languages. At least in others (Python etc), most things that should be compile-time errors are still run-time errors. But in Javascript they're often silent failures. For example, accessing a nonexistent slot of an array or object gives you `undefined`. Good luck debugging that.
 
 But you can define one of the values to be `undefined` and it's now in there!
 ```javascript
@@ -42,7 +39,7 @@ And I found out the hard way that in browsers, `setTimeout` silently does nothin
 
 ### Arrays are objects?
 
-Despite being implemented internally as linked lists, Javascript arrays are treated like a type of object in a lot of ways. One is that you can assign past the end of an array and you just get "empty items" inbetween:
+Javascript arrays aren't really arrays, but objects. I don't just say this because `typeof [] === 'object'`, there are a lot of destructive ways in which the language doesn't seem to think of them as an actual sequence type. One is that you can assign past the end of an array and you just get "empty items" inbetween:
 ```javascript
 arr = [];
 arr[5] = 'x';
@@ -52,7 +49,7 @@ delete(arr[5]);
 arr; // [ <6 empty items> ]
 arr.length; // 6
 ```
-See what I mean about arrays being objects? It's like you're just assigning keys in an object, and array indices don't have any special meaning (though they still print sensibly).
+See what I mean? It's like you're just assigning keys in an object, and array indices don't have any special meaning (though they do print sensibly).
 
 And those empty items *aren't the same as undefined* (if they were, that would imply a deeper difference between arrays and objects than Javascript seems to want to admit). Or they are, but they're not. Check this out:
 ```javascript

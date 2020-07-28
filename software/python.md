@@ -21,7 +21,7 @@ Python is an interactive language with a REPL, but it goes a few extra miles. Th
 
 ## Type system
 
-My only huge gripe with Python - and it's a huge one - is the total lack of type checking. It's costed me almost as much time and happiness as [Go's error handling](https://yujiri.xyz/software/go#error-handling), to a point that I can no longer believe dynamic typing is not the devil. Despite loving Python, I [don't think there are any major downsides of static typing if it's done right](https://dev.to/yujiri8/what-are-the-benefits-of-dynamic-typing-211).
+My only huge gripe with Python - and it's a huge one - is the total lack of type checking. It's costed me almost as much time and happiness as [Go's error handling](https://yujiri.xyz/software/go#error-handling), to a point that I [can no longer believe dynamic typing is not a sin](https://yujiri.xyz/software/typing).
 
 It feels like a cruel taunt that Python has type annotations, but they don't do anything, not even at runtime (although libraries like Pydantic use them, it's not at all as if they solve the problem).
 
