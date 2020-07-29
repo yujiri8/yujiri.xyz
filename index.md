@@ -157,7 +157,9 @@ Recent update log:
 <expand-note open openText="collapse" closedText="show">
 
 **July 27:**
-New: [Dynamic typing is a sin](software/typing). Been working on that for a while.
+New:
+* [Dynamic typing is a sin](software/typing). Been working on that for a while.
+* [Fake speedruns](misc/fake_speedruns)
 
 **July 26:**
 New: [Including library code in stack traces](software/library_stack_traces) and [Stop double-counting notifs](argument/grouping_notifs).

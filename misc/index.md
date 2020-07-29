@@ -26,3 +26,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [The Bystander Effect - a story of my failure](bystander)
 
 [Confessions of a keyboard warrior](keyboard_warrior)
+
+[Fake speedruns](fake_speedruns)
