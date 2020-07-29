@@ -45,8 +45,6 @@ Believe it or not, I've actually heard statists accuse us of supporting slavery 
 
 <img loading="lazy" src="memes/background_checks.jpg" alt="memes/background_checks.jpg">
 
-<img loading="lazy" src="memes/guncontrol.jpg" alt="memes/guncontrol.jpg">
-
 <img loading="lazy" src="memes/voting_asymmetry.jpg" alt="memes/voting_asymmetry.jpg">
 
 <img loading="lazy" src="memes/outlaw_all_the_things.jpg" alt="memes/outlaw_all_the_things.jpg">
