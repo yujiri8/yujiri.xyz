@@ -32,9 +32,14 @@ customElements.define('comment-submit-area', class extends LitElement {
 		}
 		`];
 	}
-	constructor() {
-		super();
-		this.savedContents = '';
+	connectedCallback() {
+		super.connectedCallback();
+		this.savedContents = localStorage.getItem(`reply_${this.reply_to}`) || '';
+		this.interval = setInterval(this.autosave.bind(this), 10000);
+	}
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		clearInterval(this.interval);
 	}
 	render() {
 		return html`
@@ -78,6 +83,8 @@ customElements.define('comment-submit-area', class extends LitElement {
 			reply_to: this.reply_to || location.pathname,
 			body: bodyElem.value,
 		});
+		// Now that the comment is posted, clear the autosave.
+		localStorage.removeItem(`reply_${this.reply_to}`);
 		// Dispatch the event to load the comment in.
 		this.dispatchEvent(new CustomEvent('comment-posted',
 			{bubbles: true, composed: true, detail: this.reply_to}));
@@ -105,5 +112,10 @@ customElements.define('comment-submit-area', class extends LitElement {
 		this.previewHTML = '';
 		await this.updateComplete;
 		util.autogrow({target: this.shadowRoot.getElementById('body')});
+	}
+	autosave() {
+		const content = this.shadowRoot.getElementById('body').value;
+		if (content) localStorage.setItem(`reply_${this.reply_to}`, content);
+		else localStorage.removeItem(`reply_${this.reply_to}`);
 	}
 });
