@@ -84,7 +84,7 @@ Null is not dealt with. Pointers, slices, maps, and channels can all be `nil`, w
 
 * A nil map can be read from and iterated as if it's an empty map, but setting a key panics.
 
-* nil channels are infintely worse than any of that: [a send to or receive from a nil channel blocks forever](https://dave.cheney.net/2014/03/19/channel-axioms) instead of crashing. Single instances of this mistake have costed me hours.
+* nil channels are infinitely worse than any of that: [a send to or receive from a nil channel blocks forever](https://dave.cheney.net/2014/03/19/channel-axioms) instead of crashing. Single instances of this mistake have costed me hours.
 
 The non-pointer ones are easy mistakes to make because declaring those types, for example `var nums = []int`, makes it nil; you're supposed to use `make` to initialize them if you don't want nil.
 
@@ -304,7 +304,7 @@ Go is the first language I've seen with not only a standard style, but a built-i
 
 But it's even better than that. [Goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) is an improved version of `go fmt` that also can usually handle your imports for you, adding missing ones and removing unused ones and even automatically sorting them, and there are also some really good third-party vetting and linting tools, like [golangci-lint](https://github.com/golangci/golangci-lint).
 
-There's no [build system hell](https://yujiri.xyz/software/build_systems). `go build` Just Works. `go get` is a built-in package manager (or at least an installer) and also Just Works; and [govendor](https://github.com/kardianos/govendor) is a more sophisticated package manager that I've had some bad experiences with, but overall it's satisfactory.
+There's no [build system hell](https://yujiri.xyz/software/build_systems). You do `go mod init` when setting up a project and then `go build` Just Works.
 
 ### Compiler red tape
 
