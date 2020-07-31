@@ -70,8 +70,6 @@ https://yujiri.xyz/category_images/logo.svg
 https://yujiri.xyz/category_images/music.jpg
 https://yujiri.xyz/category_images/prismata.jpg
 https://yujiri.xyz/category_images/spem.png
-https://yujiri.xyz/ci
-https://yujiri.xyz/ci_trial_error_meme.jpg
 https://yujiri.xyz/fiction/
 https://yujiri.xyz/fiction/action_scenes
 https://yujiri.xyz/fiction/agency
