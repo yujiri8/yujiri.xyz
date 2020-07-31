@@ -157,9 +157,7 @@ Recent update log:
 <expand-note open openText="collapse" closedText="show">
 
 **July 27:**
-New:
-* [Dynamic typing is a sin](software/typing). Been working on that for a while.
-* [Fake speedruns](misc/fake_speedruns)
+New: [Dynamic typing is a sin](software/typing). Been working on that for a while.
 
 And get this: I implemented comment autosaving! It saves every in-progress comment every 10 seconds.
 
