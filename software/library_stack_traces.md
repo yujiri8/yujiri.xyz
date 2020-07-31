@@ -81,7 +81,7 @@ Traceback (most recent call last):
 ```
 There are two frames here that are my code, and neither of them is the problem.
 
-(If you're interested, the problem was that my route's header paramaters were flagged with type annotations: `x_forwarded_for: Header('')` when it should've been `x_forwarded_for = Header('')`. [FastAPI](https://fastapi.tiangolo.com) uses reflection a lot in the form of looking at route handlers' argument defaults and type annotations to know what to pass them, but I forgot which was for which kind of parameter: type annotations are used for getting the `Response`, `Request`, and a few other things, but not for `Header`s or most other kinds of "individual" parameters. Hence the above completely useless error.
+If you're interested, the problem was that my route's header paramaters were flagged with type annotations: `x_forwarded_for: Header('')` when it should've been `x_forwarded_for = Header('')`. [FastAPI](https://fastapi.tiangolo.com) uses reflection a lot in the form of looking at route handlers' argument defaults and type annotations to know what to pass them, but I forgot which was for which kind of parameter: type annotations are used for getting the `Response`, `Request`, and a few other things, but not for `Header`s or most other kinds of "individual" parameters. Hence the above completely useless error.
 
 In Rust and Julia, stack traces include *even the standard library* by default. At least Python doesn't do that.
 
