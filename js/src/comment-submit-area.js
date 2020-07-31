@@ -35,11 +35,6 @@ customElements.define('comment-submit-area', class extends LitElement {
 	connectedCallback() {
 		super.connectedCallback();
 		this.savedContents = localStorage.getItem(`reply_${this.reply_to}`) || '';
-		this.interval = setInterval(this.autosave.bind(this), 10000);
-	}
-	disconnectedCallback() {
-		super.disconnectedCallback();
-		clearInterval(this.interval);
 	}
 	render() {
 		return html`
@@ -61,7 +56,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 		${this.previewHTML? html`
 			<div id="preview">${unsafeHTML(this.previewHTML)}</div>
 		`:html`
-			<textarea id="body" @input="${util.autogrow}"
+			<textarea id="body" @input="${this.autosave}"
 				placeholder="Your comment...">${this.savedContents}</textarea>
 		`}
 		`;
@@ -113,8 +108,9 @@ customElements.define('comment-submit-area', class extends LitElement {
 		await this.updateComplete;
 		util.autogrow({target: this.shadowRoot.getElementById('body')});
 	}
-	autosave() {
-		const content = this.shadowRoot.getElementById('body').value;
+	autosave(e) {
+		util.autogrow(e);
+		const content = e.target.value;
 		if (content) localStorage.setItem(`reply_${this.reply_to}`, content);
 		else localStorage.removeItem(`reply_${this.reply_to}`);
 	}
