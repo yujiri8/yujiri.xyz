@@ -28,9 +28,12 @@ class User(Base):
 	auth = Column(String, nullable = False)
 	admin = Column(Boolean, default = False, nullable = False)
 	autosub = Column(Boolean, default = True, nullable = False)
+	sub_site = Column(Boolean, default = False, nullable = False)
 	# related objects
 	comments = relationship('Comment', back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
-	subs = relationship('Subscription', back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
+	comment_subs = relationship('Subscription', back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
+	article_subs = relationship('ArticleSubscription',
+		back_populates = 'user', lazy = 'dynamic', passive_deletes = 'all')
 	def __repr__(self):
 		return self.email
 
@@ -40,9 +43,9 @@ class Comment(Base):
 	time_added = Column(DateTime, nullable = False, default = datetime.datetime.now)
 	time_changed = Column(DateTime)
 	name = Column(String, nullable = False)
-	reply_to = Column(String, nullable = False)
-	# These fields are stored for the sake of /recent_comments performance.
+	reply_to = Column(Integer, ForeignKey('comments.id', ondelete = 'cascade'))
 	article_path = Column(String, nullable = False)
+	# Stored for the sake of /recent_comments performance.
 	article_title = Column(String, nullable = False)
 	body = Column(String, nullable = False)
 	ip = Column(String)
@@ -51,6 +54,7 @@ class Comment(Base):
 	user_id = Column(Integer, ForeignKey('users.id', ondelete = 'set null'))
 	user = relationship('User', back_populates = 'comments')
 	subs = relationship('Subscription', back_populates = 'comment', lazy = 'dynamic', passive_deletes = 'all')
+	children = relationship('Comment', lazy = 'dynamic', passive_deletes = 'all')
 	def __repr__(self):
 		txt = f"{self.name} on {self.article_title} at {self.time_added.strftime('%Y-%m-%d %R')}"
 		if self.time_changed:
@@ -58,7 +62,7 @@ class Comment(Base):
 		return txt
 	def dict(self, session, user = None, raw = False, recursion = 5):
 		cmt = {
-			'id': str(self.id),
+			'id': self.id,
 			'name': self.name,
 			'reply_to': self.reply_to,
 			'body': util.markdown(self.body) if not raw else self.body,
@@ -77,22 +81,21 @@ class Comment(Base):
 		# Load at most `recursion` levels deep.
 		if recursion:
 			cmt['replies'] = [c.dict(session, user, raw, recursion - 1) for c in
-				session.query(Comment).filter_by(reply_to = str(self.id)).
-				order_by(Comment.time_added.desc()).all()]
+				self.children.order_by(Comment.time_added.desc()).all()]
 		else:
 			# If we aren't loading them, just send the count of how many are left.
-			cmt['replies'] = session.query(Comment).filter_by(reply_to = str(self.id)).count()
+			cmt['replies'] = self.children.count()
 		return cmt
 	def summary_dict(self):
 		return {
-			'id': str(self.id),
+			'id': self.id,
 			'name': self.name,
 			'article_title': self.article_title,
 			'link': f"{self.article_path}?c={self.id}#comment-section",
 			'time_added': self.time_added.isoformat(),
 		}
 	def validate(self):
-		"""Validates the comment, and if invalid, returns a string explanation."""
+		"""Validates the comment, and if invalid, raises a ModelError."""
 		if not self.name:
 			raise ModelError("You need a name")
 		if self.name.strip() != self.name:
@@ -101,11 +104,11 @@ class Comment(Base):
 			raise ModelError("You cannot possibly need a name longer than 30 characters.")
 
 class Subscription(Base):
-	__tablename__ = 'subs'
+	__tablename__ = 'comment_subs'
 	id = Column(Integer, primary_key = True)
 	comment_id = Column(Integer, ForeignKey('comments.id', ondelete = 'cascade'), nullable = False)
 	user_id = Column(Integer, ForeignKey('users.id', ondelete = 'cascade'), nullable = False)
-	user = relationship('User', back_populates = 'subs')
+	user = relationship('User', back_populates = 'comment_subs')
 	comment = relationship('Comment', back_populates = 'subs')
 	sub = Column(Boolean, nullable = False, default = True)
 	def __repr__(self):
@@ -115,6 +118,21 @@ class Subscription(Base):
 		return {
 			'comment': self.comment.summary_dict(),
 			'sub': self.sub,
+		}
+
+class ArticleSubscription(Base):
+	__tablename__ = 'article_subs'
+	id = Column(Integer, primary_key = True)
+	path = Column(String, nullable = False)
+	title = Column(String, nullable = False) # Cached for performance.
+	user_id = Column(Integer, ForeignKey('users.id', ondelete = 'cascade'), nullable = False)
+	user = relationship('User', back_populates = 'article_subs')
+	def __repr__(self):
+		return f"{self.user} subbed to {self.title}"
+	def dict(self):
+		return {
+			'path': self.path,
+			'title': self.title,
 		}
 
 class Word(Base):

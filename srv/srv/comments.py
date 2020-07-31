@@ -1,10 +1,10 @@
-from fastapi import APIRouter, HTTPException, Header, Response, Request, Depends, BackgroundTasks
+from fastapi import APIRouter, HTTPException, Request, Header, Body, Depends, BackgroundTasks
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 import datetime
 
-from db import User, Comment, Subscription
+from db import User, Comment, Subscription, ArticleSubscription
 from common import env, require_login, require_admin
 from email_templates import *
 import users, util, emails
@@ -15,11 +15,16 @@ router = APIRouter()
 async def get_comments(reply_to = '', id: int = 0, raw: bool = False, env = Depends(env)):
 	# Case 1: all comments replying to something.
 	if reply_to:
-		# Don't get messed up by polynymous index pages.
-		if reply_to.endswith('/index'):
-			reply_to = reply_to[:-5]
-		comments = env.db.query(Comment).filter_by(reply_to = reply_to). \
-			order_by(Comment.time_added.desc())
+		# It's a reply.
+		if reply_to.isnumeric():
+			comments = env.db.query(Comment).filter_by(reply_to = int(reply_to)).order_by(Comment.time_added.desc())
+		# It's top-level.
+		else:
+			# Don't get messed up by polynymous index pages.
+			if reply_to.endswith('/index'):
+				reply_to = reply_to[:-5]
+			comments = env.db.query(Comment).filter_by(reply_to = None, article_path = reply_to) \
+				.order_by(Comment.time_added.desc())
 		return [c.dict(env.db, user = env.user, raw = raw) for c in comments]
 	# Case 2: a specific comment requested.
 	if id:
@@ -37,36 +42,34 @@ async def recent_comments(count: int = 10, env = Depends(env)):
 async def preview_comment(req: Request):
 	return HTMLResponse(util.markdown((await req.body()).decode('utf8')))
 
-class PostCommentParams(BaseModel):
-	name: str
-	email: str = ''
-	reply_to: str
-	body: str
 @router.post('/comments')
 async def post_comment(
-	params: PostCommentParams,
-	response: Response,
 	bg: BackgroundTasks,
+	name = Body(''),
+	body = Body(''),
+	email = Body(''),
+	reply_to = Body(None),
+	article_path = Body(''),
+	sub_site: bool = Body(False),
 	x_forwarded_for = Header(''),
 	user_agent = Header(''),
 	env = Depends(env),
 ):
 	# If it's a reply, get the article path from the parent comment.
-	if '/' not in params.reply_to:
-		article_path = env.db.query(Comment).get(params.reply_to).article_path
-	# Otherwise, make sure it exists.
+	if reply_to:
+		article_path = env.db.query(Comment).get(reply_to).article_path
+	# Otherwise, make sure the article exists.
 	else:
-		if not util.article_exists(params.reply_to):
+		if not util.article_exists(article_path):
 			raise HTTPException(status_code = 404, detail = "That article doesn't exist")
-		if params.reply_to == '/404':
+		if reply_to == '/404':
 			raise HTTPException(status_code = 400, detail = "You can't comment on that URL")
 		# Strip 'index'.
-		if params.reply_to.endswith('/index'): params.reply_to = params.reply_to[:-5]
-		article_path = params.reply_to
+		if article_path.endswith('/index'): article_path = article_path[:-5]
 	cmt = Comment(
-		name = params.name,
-		reply_to = params.reply_to,
-		body = params.body,
+		name = name,
+		reply_to = reply_to,
+		body = body,
 		article_path = article_path,
 		article_title = util.get_article_title(article_path),
 		ip = x_forwarded_for,
@@ -75,16 +78,16 @@ async def post_comment(
 	)
 	cmt.validate()
 	# Prevent name impersonation.
-	name_user = env.db.query(User).filter_by(name = cmt.name).one_or_none()
-	if name_user and (not cmt.user or cmt.user != name_user):
+	name_user = env.db.query(User).filter_by(name = name).one_or_none()
+	if name_user and (not env.user or env.user != name_user):
 		raise HTTPException(status_code = 401, detail = "That name is taken by a registered user.")
 	# If it's not a logged in user, check for an email.
-	if not cmt.user and params.email:
+	if not env.user and email:
 		# Determine if the email is already claimed.
-		email_user = env.db.query(User).filter_by(email = params.email).one_or_none()
+		email_user = env.db.query(User).filter_by(email = email).one_or_none()
 		if not email_user:
 			# The email isn't claimed yet, so assume they have it and try to register it.
-			cmt.user = users.register_email(env.db, params.email)
+			cmt.user = users.register_email(env.db, email)
 		else:
 			# It's a registered user's email.
 			raise HTTPException(status_code = 401, detail = "That email belongs to a registered user." +
@@ -93,6 +96,8 @@ async def post_comment(
 	# Subscribe the user who posted it.
 	if cmt.user and cmt.user.autosub:
 		env.db.add(Subscription(user = cmt.user, comment = cmt))
+	# For now, only sitewide new-article subscription is supported.
+	if sub_site: cmt.user.sub_site = True
 	env.db.commit()
 	bg.add_task(send_reply_notifs, env.db, cmt)
 
@@ -135,8 +140,11 @@ def send_reply_notifs(db, new_comment):
 			# If it's an ignore and not overridden by a more specific sub.
 			elif sub.user not in listening:
 				ignoring.add(sub.user)
-		# Finish if we're at the top level.
-		if '/' in comment.reply_to: break
+		# If we're at the top level, do article subs.
+		if not comment.reply_to:
+			for sub in db.query(ArticleSubscription).filter_by(path = comment.article_path).all():
+				if sub.user not in ignoring: listening.add(sub.user)
+			break
 		# Else, get the parent comment.
 		comment = db.query(Comment).get(comment.reply_to)
 	# Email everybody.

@@ -7,7 +7,7 @@ import {styles} from './css.js';
 customElements.define('comment-submit-area', class extends LitElement {
 	static get properties() {
 		return {
-			reply_to: {type: String, attribute: 'reply-to'},
+			replyTo: {type: Number, attribute: 'reply-to'},
 			loggedIn: {type: Boolean, attribute: 'logged-in'},
 			previewHTML: {type: String, attribute: false},
 		}
@@ -34,7 +34,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 	}
 	connectedCallback() {
 		super.connectedCallback();
-		this.savedContents = localStorage.getItem(`reply_${this.reply_to}`) || '';
+		this.savedContents = localStorage.getItem(`reply_${this.replyTo}`) || '';
 	}
 	render() {
 		return html`
@@ -51,6 +51,11 @@ customElements.define('comment-submit-area', class extends LitElement {
 			<br>
 			<label for="email">Email (optional):</label>
 			<input id="email">
+			<br>
+			<input id="sub-site" type="checkbox">
+			<label for="sub-site">
+				Be notified of new articles (more sophisticated subscription settings available in account settings)
+			</label>
 		`:''}
 		<br>
 		${this.previewHTML? html`
@@ -75,19 +80,21 @@ customElements.define('comment-submit-area', class extends LitElement {
 		await util.api('POST', 'comments', undefined, {
 			name: nameElem.value,
 			...emailElem && {email: emailElem.value},
-			reply_to: this.reply_to || location.pathname,
+			reply_to: this.replyTo,
+			article_path: location.pathname,
 			body: bodyElem.value,
+			...!this.loggedIn && {sub_site: this.shadowRoot.getElementById('sub-site').checked},
 		});
 		// Now that the comment is posted, clear the autosave.
-		localStorage.removeItem(`reply_${this.reply_to}`);
+		localStorage.removeItem(`reply_${this.replyTo}`);
 		// Dispatch the event to load the comment in.
 		this.dispatchEvent(new CustomEvent('comment-posted',
-			{bubbles: true, composed: true, detail: this.reply_to}));
+			{bubbles: true, composed: true, detail: this.replyTo}));
 		// Show a toast if it was a new poster making an account.
 		if (emailElem && emailElem.value && !window.loginRequired)
 			util.showToast('success', "You'll receive a confirmation email about your account creation.");
 		// Close the submit area if it's not the top-level one.
-		if (!this.reply_to.includes('/')) this.remove();
+		if (this.replyTo) this.remove();
 		// Otherwise, just clear the fields.
 		else {
 			nameElem.value = bodyElem.value = '';
@@ -111,7 +118,7 @@ customElements.define('comment-submit-area', class extends LitElement {
 	autosave(e) {
 		util.autogrow(e);
 		const content = e.target.value;
-		if (content) localStorage.setItem(`reply_${this.reply_to}`, content);
-		else localStorage.removeItem(`reply_${this.reply_to}`);
+		if (content) localStorage.setItem(`reply_${this.replyTo}`, content);
+		else localStorage.removeItem(`reply_${this.replyTo}`);
 	}
 });

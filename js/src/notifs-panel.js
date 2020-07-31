@@ -9,8 +9,10 @@ customElements.define('notifs-panel', class extends LitElement {
 		return {
 			email: {type: String, attribute: false},
 			user: {type: String, attribute: false},
-			subs: {type: Array, attribute: false},
+			commentSubs: {type: Array, attribute: false},
+			articleSubs: {type: Array, attribute: false},
 			autosub: {type: Boolean, attribute: false},
+			subSite: {type: Boolean, attribute: false},
 		}
 	}
 	static get styles() {
@@ -82,37 +84,48 @@ customElements.define('notifs-panel', class extends LitElement {
 		</p>
 		<input id="autosub" type="checkbox" ?checked="${this.autosub}" @change="${this.setAutosub}"></input>
 		<label for="autosub">Automatically subscribe to your own comments</label>
-		<h2>Subscriptions</h2>
+		<br>
+		<input id="sub-site" type="checkbox" ?checked="${this.subSite}" @change="${this.setSubSite}"></input>
+		<label for="sub-site">Be notified when new articles are posted</label>
+		<h3>Subscriptions</h3>
 		<table>
 			<thead><tr>
-			<td>Comment</td>
+			<td>Comment/Article</td>
 			<td>Actions</td>
 			</tr></thead>
 			<tbody id="subs">
-				${this.subs.filter(s => s.sub).map(s => html`
+				${this.articleSubs.map(s => html`
+				<tr>
+					<td><a href="${s.path}">${s.title}</a></td>
+					<td>
+					<button @click="${() => this.delArticleSub(s.path)}">clear</button>
+					</td>
+				</tr>
+				`)}
+				${this.commentSubs.filter(s => s.sub).map(s => html`
 				<tr>
 					<td>${util.summarizeComment(s.comment)}</td>
 					<td>
-					<button @click="${() => this.editSub(s.comment.id, null)}">clear</button>
-					<button @click="${() => this.editSub(s.comment.id, false)}">ignore</button>
+					<button @click="${() => this.editCommentSub(s.comment.id, null)}">clear</button>
+					<button @click="${() => this.editCommentSub(s.comment.id, false)}">ignore</button>
 					</td>
 				</tr>
 				`)}
 			</tbody>
 		</table>
-		<h2>Ignores</h2>
+		<h3>Ignores</h3>
 		<table>
 			<thead><tr>
 			<td>Comment</td>
 			<td>Actions</td>
 			</tr></thead>
 			<tbody id="ignores">
-				${this.subs.filter(s => !s.sub).map(s => html`
+				${this.commentSubs.filter(s => !s.sub).map(s => html`
 				<tr>
 					<td>${util.summarizeComment(s.comment)}</td>
 					<td>
-					<button @click="${() => this.editSub(s.comment.id, null)}">clear</button>
-					<button @click="${() => this.editSub(s.comment.id, true)}">subscribe</button>
+					<button @click="${() => this.editCommentSub(s.comment.id, null)}">clear</button>
+					<button @click="${() => this.editCommentSub(s.comment.id, true)}">subscribe</button>
 					</td>
 				</tr>
 				`)}
@@ -124,8 +137,10 @@ customElements.define('notifs-panel', class extends LitElement {
 		const resp = await util.api('GET', 'users/notifs');
 		try {
 			const data = await resp.json();
-			this.subs = data.subs;
+			this.commentSubs = data.comment_subs;
+			this.articleSubs = data.article_subs;
 			this.autosub = data.autosub;
+			this.subSite = data.site;
 		} catch {
 			util.showToast('err', "Couldn't understand response from server");
 		}
@@ -152,8 +167,16 @@ customElements.define('notifs-panel', class extends LitElement {
 		await util.api('PUT', 'users/setautosub', undefined, e.target.checked);
 		util.showToast('success', "Setting saved");
 	}
-	async editSub(id, state) {
+	async setSubSite(e) {
+		await util.api('PUT', 'users/notifs/site', undefined, e.target.checked);
+		util.showToast('success', "Setting saved");
+	}
+	async editCommentSub(id, state) {
 		await util.api('PUT', 'users/notifs', undefined, {id: id, state: state});
+		this.fetchData();
+	}
+	async delArticleSub(path) {
+		await util.api('PUT', 'users/notifs', undefined, {path: path, state: null});
 		this.fetchData();
 	}
 });

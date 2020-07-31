@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Response, Request, Depends
+from fastapi import APIRouter, HTTPException, Response, Request, Body, Depends
 from starlette.responses import RedirectResponse
 from pydantic import BaseModel
 
@@ -7,7 +7,7 @@ import pgpy
 import re, secrets, hashlib, urllib.parse, json
 from typing import Any
 
-from db import User, Comment, Subscription
+from db import User, Comment, Subscription, ArticleSubscription
 from common import env, require_login, COOKIE_LIFETIME
 from email_templates import *
 import emails, util
@@ -97,31 +97,37 @@ async def prove_email(token, env = Depends(env)):
 	return grant_auth(resp, user)
 
 @router.get('/users/notifs')
-async def see_subs(env = Depends(env)):
+async def see_subs(path: str = '', env = Depends(env)):
 	require_login(env.user)
-	resp = {
-		'subs':	[sub.dict() for sub in env.user.subs],
+	if path: # For checking if you're subscribed to an article.
+		if path.endswith('/index'): path = path[:-5]
+		return env.user.article_subs.filter_by(path = path).one_or_none()
+	return {
+		'comment_subs': [sub.dict() for sub in env.user.comment_subs],
+		'article_subs': [sub.dict() for sub in env.user.article_subs],
 		'autosub': env.user.autosub,
+		'site': env.user.sub_site,
 	}
-	return resp
 
-class EditSubsParams(BaseModel):
-	id: int
-	state: Any
 @router.put('/users/notifs')
-async def edit_subs(params: EditSubsParams, env = Depends(env)):
+async def edit_subs(state = Body(None), id = Body(None), path = Body(''), env = Depends(env)):
+	# TODO maybe this should use DELETE for removing a sub.
 	require_login(env.user)
-	cmt = env.db.query(Comment).get(params.id)
-	if params.state is None:
-		env.db.query(Subscription).filter_by(user = env.user, comment = cmt).delete()
-		env.db.commit()
-		return
-	# Avoid creating duplicates.
-	sub = env.user.subs.filter_by(comment = cmt).one_or_none()
-	if not sub:
-		sub = Subscription(user = env.user, comment = cmt)
-		env.db.add(sub)
-	sub.sub = bool(params.state)
+	# Comment subscription.
+	if id:
+		env.user.comment_subs.filter_by(comment_id = id).delete()
+		if state is not None:
+			env.db.add(Subscription(user = env.user, comment_id = id, sub = bool(state)))
+	# Article subscription.
+	else:
+		try:
+			title = util.get_article_title(path)
+		except FileNotFoundError:
+			raise HTTPException(status_code = 404, detail = "No such article")
+		if path.endswith('/index'): path = path[:-5]
+		env.user.article_subs.filter_by(path = path).delete()
+		if state:
+			env.db.add(ArticleSubscription(user = env.user, path = path, title = title))
 	env.db.commit()
 
 @router.put('/users/setpw')
@@ -165,4 +171,10 @@ async def setkey(req: Request, resp: Response, env = Depends(env)):
 async def setautosub(req: Request, env = Depends(env)):
 	require_login(env.user)
 	env.user.autosub = json.loads(await req.body())
+	env.db.commit()
+
+@router.put('/users/notifs/site')
+async def setsubsite(state = Body(True), env = Depends(env)):
+	require_login(env.user)
+	env.user.sub_site = state
 	env.db.commit()

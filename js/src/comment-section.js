@@ -10,6 +10,7 @@ customElements.define('comment-section', class extends LitElement {
 	static get properties() {
 		return {
 			loggedIn: {type: String, attribute: false},
+			subscribed: {type: Boolean, attribute: false},
 			admin: {type: Boolean, attribute: false},
 			comments: {type: Array, attribute: false},
 		}
@@ -27,6 +28,9 @@ customElements.define('comment-section', class extends LitElement {
 		this.comments = [];
 		this.loadComments();
 		this.addEventListener('comment-posted', this.loadComments);
+		if (this.loggedIn)
+			util.api('GET', 'users/notifs', {path: location.pathname}).then(resp =>
+				resp.json().then(d => this.subscribed = d));
 	}
 	render() {
 		return html`
@@ -43,11 +47,15 @@ customElements.define('comment-section', class extends LitElement {
 		</p>
 		<login-pane></login-pane>
 		<br>
+		${this.loggedIn? html`
+			<label for="sub-post">Be notified of new top-level comments on this page</label>
+			<input id="sub-post" type="checkbox" ?checked="${this.subscribed}" @change="${this.toggleSubscribe}">
+		`:''}
 		<comment-submit-area open ?logged-in="${this.loggedIn}" reply-to="${location.pathname}">
 		</comment-submit-area>
 		${util.parseQuery(location.search).c? html`
 			You're viewing a subtree of the comments.
-			${this.comments[0] && !this.comments[0].reply_to.startsWith('/')? html`
+			${this.comments[0] && this.comments[0].reply_to? html`
 				<a href="${location.origin + location.pathname}?c=${
 					this.comments[0].reply_to}#comment-section">view parent</a> or
 			`:''}
@@ -71,6 +79,10 @@ customElements.define('comment-section', class extends LitElement {
 			util.showToast('err', "Couldn't understand response from server");
 			throw err;
 		}
+	}
+	async toggleSubscribe(e) {
+		await util.api('PUT', 'users/notifs', undefined, {path: location.pathname, state: e.target.checked});
+		util.showToast('success', "Setting saved");
 	}
 });
 
