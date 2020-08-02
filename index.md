@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**August 2:**
+New [faction analysis: the Anarchist Left](argument/faction_ancom).
+
 **July 27:**
 New: [Dynamic typing is a sin](software/typing). Been working on that for a while.
 
