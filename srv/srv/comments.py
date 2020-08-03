@@ -144,7 +144,7 @@ def send_reply_notifs(db, new_comment):
 		emails.send(util.SERVER_EMAIL, [user.email], "New reply on yujiri.xyz", REPLY_NOTIF_TXT.format(
 			title = new_comment.article_title,
 			name = new_comment.name,
-			time = new_comment.time_added.strftime("%b %d, %A, %R (UTC)"),
+			time = new_comment.time_added.strftime("%Y-%m-%d %R"),
 			body = new_comment.body,
 			link = 'https://yujiri.xyz' + new_comment.summary_dict()['link'],
 		))

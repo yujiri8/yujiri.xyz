@@ -52,9 +52,9 @@ class Comment(Base):
 	user = relationship('User', back_populates = 'comments')
 	subs = relationship('Subscription', back_populates = 'comment', lazy = 'dynamic', passive_deletes = 'all')
 	def __repr__(self):
-		txt = f"{self.name} on {self.article_title} at {self.time_added.strftime('%Y %b %d, %A, %R (UTC)')}"
+		txt = f"{self.name} on {self.article_title} at {self.time_added.strftime('%Y-%m-%d %R')}"
 		if self.time_changed:
-			txt += f" (edited {self.time_changed.strftime('%Y %b %d, %A, %R')})"
+			txt += f" (edited {self.time_changed.strftime('%Y-%m-%d %R')})"
 		return txt
 	def dict(self, session, user = None, raw = False, recursion = 5):
 		cmt = {
