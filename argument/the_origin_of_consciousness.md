@@ -11,13 +11,13 @@ I was linked to a Youtube video by a friend (my friend was not speaking positive
 
 It doesn't bode well that he's making such a sloppy statement so early on. Consciousness *is* the being aware, not something that *allows* us to be aware. This kind of language is usually a sign of people who don't understand their own ideas...
 
-I think we can just tune out his filler phrase "Stripped to its core meaning", which adds nothing to his statement and serves only as a psychological trick to give the impression that what he's saying is more profound than it is. There's going to be a lot more of this empty fake mysticism in this video.
+I think we can just tune out his filler phrase "Stripped to its core meaning", which adds nothing to his statement and serves only as a psychological trick to make what he's saying sound more profound than it is. There's going to be a lot more of this empty fake mysticism in this video.
 
 #### 0:27 - 0:32
 
 > But once we try to pinpoint just what exactly it is, it leaves us grasping at thin air.
 
-Oh come on, that's because it's a prime concept! It [can't be defined in terms of other things](define_by_ref)! That's like saying it's some kind of profound mystery just what "quantity" is. You'll never find an answer to a null question, and one of the trademarks of poor thinkers is that they can't tell the difference between a question they can't answer because it's deep and one they can't answer because there's nothing being asked.
+Oh come on, that's because it's a prime concept! It [can't be defined in terms of other things](define_by_ref)! That's like saying it's some kind of profound mystery just what "quantity" is. You'll never find an answer to an invalid question, and one of the trademarks of poor thinkers is that they can't tell the difference between a question they can't answer because it's deep and one they can't answer because there's nothing being asked.
 
 The next two won't be real rebuttals, just inessential remarks he makes that I'll criticize because I can.
 
@@ -37,7 +37,7 @@ So it shows the telltale empirical sign of being a question of philosophy and no
 
 > ... but no one has come close to figuring it out.
 
-**Bullshit!** People who don't approach it like philosophy haven't figured it out, but I have figured out that there's no question. One of the best ways to make it seem like you can't be refuted is to present it as fact that the question is unsolved and that if you don't understand it, it's not even possible that someone else does.
+Of course people who don't approach it like philosophy haven't figured it out. One of the best ways to make it seem like you can't be refuted is to present it as fact that the question is unsolved and that if you don't understand it, it's not even possible that someone else does.
 
 #### 0:46 - 0:53
 
@@ -53,7 +53,7 @@ He's going to outright mention *natural selection* in his attempt to delegitimiz
 
 Materialists who realize this often end up going into [even more incoherent ideas like that consciousness *is* behavior (or even literally that consciousness doesn't exist!)](http://people.tamu.edu/~sdaniel/Notes/dualism.html)
 
-And naturally he doesn't think for a second about what the implications of this would do to his moral system. If consciousness can evolve from non-consciousness, then couldn't there be something at any point between the two? According to this claim, it's impossible to draw a hard divide between unconscious and conscious. And then how would we resolve questions about the rights of beings inbetween us and rocks?
+And naturally he doesn't think for a second about what this does to his moral system. If consciousness can evolve from non-consciousness, then couldn't there be something at any point between the two? According to this claim, it's impossible to draw a hard divide between unconscious and conscious. And then how would we resolve questions about the rights of beings inbetween us and rocks?
 
 Most people already irrationally believe animals are a form of this, but if you outright say you believe consciousness is a gradient, then there could be beings between *that* and us. It's *logically impossible* now that there can't be a species with *some* human rights but distinctly less. He *has* to believe that there could be a species for whom *ideal moral behavior* from us could be treating them similarly to slaves. I don't think this guy would be comfortable with that implication...
 
@@ -61,19 +61,19 @@ Most people already irrationally believe animals are a form of this, but if you 
 
 > What was the first step on this path from the non-conscious, to the basic consciousness that ultimately led to the convoluted consciousness we humans enjoy today?
 
-Sad! Materialists can get away with thoroughly explaining how broken their own ideology is and the reaction they get is not "Wow that's a really big problem with your ideology" but "Wow what an interesting question!" It is impossible for him to ever describe the first step because not only does such a thing not exist, not only is it painfully obvious that there's a hard line between non-consciousness and "basic consciousness", but as I've explained before, it is impossible to have evidence for the existence of consciousness without free will.
+Sad! Materialists can get away with thoroughly explaining how broken their own ideology is and the reaction they get is not "Wow that's a really big problem with your ideology" but "Wow what an interesting question!" He can never describe the first step because not only does such a thing not exist, not only is it painfully obvious that there's a hard line between non-consciousness and "basic consciousness", but as I've explained before, it's impossible to have evidence for the existence of consciousness without free will.
 
 #### 2:14 - 2:17
 
 > A more common starting point is with a living thing.
 
-I love how he just skips over the progression from non-conscious to barely conscious, because he couldn't even whip up some bullshit to make it sound remotely coherent!
+Of course he just skips over the progression from non-conscious to barely conscious, because he couldn't even whip up some bullshit to make it sound remotely coherent.
 
 #### 2:17 - 2:24
 
 > A living thing, or a self, is a part of the universe that sustains itself, and makes more of its kind.
 
-Hoho! He *actually played* the life definition! A materialist tried to define life, and to nobody's surprise, his definition is too insane to be anything but the product of a desperate attempt to move mountains to save a broken metaphysics!
+He *actually played* the life definition! A materialist tried to define life, and to nobody's surprise, his definition is too insane to be anything but the product of a desperate attempt to move mountains to save a broken metaphysics!
 
 First of all, he includes the criterion "sustains itself" as part of the definition of life. I'm used to dealing with non-definitions, but *phew...* What does "sustaining" mean? Does it mean keeping itself alive? How long does something have to do that for to be considered "a living thing"? And how do you define whether a being is sustaining itself or being sus-
 
@@ -81,11 +81,11 @@ wait. I just realized what's going on here. He included this because he's pro-ab
 
 Alright then, back to the *other* gaping flaws in his definition...
 
-If living things are material objects reducible to their bodies and brains, how can you even delimit which pieces of matter are part of the being or not? I assume he thinks my toe is part of me as an organism, even though I could survive without it, but what about a microscoping piece of my toenail that I wouldn't notice, or a single molecule? What about a dead skin cell I scratched off? Is it still part of me? What about the bacteria on my stomach? These questions matter for a materialist because they reveal that dividing the world into discrete objects or organisms is a heuristic and not objective, making another reason not to use it as our definition of life.
+If living things are material objects reducible to their bodies and brains, how can you even delimit which pieces of matter are part of the being or not? I assume he thinks my toe is part of me as an organism, even though I could survive without it, but what about a microscopic piece of my toenail that I wouldn't notice, or a single molecule? What about a dead skin cell I scratched off? Is it still part of me? What about the bacteria on my stomach? These questions matter for a materialist because they reveal that dividing the world into discrete objects or organisms is a heuristic and not objective, making another reason not to use it as our definition of life.
 
 How dumb can you get? Let me unpause the video... oh, I forgot, that was only his first criterion! He included *another* nonsensical criterion as part of the definition of life, "makes more of its kind." *Oh* boy.
 
-So anything that doesn't make more of its kind is not alive. If a god similar to the Christian conception existed, he would not be alive. If there were a group of conscious and intelligent and social aliens on another planet with no ability to reproduce, they wouldn't be alive. Actually... wasn't there an episode of Star Trek about that? Or if he prefers a more "realistic" example, suppose human sterilized themselves so none of us could reproduce; do we lose our status as living beings? Or what if the eventual end of natural selection produces life forms that don't need to reproduce because they can live forever (sustaining themselves!)?
+So anything that doesn't make more of its kind is not alive. If a god similar to the Christian concept existed, it would not be alive. If there were a group of conscious and intelligent and social aliens on another planet with no ability to reproduce, they wouldn't be alive. Actually... wasn't there an episode of Star Trek about that? Or if he prefers a more "realistic" example, suppose human sterilized themselves so none of us could reproduce; do we lose our status as living beings? Or what if the eventual end of natural selection produces life forms that don't need to reproduce because they can live forever (sustaining themselves!)?
 
 And does this criterion have to apply to each organism we consider a living thing, in which case no one who dies before having kids was ever alive? <span class="note">And does having had kids in the past make you count as alive for the rest of your existence? If so, why didn't he use the present perfect tense?</span> Or does a species only have to have this ability for each member of it to be considered alive? In that case, you run into issues demarcating whether an organism is a member of a given species! Are people with rare genetic mutations human? What if humans and aliens could interbreed, what species would the children be? What if the aliens could reproduce sexually with humans, but not with themselves (they live forever)? Does that count? If so, what if humans built a machine that could take rocks and use them to produce another rock? Do all rocks suddenly become alive? His entire worldview is ludicrous!
 
@@ -107,7 +107,7 @@ Imagine that! Perception at a distance is a "step on the ladder of consciousness
 
 > Like vision.
 
-Holy shit! He just went right there! His lack of self-awareness is nothing short of stunning.
+Holy shit! This guy deserves an award for lack of self awareness.
 
 #### 4:46 - 5:19
 
@@ -129,13 +129,13 @@ There he goes. He's a behaviorist materialist. He actually thinks being able to 
 
 > Human babies tend to develop this ability around the time they turn 8 months.
 
-This is an absurdly high guess even if you don't count recognizing their parents as object permanence, which I'm not sure why you wouldn't. Our experience with [the soul's instinct](/protagonism/soul_anatomy) indicates that any being with such an instinct learns this fundamental concept after the first few hours of experience with it. The only thing I can think of that would impede it from happening on day 1 with non-people objects is newborns not having clear vision, which I've heard they don't, so I won't argue it happens on day 1, but I know from experience with four toddlers in my life that it happens a long time before 8 months.
+This is an absurdly high guess even if you don't count recognizing their parents as object permanence, which I'm not sure why you wouldn't. Our experience with [the soul's instinct](/protagonism/soul_anatomy) indicates that any being with such an instinct learns this fundamental concept after the first few hours of experience with it. The only thing I can think of that would impede it from happening on day 1 with non-people objects is newborns not having clear vision, which I've heard they don't, so I won't argue it happens on day 1, but I've witnessed four toddlers get there before 8 months.
 
-[According to even some other materialists, his info is outdated and it happens at 2-3 months](https://www.healthline.com/health/parenting/object-permanence#age) (although they go on to say 4-7 months, after describing the concept without using its name and saying 2-3).
+[According to even some other materialists, his info is outdated and it happens at 2-3 months](https://www.healthline.com/health/parenting/object-permanence#age) (although they go on to say 4-7, after describing the concept without using its name and saying 2-3).
 
 #### 6:27 - 6:45
 
-> (He finally mentions that memory suggests a sense of time.) A sense of time, is a big step on the ladder of consciousness. It may also enable oneself to look forward from the present moment and anticipate the future.
+> (He mentions that memory suggests a sense of time.) A sense of time, is a big step on the ladder of consciousness. It may also enable oneself to look forward from the present moment and anticipate the future.
 
 Yes, a sense of time is a major corollary of consciousness. I've still heard nothing about how or why natural selection created consciousness from unconsciousness.
 
@@ -143,9 +143,9 @@ Yes, a sense of time is a major corollary of consciousness. I've still heard not
 
 > This sort of delayed gratification means there is an ability to visualize a reward that only exists in the future. Which can be quite a challenge even for adult humans. (The video shows an animation of a human picking a single slice of pizza over a full pizza with a clock over it.)
 
-1. It doesn't require visualization, as demonstrated by people born blind. *Fucking think*.
+1. It doesn't require visualization, as demonstrated by people born blind. *Fucking think.*
 
-2. No, it's not a challenge for adult humans. Humans just have time preference. It's not that we can't visualize the future reward or don't understand that it would be bigger, we just prefer to have it now. There could be some interesting discussion about that phenomenon, but I know we're not going to get any actual thought with this video.
+2. No, it's not a challenge for adult humans. Humans just have time preference. It's not that we can't visualize the future reward or don't understand that it would be bigger, we just prefer to have it now. There could be some interesting discussion about that phenomenon, but I know we're not going to get it with this video.
 
 #### 8:06 - 8:14
 
@@ -153,7 +153,7 @@ Yes, a sense of time is a major corollary of consciousness. I've still heard not
 
 So he also thinks we can't think about those things without words. You actually can even after being raised to speak a language; if you pay close attention you'll notice that your actual thoughts are wordless; feelings can be experienced and logical deductions can be made without imagining words.
 
-Probably the only purpose the words serve is to make it easier to remember your train of thought, by attaching perceptions which seem to me to be more easily linked by instinct. Of course, it doesn't surprise me at all that that guy didn't *test* it before he said that. It's not like testing is the basis of science, is it?
+Probably the only purpose the words serve is to make it easier to remember your train of thought, by attaching perceptions which seem to me to be more easily linked by instinct. Of course, it doesn't surprise me at all that this guy didn't *test* it before he said that. It's not like testing is the basis of science, is it?
 
 #### 8:14 - 8:17
 
@@ -165,7 +165,7 @@ Golly, I can't wait. If it's by this guy's definition of thought, I know exactly
 
 > It probably all started with the urge for more food. So even with this sophisticated consciousness that allows us to dream about space, build skyscrapers, or obsess about novels, it's not surprising that we can't stop thinking about where we'll get our next meal.
 
-Yet another sparkling demonstration of the mental illness of materialism. To this guy, the conscious experience of the pain of hunger and the experience-trained belief that eating relieves the feeling manifesting in a temptation to eat isn't a sufficient explanation for why humans like to eat. He needs to invent this absurd history to explain what wasn't unclear, to answer a question that doesn't exist. This is actually quite revealing; no wonder he couldn't understand consciousness in the beginning - he's been trained to see consciousness not as the *cause* of behavior, not even as an epiphenomenon, but merely a metaphor for behavior.
+The best thing to end on is this sparkling demonstration of the mental illness of materialism. To this guy, the conscious experience of the pain of hunger and the experience-trained belief that eating relieves the feeling manifesting in a temptation to eat isn't a sufficient explanation for why humans like to eat. He needs to invent this absurd history to explain what wasn't unknown, to answer a question that doesn't exist. Now we see why he couldn't understand consciousness in the beginning - he's been trained to see consciousness not as the *cause* of behavior, not even as an epiphenomenon, but merely a metaphor for behavior.
 
 It's the purest self-destroying ideology, and it destroys as well everything its believer believes or values, by delegitimizing all facets of his mind as arbitrary and meaningless.
 
@@ -175,4 +175,4 @@ It's the purest self-destroying ideology, and it destroys as well everything its
 
 <br>
 
-At the end of the video, he mentions how it was funded by a grant from the Templeton World Charity Foundation. Figures. Materialists don't have any substance to argue with so they need donations to hire artists and animators for a video backdrop to distract you from how nonsensical their "information" is. Now I know never to donate to the Templeton World Charity Foundation, because they fund propaganda videos that ruin people's ability to think.
+At the end of the video, he mentions how it was funded by a grant from the Templeton World Charity Foundation. Figures. Materialists don't have any substance so they need donations to hire artists and animators for a video backdrop to distract you from how nonsensical their "information" is. Now I know never to donate to the Templeton World Charity Foundation, because they fund propaganda videos that ruin people's ability to think.

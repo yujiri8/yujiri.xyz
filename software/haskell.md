@@ -161,7 +161,7 @@ Here are a few examples of incredibly important stuff that's left out: regex, JS
 
 Documentation tends to be subpar. I heard someone remark that "the Haskell community doesn't understand that type signatures are not a substitute for documentation", and that's kind of true, although it started seeming a lot better to me once I got past beginner level in understanding the concepts (this was true even for things that I didn't think involved abstractions I hadn't got).
 
-There also isn't an easy way to view it from the command-line as far as I know. But to compensate, there's Hoogle, which is something that doesn't seem to have an equivalent in other languages. Hoogle is a CLI tool that lets you search a database of packages for funtcion names or type signatures. I don't know nearly everything about how to use it, but I think it's really powerful.
+There also isn't an easy way to view it from the command-line as far as I know. But to compensate, there's Hoogle, which is something that doesn't seem to have an equivalent in other languages. Hoogle is a CLI tool that lets you search a database of packages for function names or type signatures. I don't know nearly everything about it, but I think it's really powerful.
 
 The conceptual tutorials tend not to be very good - they're hard concepts to teach, with [the curse of knowledge](https://yourbias.is/the-curse-of-knowledge) applying far stronger than usual. There are some pretty good ones though; part of the problem is that they're drowned by bad ones due to [the monad tutorial fallacy](https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/).
 

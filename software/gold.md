@@ -79,21 +79,19 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `''` is for declaring a Byte using the literal character in the source. `u''` makes a Char (and equivalent notation exists for other quoted literals).
 
-* `""` is syntactic sugar for List Byte.
+* `""` is syntactic sugar for Array Byte.
 
 * `"""`...`"""` are multiline strings.
 
 * <code>&#96;&#96;</code> are template strings like in Javascript.
 
-* `list[i]` is index syntax; works on both Lists and tuples.
+* `arr[i]` is index syntax for arrays.
 
 * `dict[key]` is lookup syntax for a Dict.
 
 * `.` is access syntax for Struct fields. It's also method syntax: there's no difference in definition between a function and a method; any function can be called with the `.` syntax as if it were a method of its first argument.
 
-* `[a, b, c, d]` is List syntax.
-
-* `[a; b; c; d]` is Array syntax.
+* `[a, b, c, d]` is Array syntax.
 
 * `{a, b, c, d}` is Set syntax.
 
@@ -108,10 +106,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 	```
 	This way neither line can look complete, and there's no indentation confusion.
 
-## Stylistic stuff
-
 * When inside parens or a similar character and breaking across lines, you don't need commas:
-
 	```
 	items = [
 		item1
@@ -132,7 +127,7 @@ The error will be caught and ignored if it happens anywhere in the `try` block.
 
 * `exit Int` - exit the process with the given status.
 
-* There are no variadic functions, just take lists as arguments.
+* There are no variadic functions, just take arrays as arguments.
 
 * You can have multiple functions with the same name if they have different type signatures. As long as the calls aren't ambiguous.
 
@@ -218,9 +213,9 @@ The results are not evaluated immediately, but they can be iterated on.
 
 Comprehension:
 ```
-results = List (function(v) for v from inputs where condition(v))
+results = Array (function(v) for v from inputs where condition(v))
 ```
-Converts the results to a List (not lazy), so they're all evaluated.
+Converts the results to an Array (not lazy), so they're all evaluated.
 
 # Function declarations
 
@@ -250,9 +245,7 @@ greet = (name = "Anon") =>
 
 * `Float`
 
-* `List a` - linked list
-
-* `Array a` - (contiguous storage) worth having in addition to List? Bytestrings of course would like to be implemented as `Array Byte`, but I'm not sure if this is useful for much else.
+* `Array a`
 
 * `Set a`
 
@@ -262,9 +255,9 @@ greet = (name = "Anon") =>
 
 # Interfaces
 
-* Source - anything you can get values out of. Iteration works on Sources. Lists, Sets, Dicts, Files, and other stuff are Sources.
+* Source - anything you can get values out of. Iteration works on Sources. Arrays, Sets, Dicts, Files, and other stuff are Sources.
 
-* Dest - anything you can put values into. Lists, Sets, Dicts, Files, and other stuff are Dests.
+* Dest - anything you can put values into. Arrays, Sets, Dicts, Files, and other stuff are Dests.
 
 * Seq - a Source that has a defined ordering of elements.
 
