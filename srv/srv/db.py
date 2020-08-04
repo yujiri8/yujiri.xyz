@@ -183,7 +183,7 @@ if __name__ == '__main__':
 		sys.exit(1)
 	connect(sys.argv[1])
 	if len(sys.argv) >= 3 and sys.argv[2] == 'create': createdb()
-	elif len(sys.argv) >= 3 and [2] == 'reset': resetdb()
+	elif len(sys.argv) >= 3 and sys.argv[2] == 'reset': resetdb()
 	else:
 		# If no command, opens the database shell. For use with the -i interpreter flag.
 		s = Session()
