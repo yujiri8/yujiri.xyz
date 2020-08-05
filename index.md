@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**August 4:**
+Major work on notifications! You can now subscribe to articles, to get notified of new top-level comments, and to notifications on new articles.
+
 **August 2:**
 New [faction analysis: the Anarchist Left](argument/faction_ancom).
 
