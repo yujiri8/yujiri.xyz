@@ -6,7 +6,7 @@ import mistune
 from slugify import slugify
 import pygments, pygments.lexers, pygments.formatters
 import bs4
-import os, sys, datetime, argparse, pwd, re, html
+import os, sys, datetime, argparse, pwd, html
 
 # Note this code is duplicated on the server.
 class HighlightRenderer(mistune.HTMLRenderer):
@@ -148,7 +148,7 @@ if __name__ == '__main__':
 		import glob
 		args.infiles = (f for f in glob.glob(args.srcdir+'/**', recursive=True)
 			if '/js/' not in f and '/srv/' not in f and '.gitignore' not in f)
-	elif not len(args.infiles):
+	elif not args.infiles:
 		print('if not generating everything, need at least one filename', file = sys.stderr)
 		sys.exit(1)
 	for arg in args.infiles:
