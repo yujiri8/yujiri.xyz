@@ -3,29 +3,29 @@ NAV The Concise Python Tutorial, Lesson 1: From zero to calculator
 TEMPLATE DEFAULT
 DESC Starting from zero programming ability, learn to make a simple calculator.
 
-I know, I know, there are an infinite number of Python tutorials on the internet (and on everything else for that matter), but I haven't found a single one I think is really good, so I'm making this one. My goal is to make a tutorial as **digestible**, **concise**, and **accurate** as I can. (Most of the other ones I've seen I dislike because they drone on about complex stuff in the early chapters and teach things in a nonsensical order.) The project we're aiming for in this first entry will be a text-based, single-operation calculator.
+I know, I know, there are an infinite number of Python tutorials on the internet (and on everything else for that matter), but I haven't found a single one I think is really good, so I'm making this one. My goal is to make a tutorial as **digestible**, **concise**, and **accurate** as I can. (Most of the others I've seen I dislike because they talk about advanced stuff in the early chapters and put off certain essentials for too long.) The project we're aiming for in this first entry will be a text-based, single-operation calculator.
 
 Prerequisite for this series: preferably [a basic understanding of how programming works](programming), but no actual ability.
 
-# Installing the Python interpreter
+## Installing the Python interpreter
 
-Let me take a quick opportunity to hound you about this first: learning to program is *much* easier if you're on a Unix-like operating system than on Windows. I've written about [what Unix is and why you should use it](why_unix), and the reasons are even stronger for those learning to program, but of course nothing stops you from doing it on Windows or Mac or anything else.
+Regardless of your operating system, there's actually a good chance Python is preinstalled, but if not, it's easy to get:
 
-**If you're on any Unix-like system:** you just need the interpreter installed, and you can run a file by passing the filename as an argument, or open the prompt by running it without a filename (ctrl-D to exit). The command might not just be called `python` though; it might be called `python3`, `python3.8`, or whatever version. <span class="highlight">(On many Unix systems, the command `python` is Python 2. You need Python 3 for this tutorial, since Python 2 is long outdated.)</span>
+**If you're on Windows:** you can [download it from python.org](https://www.python.org/downloads/) (you probably want the "x86-64 executable installer"). The installer should include something called IDLE ("integrated development and learning environment"), which is a convenient (compared to Windows File Explorer) way of accessing the Python prompt and executing files. You can run IDLE from the Windows menu.
 
-**If you're on Windows:** the Python interpreter is probably preinstalled, but if not you can [get it from python.org](https://www.python.org/downloads/) (on a modern machine, you probably want the Windows x86-64 executable installer). The installer should include something called IDLE ("integrated development and learning environment"), which is a convenient (compared to Windows file explorer) way of opening the Python prompt and executing files. You can run IDLE from the Windows menu.
+**If you're on any Unix-like system:** use your distribution's package manager to install it if needed. To use it, open a Terminal and run `python <filename>` to run a file named `filename`, or just `python` for interactive mode. (The command might not just be called `python`; it might be called `python3`, `python3.8` or whatever version, so if `python` doesn't work, try that.)
 
 ## What's with this "prompt"?
 
 In most languages, to write a program, you have to save the source code to a file and then execute the file. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. This is called the interactive prompt, the Python shell, or the REPL (read-evaluate-print loop). Please follow along with this for now by starting IDLE or the appropriate Python command.
 
-When you open IDLE (or start Python from the command line), you'll probably see a message about the Python version and stuff and then a line starting with `>>>`. The `>>>` means it's waiting for you to enter code. The result of each command you type is displayed on the next line without the `>>>`. The `>>>` is called a "prompt" (I know it's confusing because that word refers to both this symbol and the Python shell).
+When you start, you'll probably see a message about the Python version and stuff and then a line starting with `>>>`. The `>>>` means it's waiting for you to enter code. The result of each command you type is displayed on the next line without the `>>>`. The `>>>` is called a prompt (confusingly, that word refers to both this symbol and the interactive mode in general).
 
-To write a saved program in IDLE, you can go to File -> New File in the top menu, and then when you run it with Run -> Run Module, the output will show up in the prompt window. But I highly recommend sticking with the interactive prompt at first. It's awesome.
+To write a saved program in IDLE, you can go to File -> New File in the top menu, and then when you run it with Run -> Run Module, the output will show up in the prompt window. But I highly recommend sticking with the interactive mode for now.
 
-Most of my excerpts here are interactive sessions, and so lines that start with `>>>` are lines of code (but the `>>>` is not part of them), lines without it are output. Unless I put a block with no `>>>` lines - then it's a saved program instead of an interactive session.
+Most of my excerpts here are interactive sessions, and so lines that start with `>>>` are lines of code (but the `>>>` is not part of them), lines without it are output. If I show an excerpt with no `>>>` lines, then it's a saved program instead of an interactive session.
 
-# Math
+## Math
 
 First, let me demonstrate the calculator use:
 
@@ -40,7 +40,7 @@ First, let me demonstrate the calculator use:
 
 The interactive prompt interprets math expressions just like math.
 
-# Variables
+## Variables
 
 A variable is like a name you can set to mean whatever you want. `number = 5` assigns the value `5` to the name `number`. Hereafter, we could include `number` in our calculations and it would have this value:
 
@@ -68,9 +68,9 @@ This lets us do slightly more interesting stuff:
 
 Now let's take a break from the math. There are just a couple other prerequisites to our objective of making a calculator.
 
-# Print
+## Print
 
-First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never displayed, even though it works in the prompt. In the shell, Python automatically displays the result of an expression, but not when it's in a saved program. To make a program output text you need the `print` function:
+First of all, if you save the above lines of code (minus the `>>>` prompt, obviously) to a file and run it, you'll notice the result is never displayed, even though it works in the prompt. In the shell, Python automatically displays the result of an expression, but not when it's in a saved program (there's a good reason for this). To make a program output text you need the `print` function:
 
 ```python
 x = 12
@@ -91,16 +91,16 @@ You might've assumed this, but programming is **case-sensitive**: that function 
 
 </div>
 
-# Strings
+## Strings
 
-`print` can print anything, not just numbers, so now we're going to talk about **strings**, another very important data type. A "string" meaning a string of text. String *literals* (as opposed to a variable that holds a string) always have to be enclosed in quotes, so that Python knows to interpret them as literal text instead of the name of a variable or something. The quotes are not themselves part of the string, though:
+`print` can print anything, not just numbers, so now we're going to talk about **strings**. A "string" meaning a string of text. String *literals* (as opposed to a variable that holds a string) always have to be enclosed in quotes, so that Python knows to interpret them as literal text instead of as the name of a variable or something. The quotes are not themselves part of the string, though:
 ```python
 >>> print("hello")
 hello
 ```
 You can use either single or double quotes, as long as you use the same kind on both sides.
 
-Strings are going to be essential to building our calculator, but before we get on with them, now's a good time to talk a little about error messages, since you're very likely to run into some in the next section.
+Before we get on with strings, now's a good time to talk a little about error messages, since you're very likely to run into some in the next section.
 
 ## Reading error messages
 
@@ -111,11 +111,11 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'blah' is not defined
 ```
-For now, don't worry about the line `Traceback (most recent call last):` - we won't get into what that means until much later in this series. The second line shows you the name of the file your program was saved to, or `<stdin>` if you were just in the prompt (It stands for 'standard input', and I [explain the concept](unix_streams) in my Unix tutorial track, but that's not important here); the line number that caused the error (or 1 if you're in the prompt); and the `in <module>` part is another thing you don't need to worry about until much later when we start working with modules.
+For now, don't worry about the line `Traceback (most recent call last):` - we won't get into what that means until much later in this series. The second line shows you the name of the file your program was saved to, or `<stdin>` if you were just in the prompt (it stands for 'standard input', and I [explain the concept](unix_streams) in my Unix tutorial track, but that's not important here); the line number that caused the error (or 1 if you're in the prompt); and the `in <module>` part is another thing you don't need to worry about until much later.
 
 The most important line is the last one, which shows what the actual problem is. Here are some of the most common kinds of errors:
 
-* `SyntaxError` means your code was malformed and Python didn't know to parse it. You'll get this if you forget the closing quote on a string, try to use a function without parentheses or write a nonsenical line like `a =`. Syntax errors are the only kind that will be caught as soon as you try to run the program, since with other kinds of errors, Python won't know there's a problem until it gets to the line that has it, so you'll see the program execute up to that point and then crash. (As a result, syntax errors don't show the "`Traceback (most recent call last):`" line.)
+* `SyntaxError` means your code was malformed and Python couldn't understand it. You'll get this if you forget the closing quote on a string, try to use a function without parentheses or write a nonsenical line like `a =`. Syntax errors are the only kind that will be caught as soon as you try to run the program, since with other kinds of errors, Python won't know there's a problem until it gets to the line that has it, so you'll see the program execute up to that point and then crash. (As a result, syntax errors don't show the "`Traceback (most recent call last):`" line.)
 
 * `NameError` of course is what you get when you use a variable you didn't define. The most common cause of this is typo (again, unless you're a way more accurate typist than me).
 
@@ -140,7 +140,7 @@ The `+` and `*` operators also work on strings. Check this out:
 
 (Note that they weren't separated by spaces. You might've already noticed, but <span class="highlight">the spaces I've been typing around everything are unnecessary; spaces inside code are generally ignored. They're just there to make it easier to read.</span> If you want to space-separate the output, put a space inside one of the string literals, like `'hello ' + 'friend'`.)
 
-You probably also noticed that this time the results of the operation were still printed with quotes around them. Entering a string by itself just shows it in the form you'd have to type it in to get that value. `print` prints them without the quotes:
+You probably also noticed that this time the results of the operation were still printed with quotes around them. Entering a string by itself at the prompt just shows it in the form you'd have to type it in to get that value. `print` prints them without the quotes:
 ```python
 >>> 'hello'
 'hello'
@@ -154,7 +154,7 @@ Jargon: **concatenate**: to add sequences together. Using `+` on strings is "con
 
 </div>
 
-As an aside, you can now figure out how to make backslash-escaping completely unnecessary. Try to find another way to print a line of text that has both single and double quotes.
+As an aside, you can now figure out how to make backslash-escaping unnecessary. Try to find another way to print a line of text that has both single and double quotes.
 
 <expand-note closedtext="Show solution" opentext="Hide solution">
 
@@ -165,7 +165,7 @@ See how this works? I made it three separate strings: the first one is enclosed 
 
 </expand-note>
 
-This isn't to say you shouldn't use backslash-escaping (of course it's better than that mess), I just wanted to point out that they're never strictly necessary.
+This isn't to say you shouldn't use backslash-escaping (of course it's better than that mess), I just wanted to point out that they're not strictly necessary.
 
 ## Escape sequences
 
@@ -187,13 +187,13 @@ one word	another
 
 [Here's a list of string escape sequences](https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html), but you don't need to memorize them or anything.
 
-# Input
+## Input
 
 `input` is the basic function for getting text input from the user. Just doing `input()` by itself will wait for the user to type something thing in (stopping when they press enter). After that, you can think of the `input()` as if it gets *replaced* by what the user typed in, so you can use it like a literal value:
 ```python
 print(input())
 ```
-That one-line program will wait for the user to type something in, and then repeat it back to them. If the user types "hello", it's like that line becomes `print('hello')`. You could also store the input in a variable like `a = input()`, then do something else, and parrot it back with `print(a)` later.
+That one-line program will wait for the user to type something in, and then repeat it back to them. If the user types "hello", it's like that line becomes `print('hello')`. You could also store the input in a variable like `a = input()`, then do something else, and parrot it back later with `print(a)`.
 
 You can also give `input` a string value to use as a prompt:
 ```python
@@ -254,7 +254,9 @@ There's just one appendix worth tacking on to this first chapter:
 
 ## Floats
 
-You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'3.5'` to an integer.) A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
+You might've noticed that the calculator program doesn't accept decimal inputs, only integers. That's because we used the `int` function - `int` converts a string to an integer, and if it can't, it raises an error. (Interestingly, `int` *can* convert a decimal input: `int(3.5)` gives `3`, but it can't convert the string `'3.5'` to an integer.)
+
+A "[floating-point number](https://floating-point-gui.de/formats/fp/)" or "float" is the programmer term for a decimal number, and the function to convert to them is `float`. Go ahead and try modifying the calculator program to accept float input.
 
 (If you play with floats, you might also run into a strange inaccuracy like `0.1 + 0.2` adding up to `0.30000000000000004`. This isn't Python's fault; it's due to an inherent consequence of the way your hardware stores decimal values in memory. There's a good explanation [here](https://floating-point-gui.de/basic/), but it's not important unless you're curious.)
 
