@@ -6,7 +6,6 @@ window.util = util;
 
 import './theme-switch.js';
 import './login-pane.js';
-import './expand-note.js';
 import './comment-section.js';
 import './recent-comments.js';
 import './auth-popup.js';

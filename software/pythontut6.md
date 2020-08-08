@@ -24,7 +24,7 @@ print("The number + 1 is", num + 1)
 ```
 You can run that to see it work. If an exception is raised by something inside a `try` block, it won't crash; instead, it'll go to the `except` block after it, and if that finishes without any further errors, it'll proceed with the program. With that, try making the calculator from part 1, but if the user enters a non-number, it should explain their mistake and then let them try again.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 def safe_getnum(prompt):
@@ -39,7 +39,7 @@ num2 = safe_getnum("enter another number:")
 print(num1 + num2)
 ```
 
-</expand-note>
+</details>
 
 Isn't that a cool power to have unlocked! There's a lot more cool stuff I need to show you about exceptions.
 
@@ -266,7 +266,7 @@ Try modifying the score reporter program so it can save the scores to a text fil
 
 Preferably do it without catching all exception types. If you're not sure which ones you need to catch, try causing every failure condition you can think of besides `NameError` - delete the file before trying to load, edit the file to have invalid data, etc. That will tell you the names of the exception types you want to catch.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 import util
@@ -399,6 +399,6 @@ while True:
         print("Not a valid entry.\n" + menu)
 ```
 
-</expand-note>
+</details>
 
 [Next lesson: Classes](pythontut7)

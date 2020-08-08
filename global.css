@@ -11,7 +11,7 @@
 	--linkvisitedcolor: #50a;
 	--yellowcolor: #aa0; /* yellow needs to be darker on a white background to look good */
 	--notecolor: #090;
-	--monospace-sizefix: 1.2em; /* monospace text is small by default, needs to be upsized */
+	--monospace-sizefix: 1.0em; /* monospace text is small by default, needs to be upsized */
 }
 [data-theme="dark"] {
 	--bgcolor: #080808;
@@ -187,6 +187,13 @@ a.sectionlink {
 }
 a.sectionlink:visited {
 	color: inherit;
+}
+
+summary {
+	cursor: pointer;
+}
+details {
+	margin-bottom: 1em;
 }
 
 /* Middle finger to you browsers. I will not let you mutilate my h1s into h2s inside <article>. */

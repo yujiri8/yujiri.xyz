@@ -201,7 +201,7 @@ And whatever other operations you want to implement.
 
 When they're done manipulating their sentence, print it out with the first word capitalized like a proper sentence. Then print the number of times each letter occurs in the sentence.
 
-<expand-note opentext="Hide solution" closedtext="Show solution">
+<details><summary>Solution</summary>
 
 ```python
 menu = """
@@ -265,7 +265,7 @@ for letter in "abcdefghijklmnopqrstuvwxyz":
         print(letter, "appears", frequency, "times")
 ```
 
-</expand-note>
+</details>
 
 # Dictionaries
 
@@ -331,7 +331,7 @@ Here's a (hopefully) fun project. Write a program that lets a group of people ea
 
 Some functions that will help you here are the builtin `max` and `sum`, which take a sequence of any type and give you the max or total value, if applicable. (If you use them on a sequence of values that can't be compared, like `max([4, 'a'])`, you'll get an error.) You can do it without these, by implementing their logic yourself, but using the builtin ones will save you some effort.
 
-<expand-note opentext="Hide solution" closedtext="Show solution">
+<details><summary>Solution</summary>
 
 ```python
 # The value of each key will be a nested dict of all
@@ -365,6 +365,6 @@ for player in data:
     print('\t' + player + ":", data[player]['average'])
 ```
 
-</expand-note>
+</details>
 
 [Next lesson: Functions](pythontut5)

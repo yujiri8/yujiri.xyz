@@ -27,7 +27,7 @@ If the last line were indented too, it would only be printed if the password was
 
 With this, you now have enough tools to implement a four-operation calculator (one that can do addition, subtraction, multiplication and division, and ask the user which one instead of just doing all four).
 
-<expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+<details><summary>Solution</summary>
 
 ```python
 operation = input("What operation?")
@@ -43,7 +43,7 @@ if operation == '/':
 	print(num1 / num2)
 ```
 
-</expand-note>
+</details>
 
 ### Indentation in the prompt
 
@@ -267,7 +267,7 @@ Note that I placed the line `string += newest_entry` so that it would not execut
 
 Once you understand how that's working, **Exercise:** make it so the user can enter 'clear' to clear the string, and 'copy' to be prompted to enter a number, and then copy the string that many times. The program should also print a unique message if the user enters nothing.
 
-<expand-note closedtext="Show solution" opentext="Hide solution" markdown="1">
+<details><summary>Solution</summary>
 
 ```python
 string = ''
@@ -291,6 +291,6 @@ This one was a bit tricky. Previously, I had put the adding before the getting i
 
 **Thinking exercise:** how do you clear the string without using the `clear` command?
 
-</expand-note>
+</details>
 
 [Next lesson: Sequences](pythontut3)

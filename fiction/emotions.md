@@ -20,9 +20,12 @@ One pitfall I want to mention briefly is that having your POV shout their friend
 
 Now lemme talk about some examples of scenes in other people's work that worked and some that didn't.
 
-Doki Doki Literature Club is a masterpiece in this regard. For an example, I'll go through MC's reaction to (major spoiler!) <span class="spoiler">Sayori's death</span>. <expand-note contentId="1"></expand-note>
+Doki Doki Literature Club is a masterpiece in this regard. For an example, I'll go through MC's reaction to (major spoiler!) <span class="spoiler">Sayori's death</span>.
 
-<div class="hidden indent" id="1" markdown="1">
+<details>
+<summary>+</summary>
+<div class="indent">
+
 His first thought: "What the hell?" He starts with a general expression of shock before any thoughts about about the ramifications of what he's seeing. The line is repeated one additional time.
 
 Next he has thoughts to the effect of "Is this a nightmare? It... has to be". The denial phase. It's human nature to look for any way to deny reality when you see something you really don't want to be true, even if only for a few seconds. The writer drags this out a bit, with the next lines being "This isn't real", "There's no way this can be real", "Sayori wouldn't do this", etc. This seems to bolster the effect; we don't want to breeze through these thoughts too quickly. A real person would probably spend several seconds at this phase, so the writer does too, even though it only takes one or two lines to make the point.
@@ -32,7 +35,9 @@ Next, as MC accepts it as reality, the writer mentions in his thoughts, "I suppr
 MC's thoughts continue into the main phase of grief and guilt, but he doesn't just think "I feel sad" and expect the player to sympathize. He goes through "I could have prevented this if I just did (xyz)!", "Nothing in my life is worth more than hers... but I still couldn't do what she needed from me", and "I'll carry this guilt with me until I die". These are concrete thoughts that do a very good job of making you [shadow](/protagonism/misc_psychology) MC's pain.
 
 Of course, a huge part of the magic of this scene was also the music it plays. That song captures MC's state of mind perfectly, and it's beautiful. The song is physically painful to listen to.
+
 </div>
+</details>
 <!--Mention time-->
 
 For a bad example, I could always criticize Star Wars. I know I've already talked about this but the total lack of any acknowledgement of fear really hurts the action scenes. How can you take these characters for real people when they don't show the slightest bit of fear getting shot at by a trained army and being trapped on the Death Star with no foreseeable way out? In real life, mortal danger is *scary*. Most people, if not fleeing or trying to surrender, would either be screaming or swearing their heads off in a situation like that.

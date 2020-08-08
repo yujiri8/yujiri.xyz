@@ -156,14 +156,14 @@ Jargon: **concatenate**: to add sequences together. Using `+` on strings is "con
 
 As an aside, you can now figure out how to make backslash-escaping unnecessary. Try to find another way to print a line of text that has both single and double quotes.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 print('I said, "' + "it's okay." + '"')
 ```
 See how this works? I made it three separate strings: the first one is enclosed by single quotes, so the double quote inside it is literal; the second one is enclosed by double quotes, so the single-quote inside it is literal, and the last one just needs to contain the remaining double quote, so I put it in single quotes.
 
-</expand-note>
+</details>
 
 This isn't to say you shouldn't use backslash-escaping (of course it's better than that mess), I just wanted to point out that they're not strictly necessary.
 
@@ -228,7 +228,7 @@ Hm... there's one problem with using `input` to make a calculator: it gives us a
 
 Now you've got all the knowledge you need to make a program that asks for two numbers and then prints their sum (or whichever operation you like - you can't ask the user which one they want, because that would require the `if` statement, which we'll get to in the next lesson). Combine what you've learned and you can do it in as little as three lines.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 num1 = int(input('give me a number:'))
@@ -236,19 +236,19 @@ num2 = int(input('give me another number:'))
 print(num1 + num2)
 ```
 
-</expand-note>
+</details>
 
 **Other exercise:** make it print the sum, difference, product, and quotient of the two numbers in sequence, as a substitute for asking the user which one they want.
 
 **More interesting exercise:** How do you do the single-operation calculator in one line and without using any variables?
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 print(int(input('give me a number:')) + int(input('give me another number:')))
 ```
 
-</expand-note>
+</details>
 
 There's just one appendix worth tacking on to this first chapter:
 

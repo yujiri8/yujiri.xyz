@@ -126,7 +126,7 @@ In the first mission to Kashyyyk, you meet Saw Gererra, and help liberate Wookie
 
 I'll go ahead and stick the rest of the story section in an expand spoiler. TLDR: the story has a lot of really good ideas, some well-executed reveals with competent use of [foreshadowing](/fiction/foreshadowing), a disappointing ending, and a generous helping of [clumsy dialogue](/fiction/dialog) and [downplayed emotional drama](/fiction/emotions), but on the whole I like it.
 
-<expand-note>
+<details><summary>More</summary>
 
 During the second visit to Zeffo, Cal has a run-in with the Second Sister. It's a really fun boss. After the fight, she reveals that *she* is Cere's apprentice, and that Cere did not ultimately resist the torture as she claimed; she gave up Trilla's location and so Trilla was captured and tortured into becoming an Inquisitor. Upon seeing this, Cere used the dark side to escape, killing everyone present except Trilla. The foreshadowing was there; Cere's two-time evasion of Cal's question all makes sense. She just about *did* tell him why she cut herself off from the Force! She just lied about that crucial detail.
 
@@ -166,7 +166,7 @@ Cal defeats Trilla and gets the holocron, Cere arrives and tries to sway Trilla 
 
 Finally, everyone is safe in the Mantis with the holocron, and Cere points out that if they try to recruit these children, the Empire will be after them for the rest of their lives too. In light of that, Cal says "Their destiny should be trusted to the Force" and destroys the holocron.
 
-</expand-note>
+</details>
 
 ## Verdict
 

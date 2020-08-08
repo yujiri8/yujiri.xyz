@@ -9,15 +9,16 @@ Depth is not state space. A lot of game design philosophers reference the idea o
 Action games typically have very small state space compared to strategy games, and yet may be harder to master, and therefore have more depth. Of course a criterion that ignores the difference in how easy it is to master the given state space is a bad criterion (if you have several seconds to consider before acting, then you need much more state space to achieve equivalent
 depth).
 
-For another example, the unit-on-unit combat mechanics in most RTS games have extremely vast state space and complexity, but they don't create much depth in practice because they're just how we imagine the combat working anyway, so there's nothing to learn there, nothing to master. <expand-note contentId="1"></expand-note>
+For another example, the unit-on-unit combat mechanics in most RTS games have extremely vast state space and complexity, but they don't create much depth in practice because they're just how we imagine the combat working anyway, so there's nothing to learn there, nothing to master.
 
-<div class="hidden indent" id="1">
+<details>
+<summary>+</summary>
 
 It's interesting to note that this means the same game *would* be deeper if shown to an alien culture with a different preconception of how such things would work. They'd have to figure it out, and so for them, there'd be more to learn and they could derive more enjoyment from it.
 
 This is not subjectivism. It's recognition that people are the point of everything and that games - like everything else - should be designed with their expected audience in mind rather than aimed at some universal idea as if it exists outside of sentient experience, [which it doesn't](/protagonism/metaphysics).
 
-</div>
+</details>
 
 Somewhat on the other end of things, the [pitfall of brute-force skills](brute_force_skills) is relevant to any discussion of depth.
 

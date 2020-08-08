@@ -303,9 +303,9 @@ There are at least these types of ships:
 
 * **Frigate**: Never dodges anything. 30 hull, 30 shield, regenerates 2 shield per turn, fires both a 3 damage laser and 6 damage missile (which can be at different targets).
 
-Make the program explain what's happening as it goes. Here's a test run of my implementation, with 2 Fighters, 1 Bomber and 1 Frigate on each side (it's very long, so I put it in a button):
+Make the program explain what's happening as it goes. Here's a test run of my implementation, with 2 Fighters, 1 Bomber and 1 Frigate on each side:
 
-<expand-note closedtext="Show" opentext="Collapse">
+<details><summary>(it's long)</summary>
 
 ```
 
@@ -682,13 +682,13 @@ Milky Way Federation Frigate #1 (hull: 20/30, shield: 2/30)
 
 ```
 
-</expand-note>
+</details>
 
 Poor Andromeda Alliance! Not a single kill!
 
 There's just a couple other things you should know about classes before you try to implement this. First, you can see what class something is with the `type` function - `type(5) == int`, etc. Second, every class stores its name in a `__name__` attribution on the class itself. `Rectangle.__name__` will be `'Rectangle'`. I use both of these in my implementation.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 import random
@@ -846,7 +846,7 @@ else:
 	print("A draw! Both fleets are completely destroyed.")
 ```
 
-</expand-note>
+</details>
 
 
 And once you've done this, it's trivial to add new kinds of ships or new types of attacks! You could also do something like add a `SmartFighter` which knows to focus its attacks on enemy bombers and to shoot at the most damaged one, or a `SmartBomber` which knows not to target small ships if there are any big ones. Maybe a `RepairProbe` that restores the hull of damaged allied ships? A `Factory` that produces a Fighter or Bomber each turn? Maybe an Ion attack type that does extra damage to shields? The possibilities are endless, and with the flexibility of classes, it's easy to explore them.

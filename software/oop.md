@@ -3,9 +3,9 @@ NAV The truth about object-oriented programming
 TEMPLATE DEFAULT
 DESC The problem with OOP is that it conflates interfaces with classes.
 
-When [I first started learning Python](python), I was sold the typical OOP advocate idea of OOP - that it's great, that it provides code reuse through Inheritance the Father, Encapsulation the Son, and Polymorphism the Holy Spirit (although I didn't understand what those terms meant at the time). And I was even taught what I'm now pretty sure is the worst OOP practice: modifying objects from within other objects' methods. <expand-note contentid="1"></expand-note>
+When [I first started learning Python](python), I was sold the typical OOP advocate idea of OOP - that it's great, that it provides code reuse through Inheritance the Father, Encapsulation the Son, and Polymorphism the Holy Spirit (although I didn't understand what those terms meant at the time). And I was even taught what I'm now pretty sure is the worst OOP practice: modifying objects from within other objects' methods.
 
-<div class="hidden" id="1">
+<details><summary>+</summary>
 
 A Hero class and an Enemy class. `player`, an instance of Hero, fires at `alien`, an instance of Enemy.
 The code looked something like this:
@@ -31,7 +31,7 @@ Except no, it isn't.
 
 The player is not what does the shooting. The 'player' is a data structure in memory, and the 'shooting' is the modification of some data in a different struct based on data in this one. The shooting is actually done by the process thread, corresponding to code in the mainloop. So metaphysically speaking it's much more accurate for the call to `alien.die` to be exposed in the mainloop (or in an action handler), not hidden away inside the method of a *different* object. The point of encapsulation is to keep everything that deals with an object clearly attached to the object. What this code does is encapsulates code that modifies the `Enemy` inside a method of the `Hero`.
 
-</div>
+</details>
 
 In recent years after I started working with [Go](go), I happened to read some articles like [Goodbye, Object Oriented Programming](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53) (and many others, but this was the one I remember most). And while that article contains a lot of questionable logic and melodrama and fell a long way short of convincing me that all of "Object-Oriented Programming" is bad, it did set me on a path of questioning the philosophy that eventually led me to my current stance.
 

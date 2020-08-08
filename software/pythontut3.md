@@ -31,7 +31,7 @@ You can also, of course, index with a variable.
 
 **Exercise:** make a program that asks the user for a string, and then a number, and prints out the character at that position in the string. (For extra fun, do it in one line.)
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 print(input("enter a string:")[int(input("enter a number:"))])
@@ -44,7 +44,7 @@ This might look hard to parse - indeed, it's bad enough that a serious programme
 
 3. `int('3')` is replaced with `3`, leaving: `print('blah'[3])`
 
-</expand-note>
+</details>
 
 ## Negative index
 
@@ -85,7 +85,7 @@ An invalid slice range, where the start position is greater than the end positio
 
 **Exercise**: Try making a program that accepts a string and then prints it back limited to a specified max length. If the string has to be cut off, it should end with `...` to indicate there's more - but the total printed length should be exactly the maximum, including the ellipsis. For example, if you choose 10 as the max length and I enter `Hi my friend`, it should print `Hi my f...`.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 limit = 10
@@ -97,7 +97,7 @@ if len(msg) > limit:
 print(msg)
 ```
 
-</expand-note>
+</details>
 
 ## Slice step
 
@@ -118,7 +118,7 @@ Jargon: **iterate**: to loop with a sequence and do something with each element 
 
 **Exercise**: use your knowledge of loops and indexing to write a program that gets a string from the user and then prints out each character inside it on its own line. (I'm about to introduce an easier way of doing this, but I want you to see how it can be done without it.)
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 string = input("give me a string:")
@@ -129,7 +129,7 @@ while index < len(string):
 ```
 Note that I couldn't put the `input("give me a string:")` that defines the variable `string` inside the condition like `while index < len(input("give me a string:")):`. If you tried to solve this yourself before looking at the solution (which you should have), you probably ran into this, but the reason that doesn't work is that a `while` loop's condition is **evaluated** every time it's checked, since it has to know when to stop. So every time it loops, it would ask, is `index < len(input("give me a string:"))`?. And every time it asks that, it would execute `input("give me string:")` to find out what its value was, which means the user would be asked to enter a new string after every iteration of the loop. The solution was to execute `input("give me a string:")` once at the beginning, and store the value, so that when the `while` loop evaluates its condition every time, it's only asking whether `index` is less than the length of `string`, where `string` is the *result* of `input("give me a string:")`. This way, it doesn't ask the user for a new string every time.
 
-</expand-note>
+</details>
 
 ## `for`
 
@@ -144,7 +144,7 @@ In general, in Python you should never have to iterate in the fashion I had you 
 
 **Another problem you can solve now**: make a program that gets a string from the user, and then a letter, and determines whether the letter is in the string.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 string = input("give me a string:")
@@ -159,7 +159,7 @@ else:
     print(char, 'is not in', string)
 ```
 
-</expand-note>
+</details>
 
 ## `in`
 
@@ -388,7 +388,7 @@ lines removed: 2
 
 This is supposed to be a fairly difficult project for someone with no programming experience outside of these three lessons. Give it some time. When I learned Python from the book that taught me, some of the end-of-chapter projects took me a few hours, but if you can solve a problem of this caliber on your own, then you're really catching on.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 WORDS = ('free', 'liberty', 'tyrant', 'tyranny', 'oppress', 'rebel', 'revolt', 'revolution')
@@ -431,6 +431,6 @@ print("words found:", words_caught_str)
 print("lines removed:", removed)
 ```
 
-</expand-note>
+</details>
 
 [Next lesson: Mutable types](pythontut4)

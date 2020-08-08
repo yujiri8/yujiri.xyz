@@ -152,9 +152,8 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 
 ---
 
-Recent update log:
-
-<expand-note open openText="collapse" closedText="show">
+<details open>
+<summary>Recent update log</summary>
 
 **August 7:**
 I've done a ton of editing old articles of storytelling and my Mass Effect review, and posted a new short: [A couple of garbage, under-criticized tropes](fiction/bad_tropes).
@@ -220,4 +219,4 @@ Added [Dialog practice: best and worst lines in Star Wars](fiction/dialog_star_w
 **July 3:**
 Added [FreeBSD source code is bullshit](software/unix_src).
 
-</expand-note>
+</details>

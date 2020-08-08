@@ -110,7 +110,7 @@ See how that works? `enumerate` took the tuple I passed it, iterated on the tupl
 
 As an exercise, try implementing a function that generates [the fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html). It should keep going for as long as the program keeps iterating on it - theoretically generating an infinite sequence.
 
-<expand-note closedtext="Show solution" opentext="Hide solution">
+<details><summary>Solution</summary>
 
 ```python
 def fibonacci():
@@ -120,7 +120,7 @@ def fibonacci():
 		current = (current[1], current[0] + current[1])
 ```
 
-</expand-note>
+</details>
 
 Generators are actually even more powerful that this: [they're coroutines](https://book.pythontips.com/en/latest/coroutines.html), and you can actually pass data in the other direction too (but I've honestly never used that in all my years of Python).
 
