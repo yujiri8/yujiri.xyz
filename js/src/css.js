@@ -1,34 +1,57 @@
 import {css} from 'lit-element';
 
 export const styles = css`
-
-/* stuff shared with the components */
 * {
 	box-sizing: border-box;
 }
-/* Misc color adjustments */
 a {
 	color: var(--linkcolor);
 }
 a:visited {
 	color: var(--linkvisitedcolor);
 }
-code, .code {
-	background-color: var(--codecolor);
-	font-size: var(--monospace-sizefix);
+a.yujiri-link, a.yujiri.link:visited {
+	color: var(--yellowcolor);
+}
+
+code, pre {
+	font-family: monospace, monospace;
 }
 code {
+	background-color: var(--codecolor);
 	white-space: pre-wrap;
-}
-hr {
-	border-color: var(--weakcolor);
-}
-.indent {
-	margin-left: 1em;
+	word-break: break-word;
 }
 spem {
-	font-family: monospace;
-	font-size: var(--monospace-sizefix);
+	font-family: monospace, monospace;
+}
+.highlight {
+	background-color: #ff06;
+}
+.note:before {
+	content: '[';
+}
+.note:after {
+	content: ']';
+}
+.note {
+	color: var(--notecolor);
+}
+.spoiler {
+	background-color: var(--textcolor);
+}
+/* this is necessary to stop links from showing through */
+.spoiler:not(:hover) a {
+	color: var(--textcolor);
+}
+.spoiler:hover {
+	color: var(--bgcolor);
+}
+summary {
+	cursor: pointer;
+}
+details {
+	margin-bottom: 1em;
 }
 blockquote {
 	border-left: 6px solid #00ffff;
@@ -36,17 +59,22 @@ blockquote {
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
-.highlight {
-	background-color: #ff06;
+hr {
+	border-color: var(--weakcolor);
+}
+.indent {
+	margin-left: 1em;
 }
 
-/* column-layout pages */
-div.row {
-	display: grid;
-	grid-gap: 1em;
+/* stuff for reviews */
+.good {
+	color: blue;
 }
-div.column {
-	min-width: 18em;
+.bad {
+	color: red;
+}
+.mixed {
+	color: var(--yellowcolor);
 }
 
 /* tables */
@@ -65,47 +93,12 @@ tbody.checkered tr:nth-child(odd) {
 	background-color: #222222;
 }
 
-.spoiler {
-	background-color: var(--textcolor);
-}
-/* this is necessary to stop links from showing through */
-.spoiler:not(:hover) a {
-	color: var(--textcolor);
-}
-.spoiler:hover {
-	color: var(--bgcolor);
-}
-.note:before {
-	content: '[';
-}
-.note:after {
-	content: ']';
-}
-.note {
-	color: var(--notecolor);
-}
-/* stuff for reviews */
-.good {
-	color: blue;
-}
-.bad {
-	color: red;
-}
-.mixed {
-	color: var(--yellowcolor);
-}
-
 /* Stop things from overflowing horizontally (don't ask me why the overflow-y thing works) */
 pre {
 	overflow-y: hidden;
 }
 img {
 	max-width: 100%;
-}
-
-
-a.yujiri-link, a.yujiri.link:visited {
-	color: var(--yellowcolor);
 }
 
 /* inputs */
@@ -131,8 +124,6 @@ button {
 	border-radius: 5px;
 	background-color: var(--buttonbgcolor);
 }
-
-.pygments > pre { font-size: var(--monospace-sizefix) }
 
 .pygments  { background: #232629; color: #fff }
 .pygments .c, .pygments .c1, .pygments .cm { color: #aaa; font-style: italic } /* comments */

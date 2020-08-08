@@ -155,6 +155,12 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**August 8:**
+
+* I found out about [the `<details>` and `<summary>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) and replaced `<expand-note>` with them!
+
+* I found out the real solution to the monospace font size problem: `font-family: monospace, monospace`! Thanks to [normalize.css](https://github.com/necolas/normalize.css/blob/master/README.md#pre-code-kbd-samp)!
+
 **August 7:**
 I've done a ton of editing old articles of storytelling and my Mass Effect review, and posted a new short: [A couple of garbage, under-criticized tropes](fiction/bad_tropes).
 
