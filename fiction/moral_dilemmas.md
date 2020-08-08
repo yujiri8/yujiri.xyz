@@ -8,4 +8,4 @@ Moral dilemmas for the POV character can be some of the most awesome scenes. Her
 
 2. If the answer seems obvious, adjust the numbers to make it closer. So instead of saving someone or healing a blind person, in which almost everyone would choose the former because being blind is surely better than being dead, make it "save someone or heal three blind people" or maybe ten, or however many you think places it just on the border. That's a much better dilemma. But you can still make it better.
 
-3. At least if you plan to do anything at all with the hero retroactively doubting their choice and feeling guilty (which is one of the best things about moral dilemmas) choosing between two evils is more interesting than choosing between two goods (due to [loss aversion](https://en.wikipedia.org/wiki/Loss_aversion)). So an even better dilemma would be "kill someone or make x people blind".
+3. Choosing between two evils is generally more interesting than choosing between two goods (due to [loss aversion](https://en.wikipedia.org/wiki/Loss_aversion)). So an even better dilemma would be "kill someone or make x people blind".

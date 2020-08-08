@@ -156,6 +156,9 @@ Recent update log:
 
 <expand-note open openText="collapse" closedText="show">
 
+**August 7:**
+I've done a ton of editing old articles of storytelling and my Mass Effect review, and posted a new short: [A couple of garbage, under-criticized tropes](fiction/bad_tropes).
+
 **August 4:**
 Major work on notifications! You can now subscribe to articles, to get notified of new top-level comments, and to notifications on new articles.
 

@@ -18,7 +18,7 @@ My site's logo had a lot of thought put into it and I'm very satisfied. Not only
 
 	It's because of a couple things. Firstly, anomaly is a factor of beauty. Part of the reason all of us find the sunset colors beautiful is precisely because they're only there for that tiny sliver of the day. If the sun were yellow all day and things turned more white for a few minutes around midday, I'm sure we'd find that equally beautiful.
 
-	Secondly, I think there's something very real to the correlation between Protagonist and the sunset. More generally, it's about vast things being beautiful. I think associating beauty with vastness and faraway things leads the soul toward thinking about vast things in real life; finding a purpose other than one's own happiness. I had Rebeka allude to this in [Pillars of Life](/works/pillars_of_life/), although that was before I really understood it.
+	Secondly, I think there's something very real to the correlation between Protagonist and the sunset. More generally, it's about vast things being beautiful. I think associating beauty with vastness and faraway things leads us toward thinking about vast things in real life; finding a purpose other than one's own happiness.
 
 * The blue line represents my weakness. Water is fluid, harmless in most ways and easily appropriated. So I chose blue because I'm weak. I'm actually a pathetic social coward in real life. I'm a very bad Protagonist. But I've come to terms with that. I don't need to deny it, my wisdom prevents low self-esteem from interfering with my productivity, so I put in my logo. I even put it on top of yellow to symbolize that I'm less than halfway an ideal Protagonist.
 
