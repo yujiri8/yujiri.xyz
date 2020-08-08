@@ -1,6 +1,7 @@
 TITLE Mass Effect review
 NAV Mass Effect
 TEMPLATE DEFAULT
+DESC Mass Effect is statist, racist, sexist, and much more! At least it has good combat.
 
 Mass Effect is a series I used to really love. I think I first played the original when I was 12 or so. And I still think its combat system was good, although none of the incarnations were perfect. But over the next few years I became extremely disillusioned with the intense [statism](/protagonism/anarchism) in the game.
 
