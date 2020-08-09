@@ -131,7 +131,7 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 <a class="card" href="works/">
 	<div class="card-title"><b>My Works</b></div>
 	<img src="category_images/reading.jpg" alt="My Works">
-	<div class="card-text">Novels, DDLC mods, poems</div>
+	<div class="card-text">DDLC mods, poems</div>
 </a>
 <a class="card" href="misc/">
 	<div class="card-title"><b>Miscellany</b></div>
@@ -160,6 +160,8 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 * I found out about [the `<details>` and `<summary>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) and replaced `<expand-note>` with them!
 
 * I found out the real solution to the monospace font size problem: `font-family: monospace, monospace`! Thanks to [normalize.css](https://github.com/necolas/normalize.css/blob/master/README.md#pre-code-kbd-samp)!
+
+* I finally deleted the old crappy novels. I really did it. They're gone. I still reference The Pygon Hybrid in one of the storytelling philosophy aricles, but in a way that makes sense without the full text still being available.
 
 **August 7:**
 I've done a ton of editing old articles of storytelling and my Mass Effect review, and posted a new short: [A couple of garbage, under-criticized tropes](fiction/bad_tropes).
