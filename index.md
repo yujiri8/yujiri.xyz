@@ -161,7 +161,7 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 
 * I found out the real solution to the monospace font size problem: `font-family: monospace, monospace`! Thanks to [normalize.css](https://github.com/necolas/normalize.css/blob/master/README.md#pre-code-kbd-samp)!
 
-* I finally deleted the old crappy novels. I really did it. They're gone. I still reference The Pygon Hybrid in one of the storytelling philosophy aricles, but in a way that makes sense without the full text still being available.
+* I finally deleted the old crappy novels. I really did it. They're gone. I still reference The Pygon Hybrid in one of the storytelling philosophy articles, but in a way that makes sense without the full text still being available.
 
 **August 7:**
 I've done a ton of editing old articles of storytelling and my Mass Effect review, and posted a new short: [A couple of garbage, under-criticized tropes](fiction/bad_tropes).

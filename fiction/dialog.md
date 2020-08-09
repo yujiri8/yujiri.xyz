@@ -8,7 +8,7 @@ I've got a few principles of good dialogue that I think might be more insightful
 
 This is the principle behind the decision in [Mass Effect](/reviews/mass_effect) to make the dialogue option labels paraphrased from what Shepard actually says. I don't think it's unreasonable to think it was still a bad idea overall, but it would have been boring to have the player select a dialog line and then listen to Shepard repeat it verbatim, and the paraphrasing solves this problem.
 
-For a concrete example, I'll talk about an excerpt from a crap novel I wrote when I was 19, The Pygon Hybrid, before and after improvements. An except from chapter 1 originally read:
+For a concrete example, I'll talk about an excerpt from a crap novel I wrote when I was 19, The Pygon Hybrid, before and after improvements. An excerpt from chapter 1 originally read:
 
 > I hear footsteps coming up the stairs. It's Brev and three other cadets I recognize: Logan, Stef, and Sally. They move immediately but casually to surround me.
 
