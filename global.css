@@ -80,8 +80,6 @@ div.column {
 /* content styles */
 code, pre {
 	font-family: monospace, monospace;
-}
-code {
 	background-color: var(--codecolor);
 	white-space: pre-wrap;
 	word-break: break-word;
