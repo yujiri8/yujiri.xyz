@@ -155,6 +155,9 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**August 12:**
+I've posted my [review of Rust](software/rust).
+
 **August 8:**
 
 * I found out about [the `<details>` and `<summary>` elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) and replaced `<expand-note>` with them!
