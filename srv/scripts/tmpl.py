@@ -15,7 +15,7 @@ class HighlightRenderer(mistune.HTMLRenderer):
 			lexer = pygments.lexers.get_lexer_by_name(lang)
 			formatter = pygments.formatters.HtmlFormatter(linenos = False, cssclass="pygments")
 			return pygments.highlight(code, lexer, formatter)
-		return '<pre class="code">' + html.escape(code) + '</pre>'
+		return '<pre>' + html.escape(code) + '</pre>'
 markdown = mistune.create_markdown(renderer = HighlightRenderer(escape = False), plugins = ['strikethrough'])
 
 HOME = pwd.getpwuid(os.getuid()).pw_dir

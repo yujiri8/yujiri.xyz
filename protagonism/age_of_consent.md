@@ -1,4 +1,4 @@
-TITLE Age of consent ideology is self-contradicting
+TITLE There is no age of consent
 NAV "Age of consent"
 TEMPLATE DEFAULT
 DESC Ironically, enforcing an "age of consent" requires violating consent.
@@ -31,6 +31,6 @@ The irony here is that it's actually the enforcement of an "age of consent" that
 
 Now, people often fill in strawmen when I make this argument. It's important to keep in mind that [deliberate deception is equivalent to force](https://yujiri.xyz/protagonism/property#lying-as-a-non-peaceful-act). Children generally trust adults to an extreme (and may also perceive implicit threats in this type of situation which obviously invalidate consent). I am sure that in practice, most pedophilic relationships are coercive, and I'll gladly join in socially punishing the perpetrators of even the ones that aren't. But it *is* possible for a child to consent.
 
-But I think this is actually a really serious issue because of how far it's taken. It's not just a case where people are wrong about ethics. Almost every Ancap I know thinks people who have sex with a 17 year old should be *killed*. It's unbelievable how unanimous it is, and how grossly against voluntaryist principles. You can post horrific memes about feeding people into woodchippers for saying "MAP rights" in Ancap communities and you will never get a negative reaction.
+But I think this is actually a really serious issue because of how far it's taken. It's not just a case where people are wrong about ethics. Almost every Ancap I know thinks people who have sex with a willing 17 year old should be *killed*. It's unbelievable how unanimous it is, and how grossly against voluntaryist principles. You can post horrific memes about feeding people into woodchippers for saying "MAP rights" in Ancap communities and you will never get a negative reaction.
 
 It's terrifying. Are Ancaps actually going to murder a whole bunch of people when we finally get that voluntary world?
