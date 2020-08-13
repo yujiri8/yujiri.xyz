@@ -178,7 +178,7 @@ New [faction analysis: the Anarchist Left](argument/faction_ancom).
 **July 27:**
 New: [Dynamic typing is a sin](software/typing). Been working on that for a while.
 
-And get this: I implemented comment autosaving! It saves every in-progress comment every 10 seconds.
+And get this: I implemented comment autosaving! It saves in-progress comments every time you make a change.
 
 **July 26:**
 New: [Including library code in stack traces](software/library_stack_traces) and [Stop double-counting notifs](argument/grouping_notifs).
