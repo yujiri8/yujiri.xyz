@@ -22,11 +22,4 @@ But you don't lose the ability to represent any possible string of text, because
 
 Most programming languages have a few that are commonly agreed on; besides `\n` for newline, `\t` usually represents tab, `\a` a "BEL" character (which is a nonprintable character that causes the computer to beep when outputted in environments that support it), `\r` is "carriage return", which causes the following text to appear at the beginning of the line overwriting the previous beginning - so basically a newline that doesn't go down. Likewise, in most programming languages, literal strings of text have to be enclosed in quotes, so to indicate a string that actually has a quote in it, you would write for example `print("hello \"user\"")` and it would print `hello "user"`.
 
-In fact, even Unix terminal text coloration is achieved through escape sequences. There's a standard of [ANSI codes](https://bluesock.org/~willkg/dev/ansi.html) that terminals support which includes escape characters that a program can output to change the current text color, switch to outputting text at a different position, or do almost anything you can imagine in a text-based terminal.
-
-<!--
-https://www.webopedia.com/TERM/A/ASCII.html
-https://www.techonthenet.com/ascii/chart.php
-https://vt100.net/
-https://en.wikipedia.org/wiki/Escape_character
--->
+In fact, even Unix terminal text coloration is achieved through escape sequences. There's a standard of [ANSI codes](https://en.wikipedia.org/wiki/ANSI_escape_code) that terminals support which includes escape characters that a program can output to change the current text color, switch to outputting text at a different position, or do almost anything you can imagine in a text-based terminal.

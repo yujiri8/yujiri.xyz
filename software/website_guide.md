@@ -5,7 +5,7 @@ DESC I thought I'd make a sorta guide on how to set them up for people with litt
 
 I generally encourage having personal websites. They have a lot of uses, and [contrary to the widespread anti-self-promotion sentiment](https://yujiri.xyz/argument/self_promotion), I actually like it when someone links themselves. It gives me a way to find out what they're about if I'm interested.
 
-So I thought I'd make a sorta guide on how to set them up aimed at people with little technical knowledge.
+So I thought I'd make a sorta guide on how to set them up aimed at people with little technical knowledge. (This involves *picking up* some technical knowledge, but not as much as you might think.)
 
 ## Platforms?
 
@@ -23,11 +23,11 @@ So what I'm getting at here is, the quick and easy path leads to the dark side :
 
 So there are a few core components that go into a website:
 
-* A domain name - the part like `yujiri.xyz`. See [this wonderful explanation of the Domain Name System](http://en.tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/internet.html) if you're not familiar. You'll need the nameserver for the [TLD (top-level domain)](https://en.wikipedia.org/wiki/Top-level_domain) to resolve requests for your domain. This does cost money, but almost nothing (I get mine from Namecheap for like $13/year).
+* A domain name - the part like `yujiri.xyz`. See [this wonderful explanation of the Domain Name System](http://en.tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/internet.html) if you're not familiar. You'll need the nameserver for the [TLD (top-level domain)](https://en.wikipedia.org/wiki/Top-level_domain) to resolve requests for your domain. This does cost money, but barely (I get mine from Namecheap for like $13/year).
 
-* A computer to act as a server. It's actually possible to just use a home computer for this, but not necessarily a good idea because it means your website goes down whenever *your* internet does. Your connection may also be too slow to give a good experience to people accessing your website from around the world.
+* A computer to act as a server. It's actually possible to just use a home computer for this, but not necessarily a good idea because it means your website goes down whenever *your* internet does. Your connection may also be too slow to give a good experience to viewers from around the world.
 
-	The easiest way to get a server that avoids those problems is to rent one from a service like Digital Ocean or Amazon EC2. It also costs very little (I get mine from Digital Ocean for $5/month). Note that these don't give you a Remote Desktop Connection-like interface to your server (although I'm sure there are ways to set up something like that), only SSH access. If you don't know what that is but aren't scared off by it, my [Unix tutorial track](https://yujiri.xyz/software/shell_basics) can probably help - the server will be running an open-source Unix-like operating system. Do be aware that you can use SSH from Windows with [PuTTY](https://www.putty.org/).
+	The easiest way to get a server that avoids those problems is to rent one from a service like Digital Ocean or Amazon EC2. This also costs very little (I get mine from Digital Ocean for $5/month). Note that these don't give you a Remote Desktop Connection-like interface to your server (although I'm sure there are ways to set up something like that), only SSH access. If you don't know what that is but aren't scared off by it, my [Unix tutorial track](https://yujiri.xyz/software/shell_basics) can probably help - the server will be running an open-source Unix-like operating system. Do be aware that you can use SSH from Windows with [PuTTY](https://www.putty.org/).
 
 * A web server program to run on the serving machine. I use [Nginx](https://yujiri.xyz/software/nginx) for this; its configuration is relatively simple (it can do with just a small text file that's mostly default settings) and it supports modern protocols like HTTP 2.0 out of the box.
 
