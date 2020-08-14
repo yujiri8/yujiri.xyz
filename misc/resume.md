@@ -82,19 +82,23 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 ## Open source contributions
 
-* FreeBSD: A few bug reports in base system tools, helped keep some ports up to date
+* FreeBSD: Helped keep some ports up to date and reported a few bugs in base system tools
 
 * [Paladin](https://github.com/rwestlund/paladin): Fixed multiple showstopper bugs, added SIGINFO support
 
 * [GNU Nano](https://nano-editor.org): Several improvements to syntax highlighting, including adding support for Haskell and Markdown
 
-* [Micro](https://micro-editor.github.io): Improvements to syntax highlighting, including adding Renpy support, and to comment plugin
+* [Micro](https://micro-editor.github.io): Several improvements to syntax highlighting, including adding Renpy support, and to comment plugin
 
 * GTK: [Fix missing GObject Introspection annotation](https://gitlab.gnome.org/GNOME/gtk/merge_requests/1012)
 
 * [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations causing some functions to be unusable](https://github.com/haskell-gi/haskell-gi/pull/263)
 
-* [OGS](https://online-go.com): found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
+* [Comrak](https://github.com/haskell-gi/haskell-gi): Added the option to escape HTML instead of clobbering
+
+* [quickbooks-go](https://github.com/rwestlund/quickbooks-go): Added some features and updated to use Go modules
+
+* [OGS](https://online-go.com): Found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
 
 ## Human Languages
 
