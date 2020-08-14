@@ -155,6 +155,11 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**August 14:**
+New:
+* [Snakes](misc/snakes).
+* [Why I don't believe in pure functional programming anymore](software/why_not_functional).
+
 **August 12:**
 I've posted my [review of Rust](software/rust).
 

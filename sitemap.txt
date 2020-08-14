@@ -147,6 +147,7 @@ https://yujiri.xyz/misc/masks
 https://yujiri.xyz/misc/names
 https://yujiri.xyz/misc/public_wisdom
 https://yujiri.xyz/misc/resume
+https://yujiri.xyz/misc/snakes
 https://yujiri.xyz/misc/structure
 https://yujiri.xyz/music/
 https://yujiri.xyz/music/a_new_hope_in_the_lands_of_snow.ogg
@@ -399,6 +400,7 @@ https://yujiri.xyz/software/unix_permissions
 https://yujiri.xyz/software/unix_src
 https://yujiri.xyz/software/unix_streams
 https://yujiri.xyz/software/website_guide
+https://yujiri.xyz/software/why_not_functional
 https://yujiri.xyz/software/why_program
 https://yujiri.xyz/software/why_root
 https://yujiri.xyz/software/why_unix
