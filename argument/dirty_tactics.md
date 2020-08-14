@@ -65,11 +65,11 @@ The defense can be made stronger with a technique I call **submissive interrupti
 
 * They don't let me interrupt after multiple tries, and speak for way longer than it should take to make a valid and complete point. This amplifies the power of the complaint when I call them out for filibustering, since I tried to speak and they repeatedly cut me off.
 
-## Linguistic cloaking
+## Linguistic obfuscation
 
 Using words with no clearly defined meaning to prevent the opponent from answering your argument, because they can't figure out exactly what it is.
 
-The differene between this and ideograph abuse is that the point of ideograph abuse is to manipulate your emotions while the point of this is to make it hard for them to answer your argument. The words used in linguistic cloaking often don't have a polarized connotation. For example, someone criticizing a work of fiction might say, "the ending is inconsistent with the tone of the story." But for that criticism to be anything other than an arbitrary, ad-hoc criterion, you need to have a clear idea of what a "tone" even is in this context (which I'm sure most people don't - I don't). If your opponent finds themselves unable to pin down what your argument is, they won't be able to respond effectively.
+The differene between this and ideograph abuse is that the point of ideograph abuse is to manipulate your emotions while the point of this is to make it hard for them to answer your argument. The words used in linguistic obfuscation often don't have a polarized connotation. For example, someone criticizing a work of fiction might say, "the ending is inconsistent with the tone of the story." But for that criticism to be anything other than an arbitrary, ad-hoc criterion, you need to have a clear idea of what a "tone" even is in this context (which I'm sure most people don't - I don't). If your opponent finds themselves unable to pin down what your argument is, they won't be able to respond effectively.
 
 You'd think it would be easy to just ask for a definition and instantly counter this technique. I've had great success countering it that way. But I see this get played on other people all the time on the internet and in real life and they seem to almost never challenge it. I think it's because most people don't have an ontology. Not having one makes it hard to identify this trick in time to stop its argumentative power, because you can't pinpoint what the concepts you believe in are either.
 
@@ -109,7 +109,7 @@ Another possible angle is, "of course I get to decide that. So do you". This can
 
 When a good person explicitly defines a word and then makes an argument using that definition, bad people will often have trouble countering it, so one thing they might resort to is to plug their own definition of the word into the good person's argument, show that the result is absurd, and then call the good person's argument invalid. (This has even been played on me by some good people.)
 
-I've never seen anyone actually lose an argument to this cheat. That might be because I can't remember seeing it played on anyone but me. Regardless, it can be an effective way to stall or frustrate the good person, especially if the bad person makes the resolution take a long time by at first just stating that the argument leads to the bogus conclusion without explaining what they did and leave the good person to figure it out through a chain of questions (which will likely be given dodgy answers laced with linguistic cloaking).
+I've never seen anyone actually lose an argument to this cheat. That might be because I can't remember seeing it played on anyone but me. Regardless, it can be an effective way to stall or frustrate the good person, especially if the bad person makes the resolution take a long time by at first just stating that the argument leads to the bogus conclusion without explaining what they did and leave the good person to figure it out through a chain of questions (which will likely be given dodgy answers laced with linguistic obfuscation).
 
 ## Relativist rhetoric
 

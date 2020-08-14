@@ -7,7 +7,7 @@ DESC Rust is a great language. From now on, I plan to use it as a go-to.
 
 I first heard of Rust long ago through stray searches. I was interested because it seemed like a competitor to [Go](https://yujiri.xyz/software/go), which was the most recent language I had learned for a job but that I had a low opinion of. My biggest gripe with Go was error handling. But when I read about Rust's error handling, I misunderstood what I was reading, causing me to think it was even *more* verbose than Go's, so I stopped investigating.
 
-I think that was before most of my search for a better language which led me through brief dips into several of them but mostly [Haskell](https://yujiri.xyz/software/haskell). So a long time passed - long enough for me to become fairly competent with Haskell.
+I think that was before most of my search for a better language, which led me through brief dips into several but mostly [Haskell](https://yujiri.xyz/software/haskell). So a long time passed - long enough for me to become fairly competent with Haskell.
 
 Then I heard about Rust again from a friend who held it in high esteem. I did a little more research and found out that it has sugar to cut down on error handling boilerplate. That combined with an ML-inspired type system made it sound to me like Go done right, so I was eagerly jumped in.
 
@@ -92,6 +92,8 @@ Also like Go, you get backtraces on panics (if you set environment var `RUST_BAC
 Rust's syntax is pretty verbose. Not just that it's a brace and semicolon language, but types take extra characters: function parameters need `param: Type`, whereas in most other static languages it's just `param Type` or `Type param`, and parameterized types need a pair of angle brackets: `Vec<u8>` is a vector of bytes, instead of `Vec u8` like it would be with Haskell syntax. This can get very ugly with nested types like `Box<Vec<Option<Thing>>>`.
 
 The syntax for namespacing is `::` instead of `.` (except struct fields which still use `.`). A downside of this besides being less ergonomic is that it's precedence is misleading when combined with `.`: `comments::table.load::<Comment>` looks like `comments :: table.load :: <Comment>`, because the `::` is more visual separation so intuitively it should bind less tightly, but it's actually `comments::table . load::<Comment>`.
+
+Rust is often littered with "glue" calls like `.to_string()` after string literals to turn them from type `&str` into `String` (the difference between those types is for good reason, but you'd think literals would be able to be interpreted as `String` when necessary, just like numeric literals are agnostic). Not having concise string concatenation also contributes to the verbosity, and you also need explicit `impl StructName {...}` around methods defined on a struct, and `impl TraitName for StructName {...}` for around trait implementations.
 
 ### No default values in function args
 
