@@ -93,7 +93,7 @@ Rust's syntax is pretty verbose. Not just that it's a brace and semicolon langua
 
 The syntax for namespacing is `::` instead of `.` (except struct fields which still use `.`). A downside of this besides being less ergonomic is that it's precedence is misleading when combined with `.`: `comments::table.load::<Comment>` looks like `comments :: table.load :: <Comment>`, because the `::` is more visual separation so intuitively it should bind less tightly, but it's actually `comments::table . load::<Comment>`.
 
-Rust is often littered with "glue" calls like `.to_string()` after string literals to turn them from type `&str` into `String` (the difference between those types is for good reason, but you'd think literals would be able to be interpreted as `String` when necessary, just like numeric literals are agnostic). Not having concise string concatenation also contributes to the verbosity, and you also need explicit `impl StructName {...}` around methods defined on a struct, and `impl TraitName for StructName {...}` for around trait implementations.
+Rust is often littered with "glue" calls like `.to_string()` after string literals to turn them from type `&str` into `String` (the difference between those types is for good reason, but you'd think literals would be able to be interpreted as `String` when necessary, just like numeric literals are agnostic). Not having concise string concatenation also contributes to the verbosity, along with needing explicit `impl StructName {...}` around methods defined on a struct, and `impl TraitName for StructName {...}` for around trait implementations.
 
 ### No default values in function args
 
@@ -118,11 +118,11 @@ Go has a much more streamlined syntax for it (you can just omit default fields) 
 
 ### Variable declarations
 
-Rust requires `let` on the first use of a variable. A second `let` shadows, which solves [the lexical coupling issues other explicit declaration languages have](https://yujiri.xyz/software/declarations). A `let mut` is required to make a mutable binding; immutability by default is important for the borrowing rules to be practical, and it also breeds a good awareness of where mutations can happen. Accidental mutation is involved in lots of bugs in other languages.
+Rust requires `let` on the first use of a variable. A second `let` shadows, which solves [the lexical coupling issues other explicit declaration languages have](https://yujiri.xyz/software/declarations). A `let mut` is required to make a mutable binding; immutability by default is important for the borrowing rules to be practical, and it also breeds a good awareness of where mutations can happen.
 
 ## Array operations
 
-The Vec type (which is the main sequence type) accomodates [most common sequence operations out of the box](https://doc.rust-lang.org/std/vec/struct.Vec.html): push, pop, membership test, insert at position, remove at position, sort, reverse, filter, map, comprehension, and a ton of relatively obscure ones. The only things missing are negative index, find item by predicate and count occurrences.
+The Vec type (which is the main sequence type) accomodates [most common sequence operations out of the box](https://doc.rust-lang.org/std/vec/struct.Vec.html): push, pop, membership test, insert at position, remove at position, sort, reverse, filter, map, comprehension, and a ton of relatively obscure ones. Pretty much the only thing missing is negative index.
 
 ## Concurrency
 

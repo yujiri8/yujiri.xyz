@@ -1,11 +1,13 @@
 TITLE Why I don't believe in pure functional programming anymore
 NAV Why I don't believe in pure functional programming anymore
 TEMPLATE DEFAULT
-DESC Even with all the elaborate abstractions, sttae would never be *easy*.
+DESC Even with all the elaborate abstractions, state would never be *easy*.
 
 My first contact with pure functional programming was [Haskell](https://yujiri.xyz/software/haskell). The idea sounded bizarre, but fascinating. I had faith that once I'd learned Haskell, I'd understand how to use things like monads to replace the uses of state and side effects.
 
 But that wasn't what happened. After reaching a medium level in Haskell, what I learned was that although the functionality of state and side effects could be replicated, it was only in the sense that everything can be replicated in assembly. Even with all the elaborate abstractions, state would never be *easy*. It was a huge weakness of functional programming that would plague almost any sizable project.
+
+<!-- Pure functional programming forces all causation to be explicit, and that's exactly its pitch, but implicit causation is useful. This is the reason [DBus]() and [Redux.js](https://redux.js.org) exist: centralized . -->
 
 And I'm not blaming the paradigm for the flaws of a language. Most of my gripes with Haskell aren't the fault of pure functional programming ([Idris](https://deque.blog/2017/06/14/10-things-idris-improved-over-haskell/) is a remake that solves most of them), but this one is: state becomes unreasonably difficult to represent. Not 'difficult' in the sense that it was still hard to figure out once I understood the concepts, but that it was a ton of work to make something impure. Making a function deep in the logic log or be affected by an environment variable required everything below it in the stack to be refactored. Using multiple monads together required monad transformers which meant comically convoluted type signatures (which you would alias) and a sprinkling of *glue* functions like `liftIO` and `runWriterT`.
 

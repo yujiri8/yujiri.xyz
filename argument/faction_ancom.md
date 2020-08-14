@@ -73,7 +73,7 @@ Whatever you think of this article overall, *don't* take what I say next as excu
 
 There are a few things that deserve pointing out in their defense:
 
-1. Few or none of them ever directly stanned violence against the protesters. But when the police actually assaulted and kidnapped protesters, the leftists were silent. Compare this to the libertarian right's reaction later in the year to BLM protesters being brutalized left and right (pun): "Haha lol communists getting what they asked for, good riddance cause everyone who says BLM loses all their rights in my eyes".
+1. Few or none of them ever directly stanned violence against the protesters. They claimed the protesters were risking others' lives, but when the police actually assaulted and kidnapped protesters, the leftists were silent rather than openly supportive. Compare this to the libertarian right's reaction later in the year to BLM protesters being brutalized left and right (pun): "Haha lol communists getting what they asked for, good riddance cause everyone who says BLM loses all their rights in my eyes".
 
 	I heard some of the better ones - Rechelon in particular - say that their demonization of the protesters was never to be understood as an endorsement of violence against them, but a form of peaceful social punishment. Of course they must have been in cognitive dissonance to say that when most of the protesters were specifically protesting *the violent enforcement* of COVID overreactions rather than the idea that staying at home was a good idea for most people, but it's at least a little redeeming.
 
@@ -81,6 +81,6 @@ There are a few things that deserve pointing out in their defense:
 
 3. When you err on the side of seeing capital and the state as more linked than they are, and COVID lockdowns mean not going to your job, it feels like liberation. This couldn't be completely separated from the axiological anti-capitalist arguments. If we were (entirely) slaves and COVID lockdowns meant we didn't have to work, we would've all seen them more favorably, even when they plunged us deeper into poverty.
 
-4. The violence against anti-lockdown protesters, as much as I hate to say it, wasn't normally that severe. People were brutally assaulted and kidnapped, but most weren't held for long and I don't clearly remember any stories of them being murdered by police.
+4. The violence against anti-lockdown protesters, as much as I hate to say it, was mostly not that severe. People were brutally assaulted and kidnapped, but most weren't held for long and I don't clearly remember any stories of them being murdered.
 
 Again, for all of this defending, I don't forgive them at all. No matter how good some of them are in every other way. I won't fully forgive anyone who demonized the anti-lockdown protesters until they admit they were wrong and apologize.
