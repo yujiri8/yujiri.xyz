@@ -155,6 +155,9 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**August 17:**
+New: [Specifications are contravariant](software/specs_are_contravariant).
+
 **August 14:**
 New:
 * [Snakes](misc/snakes).
