@@ -19,7 +19,7 @@ I had some bad experiences early on and thought about quitting, but someone told
 
 As of this writing, I have no major accomplishments in Haskell, but I've used it with GTK using [haskell-gi](https://github.com/haskell-gi/haskell-gi) (as well as helped out with the missing GObject Introspection annotation problem there), briefly collaborated on [a Snake game AI](https://github.com/megaweb33/haskell_snaketail_smarties_ryan), [dabbled in AST parsing](https://dev.to/yujiri8/a-haskell-ast-parser-and-formatter-4hp5), and I think I understand enough to use Haskell for something serious.
 
-So while I'm nowhere near Haskell mastery and don't know if I ever will be, I'm done holding off on giving my opinion of Haskell, even though it's incomplete and should be taken with a grain of salt.
+So while I'm nowhere near Haskell mastery (and probably never will be), I'm done holding off on giving my opinion of Haskell, even though it's not as informed as some of my other language opinions.
 
 ## Compiled AND interactive
 
@@ -181,8 +181,8 @@ I haven't done much with Haskell's concurrency, but it seems pretty solid. `fork
 
 ---
 
-So Haskell has soundly failed to replaced Python as my go-to. It definitely taught me a lot about type system theory and stuff. I still don't have a settled opinion on the whole enforced functional purity thing yet. I do think the idea of lazy evaluation is really cool in principle (especially the analogy to [metaphysics](/protagonism/metaphysics)), and referential transparency is cool. But it does make anything involving IO, state, or a shared global environment way more convoluted than it ever was, and as clever as the solutions are, I'm not certain if this whole radical approach is worth it.
+Haskell definitely taught me a lot about type system theory and language design. But there are a few reasons I won't be going farther with it.
 
-Since the last time I worked on Haskell, I've dabbled in OCaml, which showed me that a lot of Haskell's ideas can be kept without completely abandoning impurity. I'm not sure what I think of that - it felt so great to have looping back, but maybe it gives up most of the benefits too? (I also won't be learning OCaml because the package management / build system hell seems somehow even worse than Haskell's).
+The biggest one is that [I don't believe in pure functional programming anymore](https://yujiri.xyz/software/why_not_functional). I was still unsettled on it when I last touched Haskell; it was mostly [Rust](https://yujiri.xyz/software/rust) that convinced me, by showing that most of the benefits of functional programming can be had without outlawing side effects.
 
-But actually, the main reason I don't plan to continue learning Haskell is that I found out about [Idris](https://deque.blog/2017/06/14/10-things-idris-improved-over-haskell/). Idris seems like basically a remake of Haskell with design mistakes and historical artifacts fixed. I've heard it's not quite ready to compete yet, but I'm sure it will soon, and there's no way I'd choose Haskell over all the improvements listed in that pitch article. It also seems like the effort I put into learning Haskell will carry over with about 90% efficiency (I played with Idris a bit).
+The other reason is that I found out about [Idris](https://deque.blog/2017/06/14/10-things-idris-improved-over-haskell/). Idris seems like basically a remake of Haskell with design mistakes and historical artifacts fixed. If I ever do want to use a pure functional language, I'd go for Idris. It seems like the effort I put into learning Haskell would carry over with about 90% efficiency (I played with Idris a bit).
