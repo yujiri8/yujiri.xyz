@@ -3,12 +3,14 @@ NAV Forgot Password Considered Harmful
 TEMPLATE DEFAULT
 DESC The "forgot password" button on most websites is a gaping security hole. Please stop.
 
-Does it bother anyone else that your email provider can hack all of your online accounts at any time with zero effort? Incase you haven't considered it before, let me explain how this is true.
+The "forgot password" buttons on every web service mean that if someone gains access to your email account, they also get access to every other account you have.
 
-Virtually every web service has a "forgot password" feature, where if you forget your password the only information required to retrieve it is your email address and access to your email account. That means your email provider could send requests to all of those web services hitting the forgot password button with your address and since your email provider can necessarily read your emails they would instantly have control of all of your accounts.
+It also means that your email provider can hack all your other accounts at any time, since they already have access to your email.
 
-And of course not a single web service offers an account setting to encrypt this email... (Not even [Github](https://github.com), a website specifically for programmers and that *already allows you to set public keys on your account!*) That would make sense and allow people to actually protect their accounts.
+This is a horrendous violation of common sense. We're always advised to "use different passwords on everything", but how much does that matter if you have one account that invalidates all your other security mechanisms?
 
-Honestly the only reason to think your email provider doesn't already have all of your passwords is that doing this would reset it and they couldn't discover the original, so you'd at least find out next time you tried to log in. But not that it was them, only that someone had hacked you. It'd be indistinguishable from someone just cracking your email account.
+This wouldn't bother me so much if it was something we could choose not to do. But the problem is that *none of us have any choice*, because not a single web service offers a setting to either disable password reset or encrypt the emails. Not even [Github](https://github.com), a website specifically for programmers and that *already allows you to set public keys on your account!*
 
-If you're making a web service, this is why I regard you as a moron if you include a forgot password button without an account setting to either disable the button or provide a public key to encrypt the reset email with.
+I'm setting a good example with this website by letting users upload PGP keys to encrypt their password reset emails with. This is *basic* security practice. Having password reset without a feature like this should be seen as similar to storing passwords in plain text, but it isn't. Even the people who write great stuff about security go on to make web services that effectively accept your email password as an alternative to the one you set, and there's nothing you can do about it.
+
+This is a huge problem. Spread the word.
