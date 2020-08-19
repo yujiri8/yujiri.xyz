@@ -156,7 +156,7 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <summary>Recent update log</summary>
 
 **August 18:**
-New: [Stop writing C](software/stop_c).
+New: [Stop writing C](software/stop_c), and [The Unix world needs to get its shit together](software/unix_broken).
 
 **August 17:**
 New: [Specifications are contravariant](software/specs_are_contravariant).

@@ -397,6 +397,7 @@ https://yujiri.xyz/software/shell_basics
 https://yujiri.xyz/software/sqlite
 https://yujiri.xyz/software/tests
 https://yujiri.xyz/software/typing
+https://yujiri.xyz/software/unix_broken
 https://yujiri.xyz/software/unix_manual
 https://yujiri.xyz/software/unix_permissions
 https://yujiri.xyz/software/unix_src
