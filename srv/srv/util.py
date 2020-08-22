@@ -7,9 +7,11 @@ import os, pwd, html
 class HighlightRenderer(mistune.HTMLRenderer):
 	def block_code(self, code, lang = None):
 		if lang:
-			lexer = pygments.lexers.get_lexer_by_name(lang)
-			formatter = pygments.formatters.HtmlFormatter(linenos = False, cssclass="pygments")
-			return pygments.highlight(code, lexer, formatter)
+			try:
+				lexer = pygments.lexers.get_lexer_by_name(lang)
+				formatter = pygments.formatters.HtmlFormatter(linenos = False, cssclass="pygments")
+				return pygments.highlight(code, lexer, formatter)
+			except pygments.util.ClassNotFound: pass
 		return '<pre class="code">' + html.escape(code) + '</pre>'
 markdowner = mistune.create_markdown(renderer = HighlightRenderer(escape = True), plugins = ['strikethrough'])
 
