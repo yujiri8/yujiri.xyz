@@ -4,7 +4,7 @@ TEMPLATE DEFAULT
 
 This page kind of serves three purposes: part of my Unix tutorial track, a place to recommend stuff to more experienced Unixers, and a personal checklist for when I set up a new system. Not everything's aimed at all three.
 
-Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, which might be different on other systems. (And for the Unix beginers, most Linux distros probably have a lot of these preinstalled.) Except Python packages - I [recommend](https://dev.to/yujiri8/dreams-of-an-ideal-world-package-managers-1d7e) installing those from pip, so I'll use their pip names.
+For packages that I [recommend installing through langugae package managers instead of distribution ones](https://dev.to/yujiri8/dreams-of-an-ideal-world-package-managers-1d7e), I'll indicate it with a prefix.
 
 ## Basic terminal utilities
 
@@ -18,47 +18,39 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 ## Window manager and main graphical applications
 
-* [`xorg-server`](https://www.freedesktop.org/Software/xorg) - X (the graphical window system) doesn't come with FreeBSD, and this is the package for it.
+* [`sway`](https://swaywm.org) - A tiling window manager with no desktop and an incredibly productive way to use a computer. Great configuration and can reload the config without restarting. It's actually a remake of i3 for Wayland instead of X.
 
-* [`dwm`](https://dwm.suckless.org) - My window manager of choice. A tiling window manager with no desktop and a wonderful way to use a computer productively. The only possible criticism of it I could see is the configuration. It needs a custom config file to be good (albeit it only takes a few changes to the default, unlike [xmonad](https://xmonad.org)), and its config file has to be compiled in, which means you *have* to build it from source. (And you have to rebuild it every time you change the config.) On the bright side, it builds in like 1 second.
+	Unfortunately Sway [outright prevents running as root](safety_choice#root), so I had to modify the source to get a satisfactory version. Building was easy enough though.
 
-* [`conky`](https://github.com/brndnmtthws/conky) - a configurable tool to easily get system status information. Most useful as a statusbar for `dwm`.
+* [`alacritty`](https://github.com/alacritty/alacritty) - my currently preferred terminal emulator. Written in Rust. Actually leaves out tabbing, which is a pain depending on your window manager but I think Sway actually makes it unnecessary.
 
-* `xfce4-terminal` - my currently preferred terminal emulator.
+* [`conky`](https://github.com/brndnmtthws/conky) - a configurable tool to easily get system status information. Most useful as a statusbar for Sway or DWM.
 
-* [`firefox`](https://www.mozilla.com/firefox) - Firefox web browser.
-
-* [`chromium`](https://www.chromium.org/Home) - Chromium web browser (different from but related to Chrome).
+* [`dmenu`](https://tools.suckless.org/dmenu) - an easy launcher solution for simple, tiling window managers like DWM and Sway.
 
 ## Networking
 
-* [`httpie`](https://httpie.org), [`curl`](https://curl.haxx.se), [`wget`](https://www.gnu.org/s/wget/) - swiss army knives of HTTP (and some other protocols). `curl` and `wget` are both classics written in C; `wget` is GNU software and `curl` is MIT licensed. `httpie` is a much younger implemention in Python (also BSD-licensed) and is nicer in just about every way, but doesn't support everything the others do. I keep all three installed.
+* (pip) [`httpie`](https://httpie.org), [`curl`](https://curl.haxx.se), [`wget`](https://www.gnu.org/s/wget/) - swiss army knives of HTTP (and some other protocols). `curl` and `wget` are both classics written in C; `wget` is GNU software and `curl` is MIT licensed. `httpie` is a much younger implemention in Python (also BSD-licensed) and is nicer in just about every way, but doesn't support everything the others do. I keep all three installed.
 
-* [`youtube_dl`](https://yt-dl.org) - Download videos from Youtube and a few other sites. Yeah, apparently this isn't illegal...
+* (pip) [`youtube-dl`](https://yt-dl.org) - Download videos from Youtube and a few other sites. Yeah, apparently this isn't illegal...
 
 * [`nmap`](https://nmap.org) - "network mapper". `nmap` is a tool for network exploration and security auditing, widely known as a port scanner. The package also contains `ncat`, which is a more sophisticated version of `nc` that supports TLS!
 
 * [`tor`](https://torproject.org) - The Onion Router, a network anonymity tool. I recommend you read about this if you haven't heard of it.
 
-* [`vnstat`](https://humdi.net/vnstat/) - analyze network traffic statistics over long times.
-
-* [`scapy`](https://scapy.net) - Python library and interactive tool for sending and analyzing packets. *Horrible* documentation, but I think it is really powerful if you learn to use it.
-
-* [`wireshark`](https://wireshark.org)/`tshark` - Wireshark is a renowned packet analysis tool. It can't *send* custom packets like Scapy can as far as I know, but for receiving and analyzing them it's much easier to use without trawling through huge amounts of vague documentation and experimenting for hours. `tshark` is a terminal version of wireshark. For some horrible reason, you can't have both installed at once on FreeBSD, and I remember thinking Wireshark's interface was horrid.
-
-* [`siege`](https://www.joedog.org/siege-home/) - load testing tool (but HTTP/1.1 only).
-
-* [`nghttp2`](https://nghttp2.org) - gives `h2load`, an HTTP/2 load testing tool. I remember thinking it wasn't as nice though. (That's not all this package is; just all I know about it.)
+* [`wireshark`](https://wireshark.org) - a renowned packet analysis tool.
 
 * [`openvpn`](https://openvpn.net/index.php/open-source.html) - open source VPN server and client. I followed [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-and-connect-to-a-private-openvpn-server-on-freebsd-10-1) to set one up.
 
 ## Resources and monitoring
 
-* [`lsof`](https://people.freebsd.org/~abe) - list open files. This might be preinstalled on GNU/Linux. It's a little different from `fstat`; I'm not sure if either can do anything the other can't, but I find `lsof` convenient to have.
+* [`lsof`](https://people.freebsd.org/~abe) - list open files. It's a little different from `fstat`; I'm not sure if either can do anything the other can't, but I find `lsof` convenient to have.
 
 * [`htop`](https://hisham.hm/htop) - like `top`, but looks nicer (has color).
 
 * [`iftop`](http://www.ex-parrot.com/~pdw/iftop) - like `top`, but for network traffic.
+
+* [`vnstat`](https://humdi.net/vnstat/) - analyze network traffic statistics over long times.
 
 ## Misc CLI utilities
 
@@ -78,15 +70,13 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`jq`](https://stedolan.github.io/jq/) - I'm not sure what it stands for, but it pretty-prints and manipulates JSON data. "`sed` for JSON".
 
-* [`cloc`](https://github.com/AlDanial/cloc) - Count Lines Of Code. The advantages over `wc` are that it can count blank lines and comments separately from code lines, can automatically find just the source code files in a hierarchy, and it can separate them by language.
+* (cargo) [`tokei`](https://github.com/XAMPPRocky/tokei) - Count lines of code in a directory. Distinguishes blank lines and comments from code lines and categorizes by language. Lots of other handy functionality.
 
 * `rlwrap` - ever used a CLI application that really needed some goddamn line editing? Use the ReadLine Wrapper.
 
 ## Hardware and filesystems
 
 * [`dmidecode`](https://www.nongnu.org/dmidecode/) - massive amount of info on all hardware. I can't think of any commonly useful information I don't know how to get without this command, but `dmidecode` simplifies things.
-
-* [`cdrtools`](http://cdrtools.sourceforge.net/private/cdrecord.html) - burn CDs (and do other things with them I guess).
 
 * [`zfsnap`](https://www.zfsnap.org) - makes automatic ZFS snapshots slightly easier.
 
@@ -106,9 +96,7 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`rar`](https://rarlab.com), `unrar` - tools for `.rar` files. (They're separate packages on FreeBSD.)
 
-* [`xpdf`](https://www.xpdfreader.com) - dedicated PDF reader and manipulator.
-
-* [`geeqie`](http://geeqie.org) - image viewer. It's not like you need `geeqie` to view images, and I don't even like the program, but I find it useful for viewing all the image files in a directory in a single window.
+* [`eog`](https://wiki.gnome.org/Apps/EyeOfGnome) - "eye of GNOME" (image viewer). It's not like you need a program like this to view images, but I find it useful for viewing all the image files in a directory in a single window.
 
 * [`tesseract`](https://github.com/tesseract-ocr/tesseract) - [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) for Unix! FOSS, and works out of the box.
 
@@ -120,38 +108,8 @@ Since I'm a FreeBSD user, I'll be calling them by their FreeBSD package names, w
 
 * [`gimp`](https://www.gimp.org) - the GNU Image Manipulation Program. Again, I have plenty of gripes with it, mostly interface-related, but it's free and has been indispensible to me.
 
-* [`ImageMagick7`](https://imagemagick.org) - libraries and CLI tools for image manipulation.
-
-## X utilities
-
-* `xinit` - ships the `xinit` and `startx` commands, which make dealing with X much simpler.
-
-* [`xbindkeys`](https://www.nongnu.org/xbindkeys/xbindkeys.html) - set keybinds in the X environment. Incredibly useful. Don't live your life without it.
-
-* `xmodmap` - manipulate the keymap in X.
-
-* `xset` - X window system settings
-
-* `xsetroot` - set the title of the "root window" in X. `dwm` uses this to set statusbar text, making it even easier to plug `conky` into it.
-
-* [`xsel-conrad`](http://www.vergenet.net/~conrad/software/xsel/) - manipulate the X selection buffer (clipboard). (The command is `xsel`).
-
-* [`scrot`](https://github.com/resurrecting-open-source-projects/scrot) - CLI tool for SCReenshOTs.
-
-* `xmessage` - display a message in an X window. It's primitive and ugly, but sometimes this is the tool you need, for a script to get your attention or something.
-
-* [`dmenu`](https://tools.suckless.org/dmenu) - an easy launcher solution from the same people that make `dwm`. The `dmenu` command by itself takes a list of options from stdin and displays a menu on the top where you can select one via typing, arrow keys and tab completion, and returns the selected option on stdout. The `dmenu_run` script it comes with is used as a plugin for `dwm` to make it easier to launch stuff you don't have a hotkey for without opening a terminal to type the command.
-
-* `xev` - report X events. Enormously useful for debugging.
-
-* [`xdotool`](https://www.semicomplete.com/projects/xdotool/) - programmatically do key strokes, mouse clicks, and other X events.
-
-* `xlsclients` - list X client applications (applications running in X windows).
-
-* `xwininfo` - get info about an X window by clicking on it.
-
-* `xinput` - get information about X input devices.
+* [`ImageMagick`](https://imagemagick.org) - libraries and CLI tools for image manipulation.
 
 ## Other
 
-* `linux-base-c7` - files needed for Linux compatibility. Also load kernel modules `linux`, `linux64`, and `linux_common`.
+* To get Linux compatibilty on FreeBSD, install `linux-base-c7` and load kernel modules `linux`, `linux64`, and `linux_common`.

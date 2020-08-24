@@ -16,7 +16,7 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 * **Proficient in**: Python, Go, Javascript, Unix shell, HTML and CSS, Regular expressions
 
-* **Moderate ability in**: Haskell, Julia, C, Rust, SQL
+* **Moderate ability in**: Crystal, Rust, Haskell, Julia, C, SQL
 
 ## Technologies and Frameworks
 
