@@ -155,6 +155,9 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**August 30:**
+New: [The Facts Don't Matter](argument/facts).
+
 **August 18:**
 New: [Stop writing C](software/stop_c), and [The Unix world needs to get its shit together](software/unix_broken).
 
