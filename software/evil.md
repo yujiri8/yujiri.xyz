@@ -5,7 +5,7 @@ DESC Some software is just making the world a worse place by its mere existence.
 
 ## "Document" formats
 
-Compared to HTML files, document formats have basically no advantages. The biggest disadvantage is that you need specific applications to read them. You can't open a PDF in a text editor; you need a "PDF viewer". And while most browsers can render PDFs natively, *they shouldn't have to*, because HTML exists. That browsers have to [implement PDF support](https://github.com/mozilla/pdf.js) <span class="note">Notice the commit count on that repository. How many thousands of hours do you think were put into it? I cloned it and [counted the source lines](https://github.com/AlDanial/cloc) at well over 100k.</span> as well as HTML [adds to the complexity and bugginess](features) of browsers (as well as the difficulty of new browsers [entering the market](/protagonism/market)).
+Compared to HTML files, document formats have basically no advantages. The biggest disadvantage is that you need specific applications to read them. You can't open a PDF in a text editor; you need a "PDF viewer". And while most browsers can render PDFs natively, *they shouldn't have to*, because HTML exists. That browsers have to [implement PDF support](https://github.com/mozilla/pdf.js) <span class="note">It's over 100k lines of code. How many thousands of hours do you think were put into it?</span> as well as HTML [adds to the complexity and bugginess](features) of browsers (as well as the difficulty of new browsers [entering the market](/protagonism/market)).
 
 Making matters worse, document formats besides PDF have compatibility issues. Unix operating systems don't usually come with viewers for them preinstalled. [PDFs are not the worst](https://www.xpdfreader.com) but stuff like .xlsx or .ppt tends to require installing something absurdly heavyweight like [libreoffice](https://www.libreoffice.org).
 
@@ -13,24 +13,21 @@ Honestly, half of the time I see PDFs used on the web, there's no real reason it
 
 ## "Smart" quotes and unicode dashes
 
-While almost everything supports UTF-8 these days, it's still not everything, and even if it were, why would you want to use a character that can't be directly typed on your keyboard? Both are unnecessary, a chore to type, and risk compatibility issues (in fact smart quotes have been the cause of a failure in an enterprise app I develop).
+While almost everything supports UTF-8 these days, it's not everything, and even if it were, why would you want to use a character that can't be directly typed on your keyboard? They're unnecessary, a chore to type, and risk incompatibility. Smart quotes have even been the cause of a failure in an enterprise app I develop.
 
 ## XML, in any application other than HTML and SVG
 
-The only reason I qualify it that way is because instituting an alternative to HTML would be an incredibly massive undertaking; even just to coexist alongside it we would have to get support implemented in all the browsers and everything. The idea of SVG (vector graphics in a human-readable format!) is glorious honestly; my only gripe with it is that it's implemented in XML. I dream of standardizing a non-XML version of SVG, but for the time being, I consider SVG one of the few justifiable uses of XML.
+The only reason I qualify it that way is because instituting an alternative to HTML is completely unfeasable for the foreseeable future; even just to coexist it would have to get support in all major browsers. The idea of SVG (vector graphics in a human-readable format!) is glorious honestly; my only gripe with it is that it's implemented in XML. I dream of standardizing a non-XML version of SVG, but without that, I consider SVG one of the few justifiable uses of XML.
 
-JSON should replace XML in the vast majority of uses. For web applications, JSON's inherent affinity with Javascript is an enormous plus, and support for it is also in the stdlib of most other languages.
-<!--QB, Google apis-->
+JSON should replace XML in most cases. For web applications, JSON's inherent affinity with Javascript is essential, and support for it is also in the stdlib of most other languages.
 
-(Also, I know that HTML isn't technically XML, but it is deeply influenced by it.)
+(Also, I know that HTML isn't technically XML, but pretty much all the same things apply to it.)
 
 Flaws of XML:
 
 * The central attribute/child dichotomy is very inelegant, rarely if ever a useful distinction.
 
 * Tag names are always written twice, lowering productivity and increasing typo rate when handwritten and increasing data size.
-
-* No type information is conveyed. This is a rather terrible trait for data applications.
 
 * Five unique escape sequences that must be memorized instead of using the versatile backslash like everything else in the universe.
 
@@ -46,7 +43,7 @@ I didn't want to make a big judgement off hearsay from the critics alone, so I m
 
 > I do accept that PHP lacks some features that other languages have but that doesn't mean PHP is a bad language. PHP lets you write your code in the way you want which can be an advantage or a disadvantage according to one's knowledge of software architecture. The other reason that I use PHP is the reason that deploying it is very easy thanks to many hostings supporting PHP.
 
-The reason I find this so cringey is that when someone interprets any criticism (I linked the Eevee article), even criticism mostly about confusingness, as "it lacks features", it tells me that they have [a *very* bad way of thinking about how software should be designed](features).
+When someone interprets any criticism (I linked the Eevee article), even criticism mostly about confusingness, as "it lacks features", it tells me that they have [a very bad way of thinking about software](features).
 
 The one relevant point I've heard raised is that it apparently [has optional static type hints](https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration). That's a massive plus over something like Python, but nowhere near the babel tower of flaws it seems to have.
 

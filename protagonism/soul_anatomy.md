@@ -1,4 +1,4 @@
-TITLE Protagonism: The Anatomy of Souls
+TITLE The Anatomy of Souls
 NAV Anatomy of Souls
 TEMPLATE DEFAULT
 
