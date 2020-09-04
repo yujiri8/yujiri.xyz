@@ -100,6 +100,8 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [OGS](https://online-go.com): Found and reported HTML vulnerability: user-controlled links with `target="_blank"` but not `rel="noopener"`
 
+* [Markd](https://github.com/icyleaf/markd): [Found and reported high-severity HTML injection](https://github.com/icyleaf/markd/pull/32/commits/7c5e53252ee20ef9e7d6f7907ef0a969bb7cafb4)
+
 ## Human Languages
 
 * Spanish - conversational
