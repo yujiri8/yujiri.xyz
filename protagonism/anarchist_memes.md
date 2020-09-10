@@ -15,7 +15,7 @@ img {
 }
 </style>
 
-Some time ago I made a whole bunch of Anarchist memes, but I kind of forgot about them cause I never found a place that seemed like the right place to dump them all. Some of them are just variations onan idea with different templates. If you like, please share them somewhere!
+Some time ago I made a whole bunch of Anarchist memes, but I kind of forgot about them cause I never found a place that seemed like the right place to dump them all. Some of them are just variations on an idea with different templates. If you like, please share them somewhere!
 
 <img loading="lazy" src="memes/democracy.jpg" alt="memes/democracy.jpg">
 

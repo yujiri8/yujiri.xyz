@@ -19,4 +19,4 @@ The arguments weren't about ideology at all, everyone just had different informa
 
 No one didn't have an opinion. You couldn't get away from it; the whole internet was drooling ideologues who can't understand that someone else might just have different information. If you said anything about it, you were the enemy team and were pure evil to the half of the country who disagreed.
 
-And it wasn't just the usual Republican/Democrat drones making this mistake. I saw libertarians at each others' throats over it. *That* is why writing this article was orders of magnitude more productive than it is for anyone not connected to the events to become informed.
+And it wasn't just the usual Republican/Democrat drones making this mistake. I saw libertarians at each other's throats over it. *That* is why writing this article was orders of magnitude more productive than it is for anyone not connected to the events to become informed.

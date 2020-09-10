@@ -9,7 +9,7 @@ I first heard of Rust long ago through stray searches. I was interested because 
 
 I think that was before most of my search for a better language, which led me through brief dips into several but mostly [Haskell](https://yujiri.xyz/software/haskell). So a long time passed - long enough for me to become fairly competent with Haskell.
 
-Then I heard about Rust again from a friend who held it in high esteem. I did a little more research and found out that it has sugar to cut down on error handling boilerplate. That combined with an ML-inspired type system made it sound to me like Go done right, so I was eagerly jumped in.
+Then I heard about Rust again from a friend who held it in high esteem. I did a little more research and found out that it has sugar to cut down on error handling boilerplate. That combined with an ML-inspired type system made it sound to me like Go done right, so I eagerly jumped in.
 
 ## Ownership
 

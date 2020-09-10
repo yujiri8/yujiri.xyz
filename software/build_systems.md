@@ -44,5 +44,3 @@ The built-in `Str` module apparently requires explicit linking. If you're using 
 ---
 
 This is madness. We shouldn't need this much complexity just to write some code. Compilers should just work.
-
-PS: If you're going to tell me my demands are unreasonable, include an explanation of why other languages can't do what Go does.
