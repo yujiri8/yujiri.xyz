@@ -368,6 +368,7 @@ https://yujiri.xyz/software/nginx
 https://yujiri.xyz/software/nil_comparison
 https://yujiri.xyz/software/objectivism
 https://yujiri.xyz/software/oop
+https://yujiri.xyz/software/oses
 https://yujiri.xyz/software/overempowering_js
 https://yujiri.xyz/software/password_restrictions
 https://yujiri.xyz/software/privacy_overrated
