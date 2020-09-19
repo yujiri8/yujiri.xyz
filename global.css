@@ -36,7 +36,7 @@ a:visited {
 
 /* body and general */
 body {
-	font-family: sans-serif;
+	font-family: system-ui, sans-serif;
 	margin: 0; /* Remove UA edge spacing */
 	padding-bottom: 3em;
 	background-color: var(--bgcolor);
