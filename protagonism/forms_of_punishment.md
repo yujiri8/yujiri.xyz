@@ -17,7 +17,7 @@ Many different forms of punishment have been invented and used throughout human 
 
 <div class="indent">
 
-From a theorical perspective, this is an excellent method (for a reason discussed in the article on imprisonment). Another upside is that it's a feasible option in a lot of situations where these other methods aren't. Pain can be used in almost any situation where the criminal is someone you have non-digital social circle intersection with. The drawback is  that it's strictly negative-sum; it *only* punishes instead of extracting restitution. For that reason, it's generally preferable to use forced labor (see below) if possible.
+Has no moral purity issues, but unfortunately it's strictly negative-sum; it *only* punishes instead of extracting restitution. For that reason, it's generally preferable to use forced labor (see below) if possible.
 
 </div>
 

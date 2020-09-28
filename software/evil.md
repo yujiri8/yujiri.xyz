@@ -45,6 +45,6 @@ I didn't want to make a big judgement off hearsay from the critics alone, so I m
 
 When someone interprets any criticism (I linked the Eevee article), even criticism mostly about confusingness, as "it lacks features", it tells me that they have [a very bad way of thinking about software](features).
 
-The one relevant point I've heard raised is that it apparently [has optional static type hints](https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration). That's a massive plus over something like Python, but nowhere near the babel tower of flaws it seems to have.
+The one relevant point I've heard raised is that it apparently [has optional call-time type hints](https://www.php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration). That's something, but seems to be the only meaningful comparison where PHP doesn't have the losing side versus any other dynamic language.
 
 So that's why despite not knowing PHP, I'm reasonably confident saying it's awful and we should abandon it.

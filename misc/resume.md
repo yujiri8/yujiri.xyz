@@ -102,6 +102,10 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [Markd](https://github.com/icyleaf/markd): [Found and reported high-severity HTML injection](https://github.com/icyleaf/markd/pull/32/commits/7c5e53252ee20ef9e7d6f7907ef0a969bb7cafb4)
 
+<!-- * [Granite ORM](https://github.com/amberframework/granite/): Improved migrator, updated docs -->
+
+<!-- * [Yggdrasil](https://yggdrasil-network.github.io): Packaged for FreeBSD -->
+
 ## Human Languages
 
 * Spanish - conversational

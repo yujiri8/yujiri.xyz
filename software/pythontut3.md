@@ -56,6 +56,9 @@ Negative indices start from the end. Note that this means *they are not subject 
 
 </div>
 
+## `len`
+
+
 If you try to access an element that doesn't exist, such as `'blah'[10]`, you'll get an error. This is a good time to introduce the handy `len` function that can help you avoid this:
 ```python
 >>> len("hi")
@@ -206,14 +209,16 @@ Tuples are a more general sequence data type. They store an arbitrary list of ar
 (6, 1, 4)
 >>> nums[0]
 6
->>> for num in nums: print(num)
+>>> for num in nums:
+...  print(num)
 6
 1
 4
 >>> greetings = ("Hi", "Hello", "Good day", "Salutations")
 >>> greetings[2]
 "Good day"
->>> for greeting in greetings: print(greeting)
+>>> for greeting in greetings:
+...  print(greeting)
 Hi
 Hello
 Good Day
