@@ -151,7 +151,7 @@ table, th, td {
 	text-align: center;
 }
 tbody.checkered tr:nth-child(odd) {
-	background-color: #222222;
+	background-color: var(--codecolor);
 }
 
 /* section links */
@@ -188,26 +188,26 @@ h1 {
 	margin-block-end: 0.67em;
 }
 
-.pygments  { background: #232629; color: #fff }
-.pygments .c, .pygments .c1, .pygments .cm { color: #aaa; font-style: italic } /* comments */
-.pygments .ch { color: #aaa; font-style: italic } /* shebang */
-.pygments .cp, .pygments .cpf { color: #777; font-style: italic } /* preprocessor */
-.pygments .cs { color: #777; font-style: italic } /* special comment */
-.pygments .gp { color: #fff } /* 'generic prompt' */
-.pygments .k, .pygments .kr { color: #99f; font-weight: bold } /* keywords */
-.pygments .kd { color: #ff0 } /* declaration */
-.pygments .kc { color: #0f0 } /* constant */
-.pygments .kn { color: #99f; font-weight: bold } /* 'namespace' (`package` and `import` in Go) */
-.pygments .kp { color: #7686bb; font-weight: bold } /* pseudo */
-.pygments .kt { color: #f7f } /* type */
-.pygments .w { color: #bbbbbb } /* 'whitespace' */
-.pygments .p, .pygments .o { color: #fb2 } /* punct and ops */
-.pygments.m, .pygments .mi, .pygments .mb, .pygments .mo, .pygments .mh, .pygments .mf, .pygments.il { color: #4FB8CC } /* numbers */
-.pygments .s, .pygments .sa, .pygments .sb, .pygments .sc, .pygments .sd, .pygments .sh, .pygments .sx, .pygments .sr, .pygments .ss, .pygments .s1, .pygments .s2, .pygments.dl { color: #5c9 } /* strings */
-.pygments .se { color: #5c9 } /* escape */
-.pygments .si { color: #5c9 } /* interpolation */
-.pygments .vc { color: #7AB4DB; font-weight: bold } /* vars */
-.pygments .vg { color: #BE646C; font-weight: bold }
-.pygments .vi { color: #7AB4DB; font-weight: bold }
-.pygments .vm { color: #7AB4DB; font-weight: bold }
-.pygments .err { color: #a61717; background-color: #e3d2d2 }
+:root[data-theme="dark"] .pygments  { background: #232629; color: #fff }
+:root[data-theme="dark"] .pygments .c, :root[data-theme="dark"] .pygments .c1, :root[data-theme="dark"] .pygments .cm { color: #aaa; font-style: italic } /* comments */
+:root[data-theme="dark"] .pygments .ch { color: #aaa; font-style: italic } /* shebang */
+:root[data-theme="dark"] .pygments .cp, :root[data-theme="dark"] .pygments .cpf { color: #777; font-style: italic } /* preprocessor */
+:root[data-theme="dark"] .pygments .cs { color: #777; font-style: italic } /* special comment */
+:root[data-theme="dark"] .pygments .gp { color: #fff } /* 'generic prompt' */
+:root[data-theme="dark"] .pygments .k, :root[data-theme="dark"] .pygments .kr { color: #99f; font-weight: bold } /* keywords */
+:root[data-theme="dark"] .pygments .kd { color: #ff0 } /* declaration */
+:root[data-theme="dark"] .pygments .kc { color: #0f0 } /* constant */
+:root[data-theme="dark"] .pygments .kn { color: #99f; font-weight: bold } /* 'namespace' (`package` and `import` in Go) */
+:root[data-theme="dark"] .pygments .kp { color: #7686bb; font-weight: bold } /* pseudo */
+:root[data-theme="dark"] .pygments .kt { color: #f7f } /* type */
+:root[data-theme="dark"] .pygments .w { color: #bbbbbb } /* 'whitespace' */
+:root[data-theme="dark"] .pygments .p, :root[data-theme="dark"] .pygments .o { color: #fb2 } /* punct and ops */
+:root[data-theme="dark"] .pygments.m, :root[data-theme="dark"] .pygments .mi, :root[data-theme="dark"] .pygments .mb, :root[data-theme="dark"] .pygments .mo, :root[data-theme="dark"] .pygments .mh, :root[data-theme="dark"] .pygments .mf, :root[data-theme="dark"] .pygments.il { color: #4FB8CC } /* numbers */
+:root[data-theme="dark"] .pygments .s, :root[data-theme="dark"] .pygments .sa, :root[data-theme="dark"] .pygments .sb, :root[data-theme="dark"] .pygments .sc, :root[data-theme="dark"] .pygments .sd, :root[data-theme="dark"] .pygments .sh, :root[data-theme="dark"] .pygments .sx, :root[data-theme="dark"] .pygments .sr, :root[data-theme="dark"] .pygments .ss, :root[data-theme="dark"] .pygments .s1, :root[data-theme="dark"] .pygments .s2, :root[data-theme="dark"] .pygments.dl { color: #5c9 } /* strings */
+:root[data-theme="dark"] .pygments .se { color: #5c9 } /* escape */
+:root[data-theme="dark"] .pygments .si { color: #5c9 } /* interpolation */
+:root[data-theme="dark"] .pygments .vc { color: #7AB4DB; font-weight: bold } /* vars */
+:root[data-theme="dark"] .pygments .vg { color: #BE646C; font-weight: bold }
+:root[data-theme="dark"] .pygments .vi { color: #7AB4DB; font-weight: bold }
+:root[data-theme="dark"] .pygments .vm { color: #7AB4DB; font-weight: bold }
+:root[data-theme="dark"] .pygments .err { color: #a61717; background-color: #e3d2d2 }
