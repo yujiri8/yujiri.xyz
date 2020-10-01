@@ -28,3 +28,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [Confessions of a keyboard warrior](keyboard_warrior)
 
 [Snakes](snakes)
+
+[Self-aware sin](sin)

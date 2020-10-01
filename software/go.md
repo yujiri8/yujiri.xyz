@@ -19,7 +19,7 @@ So here's what I think of the language now.
 
 ## Modes of use
 
-Go compiles to native code with static linking by default, which [I like](https://yujiri.xyz/software/go). It also supports dynamic linking and compiling to shared libraries that can be used by other languages. So as far as modes of use I'd definitely prefer to use Go over a dynamic language. As great as REPLs are, I'd rather miss one than have all programs always tied to the interpreter and all the dependencies *and* lose performance.
+Go compiles to native code with dependencies statically linked by default, which [I like](https://yujiri.xyz/software/go). It also supports dynamic linking and compiling to shared libraries that can be used by other languages. So as far as modes of use Go, I'm a big fan. As great as REPLs are, I'd rather miss one than have all the downsides of an interpreted language.
 
 ## Error handling
 

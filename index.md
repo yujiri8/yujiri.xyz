@@ -155,8 +155,11 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**October 1:**
+New: [Self-aware sin](misc/sin).
+
 **September 31:**
-New [Crystal review](software/crystal).
+New: [Crystal review](software/crystal).
 
 **September 18:**
 New: [Notes on operating systems I've tried](software/oses).
