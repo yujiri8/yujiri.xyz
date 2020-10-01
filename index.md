@@ -155,6 +155,9 @@ I also have a presence on [Twitter](https://twitter.com/Yujiri3), [dev.to](https
 <details open>
 <summary>Recent update log</summary>
 
+**September 31:**
+New [Crystal review](software/crystal).
+
 **September 18:**
 New: [Notes on operating systems I've tried](software/oses).
 
