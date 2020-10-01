@@ -5,7 +5,7 @@ DESC Different pieces of software that fill the same role just mean more work. W
 
 I've been a lover of FOSS ideals for years, dating back to when my brother first introduced me to Linux as a teenager, with Ubuntu. Ever since then I've believed that computing is for everyone, and I felt a belonging to the Unix world as a Catholic does to their church community.
 
-But part of me is starting to wonder if the Unix world is the the greatest waste of human effort I've ever seen. Not as opposed to Windows and Mac - I think [the benefits of Unix-like operating systems over those](why_unix) are absolutely massive - but internally. When I look at [the hundreds of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions) and think of the maintainers, I wonder just how much of their time is spent solving problems that someone else already solved. And on a mostly-compatible operating system, too.
+But part of me is starting to wonder if the Unix world is the greatest waste of human effort I've ever seen. Not as opposed to Windows and Mac - I think [the benefits of Unix-like operating systems over those](why_unix) are absolutely massive - but internally. When I look at [the hundreds of Linux distributions](https://en.wikipedia.org/wiki/List_of_Linux_distributions) and think of the maintainers, I wonder just how much of their time is spent solving problems that someone else already solved. And on a mostly-compatible operating system, too.
 
 And the package managers. When a package gets an update, every repository's maintainer has to make their own changes to make the new version available on their operating system.
 
