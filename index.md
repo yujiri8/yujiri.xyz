@@ -21,19 +21,23 @@ recent-comments {
 
 I'm a programmer, writer, and philosopher of all things. I post all kinds of stuff here:
 
-[Prismata content](prismata/) - I used to play this game devoutly, and wrote a lot of beginner guides and stuff.
+[Didact](didact) - an anti-CMS that does the busywork without taking away your flexibility
+
+[Sanemark](sanemark) - a saner dialect of Markdown
 
 [Spem, the philosopher's conlang.](spem/)
-
-[Software content](software/) - Unix and Python tutorials, reviews, programming philosophy and rants. Not actual software I've written.
 
 [Protagonism](protagonism/), my "religion" if you could call it that.
 
 [Argument](argument/) - insights on debating and the psychology of argument, arguments and rebuttal I've made, debunkings of random bad but popular ideas.
 
+[Software content](software/) - Unix and Python tutorials, reviews, programming philosophy and rants. Not actual software I've written.
+
+[Prismata content](prismata/) - I used to play this game devoutly, and wrote a lot of beginner guides and stuff.
+
 [Music](music/) - I used to make some, although I don't anymore.
 
-[Game design](game_design/) - many people think that different people enjoy different things and so all judgements of games are nothing more than personal preferences, but I don't subscribe to that nihilism.
+[Game design philosophy](game_design/) - many people think that different people enjoy different things and so all judgements of games are just than personal preferences, but I don't subscribe to that nihilism.
 
 [Storytelling philosophy](fiction/)
 

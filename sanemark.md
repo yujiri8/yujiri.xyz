@@ -3,7 +3,7 @@ NAV Sanemark
 TEMPLATE DEFAULT
 DESC A simpler, saner Markdown.
 
-Sanemark is a variant of [Markdown](https://daringfireball.net/projects/markdown) that's much simpler and saner than [the Commonmark spec](https://spec.commonmark.org).
+Sanemark is a variant of [Markdown](https://daringfireball.net/projects/markdown) that's much saner than the original, let alone [the Commonmark spec](https://spec.commonmark.org), while still being fully specified.
 
 ## What's wrong with Commonmark?
 
@@ -11,11 +11,11 @@ In a word:
 
 <div style="text-align:center; font-size:4em; margin-top:50vh;margin-bottom:50vh">BLOAT</div> 
 
-The spec would fill an entire book. Who has time to read such a gargantuan list of obscure technicalities? Even if you did, would you remember any of it? Would you implement all of it without bugs? How many thousands of lines would it take? Do you want to maintain that many thousands of lines?
+The commonmark spec is a small book. Who has time to read such a gargantuan list of obscure technicalities? Even if you did, would you remember any of it? Would you implement all of it without bugs? How many thousands of lines would it take? Do you want to maintain that many thousands of lines?
 
 And I'm not complaining about a problem I don't know how to solve. There are several pointless [contravariant features](/software/specs_are_contravariant) in Markdown and several more that are Commonmark-specific (hereafter I won't really distinguish between Commonmark and original Markdown):
 
-1. The handling of HTML entities and URL escapes is overcomplicated as hell. It's a markdown processor, it don't need to know about any of this. Just escape HTML and call it a day.
+1. The handling of HTML entities and URL escapes is perverse and complicated as hell. It's a markdown processor, it don't need to know about any of this. Just escape HTML and call it a day.
 
 2. The rules for HTML blocks are overcomplicated as hell. The spec defines 7 different kinds of them, including support for obscure bullshit that should never have been invented like `<?php` and `CDATA`, and *a fucking hardcoded list of all block-level HTML tags*. Nevermind future-proofing, I guess [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) can go fuck themselves?
 
@@ -27,7 +27,7 @@ And I'm not complaining about a problem I don't know how to solve. There are sev
 
 4. Who the hell needs the double-space-at-end-of-line syntax when you have backslashes? Was this invented at the Department of Redundany Department?
 
-5. A dedicated syntax for autolinks? Just autolink when the anchor text is empty. Duh.
+5. A dedicated syntax for autolinks? Just use the URL as the anchor text when the anchor text is empty. Duh.
 
 6. The grammar for link destinations and titles is some crazy batshit. Whitespace is trimmed on both sides, there are three different title enclosers you can choose from, and destinations can be wrapped in `<>` which is stripped *or* not be wrapped in it but not be allowed to contain spaces, even if they're backslashed, and titles can contain newlines but not blank lines?
 
@@ -37,7 +37,7 @@ And I'm not complaining about a problem I don't know how to solve. There are sev
 
 ## What's Sanemark gonna do about it?
 
-Be a better spec that actually makes sense and is worth using.
+Be a better spec that actually makes sense and is worth implementing.
 
 Not all details are hammered out yet. The spec will be finalized after some feedback and pondering. See [Open questions](#open-questions-todo).
 
