@@ -27,7 +27,7 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 
 [Spem, the philosopher's conlang.](spem/)
 
-[Protagonism](protagonism/), my "religion" if you could call it that.
+[Protagonism](protagonism/) - my "religion" if you could call it that.
 
 [Argument](argument/) - insights on debating and the psychology of argument, arguments and rebuttal I've made, debunkings of random bad but popular ideas.
 
