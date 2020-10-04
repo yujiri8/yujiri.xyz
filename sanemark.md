@@ -49,8 +49,6 @@ Sanemark is well under half the lines of code as [Markd](https://github.com/icyl
 
 * Reconsider how indentation under a list item works. Matching the number of spaces is a bad solution because of non-monospace fonts, but I'm not quite sure of a better one. Maybe now that I don't have indented code blocks or lazy continuations, I should remove the requirement that block elements have to be unindented to be interpreted?
 
-* Should non-Unix line endings be supported? It adds complexity, and it's not like saying no would stop it from working on Windows and Mac because I'm sure any serious editor has the option to use Unix line endings. Support for other line endings is a huge pain to test.
-
 * Look into making inline context not strip leading and trailing spaces (and a line with spaces not count as blank?).
 
 * I've already removed a lot of the pointless alternative symbols for list markers and thematic breaks, leaving only dashes and asterisks. Should I go further and leave only one for each? I would like to, but worry that people actually use both intuitively.
@@ -60,8 +58,6 @@ Sanemark is well under half the lines of code as [Markd](https://github.com/icyl
 *As Sanemark started as a fork of Markd, the below spec is copied from that repo's `spec.txt` at the time. Some parts of it may still describe Commonmark and not Sanemark; this will be fixed in the future.*
 
 In the examples, the `→` character is used to represent tabs and a `.` on a line by itself in an example separates input from output. I will get around to formatting this nicer when I've arrived at something close to a 1.0.
-
-In the examples, the `→` character is used to represent tabs.
 
 ## Tabs
 
