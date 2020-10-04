@@ -91,7 +91,7 @@ I'm also not a fan of the `unless` keyword. `unless` is an alias for `if !(...)`
 
 A deeper issue I have is that function calls don't need parentheses (just `func arg1, arg2`), which means *there is no way to reference a function without calling it*. You can work around it by defining a proc that calls the function, but that feels so inelegant. It also makes it unclear while reading whether something is a function or just a variable.
 
-I do want to say that I really like that `continue` is called `next`. It's an *way* clearer name. I don't know what idiot decided to call that `continue`, but it's nice to see someone breaking from the tradition.
+I do want to say that I really like that `continue` is called `next`. It's a *way* clearer name. I don't know what idiot decided to call that `continue`, but it's nice to see someone breaking from the tradition.
 
 ## Semantics
 

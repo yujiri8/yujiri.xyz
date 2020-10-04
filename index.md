@@ -47,7 +47,7 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 
 [Miscellany](misc/) - Personal ramblings, stories, and secure contact info.
 
-I post programming stuff that's not appropriate for this site on [dev.to](https://dev.to/yujiri8), and DDLC content and a few random Python tutrial videos on [Youtube](https://www.youtube.com/channel/UCmTi4rq5oOp2S9UER0BH3sQ).
+I post programming stuff that's not appropriate for this site on [dev.to](https://dev.to/yujiri8), and DDLC content and a few random Python tutorial videos on [Youtube](https://www.youtube.com/channel/UCmTi4rq5oOp2S9UER0BH3sQ).
 
 </div>
 

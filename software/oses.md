@@ -52,7 +52,7 @@ Init system: systemd
 
 Tried: 2020 summer
 
-* Good package manager. Colored output and ability to get more detailed info on uninstalled packages than other package mangers allow.
+* Good package manager. Colored output and ability to get more detailed info on uninstalled packages than other package managers allow.
 
 ### <span class="bad">Arch</span>
 

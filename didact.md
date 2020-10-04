@@ -18,4 +18,4 @@ So [here](https://github.com/yujiri8/didact) it is. Didact is the anti-CMS where
 
 Because that's my use case, and the type of site it's geared toward in general. Most personal websites are blogs - a term that, at least to me, implies a chronological rather than hierarchical structure and a lack of editing past content. My site is different: it was never meant to be a timeline of my thoughts, but a living database of everything I have to say that's worth saying immortally. So I went with a hierarchical, category-based structure and constantly update old articles when my beliefs change or just to improve their presentation. I even delete my articles without hesitation if I decide I was wrong about the main idea they expressed, or even just that they weren't very profound.
 
-Most of my content is philosphical too. I love being a didact and want to promote this kind of site.
+Most of my content is philosophical too. I love being a didact and want to promote this kind of site.

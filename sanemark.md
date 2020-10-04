@@ -25,7 +25,7 @@ And I'm not complaining about a problem I don't know how to solve. There are sev
 
 3. Setext headings are worthless. Not only do they do nothing ATX headings can't, not only are they more verbose, not only do they present the ambiguity of how many markers you should use, but *they're less powerful than ATX headings* because they only support two levels.
 
-4. Who the hell needs the double-space-at-end-of-line syntax when you have backslashes? Was this invented at the Department of Redundany Department?
+4. Who the hell needs the double-space-at-end-of-line syntax when you have backslashes? Was this invented at the Department of Redundancy Department?
 
 5. A dedicated syntax for autolinks? Just use the URL as the anchor text when the anchor text is empty. Duh.
 

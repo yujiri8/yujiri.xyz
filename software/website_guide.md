@@ -9,7 +9,7 @@ So I thought I'd make a sorta guide on how to set them up aimed at people with l
 
 ## Platforms?
 
-First, there are a lot of [CMS](https://en.wikipedia.org/wiki/Content_management_system)es solutions out there, like Wordpress and Wix. These aren't what I'm on about. They're a quick path to putting up some content, but they don't give you full control over the website - you're limited to what the platform offers as far as layout and style, post format, comment/account systems which are usually confusing and buggy, and anything else you might want. <span class="note">This may not actually be true of Wordpress if you run it yourself on a self-hosted server, which you can do. I don't know much about that option, honestly.</span>
+First, there are a lot of [CMS](https://en.wikipedia.org/wiki/Content_management_system)es out there, like Wordpress and Wix. These aren't what I'm on about. They're a quick path to putting up some content, but they don't give you full control over the website - you're limited to what the platform offers as far as layout and style, post format, comment/account systems which are usually confusing and buggy, and anything else you might want. <span class="note">This may not actually be true of Wordpress if you run it yourself on a self-hosted server, which you can do. I don't know much about that option, honestly.</span>
 
 This guide is gonna be about "the real way" which has the following benefits:
 
