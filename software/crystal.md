@@ -147,6 +147,8 @@ It does have a nice formatter tool with an unusual but interesting style choice:
 
 It has the same documentation story as Rust - no command-line viewing, but a tool to generate handy HTML docs.
 
+There is no built-in linter, but there is a popular and very useful one, [Ameba](https://github.com/crystal-ameba/ameba).
+
 ## Stdlib and ecosystem
 
 The ecosystem is very small due to the youth of the language, but the stdlib is great. There's a solid core of essentials like common array operations and modules for a lot of common things like array operations, JSON, CSV, Regex and HTTP. Not as expansive as Python's stdlib, but good enough that you can actually do some things without third-party packages.
