@@ -17,8 +17,6 @@ I've written a lot about this in [this comment](index?c=101#comment-section) and
 
 I need to deal with concepts of directness. In English, we often say things like "directly cause" drawing a relevant distinction between that and indirect causation. The distinctions *are* very important. I should probably have a different verb for that. I already spent <spem>zo</spem>, so maybe <spem>zyu</spem>?
 
-There might also be a need for "directly say" or perhaps "indirectly say" while <spem>tel</spem> means directly say. Maybe <spem>tʌl</spem>.
-
 ## Quantifier problems
 
 I've discussed this one in the comments on [quantifiers](quantifiers). I have no idea what a good approach is.
