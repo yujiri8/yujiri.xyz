@@ -69,6 +69,8 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 **October 9:**
 I actually removed the Gold spec, a draft for a hypothetical ideal programming language I'd posted. Since learning [Rust](software/rust), my ideas have changed a lot. Many ideas from Rust are much more attractive to me now: ownership and immutability by default, and monadic error handling instead of exceptions. Also, most of my ideas for Gold were things that have appeared in other languages, so if I want to describe what I want to see in a language, I could just list the names of the ideas, not write a spec.
 
+Update: I also removed the anarchist memes. I'm proud of some of them, but a meme dump page didn't fit [this site's purpose](misc/structure).
+
 **October 1:**
 New: [Self-aware sin](misc/sin).
 
