@@ -35,7 +35,7 @@ async def get_words(
 	if notes:
 		filters.append(func.lower(Word.notes).contains(notes.lower()))
 	if notes_regex:
-		filters.append(Word.notes_regex.op('~')(notes_regex))
+		filters.append(Word.notes.op('~')(notes_regex))
 	# Search.
 	filter = reduce(lambda x, y: x & y, filters)
 	words = env.db.query(Word).filter(filter).order_by(Word.time_changed.desc())
