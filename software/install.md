@@ -112,4 +112,4 @@ For packages that I [recommend installing through langugae package managers inst
 
 ## Other
 
-* To get Linux compatibilty on FreeBSD, install `linux-base-c7` and load kernel modules `linux`, `linux64`, and `linux_common`.
+* To get Linux compatibilty on FreeBSD, install `linux_base-c7` and load kernel modules `linux`, `linux64`, and `linux_common`.
