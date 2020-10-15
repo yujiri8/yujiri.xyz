@@ -3,9 +3,9 @@ NAV Transgenderism in Fizzy's server
 TEMPLATE DEFAULT
 DESC An experience I had reinforcing my negative perception of trannies as sexist assholes who can't take disagreement.
 
-I've [explained](/protagonism/gender) why I disapprove of transgenderism, but my case isn't completely airtight - as main_gi once pointed out to me, it's possible for all I know that most trans people have a legitimate genetic issue that causes their "discomfort" rather than them having sexist attitudes.
+*[My beliefs about transgenderism](/protagonism/gender) have changed since this event. I leave it up for historical interest and because these trenders are a good illustration of why I believed what I did - I actually think this record serves as a sort of exonerating evidence for me.*
 
-Well today, I followed an invite to Fizzy the Mutualist's Discord server. I thought it was a great opportunity to learn about mutualism, an anarchist ideology I knew very little about. Who knew, maybe mutualism has the next insight I need.
+Today, I followed an invite to Fizzy the Mutualist's Discord server. I thought it was a great opportunity to learn about mutualism, an anarchist ideology I knew very little about. Who knew, maybe mutualism has the next insight I need.
 
 After joining the server, I saw the rules, which included the usual leftist "don't disagree with us about anything related to gender" clauses, as vague as ever (words like 'harass', 'prejudice', 'anti-' used). I reluctantly agreed planning not to start a discussion about it. So the gatekeeper, Fizzy's right-hand Qpoter, came to ask me one question first: "What do you think of trans peeps".
 
@@ -51,7 +51,7 @@ To be fair, the argument "Who is "most people"? That's a very vague reference" t
 
 ![screenshot 2](fizzy_trans_2.png)
 
-Yeah yeah, black folks are an oppressed group despite affirmative action and liberal pandering. I don't know, maybe it's still more true than false. I can't say for sure. (Oppression means being treated differently, not just being statistically more likely to be born to a poor family.) I think police might still be a bastion of anti-black racism, but I don't have any data for that, just my impression.
+Yeah yeah, black folks are an oppressed group despite affirmative action and liberal pandering. I don't know, maybe it's still more true than false. I can't say for sure. ([Oppression means being treated differently](/protagonism/bigotry), not just being statistically more likely to be born to a poor family.) I think police might still be a bastion of anti-black racism, but I don't have any data for that, just my impression.
 
 And that's when Fizzy decided to try to completely derail the argument by claiming trans people get treated like shit when that has nothing to do with the point I'm making.
 

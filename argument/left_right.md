@@ -39,13 +39,13 @@ However, leftists still usually abhor pedophilia, even if [it's totally consensu
 
 </div>
 
-### Axis 4: The invention of gender identity.
+### Axis 4: Gender identity.
 
 <div class="indent">
 
-Opposite to their rhetoric about gender being unimportant, leftists see gender as a psychological "identity" chosen by the individual and [you're a hateful bigot](/argument/fizzy_trans) if you ever suggest that changing your "gender identity" [is a less-than-admirable thing to do](/protagonism/gender).
+Leftists believe in the concept of gender identity as a thing separate from sex and that people should be considered to be of the gender they identify as rather than the one they were born as. Most or many leftists also believe that gender identity is a choice, and it's cruel to ever criticize that choice for any reason.
 
-Rightists do not invent a fake concept of gender as separate from sex.
+Rightists generally don't believe gender identity is a valid concept.
 
 </div>
 
@@ -55,9 +55,8 @@ Rightists do not invent a fake concept of gender as separate from sex.
 
 Leftists insist that there's (in America) serious widespread bigotry against women, non-whites, non-heterosexuals, Muslims, and the disabled. Rightists tend to perceive American society as mostly non-bigoted.
 
-Whatever the fact of the situation, many leftists are so attached to fighting perceived bigotry against those groups that they've developed some degree of counter-bigotry against the "dominant class" of white, straight, cisgender, upper-class males. And I'm not just talking about the [double standard on physical assault](/fiction/sexist_tropes) that you see quite often even outside of movies (conservatives seem to be just as guilty of excusing that); some liberals [are *way* worse](https://www.youtube.com/watch?v=v11wfp8vmrM) (be prepared for explicit content if you follow that link).
+Whatever the fact of the situation, many leftists are so attached to fighting perceived bigotry against those groups that they are counter-bigoted against the "dominant class" of white, straight, cisgender, non-disabled males. And I'm not just talking about the [double standard on physical assault](/fiction/sexist_tropes) that you see quite often even outside of movies (conservatives seem to be just as guilty of excusing that); some liberals [are *way* worse](https://www.youtube.com/watch?v=v11wfp8vmrM) (be prepared for explicit content if you follow that link).
 
 </div>
 
 Libertarians, far less often discussed, tend to have all of these axes right except axis 3 (where you can often [hear them glorify pornography](https://youtu.be/AspFfALQSsU?t=119) and even prostitution). I think this is because "libertarianism" is the only one of these labels that actually maps to a single idea: self-ownership (or in [Protagonist terms](/protagonism/virtues), the valuation of consent as close to the only moral value). Libertarians are the most consistent, although to really be [consistent in that idea](/argument/faction_ancap) you have to be an [anarchist](/protagonism/anarchism).
-<!--Maybe also foreign intervention.-->

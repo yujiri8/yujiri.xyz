@@ -51,8 +51,6 @@ It's also used to discredit people with unpopular opinions without dealing with 
 
 People also use the language of mental health to talk about things like depression, which is also harmful because it suggests a scientific solution to an emotional problem, which promotes not understanding emotions (the [DDLC](/reviews/ddlc) fanbase is an excellent demonstration of how it promotes that) and is counterproductive for real depressed people; when you have emotional problems, you don't feel better if you keep sulking and doing nothing of value and expecting a pill to change your mind. You have free will. *You* have to change your mind.
 
-Yet another way the concept is harmful is how it's used to justify censorship. For example, I've heard people defend [legislation prohibiting](enforcement) "hate speech" on bases like, "[calling me the wrong pronouns](gender) is an attack on my mental health". It's crazy, but revealing: if you say that people's emotions are a matter of *health*, it's difficult to *not* justify this, because no one can say where "mental health" ends and just hurting someone's feelings begins, because the former concept is bogus.
-
 <br>
 
 I might use the phrase "mental health" or "psychological health" occasionally just to describe something extreme emotional issues, but I mean nothing special by it. I try to make sure I'm using it in ways that don't risk insinuating any of the above ideas.

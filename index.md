@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**October 14:**
+My beliefs about transgenderism actually changed a while ago, but I didn't get around to editing my relevant articles until recently, partly because the issue is more nuanced than I thought when I wrote them and I had a harder time deciding exactly what they should say. But it's done now. See [new version](protagonism/gender).
+
 **October 9:**
 I actually removed the Gold spec, a draft for a hypothetical ideal programming language I'd posted. Since learning [Rust](software/rust), my ideas have changed a lot. Many ideas from Rust are much more attractive to me now: ownership and immutability by default, and monadic error handling instead of exceptions. Also, most of my ideas for Gold were things that have appeared in other languages, so if I want to describe what I want to see in a language, I could just list the names of the ideas, not write a spec.
 
