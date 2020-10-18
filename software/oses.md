@@ -78,7 +78,7 @@ Tried: 2020 summer, multiple times.
 
 * Package manager hell. Just running normal install and uninstall commands produced a broken system that I could not fix.
 
-### <span class="mixed">TrueOS</span>
+### <span class="mixed">Trident</span>
 
 Reputation: desktop distribution of Void
 
