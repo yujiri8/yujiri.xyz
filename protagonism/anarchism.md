@@ -19,7 +19,7 @@ First, let me dispel the notion that there's any moral obligation to follow the 
 
 	* A common response is that a *democratic* government is okay because the leaders are chosen by the people. The obvious problem with this argument is that it treats "the people" as a single person. In a group of 5 friends, can 4 of them decide that "the group" wants to go out to dinner and force the fifth to come with them? You need *unanimous* consent for a group arrangement, not just a majority, not even 99%. Likewise, you can't say "the people" chose a leader unless you mean *all* of them.
 
-		People who are determined to defend government will often try to argue that even if a citizen of a democracy *doesn't* vote for the winning candidate, they somehow consent to be ruled by them anyway. For this to work, you would have to argue all three of:
+		People who are determined to defend government will often try to argue that even if a citizen of a democracy *doesn't* vote for the winning candidate, they somehow consent to be ruled by them anyway. They'll argue that by voting at all you agree to accept the outcome of the system. But of course, many people don't vote, so that argument doesn't cut it. Some defenders of government claim that *not* voting constitutes consent to be ruled by the winning candidate because you didn't use your vote to express nonconsent. Notice something fishy about this reasoning? It requires all three of:
 
 		1. If you vote for a politician, you consent to be ruled by them.
 
@@ -27,9 +27,9 @@ First, let me dispel the notion that there's any moral obligation to follow the 
 
 		3. If you don't vote, you consent to be ruled by the winning candidate by not voting against them.
 
-		So there's no way to not consent? Obviously, that reasoning is complete bunk. (Not only are they not all true, but they are *all* false, as we will see later.)
+		So according to this argument, *any* course of action constitutes consent to be governed by the winning candidate. Obviously, this reasoning is bunk. (Not only are they not all true, but they are *all* false, as we will see later.)
 
-	* Another common one is the "if you don't like it, leave", implying that just living in your house constitutes consent to be ruled by the local government. This is a circular argument because it already assumes the government owns the area they claim to. I couldn't go to your house and say "You have to follow these rules, and if you don't like it, you can leave your house". I can only do that in *my* house.
+	* Another common one is "if you don't like it, leave", implying that just living in your house constitutes consent to be ruled by the local government. This is a circular argument because it already assumes the government owns the area they claim to. I couldn't go to your house and say "You have to follow these rules, and if you don't like it, you can leave your house". I can only do that in *my* house.
 
 	* Another is the "lineage" defense, another favorite of constitutionalists: that the founders of America consented to the system, and that we're bound by their decision. But no one would ever apply that same logic to anything else. A contract I sign doesn't bind my children, let alone for the rest of their lives!
 

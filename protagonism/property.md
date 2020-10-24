@@ -40,7 +40,7 @@ This stacks with ownership by possession. Violating either one without the other
 
 A lot of relatively reasonable people deny the existence of this altogether on the basis that only individuals can own things.
 
-But shared property is inevitable. Imagine two children home alone and a transient opportunity comes up and they have to make a decision about the property (and they're sure the parents wouldn't nothing to be done); or the parents die. Assuming the parents didn't plan for this and specify who gets to act in their stead, there's only one possibility: shared ownership (or [moral conflict](moral_conflict) I guess but I doubt anyone wants to stand by that here).
+But shared property is inevitable. Imagine two children home alone and a transient opportunity comes up and they have to make a decision about the property (and they're sure the parents wouldn't want nothing to be done); or the parents die. Assuming the parents didn't plan for this and specify who gets to act in their stead, there's only one possibility: shared ownership (or [moral conflict](moral_conflict) I guess but I doubt anyone wants to stand by that here).
 
 Or suppose two adventurers kill a dragon together and find treasure in its lair that can't be split (such as a single gem that provides magical effects).
 
