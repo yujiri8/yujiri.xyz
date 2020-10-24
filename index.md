@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**October 23:**
+New: [Art Carden demonstrates Vulgar Libertarianism](argument/art_carden_vulgar_libertarianism)
+
 **October 14:**
 My beliefs about transgenderism actually changed a while ago, but I didn't get around to editing my relevant articles until recently, partly because the issue is more nuanced than I thought when I wrote them and I had a harder time deciding exactly what they should say. But it's done now. See [new version](protagonism/gender).
 
