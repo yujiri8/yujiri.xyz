@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**October 25:**
+New: [Halo review](reviews/halo)
+
 **October 23:**
 New: [Art Carden demonstrates Vulgar Libertarianism](argument/art_carden_vulgar_libertarianism)
 
