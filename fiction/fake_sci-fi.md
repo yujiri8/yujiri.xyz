@@ -20,7 +20,7 @@ Here are some things that could probably be done given the other technologies we
 
 This is actually such a big obstacle that I can't think of a single sci-fi story that's really solved it.
 
-In my teens, I came up with a story (that I wrote 7 chapters of) with a workable but kludkgy solution: the [human soul](/protagonism/metaphysics)'s "death detector" is a lot touchier than it is in real life, and so any sort of tampering with someone's brain causes their soul to leave their body (death) permanently. That solved the problems of elimination of pain and genetic enhancement. As for computers implanted in people's brains, they couldn't actually be implanted for that reason, but they did have little wrist-mounted devices called companions that were a vestige of it.
+In my teens, I came up with a story (that I wrote 7 chapters of) with a workable but kludgy solution: the [human soul](/protagonism/metaphysics)'s "death detector" is a lot touchier than it is in real life, and so any sort of tampering with someone's brain causes their soul to leave their body (death) permanently. That solved the problems of elimination of pain and genetic enhancement. As for computers implanted in people's brains, they couldn't actually be implanted for that reason, but they did have little wrist-mounted devices called companions that were a vestige of it.
 
 But that was still really unsatisfying.
 
