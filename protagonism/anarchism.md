@@ -71,23 +71,21 @@ So anarchist, market-based "law enforcement" is really a strict improvement over
 
 ## The poor
 
-The poor present a much more interesting objection: if we acknowledge that taxation altogether is theft, we have to find a better way to provide for the economically unfortunate.
+The poor present a much more interesting objection: if we abolish taxation, we have to find a better way to provide for the economically unfortunate. There are several parts of the answer.
 
-The first thing I always point out here is that government is in large part responsible for poverty. Market regulations that take away poor people's options, a broken [compulsory](children) school system, prisons, wars and massive government spending programs make us all poorer because we're the ones who have to pay for all that shit. So while it wouldn't solve the problem entirely, getting rid of governments would make us all better off.
+The first thing I always point out here is that government is in large part responsible for poverty. Market regulations that take away poor people's options, a broken [coercive](children) school system, prisons, wars and massive government spending programs make us all poorer because we're the ones who have to pay for all that shit. So while it wouldn't solve the problem entirely, getting rid of governments would make us all better off.
 
 It's also important not to discount [the large-scale examples of voluntary charity in the real world](altruism_examples). Those would all still exist! And they'd be more powerful, and more people would feel fortunate enough to help the poor for free, if we were all richer.
 
-Now, you might think these things have been demonstrated to be inadequate because there are people in America who are literally kept alive by government handouts, and that the difference wouldn't be made up by the increase in general prosperity. But have you considered that _voluntary methods aren't working **because** involuntary methods are being used?_ If the government's taking my money already and giving it to people who would otherwise starve, I'm obviously not going to feed the starving people myself, because they're not starving anymore. If turning them away actually meant killing them, virtually everyone would feed a starving person who showed up at their door.
+Now, you might think these things have been demonstrated to be inadequate because there are people in America who are literally kept alive by government handouts, and that the difference wouldn't be made up by the increase in general prosperity. But have you considered that _voluntary methods aren't working **because** involuntary methods are being used?_ If the government's taking my money already and giving it to people who would otherwise starve, I'm obviously not going to feed the starving people myself, because they're not starving anymore. If turning them away actually meant killing them, virtually everyone would feed a starving person who showed up at their door. So we should expect that without taxation and government handouts, voluntary charity would rise to fill the gap.
 
-So I expect that without taxation and government handouts, voluntary charity would rise to fill the gap.
+But this may not be enough. The other major part of the answer is contractual obligation: anarchists can and have formed mutual aid assocations that are essentially a voluntary contractual agreement to provide aid to the least fortunate among them in return for the possibility of them eventually being that least fortunate. What I'm describing is really just like taxation except that people can choose not to participate in these arrangements (and then not be eligible to receive the benefits themselves when they are in need). The number of people who are concerned about abolishing govenrment welfare indicates that many people would participate in them voluntarily.
 
-Nevertheless, I'll have to come out and admit here that it's possible there could be a few cases where this didn't work. I'm not a self-ownership absolutist; I won't claim it's immoral to steal to survive! What I will claim is that it would be extremely rarely necessary, and to carry it out doesn't take anything like a government. Moral behavior doesn't depend on bureaucrats and legislators approving it.
+(There is also [a pretty large faction of self-described anarcho-communists](/argument/faction_ancom), who could tell you some different perspectives on this.)
 
-(There is also a pretty large faction of self-described anarcho-communists, who could tell you very a different perspective on this.)
+As far as protection services for the poor in particular (a common objection is that market-based protection services don't work because the poor can't afford them), there's a simple answer: a contingency fee paid with the restitution.
 
-As far as protection services for the poor in particular, there's a simple answer that tends to get overlooked: a contingency fee paid with the restitution.
-
-If a criminal hurts a poor person, the poor person wouldn't need to have money left to hire a protection agency to get it back; if I were a protection firm CEO I'd offer to catch the criminal, make them perform restitution, and take the cost of my services out of that and give the remainder to the victim. Especially since justice in Ancapistan would be restorative rather than punitive, [we'd favor penal labor over imprisonment](forms_of_punishment), so the victim and I could both *profit* of the event.
+If a criminal hurts a poor person, the poor person wouldn't need to have money left to hire a protection agency to get it back; if I were a protection firm CEO I'd offer to catch the criminal, make them perform restitution, and take the cost of my services out of that and give the remainder to the victim. Especially since justice in an anarchist society would be restorative rather than punitive, [we'd favor restitution or penal labor over imprisonment](forms_of_punishment), so the victim and I could both *profit* of the event.
 
 <!--## Arbitration and vigilantism
 
@@ -102,9 +100,9 @@ Nevertheless, many anarcho-capitalists have suggested the idea of a dispute reso
 https://libertarianism.fandom.com/wiki/Dispute_resolution_organization
 -->
 
-## Public goods?
+## Public goods
 
-Another common objection to anarchism is the idea of "public goods". How would we handle road maintenance? (The roads question is, in fact, a meme in anarcho-capitalist circles because of how many times each of them has answered it, and how terribly inadequate it would be as a justification for the state's violence anyway.)
+Another common objection to anarchism is the idea of "public goods". How would we handle road maintenance? (The roads question is, in fact, a meme in [anarcho-capitalist](/argument/faction_ancap) circles because of how many times each of them has answered it, and how terribly inadequate it would be as a justification for the state's violence anyway.)
 
 To give my own answer, the roads question depends on who we consider to own the roads at the start of the anarchy's lifetime. Given that the people who built it did so with money stolen from millions of different people, I think they would be [shared property](property#shared-property). It makes the question very complicated, I admit, when you have to solve it without stealing.
 
