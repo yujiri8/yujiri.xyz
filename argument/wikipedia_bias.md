@@ -66,8 +66,6 @@ Um... what? Are you calling counseling an alternative to surgery? Counseling and
 
 This all hinges on their claim that the surgeries are medically unnecessary. I even bothered investigating both the citations they give for it; one doesn't even include a link (it's just a work title that can't be followed) and the other is to an <a rel="nofollow" href="https://www.hrw.org">*HRW*</a> article about a case where the doctors *didn't* do the surgery because the parents told them not to, completely destroying their argument.
 
-<!--It's not like giving parents or other guardian figures this kind of power over their children is specific to intersexuality; do you think the doctors ask for an infant's consent before doing any other kind of medical operation?-->
-
 And their section farther down on "Protection from discrimation" *exclusively* mentions laws that *do* explictly protect intersex people. (And one *report of an accusation* (not even Wikipedia affirming it) of discrimination without any evidence to back it up (once again, the citation doesn't provide a link).)
 
 <h4><a rel="nofollow" href="https://en.wikipedia.org/wiki/Pathological_lying">https://en.wikipedia.org/wiki/Pathological_lying</a> (added 2019 June 15)</h4>
@@ -80,11 +78,7 @@ And guess what their citation is for that sentence? <a rel="nofollow" href="http
 
 <h4><a rel="nofollow" href="https://en.wikipedia.org/wiki/Gender_binary">https://en.wikipedia.org/wiki/Gender_binary</a> (added 2019 Sep 22)</h4>
 
-> Gender binary (also known as gender binarism, binarism, or genderism)[1][2][3] is the classification of gender into two distinct, opposite, and disconnected forms of masculine and feminine, whether by social system or cultural belief.
-
-'...by social system or cultural belief'. They explicitly exclude the possibility that [the gender binary is a scientific truth](/protagonism/gender)!
-
-Also, "disconnected" means nothing here; it's pure [linguistic cloaking](/argument/dirty_tactics). The word "opposite" also doesn't apply in any meaningful sense.
+"Disconnected" means nothing here; it's pure [linguistic cloaking](/argument/dirty_tactics). The word "opposite" also doesn't apply in any meaningful sense.
 
 > Within the LGBT community, gender binarism may create institutionalized structures of power, and individuals who identify outside traditional gender binaries may experience discrimination and harassment within the LGBT community.	Most of this discrimination stems from societal expectations of gender that are expressed in the LGBT community. But many LGBT people and many youth activist groups advocate against gender binarism within the LGBT community. Many individuals within the LGBT+ community report an internal hierarchy of power status. A specific example of this would include a white, gay man who behaves as "masculine" as being more powerful. However, those who do not identify within a binary system experience being at the bottom of the hierarchy. The multitude of different variables such as race, ethnicity, age, gender, and more can lower or raise one's perceived power.[19]
 
