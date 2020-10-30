@@ -18,7 +18,7 @@ I've tried and researched a lot of Linux and BSD distributions in search of two 
 
 2. One I'd want to use myself.
 
-	I'm a software idealist - I don't want to use an operating system that isn't the best practical one. Where practicality and design quality conflict, I seek a balance, because I realize practicality is the point of it all, and I'm not an OS dev, but I want to support and encourage good architecture and also I think using it helps me grow wiser about software.
+	I'm a software idealist - I don't want to use an operating system that isn't the best designed one. Where practicality and design quality conflict, I seek a balance, because I realize practicality is the point of it all, and I'm not an OS dev, but I want to support and encourage good architecture and also I think using it helps me grow wiser about software.
 
 Here are my notes on the ones I've tried or researched and why I won't or will use them. When I say things like "broken install process", I mean that when I tried it, I ran into things that were clearly releng mistakes, such as the installer telling me to run a command that doesn't exist. I consider egregious instances of this pretty much disqualifiers; I don't want to use a distribution that's had problems like that, even if they've fixed it since.
 
@@ -44,15 +44,19 @@ Tried: 2020 summer
 
 * Apparently supports OpenRC as an init system option now, but not default?
 
-### Fedora
+### <span class="bad">Fedora</span>
 
 Reputation: cutting-edge
 
 Init system: systemd
 
-Tried: 2020 summer
+Tried: 2020 summer (only on server)
+
+* Separate -devel packages, like Debian.
 
 * Good package manager. Colored output and ability to get more detailed info on uninstalled packages than other package managers allow.
+
+CentOS is derived from Fedora (through Red Hat), so it's much the same except its packages are outdated as hell.
 
 ### <span class="bad">Arch</span>
 
@@ -78,13 +82,7 @@ Tried: 2020 summer, multiple times.
 
 * Package manager hell. Just running normal install and uninstall commands produced a broken system that I could not fix.
 
-### <span class="mixed">Trident</span>
-
-Reputation: desktop distribution of Void
-
-Tried: 2020 summer
-
-* Guided installer works well, but doesn't support dual booting (understandably).
+* [Trident](https://project-trident.org) exists as a desktop installer.
 
 ### <span class="bad">Gentoo<span>
 
@@ -106,7 +104,11 @@ Init system: sysvinit
 
 Tried: 2020-09-17
 
-Reputation: secure, lightweight. Uses musl libc, which is argued to be better than glibc but means binaries compiled for glibc won't work.
+Reputation: secure, lightweight
+
+Init system: OpenRC
+
+* Uses musl libc, which is argued to be better than glibc but means binaries compiled for glibc won't work.
 
 * Broken install process: guided installer wrote invalid syntax to wpa_supplicant.conf and left me to figure it out. Wiki written in very poor English.
 
@@ -118,7 +120,7 @@ Reputation: Arch without systemd.
 
 Init system: choice of OpenRC, runit or s6. I use OpenRC.
 
-* Due to the three init system options, packages with service files are separated into variants like `thing-openrc`, `thing-runit`, `thing-s6` and just `thing` which is only the program itself without a service file. This makes it a bit cumbersome to figure out exactly what you need to install, but the service versions pull in the main package as a dependency, so it's not too bad.
+* Due to the three init system options, packages with service files are separated into variants like `thing-openrc`, `thing-runit`, `thing-s6` and just `thing` which is only the program itself without a service file. This makes it a bit cumbersome to figure out exactly what you need to install, but the service versions pull in the main package as a dependency, so it's not too bad - and in the end I think it's more elegant to have the service files separate from the program itself.
 
 * There are desktop and manual installers. The guide for the manual installation is really unclear about partitioning, but once you know what to do, it works. At least it isn't years out of date.
 
