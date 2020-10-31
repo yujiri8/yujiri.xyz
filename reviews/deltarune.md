@@ -5,8 +5,6 @@ DESC From Undertale to Deltarune is a Spy Kids to Spy Kids 2 level downgrade.
 
 Deltarune is sort of the sequel to [Undertale](undertale), so I played the first chapter not long after. It was so disappointing that I didn't go back through to explore other choices.
 
-# Review
-
 I'm going to go through the whole plot below, but first I'll do a short spoiler-free review.
 
 ## Combat system
@@ -19,7 +17,7 @@ It's a dumpster fire.
 
 It's still a silent protagonist game and is all about sparing again, but this time has an absurdly strong pacifist slant. In Undertale, the best ending involved never killing, but it was for legitimate reasons, not because the game portrays it as wrong to hurt someone who knows fully well you're inncoent, tries to kill you repeatedly, and has no redeeming qualities, and will completely break the believability of other characters to support it. Deltarune's story is real pacifist bullshit, and you don't even get a choice in it.
 
-The character who serves as antagonist for most of the game is intolerably incompetent and unserious. He's like Papyrus except with everything that make Papyrus work removed.
+The character who serves as antagonist for most of the game is intolerably incompetent and unserious. He's like Papyrus without everything that make Papyrus work.
 
 ## Other stuff
 
@@ -53,7 +51,7 @@ There's even a point where Susie gets fed up with Kris and Ralsei being goodguys
 
 Susie reminds me of Stefan from The Magnificant Twelve: a caricature of a school bully who's openly infatuated with the idea of being a villain. Stefan was the way more interesting character.
 
-In terms of the reasonability of the game asking us to show them mercy, Susie and Lancer are halfway between random encounters and Omega Flowey. They're [strawman chaotic evil](/fiction/strawman_chaotic_evil), and worse, this is never optional.
+In terms of the reasonability of asking us to show them mercy, Susie and Lancer are halfway between random encounters and Omega Flowey. They're [strawman chaotic evil](/fiction/strawman_chaotic_evil), and worse, this is never optional.
 
 At the worst of it, you come across Susie and Lancer lazing in chairs while they've apparently enslaved two monsters to fan them. If you talk to the monsters, they tell you how they're being forced and don't want to do it. There's still no option to do anything. Because a pacifist would *nevuhr* throw the first punch... not even if it isn't the first of act of violence in the actual context. That's what pacifism is, kids. Refusal to free slaves.
 
@@ -63,7 +61,7 @@ It's not long after that that the game deploys the "forced RPG capture and cardb
 
 This is F- level storytelling. For any other game, I'd be out by now. I honestly would've guessed this was a fan-made sequel to Undertale by the kind of the person who makes DDLC mods like Spark of Hope.
 
-She tells Lancer to get out of his way so she can proceed without fighting him, and when he doesn't, she finally, reluctantly, attacks. He refuses to kill her after the first couple rounds with an exact copy of Toriel's non-attack. This was excellent gamified storytelling when Toriel did it, but it only works once.
+She tells Lancer to get out of his way so she can proceed without fighting him, and when he doesn't, she finally, reluctantly attacks. He refuses to kill her after the first couple rounds with an exact copy of Toriel's non-attack. This was excellent gamified storytelling when Toriel did it, but it only works once.
 
 And then Susie actually decides to spare him and promises, apparently sincerely, to not kill his dad.
 

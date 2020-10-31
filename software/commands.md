@@ -45,9 +45,9 @@ I'll also color-code the commands according to how important they are. <code cla
 
 * <code class="ess">cp</code> - copy files.
 
-* <code class="ess">ee</code> - "easy editor". A basic built-in text editor that runs in the terminal. It's easy to use, but far better editors exist.
+* <code class="ess">nano</code> - An easy-to-use text editor that's preinstalled on most Linux distributions. It shows help on the bottom by default, so it's good for newcomers.
 
-	If you're running Linux, you probably have `nano` installed by default. `nano` is much better than `ee`, and still shows help at the bottom with the default configuration. `nano` is very newcomer-friendly. I'd not recommend using `ee` unless your operating system doesn't have `nano` built-in. In fact, in that case you should probably just install Nano or another text editor rather than using `ee`.
+	If you're on FreeBSD, Nano isn't installed by default, but there's another easy-to-use editor called `ee` ("easy editor").
 
 * <code class="basic">pwd</code> - print working directory. Shows the directory you're in (although any decently configured shell shows this automatically in the prompt).
 

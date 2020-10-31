@@ -3,8 +3,6 @@ NAV Undertale
 TEMPLATE DEFAULT
 DESC Verdict: it's a masterpiece and you should play it.
 
-# Background
-
 I heard of Undertale gradually throughout internet references and happening upon the OST on Youtube. The OST is excellent and was a major factor in me deciding to play the game.
 
 By the time I decided to play it, I was familiar with the basic idea: there are humans and monsters, killing is always optional, and there are Pacifist, Genocide, and Neutral routes. I'd seen some gameplay and was familiar with most of the core characters' names, as well as a couple unfortunate spoilers about each from scrolling too far down in the comments on the OST videos.
@@ -17,7 +15,7 @@ I'm surprised to be saying this as I went into it expecting the primary appeal t
 
 The main mechanic is bullet hell-style dodging during enemy turns. There's no unavoidable damage (or almost none; there's one enemy that might be an exception), and each enemy has a good variety of moves. Just about all of them [can be evaded without prior knowledge](/game_design/trial_and_error).
 
-One thing that's done really well is how their attack patterns progress throughout the fight, especially bosses. Bosses usually start with their easiest attacks and break out new ones or more sophisticated versions of early ones as they go on.
+One thing that's done really well is how their attack patterns progress throughout the fight, especially bosses. They usually start with their easiest attacks and break out new ones or more sophisticated versions of early ones as they go on.
 
 They also introduce a few different color-coded types of attacks and modified states for your avatar that change the dodging rules, massively expanding their design space beyond simple messes of bullets.
 
@@ -25,7 +23,7 @@ Your own attacks are modulated by a "watch this beam move and press it close to 
 
 # Silent protagonist
 
-It's a **silent protagonist** game. So much for role-playing! I can't express how much this harms the potential of a story with intricate lore and lots of conflict resolution for the player character to have no dialogue in most situations. As with [Dark Souls](/reviews/dark_souls_story), it's often used to prevent the player from asking questions that any reasonable person would ask and that would presumably get an informative answer. The player's interactions with Undyne are harmed the most.
+It's a **silent protagonist** game. So much for role-playing! I can't express how much it harms the potential of a story with intricate lore and lots of conflict resolution for the player character to have no dialogue in most situations. As with [Dark Souls](/reviews/dark_souls_story), it's often used to prevent the player from asking questions that any reasonable person would ask and that would presumably get an informative answer. The player's interactions with Undyne are harmed the most.
 
 It's not fatal though. Unlike Dark Souls, Undertale's major NPCs play meaningful roles in the story and have significant depth (for which you don't have to 100%, cross-reference every item description, read game files and headcanonize into conclusions that have almost no basis in the actual game, which is how lore seems to work in Dark Souls).
 
@@ -35,7 +33,7 @@ The game revolves around your decisions whether to spare monsters that fight you
 
 Of course, changing this would've been a massive overhaul because it would've required thinking up a way to prevent exposition from getting out too soon.
 
-You find out why the monsters are trying to kill you halfway through, and it's a pretty damn good reason, but even after that you can't try to reason with them. In the case of the boss who more or less explains it to you, the only way to spare her is <span class="spoiler">fleeing on a specific turn</span> and then she just stops trying to kill you after that, even though there's no reason that should change anything that refusing to attack her doesn't.
+You find out why the monsters are trying to kill you halfway through, and it's a pretty damn good reason, but even after that you can't try to reason with them. In the case of the boss who explains it to you, the only way to spare her is <span class="spoiler">fleeing on a specific turn</span> and then she just stops trying to kill you after that, even though there's no reason that should change anything that refusing to attack her doesn't.
 
 Other than that though, all the main characters are solid, nuanced and have real development. Even characters I'd previously planned to kill, I ended up finding quite likable and their actions much more defensible in hindsight.
 
@@ -47,13 +45,13 @@ I'm awed by how much work is put into the many different Neutral endings. I only
 
 ## Morality
 
-One thing I'm disappointed about is that the game doesn't lend any serious consideration to the idea that it is justified for <span class="spoiler">the monsters to kill you to free them all</span>. There's not even an ending where you <span class="spoiler">voluntarily submit to this</span>, even though that's the most logical way for this to end if the protagonist has good intentions (and was the ending I thought I was going for on my first run).
+One thing I'm disappointed about is that the game doesn't lend any serious consideration to the idea that it is justified for <span class="spoiler">the monsters to kill you to free them all</span>. There's not even an ending where you <span class="spoiler">voluntarily submit to this</span>, even though that's the most logical way for this to end if the protagonist has good intentions (and was the ending I thought I was going for on my first run, especially since Sans tells you this is an option).
 
 Of course, I have to make the monarchy criticism. It normalizes monarchy by having both a king and a queen as designated goodguys, like all too much fantasy fiction. It also normalizes [schools](/protagonism/children). But the [enforcement](/protagonism/enforcement) of these institutions is never seen or mentioned, leaving it possible that the schools aren't coercive and the monarchic titles are misnomers, which I guess makes it still an improvement over the par for this world's fiction?
 
 # Combat conversation system is capricious
 
-In general, getting enemies to be spareable involves the Act menu dialogue options, which let you (forgo an attack to) make some attempt at conversation or other non-violent action during a fight. Unfortunately, there's often no predictable logic to what options will work. I recommend asking the wiki if you want to spare an enemy and don't feel like guessing in the dark. I used the wiki heavily during my Pacifist run and never regretted it. Each character has a separate "In Battle" page, so it's not too hard to do so without spoiling stuff.
+In general, getting enemies to be spareable involves the Act menu dialogue options, which let you forgo an attack to make some attempt at conversation or other non-violent action during a fight. Unfortunately, there's often no predictable logic to what options will work. I recommend asking the wiki if you want to spare an enemy and don't feel like guessing in the dark. I used the wiki heavily during my Pacifist run and never regretted it. Each character has a separate "In Battle" page, so it's not too hard to do so without spoiling stuff.
 
 There's also the Flee command; I never figured out exactly how it works. Early on it seemed to be 100% reliable, but it's not; then I thought for some time you could only flee against a single enemy, but that's not it either; I saw exceptions on both sides. I couldn't find anything on it on Google either. I think it just has a high chance to work. The main downside for a Pacifist run is that fleeing doesn't give you gold either, while sparing enemies without fleeing still sometimes gets you gold.
 
@@ -65,7 +63,7 @@ Undertale is denser with laugh-out-loud moments than any other game I've seen. P
 
 The overworld consists largely of puzzles, most of which aren't too difficult, though there were two I looked up: the two where there's no explicit puzzle but proceeding involves pressing the action button with no obvious target. (To be fair, one of the two seems legitimate to me in retrospect.)
 
-The game is significantly harmed by the lack of a fast travel and the slow movement. It makes it very unappealing to revisit previous areas, which is especially bad since that's required for a lot of important scenes.
+The game is harmed by the lack of a fast travel and the slow movement. It makes it very unappealing to revisit previous areas, which is required for some important scenes.
 
 <br>
 

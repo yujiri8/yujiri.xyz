@@ -4,7 +4,7 @@ TEMPLATE DEFAULT
 
 [Jedi: Fallen Order](https://en.wikipedia.org/wiki/Star_Wars_Jedi:_Fallen_Order) is a singleplayer action RPG. Given it was published by EA, the makers of the Battlefront 2 atrocity, and in the Disney era, my expectations weren't high, but during the month of its release I happened to watch a friend - a [Dark Souls](dark_souls) loyalist - play it and he compared it to [Sekiro](sekiro) minus a lot of the things I hated about that game. I saw that his claims were accurate, and so I ended up playing it on his installation in 2019 December.
 
-The comparison to Sekiro is astonishingly accurate. The game's combat system borrows all of Sekiro's great ideas, while removing most of the trial and error. And most importantly, Fallen Order has no consumables, so there's no loss of items when you die! Although they do still treat experience in the Dark Souls way. I'll put my discussion of the game first and story at the bottom.
+The comparison to Sekiro is very accurate. The combat system borrows all of Sekiro's great ideas, while removing most of the trial and error. And most importantly, Fallen Order has no consumables, so there's no loss of items when you die! Although they do still treat experience in the Dark Souls way. I'll put my discussion of the game first and story at the bottom.
 
 <h1 class="good">Mechanics</h1>
 
@@ -16,11 +16,11 @@ The combat system is well balanced in that all the options are useful. In almost
 
 The game has a leveling system pretty much like Sekiro, except there's no shopping; you only use skill points to unlock abilities organzed in three trees: Force, Lightsaber, and Survival.
 
-The upgrades are well balanced. There are no bad ones, and quite a few that seem like "OMG I *have* to get that that'll make me unstoppable!", and they are really good, but there are no game-breakers.
+The upgrades are well balanced. There are no bad ones. A lot of them seem like "OMG I *have* to get that that'll make me unstoppable!", and they are really good, but there are no game-breakers.
 
 <h2 class="bad">Experience system</h2>
 
-Experience is handled in the Dark Souls fashion, meaning: it isn't stored safely when you rest, so you can lose experience after saving. It's also grindable (which [is bad inherently](/game_design/difficulty_settings) but kind of necessary when you can lose it), and even worse, it's tied to environmental exploration. A lot of the "Force echoes" and other things you can "inspect" throughout the planets give you experience, which means you have to do irrelevant non-combat non-story stuff to keep your combat abilities progressing properly.
+Experience is handled in the Dark Souls fashion, meaning: it isn't stored safely when you rest, so you can lose experience after saving. It's also grindable (which [is bad inherently](/game_design/difficulty_settings) but kind of necessary when you can lose it), and worse, it's tied to environmental exploration. A lot of the "Force echoes" and other things you can "inspect" throughout the planets give you experience, which means you have to do irrelevant non-combat non-story stuff to keep your combat abilities progressing properly.
 
 <h2 class="mixed">Trial and error</h2>
 
@@ -32,7 +32,7 @@ The hitboxes are really good. There were less than a handful of instances where 
 
 <h2 class="good">Bosses</h2>
 
-Every boss was excellent; both well-designed and well-balanced. On Jedi Grandmaster, most took me upward of ten tries, but I beat most in the same session as I got to them. None of them have [an unreasonable amount of health](/game_design/cheap_difficulty), but they all have enough that you have to really master them to win. They all (minus the upgraded versions of normal planetary monsters, which are optional bosses) have novel attack patterns that take a lot of getting used to, but are seldom unfair.
+Every boss was excellent; both well-designed and well-balanced. On Jedi Grandmaster, most took me upward of ten tries, but I beat most in the same session as I got to them. None of them have [an unreasonable amount of health](/game_design/cheap_difficulty), but they all have enough that you have to actually master them to win. They all (minus the upgraded versions of normal planetary monsters, which are optional bosses) have novel attack patterns that take a lot of getting used to, but are seldom unfair.
 
 In most of the big story bosses, I did barely a scrape of damage on my first life, but it was amazing to see how much I could improve at them after a dozen tries, even with minimal use of trial and error attacks.
 
@@ -50,17 +50,17 @@ Unfortunately, the developers also took a lesson from [Assassin's Creed](assassi
 
 That one's a particularly egregious, concentrated example, but the game is filled with what I call "crawl spaces" which are narrow spaces in walls you can climb through to get to a new area. Functionally, they're no different from a doorway; except that they're sometimes easy to miss, and the animation to climb through them is *reaaaly looooong*. There's no reason for them to be in the game; visual spectacle should never come before gameplay.
 
-Another thing they reaaaly overuse is sliding sections. It's an extremely frequent mechanic that during exploration, you slide down a steep slope of ice, rock, or whatever material, and you control only your left/right steering and jumping as you go down. In most of these sections, there's a risk of falling off the edge and respawning at the top, and the steering is so slidey that it's often close to impossible to avoid this when you don't know how the path will curve around the next corner. These sequences never felt like a satisfying challenge to me; they were always either pointless or actively frustrating, and they're used about three times too often even if they were implemented a little better.
+Another thing they reaaaly overuse is sliding sections. It's a common mechanic that during exploration, you slide down a steep slope of ice, rock, or whatever material, and you control only your left/right steering and jumping as you go down. In most of these sections, there's a risk of falling off the edge and respawning at the top, and the steering is so slidey that it can be almost impossible to avoid this when you don't know how the path will curve around the next corner. These sequences never felt like a satisfying challenge to me; they were always either pointless or actively frustrating, and they're used about 3x too often even if they were implemented a little better.
 
 Many of the boss fights have "clash sabers and [mash this button](/game_design/brute_force_skills)" happen a couple times throughout them, but at least they don't seem to demand superhuman tapping frequency. I never failed one even when I wasn't pressing my fastest. And if they aren't cutscene delimiters they always reward you with visible damage to the boss afterward, so it doesn't feel so much like the designers wasting your time.
 
 <h2 class="bad">Camera</h2>
 
-The game has some fairly significant camera issues. The most common is that the sensitivity is just too low, and unless I'm blind, there's no option to raise it (there's an option for "mouse sensitivity", but for whatever reason it doesn't affect console controller sensitivity). This is frequently an issue during combat with multiple enemies; although in the second half of my playthrough I discovered something that helps a lot with this (see [Protips](#Protips) below).
+The game has significant camera issues. The most common is that the sensitivity is just too low, and unless I'm blind, there's no option to raise it (there's an option for "mouse sensitivity", but for whatever reason it doesn't affect console controller sensitivity). This is frequently an issue during combat with multiple enemies; although in the second half of my playthrough I discovered something that helps a lot with this (see [Protips](#protips) below).
 
-A more rare issue is that sometimes being attacked seems to rotate the camera so you can't see the enemy, or stick the camera inside the enemy's body so you can't see anything at all. This only happened to me a few times, but *damn* was it annoying. Every time it happened I got killed by it.
+Another issue is that sometimes being attacked seems to rotate the camera so you can't see the enemy, or stick the camera inside the enemy's body so you can't see anything at all. This only happened to me a few times, but *damn* was it annoying. Every time it happened I got killed by it.
 
-Also, they've inherited the problem every Dark Souls game and Sekiro has: if you try to lock on and the game doesn't think you're close enough or sufficiently in view, your camera gets thrown in a random direction. And let's just say the designers and you often disagree on how close you should have to be to lock on...
+Also, they've inherited the problem every Dark Souls game and Sekiro has: if you try to lock on and the game doesn't think you're close enough or sufficiently in view, your camera gets thrown in a random direction instead of just failing to lock on.
 
 <h2 class="mixed">Difficulty</h2>
 
@@ -106,11 +106,11 @@ This game's team had some people on it who really love Star Wars and the expande
 
 The opening sequence is poor in story terms. It's about an hour of playing before you're no longer an outsider in Cal's mind. You're led to believe he's a random scrap collector working for the Empire. When I played (if you could call it that) the interactive cinematic where he saves Prauf from a fall with the Force, I assumed he was Force-sensitive and didn't know it before this. It turns out he's a Jedi who went into hiding after Order 66. While I'm glad it's not another "magically became proficient in the Force with no training" story in the vein of Rey, it's a bit jarring that I found out the "viewpoint" character *knew* he was a Jedi only after so much time playing as him.
 
-Dialogue between him and Prauf is a bit clumsy, and Prauf's death scene is very bad. The imperial overseers find out there's a Jedi in their workforce, bring Cal and Prauf and their coworkers before stormtroopers, and say that if the Jedi doesn't come forth they'll execute them all. Prauf pretends to be the Jedi to save Cal. That would've been great, but after the Inquisitor stabs him, Cal reveals himself and attacks her. This reaction completely wastes Prauf's sacrifice, so the writers pull a total Deus Ex Machina to make him escape anyway. I'm not against characters making mistakes, but I'm against them making them in ways that harm other parts of the story, the mistakes not being acknowledged as such, and a Deus Ex Machina being required to cover for them.
+Dialogue between him and Prauf is a bit clumsy, and Prauf's death scene is very bad. The imperial overseers find out there's a Jedi in their workforce, bring Cal and Prauf and their coworkers before stormtroopers, and say that if the Jedi doesn't come forth they'll execute them all. Prauf pretends to be the Jedi to save Cal. That would've been great, but after the Inquisitor stabs him, Cal reveals himself and attacks her. This reaction completely wastes Prauf's sacrifice, so the writers pull a total Deus Ex Machina to make him escape anyway. I'm not against characters making mistakes, but I'm against them making them in ways that require a Deus Ex Machina to cover for them, and the mistakes not being acknowledged as such.
 
 Still, I have to admit the dream scene on the train was *awesome*. That's something I've probably never said of a dream sequence in a game before.
 
-Cal is chased by the Inquisitors, and ends up having a brief clash of blades with the Second Sister, the one who stabbed Prauf. He's rescued by a woman named Cere, a former Jedi, and her pilot, the obligatory short-and-stout alien named Greez. Cere tells Cal that their plan is to rebuild the Jedi order. Cal is skeptical, having basically given up already and lived the last decade or so in hiding, and Cere tells him not to despair.
+Cal is chased by the Inquisitors, and ends up having a brief clash of blades with the Second Sister, the one who stabbed Prauf. He's rescued by a woman named Cere, a former Jedi, and her pilot, the obligatory short-and-stout alien named Greez. Cere tells Cal that their plan is to rebuild the Jedi order. Cal is skeptical, having basically given up and lived the last decade or so in hiding, and Cere tells him not to despair.
 
 They fly to Bogano, a planet where Cal meets the obligatory trusty droid companion, BD-1. BD-1 has some stored recordings of an old Jedi named Eno Cordova, who used to be Cere's master. The recordings reveal that Cordova was researching an ancient civilization called the Zeffo and believes their remnants can lead him to the location of a holocron that can find Force-sensitive children. That, of course, would be exactly what they need to rebuild the Jedi order... as well as exactly what the Empire needs to exterminate the Jedi for good, or to raise an army of Inquisitors if they wanted. BD-1 was given recordings of Cordova's messages in places throughout his footsteps that Cal will trace, but doesn't have them all available immediately because they're encrypted. Cordova wanted to make sure it wouldn't be easy for the Empire to find out what he found out if they captured BD-1. So BD-1 is only able to display the recordings as Cal visits the places they were made in.
 
@@ -132,7 +132,7 @@ During the second visit to Zeffo, Cal has a run-in with the Second Sister. It's 
 
 Another awesome thing about the way this reveal is done is that with Cere's dialogue in the previous conversation, when she explicitly claims Trilla "didn't survive", the writers were making a callback to how Ben told Luke Vader had "betrayed and murdered" his father, and then when the truth came out, instead of apologizing for lying, justified it as "Vader [isn't the same person](/argument/same_person) as your father, so what I told you was true... from a certain point of view".
 
-It's not so awesome that they put this in the same mission as the event where Greez's past catches up with him and Cal is captured by bounty hunters, because the payoffs draw attention away from each other, and when you get back to the Mantis, both conversations are handled very poorly.
+It's not so awesome that they put this in the same mission as the event where Greez's past catches up with him and Cal is captured by bounty hunters, because the payoffs draw attention away from each other, and when you get back to the Mantis, both conversations are handled very poorly:
 
 * Almost nothing is said about Greez's past; there's about three lines digging at him for getting Cal into that, but no real explanation of what happened.
 
@@ -140,7 +140,7 @@ It's not so awesome that they put this in the same mission as the event where Gr
 
 * Cal decides not to press her about it because "we have our lead now", but that makes no sense because they have hours left to ride.
 
-* Greez says he doesn't know what's going on between Cal and Cere, but Cal said it right in front of his face. In fact from Cal's body language in that scene, I thought he considered not saying it in front of Greez for Cere's sake, but then decided she didn't deserve that favor and more or less gave her secret away. Apparently the writers were trying to convey that he took Cere out of Greez's earshot for this and the cutscene animators didn't do their job.
+* Greez says he doesn't know what's going on between Cal and Cere, but Cal said it right in front of his face. In fact from Cal's body language in that scene, I thought he considered not saying it in front of Greez for Cere's sake, but then decided she didn't deserve that favor and gave it away. Apparently the writers were trying to convey that he took Cere out of Greez's earshot for this and the cutscene animators didn't do their job.
 
 ## Act 3
 
@@ -158,9 +158,9 @@ Cal returns to Dathomir. This information has been getting hinted at throughout 
 
 With all the necessary pieces, the group heads back to Bogano to get the holocron, and Cal's able to reach it. Trilla is there. She and Cal have a brief fight that ends with him disarming her and getting her lightsaber, but this is what Trilla intended - holding the saber gives Cal a lengthy vision of her and Cere's past and how they were tortured. It renders him incapacitated while Trilla swipes the holocron and leaves.
 
-When Cal gets back to the Mantis, the conversation is downplayed as usual and the events aren't nearly done justice, but we get an *amazing* scene where Cere uses Trilla's lightsaber (she walked away without it) to anoint Cal as a Jedi Knight.
+When Cal gets back to the Mantis, the conversation is downplayed as usual and the events aren't nearly done justice, but we get an *amazing* scene where Cere uses Trilla's lightsaber (she walked away without it) to anoint Cal as a Jedi Knight. She goes back to being a Jedi herself.
 
-The company travels to the planet Nur, which hosts Fortress Inquisitorius. Nur is blockaded and the Mantis's stealth systems are insufficent, and Merrin's Nightsister magic comes in to make them invisible. They land at Fortress Inquisitorius.
+The company travels to the planet Nur, which hosts Fortress Inquisitorius. Nur is blockaded and the Mantis's stealth systems are insufficent, and Merrin's Nightsister magic comes in handy to make them invisible. They land at Fortress Inquisitorius.
 
 Cal defeats Trilla and gets the holocron, Cere arrives and tries to sway Trilla back to Team Good, but before the conversation can come to a conclusion, Vader appears, and kills Trilla. Cal and Cere flee in an excellent cinematic, and end up flooding the underwater facility and escaping Vader, but Cere is knocked unconscious during it. Cal gives her his water breather, but without it himself, he passes out before he can reach the surface. Merrin swims down and rescues them.
 
@@ -170,7 +170,7 @@ Finally, everyone is safe in the Mantis with the holocron, and Cere points out t
 
 ## Verdict
 
-The story had some really good ideas, but the ending was a major disappointment. My biggest criticism is of Cal's decision to destroy the holocron. While it's arguably an understandable decision (it wouldn't outright waste the plot because they had to stop the Empire from getting the holocron), they *needed* to have this idea be discussed throughout the story. Having them go through all this under the assumption that they'll use the holocron to find the children without even considering destroying it and then at the last second decide to do the latter with only a few lines of dialogue and next to no fanfare? No!
+The story had some really good ideas, but the ending was a major disappointment. My biggest criticism is of Cal's decision to destroy the holocron. While you *could* argue it's the right decision (it wouldn't outright waste the plot because they had to stop the Empire from getting the holocron), they *needed* to have this idea be discussed throughout the story. Having them go through all this under the assumption that they'll use the holocron to find the children without even considering destroying it and then at the last second decide to do the latter with only a few lines of dialogue and next to no fanfare? No!
 
 The writers should've gone for a tragic ending. It would've been the better way to explain why the heroes didn't proceed to found a Jedi order and would've been [appreciated anyway](/fiction/tragedies). I noticed during the cinematic where Cal and Cere were fighting Vader, there was a *golden* opportunity to have Cal destroy the holocron to stop the Empire from getting it. I actually expected that to happen back there. The odds of them escaping with it looked pretty bleak, so it would have been a very sensible decision. And it would've been probably the only time I've ever seen the "goodguys destroy the artifact of immeasurable power instead of using it" trope be not just justified, but badass.
 
@@ -196,7 +196,7 @@ I rarely noticed the music, despite turning up the volume on it. It was mostly g
 
 * You do jump higher by holding down the jump button.
 
-* There's an upgrade far down the Force tree that makes BD's stim canisters refill your Force as well. This is easily the most valuable upgrade in the game, and I recommend getting it as soon as it's available. It lets you use Force powers as a sparing special attack, rather than an "OMG I really don't wanna waste it" emergency card that you end up almost never using as a result (like power weapons in Halo).
+* There's an upgrade far down the Force tree that makes BD's stim canisters refill your Force as well. This is easily the most valuable upgrade in the game, and I recommend getting it as soon as it's available. It lets you use Force powers as a sparing special attack, rather than an "OMG I really don't wanna waste it" emergency card that you end up almost never using as a result (like power weapons in [Halo](halo)).
 
 	I also really like how this upgade makes the decision of whether to use a stim more interesting. Normally you want to use it whenever you're low enough on health to not waste any, but this adds an element of wanting to wait until your Force is empty too. When practicing against the final boss I learned to use my Force powers more liberally to avoid needing to heal without having any Force to regain. I found an inefficent but reliable way to trade Force for a single hit, so when I was low on health, I'd drain the rest of my Force meter doing that before healing.
 
