@@ -1,7 +1,7 @@
 TITLE The Misrepresentation And Underappreciation of Philosophy
 NAV Philosophy
 TEMPLATE DEFAULT
-DESC Philosophy is the field of belief about consciousness, and thus is accessible to and important for everyone.
+DESC Philosophy is the field of belief about consciousness, and thus is accesssible to and important for everyone.
 
 When people talk about philosophy as if it's some kind of academic discipline that you have to "study" and that you can't be expected to engage in if you're not "educated", they demonstrate a complete lack of understanding or appreciation of what philosophy is.
 
@@ -13,7 +13,7 @@ When people talk about philosophy as if it's some kind of academic discipline th
 
 Philosophy has two charactistics following from being about consciousness: it's accessible to everyone, and it's important for everyone.
 
-It's accesible to everyone because everyone has direct experience with the object of study, and after a few years of such, there isn't really anything about consciousness you can't understand without more experience.
+It's accessible to everyone because everyone has direct experience with the object of study, and after a few years of such, there isn't really anything about consciousness you can't understand without more experience.
 
 It's important for everyone because it encompasses [what good and evil are](/protagonism/virtues), [how humans work and thus how to interact with them](/protagonism/emotions), [how thought works and thus how to use it more effectively](/protagonism/soul_anatomy), and any number of other things supremely important for every person to know. If you don't think those things are worth understanding, there's something wrong with you.
 

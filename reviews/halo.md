@@ -13,7 +13,7 @@ The games I'll be talking about are only Halo 1, 2, 3, and Reach, because those 
 
 There is a single significant flaw with the core design, and this is something I didn't diagnose until playing Halo 3 singleplayer on legendary: *being too careful never gets you killed*. There are many exceptions (fighting Flood, keeping marines alive), but for most Covenant encounters, the more careful, the better, which means playing on legendary tends to be *very* tedious and not as interesting as playing on heroic because you don't get to do bold things. You just have to wait behind cover, pick someone off and then hide and recharge your shields, and repeat.
 
-In Halo 1, you have a recharging shield and non-recharging health. The split works out well becacuse using your shields is part of good play but taking health damage is generally a mistake, so it acts as a sort of "mistake buffer".
+In Halo 1, you have a recharging shield and non-recharging health. The split works out well because using your shields is part of good play but taking health damage is generally a mistake, so it acts as a sort of "mistake buffer".
 
 ## Story
 
@@ -21,7 +21,7 @@ Halo 1-3 and Reach have good stories. It's hardly fair to criticize [the typical
 
 ## Balance
 
-The balance between weapons has never been great. In Halo 1, the Assault Rifle, Plasma Rifle, and needler are pretty much irrelevant. Elite encounters on legendary revolve around the Plasma Pistol / human Pistol combo so much that it gets a bit boring. The Plasma Pistol is arguably overpowered because it's both a must-have against Elites and also perfectly good against Grunts and Jackals if you can pull the trigger fast enough.
+The balance between weapons has never been great. In Halo 1, the Assault Rifle, Plasma Rifle, and Needler are pretty much irrelevant. Elite encounters on legendary revolve around the Plasma Pistol / human Pistol combo so much that it gets a bit boring. The Plasma Pistol is arguably overpowered because it's both a must-have against Elites and also perfectly good against Grunts and Jackals if you can pull the trigger fast enough.
 
 In general, automatic weapons are underpowered in all Halo games. You almost always want a long-range, headshot capable weapon because headshots are so important, and a Plasma Pistol for your secondary because it's the only practical way to deal with Elites on legendary. Picking up a machine gun for a close-range encounter always left me underwhelmed by the damage they deal (dual wielding in Halo 2 and 3 makes them usable).
 
@@ -163,7 +163,7 @@ You're almost always with another member of Noble Team through Reach's campaign.
 
 Reach did some really silly things with weapons, like adding the "Plasma Repeater". At first I thought they just renamed and reskinned the Plasma Rifle, but nope the Plasma Rifle exists too. What's the difference between these guns? Nothing worth talking about. For all intents and purposes they're interchangeable.
 
-And then there's the "Concussion Rifle" which is like a mini Fuel Rod because after Halo 1 the devs valued the number of weapons in the game as an intrinsic good even if they don't add variety of experience. The only differences besides having a larger clip is that its shots are affected by gravity. Oh, and it's utterly worthless, at least on legendary. In *enemy* hands it feels pretty powerful, but in your hands it's worthless: it takes two direct hits to kill a Grunt, and you can empty a whole clip into an Elite and they still have shields.
+And then there's the "Concussion Rifle" which is like a mini Fuel Rod because after Halo 1 the devs valued the number of weapons in the game as an intrinsic good even if they don't add variety of experience. The only difference besides having a larger clip and less damage is that its shots are affected by gravity. Oh, and it's utterly worthless, at least on legendary. In *enemy* hands it feels pretty powerful, but in your hands it's worthless: it takes two direct hits to kill a Grunt, and you can empty a whole clip into an Elite and they still have shields.
 
 They replaced the Battle Rifle with the "DMR", which is pretty similar but single-shot instead of 3-shot burst and its scope is 3x instead of 2x.
 

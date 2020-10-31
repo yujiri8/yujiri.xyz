@@ -128,7 +128,7 @@ The Vec type (which is the main sequence type) accomodates [most common sequence
 
 Rust has OS-level threads as well as async/await. The designers said somewhere that OS-level threads made more sense than green threads because Rust is supposed to be a systems language, and I'm happy with that.
 
-It's communication system is similar to Go's, but ownership solves data races *and mutex hell*. Mutexed data can't be accessed without locking because of the type system, and when the unwrapped data goes out of scope, it's automatically relocked. You can still deadlock of course, but this makes mutexes much easier to work with.
+Its communication system is similar to Go's, but ownership solves data races *and mutex hell*. Mutexed data can't be accessed without locking because of the type system, and when the unwrapped data goes out of scope, it's automatically relocked. You can still deadlock of course, but this makes mutexes much easier to work with.
 
 ## Resource management
 
