@@ -53,6 +53,8 @@ I'll also color-code the commands according to how important they are. <code cla
 
 * <code class="basic">ln</code> - create links (called shortcuts on Windows).
 
+* <code class="basic">mkdir</code> - create a directory.
+
 ## Getting help
 
 * <code class="ess">man</code> - "manual". Shows the manual page for the argument you pass it (so `man rm` will get you the manual page on the `rm` command). (And yes there's a manual page on `man`.) I cover manual pages more [here](unix_manual). The other commands in this section are not nearly as important.
@@ -67,6 +69,10 @@ I'll also color-code the commands according to how important they are. <code cla
 
 * <code class="ess">stat</code> - display information about a file (on a BSD system, it displays in a very terse format by default; `-x` to make it display in a more human-readable way)
 
+* <code class="basic">chmod</code> - "change mode". Changes file permissions.
+
+* <code class="basic">chown</code> - "change owner".
+
 * <code class="basic">locate</code> - Search the hard drive for a filename containing the given argument. Since it uses a cached database, it can search the entire hard drive almost instantly, but the downside is that its database can get out of date. Depending on your operating system it's probably updated once a week or once a day (but you can change that).
 
 * <code class="basic">touch</code> - Change a file's access and modification timestamps (useful for just creating an empty file).
@@ -74,10 +80,6 @@ I'll also color-code the commands according to how important they are. <code cla
 * <code class="basic">file</code> - determine the type of content in a file (this can sometimes even detect programming languages and stuff).
 
 * <code class="com">find</code> - print the paths of all files in the specified directory and below it (can be passed options, like `-type f -name foo` to search for a regular file named foo)
-
-* <code class="com">chmod</code> - "change mode". Changes file permissions.
-
-* <code class="com">chown</code> - "change owner".
 
 * <code class="com">du</code> - "disk usage". Show the size of a file or directory.
 
