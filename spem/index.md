@@ -36,7 +36,7 @@ Yes, I'm for real, I plan to invent a language and get the world speaking it. I 
 
 [Open question (please comment): variable dereferencing?](dereference)
 
-[Other open questions (7)](rfc)
+[Other open questions (6)](rfc)
 
 <br>
 

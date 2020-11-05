@@ -21,12 +21,6 @@ I need to deal with concepts of directness. In English, we often say things like
 
 I've discussed this one in the comments on [quantifiers](quantifiers). I have no idea what a good approach is.
 
-## Talking about difficulty and cost
-
-Original thoughts (when I saw it as "practically can" vs "technically can") in [this comment](?c=415#comment-section).
-
-I need to distinguish, though, between *difficulty* meaning a probability of failure, and *cost*. Sometimes we say something would be 'hard' to do, even if we could definitely succeed, meaning it would be costly. And there are also cases where it seems like both are applicable: "Gwyn is a hard boss" could be seen as meaning that if I try, I'll most likely fail, but it's also clear I could eventually win by trying enough times, so it kind of also means it just has a high time cost.
-
 ## Emphasizing different sides of degree modifiers
 
 There are pairs like "almost" versus "not quite"; or "slightly" versus "barely". Note that in either case they
