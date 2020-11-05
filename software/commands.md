@@ -197,8 +197,7 @@ I'll also color-code the commands according to how important they are. <code cla
 
 * <code class="adv">sockstat</code> - get information about open sockets.
 
-* <code class="adv">netstat</code> - get information about open network connections. (`netstat -r` shows
-the routing table.)
+* <code class="adv">netstat</code> - get information about open network connections. (`netstat -r` shows the routing table.)
 
 * <code class="adv">gstat</code> - "GEOM status". Get information about disk I/O.
 

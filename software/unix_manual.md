@@ -10,22 +10,25 @@ Stuff inside brackets is optional. Usually these are flags.
 Things with a bar between them are alternatives - they're mutually exclusive.
 
 Underlined words that are not bold <span class="note">if you're not on FreeBSD the text style might differ from what I'm saying but it'll be consistent across the system</span> are not to be typed literally; they're descriptions of parameters. For example, the synopsis:
-```
-**dosomething** [-f | -q] [-w] _file_
-```
-means the command is called `dosomething`, and it takes an argument which should be the name of a file. The command supports three flags: `-w`, `-q`, and `-f`; `-f` and `-q` are mutually exclusive. Exactly what each flag does will be described in the rest of the command's manual page.
+
+<pre><code><b>dosomething</b> [-f | -q] [-w] <i>file</i>
+</code></pre>
+
+means the command is called `dosomething`, anyd it takes an argument which should be the name of a file. The command supports three flags: `-w`, `-q`, and `-f`; `-f` and `-q` are mutually exclusive. Exactly what each flag does will be described in the rest of the command's manual page.
 
 `...` means multiple things can be put here. If the `dosomething` command's synopsis had said:
-```
-**dosomething** [-f | -q] [-w] _file ..._
-```
+
+<pre><code><b>dosomething</b> [-f | -q] [-w] <i>file ...</i>
+</code></pre>
+
 That would mean you can pass it more than one filename and it'll do whatever it does to all of those files. (Almost all commands allow this.)
 
 Sometimes the synopsis is also specified in multiple parts, like:
-```
-**dosomething** [-f | -q] [-w] _file ..._
-**dosomething** -h
-```
+
+<pre><code><b>dosomething</b> [-f | -q] [-w] <i>file ...</i>
+<b>dosomething</b> -h
+</code></pre>
+
 This would mean that the command can be used like above, or it can be used as just `dosomething -h` with no other flags or operands. (Usually if a command has a `-h` flag, it stands for 'help' and causes the command to print a short description of how to use it instead of doing anything.)
 
 There's [a web version of the FreeBSD manual pages](https://www.freebsd.org/cgi/man.cgi), and it looks much nicer, but you still need to know the synopsis syntax.
