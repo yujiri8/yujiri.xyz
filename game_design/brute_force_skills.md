@@ -2,7 +2,7 @@ TITLE The Pitfall of Brute-Froce Skills In Game Design
 NAV Brute-force skills
 TEMPLATE DEFAULT
 
-Brute-force skills are a pitfall in game design that appear to be an easy means to extreme [competitive depth](depth), but aren't satisfying to play because they misunderstand they point of depth.
+Brute-force skills are a pitfall in game design that appear to be an easy means to extreme [competitive depth](depth), but aren't satisfying to play because they misunderstand the point of depth.
 
 If your combat system consists of "react fast enough to avoid damage and counterattack; tougher enemies just require faster reactions and have higher health/damage", then your game won't be able to get very hard because reaction speed is somewhat of a brute-force skill. Players can't become reaction gods just by practicing.
 

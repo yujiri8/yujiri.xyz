@@ -1,5 +1,5 @@
 TITLE Crystal Review
-NAV Review: Python
+NAV Review: Crystal
 TEMPLATE DEFAULT
 DESC Crystal is an excellent language. Its biggest problems are all a matter of maturity.
 
@@ -37,7 +37,7 @@ Crystal is both duck- and statically typed, which is awesome. Hats off to the Cr
 
 Whereas Rust uses algebraic data types and pattern matching, Crystal uses union types, type parameters on classes, and a `case` statement that can check types as well as values, which is mostly equivalent in the end. I'm not really sure if either of these implementations have any real advantages over the other. But the main thing Crystal has over Rust as far as the type system is inheritance! You can't do it in Rust. It feels great to have it back.
 
-In fact (and this would probably horrify the Rust devs), Crystal lets you "re-open" a class or module with a second block that looks like its definition to modify the first, which is surprisingly handy. It's used to define a class or module across multiple files, but also to modify built-in things like the [Kemal web framework](https://kemalcr.com) does to the stdlib's [`HTTP::Server::Context`](https://crystal-lang.org/api/HTTP/Server/Context.html) to provide parameters.
+In fact (and this would probably horrify the Rust devs), Crystal lets you "re-open" a class or module with a second block that looks like its definition to modify it, which is surprisingly handy. It's used to define a class or module across multiple files, and to modify built-in things like the [Kemal web framework](https://kemalcr.com) does to the stdlib's [`HTTP::Server::Context`](https://crystal-lang.org/api/HTTP/Server/Context.html) to provide parameters.
 
 ### Type inference and annotations
 
@@ -151,7 +151,7 @@ There is no built-in linter, but there is a popular and very useful one, [Ameba]
 
 ## Stdlib and ecosystem
 
-The ecosystem is very small due to the youth of the language, but the stdlib is great. There's a solid core of essentials like common array operations and modules for a lot of common things like array operations, JSON, CSV, Regex and HTTP. Not as expansive as Python's stdlib, but good enough that you can actually do some things without third-party packages.
+The ecosystem is very small due to the youth of the language, but the stdlib is great. There's a solid core of essentials like common array operations and modules for a lot of common things like JSON, CSV, Regex and HTTP. Not as expansive as Python's stdlib, but good enough that you can actually do some things without third-party packages.
 
 As expected, the solid stdlib has led to an ecosystem that's *healthy* despite being very small. Lots of packages don't have dependencies and few have more than a couple, so you can actually understand what you're depending on. Most projects I've seen have an impressive source line count for the amount of functionality they provide. I'd take the Crystal ecosystem over the Rust, Haskell or [Javascript](https://yujiri.xyz/software/javascript) ecosystem any day.
 
