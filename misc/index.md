@@ -30,3 +30,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [Snakes](snakes)
 
 [Self-aware sin](sin)
+
+[Thoughts on communal living](communal_living)

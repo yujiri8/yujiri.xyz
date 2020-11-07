@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**November 7:**
+New: [Thoughts on communal living](misc/communal_living).
+
 **October 25:**
 New: [Halo review](reviews/halo)
 
