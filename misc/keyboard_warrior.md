@@ -5,7 +5,7 @@ DESC I've been a ferocious keyword warrior ever since I was 14, and I feel miser
 
 I've been a ferocious keyword warrior ever since I was 14, and I feel miserably about it.
 
-I preach [real action](/protagonism/revolution), but I don't take it myself. Almost all I've ever done is argue. I've never so much as set foot in a protest.
+I preach [direct action](/protagonism/revolution), but I don't take it myself. Almost all I've ever done is argue. I've never so much as set foot in a protest. (For the record: protests are not direct action. They're an embarrassing waste of time, but they're at least more dignified than keyboard warrioring.)
 
 To be fair, I have a very unusual position that isn't well-suited to direct action. And keyboard warrioring does have *some* value. I've even swayed at least one person [away from statism](/protagonism/anarchism). I've probably done a fair done amount of good.
 

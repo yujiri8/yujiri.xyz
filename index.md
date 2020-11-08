@@ -67,7 +67,7 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <summary>Recent update log</summary>
 
 **November 7:**
-New: [Thoughts on communal living](misc/communal_living).
+New: [Thoughts on communal living](misc/communal_living) and [On not depending on external validation](misc/external_validation).
 
 **October 25:**
 New: [Halo review](reviews/halo)

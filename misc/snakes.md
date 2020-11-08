@@ -6,9 +6,9 @@ A snake is a type of abuser. They have the following characteristics:
 
 * They have no principles. A snake's allegiance is entirely determined by their programming.
 
-* Their speech is full of doublespeak and [linguistic obfuscation](/argument/dirty_tactics#linguistic-obfuscation). Their words are chosen entirely by social strategy. Any complements, testimony, or other dialogue from them should not be considered any indication of truth, and if something they say doesn't make sense, don't try to make sense of it.
+* Their speech is full of doublespeak and [linguistic obfuscation](/argument/dirty_tactics#linguistic-obfuscation). Their words are chosen entirely by social strategy. Any compliments, testimony, or other dialogue from them should not be considered any indication of truth, and if something they say doesn't make sense, don't try to make sense of it.
 
-* You cannot change their mind about anything, nor will they ever change of their own accord. Any criticism, advice, complements, encouragement or other dialogue will be forgotten the next day. But they're open to "discussing", which means them making you explain yourself infinitely and getting upset if you give up on convincing them.
+* You cannot change their mind about anything, nor will they ever change of their own accord. Any criticism, advice, compliments, encouragement or other dialogue will be forgotten the next day. But they're open to "discussing", which means them making you explain yourself infinitely and getting upset if you give up on convincing them.
 
 * They will never leave you alone at your request. Your only options are to physically leave or threaten them. The best way is generally to run, since they won't stop talking once you start leaving, only once you're out of earshot.
 
@@ -22,7 +22,7 @@ A snake is a type of abuser. They have the following characteristics:
 
 * In the unlikely event that you genuinely wrong a snake, they will usually not accept restitution, because they prefer to have you in the malefactor position.
 
-Snakes can be hard to identify beccause they're so skilled at what they do. But the most important advice is to give up on them completely. Don't ever try to argue with them or consider anything they say. Interact with them as little as possible. That's the best you can do for your sanity.
+The most important advice is to give up on them completely. Don't ever try to argue with them or consider anything they say. Interact with them as little as possible. That's the best you can do for your sanity.
 
 The worst thing you can do with them is feel obligated to be honest. They will never return the gesture.
 

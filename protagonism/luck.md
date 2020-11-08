@@ -5,7 +5,7 @@ DESC The premise of property rights is that barring aggression, people deserve w
 
 By far the most interesting critique of capitalism (in [the libertarian anarchist sense](market)) to me is that it constitutes a sort of *luck worship*: the premise of property rights is that *barring aggression*, people deserve whatever they have; whatever they can get. In other words, *barring aggression*, whatever happens naturally is just; *luck* (or a combination of luck and intelligence) determines who's entitled to what; *might makes right*.
 
-<span class="note">To my own disappointment, of all the communists I've debated, I've never heard this argument. It came to me entirely on my own.</span>
+(To my own disappointment, of all the communists I've debated, I've never heard this argument. It came to me entirely on my own.)
 
 If we believed, as one might intuitively want to, that luck never affects what anyone's entitled to, we would discard the entire concept of homesteading and essentially believe in redistributing wealth so that everyone gets what they deserve ([Chaos Anarchism](/misc/anarchism_conversion)).
 

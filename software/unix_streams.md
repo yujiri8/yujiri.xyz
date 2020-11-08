@@ -22,13 +22,6 @@ Stdout is for normal output - the expected output of a command. Commands write t
 ## Other forms of stream redirection
 
 There's a lot of other useful stuff you can do by changing where a process's stdin, stdout, and stderr are coming from or going to. For example, in most shells the `>` character is like `|` except that it writes the output to a file instead of to the stdin of another command. `dmidecode > output` would run `dmidecode` but save its output to the file named `output` instead of printing it to the terminal. You can do this with any command.
-<!--</p><p><code>cat input > output</code> will read the file
-<code>input</code> and write its contents to the file <code>output</code>, effectively copying the file. This would be
-more interesting if you used it with a command like <code>echo</code> in place of <code>cat</code>, which sends its arguments
-to stdout. So <code>echo hello > output</code> would create a file named <code>output</code> that would have the word 'hello'
-in it, and you'd be doing it with one command without having to open a text editor. (I realize this is still an unimpressive
-example. But you could do this with any program, saving its output to a file instead of printing it to the terminal.)-->
-<!--Maybe use a note to give the example of tee-->
 
 Another useful form of this is **command substitution**, which lets you use the stdout of a command as arguments to another. Most shells do this with backquotes (\`). For example, <code>stat &#96;cat files&#96;</code> will run `cat files`, reading the text from the file named `files`, and then run `stat` on each file listed in there.
 
@@ -48,4 +41,4 @@ There are some possible misunderstandings I should dispel before I end this.
 
 	The downside of programs not using the standard streams is that then the user can't easily change where they're going, which makes the command less flexible. But for something like playing music that wouldn't really be useful anyway because you don't want the raw audio data dumped on your terminal screen; and if a program used stdin to read its configuration file then you'd have to know where that file is and pipe it in to the command every time you wanted to use it.
 
-* The definition of a "stream" (as I understand it) is that it can be read or written to gradually. A process's stdin doesn't have to all be available for the program to start running, whereas if the output of another command is part of its arguments, then that other command does have to complete first because a process has to have access to all of its arguments upfront. Streams allow us to run commands in parallel, whereas arguments are more convenient for things that are supposed to be treated as distinct items rather than a stream of data.
+* The definition of a "stream" is that it can be read or written to gradually. A process's stdin doesn't have to all be available for the program to start running, whereas if the output of another command is part of its arguments, then that other command does have to complete first because a process has to have access to all of its arguments upfront. Streams allow us to run commands in parallel, whereas arguments are more convenient for things that are supposed to be treated as distinct items rather than a stream of data.
