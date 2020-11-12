@@ -25,13 +25,13 @@ Of course, the work-is-enjoyable argument doesn't apply equally to all occupatio
 
 ## Concentration of power
 
-Market advocates bend over backward trying to defend markets from the monopoly criticism. Many Ancaps will go so far as to argue that monopolies *can't* happen in a free market. Although they're right that most monopolies and oligopolies are created by government red tape and favoritism (and that government itself is a monopoly on all of the most structurally important things), and there are lots of good arguments to make about how monopoly abuse is not a critical problem with free markets, I've never heard a convincing argument that markets *don't* tend toward the concentration of power at all, since economic power facilitates its own growth and things like vendor lock-in exist. Monopolies *can* form in a free society, and they *can* abuse their power, especially by acting in secrecy. Communes don't have this problem.
+Market advocates bend over backward trying to defend markets from the monopoly criticism. Many Ancaps will go so far as to argue that monopolies *can't* happen in a free market. Although they're right that most monopolies and oligopolies are created by government red tape and favoritism (and that government itself is a monopoly), and there are lots of good arguments to make about how monopoly abuse is not a critical problem with free markets, I've never heard a convincing argument that markets *don't* tend toward the concentration of power at all, since economic power facilitates its own growth and things like vendor lock-in exist. Monopolies *can* form in a free society, and they *can* abuse their power, especially by acting in secrecy. Communes don't have this problem.
 
 ## Luck
 
 Finally, market advocates are always on about how enterpreneurs are brilliant and *deserve* to be rewarded for their wise leadership; how the market rewards good decisions and punishes bad decisions. But they downplay how much *luck* is involved. Even if you assume there's a real difference between luck and good amoral decisions (I actually think that's a very dubious distinction), a lot of market success is luck. The environment you're born into is a huge factor. Even after that, you never have all the information relevant to your decision, so it's wrong to characterize markets as pure meritocracies.
 
-And it works in the opposite direction. In a market society, you can lose everything and/or be plunged into debt without making any bad decisions. You can suffer all sorts of natural or financial disasters. And things like mutual aid societies can mitigate this, but then those aren't really a market construct so much as a mix-in of voluntary communism.
+Accordingly, in a market society, you can lose everything and be plunged into debt without making any bad decisions. You can suffer all sorts of natural or financial disasters. And things like mutual aid societies can mitigate this, but then those aren't really a market construct so much as a mix-in of voluntary communism.
 
 ---
 

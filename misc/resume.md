@@ -14,9 +14,9 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 # Skills
 
-* **Proficient in**: Python, Go, Javascript, Unix shell, HTML and CSS, Regular expressions
+* **Proficient in**: Python, Go, Javascript, Crystal, Unix shell, HTML and CSS, Regular expressions
 
-* **Moderate ability in**: Crystal, Rust, Haskell, Julia, C, SQL
+* **Moderate ability in**: Rust, Haskell, Julia, C, SQL
 
 ## Technologies and Frameworks
 
@@ -94,7 +94,7 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 * [Haskell-gi](https://github.com/haskell-gi/haskell-gi): [Fix missing GObject Introspection annotations causing some functions to be unusable](https://github.com/haskell-gi/haskell-gi/pull/263)
 
-* [Comrak](https://github.com/haskell-gi/haskell-gi): Added the option to escape HTML instead of clobbering
+* [Comrak](https://github.com/haskell-gi/haskell-gi): Added option to escape HTML instead of clobbering
 
 * [quickbooks-go](https://github.com/rwestlund/quickbooks-go): Added some features and updated to use Go modules
 
@@ -104,7 +104,9 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 <!-- * [Granite ORM](https://github.com/amberframework/granite/): Improved migrator, updated docs -->
 
-<!-- * [Yggdrasil](https://yggdrasil-network.github.io): Packaged for FreeBSD -->
+* [Yggdrasil](https://yggdrasil-network.github.io): Packaged for FreeBSD
+
+* [Crystal SQLite binding](https://github.com/crystal-lang/crystal-sqlite3): added REGEXP support
 
 ## Human Languages
 
