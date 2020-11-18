@@ -5,10 +5,6 @@ TEMPLATE DEFAULT
 (There are more open questions in [the dictionary](search). Ones that are specifically about an existing
 word go in the word's Notes field; to search for them, put "Open question" in the Notes box.)
 
-## Pronoun revamp
-
-Currently, <spem>ni</spem> is self and <spem>ɪl</spem> is 'the'/'it'. I've mentioned before the idea of separating <spem>ɪl</spem> into two words: one for an aforementioned entity and one for an entity that hasn't been mentioned yet, but is inferrable. So the idea I'm having now is: <spem>ni</spem> becomes the inferrable entity because it most closely fits with <spem>mi</spem> and <spem>ŋi</spem>; <spem>nɑi</spem> becomes the aforementioned entity; <spem>ɪl</spem> becomes 'self'.
-
 ## The adjective/noun distinction
 
 I've written a lot about this in [this comment](index?c=101#comment-section) and its subtree. In [this below comment](?c=386#comment-section), I started to change my mind.
