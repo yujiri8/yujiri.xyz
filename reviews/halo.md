@@ -117,7 +117,7 @@ The other Halo games don't really have *boss fights*, but Halo 2 has several: th
 
 ## Halo 3
 
-Halo 3 has an interesting mechanic since you're with the Arbiter more often than not: the Arbiter is immortal ally, *but* he can be defeated temporarily and get back up after the fight. I like how this mechanic works compared to the immortal allies in Reach because you have to fight *with* the Arbiter to maximize his value, or else he goes down and leaves you alone.
+Halo 3 has an interesting mechanic since you're with the Arbiter more often than not: the Arbiter is an immortal ally, *but* he can be defeated temporarily and get back up after the fight. I like how this mechanic works compared to the immortal allies in Reach because you have to fight *with* the Arbiter to maximize his value, or else he goes down and leaves you alone.
 
 ### Snipers
 

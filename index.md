@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**November 19:**
+New review: [Half-Life: Alyx](reviews/half_life_alyx).
+
 **November 7:**
 New: [Thoughts on communal living](misc/communal_living) and [On not depending on external validation](misc/external_validation).
 
