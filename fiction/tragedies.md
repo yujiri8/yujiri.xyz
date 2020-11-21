@@ -4,9 +4,9 @@ TEMPLATE DEFAULT
 
 We need more tragedies. The goodguys win so often in our stories that we usually go into the climax fully expecting them to no matter how outmatched they are. Of course, it's a cherished legend that goodguys can always win if they try hard enough. Even though we all know that's not true, we have an innate desire to imagine it is.
 
-But hiding away this large area of possibility space is bad for our story diversity, and for our psyches when we return to the real world, where everything is fucked and innocent people lose regularly.
+But hiding away this large space of possibility is bad for our story diversity, and for our psyches when we return to the real world, where everything is fucked and innocent people lose regularly.
 
-And I confess, I'm guilty of contributing to this. I've yet to make a story without a triumphant ending. (In my defense, I wrote 7 chapters of what was going to be a tragedy when I was 19 that I hosted here until I abandoned it because I got too disillusioned, and my other works all explore tragedy at least in a partial way or via multiple endings.) Anyway, in the hopes of giving you some inspiration to write tragedies, I thought we could talk about different kinds of them. It can be interesting to lay out the four ways of getting a failure:
+And I confess, I'm guilty of contributing to this. I've yet to make a story without a triumphant ending. (I did write 7 chapters of what was going to be a tragedy when I was 19 that I hosted here until I abandoned it because I got too disillusioned, and my other works all explore tragedy at least in a partial way or via multiple endings.) Anyway, in the hopes of giving you some inspiration to write tragedies, I thought we could talk about different kinds of them. It can be interesting to lay out the four ways of getting a failure:
 
 * Unwinnable from the start
 
