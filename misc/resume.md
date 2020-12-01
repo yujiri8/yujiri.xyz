@@ -2,8 +2,6 @@ TITLE Resume
 NAV Resume
 TEMPLATE DEFAULT
 
-This is sort of an informal draft.
-
 Legal name: Ryan Westlund
 
 Email: rlwestlund@gmail.com
@@ -40,25 +38,17 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 # Experience
 
-## [Awningtracker](https://awningtracker.com) - paid intern, May 2018 - present
+## Full-stack developer at [Awning Tracker](https://awningtracker.com), May 2018 - present
 
-* Implemented external event logging and aggregation using Elasticsearch, with Kibana for visualization and analytics
+* Implemented external event logging and aggregation using Elasticsearch and Kibana for analytics and debugging.
 
-* Implemented autocomplete and search for addresses using the Google Places API, and to find a list of awning suppliers in the country to market the project to
+* Implemented integration with Google Maps and Google Places
 
-* Implemented Google Maps integration to show a map of all appointments for a day
-
-* Created a suite of scripts and web interface to aid system administration, including creating, removing and upgrading client deployments, and email notifications for the sysadmin when the service goes down
-
-* Found and fixed a security vulnerability caused by cookies lacking the SameSite attribute
+* Created a web-based admin panel for the syadmin using Lit-Element and Redux
 
 ## yujiri.xyz - website architect and sysadmin
 
-Site uses FastAPI, SQLAlchemy and Lit-Element.
-
-* Implemented comments with a tree structure, markdown, and email notifications including a selective subscription and ignore system
-
-* Implemented a searchable dictionary for my conlang
+Personal website without a CMS. Self-implemented a tree-structured comment system with markdown and email notifications, and a searchable dictionary for my conlang. Originally implemented in plain uWSGI and PostgreSQL with psycopg2; rewritten with Django and then rewritten again with FastAPI and SQLAlchemy.
 
 * Researched and practiced SEO and got the site to average 10-20 clicks through Google Search per day
 
