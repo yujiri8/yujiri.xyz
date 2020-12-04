@@ -66,6 +66,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**December 4:**
+New: [Stop taking tests](argument/tests)
+
 **November 19:**
 New review: [Half-Life: Alyx](reviews/half_life_alyx).
 
