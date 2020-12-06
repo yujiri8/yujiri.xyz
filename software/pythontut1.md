@@ -17,7 +17,7 @@ Regardless of your operating system, there's actually a good chance Python is pr
 
 ## What's with this "prompt"?
 
-In most languages, to write a program, you have to save the source code to a file and then execute the file. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. This is called the interactive prompt, the Python shell, or the REPL (read-evaluate-print loop). Please follow along with this for now by starting IDLE or the appropriate Python command.
+In most languages, to write a program, you have to save the source code to a file and then execute the file. Lines of code are executed from top to bottom. But Python also features an interactive mode, where you can type instructions one by one and see them executed as you enter them. This is called the interactive prompt, the Python shell, or the REPL (read-evaluate-print loop). I recommend following along with this for now by starting IDLE or the appropriate Python command.
 
 When you start, you'll probably see a message about the Python version and stuff and then a line starting with `>>>`. The `>>>` means it's waiting for you to enter code. The result of each command you type is displayed on the next line without the `>>>`. The `>>>` is called a prompt (confusingly, that word refers to both this symbol and the interactive mode in general).
 
@@ -27,7 +27,7 @@ Most of my excerpts here are interactive sessions, and so lines that start with 
 
 ## Math
 
-First, let me demonstrate the calculator use:
+A lot of early examples will involve math, because math is simple and you already know it. Let me demonstrate the calculator use:
 
 ```python
 >>> 5 + 2
@@ -42,7 +42,7 @@ The interactive prompt interprets math expressions just like math.
 
 ## Variables
 
-A variable is like a name you can set to mean whatever you want. `number = 5` assigns the value `5` to the name `number`. Hereafter, we could include `number` in our calculations and it would have this value:
+A variable is a name you can set to mean whatever you want. `number = 5` assigns the value `5` to the name `number`. Hereafter, we could include `number` in our calculations and it would have this value:
 
 ```python
 >>> number = 5
