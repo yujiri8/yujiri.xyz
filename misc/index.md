@@ -34,3 +34,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [Thoughts on communal living](communal_living)
 
 [On not depending on external validation](external_validation)
+
+[Secret rules, peaceful enforcers](secret_rules)
