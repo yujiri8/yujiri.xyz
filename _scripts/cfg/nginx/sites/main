@@ -1,0 +1,34 @@
+include redirect-map.conf;
+
+server {
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+
+	server_name yujiri.xyz;
+
+	root /root/didact/html;
+
+	index index;
+	error_page 404 /404;
+	#error_page 400 /400;
+	#error_page 502 /502;
+	try_files $uri $uri/ =404;
+	# redirect map
+	if ( $redirect_uri ) {
+		return 301 $redirect_uri;
+	}
+	# strip .html
+	rewrite (.*)\.html$ $1 permanent;
+	# category redirects
+	rewrite ^/protagonism/lessons(.*) /protagonism$1 permanent;
+	rewrite ^/writing(.*) /fiction$1 permanent;
+	rewrite ^/kaliruk(.*) /works$1 permanent;
+	rewrite ^/works/rebels(.*) /works/the_pygon_hybrid$1 permanent;
+	rewrite ^/works/rttp_downloads(.*) /works/return_to_the_portrait$1 permanent;
+	rewrite ^/computing(.*) /software$1 permanent;
+	# API
+	location /api/ {
+		proxy_pass http://localhost:3000/;
+		proxy_set_header X-Forwarded-For $remote_addr;
+	}
+}

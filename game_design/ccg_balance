@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../global.css">
+<title>Objectives of CCG Balance</title>
+</head>
+<body>
+<div class="content">
+<p>There are four objectives one should have when balancing a customizable card game. In order of precedence, they are:</p>
+<ol>
+ <li>You want to maximize interesting decisions in deckbuilding.</li>
+     <p>If . going to want it in your deck every time, reducing .</p>
+ <li>You don't want any card to feel unfair for the person it gets played on.</li>
+     <p>This is where most CCGs out there completely shit themselves. A lot of developers don't believe that individual cards should be balanced, and even explicit say so. They think that if it
+     isn't causing a single deck to dominate the meta, it's not a problem, period.</p>
+     <!--The way players claim the game would be worse this way is similar to Anarchy.-->
+ <li>You want there to be as many different viable decks and strategies as possible.</li>
+ <li>You want every card to have a place in the metagame.</li>
+     <p>Another area that many popular CCGs completely fail at. Most of the ones I've seen have such a tragic collection of cards that never see any play at all, not even by noobs, because they
+     are simply obviously worthless just by looking at the card, and because no one ever sees them, no one ever thinks or talks about them, and so the devs don't hear any complaints, resulting in
+     no buffs. Of course, it's still puzzling how the developers could be so mind-bogglingly stupid as to release those cards in the first place.</p>

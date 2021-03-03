@@ -1,0 +1,12 @@
+# For running:
+# certbot certonly --webroot -w /usr/local/www/letsencrypt -d domain
+server {
+	listen 80 default;
+	location ^~ /.well-known/acme-challenge/ {
+		default_type text/plain;
+		root /usr/local/www/letsencrypt;
+	}
+	location / {
+		return 301 https://$host$request_uri;
+	}
+}
