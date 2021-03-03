@@ -1,4 +1,5 @@
 TITLE Yujiri's fiction
+NAV Works
 
 Storytelling has been a passion of mine ever since I was 13. I'm not currently working on any stories, and don't know if I ever will again, which is sad because I didn't actually keep any of the full-scale, independent stories around. I did finish one of my teenage novels but it was bad enough that I scrapped it a couple years later. I hope to come back and write a full-scale story of my own someday.
 

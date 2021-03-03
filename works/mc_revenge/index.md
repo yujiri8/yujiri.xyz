@@ -1,5 +1,6 @@
 TITLE MC's Revenge - Doki Doki Literature Club mod
 DESC MC's Revenge is a fan work I made for Doki Doki Literature Club where MC is meta-aware in Act 2.
+NAV MC's Revenge
 
 MC's Revenge is a fan work I made for [Doki Doki Literature Club](/reviews/ddlc). The project was [started](https://github.com/firelightning13/DDLC-MCRevengeMod) by [Firelightning13](https://reddit.com/u/firelightning13), abandoned by him, and I continued it with permission.
 

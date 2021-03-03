@@ -1,4 +1,5 @@
 TITLE Yujiri's miscellany
+NAV Misc
 
 This is the section where I post miscellaneous stuff and personal ramblings.
 

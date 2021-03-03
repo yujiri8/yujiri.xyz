@@ -1,5 +1,6 @@
 TITLE Spem: the philosopher's conlang
 DESC A conlang designed to be elegant, semantically accurate, and free of built-in destructive ideas. Screw Esperanto.
+NAV Spem
 
 Yes, I'm for real, I plan to invent a language and get the world speaking it. I don't care if you think I'm crazy or it's hopeless. So is anything else I might try to do to fix the world. (I just feel the need to say this cause so many people in real life have jeered at me for this even though [there are verifiable examples of somewhat successful conlangs](https://en.wikipedia.org/wiki/Esperanto).)
 

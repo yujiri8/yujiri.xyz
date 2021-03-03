@@ -1,5 +1,6 @@
 TITLE Return To The Portait - Doki Doki Literature Club mod
 DESC Return To The Portrait continues from DDLC and explores Project Libitina and all the file secrets.
+NAV Return To The Portrait
 
 Return To The Portrait is a fan work I made for [Doki Doki Literature Club](/reviews/ddlc). It picks up from the end of the original game and involves everyone working together to find out the truth about their world and about Project Libitina. It features a ton of file tampering and other meta stuff like exploring the rules behind Club President powers. It also features Natsuki's dad, who is *not* a sadistic prick, and tries to give each character some limelight. Estimated play time is maybe... 8 hours?
 
