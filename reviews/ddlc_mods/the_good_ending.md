@@ -87,7 +87,7 @@ We were just as trapped out there as we are in here.
 
 158 help us.
 </pre>
-</detals>
+</details>
 
 `natsuki.chr` is an enormous ASCII art image that looks like the fully decoded version of her .png from the original game.
 

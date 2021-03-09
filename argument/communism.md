@@ -28,7 +28,7 @@ Market advocates bend over backward trying to defend markets from the monopoly c
 
 ## Property enforcement difficulty
 
-How much of an issue this is depends on your beliefs about [the nature of property rights](/protagonism/property). If you share mine, particularly the half-defense of intellectual property and the value-splitting stance on natural resources, well, there's a problem: as sound as those might be axiologically, they're basically impossible to enforce because both depend on quantifying subjective experience and intellectual property is trying to fight against the nature of physical reality. Note that having unenforceable property is worse than abolishing property in this way: unenforceable property allows your income to be lost; in a communist society, your income is effectively fixed because you don't need to pay for anything.
+How much of an issue this is depends on your beliefs about [the nature of property rights](/protagonism/property). If you share mine, particularly the half-defense of intellectual property and the value-splitting stance on natural resources, well, there's a problem: as sound as those might be axiologically, they're basically impossible to enforce because both depend on quantifying subjective experience and intellectual property is trying to fight against the nature of physical reality. Note that having unenforceable property is worse than abolishing property in this way: unenforceable property allows your income to be lost; in a communist society, your income is effectively fixed.
 
 Of course, this is a much lesser issue if you're a typical ancap who accepts homesteading and rejects intellectual property altogether.
 

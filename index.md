@@ -65,6 +65,11 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**March 3:**
+*HUGE drumroll* Didact is ready for use! And this website is now powered by it!
+
+I feel so fulfilled! I finished a dream project with technologies I like!
+
 **February 27:**
 Gee, it's been a while.
 New: [Separate communication and notification](software/separate_comms_and_notifs).

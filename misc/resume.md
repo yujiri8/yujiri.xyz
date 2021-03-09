@@ -23,7 +23,7 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 * **Frontend**: [Lit-Element](https://lit-element.polymer-project.org), [Redux](https://redux.js.org)
 
-* FreeBSD - main operating system for many years. Proficient with a command-line interface and configuring and troubleshooting FreeBSD.
+* **Operating systems**: GNU/Linux, FreeBSD
 
 * [Elasticsearch](https://www.elastic.co/elasticsearch/), [Kibana](https://elastic.co/kibana)
 

@@ -11,9 +11,9 @@ I spent a long time read about them; Django and Flask were all the rage, and I l
 
 So I gave Django a try. At first I was awed. I ran into a couple of obstacles setting it up, but once I did, I was awed by the free admin interface as well as the database abstraction. I used Django happily on my website for probably over a year. Later on, I discussed frameworks with someone over dev.to chat and he mentioned he'd migrated from Django to [FastAPI](https://fastapi.tiangolo.com) and [SQLAlchemy](https://sqlalchemy.org) because Django had "too much stuff". I told him that [I totally shared that feeling](https://yujiri.xyz/software/features), but that I still valued the database management too much to give it up; but he mentioned that SQLAlchemy with Alembic could achieve the same thing. At the time I was too busy to look into another major overhaul, but when I finished RTTP, I started to do so. As I write this, I'm in the process of switching to SQLAlchemy and FastAPI. So that's my story with Django.
 
-<h1 class="good">Database abstraction</h1>
+<h1 class="good">ORM</h1>
 
-Django's database abstraction provides several benefits:
+Django's ORM provides several benefits:
 
 1. You aren't tied to any specific database. You can switch from [SQLite](https://yujiri.xyz/software/sqlite) to Postgres without significantly changing your code. Though of course this isn't true if you specifically use features that aren't available on all of them, like Postgres's array fields, but there's no way around that.
 
@@ -59,7 +59,7 @@ Kind of like how when I was [looking for a markdown processor](https://dev.to/yu
 
 I think there's also a perverse idea of packageification here. Django has this distinction between *projects* and *apps*, where a project can have multiple apps. The admin interface is a separate "app". There are also a bunch of middleware packages installed by default, including `django.middleware.security.SecurityMiddleware`, `django.contrib.sessions.middleware.SessionMiddleware`, and a few more. It's not obvious what these do or why you need them. In fact, the default Django `manage.py setup` result installs no less than 6 distinct apps besides your own!
 
-I honestly think it's just very perverse. The built-in user account system, for example, I couldn't use because (at least as far as I could find) I couldn't modify the built-in `auth` app, so if I wanted any domain-specific fields on the user model, I had to roll my own, which I did. I don't think frameworks should provide things like account systems because that's just too domain-specific for cookie cutter solutions to really work.
+I honestly think it's just very perverse. The built-in user account system, for example, I couldn't use because (at least as far as I could find) I couldn't modify the built-in `auth` app, so if I wanted any project-specific fields on the user model, I had to roll my own, which I did. I don't think frameworks should provide things like account systems because that's just too project-specific for cookie cutter solutions to really work.
 
 Another downside of all the packages is that my database was bloated. With a basic guide-following setup, I ended up with *10* database tables that were not mine (6 belonging to the `auth` app). That's such an ugly feeling.
 
