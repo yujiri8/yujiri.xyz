@@ -65,6 +65,12 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**March 12:**
+New articles:
+* [Doublespeak](argument/doublespeak)
+* [Double-counting](argument/double_counting)
+* [Why I won't read a book](argument/reading)
+
 **March 3:**
 *HUGE drumroll* Didact is ready for use! And this website is now powered by it!
 
