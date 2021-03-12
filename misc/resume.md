@@ -11,9 +11,9 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 # Skills
 
-* **Proficient in**: Python, Go, Javascript, Crystal, Unix shell, HTML and CSS, Regular expressions
+* **Proficient in**: Python, Go, Javascript, Crystal, Unix shell, HTML and CSS, SQL
 
-* **Moderate ability in**: Rust, Haskell, Julia, C, SQL
+* **Moderate ability in**: Rust, Haskell, Julia, C
 
 ## Technologies and Frameworks
 
@@ -37,37 +37,29 @@ PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E7
 
 # Experience
 
-## Full-stack developer at [Awning Tracker](https://awningtracker.com), May 2018 - present
+## [Awning Tracker](https://awningtracker.com), May 2018 - present
 
-* Implemented external event logging and aggregation using Elasticsearch and Kibana for analytics and debugging.
+Responsibilities: Write code for the Awning Tracker web application. Debug, refactor, implement new features, participate in design discussions, and perform one-off tasks for customers.
+
+* Designed and implemented a logging solution using Elasticsearch and Kibana for analytics and debugging
 
 * Implemented integration with Google Maps and Google Places
 
 * Created a web-based admin panel for the syadmin using Lit-Element and Redux
 
-## yujiri.xyz - website architect and sysadmin
+## [Didact](/didact), 2019 - present
 
-Personal website without a CMS. Self-implemented a tree-structured comment system with markdown and email notifications, and a searchable dictionary for my conlang. Originally implemented in plain uWSGI and PostgreSQL with psycopg2; rewritten with Django and then rewritten again with FastAPI and SQLAlchemy.
+Sole designer and developer of an open-source CMS aimed at maximum flexibility. Features a sophisticated comment system, customizable notifications, and extremely good performance. Rewritten several times over the years in various languages and frameworks.
 
-* Researched and practiced SEO and got the site to average 10-20 clicks through Google Search per day
+## Doki Doki Literature Club fan games - 2018 - April 2020
 
-* 350 articles on topics including software, game design, storytelling, strategy guides for [Prismata](https://prismata.net), game/story reviews, novels of my own, and philosophy
+Wrote, developed and released two nonlinear visual novels with the RenPy engine: MC's Revenge and Return To The Portrait.
 
-## [Return To The Portrait](/works/return_to_the_portrait/) (Doki Doki Literature Club fan game) - March 2019 - April 2020
-
-Nonlinear visual novel; estimated 8 hours of playtime.
+* Estimated total 12 hours of playtime
 
 * Hired artists and a musician
 
-* Created significant sprite edits in GIMP
-
-* Handled commnuity relations, making and releasing teasers and progress updates and responding to bug reports
-
-## [MC's Revenge](/works/mc_revenge) (Doki Doki Literature Club fan game) - 2018
-
-Project was abandoned by [firelightning13](https://reddit.com/u/firelightning13). I continued it with permission.
-
-My first experience with Renpy or visual novel development. Nonlinear; estimated 4 hours of content.
+* Addressed bug reports
 
 ## Open source contributions
 
@@ -111,10 +103,4 @@ My first experience with Renpy or visual novel development. Nonlinear; estimated
 
 # Education
 
-* Mostly homeschooled and self-taught. I took some college courses, but dropped out before pursuing a degree to study on my own. I forgot most of what I learned in school and none of it contributed to my current skill set and accomplishments.
-
-<!--
-autism diagnosis
-
-I have many phonic tics, including echolalia, palilalia, and lexilalia (although none of them go to the point of repeating words aloud)
--->
+* Mostly homeschooled and self-taught. I took some college courses, but dropped out before pursuing a degree to study on my own. I forgot most of what I learned in school and none of it contributed to my current skill set.

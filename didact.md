@@ -1,5 +1,5 @@
 TITLE Didact, the user-respecting anti-CMS
-NAV Didact, the user-respecting anti-CMS
+NAV Didact
 
 [**Didact**](https://github.com/yujiri8/didact) is a [CMS](https://en.wikipedia.org/wiki/Content_management_system) that isn't a CMS.
 
