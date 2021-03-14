@@ -79,6 +79,9 @@ pre > code { display: block }
 .spoiler:hover { color: var(--bgcolor) }
 /* this is necessary to stop links from showing through */
 .spoiler:not(:hover) * { color: var(--textcolor) }
+.good { color: #00f }
+.bad { color: #f00 }
+.mixed { color: var(--yellowcolor) }
 hr { border-color: var(--weakcolor) }
 .indent { margin-left: 1em }
 summary { cursor: pointer }
