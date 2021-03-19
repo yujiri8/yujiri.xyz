@@ -138,9 +138,10 @@ https://yujiri.xyz/game_design/turn_waiting
 https://yujiri.xyz/
 https://yujiri.xyz/logo24-thick.png
 https://yujiri.xyz/misc/
-https://yujiri.xyz/misc/apostasy
 https://yujiri.xyz/misc/anarchism_conversion
 https://yujiri.xyz/misc/anarchism_rater
+https://yujiri.xyz/misc/apostasy
+https://yujiri.xyz/misc/at_their_mercy
 https://yujiri.xyz/misc/axiological_retribution
 https://yujiri.xyz/misc/bystander
 https://yujiri.xyz/misc/communal_living
