@@ -43,6 +43,7 @@ https://yujiri.xyz/argument/not_ad_hominem
 https://yujiri.xyz/argument/openmind
 https://yujiri.xyz/argument/philosophy
 https://yujiri.xyz/argument/polymorphic_values
+https://yujiri.xyz/argument/preconditions
 https://yujiri.xyz/argument/propaganda
 https://yujiri.xyz/argument/punishment_reward
 https://yujiri.xyz/argument/reactance
