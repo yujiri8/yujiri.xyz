@@ -40,3 +40,5 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 [The Definitive Anarchism Rater](anarchism_rater)
 
 [Survival advice](survival_advice)
+
+[At Their Mercy](at_their_mercy)

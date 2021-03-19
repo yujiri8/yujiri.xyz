@@ -46,7 +46,7 @@ The setgid bit works the same way, but gives you the permissions of the group th
 
 ## The sticky bit
 
-The sticky bit is the most complicated. Normally, write permission on a directory lets you delete *anything* inside it, even something you don't own and don't have write permission to. The sticky bit changes this rule so that even if you own the directory you can't delete or rename stuff inside it that you don't own.
+The sticky bit is the most complicated. Normally, write permission on a directory lets you delete *anything* inside it, even something you don't own and don't have write permission to. The sticky bit changes this rule so that even if you have write permission to the directory, you can't delete or rename stuff inside it that you don't own.
 
 On regular files, the sticky bit has no effect.
 

@@ -34,11 +34,11 @@ Tip about airbnb in particular: a lot of places give massive discounts if you bo
 
 ## Shopping
 
-You want your residence to be within walking distance of multiple grocery stores (incase one doesn't sell something you need). When buying food, always look for alternatives until you find the lowest price. Check the nutrition facts and determine the ratio of dollar to substance. **You should be able to feed one person on less than $10/day** (I can feed myself on $7 and that's with some unusual restrictions making it harder).
+You want your residence to be within walking distance of multiple grocery stores (incase one doesn't sell something you need). When buying food, always look for alternatives until you find the lowest price. Check the nutrition facts and determine the ratio of dollar to substance. **You should be able to feed one person on $5 per day**.
 
 When reading nutrition facts, *always check the serving size and the number of servings included*. Preferably do some research on nutrition too.
 
-In my experience, delis often have a good selection of food items but much worse prices than larger grocery stores. Don't pay $5 for 8 cups of juice; a supermarket probably sells it for half that. Some delis also don't allow card payment, only cash.
+In my experience, delis often have a good selection of food items but much worse prices than larger grocery stores. Don't pay $5 for 2 liters of juice; a supermarket probably sells it for half that. Some delis also don't allow card payment, only cash.
 
 And don't even think about restaurants, the prices are absolutely celestial compared to grocery stores.
 
@@ -52,13 +52,9 @@ There are basically 3 desirable traits of foods that usually come at the expense
 
 3. Ease of preparation
 
-There is one food in particular that I point out for having an exceptional combination of these traits: **rice**. You can literally spend $5 on enough rice to eat it every day for a month. It's also fairly high in protein and calories, and is easy to prepare as long as you have a stove, pot and lid. My procedure is: use 3/2 as much water as rice, wait for the water to boil, then put the rice in (lower heat to minimum so it doesn't boil over) and cover until the water is all gone. It only takes a few minutes.
+In general, simple grain foods like rice and oats are the cheapest, but provide mostly carbohydrates. Processed grain foods (like bread loaves and cereal) are a little more expensive but still cheaper than most things. Beans, especially lentils, and peanut butter are higher in protein and also cheap.
 
-Rice pairs very well with beans, which are also nutritious, cheap, and easy to cook. I put canned beans in a pan, fill with water until the beans are mostly submerged, cover and heat for a few minutes. Many sources say dried beans are much more efficient than canned ones but harder to prepare, but I haven't tried dried ones yet.
-
-Nut butters are another extremely efficient food, on the order of 1000 calories per dollar.
-
-<!-- By the way, vegan milk substitutes exist that are nutritionally and gustatorily similar to cow milk. Soy and oat milk in particular. -->
+Personally I try to cook 180ml of dry rice and lentils every day. It makes two large bowls which take me several hours to eat and provide nearly half of the food I need in a day for less than a dollar.
 
 ## Employment
 

@@ -1,15 +1,15 @@
 TITLE At Their Mercy
 DESC We live at the mercy of every institution we interact with, and it's disgustingly undignified.
 
-[Our email providers have the power to take control of all of our accounts at any time](/software/forgot_password), and the *only* way to stop them is to self-host your email.
+* [Our email providers have the power to take control of all of our accounts at any time](/software/forgot_password), and the *only* way to stop them is to self-host your email.
 
-The first time I went to receive a COVID test, the authorities took away my passport while I was there. Then they told me to sign something saying I'd received a document I hadn't received. I told them this, and they told me to sign away because they would give it to me upstairs. (They didn't.) I wouldn't have submitted to this if I hadn't thought I had to to get a roof for the night.
+* The first time I went to receive a COVID test, the authorities took away my passport while I was there. Then they told me to sign something saying I'd received a document I hadn't received. I told them this, and they told me to sign anyway because they would give it to me upstairs. (They never did.) I wouldn't have submitted to this if I hadn't thought I had to to get a roof for the night.
 
-Most of us - myself included - rarely or never read terms of service. When I do read them, I almost always find that they grant a corporation the right to do almost anything to me. And I sign it anyway because I know they probably won't and people I need to deal with require me to use the service.
+* Most of us - myself included - rarely or never read terms of service. When I do read them, I almost always find that they grant a corporation the right to do almost anything to me. And I sign it anyway because I know they probably won't and people I need to deal with require me to use the service.
 
-Paying for things with a debit card usually involves giving a website or store full access to all the money in our account, and we just hope they don't abuse it.
+* Paying for things with a debit card usually involves giving a website or store full access to all the money in our account, and we just hope they don't abuse it.
 
-Renting an apartment via the mainstream rent system usually involves leaving an extra month's worth of rent with your landlord, in the hope of getting it back when you leave. It also usually involves paying a non-refundable fee *just to apply*.
+* Renting an apartment via the mainstream rent system usually involves leaving an extra month's worth of rent with your landlord, in the hope of getting it back when you leave. It also usually involves paying a non-refundable fee *just to apply*.
 
 We live at the mercy of every institution we interact with, and it's disgustingly undignified.
 
