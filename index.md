@@ -65,6 +65,8 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**March 26:**
+New: [The Owl House review](reviews/owl_house).
 
 **March 18:**
 New:
