@@ -96,25 +96,4 @@ New: [Separate communication and notification](software/separate_comms_and_notif
 * [Beat Saber review](reviews/beat_saber).
 * A guest article from terepy: [Damage formulas](game_design/damage_formulas).
 
-**December 23:**
-Spem conlang: the open question on degree modifiers question has been resolved with the addition of `ŋor` and `ŋur`. A new article explains [the theory behind the new words](spem/degree_modifiers).
-
-**December 17:**
-Updated my article on [borders](protagonism/borders). I wrote it back when I had the impression that a lot of legitimate anarcho-capitalists believed in borders and I gave the arguments for borders way too much credit. The issue is really one-sided and all the pro-border arguments are hypocritical and inconsistent.
-
-**December 16:**
-New: [Ally with bigots before statists](protagonism/ally_with_bigots)
-
-**December 12:**
-New: [The Definitive Anarchism Rater](misc/anarchism_rater)
-
-**December 4:**
-New: [Stop taking tests](argument/tests)
-
-**November 19:**
-New review: [Half-Life: Alyx](reviews/half_life_alyx).
-
-**November 7:**
-New: [Thoughts on communal living](misc/communal_living) and [On not depending on external validation](misc/external_validation).
-
 </details>
