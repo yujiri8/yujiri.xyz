@@ -69,13 +69,13 @@ From the interaction of the above principles, a few scenarios can be recognized:
 
 ### Favors and gifts
 
-When you do something for someone else without negotiating repayment, you consent to not receiving any because you make a voluntary choice to do it and give them the impression that repayment isn't required. If you do communicate that you're only doing it under the assumption of being repaid but nothing is mutually negotiated, then they must repay the minimum of your sacrifice and their benefit from it. That's because you didn't consent to doing it for free, so if they repay less than that they're violating you, but they also didn't consent to anything, so they can't be obliged to give up anything worth more to them than the result of your favor.
+When you do something for someone else without negotiating repayment, you consent to not receiving any because you make a voluntary choice to do it and give them the impression that repayment isn't required. If you do communicate that you're only doing it under the assumption of being repaid but nothing is mutually negotiated, then they must repay the minimum of your sacrifice and half their benefit from it, because you didn't consent to doing it for free, so if they repay less than that they're violating you, but they also didn't consent to anything, so they can't be obliged to give up anything worth more to them than the result of your favor (and it's half because you also wouldn't have been able to collect anything without them).
 
 ### Non-scarce goods (freeloading)
 
 The situation that a software vendor makes their software available for download with pay and (against their intention) you have a way of downloading it for free can be exactly rewritten as follows:
 
-Alice makes a substantial personal sacrifice to provide some benefit to Bob, telling him she's doing it under the assumption that he'll do something else in return, although Bob didn't actually get any input in the matter. This is exactly the inaltruistic favor scenario above and the answer is the same: Bob must repay her the minimum of the value of her sacrifice, his benefit, and her requested price (since she consented to that).
+Alice makes a substantial personal sacrifice to provide some benefit to Bob, telling him she's doing it under the assumption that he'll do something else in return, although Bob didn't actually get any input in the matter. This is exactly the inaltruistic favor scenario above and the answer is the same: Bob must repay her the minimum of the value of her sacrifice, half his benefit, and her requested price (since she consented to that).
 
 Of course, the specific nature of the software version of this scenario creates different abilities for the consumer. In particular there's nothing wrong with the consumer pirating it and paying after using it - he can't be obliged to pay more than the software is worth to him and paying before using it means paying before finding out how much it's worth to him.
 

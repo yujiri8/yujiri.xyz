@@ -2,7 +2,7 @@ TITLE Breadth-first versus depth-first autocompletion
 NAV Breadth-first versus depth-first autocompletion
 DESC There are a couple reasons I prefer breadth-first. With depth-first, there's state I can't see.
 
-I've seen two approaches taken to autocompletion in shells and similar environments. As far as I know they don't have names, but I think breadth-first and depth-first accurately describe them.
+I've seen two approaches taken to autocompletion in shells and similar environments:
 
 * Breadth-first: The Unix shell standard. Pressing tab adds the largest prefix common to all possible completions.
 

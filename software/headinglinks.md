@@ -21,7 +21,7 @@ The elegant CSS solution (credit to [Mark Chaves](https://dev.to/marklchaves/com
 	margin-top: -6rem;
 }
 ```
-That's it. I sure wish I'd discovered that 2 years before I did. So the only inadequacy is that it hardcodes the height of the top bar. If your top bar can vary wildly in height, you might be able to dynamically adjust this CSS, or you could resort to this other solution:
+I sure wish I'd discovered that 2 years before I did. The only inadequacy is that it hardcodes the height of the top bar. If your top bar can vary wildly in height, you might be able to dynamically adjust this CSS, or resort to...
 
 ## Kludgy Javascript solution
 
