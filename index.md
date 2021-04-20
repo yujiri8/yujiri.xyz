@@ -65,6 +65,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**April 20:**
+New: [You're wrong to focus on privilege and oppression](argument/privilege).
+
 **March 26:**
 New: [The Owl House review](reviews/owl_house).
 
