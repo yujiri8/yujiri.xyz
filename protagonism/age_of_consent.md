@@ -1,4 +1,4 @@
-TITLE There is no age of consent
+TITLE Age of consent is a correlated trait fallacy
 NAV "Age of consent"
 DESC Ironically, enforcing an "age of consent" requires violating consent.
 
