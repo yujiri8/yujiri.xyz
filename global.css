@@ -56,6 +56,13 @@ nav {
 	text-align: center;
 }
 
+/* column layout */
+.row {
+	display: grid;
+	grid-gap: 1em;
+	grid-template-columns: repeat(auto-fit, minmax(19em, auto));
+}
+
 /* Everything after this point will be copied to css.js - see the copycss.cr pre-build script. */
 
 * { box-sizing: border-box }
