@@ -65,6 +65,11 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**April 24:**
+New:
+* [Why I don't like combos in rhythm games](game_design/rhythm_combos)
+* [Fucking anti-moralists](argument/egoists)
+
 **April 20:**
 New: [You're wrong to focus on privilege and oppression](argument/privilege).
 
