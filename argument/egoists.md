@@ -8,7 +8,7 @@ In what the fuck context does "X is objective" mean "everyone agrees about X"? I
 
 To a sane reader: maybe you think this strawman is so blatant that it can't be true, I must be strawmanning *them*. Behold [this "rebuttal"](https://www.notion.so/Metaphysics-the-Matter-of-Matter-and-the-Heart-of-the-Soul-f11b764854a143ffa8b9a96a02cc5a19) of [my article on metaphysics](https://yujiri.xyz/protagonism/metaphysics). Read the section that "rebuts" my argument based on morality.
 
-It's not the only place. I've seen this all over twitter arguments and even in-person arguments. Almost every anti-moralist I've seen does this. And explaining this to them doesn't help. It all goes out the other hear.
+It's not the only place. I've seen this all over twitter arguments and even in-person arguments. Almost every anti-moralist I've seen does this. And explaining this to them doesn't help. It all goes out the other ear.
 
 You fucking anti-philosophers. You are not stupid. You're trolls. You can't do this on accident. This isn't a debate, it's you intentionally wasting my time with your smug assholery.
 
