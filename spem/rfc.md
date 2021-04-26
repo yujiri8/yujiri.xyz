@@ -4,10 +4,6 @@ NAV Open questions
 (There are more open questions in [the dictionary](search). Ones that are specifically about an existing
 word go in the word's Notes field; to search for them, put "Open question" in the Notes box.)
 
-## The adjective/noun distinction
-
-I've written a lot about this in [this comment](index?c=101#comment-section) and its subtree. In [this below comment](?c=386#comment-section), I started to change my mind.
-
 ## Directness
 
 I need to deal with concepts of directness. In English, we often say things like "directly cause" drawing a relevant distinction between that and indirect causation. The distinctions *are* very important. I should probably have a different verb for that. I already spent <spem>zo</spem>, so maybe <spem>zyu</spem>?

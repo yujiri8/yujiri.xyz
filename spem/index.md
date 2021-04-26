@@ -38,7 +38,7 @@ Yes, I'm for real, I plan to invent a language and get the world speaking it. I 
 
 [Open question (please comment): variable dereferencing?](dereference)
 
-[Other open questions (4)](rfc)
+[Other open questions (3)](rfc)
 
 <br>
 
@@ -100,7 +100,7 @@ Obviously these goals clash often and it's not always clear how to prioritizing 
 
 * **No plural.** You won't change my mind about this. The difference between one and two is not special and does not deserve to be treated differently from the difference between two and three. Number is unspecified by default because surprisingly often it's not essential to the intended meaning of your statement; how many times have you had to write '(s)' after a word so it applies to both singular and plural? We'll have a word for many/several, and if it turns out to be needed sufficiently often, we'll have a one- or two-syllable word for "multiple", and the use of this or "one" before stuff won't sound unnatural because we'll be used to it being standard whenever the number actually matters.
 
-* **No distinction between nouns and adjectives.** (I used to be pretty sure of this too, but I've been starting to have serious doubts about it recently.) Substantive adjectives or placeholder words are used quite often in English: "the poor", "the green one", et cetera. In Spem any adjective can be used this way by default and it won't need a noun like "one" in that second example. Note that while "the poor" works well, if you don't want to use "the" you need a noun like so: "poor people". You shouldn't have to specify "people".
+* **No distinction between nouns and adjectives.** Substantive adjectives or placeholder words are used quite often in English: "the poor", "the green one", et cetera. In Spem any adjective can be used this way by default and it won't need a noun like "one" in that second example. Note that while "the poor" works well, if you don't want to use "the" you need a noun like so: "poor people". You shouldn't have to specify "people".
 
 	Basically there are "entity words" or descriptors in Spem that just pile together to describe an entity. The entity has whatever traits the descriptors specify, and all descriptors were created equal. <!--There are two meaningful differences: nouns are usually things that can't be mixed with other nouns in any obvious way, and nouns don't have opposites.-->
 
