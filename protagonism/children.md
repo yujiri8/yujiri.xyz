@@ -6,7 +6,7 @@ Children are the victims of the worst modern human rights abuses.
 
 Schools are among the least humane institutions in the world. Tell me what this sounds like to you: "Despite being innocent, you have to spend hours in this building every day whether you want to or not, and while inside you must do everything the designated authority says, or you will be punished". It sounds like slavery, doesn't it?
 
-Pre-teen-age, attendance is almost never voluntary as far as the children are concerned; [obedience is coerced by threats of punishment](enforcement). And being forced to go to an otherwise humane place of learning [would be abuse](consent), but schools are far from it. A place where you need someone else's approval to *speak*, hell, to even *leave your seat*, even to *use the toilet*, is not a human place of learning. And to top it off, the people involved in this system claim to think child abuse is wrong.
+Attendance is rarely voluntary as far as the children are concerned; [obedience is coerced by threats of punishment](enforcement). And being forced to go to an otherwise humane place of learning [would be abuse](consent), but schools are far from it. A place where you need someone else's approval to *speak*, hell, to even *leave your seat*, even to *use the toilet*, is not a human place of learning. And to top it off, the people involved in this system claim to think child abuse is wrong.
 
 The only difference anyone can offer is that it's "for their good". Somehow, if it's "educational", slavery becomes okay again. I plan to write separately about how schools are inefficient at teaching, but even if they weren't, that wouldn't justify slavery, for fuck's sake.
 

@@ -18,7 +18,7 @@ Obviously, you'll be renting. And **you'll probably have to tolerate housemates.
 
 A big bummer is that unless you have significant income and a good credit score, which you almost certainly don't if your position is anything like mine, you can't rent an apartment traditionally. They have application processes covered in some sticky red substance and usually require you to *prove your income is 3x the rent.* So searching on websites like zillow and hotpads is a waste of time. Your only options are alternative renting platforms like airbnb.
 
-Some people say airbnb gives worse prices than traditional rent. I think that's bullshit: airbnbs nearly always include all utilities (running water, temperature control, electricity, WiFi) while traditional apartments usually include at most 2 of them; the rest are further expenses. I don't think airbnbs are actually a worse deal when you factor all that in.
+Some people say airbnb gives worse prices than traditional rent. I think that's bullshit: airbnbs nearly always include all utilities (running water, temperature control, electricity, WiFi) while traditional apartments usually include at most 2 of them and the rest are further expenses. I don't think airbnbs are actually a worse deal when you factor all that in.
 
 Although airbnb is the most well-known alternative renting platform, there are [several others](https://blog.tortugabackpacks.com/airbnb-competitors/).
 
@@ -34,30 +34,10 @@ Tip about airbnb in particular: a lot of places give massive discounts if you bo
 
 ## Shopping
 
-You want your residence to be within walking distance of multiple grocery stores (incase one doesn't sell something you need). When buying food, always look for alternatives until you find the lowest price. Check the nutrition facts and determine the ratio of dollar to substance. **You should be able to feed one person on $5 per day**.
+Your residence should be within walking distance of at least one grocery store. When buying food, spend a minute looking for altneratives to each item, because often there are very similar products with wildly different ratios of value to substance. There are a lot of good articles on the web about which foods are the cheapest and how to prepare them. If you shop well, **you should be able to feed one person on $5 per day**.
 
-When reading nutrition facts, *always check the serving size and the number of servings included*. Preferably do some research on nutrition too.
+When reading nutrition facts, *always check the serving size and the number of servings included*.
 
-In my experience, delis often have a good selection of food items but much worse prices than larger grocery stores. Don't pay $5 for 2 liters of juice; a supermarket probably sells it for half that. Some delis also don't allow card payment, only cash.
+In my experience, delis usually have worse prices than large grocery stores. Don't pay $5 for 2 liters of juice; a supermarket probably sells it for half that. Some delis also don't support card payment, only cash.
 
 And don't even think about restaurants, the prices are absolutely celestial compared to grocery stores.
-
-## Food
-
-There are basically 3 desirable traits of foods that usually come at the expense of each other:
-
-1. Price
-
-2. Health
-
-3. Ease of preparation
-
-In general, simple grain foods like rice and oats are the cheapest, but provide mostly carbohydrates. Processed grain foods (like bread loaves and cereal) are a little more expensive but still cheaper than most things. Beans, especially lentils, and peanut butter are higher in protein and also cheap.
-
-Personally I try to cook 180ml of dry rice and lentils every day. It makes two large bowls which take me several hours to eat and provide nearly half of the food I need in a day for less than a dollar.
-
-## Employment
-
-I don't have much to say about this one since I've still never successfully been hired by anyone other than relatives, so I mostly lack the qualification to advise. If you have a skill set that allows remote work, like me (programing), you're lucky as that means you aren't limited to searching within a tiny area.
-
-Determine your stability threshold. If you work 40 hours a week, $8 per hour, you make $1370 per month. Especially after tax, that's cutting it close but might still be enough to cover rent + food. So if you can make $15 per hour, that should be pretty good.
