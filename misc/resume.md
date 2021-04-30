@@ -5,8 +5,6 @@ Legal name: Ryan Westlund
 
 Email: rlwestlund@gmail.com
 
-PGP key: [8D8E70D0BBD08947](https://pgp.mit.edu/pks/lookup?op=get&search=0x8D8E70D0BBD08947)
-
 [Github: yujiri8](https://github.com/yujiri8)
 
 # Skills
