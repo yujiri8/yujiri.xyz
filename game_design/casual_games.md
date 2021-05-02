@@ -10,19 +10,10 @@ Competitive games are not so because the point of them is not the in-universe po
 Lego Star Wars and similar games may serve legitimately as a "gateway into gaming": a lot of older adults that grew up without video games are kind of phobic of them and it's possible that playing a game like this could help them to see that the medium isn't "some newfangled thing for youngsters" or "for hardcore competitors only".
 
 A legitimate ["casual game"](roles) is one like Codenames or Dominion; one that has skill and allows trying, but also allows enjoying it without being into it.
+
 <!--
 Here's a way of looking at it: if you don't want to be challenged, then you don't want to play a game. Challenge is the only 
 thing unique to games. If you're plyaing for the story, what you really want is to read a novel or watch a movie or something. 
 It's totally valid to play a story game on the easiest difficulty because there's no way to separate the story from the game. 
 But making a game specifically for that is wrong.
--->
-<!--
-</p><p>
-Candy Crush is arguably not even a game because neither winning nor losing has any meaning. Winning just means you can keep 
-wasting time and losing means it's time to pay money so you can continue wasting time.
-
-Let me stick up for Spoons. Spoons may seem like an obvious include in what I'm criticizing. But when I played Spoons, it was 
-all about the humor. It was hilarious to notice the spoons being taken and take one and watch everybody else waiting for them 
-to notice it and then either the sudden explosion of hands reaching for a spoon or the last person's expression when they 
-realized the game was over before they even noticed it starting.
 -->
