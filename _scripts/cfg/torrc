@@ -145,7 +145,7 @@ AccountingStart day 00:00
 ##
 # ContactInfo Random Person <nobody AT example dot com>
 ## You might also include your PGP or GPG fingerprint if you have one:
-ContactInfo PGP D6CCC0F60889BEBF19B4BEDC8D8E70D0BBD08947 <rlwestlund AT gmail dot com>
+ContactInfo Matrix @yujiri:matrix.org
 
 ## Uncomment this to mirror directory information for others. Please do
 ## if you have enough bandwidth.
