@@ -5,13 +5,13 @@ DESC Learn some of the amazing features Python offers and how they're implemente
 
 [Previous lesson: Classes](pythontut7)
 
-Well, you've basically got all the core concepts of Python now. For this penultimate chapter, I'm going to go through a couple of less central, but extremely useful things that wouldn't really have made sense without understanding objects first.
+Well, you've basically got all the core concepts of Python now. For this penultimate chapter, I'm going to go through a couple of less fundamental, but very useful things that wouldn't really have made sense without understanding objects first.
 
 # Generators
 
-Generators are one of the most awesome applications of what I taught about classes in part 7. I use them every day I write Python. What they do is basically allow you to work with sequences without computing up-front exactly what's in the sequence. Instead, it's like iterating on a list but each element in the list is only computed when you ask for it. They're useful for dealing with huge amounts of data without using too much memory, and can even work with *infinite* sequences!
+Generators are one of the most awesome applications of what I taught about classes in part 7. I use them every day I write Python. What they do is basically allow you to work with sequences without computing up-front exactly what's in the sequence. It's like iterating on a list but each element in the list is only computed when you ask for it. They're useful for dealing with huge amounts of data without using too much memory, and can even work with *infinite* sequences!
 
-To really understand how generators work, it's useful to understand how iteration really works under the hood. Between all the things you can iterate on - tuples, lists, strings, dicts - there's a common interface or protocol, called *iterable*. An iterable is anything that has an `__iter__` method that returns an *iterator*. An *iterator* in turn is something that has a `__next__` method that returns the next item.
+To understands how generators work, it's useful to understand how iteration works. Between all the things you can iterate on - tuples, lists, strings, dicts - there's a common interface or protocol, called *iterable*. An iterable is anything that has an `__iter__` method that returns an *iterator*. An *iterator* is something that has a `__next__` method that returns the next item.
 
 To see how all sequence types implement these, check this out (`iter` and `next` are builtin functions that call the `__iter__` and `__next__` methods, just for readability):
 ```python
@@ -31,13 +31,13 @@ StopIteration
 ```
 It's almost like using a `for` loop, isn't it?
 
-Yes. That is how for loops work. When I write `for num in nums:`, what's really happening is the above, with the one difference that the `for` loop automatically catches that `StopIteration` exception and silences it.
+Yes. That is how for loops work. When I write `for num in nums:`, what's really happening is the above, and the `for` loop automatically catches that `StopIteration` exception and silences it.
 
 And that's why you can use `for` to iterate on all these different types. They all implement an `__iter__` method that returns a sort of transient object called an iterator which in turns implements a `__next__` method that gives the items in sequence.
 
 With this knowledge... you could actually make your own iterable types. You could make a custom class that wasn't a subclass of tuple, list, or anything else and make it possible to iterate on it with `for`.
 
-About the difference between an iterator and an iterable: an iterable is something you can get an iterator out of. A list is *not* an iterator. Each time you loop over the list with `for`, you're making a new list iterator thingy that gives you the list elements in sequence. One thing that makes this confusing is that iterators *also* implement the `__iter__` method that returns an iterator - they just have it return themselves, for compatibility.
+About the difference between an iterator and an iterable: an iterable is something you can get an iterator out of. A list is *not* an iterator. Each time you loop over the list with `for`, you're making a new iterator that gives you the list elements in sequence. One thing that makes this confusing is that iterators *also* implement the `__iter__` method - they just have it return themselves, for compatibility.
 
 So back to generators. Generators are basically a special kind of iterator defined with the `yield` keyword, which lets you turn a function directly into a generator without the trouble of defining a class and both methods. Here's a demo of `yield`:
 ```python
@@ -47,7 +47,7 @@ def first_5_nums():
 		yield num
 		num += 1
 ```
-It kind of looks like `yield` is similar to `return` except it doesn't end the function, eh? Indeed that's pretty much how it works:
+`yield` is similar to `return` except it doesn't end the function. Let's see how that works:
 ```python
 >>> generator = first_5_nums()
 >>> next(generator)
@@ -76,7 +76,7 @@ So to convert this to the `for` syntax:
 4
 >>>
 ```
-So what's the benefit of using `yield` instead of building a list and returning `[0, 1, 2, 3, 4]`? The benefit is that the generator doesn't compute the whole list up-front. Imagine you wanted to iterate on a series of a billion items. It'd be bad if you had to create the whole list up-front, as that would take a lot of memory and your CPU might stall the program for a while to compute all that. Better to use only one number at a time and compute them as needed. Another benefit is that if it turned out you only needed the first few, you wouldn't have to compute the remaining billion.
+So what's the benefit of using `yield` instead of building a list and returning `[0, 1, 2, 3, 4]`? The benefit is that the generator doesn't compute the whole list up-front. Imagine you run a web service with millions of users, and you want to iterate over each user's account information. Computing the entire list of users would take a lot of memory and your processor might stall the program for a while to do all that work. Or maybe your computer doesn't even have that much memory, so it's literally impossible to do it that way. But if you use a generator, you can read just one user at a time from the database and never have to a store a million records in memory. Another benefit is that if it turns out you only needed the first few (maybe you're iterating to find a specific user), you won't have to compute the remaining millions.
 
 The builtin function `range` is basically my `first_5_nums`, but more general since you can tell it how many numbers:
 ```python
@@ -94,7 +94,7 @@ The builtin function `range` is basically my `first_5_nums`, but more general si
 ```
 As you can see, `range` is handy for cases where you want to do something a specified number of times, but not necessarily iterate over a sequence while you do it.
 
-Some python tutorials teach `range` a lot sooner than I did, but I chose to put it off because it looks like it returns a list of numbers, but it doesn't - it returns a generator - and I didn't want to introduce a function that relied on generators before introducing generators.
+Some python tutorials teach `range` a lot sooner than I did, but I chose to put it off because it looks like it returns a list of numbers, but it doesn't  I didn't want to introduce a function that relied on generators before introducing generators.
 
 Another handy built-in generator function, similar to `range`, is `enumerate`:
 ```python
@@ -171,7 +171,7 @@ And `filter` works like this:
 ```
 So generator expressions basically improve on this by accomplishing the same tasks as `map` and `filter`, but being more readable. A generator expression version of `map(lambda n: n ** 2, nums)` would be `(n ** 2 for n in nums)`. The two are identical, but the generator expression uses English words instead of Greek words.
 
-You can put an `if` clause in the generator expression too: the filter equivalent would be `(n for n in nums if n > 5)`. Admittedly, generators don't look as superior with `filter` as they do with `map` since you still have to write `for n in`. But the other great thing about generator expressions is you can do both in one. Imagine you wanted . Here are the two ways:
+You can put an `if` clause in the generator expression too: the filter equivalent would be `(n for n in nums if n > 5)`. Admittedly, generators don't look as superior with `filter` as they do with `map` since you still have to write `for n in`. But the other great thing about generator expressions is you can do both in one. Imagine you wanted to take a list of numbers and and keep only the ones greater than 5, but also double each number you keep. Here are the two ways:
 ```python
 map(lambda n: n ** 2, filter(lambda n: n > 5, nums))
 # Or...
@@ -252,7 +252,7 @@ Imagine you have a block like:
 ```python
 if cond: first_arg = 1
 else: first_arg = 2
-func(var, second_arg, third_arg, fourth_arg, fifth_arg)
+func(first_arg, second_arg, third_arg, fourth_arg, fifth_arg)
 ```
 and you thought it was too long and wished you could shorten it. Well, you can. There's actually a way to put that `if`/`else` expression *in* the function call - you don't even need a variable. Here's how it's done:
 ```python
