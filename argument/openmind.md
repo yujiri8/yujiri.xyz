@@ -3,7 +3,7 @@ NAV "Open-mindedness"
 
 "Open-mindedness" means nothing. Stop saying it to dismiss people for being confident in sound reasoning.
 
-The problem is that asking someone a question like "Are you willing to change your beliefs if they're proven wrong?" in the context of a belief that is held to be universal and necessary (like a claim about metaphysics) is wrong because it requires them to consider a scenario that is, from their perspective, logically impossible. <!-- (if it could be it wouldn't be a metaphysical truth).--> <!--You might as well ask someone "What would you do if it were proven that 1 + 1 = 3?" No answer to this question is correct. The question is a pile of dog shit that should be ignored.-->
+The problem is that asking someone a question like "Are you willing to change your beliefs if they're proven wrong?" in the context of a belief that is held to be universal and necessary (like a claim about metaphysics) is wrong because it requires them to consider a scenario that is, from their perspective, logically impossible.
 
 But either answer damages their image. If they say no, they're seen as willfully irrational because they're outright saying they'd reject evidence if it didn't mesh with their preconceived beliefs. If they say yes, they're saying that such a thing is possible, and so they're saying they're not certain of their beliefs. With your appearance of confidence destroyed your chance of winning an argument is crippled. Worse, in the case of [rejecting materialism](/protagonism/metaphysics), that's an automatic defeat because you'd need to have absolutely reliable a priori reasoning to reject entire fields of science and the consensus of everyone else on the planet and allegedly thousands of experiements.
 

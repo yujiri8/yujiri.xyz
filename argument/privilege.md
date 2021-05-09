@@ -4,13 +4,13 @@ DESC A proper understanding of the correlated trait fallacy shows it's irrelevan
 
 A major fixture of [leftist](left_right) messaging is that the world is full to the brim with discrimination; a few traits - being male, white, heterosexual, cisgender, etc - carry *privilege* or *institutional* power, and those without these traits are "systemically" oppressed.
 
-While I've always thought leftists greatly exaggerate this, I find it mostly pointless to argue about that because a proper understanding of the [correlated trait fallacy](correlated_trait) shows it's irrelevant to most things. For example, programs aimed at helping disadvantaged groups. We all agree that helping the less fortunate is more morally valuable than helping the more fortunate. So, the best thing to do is to help the people who are least fortunate, not the people who have the most traits correlated with misfortune. Surely it's better to help a homeless white person than a black millionaire.
+While I've always thought leftists exaggerate this, I find it mostly pointless to argue about that because a proper understanding of the [correlated trait fallacy](correlated_trait) shows it's irrelevant to most things. For example, programs aimed at helping disadvantaged groups. We all agree that helping the less fortunate is more morally valuable than helping the more fortunate. So, the best thing to do is to help the people who are least fortunate, not the people who have the most traits correlated with misfortune. Surely it's better to help a homeless white person than a black millionaire.
 
 Caveat: if you believe those traits are not only correlated with misfortunate but likely to cause more misfortune in the future, then you can consider those traits themselves to make a person less fortunate. But your plan should still be to help the least fortunate overall, so as long as you admit that some things (like being homeless) outweigh any of those traits, you should still screen for misfortune, not for oppressed traits.
 
 Another point I want to make is that the term "privilege" is a destructive one. [All of us are oppressed by the state](/protagonism/anarchism), even cishet white men. A slave treated better than another slave is not "privileged". Except for those responsible for the state's violence, we all belong on the same side, and calling each other *privileged* is victim blaming.
 
-I also want to drive home that while cishet white men might be *more likely* to be fortunate than others, not only are there are exceptions, but there are large-scale examples of [bigotry](/protagonism/bigotry) against these traits which leftists need to stop ignoring. My intention is not to claim that white men are *more* oppresssed than nonwhite people and non-men; again I have little interesting in arguing about who has it worse, but to show leftists that there are two sides to this.
+Finally I want to drive home that while cishet white men might be *more likely* to be fortunate than others, not only are there individual exceptions, but there are large-scale examples of [bigotry](/protagonism/bigotry) against these traits which leftists need to stop ignoring. My intention is not to claim that white men are *more* oppresssed than nonwhite people and non-men; again I have little interesting in arguing about who has it worse, but to show leftists that there are two sides to this.
 
 ### Anti-white racism
 
@@ -22,7 +22,7 @@ Another common retort is that these things are oppression when done to marginali
 
 ### Misandry
 
-If you don't live under a rock, you've probably also seen things like [this feminist who hates men so much that it's never okay for other women to sleep with men](https://youtu.be/v11wfp8vmrM?t=319). But why bother with game like that, when there are several examples of systemic violence that specifically target men and not women?
+If you don't live under a rock, you've probably also seen things like [this feminist who hates men so much that it's never okay for other women to sleep with men](https://youtu.be/v11wfp8vmrM?t=319). But why bother with game like that, when there are several examples of systemic violence that specifically target men?
 
 * **Conscription.** Men in America <a rel="nofollow" href="https://en.wikipedia.org/wiki/Selective_Service_System">are required to register for the "Selective Service System"</a> - "service" of course meaning slavery. If you don't already know, I encourage you to read about the punishment for refusing on that article.
 
@@ -32,6 +32,6 @@ If you don't live under a rock, you've probably also seen things like [this femi
 
 	No doubt someone will claim it's justified because most criminals are men. I think you have no idea how circular reasoning works if you make that objection. Those stats don't count criminals, but *convicts*, so they can't be used to prove a lack of bias in the conviction system.
 
-	It's infuriating that lots of leftist websites will actually spin the incarceration stats as *misogyny*. They'll say things like "the incarceration rate for women has been *rising* twice as fast as for men for the last two decades", ignoring that prisoners are still almost all men.
+	It's infuriating that lots of leftist websites actually spin the incarceration stats as *misogyny*. They'll say things like "the incarceration rate for women has been *rising* twice as fast as for men for the last two decades", ignoring that prisoners are still almost all men.
 
 * [**Circumcision**](/protagonism/circumcision). I left this for last because it's tasteless to mention anything else after this. If you know about this and still claim men are 'privileged', just shut up until you're ready to stop being a victim-blaming asshole.

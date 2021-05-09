@@ -8,7 +8,7 @@ A recent article from AIER by Art Carden named [Google is Not a Monopoly](https:
 
 It's true that Google isn't a strict monopoly in any of these spaces, but it's worth pointing out that Opera and Brave are based on Chromium, which means they're effectively also developed by Google, and Safari is, with some caveats, restricted to Mac and iOS. That leaves only Firefox as a true alternative to a Google browser for most of us.
 
-And I hope "a typewriter" and "quill and ink on parchment" are a joke. That does not at all accomplish the same thing.
+And I hope "a typewriter" and "quill and ink on parchment" are jokes. Those do not at all accomplish the same thing.
 
 > I don’t use Google products because they’re the only feasible option or because switching from one platform to another is particularly onerous. I use Google products because they offer convenience and quality at a price of $0.
 

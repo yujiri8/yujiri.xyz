@@ -2,7 +2,7 @@ TITLE Fucking anti-moralists
 
 Egoists, nihilists, or whatever word I can use without you erupting into a chorus of complaint so loud that you can't hear me. Yes I'm writing in second person this time because I've had enough of you. You brag about being evil and you think it makes you cool. You rabidly strawman my common sense, refuse to listen to corrections and jeer at me for your intentional stupidity.
 
-There is one strawman I've found to be almost universal among you: that "morality is objective" means "everyone agrees about morality".
+There is one strawman I've found to be almost universal among you: that "morality is objective" means "everyone agrees about morality". You shout at me "But not everyone agrees with your morals!" as if that proves me wrong. And you [treat it like a dunk](https://yujiri.xyz/argument/inflammation#laugh).
 
 In what the fuck context does "X is objective" mean "everyone agrees about X"? If I say science is objective, do I mean no one is wrong about science?
 

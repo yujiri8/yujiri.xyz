@@ -1,7 +1,5 @@
-TITLE What is 'magic'? An attempted answer
-NAV What is 'magic'? An attempted answer
-
-"Magic" is an extremely common element in fiction, and arguably part of the definition of fantasy as opposed to "science fiction". But what does "magic" actually mean? I'm not entirely sure myself, but I've had some thoughts.
+TITLE An attempt to define 'magic'
+NAV An attempt to define 'magic'
 
 I think the primary defining mark of magic is intimacy. Magic is forces that are some combination of:
 
@@ -15,4 +13,4 @@ I think the primary defining mark of magic is intimacy. Magic is forces that are
 
 Putting it this way makes it more evident why many of us - myself included - are so attracted to the idea. Magical forces feel more personal than technological forces in a number of ways.
 
-In particular I like how it's perfect for natural progression. It's a common theme that the hero gets stronger or more powerful as the story progresses, and when magic is magic instead of technology, this is easy. In both of my novels I've made magic grow in power from causes obviously contrived to make this happen.
+In particular I like how it's perfect for natural progression. It's a common theme that the hero gets stronger or more powerful as the story progresses, and when magic is magic instead of technology, this is easy. In the past I've done things like "when you kill someone, you absorb their magic", which feels *right* in a personal progression type of sense.

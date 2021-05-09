@@ -2,8 +2,7 @@ TITLE Trying to change a living language
 NAV Trying to change a living language
 DESC Trying to change a language by misusing it is a noble, self-sacrificial effort.
 
-I sometimes find it irritating to see people mispronounce or mispell words, especially when it seems impossible that the person doesn't know how to pronounce it correctly. The example that irritated me most was hearing a presentation on the science of trees pronounce
-"mature" as "muh-turr" - no *ch*. I made fun of it to everyone I was with afterward. Some time after I started hearing other people say it outside of that, and I got even more agitated.
+I sometimes find it irritating to see people mispronounce or mispell words, especially when it seems impossible that the person doesn't know how to pronounce it correctly. The example that irritated me most was hearing a presentation on the science of trees pronounce "mature" as "muh-turr" - no *ch*. I made fun of it to everyone I was with afterward. Some time after I started hearing other people say it outside of that, and I got even more agitated.
 
 But a few years later, I learned something.
 
