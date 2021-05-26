@@ -22,7 +22,7 @@ So what I'm getting at here is, the quick and easy path leads to the dark side :
 
 So there are a few essential components that go into a website:
 
-* A domain name - the part like `yujiri.xyz`. See [this wonderful explanation of the Domain Name System](http://tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/internet.html) if you're not familiar. You'll need the nameserver for the [TLD (top-level domain)](https://en.wikipedia.org/wiki/Top-level_domain) to resolve requests for your domain. This does cost money, but barely (I get mine from Namecheap for like $13/year).
+* A domain name - the part like `yujiri.xyz`. See [this wonderful explanation of the Domain Name System](http://tldp.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/internet.html) if you're not familiar. You'll need the nameserver for the [TLD (top-level domain)](https://en.wikipedia.org/wiki/Top-level_domain) to resolve requests for your domain. This does cost money, but barely (I get mine for like $13/year).
 
 * A computer to act as a server. It's actually possible to just use a home computer for this, but not necessarily a good idea because it means your website goes down whenever *your* internet does. Your connection may also be too slow to give a good experience to viewers from around the world.
 

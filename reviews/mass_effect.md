@@ -44,7 +44,7 @@ I do believe Mass Effect is a genuinely good team tactical shooter. The concept 
 
 The Mass Effect games were very fair and fun to play on the highest difficulty, especially Mass Effect 2. (Mass Effect 1 insanity [got too much of its difficulty from overstatting the enemies defensively](/game_design/cheap_difficulty), and 3 and Andromeda were honestly too easy on insanity.)
 
-The biggest thing to improve about it would've been increased control over squadmates.
+The biggest thing to improve about it would've been increased control over squadmates. You can use their powers and to some extent assign them positions, but that's it. You can't assign them targets or tell them to take cover when they're being shot (which they don't always do properly and that's a big problem, see below).
 
 There are a few more things I want to say about the pros and cons of each implementation of the combat system.
 
@@ -68,11 +68,11 @@ In all the games your allies go down frequently and there's sometimes not much y
 
 1. In Mass Effect 1 the equipment system was always more drudgery than fun. You find a new gun in almost every room and you don't care enough to look at it every time.
 
-2. In Mass Effect 2, they overcompensated by pretty much completely removing the equipment system. It was bad, yeah, but there wasn't nothing to be said for it. It did add some customizability that was useful.
+2. In Mass Effect 2, they overcompensated by pretty much completely removing the equipment system. It was bad, yeah, but there wasn't nothing to be said for it. It did add some non-trivial decisions.
 
-3. Mass Effect 3 was the perfect balance. You don't find new gear everywhere you go, it doesn't take that long to configure, and there are some legit meaningful decisions to be made with it.
+3. Mass Effect 3 was the perfect balance. You don't find new gear everywhere you go, it doesn't take that long to configure, and there are meaningful decisions to be made with it.
 
-4. But then Andromeda comes along and... god, no, you gotta be kidding me. I have to *loot bodies* now? What the hell! Just because Skyrim did it doesn't make it right for every game! [If there's no reason why I *wouldn't* pick up the loot, then Ryder should do it automatically](/game_design/forking_interests).
+4. But then Andromeda comes along and... god, no, you gotta be kidding me. I have to *loot bodies* now? What the hell! Just because Skyrim did it doesn't mean you should! [If there's no reason why I *wouldn't* pick up the loot, then Ryder should do it automatically](/game_design/forking_interests).
 
 ---
 

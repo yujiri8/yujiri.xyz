@@ -1,8 +1,7 @@
 TITLE Spem conlang: open questions
 NAV Open questions
 
-(There are more open questions in [the dictionary](search). Ones that are specifically about an existing
-word go in the word's Notes field; to search for them, put "Open question" in the Notes box.)
+(There are more open questions in [the dictionary](search). Ones that are specifically about an existing word go in the word's Notes field; to search for them, put "Open question" in the Notes box.)
 
 ## Directness
 

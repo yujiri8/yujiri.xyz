@@ -4,25 +4,25 @@ DESC Halo is still one of the best games I've ever played, and taught me some go
 
 I was younger than 10 when I first played Halo 1 with an older brother. I've played the games countless times over the years, and few other games are this dear to me. The immortal soundtrack is only one element of the masterpiece.
 
-Honestly, I wasn't sure about reviewing a game this old, but I think with the PC remasters, even Halo 1 will stay relevant for a long time. And recently (as of this writing) I've soloed Halo 1, Reach, 2, and 3 on legendary, so since I probably won't be doing that for the others, I want to give some closure to the experience by writing a review.
+I wasn't sure about reviewing a game this old, but I think with the PC remasters, even Halo 1 will stay relevant for a long time. And recently (as of this writing) I've soloed Halo 1, Reach, 2, and 3 on legendary, so since I probably won't be doing that for the others, I want to give some closure to the experience by writing a review.
 
 The games I'll be talking about are only Halo 1, 2, 3, and Reach, because those are the only ones I replayed recently. Also, I've never played Halo on PC, only on Xbox.
 
 ## Design
 
-There is a single significant flaw with the core design, and this is something I didn't diagnose until playing Halo 3 singleplayer on legendary: *being too careful never gets you killed*. There are many exceptions (fighting Flood, keeping marines alive), but for most Covenant encounters, the more careful, the better, which means playing on legendary tends to be *very* tedious and not as interesting as playing on heroic because you don't get to do bold things. You just have to wait behind cover, pick someone off and then hide and recharge your shields, and repeat.
+There is a single significant flaw with the core design, and this is something I didn't diagnose until near the end of my time with the series, my solo legendary Halo 3 run: *being too careful never gets you killed*. There are many exceptions (fighting Flood, keeping marines alive), but for most Covenant encounters, the more careful, the better, which means playing on legendary tends to be *very* tedious and not as interesting as playing on heroic because you don't get to do bold things. You just have to wait behind cover, pick someone off and then hide and recharge your shields, and repeat.
 
 In Halo 1, you have a recharging shield and non-recharging health. The split works out well because using your shields is part of good play but taking health damage is generally a mistake, so it acts as a sort of "mistake buffer".
 
 ## Story
 
-Halo 1-3 and Reach have good stories. It's hardly fair to criticize [the typical issues of sci-fi worldbuilding](/fiction/fake_sci-fi) in a work where the setting is an afterthought to the game, and other than that each game has a decent plot and the Arbiter in Halo 2 and 3 really enhances the story as the only character who really develops. I really like how Halo 2 manages several different plot threads at once; multiple groups of characters drive change at the same time, instead of one group driving everything. The writers also understand the importance of killing characters. But that's all I'll say for now, since the story is the least remarkable aspect of these games.
+Halo 1-3 and Reach have good stories. It's hardly fair to criticize [the typical issues of sci-fi worldbuilding](/fiction/fake_sci-fi) in a work where the setting is an afterthought to the game, and other than that, each game has a decent plot. The Arbiter in Halo 2 and 3 really enhances the story as the only character who really develops. I really like how Halo 2 manages several different plot threads at once; multiple groups of characters drive change at the same time, instead of one group driving everything. The writers also understand the importance of killing characters. But that's all I'll say for now, since the story is the least remarkable aspect of these games.
 
 ## Balance
 
-The balance between weapons has never been great. In Halo 1, the Assault Rifle, Plasma Rifle, and Needler are pretty much irrelevant. Elite encounters on legendary revolve around the Plasma Pistol / human Pistol combo so much that it gets a bit boring. The Plasma Pistol is arguably overpowered because it's both a must-have against Elites and also perfectly good against Grunts and Jackals if you can pull the trigger fast enough.
+The balance between weapons has never been great. In Halo 1, the Assault Rifle, Plasma Rifle, and Needler are pretty much irrelevant. Elite encounters on legendary revolve around the Plasma Pistol / human Pistol combo so much that it gets a bit boring. The Plasma Pistol is overpowered because it's both a must-have against Elites and also perfectly good against Grunts and Jackals if you can pull the trigger fast enough.
 
-In general, automatic weapons are underpowered in all Halo games. You almost always want a long-range, headshot capable weapon because headshots are so important, and a Plasma Pistol for your secondary because it's the only practical way to deal with Elites on legendary. Picking up a machine gun for a close-range encounter always left me underwhelmed by the damage they deal (dual wielding in Halo 2 and 3 makes them usable).
+In general, automatic weapons are underpowered in all Halo games. You almost always want a long-range, headshot capable weapon because headshots are so important, and a Plasma Pistol for your secondary because it's the only practical way to deal with Elites on legendary. Picking up a machine gun for a close-range encounter always left me underwhelmed by the damage they deal (dual wielding in Halo 2 and 3 makes them usable, but is not always available and has enough downsides that I rarely used it).
 
 In terms of enemies, one thing I like is that there isn't a strict hierarchy. Roughly, it's Grunt -> Jackal -> Elite -> Hunter, but Grunts can throw grenades and drive vehicles, which Jackals can't. I actually think Elites are generally more dangerous than Hunters by themselves, at least if you don't have the Elite combo, but Hunters make better support for other enemies because they'll come chase you out of cover, and generally can't be picked off from range.
 
@@ -40,15 +40,15 @@ Halo uses an automatic checkpoint system. This is a good system in general, but 
 
 * It's just very finicky. Sometimes you don't get a checkpoint after a fight the first time, but when you die and do that fight again, you do get one. Sometimes it doesn't give you one when you *really* need one (like on Assault on the Control Room if you take the banshee off the bridge and go to the door), and I can only hope the devs intended there to be one there. Sometimes you get a checkpoint halfway through a fight just because you picked off a Grunt, but other times you don't even get one between waves of enemies. Sometimes it gives you a checkpoint before you enter a fight, then you fire a rocket, miss, hide, and boom another checkpoint! Wouldn't want to try that first rocket again if you die, would you? It seems like it's just very badly programmed and it never gets fixed in the later games.
 
-* You have no recourse if it gives you a bad checkpoint. I've been in some situations before where I get a checkpoint in a near-unwinnable situation: no health, no ammo for any good guns, just lost the vehicle you're supposed to have, etc. You can't go back to the checkpoint *before* the latest one. These situations are pretty rare and I've never seen one that was really unwinnable, but it's a problem. 
+* You have no recourse if it gives you a bad checkpoint. I've been in some situations before where I get a checkpoint in a near-unwinnable situation: no health, no ammo for any good guns, just lost the vehicle you're supposed to have, etc. You can't go back to the checkpoint *before* the latest one. These situations are pretty rare and I've never seen one that was truly unwinnable, but it's a problem. 
 
 ## Respawn abuse
 
 In co-op, if one of you dies the other can get to safety and respawn them. This mechanic is sadly *very* abusable:
 
-* You respawn with full health and weapons that might be better than what you had or at least provide ammo refills, which means dying *helps* you if you don't drop any good stuff. Though on the bright side, this is sometimes a defense against bad checkpoints.
+* You respawn with full health and weapons that might be better than what you had or at least provide ammo refills, which means dying literally *helps* you if you don't lose any good stuff. Though on the bright side, this is sometimes a defense against bad checkpoints.
 
-* Two people can "cheese" through most hard encounters by repeatedly sending one player in to kill something and die while the other stays in a safe spot to respawn them. It can get very tempting since the line between this and playing "the real way" is not always clear.
+* Two people can "cheese" through most hard encounters by repeatedly sending one player in to kill something and die while the other stays in a safe spot to respawn them. It can get very tempting since there's not always a clear line between this and playing "the real way".
 
 ## Vehicles
 
@@ -64,15 +64,15 @@ Halo 2's aim assist was much more noticeable than Halo 1's, and honestly felt li
 
 Halo 2 mostly took away the concept of player *health* as separate from shields. You still have a little more HP after your shield, but it regenerates too, you can't see it and there's much less of it. I understand not wanting health that could take persistent damage, but I cannot understand not showing it.
 
-Halo 2 also makes the player *much* less resilient than Halo 1, and if you ask me is easily the hardest of these games. You die so quickly that it cuts off tactical options, including anything involving close range combat for the most part. Even moving between nearby pieces of cover is often not safe.
+Halo 2 also makes the player *much* less resilient than Halo 1, and at least to me, is easily the hardest of these games. You die so quickly that it cuts off tactical options, including anything involving close range combat for the most part. Even moving between nearby pieces of cover is often not safe.
 
 ### Vehicles
 
-Oh, on that note: they made all vehicles destroyable, and *you can't see your vehicle's health anymore*. *And* - Halo 1 used this as an *alternative* to vehicles to being destroyable, but Halo 2 does both - all vehicles are now subject to the player taking damage when the vehicle does, which makes it nearly impossible to defeat an enemy Ghost in a Ghost on legendary (easy in Halo 1). You're almost better off on foot, using your Ghost as cover.
+On that note: they made all vehicles destroyable, and *you can't see your vehicle's health anymore* (although you do get a vague indication from the visible state of the vehicle). *And* - Halo 1 used this as an *alternative* to vehicles to being destroyable, but Halo 2 does both - all vehicles are now subject to the player taking damage when the vehicle does, which makes it nearly impossible to defeat an enemy Ghost in a Ghost on legendary (easy in Halo 1). You're almost better off on foot, using your Ghost as cover.
 
 A big thing they added with vehicles was the ability to hijack them. Holding X near an enemy vehicle lets you jump on it, kick the driver out and replace him. I like the feature because it adds counterplay to enemy vehicles when you don't have one yourself. Enemy Elites and Brutes can do it to you too, of course.
 
-That's probably also why they gave Wraiths a machine gun turret, because otherwise hijacking them would be too easy. I'm kind of sad about that part though because it makes them less strategic. Wraiths no longer benefit from infantry or Ghost support, because they have it built in. The turret is controlled from a different seat though and you can shoot the gunner out.
+That's probably also why they gave Wraiths a machine gun turret, because otherwise hijacking them would be too easy. I'm kind of sad about that though because it makes them less strategic. Wraiths no longer benefit from infantry or Ghost support, because they have it built in. On the other hand, the turret is controlled from a different seat and you can shoot the gunner out.
 
 There are also some confusing quirks about the hijack mechanic, like sometimes you can hijack a Wraith this way, but other times jumping on it only offers you to throw in a grenade which destroys it, and not to drive it. I never figured out the rule.
 
@@ -96,13 +96,13 @@ And with the introduction of dual wielding, there are some Elites who dual-wield
 
 It also features enemy snipers using the Beam Rifle, which on legendary kill you in one hit. Combine that with being often hidden and *insanely* fast to line up their shots, and they become totally unfun to fight and often induce trial and error because they kill you before you can possibly know they're there. I often had to get killed by the same one several times to figure out where he was.
 
-Hunters got a *ridiculous* buff. Their shield bash is now an instant kill and seems to be totally undodgeable, making it nearly impossible to get behind them; they gained an overhead shield bash move that hits behind them if you do get there; *and* they're not ultra-weak to a headshot weapon to the back. It seems like it's no longer supposed to be possible for one person to beat a pair of them on legendary (which was easy in Halo 1 if you had a Pistol, and not too difficult without). You never have to because you always either have allies or can run past them.
+Hunters got a *ridiculous* buff. Their shield bash is now an instant kill and seems to be totally undodgeable, making it almost impossible to get behind them; they gained an overhead shield bash move that hits behind them if you do get there; *and* they're not ultra-weak to a headshot weapon to the back. It seems like it's no longer supposed to be possible for one person to beat a pair of them on legendary (which was easy in Halo 1 if you had a Pistol, and not too difficult without). You never have to because you always either have allies or can run past them.
 
 The Flood Combat Forms also got an insane buff to their HP, to the point where if you're using anything other than a Sentinel Beam or an Energy Sword, they feel invincible on legendary. It's like shooting at Elites. Oh and the Shotgun got nerfed to the point of being mediocre even against Combat Forms. It has much smaller clips and only one-shots them at point-blank range.
 
 ### Checkpointing
 
-The checkpointing got much worse. It usually gives you one when you need one but Halo 2 has a *serious* penchant for giving you checkpoints in danger, including when *literally in an insta-kill sniper's sights*. It's so bad that the devs had to add an emergency mechanic: if you die soon enough after a checkpoint about 4 times in a row, it sends you back to the checkpoint before it. The problem is so bad that this happened to me *5 times* on my legendary run. Oh, and it's not optional! 3 of those times, I didn't *want* to go back to the previous checkpoint. I knew I was in a winnable position and that it wouldn't make things any better if I lost some progress. And since I have no way of knowing exactly how quickly you have to die to invoke that mechanic, sometimes I would fear this happening and deliberately use a strategy that I didn't think was my best try but would drag out my death longer to interrupt the streak of immediate deaths.
+The checkpointing got much worse. It usually gives you one when you need one but Halo 2 has a *serious* penchant for giving you checkpoints in danger, including when *literally in an insta-kill sniper's sights*. It's so bad that the devs had to add an emergency mechanic: if you die soon enough after a checkpoint about 4 times in a row, it sends you back to the checkpoint before it. The problem is so bad that this happened to me *5 times* on my legendary run. Oh, and it's not optional! 3 of those times, I didn't *want* to go back to the previous checkpoint. I knew I was in a winnable position and that it wouldn't make things any better if I lost some progress. And since I have no way of knowing exactly how quickly you have to die to invoke that mechanic, sometimes I would fear this happening and deliberately use a strategy that I didn't think was my best try but would drag out my attempt longer to interrupt the streak of immediate deaths.
 
 ### Co-op
 
@@ -144,7 +144,7 @@ Halo 3 added the concept of "equipment", which are one-time use abilities you ca
 
 ### Checkpointing
 
-The checkpointing might be the best out of the three, but it still has the isuses of Halo 1. Funnily enough there was *one* situation in my legendary run where I wanted to take advantage of the checkpoint-before-last mechanic. I killed myself immediately 6 times in a row with a grenade, but found that the mechanic was removed. Pity. Why can't it just be an *option*? Why does no game have that? It's such a simple solution to the obvious problems with automatic checkpoint systems in games with persistent status.
+The checkpointing might be the best out of the three, but it still has the isuses of Halo 1. There was *one* situation in my legendary run where I wanted to take advantage of the checkpoint-before-last mechanic. I killed myself immediately 6 times in a row with a grenade, but apparently the mechanic was removed. Pity. Why can't it just be an *option*? Why does no game have that? It's such a simple solution to the obvious problems with automatic checkpoint systems in games with persistent status.
 
 ## Halo: Reach
 
@@ -156,7 +156,7 @@ There is one egregious, disturbing scene on the first mission that portrays a Sp
 
 ### Allies
 
-You're almost always with another member of Noble Team through Reach's campaign. They're very important, especially because they're completely invincible, and I honestly wish they weren't. They trivialize literally any enemy attack as long as it's hitting them and not you. Unlike the Arbiter, you don't have to worry about them being temporarily defeated. Since they do damage enemies, I think you could actually just let your ally do almost all the work for most of the game, but that would be so time consuming and boring that I've never tried it.
+You're almost always with another member of Noble Team through Reach's campaign. They're very important, especially because they're completely invincible, and I honestly wish they weren't. They trivialize literally any enemy attack as long as it's hitting them and not you. Unlike the Arbiter, you don't have to worry about them being temporarily defeated. And since they do damage enemies, I think you could actually just let your ally do almost all the work for most of the game, but that would be so time consuming and boring that I've never tried it.
 
 ### Weapons
 
@@ -172,9 +172,9 @@ Another new weapon is the Grenade Launcher which is the Halo 2 Brute Shot for hu
 
 Then there's the "Needle Rifle", a pointless redesign of the Convenant Carbine which isn't in Reach. It has the supercombine effect of the Needler but otherwise functions just like the Carbine.
 
-They added an interesting gun called the Focus Rifle, which is a continuous-beam Convenant weapon. Honestly if I made Halo 1, I would've included a weapon like this instead of the Plasma Rifle, to be more different from the human Assault Rifle. Though it also has two levels of zoom like the Beam Rifle, but can't really function that way because it doesn't get headshots.
+They added an interesting gun called the Focus Rifle, which is a continuous-beam Convenant weapon. Honestly if I made Halo 1, I would've included a weapon like this instead of the Plasma Rifle, to be more different from the human Assault Rifle. It also has two levels of zoom like the Beam Rifle, but can't really function that way because it doesn't get headshots.
 
-Finally, there's the "Plasma Launcher", which feels vaguely like a Convenant Spartan Laser. You hold it down to charge up to four balls and then release to fire the seeking plasma balls that explode.
+Finally, there's the "Plasma Launcher", which feels like a Convenant Spartan Laser. You hold it down to charge up to four balls and then release to fire the seeking plasma balls that explode.
 
 ### Hunters
 
@@ -182,7 +182,7 @@ Hunters in Reach are even more overpowered than in Halo 2. They still have all t
 
 * *Even* more health. You can empty multiple entire clips of DMR ammo into them without misses.
 
-* They aim their cannons at your feet, which means you don't avoid all damage by stepping to the side. Combined with the ridiculous amount of splash damage Fuel Rod-type shots have in this game, this makes it difficult to avoid dying against a Hunter even at range even if you focus on evading and jump over every shot.
+* They aim their cannons at your feet, which means you don't avoid all damage by stepping to the side. Combined with the ridiculous amount of splash damage Fuel Rod-type attacks have in this game, this makes it difficult to avoid dying against a Hunter even at range even if you focus on evading and jump over every shot.
 
 In Halo 2, a pair of Hunters was seemingly an impossible opposition to defeat alone. In Reach, you have to fight a pair of them *with an invincible ally* who draws fire for you - and plenty of good cover and good weapons around - and it's *still* one of the hardest and most frustrating parts of the game. Hunters in Reach are bonkers overpowered and not fun. Thankfully you can run past every other encounter with them.
 

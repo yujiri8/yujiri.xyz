@@ -1,7 +1,7 @@
 TITLE Roles of Games
 NAV Roles of Games
 
-Like many people, I like to tall about which games I consider "best", but the truth is that some games (eg. [Prismata](/reviews/prismata) and Halo) just can't be compared because they fill different roles. In this post I'm going to try to come up with a comprehensive taxonomy of these "roles" - the traits that are pivotal but can't be said to be better one way or the other. I believe in three such dichotomies: competitive or casual, replayable or scarce, and turn-based or real-time. I'll discuss the pros and cons of each trait in each category.
+While I am an objectivist about game design, there are certain categories such that games in different ones can't be compared on quality. Here I present a comprehensive taxonomy of these "roles" - the traits that are pivotal but can't be said to be better one way or the other. There are three such dichotomies: competitive or casual, replayable or scarce, and turn-based or real-time.
 
 ## Replayable Games
 

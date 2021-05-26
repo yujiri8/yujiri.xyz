@@ -31,9 +31,9 @@ The hitboxes are really good. There were less than a handful of instances where 
 
 <h2 class="good">Bosses</h2>
 
-Every boss was excellent; both well-designed and well-balanced. On Jedi Grandmaster, most took me upward of ten tries, but I beat most in the same session as I got to them. None of them have [an unreasonable amount of health](/game_design/cheap_difficulty), but they all have enough that you have to actually master them to win. They all (minus the upgraded versions of normal planetary monsters, which are optional bosses) have novel attack patterns that take a lot of getting used to, but are seldom unfair.
+Every boss was excellent; both well-designed and well-balanced. On Jedi Grandmaster, most took me upward of ten tries, but didn't span multiple play sessions. None of them have [an unreasonable amount of health](/game_design/cheap_difficulty), but they all have enough that you have to actually master them to win. They all (minus the upgraded versions of normal planetary monsters, which are optional bosses) have novel attack patterns that take a lot of getting used to, but are seldom unfair.
 
-In most of the big story bosses, I did barely a scrape of damage on my first life, but it was amazing to see how much I could improve at them after a dozen tries, even with minimal use of trial and error attacks.
+In most of the big story bosses, I did barely a scrape of damage on my first life. It was amazing to see how much I could improve at them after a dozen tries, even with minimal use of trial and error attacks.
 
 <h2 class="good">Wave/survival battles</h2>
 
@@ -49,9 +49,9 @@ Unfortunately, the developers also took a lesson from [Assassin's Creed](assassi
 
 That one's a particularly egregious, concentrated example, but the game is filled with what I call "crawl spaces" which are narrow spaces in walls you can climb through to get to a new area. Functionally, they're no different from a doorway; except that they're sometimes easy to miss, and the animation to climb through them is *reaaaly looooong*. There's no reason for them to be in the game; visual spectacle should never come before gameplay.
 
-Another thing they reaaaly overuse is sliding sections. It's a common mechanic that during exploration, you slide down a steep slope of ice, rock, or whatever material, and you control only your left/right steering and jumping as you go down. In most of these sections, there's a risk of falling off the edge and respawning at the top, and the steering is so slidey that it can be almost impossible to avoid this when you don't know how the path will curve around the next corner. These sequences never felt like a satisfying challenge to me; they were always either pointless or actively frustrating, and they're used about 3x too often even if they were implemented a little better.
+Another thing they reaaaly overuse is sliding sections. It's a common mechanic that during exploration, you slide down a steep slope of ice, rock, or whatever material, and you control only your left/right steering (and speed) and jumping as you go down. In most of these sections, there's a risk of falling off the edge and respawning at the top, and the steering is so slidey that it can be almost impossible to avoid this when you don't know how the path will curve around the next corner. These sequences never felt like a satisfying challenge to me; they were always either pointless or actively frustrating, and they're used about 3x too often even if they were implemented a little better.
 
-Many of the boss fights have "clash sabers and [mash this button](/game_design/brute_force_skills)" happen a couple times throughout them, but at least they don't seem to demand superhuman tapping frequency. I never failed one even when I wasn't pressing my fastest. And if they aren't cutscene delimiters they always reward you with visible damage to the boss afterward, so it doesn't feel so much like the designers wasting your time.
+Many of the boss fights have "clash sabers and [mash this button](/game_design/brute_force_skills)" happen a couple times throughout them, but at least they don't seem to demand superhuman tapping frequency. I never failed one even when I wasn't pressing my fastest. And if they aren't cutscene delimiters they always reward you with damage to the boss afterward, so it doesn't feel so much like the designers wasting your time.
 
 <h2 class="bad">Camera</h2>
 
@@ -67,7 +67,7 @@ Jedi: Fallen Order can *barely* be made hard enough. The person who introduced m
 
 Also, nitpick: the difficulties are named badly. They're "Story", "Jedi Knight", "Jedi Master", and "Jedi Grandmaster". Why the hell not "Padawan"? Jedi Knight should never be the lowest difficulty with a themed name.
 
-Another ancillary thing about the difficulty levels - a good one - is that during selection you can see an approximation of how much of a difference they make. [This article shows what it looks like](https://www.gamespot.com/articles/jedi-fallen-order-difficulty-options-the-best-diff/1100-6471430/). I've seen someone else play it on Jedi Master, and the preview is an accurate reflection of the difference.
+A good thing about the difficulty levels is that during selection you can see some sort of quantification of how much of a difference they make. [This article shows what it looks like](https://www.gamespot.com/articles/jedi-fallen-order-difficulty-options-the-best-diff/1100-6471430/). I've seen someone else play it on Jedi Master, and the preview is an accurate reflection of the difference.
 
 <h2 class="mixed">Unskippable cinematics (sort of)</h2>
 

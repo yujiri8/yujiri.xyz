@@ -2,7 +2,7 @@ TITLE Return To The Portait - Doki Doki Literature Club mod
 DESC Return To The Portrait continues from DDLC and explores Project Libitina and all the file secrets.
 NAV Return To The Portrait
 
-Return To The Portrait is a fan work I made for [Doki Doki Literature Club](/reviews/ddlc). It picks up from the end of the original game and involves everyone working together to find out the truth about their world and about Project Libitina. It features a ton of file tampering and other meta stuff like exploring the rules behind Club President powers. It also features Natsuki's dad, who is *not* a sadistic prick, and tries to give each character some limelight. Estimated play time is maybe... 8 hours?
+Return To The Portrait is a fan work I made for [Doki Doki Literature Club](/reviews/ddlc). It picks up from the end of the original game and involves everyone working together to find out the truth about their world and about Project Libitina. It features a ton of file tampering and other meta stuff like exploring the rules behind Club President powers. It also features Natsuki's dad, who is *not* a sadistic prick, and tries to give each character some limelight. Estimated play time is 8 hours (this is a complete guess, since I never timed it).
 
 [Original announcement video](https://www.youtube.com/watch?v=Q7GiI1qYcwA)
 
@@ -28,7 +28,7 @@ The unzipped source is [on Github](https://github.com/yujiri8/rttp).
 
 I spent over a year on this. It was a rough one with this and everything else in my life fighting for attention. I had a bad habit of putting too many things on my plate without thinking it through, but this might've taught me a lesson for good. At some points I wondered if it was a mistake to start this. Once I even considered dropping it. I can't express how ecstatic I was to be "free" from RTTP (that's really how I felt about it at times), and finally able to really pursue other projects, but I'm glad I stuck at it. This is an accomplishment I'll remember.
 
-RTTP taught me *a lot* about storytelling. I'd like to write about some of the wisdom I've gained from the pains, though I'm not sure when I'll get around to that. It also gave me enough experience with Renpy to be qualified to [review it](/software/renpy).
+RTTP taught me a lot about storytelling. I'd like to write about some of the wisdom I've gained from the pains, though I'm not sure when I'll get around to that. It also gave me enough experience with Renpy to be qualified to [review it](/software/renpy).
 
 I wrote [a self-critique](critique).
 
@@ -36,7 +36,7 @@ I wrote [a self-critique](critique).
 
 Most of the art I comissioned is Creative Commons Attribution, which means you can also use it in your own DDLC mods! Just credit me for shellin' it out for 'em and the artist I shelled out to:
 
-* <span class="spoiler">Linda, Libitina, Albert, and Adam</span>'s sprites are by [Plural Roses](https://reddit.com/u/15LarueA) (DamilsBae#0136). Also <span class="spoiler">the warehouse interior water pit room (not the room at the back with the machinery)</span>. For the characters, I also edited them a bit and divided them into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool.
+* <span class="spoiler">Linda, Libitina, Albert, and Adam</span>'s sprites are by [Plural Roses](https://reddit.com/u/15LarueA). Also <span class="spoiler">the warehouse interior water pit room (not the room at the back with the machinery)</span>. For the characters, I also edited them a bit and divided them into components so they can be easily used with [AgentGold](https://reddit.com/u/AgentGold)'s Dynamic Pose Tool.
 
 * <span class="spoiler">Cult facility and warehouse exterior</span> backgrounds are by [TomTC](https://deviantart.com/tomtc). These ones also have the non-derivative term, so derivatives aren't allowed.
 

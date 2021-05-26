@@ -1,9 +1,9 @@
 TITLE Review: Fruits of the Literature Club
 NAV Fruits of the Literature Club
 
-Fruits of the Literature Club is a DDLC mod I've seen extensive praise for and never once anyone criticize it. So, I checked it out, and... yikes. I'm baffled that it has such a positive reputation.
+Fruits of the Literature Club is a DDLC mod I've seen extensive praise for. So I checked it out, and... yikes. I'm baffled that it has such a positive reputation.
 
-I played for about 2 hours or so before I quit. The premise of the mod is the removal of the meta-canon (which is fine, not every mod has to deal with that) and a redesign of MC's background: he isn't Sayori's childhood friend, but moves into the area and gets recruited. Things the mod does particularly well:
+I played for about 2 hours before I quit. The premise of the mod is the removal of the meta-canon (which is fine, not every mod has to deal with that) and a redesign of MC's background: he isn't Sayori's childhood friend, but moves into the area and gets recruited. Things the mod does particularly well:
 
 <br>
 

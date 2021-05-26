@@ -65,6 +65,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**May 28:**
+New: [Depth comparison of a few rhythm games](game_design/rhythm_comparison)
+
 **April 24:**
 New:
 * [Why I don't like combos in rhythm games](game_design/rhythm_combos)

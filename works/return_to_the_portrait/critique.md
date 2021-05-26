@@ -2,13 +2,13 @@ TITLE Return To The Portait self-critique
 NAV Self-critique
 DESC As with everything I make, not all of my decisions seem as good to me now as they did at the time.
 
-As with everything I make, not all of my decisions seem as good to me now as they did at the time. I'm still quite proud of RTTP, but I see several flaws with it.
+As with everything I make, not all of my decisions seem as good to me now as they did at the time. I'm still proud of RTTP, but I see several flaws with it.
 
 * The contrivances. Each time I introduced a new admin API or a new rule for them or made something happen that wasn't foreshadowed, I did it with great sorrow. I worry that it feels like a constant Deus Ex Machina. There are so many of these. And still there are plotholes.
 
-* I inflicted death or trauma on characters only to heal it in the next scene so often that those things really lost their meaning. The chapter 6 one especially was pointless.
+* I inflicted death or trauma on characters only to heal it in the next scene so often that those things really lost their meaning. The chapter 6 one was really pointless.
 
-	My memory from so long ago is very murky, but I think I was motivated to do a lot of this by feeling a need to 'add tension' or something, and didn't realize I was actually taking it away.
+	My memory from so long ago is murky, but I think I was motivated to do a lot of this by feeling a need to 'add tension' or something, and didn't realize I was actually taking it away.
 
 * Sayori's dialogue about how it feels to be admin should've been in part 1. I realized this as I was writing it, but I didn't want to make changes to a part I'd already released and then have to think of another conversation for Sayori and MC's scene.
 
@@ -26,4 +26,4 @@ These are things I gave up on finding satisfactory answers to. I'll point them o
 
 * Adam says he didn't want to make Libitina admin way back when, but given he obviously knew about both memory wiping and API breaking, why didn't he wipe her memories, break memory restoring, and then give her the power and she wouldn't know what he'd done to her?
 
-* MC doesn't get a character file even when he's not POV. This wouldn't be too difficult to fix, but honestly, I didn't notice it until the night of the release, and by then, I so hated the thought of this project not being done that I chose to leave it in.
+* MC doesn't get a character file even when he's not POV. This wouldn't be too difficult to fix, I didn't notice it until the night of the release, and by then, I so hated the thought of this project not being done that I chose to leave it in.
