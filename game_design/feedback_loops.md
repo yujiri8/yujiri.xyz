@@ -33,19 +33,19 @@ And not only that, but this may actually *increase* the winrate of the stronger 
 
 ## Are comebacks even a good thing, anyway?
 
-I'd even question the idea that comebacks are a thing we should be designing for. Sure, sure, comebacks feel great for the player who comes back. But does anyone ever talk about how it feels to have someone come back against you?
+I'd even question the idea that comebacks are a thing we should be designing for. Sure, they feel great for the player who comes back. But does anyone ever talk about how it feels to have someone come back against you?
 
 As someone who's played some games designed to make that happen, let me tell you, it feels pretty shit.
 
 In Dragon Ball FighterZ it feels just as disappointing as any other game to lose by a landslide. But this game has no feedback loop (at least not much); comebacks are always possible through outplaying the opponent. And despite how great it feels to be on your last character with low health and proceed to wipe the opponent's team, it feels significantly worse to be on the losing end of that than it does to just lose a match from the start.
 
-And that's in a game where the comeback is entirely emergent and can only happen through the underdog legitimately outplaying you. When the game artificially rewards the underdog or creates its comebacks through [randomness](rng), it feels an order of magnitude worse than that. People just learn to stop seeing the game as legitimate competition to protect their emotions.
+And that's in a game where the comeback is entirely emergent and can only happen through the underdog legitimately outplaying you. When the game artificially rewards the underdog or creates its comebacks through [randomness](rng), it feels even worse. People just learn to stop seeing the game as legitimate competition to protect their emotions.
 
-That last thing I said is something I didn't come up with until I said it. It's surprisingly insightful. Looking back on my experience with [Spellweaver](/reviews/spellweaver) it wasn't really considered evidence of superiority to beat someone. It wasn't embarrassing to lose to a weaker player (and by extension it didn't feel particularly special to beat the #1 on ladder), you never reviewed your games and asked what you did wrong, and it was basically as if we weren't saying "*I* beat DragonBoy328", so much as "*My deck* beat DragonBoy328's *deck*".
+That last thing I said is something I didn't come up with until I said it. Looking back on my experience with [Spellweaver](/reviews/spellweaver) it wasn't really considered evidence of superiority to beat someone. It wasn't embarrassing to lose to a weaker player (and correspondingly it didn't feel particularly rewarding to beat the #1 on ladder), you never reviewed your games and asked what you did wrong, and it was basically as if we weren't saying "*I* beat DragonBoy328", so much as "*My deck* beat DragonBoy328's *deck*".
 
 Go was the polar opposite. Every match of Go I played - and this might be partly because of the Asian culture assiciations and the [Samurai](https://dbfiechter.bandcamp.com/album/land-of-the-rising-sun) [music](https://dbfiechter.bandcamp.com/album/chinese-dynasty) I often listened to while I played - felt like an honorable duel, as personal as it was epic, just my intellect against theirs.
 
-I think comebacks are a mixed bag in general, and I like when games allow for them, but I think sacrificing other design goals to create them is deeply perverse.
+I think comebacks are a mixed bag in general, and I like when games allow for them, but sacrificing other design goals to create them is folly.
 
 ---
 

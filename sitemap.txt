@@ -126,10 +126,12 @@ https://yujiri.xyz/game_design/healing
 https://yujiri.xyz/game_design/interrupt
 https://yujiri.xyz/game_design/main_gi_mario_rpg
 https://yujiri.xyz/game_design/obvious_choices
+https://yujiri.xyz/game_design/performance_variance
 https://yujiri.xyz/game_design/punishment
 https://yujiri.xyz/game_design/pvp_shooter_modes
 https://yujiri.xyz/game_design/queue_settings
 https://yujiri.xyz/game_design/rhythm_combos
+https://yujiri.xyz/game_design/rhythm_comparison
 https://yujiri.xyz/game_design/rng
 https://yujiri.xyz/game_design/roles
 https://yujiri.xyz/game_design/saving

@@ -65,6 +65,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <details open>
 <summary>Recent update log</summary>
 
+**May 29:**
+New: [How to achieve performance variance](game_design/performance_variance)
+
 **May 28:**
 New: [Depth comparison of a few rhythm games](game_design/rhythm_comparison)
 
