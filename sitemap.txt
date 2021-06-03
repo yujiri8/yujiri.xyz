@@ -334,7 +334,6 @@ https://yujiri.xyz/software/build_systems
 https://yujiri.xyz/software/caching
 https://yujiri.xyz/software/catch_name_errors
 https://yujiri.xyz/software/commands
-https://yujiri.xyz/software/css_cant
 https://yujiri.xyz/software/data_hiding
 https://yujiri.xyz/software/declarations
 https://yujiri.xyz/software/django

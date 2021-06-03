@@ -53,8 +53,6 @@ For packages that I [recommend installing through language package managers inst
 
 ## Misc CLI utilities
 
-* [`gnupg`](https://www.gnupg.org) - GNU Privacy Guard, a renowned encryption tool. Antiquated, but still used.
-
 * [`rsync`](https://rsync.samba.org) - swiss army knife of copying and backups. The `--delete` flag is one of the biggest things that makes it worth having over `cp` in my opinion.
 
 * [`pv`](https://www.ivarch.com/programs/pv.shtml) - "pipe view". Monitor progress of data through a pipeline. `cmd1 | pv | cmd2` and it pipes `cmd1` into `cmd2`, but shows you the progress.
