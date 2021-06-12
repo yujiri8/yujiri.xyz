@@ -39,17 +39,17 @@ There's also the `derive` feature to automatically generate instances of certain
 So error-handling was the #1 thing I hoped Rust would improve over Go (type system was #2). It does, but not as much as I hoped. The improvements are:
 
 * Sugar to cut down on boilerplate. Instead of (Rust without the sugar):
-	```rust
-	let val = match could_fail() {
-		Ok(val) => val,
-		Err(err) => return Err(err),
-	}
-	```
-	We can do:
-	```rust
-	let val = could_fail()?;
-	```
-	Excellent. If `could_fail()` returns an `Err`, we'll just propagate it upward, and otherwise, `val` becomes the unwrapped success value. Barely any more verbose than an exception language, and more explicit.
+  ```rust
+  let val = match could_fail() {
+  	Ok(val) => val,
+  	Err(err) => return Err(err),
+  }
+  ```
+  We can do:
+  ```rust
+  let val = could_fail()?;
+  ```
+  Excellent. If `could_fail()` returns an `Err`, we'll just propagate it upward, and otherwise, `val` becomes the unwrapped success value. Barely any more verbose than an exception language, and more explicit.
 
 * Error-handling is checked at compile time. Since errors are a proper part of the type system via the `Result` sum type, trying to use a `Result` value as its `Ok` type is a type error. You have to do that pattern match thing or otherwise unwrap it first. (`.unwrap()` is a way of saying "although the type checker can't tell, I'm sure it's `Ok` so just give me the unwrapped value and explode at runtime if it turns out to be an `Err`".)
 

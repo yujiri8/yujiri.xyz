@@ -1,8 +1,8 @@
 TITLE Performance variance
 
-I've touched on performance variance in my [randomness](rng) article and gave Prismata as an example of a game that has a lot of it with no randomness. But . Prismata achieves its performance variance by having a few decisions (the first few turns) meet a few criteria:
+I've touched on performance variance in my [randomness](rng) article and gave Prismata as an example of a game that has a lot of it with no randomness, but didn't give much advice on how to replicate it. I've gained some insight. Prismata achieves its performance variance by having a few decisions (the first few turns) meet a few criteria:
 
-* They have the highest skill ceiling in the game. A good player plays close to optimally for most of the duration of most Prismata matches, but even the best players occasionally choose the wrong opening.
+* They have the highest skill ceiling in the game. A good player plays close to optimally for most of the duration of most Prismata matches, but even the best players often choose the wrong opening.
 
 * There are few options to pick from, so a guess based on a poor understanding of Prismata theory is reasonably likely to be correct.
 

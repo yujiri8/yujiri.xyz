@@ -62,7 +62,7 @@ There's also "libertarian socialism", which at least to some people means mutual
 
 ## Tankies
 
-"Tankie" is a pejorative in left anarchist circles for authoritarian socialists such as Stalin, as a reference to Tienanmen Square. They recognize tankies as bad. Also, many Ancoms, and probably all left-market anarchists, consider Marx a tankie.
+"Tankie" is a pejorative in left anarchist circles for authoritarian "socialists" such as Stalin and Mao, as a reference to Tienanmen Square. The relationship between ancoms and tankies is pretty similar to the one between libertarians and the alt-right. (Many ancoms are also not fans of Marx.)
 
 ## COVID-19 lockdown support
 
