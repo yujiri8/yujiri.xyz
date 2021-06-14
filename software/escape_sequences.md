@@ -4,7 +4,7 @@ DESC The concept of an escape sequence is a common one in computing, but the con
 
 The concept of an 'escape sequence' is a common one in all fields of computing, but the concept is far broader than computers themselves. The idea of an escape sequence is to solve the following problem: we're desiging a code that uses a limited range of symbols to convey information and we need to be able to communicate each of their meanings literally; so how, without adding more possible symbols, do we signal a meaning that isn't any of those?
 
-The brilliant and all-applicable answer is escape sequences. You agree on a single symbol that's used to toggle the next symbol between literal and alternate meanings; and to convey this special symbol's literal meaning, you just use it twice. In computing, a common character for this is `\`.
+The brilliant and all-applicable answer is escape sequences. You agree on a single symbol that's used to toggle the next symbol between literal and alternate meanings; and to convey this special symbol's literal meaning, you just use it twice. In computing, a common character for this is `\\`.
 
 A concrete example: how do you encode text so it all goes on one line, without removing the line breaks? `\n` is the usual escape sequence for 'newline'. For example,
 ```
@@ -15,7 +15,7 @@ Is encoded to
 ```
 Hello?\nAre you there?
 ```
-But you don't lose the ability to represent any possible string of text, because you can still signal a literal `\` with `\\`. To signal a literal `\n` you would write `\\n`.
+But you don't lose the ability to represent any possible string of text, because you can still signal a literal `\\` with `\\\\`. To signal a literal `\n` you would write `\\n`.
 
 ---
 

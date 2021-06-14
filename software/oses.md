@@ -83,9 +83,11 @@ Tried: 2020 summer, multiple times.
 
 * [Trident](https://project-trident.org) exists as a desktop installer.
 
-### <span class="bad">Gentoo<span>
+### <span class="mixed">Gentoo<span>
 
 Reputation: DIY for advanced users, nightmarish install process
+
+Init system: OpenRC (others supported)
 
 Tried: years ago (mentor helped with install); no first-hand recent experience.
 
@@ -157,7 +159,7 @@ I don't have much personal experience with systemd. My negativity from it pretty
 
 * [Randy Westlund's critique](https://www.textplain.net/blog/2015/problems-with-systemd-and-why-i-like-bsd-init/). This is someone I know and consider pretty reliable, and he's balanced too. He's not an anti-systemd zealot.
 
-* [The Suckless folks](https://suckless.org/sucks/systemd/) have a much harsher condemnation. They wouldn't normally be very reliable on it, but they link the systemd patch notes on every criticism they make for proof. Read some of the list. It's absolutely horrifying.
+* [The Suckless folks](https://suckless.org/sucks/systemd/) have a much harsher condemnation. I wouldn't consider them a reliable source on this, but they link the systemd patch notes on every criticism they make for proof. Read some of the list. It's absolutely horrifying.
 
 ### BSD init
 
@@ -166,6 +168,16 @@ Works well enough, but service files are extremely cumbersome.
 ### <span class="good">OpenRC</span>
 
 Colored output. Service files are concise.
+
+### <span class="mixed">runit</span>
+
+Runit has fewer lines of code than OpenRC, which attracts me, and I also like the way it leverages the filesystem instead of reinventing it. For example, services are "enabled" by symlinking them into a certain directory.
+
+I like a lot of things about runit, but there are two issues I have, might be solvable but I don't know how:
+
+* There is apparently no logging by default? Jeez this is horrible. I have to stop a service and run the command manually to find out why it's failing. And it's not easy to set up either: you apparently need a separate log process that communicates with the main one via a pipe, you can't just say "log to this file".
+
+* There's apparently no way to start a service "one time only". It has to be enabled (set to run automatically at boot) to be run at all.
 
 ### sysvinit
 

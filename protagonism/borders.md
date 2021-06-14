@@ -8,7 +8,7 @@ First, let's get this straight: state welfare and democracy are aggression, but 
 
 Immigrants are your fellow victims of the state. Hell, they are generally victimized far worse than non-immigrants because of not only the threat of kidnapping and deportation but all the regulations and licensing make it incredibly difficult for immigrants to find work or do anything else. Those things relatively benefit non-immigrants by transferring opportunities from them to us. *Immigrants are not the thieves here.*
 
-Second, if receiving welfare justifies your victims to use state violence against you, then you should also believe in using violence any non-immigrants who receive welfare. I've never heard anyone support this absurd conclusion.
+Second, if receiving welfare makes it just for the victims of taxation to use state violence against you, then you should also believe in using violence any non-immigrants who receive welfare. I've never heard anyone support this absurd conclusion.
 
 Third, opposing taxation is an argument *against* borders, because guess how the borders are funded?
 

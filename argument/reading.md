@@ -7,7 +7,7 @@ When I argue with opposing ideologues, especially [ancoms](faction_ancom), my ar
 
 	I'm consistent on this. I never tell anyone to read books or long articles. At most I ask them to read short articles (<15 minutes). Most of the time I rehash the arguments in the moment, which has the added benefit of allowing me to tailor them.
 
-2. If you can't defend your position yourself, then your belief in it is irrational. This is a basic principle of epistemology. [Philosophy is not like science](philosophy) in that it takes a large amount of specialized knowledge to understand and can reasonably be offloaded to others. Everyone is responsible for their own philosophy and if you can't find anything wrong with argument against your beliefs, the rational course of action is to change your beliefs.
+2. If you can't defend your position yourself, then your belief in it is irrational. This is a basic principle of epistemology. [Philosophy is not like science](philosophy) in that it takes a large amount of specialized knowledge to understand and can reasonably be offloaded to others. Everyone is responsible for their own philosophy and if you can't find anything wrong with an argument against your beliefs, the rational course of action is to change your beliefs.
 
 3. On its face, the odds that an ancient book will contain a response to any of my arguments is very low, since the book was written by someone I never argued with, and most of my arguments are not common ones. The person I'm arguing with in the present *has* heard my argument, so they are are the one qualified to respond to it.
 

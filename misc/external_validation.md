@@ -10,7 +10,7 @@ Sometimes <a rel="nofollow" href="https://www.wikihow.com/Stop-Comparing-Yoursel
 
 I'm going to try to say something a little more concrete. If anyone who struggles with this is reading this, they can tell me whether my advice was any more helpful.
 
-There are two ways to not depend on external validation: **get _internal_ validation** or **get used to not having any**.
+There are two ways to not depend on external validation: **get *internal* validation** or **get used to not having any**.
 
 The first way only works if there's something valid to admire about yourself. For some people, there is and they just haven't noticed it.
 

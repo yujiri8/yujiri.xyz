@@ -8,7 +8,6 @@ https://yujiri.xyz/argument/communist_capitalist_faq
 https://yujiri.xyz/argument/condescending_conservative
 https://yujiri.xyz/argument/connotations
 https://yujiri.xyz/argument/correlated_trait
-https://yujiri.xyz/argument/creationism
 https://yujiri.xyz/argument/dark_web_propaganda
 https://yujiri.xyz/argument/dashes
 https://yujiri.xyz/argument/define_by_ref
@@ -151,7 +150,6 @@ https://yujiri.xyz/misc/bystander
 https://yujiri.xyz/misc/communal_living
 https://yujiri.xyz/misc/contact
 https://yujiri.xyz/misc/external_validation
-https://yujiri.xyz/misc/keyboard_warrior
 https://yujiri.xyz/misc/logo
 https://yujiri.xyz/misc/names
 https://yujiri.xyz/misc/public_wisdom

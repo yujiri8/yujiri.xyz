@@ -23,8 +23,6 @@ This is the section where I post miscellaneous stuff and personal ramblings.
 
 [The Bystander Effect - a story of my failure](bystander)
 
-[Confessions of a keyboard warrior](keyboard_warrior)
-
 [Snakes](snakes)
 
 [Self-aware sin](sin)

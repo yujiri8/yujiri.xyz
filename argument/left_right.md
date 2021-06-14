@@ -2,7 +2,7 @@ TITLE Defining political left and right
 NAV Defining political left and right
 DESC Two prime ideas constitute leftism to me: extreme prioritarianism and no moral values other than happiness and peace.
 
-Although it's normally advisable to steer clear of words that mean different things to different people, and especially of words that don't map to a single concept, but political "left/right" is too ubiquitous to avoid using it in discourse, so I try to use it in the most meaningful way that still approximates how others use it.
+Although it's normally advisable to steer clear of words that mean different things to different people, and especially of words that don't map to a single concept, political "left/right" is too ubiquitous to avoid using it in discourse, so I try to use it in the most meaningful way that still approximates how others use it.
 
 There are two prime ideas that constitute leftism to me:
 
@@ -20,6 +20,6 @@ In practice the traditions referenced are Judeo-Christian ones, which from a phi
 
 But I prefer to call that "conservative" rather than "right-wing". I use "progressive" to mean the opposite of these traditions. Conservative and progressive relate only to aspect #2 of leftism above, not to #1. I guess the logical conclusion is to use rightism to mean a combination of conservatism and an opposition to that #1.
 
-I find it much more natural to define the right in terms of opposition to the left, rather than vice versa, because both tenets of leftism are actual principles, but conservatism is not. What I mean by this is that both aspects of leftism are based on fundamental aspects of human nature, which is universal and immutable. Conservatism only exists because Judeo-Christian religion and history exist; there is no fundamental fact about human nature that gives rise to conservatism.
+Note that both tenets of leftism are actual principles, but conservatism is not. Leftism is based on fundamental aspects of human nature, which is universal and immutable. Conservatism only exists because Judeo-Christian religion and history exist; there is no fundamental fact about human nature that gives rise to conservatism.
 
 An interesting reflection is that as it is not anchored to anything timeless, conservatism cannnot be timeless. There will be a time after conservatism, but there will never be a time after leftism.
