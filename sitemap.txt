@@ -64,14 +64,6 @@ https://yujiri.xyz/argument/wikipedia_bias
 https://yujiri.xyz/argument/worrying
 https://yujiri.xyz/argument/yujiris_first_law
 https://yujiri.xyz/argument/yujiris_second_law
-https://yujiri.xyz/category_images/argument.jpg
-https://yujiri.xyz/category_images/ci.png
-https://yujiri.xyz/category_images/code.png
-https://yujiri.xyz/category_images/go.png
-https://yujiri.xyz/category_images/logo.svg
-https://yujiri.xyz/category_images/music.jpg
-https://yujiri.xyz/category_images/prismata.jpg
-https://yujiri.xyz/category_images/spem.png
 https://yujiri.xyz/didact
 https://yujiri.xyz/fiction/
 https://yujiri.xyz/fiction/action_scenes
