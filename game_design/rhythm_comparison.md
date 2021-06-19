@@ -36,7 +36,7 @@ Catch also features banana swarms, which are similar to spinners in that they al
 
 Almost identical to Osu Mania, except that the number of keys is always four (Mania maps can have more) which reduces the depth, and that unnecessary presses cost health, which I'm not sure if increases *depth* exactly but I do prefer it, because:
 
-1. Without it, button mashing sometimes seems better than trying to actually read the notes. I've experienced this in Mania.
+1. Without it, button mashing sometimes seems better than trying to actually read the notes. I've experienced this a little in Mania and a *lot* in the many FNF mods that foolishly remove the mechanic.
 
 2. It adds strategy, since trying to hit a note and missing costs you more health than not trying to hit it. In FNF I've experienced an "acceptable losses" dynamic: I can improve my performance in a hard section by choosing some notes to ignore.
 

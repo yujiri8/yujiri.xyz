@@ -1,5 +1,5 @@
 TITLE No, a little bit of randomness is not okay
-NAV RNG
+NAV Randomness
 
 Most people who don't shamelessly self-identify as "[casual](casual_games)" gamers dislike randomness in games, but a lot still think that a small amount of it can be a good thing. That actually makes me really mad because it's obvious that randomness inherently punishes players for decisions that were actually optimal given their information and therefore is inherently unfair; scaling down the degree doesn't change its nature. And all of the argued benefits of randomness are at best things you don't need randomness to get.
 

@@ -3,6 +3,8 @@ NAV Resume
 
 Legal name: Ryan Westlund
 
+Matrix: @yujiri:tchncs.de
+
 Email: rlwestlund@gmail.com
 
 [Github: yujiri8](https://github.com/yujiri8)

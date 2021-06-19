@@ -12,7 +12,7 @@ Mass Effect is a series I used to really love. I think I first played the origin
 
 * In Mass Effect Andromeda, they go as far as having enemies literally labeled "Anarchist". Thank god, they're not actual Anarchists, just pirates.
 
-This is much less important, but I also accuse the first three games of misogyny. Of *most* of the alien races, you actually never see a single female across three games. The Asari don't make up for this, and aren't the right way to make up for it anyway (they're a canonically all-female race with a culture closely based on human ideas of femininity). As a more minor point, in Mass Effect 1 all three of the women in your squad are recruited after saving their lives (albeit only one of them is a true damsel in distress situation). This is true of none of the men. Andromeda completely does away with sexism, but at the cost of doubling down on the statism (see above).
+I also accuse the first three games of misogyny. Of *most* of the alien races, you actually never see a single female across three games. The Asari don't make up for this, and aren't the right way to make up for it anyway (they're a canonically all-female race with a culture closely based on human ideas of femininity). As a more minor point, in Mass Effect 1 all three of the women in your squad are recruited after saving their lives (albeit only one of them is a true damsel in distress situation). This is true of none of the men. Andromeda completely does away with sexism, but at the cost of doubling down on the statism (see above).
 
 Let me also make the case that all four games are heavily *racist*. There are a few facets to this:
 
@@ -30,17 +30,17 @@ Let me also make the case that all four games are heavily *racist*. There are a 
 
 	1. The First Contact war started entirely because of a misunderstanding before the humans had met the other races where Turian enforcers shot down human ships for violating a law they couldn't possibly have known about. When the human government decided to respond by declaring war with an alien race they knew nothing about, what did they think their odds of winning were?
 
-	2. The Krogan Rebellions apparently started with "the Krogans" invading other races' worlds unprovoked. If that were the case, surely *the vast majority* of Krogans wouldn't have been involved, and many would have even fought against their own to protect their race's galactic reputation. But there's no mention of anything like that, it was "the" Krogans.
+	2. The Krogan Rebellions started with "the Krogans" invading other races' worlds unprovoked. If that were the case, surely *the vast majority* of Krogans wouldn't have been involved, and many would have even fought against their own as mercenaries (almost every Krogan you meet in the series is a mercenary). But there's no mention of anything like that, it was "the" Krogans.
 
 * Most generally, the intense in-universe racism in the way the races [feel separate from each other](/protagonism/group_identity) is fine as a world element, except that none of the story focuses on challenging that. When you put racism in your universe and make four big RPGs in it each with hundreds of quests and you never let the player seriously challenge the racism, you're validating it.
 
-As for the plethora of plotholes in Mass Effect 2, 3, and Andromeda, I can't possibly say it any better than [Shamus Young did](https://www.shamusyoung.com/twentysidedtale/?p=27792) (the link is to a 75-part review that covers all four games in detail). I didn't even notice most of the plotholes he points out when I played the games.
+As for the plethora of plotholes in Mass Effect 2, 3, and Andromeda, I can't possibly say it any better than [Shamus Young did](https://www.shamusyoung.com/twentysidedtale/?p=27792) (the link is to a 75-part review that covers all four games in detail).
 
 There's also the pitfall of [fake sci-fi](/fiction/fake_sci-fi), of course.
 
 ## Combat
 
-I do believe Mass Effect is a genuinely good team tactical shooter. The concept of powers is really innovative; it adds so much depth and tactics over a game like Call of Duty where all that matters is your aim and taking cover. The ability to pause the otherwise real-time combat system and look around and think wasn't a source of [serious degeneracy](/game_design/turn_timers) because it's a singleplayer game and unlimited reading doesn't apply to shooters likes it does to turn-based ones; on the other hand, it made the game significantly deeper since it enabled you to act with a lot more information (since you can look around from the power menu). In traditional shooters, since you can't see everything at once, you're always acting with blind spots.
+I do believe Mass Effect is a genuinely good team tactical shooter. The concept of powers is really innovative; it adds so much depth and tactics over a game like Call of Duty where all that matters is your aim and taking cover. The ability to pause the otherwise real-time combat system and look around and think wasn't a source of [serious degeneracy](/game_design/turn_timers) because it's a singleplayer game and unlimited reading doesn't apply to shooters likes it does to turn-based ones; on the contrary, it made the game significantly deeper since it enabled you to act with a lot more information (since you can look around from the power menu). In traditional shooters, since you can't see everything at once, you're always acting with blind spots.
 
 The Mass Effect games were very fair and fun to play on the highest difficulty, especially Mass Effect 2. (Mass Effect 1 insanity [got too much of its difficulty from overstatting the enemies defensively](/game_design/cheap_difficulty), and 3 and Andromeda were honestly too easy on insanity.)
 

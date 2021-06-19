@@ -88,7 +88,7 @@ So anything that doesn't make more of its kind is not alive. If a god similar to
 
 And does this criterion have to apply to each organism we consider a living thing, in which case no one who dies before having kids was ever alive? <span class="note">And does having had kids in the past make you count as alive for the rest of your existence? If so, why didn't he use the present perfect tense?</span> Or does a species only have to have this ability for each member of it to be considered alive? In that case, you run into issues demarcating whether an organism is a member of a given species! Are people with rare genetic mutations human? What if humans and aliens could interbreed, what species would the children be? What if the aliens could reproduce sexually with humans, but not with themselves (they live forever)? Does that count? If so, what if humans built a machine that could take rocks and use them to produce another rock? Do all rocks suddenly become alive? His entire worldview is ludicrous!
 
-I know a three-year-old who understands what constitutes life better than this guy. By the way, the definition of life is a two-way causal link between a soul and a universe.
+By the way, the definition of life is a two-way causal link between a soul and a universe.
 
 #### 2:24 - 2:31
 
