@@ -32,7 +32,6 @@ https://yujiri.xyz/argument/identity_politics
 https://yujiri.xyz/argument/inflammation
 https://yujiri.xyz/argument/iq
 https://yujiri.xyz/argument/learning_language
-https://yujiri.xyz/argument/left_right
 https://yujiri.xyz/argument/leftist_economics
 https://yujiri.xyz/argument/liking
 https://yujiri.xyz/argument/moderation
@@ -64,6 +63,7 @@ https://yujiri.xyz/argument/worrying
 https://yujiri.xyz/argument/yujiris_first_law
 https://yujiri.xyz/argument/yujiris_second_law
 https://yujiri.xyz/commentary/airbnb
+https://yujiri.xyz/commentary/left_right
 https://yujiri.xyz/commentary/tiktok
 https://yujiri.xyz/didact
 https://yujiri.xyz/fiction/
