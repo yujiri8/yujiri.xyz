@@ -15,14 +15,13 @@ For another example, the unit-on-unit combat mechanics in most RTS games have ex
 
 It's interesting to note that this means the same game *would* be deeper if shown to an alien culture with a different preconception of how such things would work. They'd have to figure it out, and so for them, there'd be more to learn and they could derive more enjoyment from it.
 
-This is not subjectivism. It's recognition that people are the point of everything and that games - like everything else - should be designed with their expected audience in mind rather than aimed at some universal idea as if it exists outside of sentient experience, [which it doesn't](/protagonism/metaphysics).
+This is not nihilism about art. It's recognition that people are the point of everything and that games - like everything else - should be designed with their expected audience in mind rather than aimed at some universal idea as if it exists outside of sentient experience, [which it doesn't](/protagonism/metaphysics).
 
 </details>
 
 Somewhat on the other end of things, the [pitfall of brute-force skills](brute_force_skills) is relevant to any discussion of depth.
 
 Also just because a game is very difficult to *completely* master doesn't mean it has a lot of depth. The principle behind engagement is that it's only fun if and insofar as it's a challenge (your skills are necessary), so if someone is 90% of the way to mastery and the right move is *usually* obvious to them, the game is already mostly ruined for them. This is relevant to CCGs in which no one ever knows how to play perfectly, but the majority of gameplay decisions are usually trivial. (Although in fairness CCGs get most of their depth from deckbuilding rather than playing.)
-<!--I still need to explain the emotions somewhere.-->
 
 ## Emergence?
 
@@ -40,9 +39,9 @@ I've always defined balance as "game elements should be at whatever level of pow
 
 Bad balance can be problematic in other ways too. If the same strategy or unit is nearly always optimal it hurts the [variety](deterministic_variety) of game experience as well. And the worst consequence of it is in PvP games where the players don't have access to the same units; in those games it becomes [a concern of fairness](rng) as well.
 
-If I had to summarize a good principle for balance in one sentence, I'd say: "Any two elements that are likely to be alternatives need to be similarly powerful, and yet very different". If one is clearly better, it'll get used even in the situations where the others are at their best. If the difference between them is small, then it usually won't matter which one you pick.
+If I had to summarize a good principle for balance in one sentence, I'd say: "Any two elements that are likely to be alternatives need to be similarly powerful, and yet very different". If one is much better, it'll get used even in the situations where the others are at their best. If the difference between them is small, then it usually won't matter which one you pick.
 
-The problem with CCGs is that in them, *all* cards are in a sense alternatives, since you build your deck by throwing together almost any combination of cards you want. Cards can fill different roles, but it's not a hard divide. If none of the spells were decent, you'd run a deck of 40 creatures. If none of the 1-drops were decent, you'd run a deck with no 1-drops; if too many of the 1-drops were overpowered, you'd run a deck with an excess of 1-drops even if you didn't mean to play an aggro strategy. *Every* card in the game has to be somewhat comparable in strength to be balanced.
+The problem with CCGs is that in them, *all* cards are in a sense alternatives, since you build your deck by throwing together almost any combination of cards you want. Cards can fill different roles, but it's not a hard divide. If none of the spells were decent, you'd run a deck of 40 creatures. If none of the 1-drops were decent, you'd run a deck with no 1-drops; if too many of the 1-drops were overpowered, you'd run a deck with an excess of 1-drops even if you didn't mean to play an aggro strategy (or maybe all decks would be aggro decks). *Every* card in the game has to be somewhat comparable in strength to be balanced.
 
 Whereas in a game like Prismata, because there's no deckbuilding, it's perfectly okay to have some low-impact units in the game like Auride Core that would never get played if people had to build decks in a CCG fashion. Auride Core is still correct to buy fairly often, and creates an impressive number of non-trivial decisions in its use, but its impact on the overall strategy is negligible compared to most other units.
 

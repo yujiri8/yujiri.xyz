@@ -113,6 +113,7 @@ https://yujiri.xyz/game_design/feedback_loops
 https://yujiri.xyz/game_design/ff13_interactive
 https://yujiri.xyz/game_design/force
 https://yujiri.xyz/game_design/forking_interests
+https://yujiri.xyz/game_design/geometry_dash
 https://yujiri.xyz/game_design/healing
 https://yujiri.xyz/game_design/interrupt
 https://yujiri.xyz/game_design/main_gi_mario_rpg
