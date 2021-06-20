@@ -64,7 +64,9 @@ This site wouldn't be what it is without my dedicated contributor main_gi. He's 
 <summary>Recent update log</summary>
 
 **June 20:**
-New: [Why Geometry Dash is addicting](game_design/geometry_dash)
+New:
+* [Why Geometry Dash is addicting](game_design/geometry_dash)
+* [I hate Windows because Windows hates me](software/windows)
 
 **May 29:**
 New: [How to achieve performance variance](game_design/performance_variance)

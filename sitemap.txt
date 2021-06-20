@@ -385,6 +385,7 @@ https://yujiri.xyz/software/unix_permissions
 https://yujiri.xyz/software/unix_src
 https://yujiri.xyz/software/unix_streams
 https://yujiri.xyz/software/website_guide
+https://yujiri.xyz/software/windows
 https://yujiri.xyz/software/why_not_functional
 https://yujiri.xyz/software/why_program
 https://yujiri.xyz/software/why_root
