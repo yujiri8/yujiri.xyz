@@ -28,7 +28,7 @@ Personality tests, D&D alignment tests, political alignment tests, people really
 
 * Questions that you've already answered
 
-	Some people tell me that these are there to "detect contradictory responses". That's BS. If that's a valid reason to put a question twice, why don't they put every question twice? And what if someone answers them differently? I've never seen one that points it out which is obviously the right thing to do if the point was to eliminate contradictory answers. They just move on and, I assume, average the results.
+	Some people tell me that these are there to "detect inconsistent responses". That's BS. If that's a valid reason to put a question twice, why don't they put every question twice? And what if someone answers them differently? I've never seen one that points it out which is obviously the right thing to do if the point was to eliminate contradictory answers. They just move on and, I assume, average the results.
 
 * Questions that don't make sense given earlier answers
 
@@ -46,7 +46,7 @@ Personality tests, D&D alignment tests, political alignment tests, people really
 
 * Questions that are the same as an earlier question
 
-	You might say the purpose of these is to "detect contradictory responses". If you do, you're an idiot. Why not put them all twice then? And what happens if someone does answer them differently? I don't think any of these tests point it out which they should do if it was about stopping contradictory answers. They just go on and, I assume, average the results.
+	You might say the purpose of these is to "detect incongruous responses". If you do, you're an idiot. Why not put them all twice then? And what happens if someone does answer them differently? I don't think any of these tests point it out which they should do if it was about stopping contradictory answers. They just go on and, I assume, average the results.
 
 	The reason I put this a third time is to make sure you have the same opinion on all three of them.
 

@@ -4,7 +4,7 @@ DESC Emotions aren't a strategic action. Saying they don't help "solve the probl
 
 I've seen [memes](https://www.reddit.com/r/ZenHabits/comments/1ve041/what_is_the_use_of_worrying/) and [posters](https://zenpencils.com/comic/39-shantideva-what-me-worry/) in a few places now (I've seen that image as a poster in real life) making the argument that "worrying" is never a good idea because it isn't necessary if you can solve your problem and it doesn't help if you can't solve your problem. This argument is so ludicrously bullshit I have to make an article ripping it apart.
 
-Let me start with some comparisons to show that nobody actually believes this troll logic. My friend dies but there's no point in being sad because being sad won't bring him back to life.
+Let me start with some comparisons to show that nobody actually believes this troll logic. My friend dies but there's no point in being sad because being sad won't bring them back to life.
 
 Or: I'm being raped but there's no reason to get upset over it because if I can resist I don't need to and if I can't resist it won't help.
 

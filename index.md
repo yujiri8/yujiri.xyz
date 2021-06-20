@@ -44,6 +44,8 @@ I'm a programmer, writer, and philosopher of all things. I post all kinds of stu
 
 [My works](works/) - DDLC mods and poems.
 
+[Commentary](commentary/) - on the particulars of the world.
+
 [Miscellany](misc/) - Personal ramblings, stories, and secure contact info.
 
 </div>

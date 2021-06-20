@@ -2,15 +2,9 @@ TITLE Sanemark
 NAV Sanemark
 DESC A simpler, saner Markdown.
 
-Sanemark is a variant of [Markdown](https://daringfireball.net/projects/markdown) that's much saner than the original, let alone [the Commonmark spec](https://spec.commonmark.org), while still being fully specified.
+Sanemark is Commonmark done right: a rigid specification of [Markdown](https://daringfireball.net/projects/markdown), much instead of being more complicated, Sanemark is simpler. Saner.
 
-## What's wrong with Commonmark?
-
-In a word:
-
-<div style="text-align:center; font-size:4em; margin-top:50vh;margin-bottom:50vh">BLOAT</div> 
-
-The commonmark spec is a small book. Who has time to read such a gargantuan list of obscure technicalities? Even if you did, would you remember any of it? Would you implement all of it without bugs? How many thousands of lines would it take? Do you want to maintain that many thousands of lines?
+The commonmark spec is a small book. Who has time to read such a gargantuan list of obscure technicalities? Even if you did, would you remember it? Would you implement all of it without bugs? How much code would it take? Do you want to maintain that much code?
 
 And I'm not complaining about a problem I don't know how to solve. There are several pointless [contravariant features](/software/specs_are_contravariant) in Markdown and several more that are Commonmark-specific (hereafter I won't really distinguish between Commonmark and original Markdown):
 
@@ -18,7 +12,7 @@ And I'm not complaining about a problem I don't know how to solve. There are sev
 
 2. The rules for HTML blocks are overcomplicated as hell. The spec defines 7 different kinds of them, including support for obscure bullshit that should never have been invented like `<?php` and `CDATA`, and *a fucking hardcoded list of all block-level HTML tags*. Nevermind future-proofing, I guess [custom elements](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) can go fuck themselves?
 
-	And for all that, they admit they still don't have the ability to paste arbitrary HTML into markdown with impunity. (Neither does Sanemark *technically*, but the caveat is way more obscure than Commonmark's.)
+	And for all that, they admit they still don't have the ability to paste arbitrary HTML into markdown with impunity. (Neither does Sanemark *quite*, but the caveat is way more obscure than Commonmark's.)
 
 	To be fair, facilitating all the reasonable use cases of HTML blocks presents some profound difficulties - none of the obvious approaches work. But Sanemark's is simpler and doesn't have a hardcoded list of HTML tags, for code's sake.
 
@@ -49,8 +43,6 @@ Sanemark is well under half the lines of code as [Markd](https://github.com/icyl
 * Reconsider how indentation under a list item works. Matching the number of spaces is a bad solution because of non-monospace fonts, but I'm not quite sure of a better one. Maybe now that I don't have indented code blocks or lazy continuations, I should remove the requirement that block elements have to be unindented to be interpreted?
 
 * Look into making inline context not strip leading and trailing spaces (and a line with spaces not count as blank?).
-
-* I've already removed a lot of the pointless alternative symbols for list markers and thematic breaks, leaving only dashes and asterisks. Should I go further and leave only one for each? I would like to, but worry that people actually use both intuitively.
 
 # The spec already
 
