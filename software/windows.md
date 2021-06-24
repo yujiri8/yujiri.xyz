@@ -14,4 +14,4 @@ There are [good explanations of why Windows is technically inferior to Unix-like
 
 ---
 
-You don't control your own device if it runs Windows. You are treated like a guest in your own house. Nevermind the sophisticated concerns about design, or the ideological ones about software freedom. I hate Windows because Windows hates me.
+You don't control your own device if it runs Windows. You are treated like a guest in your own house. Nevermind the sophisticated concerns about design or freedom. I hate Windows because Windows hates me.
