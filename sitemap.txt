@@ -20,7 +20,6 @@ https://yujiri.xyz/argument/ethical_notions_personhood
 https://yujiri.xyz/argument/evasion
 https://yujiri.xyz/argument/evolutionary_psychology
 https://yujiri.xyz/argument/experience_calculation
-https://yujiri.xyz/argument/faction_ancap
 https://yujiri.xyz/argument/faction_ancom
 https://yujiri.xyz/argument/facts
 https://yujiri.xyz/argument/fee_bystander
@@ -53,6 +52,7 @@ https://yujiri.xyz/argument/selflike
 https://yujiri.xyz/argument/self_promotion
 https://yujiri.xyz/argument/shane_utilitarianism
 https://yujiri.xyz/argument/statistics
+https://yujiri.xyz/argument/steps
 https://yujiri.xyz/argument/tags
 https://yujiri.xyz/argument/tests
 https://yujiri.xyz/argument/the_origin_of_consciousness
@@ -63,6 +63,7 @@ https://yujiri.xyz/argument/worrying
 https://yujiri.xyz/argument/yujiris_first_law
 https://yujiri.xyz/argument/yujiris_second_law
 https://yujiri.xyz/commentary/airbnb
+https://yujiri.xyz/commentary/alt-right-pipeline
 https://yujiri.xyz/commentary/left_right
 https://yujiri.xyz/commentary/tiktok
 https://yujiri.xyz/didact

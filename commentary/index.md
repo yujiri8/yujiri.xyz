@@ -6,4 +6,6 @@ This section is the newborn child of a categorization change I'm making. Other a
 
 [Defining political left and right](left_right)
 
+[Why the alt-right pipeline happens](alt-right-pipeline)
+
 [Why I hate TikTok](tiktok)
