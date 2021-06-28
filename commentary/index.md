@@ -1,6 +1,6 @@
 TITLE Commentary
 
-This section is the newborn child of a categorization change I'm making. Other articles will probably be moved here soon.
+This section is a newborn child of a categorization change I'm making. Other articles will probably be moved here soon.
 
 [Airbnb is not a platform for guests](airbnb)
 

@@ -3,7 +3,6 @@ https://yujiri.xyz/argument/bigotry
 https://yujiri.xyz/argument/changing_language
 https://yujiri.xyz/argument/chat_debate
 https://yujiri.xyz/argument/citations
-https://yujiri.xyz/argument/communism
 https://yujiri.xyz/argument/communist_capitalist_faq
 https://yujiri.xyz/argument/condescending_conservative
 https://yujiri.xyz/argument/connotations
@@ -410,6 +409,7 @@ https://yujiri.xyz/spem/should
 https://yujiri.xyz/spem/tense
 https://yujiri.xyz/spem/transliteration
 https://yujiri.xyz/spem/types
+https://yujiri.xyz/theory/communism
 https://yujiri.xyz/works/
 https://yujiri.xyz/works/mc_revenge/
 https://yujiri.xyz/works/mc_revenge/guide
