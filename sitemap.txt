@@ -23,7 +23,6 @@ https://yujiri.xyz/argument/faction_ancom
 https://yujiri.xyz/argument/facts
 https://yujiri.xyz/argument/fee_bystander
 https://yujiri.xyz/argument/first_round_capital
-https://yujiri.xyz/argument/grouping_notifs
 https://yujiri.xyz/argument/history_philosophy
 https://yujiri.xyz/argument/hypocritical_objectivism
 https://yujiri.xyz/argument/identity_politics
@@ -31,9 +30,6 @@ https://yujiri.xyz/argument/inflammation
 https://yujiri.xyz/argument/iq
 https://yujiri.xyz/argument/learning_language
 https://yujiri.xyz/argument/leftist_economics
-https://yujiri.xyz/argument/liking
-https://yujiri.xyz/argument/moderation
-https://yujiri.xyz/argument/myth_of_respect
 https://yujiri.xyz/argument/national_debt
 https://yujiri.xyz/argument/noncomparative
 https://yujiri.xyz/argument/not_ad_hominem
@@ -47,12 +43,9 @@ https://yujiri.xyz/argument/reactance
 https://yujiri.xyz/argument/relativism_not_inconsistent
 https://yujiri.xyz/argument/same_person
 https://yujiri.xyz/argument/screenshots
-https://yujiri.xyz/argument/selflike
-https://yujiri.xyz/argument/self_promotion
 https://yujiri.xyz/argument/shane_utilitarianism
 https://yujiri.xyz/argument/statistics
 https://yujiri.xyz/argument/steps
-https://yujiri.xyz/argument/tags
 https://yujiri.xyz/argument/tests
 https://yujiri.xyz/argument/the_origin_of_consciousness
 https://yujiri.xyz/argument/tu_quoque
@@ -64,6 +57,7 @@ https://yujiri.xyz/argument/yujiris_second_law
 https://yujiri.xyz/commentary/airbnb
 https://yujiri.xyz/commentary/alt-right-pipeline
 https://yujiri.xyz/commentary/left_right
+https://yujiri.xyz/commentary/self-promotion
 https://yujiri.xyz/commentary/tiktok
 https://yujiri.xyz/didact
 https://yujiri.xyz/fiction/
@@ -410,6 +404,11 @@ https://yujiri.xyz/spem/tense
 https://yujiri.xyz/spem/transliteration
 https://yujiri.xyz/spem/types
 https://yujiri.xyz/theory/communism
+https://yujiri.xyz/theory/grouping-notifs
+https://yujiri.xyz/theory/moderation
+https://yujiri.xyz/theory/rating
+https://yujiri.xyz/theory/selflike
+https://yujiri.xyz/theory/tags
 https://yujiri.xyz/works/
 https://yujiri.xyz/works/mc_revenge/
 https://yujiri.xyz/works/mc_revenge/guide

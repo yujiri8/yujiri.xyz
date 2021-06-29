@@ -1,5 +1,4 @@
-TITLE Platform designers: got common sense?
-NAV Platform designers: got common sense?
+TITLE Don't let me like my own post
 DESC Platform designers, please stop letting the creator have the same effect on the post as a viewer.
 
 One baffling design decision (to use the most charitable language I can) in media platforms that's bafflingly common is the decision to allow users to upvote their own content... but not do so automatically. On Youtube, Twitter, dev.to, minds.com, <a rel="nofollow" href="https://en.wikipedia.org/wiki/Flipnote_Studio">Flipnote Hatena</a> <span class="note">the only platform that actually let you add unlimited stars to something by tapping it indefinitely - that's not a joke</span>, Disqus, and <a href="https://liberty.me">liberty.me</a>, you can like your own content, but it's not liked by default.
@@ -12,4 +11,4 @@ On Reddit (and curiously in Dev.to comments but not Dev.to posts), you can like 
 
 Stack Exchange is actually the only platform I can think of where you can't upvote your own stuff.
 
-A similar and far worse practice on some platforms that have a view counter as well as a like counter is that *your own views count*. This is the case on Youtube, Twitter, and (if I remember correctly) Blogspot. And it about makes me want to hack them and fix it for them.
+A similar and far worse practice on some platforms that have a view counter as well as a like counter is that *your own views count*. This is the case on Youtube, Twitter, and if I remember correctly, Blogspot. And it about makes me want to hack them and fix it for them.

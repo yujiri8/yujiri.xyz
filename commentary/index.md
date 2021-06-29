@@ -9,3 +9,5 @@ This section is a newborn child of a categorization change I'm making. Other art
 [Why the alt-right pipeline happens](alt-right-pipeline)
 
 [Why I hate TikTok](tiktok)
+
+[Stop freaking out about self-promotion](self-promotion)
