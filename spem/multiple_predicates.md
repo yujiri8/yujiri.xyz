@@ -9,7 +9,7 @@ Note the difference between this and "I do it *and* use the scissors". *And* mak
 
 You see a similar pattern in English with phrases like "come help me". That doesn't mean the same thing though; it means "come *in order to* help me", rather than "help me *by* coming".
 
-You can extend this to more complicated uses too: `mi ɑn ven ke ni zu nɑi ku neʃu no tizu` = "I prevented him from doing it by hiding the tool".
+You can extend this to more complicated uses too: `mi ɑn ven ke ni zu nɑy ku neʃu no tizu` = "I prevented them from doing it by hiding the tool".
 
 Another good example is "so that". Spem does this with the verb "try" (`vi`):
 

@@ -1,8 +1,7 @@
 TITLE Spem conlang ASCII transliteration scheme
 NAV ASCII transliteration scheme
 
-Spem transliteration mostly revolves around the overloading of 'h' and ' as an
-[escape character](/computing/escape_sequences). Letters are transformed as follows:
+Spem transliteration revolves around the overloading of 'h' and ' as an [escape character](/software/escape_sequences). Letters are transformed as follows:
 
 * ɪ -> ih
 * ɵ -> oh

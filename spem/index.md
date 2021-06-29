@@ -38,19 +38,19 @@ Yes, I'm for real, I plan to invent a language and get the world speaking it. I 
 
 [Open question (please comment): variable dereferencing?](dereference)
 
-[Other open questions (3)](rfc)
+[Other open questions (2)](rfc)
 
 <br>
 
 Here are the reasons why the world needs this so badly, and why Esperanto won't do.
 
-1. **Philosophical accuracy.** The language a society speaks has an enormous impact on its culture, and quite a lot of prevalent harmful ideas can be traced to our language suggesting them:
+1. **Philosophical accuracy.** The language a society speaks has an enormous impact on its culture, and most prevalent harmful ideas can be traced to our language suggesting them:
 
-    * **"Good" is the most diabolically destructive word ever invented.** "Good" refers to many completely different concepts, such as morality, pleasure, skill, and others. (The related words "should" and "must" can also refer to probability.) The conflation of morality and pleasure doesn't just encourage utilitarianism, it allows people to write things like [this tvtropes turn-the-other-cheek propaganda piece](https://tvtropes.org/pmwiki/pmwiki.php/Main/PayEvilUntoEvil) and people can get behind the garbage. Making such wrong and destructive ideas sound appealing would be much harder if morality and pleasure weren't named the same thing.
+    * **[Polymorphic](/argument/polymorphic_values) "good".** "Good" refers to many completely different concepts, such as morality, pleasure, skill, and others. (The related words "should" and "must" can also refer to probability.) The conflation of morality and pleasure doesn't just encourage utilitarianism, it allows people to write things like [this tvtropes turn-the-other-cheek propaganda piece](https://tvtropes.org/pmwiki/pmwiki.php/Main/PayEvilUntoEvil) and people can get behind the garbage. Making such wrong and destructive ideas sound appealing would be much harder if morality and pleasure weren't named the same thing.
 
     * **Synonyms facilitate circular reasoning.** When there are many ways to communicate the same thing, it's easy to see a difference where there isn't one, and people can make statements of the form "X is right because X is right" and mask what they're doing by calling X two different things. Even honest people who were raised with bad ideas can do this unintentionally.
 
-    * **No distinction between ability and permission.** Asking for permission is usually done with "can" in English, which is a blatant road to [authoritarianism](/protagonism/anarchism).
+    * **No distinction between ability and permission.** Asking for permission is usually done with "can" in English, which is a blatant road to authoritarianism.
 
     * **Commands.** I'll admit this point is arguable but there's a strong argument that we shouldn't have commands. Commands as a language construct allow you to pressure someone to do something without saying why: maybe you think it's their duty, maybe you think it's in their interests, maybe you just want them to, but commands allow you to not distinguish, which insinuates that the distinction isn't important.
 
